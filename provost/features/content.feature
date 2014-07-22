@@ -6,7 +6,7 @@ Feature: Content
 Scenario Outline: Footer content
   Given I am on the homepage
   Then I should see the "<Header>" heading in the "<Region>" region
-  
+
   Examples:
   | Header                          | Region |
   | Stay connected to Stanford      | Footer |
@@ -16,7 +16,7 @@ Scenario Outline: Footer content
 Scenario Outline: Homepage content
   Given I am on the homepage
   Then I should see "<Text>" in the "<Region>" region
-  
+
   Examples:
   | Text                     | Region        |
   | As the chief academic    | First sidebar |
@@ -26,7 +26,7 @@ Scenario Outline: Homepage content
 Scenario Outline: About the Office content
   Given I am on "about-office"
   Then I should see "<Text>" in the "<Region>" region
-  
+
   Examples:
   | Text                  | Region  |
   | As the chief academic | Content |
@@ -34,7 +34,7 @@ Scenario Outline: About the Office content
 Scenario Outline: About the Office content
   Given I am on "about-office"
   Then I should see the "<Header>" heading in the "<Region>" region
-  
+
   Examples:
   | Header           | Region        |
   | About the Office | Content       |
@@ -43,12 +43,18 @@ Scenario Outline: About the Office content
 Scenario: About the Provost content
   Given I am on "about-professor-john-w-etchemendy"
   Then I should see "John Etchemendy received his B.A. and M.A. in Philosophy from the University of Nevada, Reno in 1973 and 1976 respectively." in the "Content" region
-  
+
 Scenario: Announcements content
   Given I am on "announcements-updates"
   Then I should see "The Western Association of Schools and Colleges (WASC) has reaffirmed Stanford University's accreditation across all seven schools" in the "Content" region
-  
+
 Scenario: Contact page content
   Given I am on "contact"
   Then I should see "The Office of the Provost is located in Building 10, situated in the Inner Quad, at the heart of the Stanford campus." in the "Content" region
   And I should see the heading "Contact" in the "Content" region
+
+@api
+Scenario: Administrative content console
+  Given I am logged in as a user with the "administrator" role
+  And I am on "admin/content"
+  Then I should see 16 ".views-field-title" elements
