@@ -25,7 +25,7 @@ default:
         Help: "#help"
         Content Top: "#content-top"
         Content Upper: "#content-upper"
-        Content Body: "#content"
+        Content Body: "#content-body"
         Content 2 column flow: "#content-row2"
         Content 2 column stacked (1): "#content-col2-1"
         Content 2 column stacked (2): "#content-col2-2"
