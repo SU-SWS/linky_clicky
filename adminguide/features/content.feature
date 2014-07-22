@@ -20,16 +20,16 @@ Scenario Outline: Homepage block and footer content
 
 Scenario: What's New page content
   Given I am on "whats-new"
-  Then I should see "Policy changes, deletions, additions" in the "Content" region
+  Then I should see "Policy changes, deletions, additions" in the "Content Body" region
 
 Scenario: Chapters content
   Given I am on "chapters"
-  Then I should see "This chapter details the cornerstone policies of Stanford University" in the "Content" region
+  Then I should see "This chapter details the cornerstone policies of Stanford University" in the "Content Body" region
 
 Scenario: Browse by Category content
   Given I am on "category"
   And I click "Vacation"
-  Then I should see "In addition to Vacations, Sick Leave and Paid Holidays, Stanford employees or employees" in the "Content" region
+  Then I should see "In addition to Vacations, Sick Leave and Paid Holidays, Stanford employees or employees" in the "Content Body" region
 
 Scenario: About the Guide page content
   Given I am on "about-guide"
