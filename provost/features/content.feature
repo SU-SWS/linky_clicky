@@ -21,7 +21,7 @@ Scenario Outline: Homepage content
   | Text                     | Region        |
   | As the chief academic    | First sidebar |
   | Read more about Stanford | First sidebar |
-  | The latest publications  | Content       |
+  | The latest publications  | Content Body  |
 
 Scenario Outline: About the Office content
   Given I am on "about-office"
@@ -42,11 +42,11 @@ Scenario Outline: About the Office content
 
 Scenario: About the Provost content
   Given I am on "about-professor-john-w-etchemendy"
-  Then I should see "John Etchemendy received his B.A. and M.A. in Philosophy from the University of Nevada, Reno in 1973 and 1976 respectively." in the "Content" region
+  Then I should see "John Etchemendy received his B.A. and M.A. in Philosophy from the University of Nevada, Reno in 1973 and 1976 respectively." in the "Content Body" region
 
 Scenario: Announcements content
   Given I am on "announcements-updates"
-  Then I should see "The Western Association of Schools and Colleges (WASC) has reaffirmed Stanford University's accreditation across all seven schools" in the "Content" region
+  Then I should see "The Western Association of Schools and Colleges (WASC) has reaffirmed Stanford University's accreditation across all seven schools" in the "Content Body" region
 
 Scenario: Contact page content
   Given I am on "contact"
