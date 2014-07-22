@@ -8,15 +8,15 @@ Scenario Outline: Homepage block and footer content
   Then I should see the "<Header>" heading in the "<Region>" region
 
   Examples:
-  | Header                   | Region  |
-  | About                    | Footer  |
-  | Chapters                 | Footer  |
-  | Actions                  | Footer  |
-  | Other Policy Handbooks   | Footer  |
-  | About the Guide          | Content |
-  | Chapters                 | Content |
-  | New Guide Numbering      | Content |
-  | Commonly Viewed Policies | Content |
+  | Header                   | Region                       |
+  | About                    | Footer                       |
+  | Chapters                 | Footer                       |
+  | Actions                  | Footer                       |
+  | Other Policy Handbooks   | Footer                       |
+  | About the Guide          | Content 2 column stacked (1) |
+  | Chapters                 | Content 2 column stacked (1) |
+  | New Guide Numbering      | Content 2 column stacked (1) |
+  | Commonly Viewed Policies | Content 2 column stacked (1) |
 
 Scenario: What's New page content
   Given I am on "whats-new"
