@@ -1,0 +1,47 @@
+default:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: https://sites.stanford.edu/drupal7-update-status/
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      api_driver: 'drush' 
+      drush:
+        alias: 'sse.d7up'
+      region_map:
+        # Open Framework regions
+        Admin Shortcuts: "#admin_shortcuts"
+        Site Login: "#site_login"
+        Header: "#header"
+        Navigation: "#navigation"
+        Search Box: "#search_box"
+        Main Top: "#main_top"
+        Main Upper: "#main_upper"
+        First sidebar: "#sidebar_first"
+        Highlighted: "#highlighted"
+        Help: "#help"
+        Content Top: "#content_top"
+        Content Upper: "#content_upper"
+        Content Body: "#content"
+        Content 2-column flow: "#content_row2"
+        Content 2-column stacked (1): "#content_col2-1"
+        Content 2-column stacked (2): "#content_col2-2"
+        Content 3-column flow: "#content_row3"
+        Content 3-column stacked (1): "#content_col3-1"
+        Content 3-column stacked (2): "#content_col3-2"
+        Content 3-column stacked (3): "#content_col3-3"
+        Content 4-column flow: "#content_row4"
+        Content 4-column stacked (1): "#content_col4-1"
+        Content 4-column stacked (2): "#content_col4-2"
+        Content 4-column stacked (3): "#content_col4-3"
+        Content 4-column stacked (4): "#content_col4-4"
+        Content Lower: "#content_lower"
+        Content Bottom: "#content_bottom"
+        Second sidebar: "#sidebar_second"
+        Main Lower: "#main_lower"
+        Main Bottom: "#main_bottom"
+        Footer: "#footer"
+        Content: "#content"
