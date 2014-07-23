@@ -1,7 +1,7 @@
 Feature: Content
   In order to ensure that the Provost website has the correct content
   As an end user
-  I want check for the existence of content that should appear
+  I want to check for the existence of content that should appear
 
 Scenario Outline: Footer content
   Given I am on the homepage
