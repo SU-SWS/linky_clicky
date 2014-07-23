@@ -58,3 +58,10 @@ Scenario: Administrative content console
   Given I am logged in as a user with the "administrator" role
   And I am on "admin/content"
   Then I should see 16 ".views-field-title" elements
+
+@javascript
+Scenario: Home page search
+  Given I am on the homepage
+  When I fill in "Search" with "Etchemendy"
+  And I press "Search"
+  Then I should see 10 ".search-result" elements
