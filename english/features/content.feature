@@ -54,5 +54,5 @@ Scenario: News page content
 Scenario: Events page content
   Given I am on "events"
   Then I should see the heading "Upcoming Events" in the "Content Body" region
-  And I should see "View Past Events" in the "Content Body" region
+  And I should see "See Past Events" in the "Content Body" region
 
