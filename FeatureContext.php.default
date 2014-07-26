@@ -44,6 +44,13 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
 //
 
   /**
+   * @Given /^I wait (\d+) seconds$/
+   */
+  public function iWaitSeconds($seconds) {
+    $this->getSession()->wait(1000*$seconds);
+  }
+
+  /**
    * @Given /^the "([^"]*)" module is enabled$/
    */
   public function theModuleIsEnabled($arg1) {
