@@ -7,10 +7,10 @@ Scenario Outline: Calendar page content
  Given I am on "calendar"
  Then I should see the "<Header>" heading in the "<Region>" region
  Examples:
- | Header                           | Region                |
- | Events                     | Content Bottom     |
- | Exhibitions                    | Content Bottom     |
- | Looking for something specific?     | First sidebar     |
+ | Header                          | Region         |
+ | Events                          | Content Bottom |
+ | Exhibitions                     | Content Bottom |
+ | Looking for something specific? | First sidebar  |
 
 Scenario: Searching events
  Given I am on "events/upcoming-events"
