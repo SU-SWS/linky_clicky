@@ -6,6 +6,9 @@ default:
       goutte: ~
       selenium2: ~
       base_url: https://sites.stanford.edu/art
+      # this is how you choose a different browser
+      # javascript_session: 'selenium2'
+      # browser_name: safari
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       api_driver: 'drush' 
