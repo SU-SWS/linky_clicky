@@ -31,3 +31,11 @@ Scenario: See exhibitions on exhibition spaces page
 Scenario: See past exhibitions - check for pager
  Given I am on "exhibitions/past-exhibitions"
  Then I should see "next ›" in the "Content Body" region
+
+Scenario: See an event node
+ Given I am on "events/aural-architecture-seminar-peter-jeffery-0"
+ Then I should see "As both a forum open to the public and a course offering academic credit to Stanford" in the "Content Body" region
+
+Scenario: See an exhibition node
+ Given I am on "exhibitions/penumbra"
+ Then I should see "Photography from the Continuing Studies course, Photography as Art" in the "Content Body" region
