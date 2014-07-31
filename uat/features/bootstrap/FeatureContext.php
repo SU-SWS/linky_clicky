@@ -97,8 +97,16 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     }
 
     $this->getSession()->visit($this->locatePath('/user'));
+    $session = $this->getSession();
     $element = $this->getSession()->getPage();
-    $element->clickLink("Local User Login");
+    // find the Local User Login link - it's only findable in the browser, with Javascript
+    // See Behat\Mink\Element\TraversableElement::findLink
+    $localuserlogin = $element->findLink("Local User Login");
+    if (!is_null($localuserlogin)) {
+      // click on the Local User Login link to expose the user name and password fields
+      // See Behat\Mink\Element\TraversableElement::clickLink
+      $element->clickLink("Local User Login");
+    }
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
     $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
     $submit = $element->findButton($this->getDrupalText('log_in'));

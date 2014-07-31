@@ -1,0 +1,13 @@
+Feature: modules
+  In order to ensure that upgrades do not break existing functionality
+  As an administrative user
+  I want to ensure that modules are working properly
+
+@api
+Scenario: Administration Views
+Given the "admin_views" module is enabled
+  And I am logged in as a user with the "administrator" role
+  And I am on "admin/content"
+Then I should see a ".views-field-title" element
+
+
