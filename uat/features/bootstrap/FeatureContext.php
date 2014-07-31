@@ -97,7 +97,6 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     }
 
     $this->getSession()->visit($this->locatePath('/user'));
-    $session = $this->getSession();
     $element = $this->getSession()->getPage();
     // find the Local User Login link - it's only findable in the browser, with Javascript
     // See Behat\Mink\Element\TraversableElement::findLink
