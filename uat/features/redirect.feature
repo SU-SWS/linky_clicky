@@ -14,3 +14,7 @@ Scenario: Redirect
   Then I should see "The redirect has been saved"
   When I go to "foo"
   Then I should be on the homepage
+  When I go to "admin/config/search/redirect"
+    And I click "Delete" in the "foo" row
+    And I press the "Confirm" button
+  Then I should see "The redirect has been deleted"
