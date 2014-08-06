@@ -17,8 +17,6 @@ Scenario: Features
     And I should see "Stanford Carousel"
     And I should see "Stanford Page"
     And I should see "Stanford WYSIWYG"
-
   When I click "Stanford WYSIWYG"
     Then I should see "Baseline WYSIWYG Feature"
     And I should see "content_editor_text_format" in the "Content" region
-

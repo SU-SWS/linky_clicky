@@ -29,4 +29,3 @@ Scenario: Taxonomy Manager
     And I press the "edit-delete-delete" button
     And I press the "Delete" button
   Then I should see "Deleted terms: cat, cow, dog, sheep, turtle"
-  

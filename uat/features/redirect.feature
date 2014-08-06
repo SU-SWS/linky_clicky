@@ -13,7 +13,4 @@ Scenario: Redirect
     And I press the "Save" button
   Then I should see "The redirect has been saved"
   When I go to "foo"
-  Then I should be on the homepage  
-
-
-
+  Then I should be on the homepage
