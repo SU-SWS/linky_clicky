@@ -3,9 +3,26 @@ Feature: Homepage carousel Javascript
  As an end user
  I want to interact with dynamic Javascript of the homepage carousel
 
+# The carousel is random, so there's no good way to assert what text will be present
+# This test should be observed visually
 @javascript
 Scenario: Homepage carousel
  Given I am on the homepage
- When I click "danceroom Spectroscopy" in the "Content Top" region
- And I wait 2 seconds
- Then I should see "Come play in this interactive, multi-award winning installation that allows you to influence both sound and image using your movement." in the "Content Top" region
+  When I press the "Next Slide" button
+   And I wait 2 seconds
+ Then I should see a ".slide-title" element
+  When I press the "Next Slide" button
+   And I wait 2 seconds
+ Then I should see a ".slide-title" element
+  When I press the "Next Slide" button
+   And I wait 2 seconds
+ Then I should see a ".slide-title" element
+  When I press the "Next Slide" button
+   And I wait 2 seconds
+ Then I should see a ".slide-title" element
+  When I press the "Next Slide" button
+   And I wait 2 seconds
+ Then I should see a ".slide-title" element
+ When I press the "Previous Slide" button
+   And I wait 2 seconds
+ Then I should see a ".slide-title" element
