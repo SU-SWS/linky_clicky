@@ -3,9 +3,6 @@ Feature: Stanford Image
   As an administrative user
   I want to ensure that the Stanford Image module is working properly
 
-Background
-
-
 @api
 Scenario: Stanford Image
   Given the "stanford_image" module is enabled
