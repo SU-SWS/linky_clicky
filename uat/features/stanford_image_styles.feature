@@ -3,14 +3,15 @@ Feature: Stanford Image Styles
   As an administrative user
   I want to ensure that the Stanford Image Styles module is working properly
 
-Background
+Background:
   Given the "stanford_image_styles" module is enabled
+    And the cache has been cleared
+    And I am logged in as a user with the "administrator" role
 
 
 @api
 Scenario Outline: Stanford Image Styles
-  Given I am logged in as a user with the "administrator" role
-  And I am on "admin/config/media/image-styles"
+  Given I am on "admin/config/media/image-styles"
   Then I should see "<Image Style>"
 
   Examples:

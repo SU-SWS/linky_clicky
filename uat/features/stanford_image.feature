@@ -6,6 +6,7 @@ Feature: Stanford Image
 @api
 Scenario: Stanford Image
   Given the "stanford_image" module is enabled
+    And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/field-collections"
   Then I should see "field_s_image_info"

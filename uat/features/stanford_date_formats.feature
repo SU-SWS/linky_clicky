@@ -3,9 +3,9 @@ Feature: Stanford Date Formats
   As an administrative user
   I want to ensure that the Stanford Date Formats module is working properly
 
-Background
+Background:
   Given the "stanford_date_formats" module is enabled
-
+    And the cache has been cleared
 
 @api
 Scenario Outline: Stanford Date Formats

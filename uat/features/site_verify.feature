@@ -6,6 +6,7 @@ Feature: Site Verification
 @api
 Scenario: Site Verification
   Given the "site_verify" module is enabled
+    And the cache has been cleared
     And I am logged in as a user with the "administrator" role
   When I am on "admin/config/search/verifications/add"
     And I select "Google" from "Search engine"
