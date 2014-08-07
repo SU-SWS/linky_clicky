@@ -6,9 +6,10 @@ default:
       goutte: ~
       selenium2: ~
       base_url: https://sites-uat.stanford.edu/drupal7-update-status/
+      files_path: "."
     Drupal\DrupalExtension\Extension:
       blackbox: ~
-      api_driver: 'drush' 
+      api_driver: 'drush'
       drush:
         alias: 'uat.drupal7-update-status'
       region_map:
