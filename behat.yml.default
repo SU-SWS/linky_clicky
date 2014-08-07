@@ -7,9 +7,10 @@ default:
       selenium2: ~
       base_url: <enter full URL here>
       # base_url: https://foo.stanford.edu
+      files_path: "."
     Drupal\DrupalExtension\Extension:
       blackbox: ~
-      api_driver: 'drush' 
+      api_driver: 'drush'
       drush:
         alias: <enter drush site alias here in the format of 'foo.bar' (use quotes)>
         # alias: 'foo.bar'
