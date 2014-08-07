@@ -30,7 +30,3 @@ Scenario: Contact and Location page content
 Scenario: PhD Art History page content
   Given I am on "academics/graduate-programs/phd-art-history"
   Then I should see "The doctoral program in the History of Art" in the "Content Body" region
-
-Scenario: PhD Art History page content
-  Given I am on "academics/graduate-programs/phd-art-history"
-  Then I should see "The doctoral program in the History of Art" in the "Content Body" region

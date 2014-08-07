@@ -7,10 +7,6 @@ Scenario: News on program pages
  Given I am on "art-history"
  Then I should see the "News" heading in the "Content Lower" region
 
-Scenario: News on program pages
- Given I am on "art-history"
- Then I should see the "News" heading in the "Content Lower" region
-
 Scenario: Searching news
  Given I am on "news/recent-news"
  When I fill in "Search by title" with "Half Tilt Full Lean"
