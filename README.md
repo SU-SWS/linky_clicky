@@ -17,9 +17,9 @@ The default FeatureContext.php file contains some additional step definitions, a
 Directory structure
 -------------------
 
-sitename
-|--behat.yml
-|--features
-   |--featurename.feature
-   |--bootstrap
-      |--FeatureContext.php
+    sitename
+    |--behat.yml
+    |--features
+       |--featurename.feature
+       |--bootstrap
+          |--FeatureContext.php
