@@ -21,8 +21,8 @@ Scenario: See past events - check for pager
 
 # How do we target dynamic content links when we can’t guarantee that node will be there?
 Scenario: See an event node
- Given I am on "events/aural-architecture-seminar-peter-jeffery-0"
- Then I should see "As both a forum open to the public and a course offering academic credit to Stanford" in the "Content Body" region
+ Given I am on "events/spotlight-art-6"
+ Then I should see "Listen to graduate students in the Department of Art & Art History give free gallery talks" in the "Content Body" region
 
 # Can’t test for this yet until the filter is placed
 Scenario: Searching events
