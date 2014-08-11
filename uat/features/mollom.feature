@@ -14,7 +14,7 @@ Scenario: Mollom protect user password form
     And I press the "Save" button
   Then I should see "The form protection has been added"
 
-# This will fail until we
+# This will fail until we figure out a way to pass private key
 Scenario: Mollom check user password form CAPTCHA
   Given I am an anonymous user
     When I am on "user/password"
