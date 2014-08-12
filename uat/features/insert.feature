@@ -13,7 +13,8 @@ Scenario: Insert
     And I press the "Save" button
   Then I should see "These settings apply to the [random:1] field everywhere it is used"
   When I press the "Save field settings" button
-    And I click "Insert"
+  Then I should see "Updated field [random:1] field settings"
+  When I click "Insert"
     And I check the box "Enable insert button"
   When I press the "Save settings" button
   Then I should see "Saved [random:1] configuration"
