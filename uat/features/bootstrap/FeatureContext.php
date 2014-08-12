@@ -18,7 +18,7 @@ use Drupal\Component\Utility\Random;
 /**
  * Features context.
  */
-// class FeatureContext extends BehatContext 
+// class FeatureContext extends BehatContext
 class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
 {
     /**
