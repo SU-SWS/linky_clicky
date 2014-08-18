@@ -31,3 +31,7 @@ Scenario: Rules
   Then I should see "Basic page Rules Test has been created"
   When I am on "admin/reports/dblog"
     Then I should see "Successfully sent email"
+  When I am on "admin/config/workflow/rules"
+    And I click "delete" in the "Send Email When Pages Are Viewed" row
+    And I press the "Confirm" button
+  Then I should see "Deleted reaction rule Send Email When Pages Are Viewed"
