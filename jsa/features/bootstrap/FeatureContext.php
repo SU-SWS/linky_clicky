@@ -185,9 +185,9 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
     /**
-   * @Then /^I should see (\d+) or less "([^"]*)" elements$/
+   * @Then /^I should see (\d+) or fewer "([^"]*)" elements$/
    */
-  public function iShouldSeeOrLessElements($num, $element) {
+  public function iShouldSeeOrFewerElements($num, $element) {
     $container = $this->getSession()->getPage();
     $nodes = $container->findAll('css', $element);
 
@@ -215,6 +215,8 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
   /**
+   * This function causes the drop down. No need to add a hover step before.
+   *
    * @Then /^I wait for the site actions drop down to appear$/
    */
   public function iWaitForTheSiteActionsDropDownToAppear() {

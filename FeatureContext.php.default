@@ -185,9 +185,9 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
     /**
-   * @Then /^I should see (\d+) or less "([^"]*)" elements$/
+   * @Then /^I should see (\d+) or fewer "([^"]*)" elements$/
    */
-  public function iShouldSeeOrLessElements($num, $element) {
+  public function iShouldSeeOrFewerElements($num, $element) {
     $container = $this->getSession()->getPage();
     $nodes = $container->findAll('css', $element);
 
@@ -213,20 +213,6 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     // ok, let's hover it
     $element->mouseOver();
   }
-
-  /**
-   * @Then /^I wait for the site actions drop down to appear$/
-   */
-  public function iWaitForTheSiteActionsDropDownToAppear() {
-
-    $this->getSession()->getDriver()->evaluateScript(
-    "jQuery('#block-menu-menu-admin-shortcuts-site-action ul.nav li.first.last').find('ul').show().css('z-index', '1000');"
-    );
-
-    $this->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts-site-action ul.nav > ul.nav').children().length > 0");
-
-  }
-
 
   /**
    * Click some text
