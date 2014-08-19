@@ -24,6 +24,6 @@ Scenario: See past events - check for pager
 # Can’t test for this yet until the filter is placed
 Scenario: Searching events
  Given I am on "events/upcoming-events"
- When I select "Lecture" from "Filter by event type"
+ When I select "Lecture" from "Filter by type"
  And I press the "Go" button
  Then I should see "Studio Lecture Series" in the "Content Body" region
