@@ -28,7 +28,6 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | Stanford Sites Jumpstart Academic    | Header |
   | This is your About block | First sidebar |
   | This is your shortcuts block to get prospective and current students  | First sidebar |
   | Sample News: Smith Conference  | Content 3 column flow |
@@ -40,7 +39,6 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | Stanford Sites Jumpstart Academic    | Header |
   | More About Us | First sidebar |
   | Undergraduate Program | First sidebar |
   | Graduate Programs | First sidebar |
