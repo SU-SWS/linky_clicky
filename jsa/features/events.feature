@@ -17,12 +17,9 @@ Scenario: See calendar nav block
 
 Scenario: See past events - check for pager
  Given I am on "events/past-events"
- Then I should see the link "next" in the "Content Body" region
-
-# How do we target dynamic content links when we can’t guarantee that node will be there?
-Scenario: See an event node
- Given I am on "events/spotlight-art-6"
- Then I should see "Listen to graduate students in the Department of Art & Art History give free gallery talks" in the "Content Body" region
+ Then I should see 5 or less ".event-title" elements
+# Next is hidden if there are less then 5
+# Then I should see the link "next" in the "Content Body" region
 
 # Can’t test for this yet until the filter is placed
 Scenario: Searching events
