@@ -217,7 +217,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   /**
    * This function causes the drop down. No need to add a hover step before.
    *
-   * @Then /^I wait for the site actions drop down to appear$/
+   * @Then /^I wait for the Site Actions drop down to appear$/
    */
   public function iWaitForTheSiteActionsDropDownToAppear() {
 
