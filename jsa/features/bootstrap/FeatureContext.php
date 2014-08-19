@@ -246,11 +246,4 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     $element->click();
   }
 
-    /**
-   * @Then /^I wait (\d+)$/
-   */
-  public function iWait($arg1) {
-    $this->getSession()->wait($arg1);
-  }
-
 }
