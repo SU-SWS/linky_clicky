@@ -6,6 +6,7 @@ Feature: Redirect
 @api
 Scenario: Redirect
   Given the "redirect" module is enabled
+    And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/config/search/redirect/add"
   When I enter "foo" for "From"
