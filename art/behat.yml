@@ -5,7 +5,7 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-      base_url: https://sites.stanford.edu/art
+      base_url: https://art.stanford.edu/
       # this is how you choose a different browser
       # javascript_session: 'selenium2'
       # browser_name: safari
