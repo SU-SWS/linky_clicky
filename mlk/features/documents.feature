@@ -2,7 +2,7 @@ Feature: Administration
  In order to ensure that all documents behave and function normally.
 
 @api
-Scenario: See the Site Actions menu
+Scenario: See and not see the conjectured dates
  Given I am on "king-papers/documents"
  When I fill in "Search documents" with "Announcement, Urging Boycott of Buses"
  And I press "Go"
