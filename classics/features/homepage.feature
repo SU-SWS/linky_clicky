@@ -1,5 +1,5 @@
 Feature: Homepage
-  In order to ensure that the Jumpstart Academic website has the correct content
+  In order to ensure that the Department of Classics website has the correct content
   As an end user
   I want to check for the existence of content that should appear
 
@@ -9,17 +9,17 @@ Scenario Outline: Header content
 
   Examples:
   | Header                          | Region |
-  | About      | First sidebar |
-  | Academic Programs      | First sidebar |
-  | Welcome to your site!      | Content Body |
-  | Recent News | Content 3 column flow |
-  | Upcoming Events | Content 3 column flow |
-  | Affiliated Programs | Content 3 column flow |
-  | About      | Footer |
-  | Academics                      | Footer |
+  | In the Spotlight      | Content 4 column flow |
+  | Recent News      | Content 4 column flow |
+  | Upcoming Events      | Content 4 column flow |
+  | Recent Publications      | Content 4 column flow |
+  | Why Classics? | Content Lower |
+  | Lorenz Eitner Lectures | Content Lower |
+  | Alumni and Friends of Classics | Content Lower |
+  | Quick Links | Footer |
   | People | Footer |
-  | News and Events | Footer |
   | Connect | Footer |
+  | Location | Footer |
   | Contact Us | Footer |
 
 Scenario Outline: Homepage content
@@ -28,10 +28,9 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | This is your About block | First sidebar |
-  | This is your shortcuts block to get prospective and current students  | First sidebar |
-  | Sample News: Smith Conference  | Content 3 column flow |
-  | This is your Affiliated Programs block  | Content 3 column flow |
+  | Applying for an M.A. or Ph.D.? The application deadline is December 2, 2014 | Content 4 column flow |
+  | With these annual lectures | Content Lower |
+  | Stay connected to Classics @ Stanford. | Content Lower |
 
 Scenario Outline: Homepage links
   Given I am on the homepage
@@ -39,29 +38,17 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | More About Us | First sidebar |
-  | Undergraduate Program | First sidebar |
-  | Graduate Programs | First sidebar |
-  | Example Link | Content Body |
-  | Sample News: Smith Conference  | Content 3 column flow |
-  | See More News | Content 3 column flow |
-  | See More Events | Content 3 column flow |
-  | Link to a program you support | Content 3 column flow |
-  | Link to an office that sponsors you | Content 3 column flow |
-  | Link to a project website | Content 3 column flow |
-  | See all affiliated programs | Content 3 column flow |
-  | About Us | Footer |
-  | Affiliated Programs | Footer |
-  | Location | Footer |
-  | Contact | Footer |
-  | Make a Gift | Footer |
-  | Undergraduate Program | Footer |
-  | Graduate Programs | Footer |
-  | Courses | Footer |
+  | online application | Content 4 column flow |
+  | graduate programs | Content 4 column flow |
+  | graduate admissions process | Content 4 column flow |
+  | See More News | Content 4 column flow |
+  | See More Events | Content 4 column flow |
+  | See More Publications | Content 4 column flow |
+  | Events | Footer |
+  | Current Research | Footer |
+  | Eitner Lectures | Footer |
   | Faculty | Footer |
-  | Students | Footer |
-  | Department Newsletter | Footer |
-  | Recent News | Footer |
-  | Subscribe | Footer |
   | Staff | Footer |
+  | Graduate Students | Footer |
   | Campus Map | Footer |
+  | classics@stanford.edu | Footer |
