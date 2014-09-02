@@ -54,7 +54,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
   /**
-   * @Given /^I wait (\d+) second(s)?$/
+   * @Given /^I wait (\d+) seconds$/
    */
   public function iWaitSeconds($seconds) {
     $this->getSession()->wait(1000*$seconds);
@@ -213,6 +213,22 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     // ok, let's hover it
     $element->mouseOver();
   }
+
+  /**
+   * This function causes the drop down. No need to add a hover step before.
+   *
+   * @Then /^I wait for the Site Actions drop down to appear$/
+   */
+  public function iWaitForTheSiteActionsDropDownToAppear() {
+
+    $this->getSession()->getDriver()->evaluateScript(
+    "jQuery('#block-menu-menu-admin-shortcuts-site-action ul.nav li.first.last').find('ul').show().css('z-index', '1000');"
+    );
+
+    $this->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts-site-action ul.nav > ul.nav').children().length > 0");
+
+  }
+
 
   /**
    * Click some text
