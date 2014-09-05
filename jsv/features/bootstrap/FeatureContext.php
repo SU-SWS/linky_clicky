@@ -3,7 +3,9 @@
 use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Context\TranslatedContextInterface,
     Behat\Behat\Context\BehatContext,
-    Behat\Behat\Exception\PendingException;
+    Behat\Behat\Exception\PendingException,
+    Behat\Mink\Exception\ExpectationException,
+    Behat\Mink\Session;
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 use Drupal\Component\Utility\Random;
@@ -18,7 +20,7 @@ use Drupal\Component\Utility\Random;
 /**
  * Features context.
  */
-// class FeatureContext extends BehatContext 
+// class FeatureContext extends BehatContext
 class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
 {
     /**
@@ -52,7 +54,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
   /**
-   * @Given /^I wait (\d+) seconds$/
+   * @Given /^I wait (\d+) second(s)?$/
    */
   public function iWaitSeconds($seconds) {
     $this->getSession()->wait(1000*$seconds);
@@ -165,4 +167,69 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
 
     return $argument;
   }
+
+  /**
+   * @Then /^I should see (\d+) or more "([^"]*)" elements$/
+   */
+  public function iShouldSeeOrMoreElements($num, $element) {
+
+    $container = $this->getSession()->getPage();
+    $nodes = $container->findAll('css', $element);
+
+    if (intval($num) > count($nodes)) {
+      $session = $this->getSession();
+      $message = sprintf('%d "%s" elements found when there should be a minimum of %d.', count($nodes), $element, $num);
+      throw new ExpectationException($message, $session);
+    }
+
+  }
+
+    /**
+   * @Then /^I should see (\d+) or fewer "([^"]*)" elements$/
+   */
+  public function iShouldSeeOrFewerElements($num, $element) {
+    $container = $this->getSession()->getPage();
+    $nodes = $container->findAll('css', $element);
+
+    if (intval($num) < count($nodes)) {
+      $session = $this->getSession();
+      $message = sprintf('%d "%s" elements found when there should be a maximum of %d.', count($nodes), $element, $num);
+      throw new ExpectationException($message, $session);
+    }
+  }
+
+  /**
+   * @When /^I hover over the element "([^"]*)"$/
+   */
+  public function iHoverOverTheElement($locator) {
+    $session = $this->getSession(); // get the mink session
+    $element = $session->getPage()->find('css', $locator); // runs the actual query and returns the element
+
+    // errors must not pass silently
+    if (null === $element) {
+      throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $locator));
+    }
+
+    // ok, let's hover it
+    $element->mouseOver();
+  }
+
+  /**
+   * Click some text
+   *
+   * @When /^I click on the text "([^"]*)"$/
+   */
+  public function iClickOnTheText($text) {
+    $session = $this->getSession();
+    $element = $session->getPage()->find(
+      'xpath',
+      $session->getSelectorsHandler()->selectorToXpath('xpath', '*//*[text()="'. $text .'"]')
+    );
+    if (null === $element) {
+      throw new \InvalidArgumentException(sprintf('Cannot find text: "%s"', $text));
+    }
+
+    $element->click();
+  }
+
 }
