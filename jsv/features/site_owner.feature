@@ -5,8 +5,8 @@ I want to check that I can access, edit, and create site content
 
 @api @javascript
 Scenario: Clicking on Manage Content
- Given I am on the homepage
- And I am logged in as a user with the "site owner" role
- When I click "Site Actions" in the "Admin Shortcuts" region
- And I click "Manage Content" in the "Admin Shortcuts" region
- Then I should see "Manage All Content" in the "Content Body" region
+  Given I am logged in as a user with the "site owner" role
+  When I hover over the element "#block-menu-menu-admin-shortcuts-site-action"
+    And I wait 2 seconds
+    And I click "Edit All Pages" in the "Admin Shortcuts" region
+  Then I should see 12 or more "tr" elements
