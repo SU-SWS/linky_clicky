@@ -5,15 +5,15 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-      base_url: http://art.su.dev/
+      base_url: https://art.stanford.edu/
       # this is how you choose a different browser
       # javascript_session: 'selenium2'
       # browser_name: safari
     Drupal\DrupalExtension\Extension:
       blackbox: ~
-      api_driver: 'drush'
+      api_driver: 'drush' 
       drush:
-        alias: 'art.su.dev'
+        alias: 'sse.art'
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
