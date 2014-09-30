@@ -17,6 +17,7 @@ default:
         Admin Shortcuts: "#admin-shortcuts"
         Site Login: "#site-login"
         Header: "#header"
+        Branding: "#branding"
         Navigation: "#navigation"
         Search Box: "#search-box"
         Main Top: "#main-top"
