@@ -5,10 +5,23 @@ I want to check that I can access, edit, and create site content
 
 @api @javascript
 Scenario: Clicking on Manage Content
- Given I am on the homepage
- And I am logged in as a user with the "site owner" role
- Then I wait for the Site Actions drop down to appear
- When I click on the text "Manage Content"
- Then I wait 5 seconds
- Then I should see "Filter by Title" in the "Content Body" region
+  Given I am logged in as a user with the "site owner" role
+    And I wait for the Site Actions drop down to appear
+  When I click "Manage Content" in the "Admin Shortcuts" region
+  Then I should see "Filter by Title" in the "Content Body" region
+    And I should see "Manage All Content" in the "Branding" region
 
+@api @javascript
+Scenario: Adding a new page through the Site Actions menu
+  Given I am logged in as a user with the "site owner" role
+    And I wait for the Site Actions drop down to appear
+  When I click "Add Page" in the "Admin Shortcuts" region
+  Then I should see "Create Stanford Page" in the "Branding" region
+
+@api @javascript
+Scenario: Adding a new page and upload an image
+  Given I am logged in as a user with the "site owner" role
+    And I am on "node/add/stanford-page"
+    And I click "Show Add/Edit Image"
+  #And I click on “Choose File”  in the "Content Body" region
+  Then I should see "Source Info" in the "Content Body" region
