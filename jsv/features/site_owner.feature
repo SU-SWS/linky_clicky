@@ -1,7 +1,7 @@
 Feature: Site Owner
-In order to ensure that the Site Owner can create and edit
+In order to ensure that the Jumpstart Academic administration functions are working properly
 As a Site Owner
-I want to check that I can access, edit, and create site content
+I want to check for my ability to complete my tasks
 
 @api @javascript
 Scenario: Clicking on Manage Content
