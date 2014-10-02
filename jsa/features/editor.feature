@@ -1,6 +1,6 @@
-Feature: Site owner
+Feature: Editor
   In order to ensure that the Jumpstart Academic administration functions are working properly
-  As a Site Owner
+  As a Editor
   I want to check for my ability to complete my tasks
 
 @api @javascript
