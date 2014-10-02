@@ -27,6 +27,7 @@ default:
         First sidebar: "#sidebar-first"
         Highlighted: "#highlighted"
         Help: "#help"
+        Console: "#console"
         Content Top: "#content-top"
         Content Upper: "#content-upper"
         Content Body: "#content-body"
