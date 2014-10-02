@@ -39,3 +39,7 @@ Scenario: Clear caches
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
   Then I should see "Site Content Refreshed" in the "Console" region
+
+# @todo add scenario for edit contact information
+
+# @todo add scenario for edit social media links
