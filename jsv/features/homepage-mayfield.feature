@@ -2,7 +2,29 @@ Feature: Mayfield Homepage Layout
   In order to ensure that the Jumpstart "Mayfield" page layout
   As an end user
   I want to check for the existence of content that should appear
-  (Tests in this Feature should fail if Mayfield is not the selected homepage layout)
+
+@api @javascript
+Scenario: Enable the Mayfield homepage layout as administrator
+# step definition not working yet
+#  Given the "stanford_jumpstart_home_mayfield" homepage layout is not selected
+  Given I am logged in as a user with the "administrator" role
+    And I am on "admin/stanford-jumpstart/customize-design"
+  When I press the "edit-layouts-stanford-jumpstart-home-mayfield-selecter" button
+  Then I should see "Customized design options saved" in the "Console" region
+
+@api @javascript
+Scenario: Enable the Mayfield homepage layout as site owner
+  Given I am logged in as a user with the "site owner" role
+    And I am on "admin/stanford-jumpstart/customize-design"
+  When I press the "edit-layouts-stanford-jumpstart-home-mayfield-selecter" button
+  Then I should see "Customized design options saved" in the "Console" region
+
+@api
+Scenario: Editor should not access Customize Design
+  Given I am logged in as a user with the "editor" role
+    And I am on "admin/stanford-jumpstart/customize-design"
+  Then I should see the heading "Access denied" in the "Branding" region
+    And I should see "This content has been restricted by the author or by the site administrator" in the "Content Body" region
 
 Scenario Outline: Header content
   Given I am on the homepage
