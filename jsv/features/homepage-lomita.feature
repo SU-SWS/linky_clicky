@@ -1,5 +1,5 @@
-Feature: Homepage
-  In order to ensure that the Jumpstart website has the correct content
+Feature: Lomita Homepage Layout
+  In order to ensure that the Jumpstart "Lomita" page layout
   As an end user
   I want to check for the existence of content that should appear
 
@@ -9,10 +9,6 @@ Scenario Outline: Header content
 
   Examples:
   | Header                          | Region |
-  | About      | First sidebar |
-  | In the Spotlight      | First sidebar |
-  | Announcements      | Content Body |
-  | Example Announcement | Content Body |
   | Connect | Footer |
   | Contact Us | Footer |
   | Optional Footer Block      | Footer |
@@ -24,11 +20,15 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | This is your About block | First sidebar |
-  | This is your Highlights block  | First sidebar |
-  | This is your Announcements block  | Content Body |
+  | Feature a tagline or website subtitle here | Content Top |
+  | To edit the block and remove this placeholder content, hover over the block, click on the gear widget and select  | Content Top |
+  | Add a video, image, or other featured content to this block.   | Content Top |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
+
+Scenario: Homepage video block
+  Given I am on the homepage
+  Then I should see an "iframe" element
 
 Scenario Outline: Homepage links
   Given I am on the homepage
@@ -36,10 +36,7 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | More About Us | First sidebar |
-  | More Information | First sidebar |
-  | Download the Document | Content Body |
-  | Optional More Information Link  | Content Body |
+  | About us | Content Top |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |
