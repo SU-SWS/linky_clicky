@@ -33,8 +33,8 @@ Scenario Outline: Header content
   Examples:
   | Header                | Region                |
   | About                 | Content 3 column flow |
-  | In the Spotlight      | Content 3 column flow |
-  | Announcements         | Content 3 column flow |
+  | Recent News      | Content 3 column flow |
+  | Upcoming Events         | Content 3 column flow |
   | Connect               | Footer                |
   | Contact Us            | Footer                |
   | Optional Footer Block | Footer                |

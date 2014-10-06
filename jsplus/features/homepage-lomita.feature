@@ -44,9 +44,9 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | Feature a tagline or website subtitle here | Content Top |
-  | To edit the block and remove this placeholder content, hover over the block, click on the gear widget and select  | Content Top |
-  | Add a video, image, or other featured content to this block.   | Content Top |
+  | Feature a tagline or website subtitle here | Main Top |
+  | To edit the block and remove this placeholder content, hover over the block, click on the gear widget and select  | Main Top |
+  | Add a video, image, or other featured content to this block.   | Main Top |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
 
@@ -60,7 +60,7 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | About us | Content Top |
+  | About us | Main Top |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |

@@ -33,10 +33,10 @@ Scenario Outline: Header content
 
   Examples:
   | Header                          | Region |
-  | About      | First sidebar |
-  | In the Spotlight      | First sidebar |
-  | Announcements      | Content Body |
-  | Example Announcement | Content Body |
+  | Welcome to your site! | Main Top |
+  | About      | Content 3 column flow |
+  | Recent News      | Content 3 column flow |
+  | Upcoming Events      | Content 3 column flow |
   | Connect | Footer |
   | Contact Us | Footer |
   | Optional Footer Block      | Footer |
@@ -48,9 +48,9 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | This is your About block | First sidebar |
-  | This is your Highlights block  | First sidebar |
-  | This is your Announcements block  | Content Body |
+  | Feature a tagline or website subtitle here | Main Top |
+  | Edit this block to change the image and caption | Main Top |
+  | This is your About block  | Content 3 column flow |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
 
@@ -60,10 +60,11 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | More About Us | First sidebar |
-  | More Information | First sidebar |
-  | Download the Document | Content Body |
-  | Optional More Information Link  | Content Body |
+  | About us | Main Top |
+  | Example Link | Main Top |
+  | More about us | Content 3 column flow |
+  | See more news | Content 3 column flow |
+  | See more events | Content 3 column flow |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |

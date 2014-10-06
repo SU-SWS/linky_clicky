@@ -51,10 +51,10 @@ Scenario: Edit Site Name
     And I should not see "Slogan"
     And I should not see "Front page"
     And I should not see "Error pages"
-  When I enter "Millenium Falcon" for "Site name"
+  When I enter "Millennium Falcon" for "Site name"
     And I press the "Save" button
     And I go to the homepage
-  Then I should see "Millenium Falcon" in the "Site Name" region
+  Then I should see "Millennium Falcon" in the "Site Name" region
 
 @api @javascript
 Scenario: View the Get Help Page
