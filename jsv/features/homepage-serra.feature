@@ -9,14 +9,14 @@ Scenario: Enable the Serra homepage layout as administrator
 #  Given the "stanford_jumpstart_home_serra" homepage layout is not selected
   Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api @javascript
 Scenario: Enable the Serra homepage layout as site owner
   Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api

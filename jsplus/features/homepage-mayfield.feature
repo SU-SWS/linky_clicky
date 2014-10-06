@@ -9,14 +9,14 @@ Scenario: Enable the Mayfield with News & Events homepage layout as administrato
 #  Given the "stanford_jumpstart_home_mayfield_news_events" homepage layout is not selected
   Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selector" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api @javascript
 Scenario: Enable the Mayfield with News & Events homepage layout as site owner
   Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selector" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api
