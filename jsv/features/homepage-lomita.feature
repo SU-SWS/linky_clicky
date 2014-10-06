@@ -1,5 +1,5 @@
 Feature: Lomita Homepage Layout
-  In order to ensure that the Jumpstart "Lomita" page layout
+  In order to ensure that the Jumpstart "Lomita" page layout is configured correctly
   As an end user
   I want to check for the existence of content that should appear
   (Tests in this Feature should fail if Lomita is not the selected homepage layout)
