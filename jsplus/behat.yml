@@ -1,0 +1,51 @@
+default:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: https://sites.stanford.edu/sws-build-jsplus
+      files_path: "."
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      api_driver: 'drush'
+      drush:
+        alias: 'sse.ds_sws-build-jsplus'
+      region_map:
+        # Open Framework regions
+        Admin Shortcuts: "#admin-shortcuts"
+        Site Login: "#site-login"
+        Header: "#header"
+        Site Name: "#site-name"
+        Branding: "#branding"
+        Navigation: "#navigation"
+        Search Box: "#search-box"
+        Main Top: "#main-top"
+        Main Upper: "#main-upper"
+        First sidebar: "#sidebar-first"
+        Highlighted: "#highlighted"
+        Help: "#help"
+        Console: "#console"
+        Content Top: "#content-top"
+        Content Upper: "#content-upper"
+        Content Body: "#content-body"
+        Content 2 column flow: "#content-row2"
+        Content 2 column stacked (1): "#content-col2-1"
+        Content 2 column stacked (2): "#content-col2-2"
+        Content 3 column flow: "#content-row3"
+        Content 3 column stacked (1): "#content-col3-1"
+        Content 3 column stacked (2): "#content-col3-2"
+        Content 3 column stacked (3): "#content-col3-3"
+        Content 4 column flow: "#content-row4"
+        Content 4 column stacked (1): "#content-col4-1"
+        Content 4 column stacked (2): "#content-col4-2"
+        Content 4 column stacked (3): "#content-col4-3"
+        Content 4 column stacked (4): "#content-col4-4"
+        Content Lower: "#content-lower"
+        Content Bottom: "#content-bottom"
+        Second sidebar: "#sidebar-second"
+        Main Lower: "#main-lower"
+        Main Bottom: "#main-bottom"
+        Footer: "#footer"
+        Content: "#content"

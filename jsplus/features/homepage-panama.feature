@@ -1,22 +1,23 @@
-Feature: Serra Homepage Layout
-  In order to ensure that the Jumpstart "Serra" page layout is configured correctly
+Feature: Panama with News & Events Homepage Layout
+  In order to ensure that the Jumpstart "Panama with News & Events" page layout is configured correctly
   As an end user
   I want to check for the existence of content that should appear
+  (Tests in this Feature should fail if Panama is not the selected homepage layout)
 
 @api @javascript
-Scenario: Enable the Serra homepage layout as administrator
+Scenario: Enable the Panama with News & Events homepage layout as administrator
 # step definition not working yet
-#  Given the "stanford_jumpstart_home_serra" homepage layout is not selected
+#  Given the "stanford_jumpstart_home_panama_news_events" homepage layout is not selected
   Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selecter" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api @javascript
-Scenario: Enable the Serra homepage layout as site owner
+Scenario: Enable the Panama with News & Events homepage layout as site owner
   Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selecter" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api
@@ -31,14 +32,15 @@ Scenario Outline: Header content
   Then I should see the "<Header>" heading in the "<Region>" region
 
   Examples:
-  | Header                | Region                |
-  | About                 | Content 3 column flow |
-  | In the Spotlight      | Content 3 column flow |
-  | Announcements         | Content 3 column flow |
-  | Connect               | Footer                |
-  | Contact Us            | Footer                |
-  | Optional Footer Block | Footer                |
-  | Related Links         | Footer                |
+  | Header                          | Region |
+  | About      | First sidebar |
+  | In the Spotlight      | First sidebar |
+  | Announcements      | Content Body |
+  | Example Announcement | Content Body |
+  | Connect | Footer |
+  | Contact Us | Footer |
+  | Optional Footer Block      | Footer |
+  | Related Links      | Footer |
 
 Scenario Outline: Homepage content
   Given I am on the homepage
@@ -46,15 +48,9 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | Feature a tagline or website subtitle here | Main Top |
-  | To edit the block and remove this placeholder content, hover over the block | Main Top |
-  | 99.9% | Main Top |
-  | This is your first Mission block. Here you can post your mission, or any other primary information about your group | Content 2 column flow |
-  | This is your second Mission block. Here you can post your mission, or any other primary information about your group | Content 2 column flow |
-  | Use this block to list facts or highlight information | Main Top |
-  | This is your About block. Here you can post a short description of your group or organization   | Content 3 column flow |
-  | This is your Highlights block   | Content 3 column flow |
-  | This is your Announcements block   | Content 3 column flow |
+  | This is your About block | First sidebar |
+  | This is your Highlights block  | First sidebar |
+  | This is your Announcements block  | Content Body |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
 
@@ -64,10 +60,10 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | About Us | Main Top |
-  | More About Us | Content 3 column flow |
-  | More Information | Content 3 column flow |
-  | Learn more about our programs | Content 3 column flow |
+  | More About Us | First sidebar |
+  | More Information | First sidebar |
+  | Download the Document | Content Body |
+  | Optional More Information Link  | Content Body |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |

@@ -1,22 +1,22 @@
-Feature: Serra Homepage Layout
-  In order to ensure that the Jumpstart "Serra" page layout is configured correctly
+Feature: Serra with News & Events Homepage Layout
+  In order to ensure that the Jumpstart "Serra with News & Events" page layout is configured correctly
   As an end user
   I want to check for the existence of content that should appear
 
 @api @javascript
-Scenario: Enable the Serra homepage layout as administrator
+Scenario: Enable the Serra with News & Events homepage layout as administrator
 # step definition not working yet
-#  Given the "stanford_jumpstart_home_serra" homepage layout is not selected
+#  Given the "stanford_jumpstart_home_serra_news_events" homepage layout is not selected
   Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-serra-news-events-selecter" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api @javascript
-Scenario: Enable the Serra homepage layout as site owner
+Scenario: Enable the Serra with News & Events homepage layout as site owner
   Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-serra-news-events-selecter" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api

@@ -1,5 +1,5 @@
 Feature: Page not Found - 404
-  In order to ensure that the Jumpstart website Page not found content is visible
+  In order to ensure that the Jumpstart Plus website Page not found content is visible
   As an end user
   I want to check for the existence of the page
 

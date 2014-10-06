@@ -1,5 +1,5 @@
 Feature: Editor
-  In order to ensure that the Jumpstart administration functions are working properly
+  In order to ensure that the Jumpstart Plus administration functions are working properly
   As an Editor
   I want to check for my ability to complete my tasks
 
