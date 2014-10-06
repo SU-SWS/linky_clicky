@@ -50,8 +50,6 @@ Scenario Outline: Homepage content
   | Since its opening in 1891, Stanford has been dedicated to finding solutions to big challenges and to preparing students for leadership in a complex world. | Main Top |
   | John Hennessy   | Main Top |
   | This is your About block. Here you can post a short description of your group or organization   | Content 3 column flow |
-  | This is your Highlights block   | Content 3 column flow |
-  | This is your Announcements block   | Content 3 column flow |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
 
@@ -63,9 +61,9 @@ Scenario Outline: Homepage links
   | Link                     | Region        |
   | About us | Main Top |
   | Learn more on stanford.edu | Main Top |
-  | More About Us | Content 3 column flow |
-  | See More News | Content 3 column flow |
-  | See More Events | Content 3 column flow |
+  | More about us | Content 3 column flow |
+  | See more news | Content 3 column flow |
+  | See more events | Content 3 column flow |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |
