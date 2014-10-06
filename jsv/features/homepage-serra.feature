@@ -1,22 +1,22 @@
-Feature: Palm Homepage Layout
-  In order to ensure that the Jumpstart "Palm" page layout is configured correctly
+Feature: Serra Homepage Layout
+  In order to ensure that the Jumpstart "Serra" page layout is configured correctly
   As an end user
   I want to check for the existence of content that should appear
 
 @api @javascript
-Scenario: Enable the Palm homepage layout as administrator
+Scenario: Enable the Serra homepage layout as administrator
 # step definition not working yet
-#  Given the "stanford_jumpstart_home_palm" homepage layout is not selected
+#  Given the "stanford_jumpstart_home_serra" homepage layout is not selected
   Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-palm-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api @javascript
 Scenario: Enable the Mayfield homepage layout as site owner
   Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-  When I press the "edit-layouts-stanford-jumpstart-home-palm-selecter" button
+  When I press the "edit-layouts-stanford-jumpstart-home-serra-selecter" button
   Then I should see "Customized design options saved" in the "Console" region
 
 @api
@@ -32,7 +32,6 @@ Scenario Outline: Header content
 
   Examples:
   | Header                | Region                |
-  | Welcome to your site! | Content Top           |
   | About                 | Content 3 column flow |
   | In the Spotlight      | Content 3 column flow |
   | Announcements         | Content 3 column flow |
@@ -47,7 +46,12 @@ Scenario Outline: Homepage content
 
   Examples:
   | Text                     | Region        |
-  | Edit this block to change the image and caption. Keep text this short! | Content Top |
+  | Feature a tagline or website subtitle here | Main Top |
+  | To edit the block and remove this placeholder content, hover over the block | Main Top |
+  | 99.9% | Main Top |
+  | This is your first Mission block. Here you can post your mission, or any other primary information about your group | Content 2 column flow |
+  | This is your second Mission block. Here you can post your mission, or any other primary information about your group | Content 2 column flow |
+  | Use this block to list facts or highlight information | Main Top |
   | This is your About block. Here you can post a short description of your group or organization   | Content 3 column flow |
   | This is your Highlights block   | Content 3 column flow |
   | This is your Announcements block   | Content 3 column flow |
@@ -60,7 +64,7 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | Example Link | Content Top |
+  | About Us | Main Top |
   | More About Us | Content 3 column flow |
   | More Information | Content 3 column flow |
   | Learn more about our programs | Content 3 column flow |
