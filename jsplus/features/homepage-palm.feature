@@ -34,8 +34,8 @@ Scenario Outline: Header content
   | Header                | Region                |
   | Welcome to your site! | Main Top           |
   | About                 | Content 3 column flow |
-  | In the Spotlight      | Content 3 column flow |
-  | Announcements         | Content 3 column flow |
+  | Recent News           | Content 3 column flow |
+  | Upcoming Events       | Content 3 column flow |
   | Connect               | Footer                |
   | Contact Us            | Footer                |
   | Optional Footer Block | Footer                |
@@ -49,8 +49,6 @@ Scenario Outline: Homepage content
   | Text                     | Region        |
   | Edit this block to change the image and caption. Keep text this short! | Main Top |
   | This is your About block. Here you can post a short description of your group or organization   | Content 3 column flow |
-  | This is your Highlights block   | Content 3 column flow |
-  | This is your Announcements block   | Content 3 column flow |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
 
@@ -60,10 +58,10 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | Example Link | Main Top |
-  | More About Us | Content 3 column flow |
-  | More Information | Content 3 column flow |
-  | Learn more about our programs | Content 3 column flow |
+  | Example link | Main Top |
+  | More about us | Content 3 column flow |
+  | See more news | Content 3 column flow |
+  | See more events | Content 3 column flow |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |

@@ -53,8 +53,6 @@ Scenario Outline: Homepage content
   | This is your second Mission block. Here you can post your mission, or any other primary information about your group | Content 2 column flow |
   | Use this block to list facts or highlight information | Main Top |
   | This is your About block. Here you can post a short description of your group or organization   | Content 3 column flow |
-  | This is your Highlights block   | Content 3 column flow |
-  | This is your Announcements block   | Content 3 column flow |
   | Building Name Room 555 | Footer |
   | This is your Optional Footer Block | Footer |
 
@@ -64,10 +62,10 @@ Scenario Outline: Homepage links
 
   Examples:
   | Link                     | Region        |
-  | About Us | Main Top |
-  | More About Us | Content 3 column flow |
-  | More Information | Content 3 column flow |
-  | Learn more about our programs | Content 3 column flow |
+  | About us | Main Top |
+  | More about us | Content 3 column flow |
+  | See more news | Content 3 column flow |
+  | See more events | Content 3 column flow |
   | Facebook | Footer |
   | Twitter | Footer |
   | GooglePlus | Footer |
