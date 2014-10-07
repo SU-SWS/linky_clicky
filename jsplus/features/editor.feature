@@ -40,6 +40,17 @@ Feature: Editor
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
     Then I should see "Site Content Refreshed" in the "Console" region
 
+
 # @todo add scenario for edit contact information
+  @api @javascript
+  Scenario: Edit Contact Information
+    Given I am logged in as a user with the "editor" role
+    And I wait for the Site Actions drop down to appear
+    And I click "Edit Contact Information" in the "Admin Shortcuts" region
 
 # @todo add scenario for edit social media links
+  @api @javascript
+  Scenario: Edit Contact Information
+    Given I am logged in as a user with the "editor" role
+    And I wait for the Site Actions drop down to appear
+    And I click "Edit Social Media Links" in the "Admin Shortcuts" region
