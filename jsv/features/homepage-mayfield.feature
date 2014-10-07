@@ -46,9 +46,9 @@ Feature: Mayfield Homepage Layout
 
   Examples:
     | Text                                                                                                                                                       | Region                |
-    | Feature a tagline or website subtitle here                                                                                                                 | Content Top           |
-    | Since its opening in 1891, Stanford has been dedicated to finding solutions to big challenges and to preparing students for leadership in a complex world. | Content Top           |
-    | John Hennessy                                                                                                                                              | Content Top           |
+    | Feature a tagline or website subtitle here                                                                                                                 | Main Top              |
+    | Since its opening in 1891, Stanford has been dedicated to finding solutions to big challenges and to preparing students for leadership in a complex world. | Main Top              |
+    | John Hennessy                                                                                                                                              | Main Top              |
     | This is your About block. Here you can post a short description of your group or organization                                                              | Content 3 column flow |
     | This is your Highlights block                                                                                                                              | Content 3 column flow |
     | This is your Announcements block                                                                                                                           | Content 3 column flow |
@@ -61,8 +61,8 @@ Feature: Mayfield Homepage Layout
 
   Examples:
     | Link                          | Region                |
-    | About us                      | Content Top           |
-    | Learn more on stanford.edu    | Content Top           |
+    | About us                      | Main Top              |
+    | Learn more on stanford.edu    | Main Top              |
     | More About Us                 | Content 3 column flow |
     | More Information              | Content 3 column flow |
     | Learn more about our programs | Content 3 column flow |
