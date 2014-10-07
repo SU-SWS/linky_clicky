@@ -32,7 +32,7 @@ Feature: Palm Homepage Layout
 
   Examples:
     | Header                | Region                |
-    | Welcome to your site! | Main Top           |
+    | Welcome to your site! | Main Top              |
     | About                 | Content 3 column flow |
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
@@ -47,7 +47,7 @@ Feature: Palm Homepage Layout
 
   Examples:
     | Text                                                                                          | Region                |
-    | Edit this block to change the image and caption. Keep text this short!                        | Main Top           |
+    | Edit this block to change the image and caption. Keep text this short!                        | Main Top              |
     | This is your About block. Here you can post a short description of your group or organization | Content 3 column flow |
     | This is your Highlights block                                                                 | Content 3 column flow |
     | This is your Announcements block                                                              | Content 3 column flow |
@@ -60,7 +60,7 @@ Feature: Palm Homepage Layout
 
   Examples:
     | Link                          | Region                |
-    | Example Link                  | Main Top           |
+    | Example Link                  | Main Top              |
     | More About Us                 | Content 3 column flow |
     | More Information              | Content 3 column flow |
     | Learn more about our programs | Content 3 column flow |

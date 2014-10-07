@@ -33,7 +33,7 @@ Feature: Panama Homepage Layout
 
   Examples:
     | Header                | Region                |
-    | Welcome to your site!  | Main Top              |
+    | Welcome to your site! | Main Top              |
     | About                 | Content 3 column flow |
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
