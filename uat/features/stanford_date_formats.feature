@@ -4,13 +4,13 @@ Feature: Stanford Date Formats
   I want to ensure that the Stanford Date Formats module is working properly
 
 
-@api
-Scenario: Stanford Date Formats
-  Given the "stanford_date_formats" module is enabled
+  @api
+  Scenario: Stanford Date Formats
+    Given the "stanford_date_formats" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/config/regional/date-time"
-  Then I should see "Date Type"
+    Then I should see "Date Type"
     And I should see "Time"
     And I should see "Month Date, Year"
     And I should see "Date, Year - Time"

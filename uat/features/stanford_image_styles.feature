@@ -3,13 +3,13 @@ Feature: Stanford Image Styles
   As an administrative user
   I want to ensure that the Stanford Image Styles module is working properly
 
-@api
-Scenario: Stanford Image Styles
-  Given the "stanford_image_styles" module is enabled
+  @api
+  Scenario: Stanford Image Styles
+    Given the "stanford_image_styles" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
-  When I am on "admin/config/media/image-styles"
-  Then I should see "12-col-banner"
+    When I am on "admin/config/media/image-styles"
+    Then I should see "12-col-banner"
     And I should see "3-col-header"
     And I should see "4-col-header"
     And I should see "6-col-banner"
