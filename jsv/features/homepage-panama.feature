@@ -32,49 +32,52 @@ Feature: Panama Homepage Layout
     Then I should see the "<Header>" heading in the "<Region>" region
 
   Examples:
-    | Header                | Region        |
-    | About                 | First sidebar |
-    | In the Spotlight      | First sidebar |
-    | Announcements         | Content Body  |
-    | Example Announcement  | Content Body  |
-    | Connect               | Footer        |
-    | Contact Us            | Footer        |
-    | Optional Footer Block | Footer        |
-    | Related Links         | Footer        |
+    | Header                | Region                |
+    | Welcome to your site  | Main top              |
+    | About                 | Content 3 column flow |
+    | In the Spotlight      | Content 3 column flow |
+    | Announcements         | Content 3 column flow |
+    | Connect               | Footer                |
+    | Contact Us            | Footer                |
+    | Optional Footer Block | Footer                |
+    | Related Links         | Footer                |
 
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
-    | Text                               | Region        |
-    | This is your About block           | First sidebar |
-    | This is your Highlights block      | First sidebar |
-    | This is your Announcements block   | Content Body  |
-    | Building Name Room 555             | Footer        |
-    | This is your Optional Footer Block | Footer        |
+    | Text                                            | Region                |
+    | Feature a tagline or website subtitle here      | Main Top              |
+    | Edit this block to change the image and caption | Main Top              |
+    | This is your About block                        | Content 3 column flow |
+    | This is your Highlights block                   | Content 3 column flow |
+    | This is your Announcements block                | Content 3 column flow |
+    | Building Name Room 555                          | Footer                |
+    | This is your Optional Footer Block              | Footer                |
 
   Scenario Outline: Homepage links
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
 
   Examples:
-    | Link                           | Region        |
-    | More About Us                  | First sidebar |
-    | More Information               | First sidebar |
-    | Download the Document          | Content Body  |
-    | Optional More Information Link | Content Body  |
-    | Facebook                       | Footer        |
-    | Twitter                        | Footer        |
-    | GooglePlus                     | Footer        |
-    | LinkedIn                       | Footer        |
-    | YouTube                        | Footer        |
-    | Vimeo                          | Footer        |
-    | Tumblr                         | Footer        |
-    | Pinterest                      | Footer        |
-    | Flickr                         | Footer        |
-    | sunetid@stanford.edu           | Footer        |
-    | Campus Map                     | Footer        |
-    | Stanford University            | Footer        |
-    | Research at Stanford           | Footer        |
-    | Stanford News                  | Footer        |
+    | Link                          | Region                |
+    | About us                      | Main Top              |
+    | Example link                  | Main Top              |
+    | More about us                 | Content 3 column flow |
+    | More Information              | Content 3 column flow |
+    | Learn more about our programs | Content 3 column flow |
+    | Facebook                      | Footer                |
+    | Twitter                       | Footer                |
+    | GooglePlus                    | Footer                |
+    | LinkedIn                      | Footer                |
+    | YouTube                       | Footer                |
+    | Vimeo                         | Footer                |
+    | Tumblr                        | Footer                |
+    | Pinterest                     | Footer                |
+    | Flickr                        | Footer                |
+    | sunetid@stanford.edu          | Footer                |
+    | Campus Map                    | Footer                |
+    | Stanford University           | Footer                |
+    | Research at Stanford          | Footer                |
+    | Stanford News                 | Footer                |
