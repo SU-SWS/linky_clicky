@@ -56,4 +56,4 @@ Feature: Editor
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
     Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
     When I press the "Save" button
-    Then I should see "stanford_contact Contact Us has been updated." in the "Console" region
+    Then I should see "stanford_social_media_connect Connect has been updated." in the "Console" region

@@ -6,4 +6,3 @@ Feature: Events
   Scenario: Check the contents of the "Events" page
     Given I am on "events"
     Then I should see the heading "Sample Event" in the "Content Body" region
-	

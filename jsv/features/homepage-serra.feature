@@ -26,6 +26,10 @@ Feature: Serra Homepage Layout
     Then I should see the heading "Access denied" in the "Branding" region
     And I should see "This content has been restricted by the author or by the site administrator" in the "Content Body" region
 
+  Scenario: Content in regions
+    Given I am on the homepage
+    Then I should see a ".infotext" element in the "Main Top" region
+
   Scenario Outline: Header content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
