@@ -64,7 +64,7 @@ Feature: Serra Homepage Layout
 
   Examples:
     | Link                          | Region                |
-    | About Us                      | Main Top              |
+    | About us                      | Main Top              |
     | More About Us                 | Content 3 column flow |
     | More Information              | Content 3 column flow |
     | Learn more about our programs | Content 3 column flow |
