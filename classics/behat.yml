@@ -5,14 +5,14 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-      base_url: https://sites.stanford.edu/classics
+      base_url: https://classics.stanford.edu
       # base_url: https://foo.stanford.edu
       files_path: "."
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       api_driver: 'drush'
       drush:
-        alias: @sse.classics
+        alias: @sse.ds_classics
         # alias: 'foo.bar'
       region_map:
         # Open Framework regions
