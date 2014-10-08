@@ -61,7 +61,7 @@ Feature: Panama with News & Events Homepage Layout
   Examples:
     | Link                 | Region                |
     | About us             | Main Top              |
-    | Example Link         | Main Top              |
+    | Example link         | Main Top              |
     | More about us        | Content 3 column flow |
     | See more news        | Content 3 column flow |
     | See more events      | Content 3 column flow |
