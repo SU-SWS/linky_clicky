@@ -91,4 +91,4 @@ Feature: Site Owner
     Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
-    Then I should see "Site Content Refreshed" in the "Console" region
+    Then I should see "Site Cache Cleared" in the "Console" region

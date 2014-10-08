@@ -60,9 +60,9 @@ Feature: Palm Homepage Layout
 
   Examples:
     | Link                          | Region                |
-    | Example Link                  | Main Top              |
-    | More About Us                 | Content 3 column flow |
-    | More Information              | Content 3 column flow |
+    | Example link                  | Main Top              |
+    | More about us                 | Content 3 column flow |
+    | More information              | Content 3 column flow |
     | Learn more about our programs | Content 3 column flow |
     | Facebook                      | Footer                |
     | Twitter                       | Footer                |
