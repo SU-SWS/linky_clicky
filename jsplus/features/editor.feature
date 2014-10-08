@@ -38,19 +38,22 @@ Feature: Editor
     Given I am logged in as a user with the "editor" role
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
-    Then I should see "Site Content Refreshed" in the "Console" region
+    Then I should see "Site Cache Cleared" in the "Console" region
 
-
-# @todo add scenario for edit contact information
   @api @javascript
   Scenario: Edit Contact Information
     Given I am logged in as a user with the "editor" role
     And I wait for the Site Actions drop down to appear
     And I click "Edit Contact Information" in the "Admin Shortcuts" region
+    Then I should see "Edit stanford_contact: Jumpstart Footer Contact Block" in the "Branding" region
+    When I press the "Save" button
+    Then I should see "stanford_contact Contact Us has been updated." in the "Console" region
 
-# @todo add scenario for edit social media links
   @api @javascript
-  Scenario: Edit Contact Information
+  Scenario: Edit Social Media Links
     Given I am logged in as a user with the "editor" role
     And I wait for the Site Actions drop down to appear
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
+    Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
+    When I press the "Save" button
+    Then I should see "stanford_contact Contact Us has been updated." in the "Console" region
