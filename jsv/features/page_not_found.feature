@@ -8,4 +8,9 @@ Feature: Page not Found - 404
     Then I should see "Oops" in the "Content Body" region
     And I should see the link "Homepage" in the "Content Body" region
     And I should see the link "Search this site..." in the "Content Body" region
+    When I click "Homepage"
+    Then I should be on the homepage
+    When I move backward one page
+    And I click "Search this site..."
+    Then I should be on "search"
     
