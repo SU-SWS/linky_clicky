@@ -12,13 +12,15 @@ default:
       blackbox: ~
       api_driver: 'drush'
       drush:
-        alias: @sse.mlk
+        alias: @sse.ds_mlk
         # alias: 'foo.bar'
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
         Site Login: "#site-login"
         Header: "#header"
+        Site Name: "#site-name"
+        Branding: "#branding"
         Navigation: "#navigation"
         Search Box: "#search-box"
         Main Top: "#main-top"
@@ -26,6 +28,7 @@ default:
         First sidebar: "#sidebar-first"
         Highlighted: "#highlighted"
         Help: "#help"
+        Console: "#console"
         Content Top: "#content-top"
         Content Upper: "#content-upper"
         Content Body: "#content-body"
