@@ -12,7 +12,7 @@ default:
       blackbox: ~
       api_driver: 'drush'
       drush:
-        alias: @sse.ds_mlk
+        alias: 'sse.ds_mlk'
         # alias: 'foo.bar'
       region_map:
         # Open Framework regions
