@@ -23,6 +23,7 @@ default:
         Branding: "#branding"
         Navigation: "#navigation"
         Search Box: "#search-box"
+        Main Navigation: "#main-nav"
         Main Top: "#main-top"
         Main Upper: "#main-upper"
         First sidebar: "#sidebar-first"
