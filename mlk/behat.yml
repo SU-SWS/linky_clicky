@@ -5,7 +5,7 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-      base_url: https://sites.stanford.edu/mlk
+      base_url: https://kinginstitute.stanford.edu
       # base_url: https://foo.stanford.edu
       files_path: "."
     Drupal\DrupalExtension\Extension:
