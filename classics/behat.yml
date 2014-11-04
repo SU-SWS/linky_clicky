@@ -20,7 +20,7 @@ default:
         Site Login: "#site-login"
         Header: "#header"
         Navigation: "#navigation"
-        Search Box: "#search-box"
+        Search Box: "#nav-search"
         Main Top: "#main-top"
         Main Upper: "#main-upper"
         First sidebar: "#sidebar-first"

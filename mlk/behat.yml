@@ -22,7 +22,7 @@ default:
         Site Name: "#site-name"
         Branding: "#branding"
         Navigation: "#navigation"
-        Search Box: "#search-box"
+        Search Box: "#nav-search"
         Main Top: "#main-top"
         Main Upper: "#main-upper"
         First sidebar: "#sidebar-first"
