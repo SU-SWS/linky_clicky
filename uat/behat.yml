@@ -11,7 +11,7 @@ default:
       blackbox: ~
       api_driver: 'drush'
       drush:
-        alias: 'uat.drupal7-update-status'
+        alias: 'uat.ds_drupal7-update-status'
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
