@@ -21,3 +21,10 @@ Feature: External Repository Update Status
     When I am on "admin/reports/updates"
     And I click "Stanford WYSIWYG"
     Then I should be on "https://github.com/SU-SWS/stanford_wysiwyg"
+
+  @api
+  Scenario: End users should not be able to enable ERUS
+    Given the "erus" module is disabled
+    And I am logged in as a user with the "administrator" role
+    And I am on "admin/modules"
+    Then I should not see a "edit-modules-administration-erus-enable" element
