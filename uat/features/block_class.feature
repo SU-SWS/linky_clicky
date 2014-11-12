@@ -13,7 +13,7 @@ Feature: Block Class
     And I select "Plain text" from "Text format"
     And I enter "Bacon iz gud" for "Block body"
     And I enter "bacon" for "CSS class(es)"
-    And I select "First sidebar" from "Open Framework (default theme)"
+    And I select "First sidebar" from "Stanford Light (default theme)"
     And I press the "Save block" button
     And I should see "The block has been created"
     When I am on the homepage
