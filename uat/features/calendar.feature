@@ -4,10 +4,11 @@ Feature: Calendar
   I want to ensure that the Calendar module is working properly
 
   @api @javascript
-  Scenario: Date
+  Scenario: Calendar
     Given the "calendar" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
+    And the cache has been cleared
     When I go to "admin/structure/views"
     And I click "Add view from template"
     And I click "add" in the "A calendar view of the 'created' field in the 'node' base table." row
