@@ -12,7 +12,7 @@ Feature: Menu Block
     When I select "Main menu" from "Menu"
     And I select "1st level (primary)" from "Starting level"
     And I select "Unlimited" from "Maximum depth"
-    And I select "Second sidebar" from "Open Framework (default theme)"
+    And I select "Second sidebar" from "Stanford Light (default theme)"
     And I press the "Save block" button
     And I should see "The block has been created"
     When I am on the homepage
