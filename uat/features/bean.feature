@@ -7,7 +7,7 @@ Feature: BEAN (Block Entities Aren't Nodes)
   Scenario: BEAN
     Given I am logged in as a user with the "administrator" role
     And the "bean" module is enabled
-    And the "bean_ui" module is enabled
+    And the "bean_admin_ui" module is enabled
     When I am on "admin/content/blocks"
     # ya rly
     Then I should see "There are no Block Available"
