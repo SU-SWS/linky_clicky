@@ -16,4 +16,8 @@ Feature: Views Slideshow
     And I enter "views-slideshow-test" for "edit-page-path--2"
     When I press the "Save & exit" button
     Then I should be on "views-slideshow-test"
-    And I should see a ".views-slideshow-cycle-main-frame-row-item" element
+    When I go to "node/add/article"
+    And I enter "[random]" for "Title"
+    And I press the "Save" button
+    And I go to "views-slideshow-test"
+    Then I should see a ".views-slideshow-cycle-main-frame-row-item" element
