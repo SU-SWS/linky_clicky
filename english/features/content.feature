@@ -49,7 +49,7 @@ Scenario: Department Bookshelf page content
 
 Scenario: News page content
   Given I am on "news"
-  Then I should see the heading "David Halliburton, Stanford professor emeritus of English and founder of the Center for Teaching and Learning, has died" in the "Content" region
+  Then I should see the heading "Digital humanities on the rise at Stanford" in the "Content" region
 
 Scenario: Events page content
   Given I am on "events"
