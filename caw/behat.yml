@@ -5,12 +5,12 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-      base_url: https://english.stanford.edu
+      base_url: https://sites.stanford.edu/caw
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       api_driver: 'drush' 
       drush:
-        alias: 'sse.english'
+        alias: 'sse.caw'
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
