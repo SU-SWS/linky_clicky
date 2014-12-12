@@ -15,7 +15,7 @@ Scenario: Do not see submitted date and author
   Then I should not see a "div.submitted" element
 
 @api
-Scenario: Do not see submitted date and author
+Scenario: See manage subsites in the shortcuts
   Given I am logged in as a user with the "site owner" role
   And I am on "admin/config/subsites"
   Then I should see a "#block-menu-menu-subsite-dashboards" element
