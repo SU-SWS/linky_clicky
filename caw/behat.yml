@@ -6,23 +6,30 @@ default:
       goutte: ~
       selenium2: ~
       base_url: https://sites.stanford.edu/caw
+      # base_url: https://foo.stanford.edu
+      files_path: "."
     Drupal\DrupalExtension\Extension:
       blackbox: ~
-      api_driver: 'drush' 
+      api_driver: 'drush'
       drush:
-        alias: 'sse.caw'
+        alias: sse.ds_caw
+        # alias: 'foo.bar'
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
         Site Login: "#site-login"
         Header: "#header"
+        Site Name: "#site-name"
+        Branding: "#branding"
         Navigation: "#navigation"
         Search Box: "#nav-search"
+        Main Navigation: "#main-nav"
         Main Top: "#main-top"
         Main Upper: "#main-upper"
         First sidebar: "#sidebar-first"
         Highlighted: "#highlighted"
         Help: "#help"
+        Console: "#console"
         Content Top: "#content-top"
         Content Upper: "#content-upper"
         Content Body: "#content-body"
