@@ -5,7 +5,11 @@ Feature: Content
 
 Scenario: Benefits subsite
   Given I am on "benefits-rewards"
-  Then I should see "Health" in the "Navigation" region
+  Then I should see "Health" in the "Main Navigation" region
+  And I should see "Retirement" in the "Main Navigation" region
+  And I should see "Compensation" in the "Main Navigation" region
+  And I should see "WorkLife" in the "Main Navigation" region
+  And I should see "Tuition" in the "Main Navigation" region
   
 Scenario: Learn & Grow subsite
   Given I am on "learn-grow"
