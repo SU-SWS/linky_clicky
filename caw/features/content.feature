@@ -20,6 +20,7 @@ Scenario: Benefits subsite
   And I should see "Compensation" in the "Main Navigation" region
   And I should see "WorkLife" in the "Main Navigation" region
   And I should see "Tuition" in the "Main Navigation" region
+  And I should see "My Benefits" in the "Main Navigation" region
   
 Scenario: Learn & Grow subsite
   Given I am on "learn-grow"
