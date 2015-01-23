@@ -1,5 +1,5 @@
 Feature: Image Styles and View Modes
-  In order to ensure that the CAW website images are appearing correctly
+  In order to ensure that the CAW website images are available and appearing correctly
   As an authenticated user
   I want to check that all styles and view modes are configured correctly
 
@@ -9,3 +9,15 @@ Scenario: No borders or shadows on Large Scaled image view mode display
  And I am on "admin/structure/field-collections/field-s-image-info/display/stanford_large_scaled"
  Then I should not see the text "border-simple-nowidth"
  And I should not see the text "border-shadow"
+
+@api
+Scenario: Insert image field is an option
+ Given I am logged in as a user with the "site owner" role 
+ And I am on "node/381/edit"
+ Then I should see a "#field_s_page_image_insert" element
+
+@api
+Scenario: Insert image large-scaled is an option
+ Given I am logged in as a user with the "site owner" role 
+ And I am on "node/381/edit"
+ Then I should see an image insert style "large-scaled"
