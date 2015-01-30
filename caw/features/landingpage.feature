@@ -2,6 +2,8 @@ Feature: Landing Page
   In order to ensure that the CAW website is editable by its site owners
   As an authenticated user
   I want to check that I can edit the site
+  
+#These tests are for a temporary test page, they need to be replaced with an actual node
 
 @api
 Scenario: Edit landing page
