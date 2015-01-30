@@ -14,3 +14,9 @@ Scenario: Select layout
  Given I am logged in as a user with the "site owner" role 
  And I am on "node/69/edit"
  Then I should see a "#edit-field-s-landing-page-layout" element
+
+@api
+Scenario: Content Notes field is available
+ Given I am logged in as a user with the "site owner" role 
+ And I am on "node/69/edit"
+ Then I should see a "Content Notes" field label
