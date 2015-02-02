@@ -29,6 +29,6 @@ Thumbs.db
 .CVS
 cgi-bin
 
+# Local files
 linky-clicky-all-the-things.sh
 uatd6
-.gitignore
