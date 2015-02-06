@@ -25,3 +25,7 @@ Scenario: Benefits subsite
 Scenario: Learn & Grow subsite
   Given I am on "learn-grow"
   Then I should see "Learn & Grow" in the "Header" region
+  
+  Scenario: View "I want to..." block
+    Given I am on "benefits-rewards"
+    Then I should see "I want to..." block in the "Content Body" region
