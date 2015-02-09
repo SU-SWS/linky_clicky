@@ -249,4 +249,13 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
        }
   }
 
+  /**
+   * @Given /^I wait for the batch job to finish$/
+   * Wait until the id="updateprogress" element is gone,
+   * or timeout after 3 minutes (180,000 ms).
+   */
+  public function iWaitForTheBatchJobToFinish() {
+    $this->getSession()->wait(180000, 'jQuery("#updateprogress").length === 0');
+  }
+
 }
