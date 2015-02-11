@@ -4,7 +4,7 @@ Feature: Administration Menu
   I want to ensure that the Administration Menu module is working properly
 
   @api @javascript
-  Scenario: Administration Menu
+  Scenario: Administration Menu General
     Given the "admin_menu" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on the homepage
@@ -22,3 +22,13 @@ Feature: Administration Menu
     And the "Account links" checkbox should be checked
     And the "Shortcuts" checkbox should not be checked
 
+  @api @javascript
+  Scenario: Administration Menu Hover
+    Given the "admin_menu" module is enabled
+    And I am logged in as a user with the "administrator" role
+    And I am on the homepage
+    And I wait for the Admin Menu to load
+    When I hover over the element ".admin-menu-icon"
+    And I click "Flush all caches"
+    Then I should be on the homepage
+    And I should see the success message "Every cache cleared."

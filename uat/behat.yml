@@ -50,3 +50,7 @@ default:
         Main Bottom: "#main-bottom"
         Footer: "#footer"
         Content: "#content"
+      selectors:
+        message_selector: '.alert'
+        error_message_selector: '.alert.alert-error'
+        success_message_selector: '.alert.alert-success'

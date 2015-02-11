@@ -249,4 +249,23 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
        }
   }
 
+  /**
+   * @Given /^I wait for the batch job to finish$/
+   * Wait until the id="updateprogress" element is gone,
+   * or timeout after 3 minutes (180,000 ms).
+   */
+  public function iWaitForTheBatchJobToFinish() {
+    $this->getSession()->wait(180000, 'jQuery("#updateprogress").length === 0');
+  }
+
+  /**
+   * @Given /^I wait for the Admin Menu to load$/
+   * Wait until we have a "#admin-menu" element,
+   * or timeout after 10 seconds (10,000 ms).
+   */
+  public function iWaitForTheAdminMenuToLoad() {
+    $this->getSession()->wait(10000, 'jQuery("#admin-menu").length > 0');
+  }
+
+
 }
