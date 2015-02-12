@@ -13,7 +13,7 @@ Feature: Social Share
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved"
     When I go to "admin/structure/types/manage/article"
-    # Vertical Tabs gives us some weird lables for fieldsets
+    # Vertical Tabs gives us some weird labels for fieldsets
     And I click "Social ShareEnabled"
     And I click "Social Networks"
     And I check the box "Twitter"
