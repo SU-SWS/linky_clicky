@@ -8,3 +8,9 @@ Scenario: Create a resource page
  Given I am logged in as a user with the "site owner" role 
  And go to "node/add/stanford-resource"
  Then I should see a "Create Resource" edit node form
+ 
+ @api
+Scenario: Filter on All Resources page
+ Given I am logged in as a user with the "site owner" role 
+ And go to "resources"
+ Then I should see a "Search by keyword" filter
