@@ -22,3 +22,14 @@ Feature: Courses
     When I enter "Underwater basketweaving" for "Search courses by title"
     And I press "Go"
     Then I should see "There are no courses available based on your search" in the "Content Body" region
+
+  Scenario: Reset button links to search page
+    Given I am on "courses"
+    And I press "Reset"
+    Then I should be on "courses/search"
+    
+  Scenario: No results text when there are courses, but none for given search
+    Given I am on "courses"
+    When I enter "Underwater basketweaving" for "Search all courses by keyword"
+    And I press "Go"
+    Then I should see "No courses are available based on your search." in the "Content Body" region
