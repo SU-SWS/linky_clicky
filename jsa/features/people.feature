@@ -29,3 +29,7 @@ Feature: People
     Given I am on "people/students"
     Then I should see a ".views-row-first" element
     And I should see a ".views-row-lines" element
+
+  Scenario: No current courses block for person not teaching any courses
+    Given I am on "people/emily-jordan"
+    Then I should not see "Current Courses" in the "Second sidebar" region
