@@ -15,3 +15,13 @@ Feature: Academics
     Given I am on "academics/graduate-programs"
     And I click "Overview" in the "First sidebar" region
     Then I should see "This is your Academics Overview page" in the "Content Body" region
+
+  Scenario: Verifying correct link on Academics Overview page
+    Given I am on "academics"
+    And I click "Learn more about the undergraduate program" in the "Content Body" region
+    Then I should be on "academics/undergraduate-program"
+
+Scenario: Verifying correct link on Academics Overview page
+    Given I am on "academics"
+    And I click "Learn more about the graduate programs" in the "Content Body" region
+    Then I should be on "academics/graduate-programs"
