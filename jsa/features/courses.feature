@@ -37,3 +37,9 @@ Feature: Courses
   Scenario: No current courses block for person not teaching any courses
     Given I am on "people/emily-jordan"
     Then I should not see "Current Courses" in the "Second sidebar" region
+
+  Scenario: Enhanced courses search functionality
+    Given I am on "courses"
+    When I enter "English 9ce" for "Search all courses by keyword"
+    And I press "Go"
+    Then I should see "ENGLISH 9CE" in the "Content Body" region
