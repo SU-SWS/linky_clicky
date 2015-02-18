@@ -17,6 +17,7 @@ default:
       api_driver: 'drush'
       drush:
         alias: 'sse.sws-build-jsv'
+      region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
         Site Login: "#site-login"
