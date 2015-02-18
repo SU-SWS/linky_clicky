@@ -17,7 +17,6 @@ default:
       api_driver: 'drush'
       drush:
         alias: 'sse.sws-build-jsa'
-      region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"
         Site Login: "#site-login"
@@ -26,11 +25,13 @@ default:
         Branding: "#branding"
         Navigation: "#navigation"
         Search Box: "#nav-search"
+        Main Navigation: "#main-nav"
         Main Top: "#main-top"
         Main Upper: "#main-upper"
         First sidebar: "#sidebar-first"
         Highlighted: "#highlighted"
         Help: "#help"
+        Console: "#console"
         Content Top: "#content-top"
         Content Upper: "#content-upper"
         Content Body: "#content-body"
@@ -53,3 +54,7 @@ default:
         Main Bottom: "#main-bottom"
         Footer: "#footer"
         Content: "#content"
+      selectors:
+        message_selector: '.alert'
+        error_message_selector: '.alert.alert-error'
+        success_message_selector: '.alert.alert-success'
