@@ -9,12 +9,10 @@ Feature: Homepage
 
   Examples:
     | Header                | Region                |
-    | About                 | First sidebar         |
-    | Academic Programs     | First sidebar         |
-    | Welcome to your site! | Content Body          |
+    | Welcome to your site! | Main Top              |
+    | About                 | Content 3 column flow |
     | Recent News           | Content 3 column flow |
     | Upcoming Events       | Content 3 column flow |
-    | Affiliated Programs   | Content 3 column flow |
     | About                 | Footer                |
     | Academics             | Footer                |
     | People                | Footer                |
@@ -28,10 +26,9 @@ Feature: Homepage
 
   Examples:
     | Text                                                                 | Region                |
-    | This is your About block                                             | First sidebar         |
-    | This is your shortcuts block to get prospective and current students | First sidebar         |
-    | Sample News: Smith Conference                                        | Content 3 column flow |
-    | This is your Affiliated Programs block                               | Content 3 column flow |
+    | Feature a tagline or website subtitle here                    | Main Top|
+    | Edit this block to change the image and caption               | Main Top |
+    | This is your About block                                             | Content 3 column flow  |
 
   Scenario Outline: Homepage links
     Given I am on the homepage
@@ -39,17 +36,10 @@ Feature: Homepage
 
   Examples:
     | Link                                | Region                |
-    | More About Us                       | First sidebar         |
-    | Undergraduate Program               | First sidebar         |
-    | Graduate Programs                   | First sidebar         |
-    | Example Link                        | Content Body          |
+    | Example link                        | Main Top|
+    | More about us           | Content 3 column flow |
     | Sample News: Smith Conference       | Content 3 column flow |
-    | See More News                       | Content 3 column flow |
-    | See More Events                     | Content 3 column flow |
-    | Link to a program you support       | Content 3 column flow |
-    | Link to an office that sponsors you | Content 3 column flow |
-    | Link to a project website           | Content 3 column flow |
-    | See all affiliated programs         | Content 3 column flow |
+    | See more news                       | Content 3 column flow |
     | About Us                            | Footer                |
     | Affiliated Programs                 | Footer                |
     | Location                            | Footer                |
