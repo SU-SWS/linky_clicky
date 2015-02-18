@@ -5,7 +5,7 @@ Feature: News
 
   Scenario: See more news
     Given I am on the homepage
-    And I click "See More News" in the "Content 3 column flow" region
+    And I click "See more news" in the "Content 3 column flow" region
     Then I should see the heading "Recent News" in the "Content" region
 
   Scenario: Searching news
@@ -14,6 +14,6 @@ Feature: News
     And I press "Go"
     Then I should see "This is a news item" in the "Content Body" region
 
-  Scenario: See an news node
+  Scenario: See a news node
     Given I am on "news/2013-sample-news-smith-conference"
     Then I should see "Smith Conference is proin lacus lacus, eleifend tristique volutpat vitae, mattis nec nisl" in the "Content Body" region
