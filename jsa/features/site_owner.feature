@@ -25,3 +25,4 @@ Feature: Site Owner
     And I click "Show Add/Edit Image"
     #And I click on “Choose File”  in the "Content Body" region
     Then I should see "Source Info" in the "Content Body" region
+    And the "Text format" field should contain "content_editor_text_format"

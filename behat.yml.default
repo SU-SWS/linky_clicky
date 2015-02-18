@@ -8,6 +8,11 @@ default:
       base_url: <enter full URL here>
       # base_url: https://foo.stanford.edu
       files_path: "."
+    Weavora\MinkExtra\Extension:
+      form: true
+      table: true
+      page: true
+      page_area: true
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       api_driver: 'drush'
