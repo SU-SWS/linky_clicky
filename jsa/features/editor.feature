@@ -7,7 +7,7 @@ Feature: Editor
   Scenario: Create Stanford event
     Given I am logged in as a user with the "editor" role
     And I wait for the Site Actions drop down to appear
-    And I click "Add Stanford Event" in the "Admin Shortcuts" region
+    And I click "Add Event" in the "Admin Shortcuts" region
     Then I should see "Create Stanford Event" in the "Branding" region
 
   @api @javascript
