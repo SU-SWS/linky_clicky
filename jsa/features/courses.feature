@@ -16,12 +16,12 @@ Feature: Courses
 
   Scenario: Finding a specific course and seeing it has multiple sections
     Given I am on "courses"
-    When I enter "e" for "Search courses by title"
+    When I enter "e" for "Search all courses by keyword"
     And I press "Go"
     Then I should see "ENGLISH 9CE" in the "Content Body" region
-    When I enter "Underwater basketweaving" for "Search courses by title"
+    When I enter "Underwater basketweaving" for "Search all courses by keyword"
     And I press "Go"
-    Then I should see "There are no courses available based on your search" in the "Content Body" region
+    Then I should see "No courses are available based on your search." in the "Content Body" region
 
   Scenario: Reset button links to search page
     Given I am on "courses"
