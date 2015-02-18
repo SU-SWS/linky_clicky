@@ -16,3 +16,4 @@ Feature: Editor
     And I wait for the Site Actions drop down to appear
     And I click "Add News Item" in the "Admin Shortcuts" region
     Then I should see "Create News Item" in the "Branding" region
+    And the "Text format" field should contain "content_editor_text_format"
