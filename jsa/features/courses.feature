@@ -33,3 +33,7 @@ Feature: Courses
     When I enter "Underwater basketweaving" for "Search all courses by keyword"
     And I press "Go"
     Then I should see "No courses are available based on your search." in the "Content Body" region
+
+Scenario: No current courses block for person not teaching any courses
+    Given I am on "people/emily-jordan"
+    Then I should not see "Current Courses" in the "Second sidebar" region
