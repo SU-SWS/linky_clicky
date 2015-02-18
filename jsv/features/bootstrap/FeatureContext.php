@@ -32,6 +32,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     public function __construct(array $parameters)
     {
         // Initialize your context here
+        $this->useContext('mink-extra', new \Weavora\MinkExtra\Context\MinkExtraContext());
     }
 
 

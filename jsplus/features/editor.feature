@@ -57,3 +57,18 @@ Feature: Editor
     Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
     When I press the "Save" button
     Then I should see "stanford_social_media_connect Connect has been updated." in the "Console" region
+
+  @api @javascript
+  Scenario: Create Stanford event
+    Given I am logged in as a user with the "editor" role
+    And I wait for the Site Actions drop down to appear
+    And I click "Add Event" in the "Admin Shortcuts" region
+    Then I should see "Create Stanford Event" in the "Branding" region
+
+  @api @javascript
+  Scenario: Create news item
+    Given I am logged in as a user with the "editor" role
+    And I wait for the Site Actions drop down to appear
+    And I click "Add News Item" in the "Admin Shortcuts" region
+    Then I should see "Create News Item" in the "Branding" region
+    And the "Text format" field should contain "content_editor_text_format"

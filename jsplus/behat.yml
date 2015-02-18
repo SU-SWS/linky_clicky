@@ -7,6 +7,11 @@ default:
       selenium2: ~
       base_url: https://sites.stanford.edu/sws-build-jsplus
       files_path: "."
+    Weavora\MinkExtra\Extension:
+      form: true
+      table: true
+      page: true
+      page_area: true
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       api_driver: 'drush'

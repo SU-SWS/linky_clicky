@@ -3,6 +3,7 @@ Feature: Site Owner
   As a Site Owner
   I want to check for my ability to complete my tasks
 
+
   @api @javascript
   Scenario: Clicking on Manage Content
     Given I am logged in as a user with the "site owner" role
@@ -16,6 +17,10 @@ Feature: Site Owner
     When I wait for the Site Actions drop down to appear
     And I click "Add Page" in the "Admin Shortcuts" region
     Then I should see "Create Stanford Page" in the "Branding" region
+    And the "Text format" field should contain "content_editor_text_format"
+    When I click "Show Add/Edit Image"
+    #And I click on “Choose File”  in the "Content Body" region
+    Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo" for "Title"
     And I press the "Save" button
     Then I should see "Stanford Page Foo has been created" in the "Console" region
@@ -44,7 +49,7 @@ Feature: Site Owner
 
   @api @javascript
   Scenario: Edit Social Media Links
-    Given I am logged in as a user with the "editor" role
+    Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
     Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
