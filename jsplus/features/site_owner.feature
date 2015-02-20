@@ -32,7 +32,7 @@ Feature: Site Owner
     When I wait for the Site Actions drop down to appear
     And I click "Add Landing Page" in the "Admin Shortcuts" region
     Then I should see "Create Landing Page" in the "Branding" region
-    When I enter "Foo" for "Title"
+    When I enter "Foo" for "Title *"
     And I select "Blocks" from "Layout"
     And I press the "Save" button
     Then I should see "Landing Page Foo has been created" in the "Console" region

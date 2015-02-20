@@ -45,15 +45,15 @@ Feature: Mayfield Homepage Layout
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
-    | Text                                                                                                                                                       | Region                |
-    | Feature a tagline or website subtitle here                                                                                                                 | Main Top              |
-    | Since its opening in 1891, Stanford has been dedicated to finding solutions to big challenges and to preparing students for leadership in a complex world. | Main Top              |
-    | John Hennessy                                                                                                                                              | Main Top              |
-    | This is your About block. Here you can post a short description of your group or organization                                                              | Content 3 column flow |
-    | This is your Highlights block                                                                                                                              | Content 3 column flow |
-    | This is your Announcements block                                                                                                                           | Content 3 column flow |
-    | Building Name Room 555                                                                                                                                     | Footer                |
-    | This is your Optional Footer Block                                                                                                                         | Footer                |
+    | Text                                                                                          | Region                |
+    | Feature a tagline or website subtitle here                                                    | Main Top              |
+    | Do the right thing. It will gratify some people and astonish the rest.                        | Main Top              |
+    | Mark Twain                                                                                    | Main Top              |
+    | This is your About block. Here you can post a short description of your group or organization | Content 3 column flow |
+    | This is your Highlights block                                                                 | Content 3 column flow |
+    | This is your Announcements block                                                              | Content 3 column flow |
+    | Building Name Room 555                                                                        | Footer                |
+    | This is your Optional Footer Block                                                            | Footer                |
 
   Scenario Outline: Homepage links
     Given I am on the homepage
@@ -62,7 +62,7 @@ Feature: Mayfield Homepage Layout
   Examples:
     | Link                          | Region                |
     | About us                      | Main Top              |
-    | Learn more on stanford.edu    | Main Top              |
+    | Learn more about Mark Twain   | Main Top              |
     | More about us                 | Content 3 column flow |
     | More information              | Content 3 column flow |
     | Learn more about our programs | Content 3 column flow |

@@ -47,8 +47,8 @@ Feature: Mayfield with News & Events Homepage Layout
   Examples:
     | Text                                                                                                                                                       | Region                |
     | Feature a tagline or website subtitle here                                                                                                                 | Main Top              |
-    | Since its opening in 1891, Stanford has been dedicated to finding solutions to big challenges and to preparing students for leadership in a complex world. | Main Top              |
-    | John Hennessy                                                                                                                                              | Main Top              |
+    | Do the right thing. It will gratify some people and astonish the rest.                        | Main Top              |
+    | Mark Twain                                                                                    | Main Top              |
     | This is your About block. Here you can post a short description of your group or organization                                                              | Content 3 column flow |
     | Building Name Room 555                                                                                                                                     | Footer                |
     | This is your Optional Footer Block                                                                                                                         | Footer                |
@@ -58,23 +58,23 @@ Feature: Mayfield with News & Events Homepage Layout
     Then I should see the link "<Link>" in the "<Region>" region
 
   Examples:
-    | Link                       | Region                |
-    | About us                   | Main Top              |
-    | Learn more on stanford.edu | Main Top              |
-    | More about us              | Content 3 column flow |
-    | See more news              | Content 3 column flow |
-    | See more events            | Content 3 column flow |
-    | Facebook                   | Footer                |
-    | Twitter                    | Footer                |
-    | GooglePlus                 | Footer                |
-    | LinkedIn                   | Footer                |
-    | YouTube                    | Footer                |
-    | Vimeo                      | Footer                |
-    | Tumblr                     | Footer                |
-    | Pinterest                  | Footer                |
-    | Flickr                     | Footer                |
-    | sunetid@stanford.edu       | Footer                |
-    | Campus Map                 | Footer                |
-    | Stanford University        | Footer                |
-    | Research at Stanford       | Footer                |
-    | Stanford News              | Footer                |
+    | Link                        | Region                |
+    | About us                    | Main Top              |
+    | Learn more about Mark Twain | Main Top              |
+    | More about us               | Content 3 column flow |
+    | See more news               | Content 3 column flow |
+    | See more events             | Content 3 column flow |
+    | Facebook                    | Footer                |
+    | Twitter                     | Footer                |
+    | GooglePlus                  | Footer                |
+    | LinkedIn                    | Footer                |
+    | YouTube                     | Footer                |
+    | Vimeo                       | Footer                |
+    | Tumblr                      | Footer                |
+    | Pinterest                   | Footer                |
+    | Flickr                      | Footer                |
+    | sunetid@stanford.edu        | Footer                |
+    | Campus Map                  | Footer                |
+    | Stanford University         | Footer                |
+    | Research at Stanford        | Footer                |
+    | Stanford News               | Footer                |
