@@ -3,7 +3,7 @@ Feature: Feeds XPath Parser
   As an administrative user
   I want to ensure that the Feeds XPath Parser module is working properly
 
-  @api @javascript
+  @api
   Scenario: Feeds XPath Parser
     Given the cache has been cleared
     And the "feeds_xpathparser" module is enabled
@@ -30,7 +30,7 @@ Feature: Feeds XPath Parser
     And I should see "Your changes have been saved"
     When I go to "admin/structure/feeds/foo/settings/FeedsXPathParserXML"
     And I enter "//foo/bar" for "Context"
-    And I enter "baz" for "body"
+    And I enter "baz" for "Body"
     And I press the "Save" button
     Then I should see " Your changes have been saved"
     When I go to "admin/structure/feeds/foo/delete"

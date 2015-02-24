@@ -23,4 +23,4 @@ Feature: Field Collection
     And I click "delete" in the "Field collection" row
     Then I should see "If you have any content left in this field, it will be lost. This action cannot be undone."
     When I press the "Delete" button
-    Then I should see "Field [random:1] has been deleted"
+    Then I should see "The field [random:1] has been deleted from the Basic page content type"

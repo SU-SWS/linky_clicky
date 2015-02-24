@@ -9,6 +9,7 @@ Feature: Stanford Courses
   @api @javascript
   Scenario: Stanford Courses
     Given I am logged in as a user with the "administrator" role
+    And the cache has been cleared
     And I am on "node/add/stanford-course-importer"
     When I enter "English Courses" for "Title"
     And I enter "http://explorecourses.stanford.edu/search?view=catalog&academicYear=&page=0&q=ENGLISH&filter-departmentcode-ENGLISH=on&filter-coursestatus-Active=on&filter-term-Winter=on" for "URL"

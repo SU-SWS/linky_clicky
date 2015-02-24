@@ -89,6 +89,7 @@ Feature: Stanford Sites Helper Module
   Scenario: Stanford Sites Backup and Migrate profile
     Given I am logged in as a user with the "administrator" role
     And the "backup_migrate" module is enabled
+    And the cache has been cleared
     And I am on "admin/config/system/backup_migrate"
     Then I want to validate select field option "profile_id" default is "Stanford Sites Profile"
     When I go to "admin/config/system/backup_migrate/settings/profile"

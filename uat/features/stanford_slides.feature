@@ -10,7 +10,7 @@ Feature: Stanford Slides
   Scenario: Stanford Slides
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-slide"
-    When I enter "[random]" for "Title"
+    When I enter "[random]" for "Title *"
     And I click "Add/Edit Image"
     And I attach the file "bacon.png" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     And I press the "Upload" button

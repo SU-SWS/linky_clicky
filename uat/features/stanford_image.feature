@@ -3,7 +3,7 @@ Feature: Stanford Image
   As an administrative user
   I want to ensure that the Stanford Image module is working properly
 
-  @api
+  @api @javascript
   Scenario: Stanford Image
     Given the "stanford_image" module is enabled
     And the "stanford_page" module is enabled
@@ -13,7 +13,7 @@ Feature: Stanford Image
     Then I should see "field_s_image_info"
     When I click "manage fields" in the "field_s_image_info" row
     Then I should be on "admin/structure/field-collections/field-s-image-info/fields"
-    And I should see "group_s_image"
+    Then I should see "group_s_image"
     And I should see "field_s_image_image"
     And I should see "field_s_image_credits"
     And I should see "field_s_image_source_info"

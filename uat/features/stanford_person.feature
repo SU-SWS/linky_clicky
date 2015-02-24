@@ -6,7 +6,9 @@ Feature: Stanford Person
   @api @javascript
   Scenario: Stanford Person
     Given the "stanford_person" module is enabled
-    Given I am logged in as a user with the "administrator" role
+    And the "entity_token" module is enabled
+    And the cache has been cleared
+    And I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-person"
     When I enter "Leland" for "First name *"
     And I enter "Stanford" for "Last Name *"
