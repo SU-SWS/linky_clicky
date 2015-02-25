@@ -1,6 +1,7 @@
 default:
   paths:
     features: 'features'
+#  suites:
   extensions:
     Behat\MinkExtension\Extension:
       goutte: ~

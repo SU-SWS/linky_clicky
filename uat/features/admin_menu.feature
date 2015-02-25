@@ -8,6 +8,7 @@ Feature: Administration Menu
     Given the "admin_menu" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on the homepage
+    And I wait for the Admin Menu to load
     Then I should see a "#admin-menu" element
     When I go to "admin/content"
     Then I should see a "#admin-menu" element
