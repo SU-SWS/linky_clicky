@@ -7,4 +7,4 @@ Feature: Course
 Scenario: Create a resource page
  Given I am logged in as a user with the "site owner" role 
  And go to "node/add/caw-course"
- Then I should see "Create Course" in the "<body>" region 
+ Then I should see "Title" in the "Content Body" region 
