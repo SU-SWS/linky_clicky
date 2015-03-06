@@ -7,7 +7,7 @@ Feature: Resource
 Scenario: Create a resource page
  Given I am logged in as a user with the "site owner" role 
  And go to "node/add/stanford-resource"
- Then I should see a "Create Resource" edit node form
+ Then I should see "Title" in the "Content Body" region
  
  @api
 Scenario: Filter on All Resources page
