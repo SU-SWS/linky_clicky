@@ -19,3 +19,8 @@ Scenario: See manage subsites in the shortcuts
   And I am on the homepage
   When I click "Manage Subsites" in the "Admin Shortcuts" region
   Then I should be on "admin/config/subsites/dashboard"
+
+@javascript
+Scenario: See carousel on subsites
+  Given I am on "benefits-rewards"
+  Then I should see a ".carousel" element
