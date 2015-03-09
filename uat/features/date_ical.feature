@@ -7,8 +7,9 @@ Feature: Date iCal
   Scenario: Date iCal README
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role
+    And the cache has been cleared
     And I am on "help/date_ical/README.txt"
-    Then I should see "This module allows users to export iCal feeds using Views, and import iCal feeds from other sites using Feeds"
+    Then I should see "This module allows users to create iCal feeds in Views, and import iCal feeds from other sites using the Feeds module"
 
   @api @javascript
   Scenario: Date iCal Node Display

@@ -13,7 +13,6 @@ Feature: Backup and Migrate
     And I attach the file "drupal7-update-status-2014-08-07T10-50-00.mysql.gz" to "edit-backup-migrate-restore-upload--2"
     And I press the "Restore now" button
     When I go to the homepage
+    And the cache has been cleared
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit"
     And I should see "Pancetta swine kielbasa, beef adipisicing kevin tri-tip"
-    # Clean up
-    Given the cache has been cleared

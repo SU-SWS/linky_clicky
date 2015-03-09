@@ -11,16 +11,15 @@ Feature: Field Collection
     And I am on "admin/structure/field-collections"
     Then I should see "No field collections have been defined yet. To do so attach a field collection field to any entity."
     When I go to "admin/structure/types/manage/page/fields"
-    And I enter "[random]" for "New field label"
+    And I enter "Test Field Collection" for "New field label"
     And I select "Field collection" from "edit-fields-add-new-field-type"
     And I press the "Save" button
-    Then I should see "These settings apply to the [random:1] field everywhere it is used"
+    Then I should see "These settings apply to the Test Field Collection field everywhere it is used"
     When I press the "Save field settings" button
-    Then I should see "Updated field [random:1] field settings"
+    Then I should see "Updated field Test Field Collection field settings"
     When I press the "Save settings" button
-    Then I should see "Saved [random:1] configuration"
-    When I go to "admin/structure/types/manage/page/fields"
-    And I click "delete" in the "Field collection" row
+    Then I should see "Saved Test Field Collection configuration"
+    When I go to "admin/structure/types/manage/page/fields/field_test_field_collection/delete"
     Then I should see "If you have any content left in this field, it will be lost. This action cannot be undone."
     When I press the "Delete" button
-    Then I should see "The field [random:1] has been deleted from the Basic page content type"
+    Then I should see "The field Test Field Collection has been deleted from the Basic page content type"

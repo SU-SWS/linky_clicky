@@ -5,8 +5,9 @@ Feature: Node Convert
 
   @api @javascript
   Scenario: Node Convert
-    Given I am logged in as a user with the "administrator" role
-    And the "node_convert" module is enabled
+    Given the "node_convert" module is enabled
+    And the cache has been cleared
+    And I am logged in as a user with the "administrator" role
     When I am on "node/add/page"
     And I enter "Node Convert Test" for "Title"
     And I select "Plain text" from "Text format"

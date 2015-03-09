@@ -18,7 +18,7 @@ Feature: Stanford CAP Extensible
     Then I should be on "admin/config/capx/settings"
     And I should see "Organizations & schema"
     # Fix when typo is fixed
-    And I should see "Syncronization settings"
+    And I should see "Synchronization settings"
     When I click "Map"
     Then I should be on "admin/config/capx/mapper"
     And I should see "After you have connected to CAP, create a Mapping to link CAP’s fields with your fields."
@@ -35,7 +35,7 @@ Feature: Stanford CAP Extensible
     Then I should be on "admin/config/capx/importer/new"
     And I should see "Configuration"
     # Fix when typo is fixed
-    And I should see "Automatic syncronization options (CRON)"
+    And I should see "Automatic synchronization options (CRON)"
     And I should see "Add groups and individuals"
     When I click "Profiles"
     Then I should be on "admin/config/capx/profiles"
