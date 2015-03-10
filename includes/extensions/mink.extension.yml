@@ -1,0 +1,7 @@
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte: ~
+      selenium2: ~
+      base_url: https://sites.stanford.edu/example
+      files_path: "."
