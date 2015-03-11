@@ -5,13 +5,13 @@ Feature: Stanford Postcard Bean Block Type
 
 @api
 Scenario: Callouts view mode is available
- Given I am logged in as a user with the "administrator" role 
+ Given I am logged in as a user with the "administrator" role
  And I am on "block/add/stanford-postcard"
- Then I want to validate select field option "stanford_callout_block" default is "Callouts"
+ Then I select "Callouts" from "View Mode"
 
 @api
 Scenario: Cards view mode is available
- Given I am logged in as a user with the "administrator" role 
+ Given I am logged in as a user with the "administrator" role
  And I am on "block/add/stanford-postcard"
- Then I want to validate select field option "stanford_tiles" default is "Cards"
+ Then I select "Cards" from "View Mode"
 

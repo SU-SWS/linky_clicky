@@ -1,4 +1,4 @@
-Feature: Search API
+Feature: Stanford Search API
   In order to ensure end users on the CAW website can search and find content
   As an anonymous user
   I want to check that I can use the search form and block

@@ -1,0 +1,16 @@
+## Local development settings:
+local:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: http://example.su.dev <<< This should be your local url.
+    Drupal\DrupalExtension\Extension:
+      drush:
+        alias: example.dev <<< This is your local drush alias.
+
+sites:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: https://sites.stanford.edu/example <<< This is the path to the website on stanford sites
+    Drupal\DrupalExtension\Extension:
+      drush:
+        alias: sse.example <<< this is the custom drush alias for the sites environment
