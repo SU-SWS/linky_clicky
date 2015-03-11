@@ -268,4 +268,52 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     $this->getSession()->wait(10000, 'jQuery("#admin-menu").length > 0');
   }
 
+  /**
+   * Click on the element with the provided CSS Selector
+   *
+   * @When /^I click on the element with css selector "([^"]*)"$/
+   */
+  public function iClickOnTheElementWithCSSSelector($cssSelector) {
+    $session = $this->getSession();
+    $element = $session->getPage()->find(
+        'xpath',
+        $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
+    );
+    if (null === $element) {
+        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+    }
+    $element->click();
+  }
+
+  /**
+   * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
+   */
+  public function iShouldSeeElementsInTheRegion($num, $element, $region) {
+    $regionObj = $this->getRegion($region);
+    $session = $this->getSession();
+
+    $selectElements = $regionObj->findAll(
+      'xpath',
+      $session->getSelectorsHandler()->selectorToXpath('css', $element) // just changed xpath to css
+    );
+
+    if (intval($num) !== count($selectElements)) {
+      $session = $this->getSession();
+      $message = sprintf('%d "%s" elements found when there should be %d.', count($selectElements), $element, $num);
+      throw new ExpectationException($message, $session);
+    }
+
+  }
+
+  /**
+   * @Given /^I follow meta refresh$/
+   */
+  public function iFollowMetaRefresh() {
+    while ($refresh = $this->getMainContext()->getSession()->getPage()->find('css', 'meta[http-equiv="Refresh"]')) {
+      $content = $refresh->getAttribute('content');
+      $url = str_replace('0; URL=', '', $content);
+      $this->getMainContext()->getSession()->visit($url);
+    }
+  }
+
 }

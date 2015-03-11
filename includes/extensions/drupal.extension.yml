@@ -21,6 +21,7 @@ default:
         Highlighted: "#highlighted"
         Help: "#help"
         Console: "#console"
+        Content Head: "#content-head"
         Content Top: "#content-top"
         Content Upper: "#content-upper"
         Content Body: "#content-body"
@@ -41,6 +42,7 @@ default:
         Second sidebar: "#sidebar-second"
         Main Lower: "#main-lower"
         Main Bottom: "#main-bottom"
+        Main Content: "#main-content"
         Footer: "#footer"
         Content: "#content"
       selectors:
