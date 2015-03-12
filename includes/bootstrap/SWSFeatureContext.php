@@ -21,8 +21,7 @@ use Drupal\Component\Utility\Random;
  * Features context.
  */
 // class FeatureContext extends BehatContext
-class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
-{
+class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
     /**
      * Initializes context.
      * Every scenario gets its own context object.
@@ -216,6 +215,21 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
   }
 
   /**
+   * This function causes the drop down. No need to add a hover step before.
+   *
+   * @Then /^I wait for the Site Actions drop down to appear$/
+   */
+  public function iWaitForTheSiteActionsDropDownToAppear() {
+
+    $this->getSession()->getDriver()->evaluateScript(
+    "jQuery('#block-menu-menu-admin-shortcuts ul.nav li.first.last, #block-menu-menu-admin-shortcuts ul.nav li.expanded:first').find('ul').show().css('z-index', '1000');"
+    );
+
+    $this->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
+
+  }
+
+  /**
    * Click some text
    *
    * @When /^I click on the text "([^"]*)"$/
@@ -314,6 +328,39 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       $url = str_replace('0; URL=', '', $content);
       $this->getMainContext()->getSession()->visit($url);
     }
+  }
+
+/**
+ * @When /^I select the "([^"]*)" radio button$/
+ */
+  public function iSelectTheRadioButton($labelText) {
+    // Find the label by its text, then use that to get the radio item's ID
+    $radioId = null;
+    $ctx = $this->getMainContext();
+
+    /** @var $label NodeElement */
+    foreach ($ctx->getSession()->getPage()->findAll('css', 'label') as $label) {
+        if ($labelText === $label->getText()) {
+            if ($label->hasAttribute('for')) {
+                $radioId = $label->getAttribute('for');
+                break;
+            } else {
+                throw new \Exception("Radio button's label needs the 'for' attribute to be set");
+            }
+        }
+    }
+    if (!$radioId) {
+        throw new \InvalidArgumentException("Label '$labelText' not found.");
+    }
+
+    // Now use the ID to retrieve the button and click it
+    /** @var NodeElement $radioButton */
+    $radioButton = $ctx->getSession()->getPage()->find('css', "#$radioId");
+    if (!$radioButton) {
+        throw new \Exception("$labelText radio button not found.");
+    }
+
+    $ctx->fillField($radioId, $radioButton->getAttribute('value'));
   }
 
 }
