@@ -300,6 +300,26 @@ class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
   }
 
   /**
+   * Press the element with the provided CSS Selector
+   *
+   * @When /^I press the element with css selector "([^"]*)"$/
+   */
+  public function iPressTheElementWithCSSSelector($cssSelector) {
+    $session = $this->getSession();
+    $xpath = $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector);
+    $element = $session->getPage()->find(
+        'xpath',
+        $xpath
+    );
+
+    if (null === $element) {
+        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+    }
+
+    $element->press();
+  }
+
+  /**
    * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
    */
   public function iShouldSeeElementsInTheRegion($num, $element, $region) {
