@@ -11,7 +11,7 @@ Feature: Panama Homepage Layout
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-palm']"
-    When I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
     Then I should see "Customized design options saved" in the "Console" region
 
   @api @javascript
@@ -19,7 +19,7 @@ Feature: Panama Homepage Layout
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-palm']"
-    When I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
     Then I should see "Customized design options saved" in the "Console" region
 
   @api

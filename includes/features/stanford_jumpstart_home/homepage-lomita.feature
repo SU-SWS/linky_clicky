@@ -9,7 +9,7 @@ Feature: Lomita Homepage Layout
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
-    When I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
+    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
     Then I should see "Customized design options saved" in the "Console" region
 
   @api @javascript
@@ -17,7 +17,7 @@ Feature: Lomita Homepage Layout
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
-    When I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
+    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
     Then I should see "Customized design options saved" in the "Console" region
 
   @api
@@ -27,51 +27,17 @@ Feature: Lomita Homepage Layout
     Then I should see the heading "Access denied" in the "Branding" region
     And I should see "This content has been restricted by the author or by the site administrator" in the "Content Body" region
 
-  Scenario Outline: Header content
-    Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-    | Header                | Region |
-    | Connect               | Footer |
-    | Contact Us            | Footer |
-    | Optional Footer Block | Footer |
-    | Related Links         | Footer |
-
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
-    | Text                                                                                                             | Region   |
-    | Feature a tagline or website subtitle here                                                                       | Main Top |
+    | Text | Region   |
+    | Feature a tagline or website subtitle here | Main Top |
     | To edit the block and remove this placeholder content, hover over the block, click on the gear widget and select | Main Top |
-    | Add a video, image, or other featured content to this block.                                                     | Main Top |
-    | Building Name Room 555                                                                                           | Footer   |
-    | This is your Optional Footer Block                                                                               | Footer   |
+    | Add a video, image, or other featured content to this block. | Main Top |
+    | Building Name Room 555 | Footer   |
 
   Scenario: Homepage video block
     Given I am on the homepage
     Then I should see an "iframe" element
-
-  Scenario Outline: Homepage links
-    Given I am on the homepage
-    Then I should see the link "<Link>" in the "<Region>" region
-
-  Examples:
-    | Link                 | Region   |
-    | About us             | Main Top |
-    | Facebook             | Footer   |
-    | Twitter              | Footer   |
-    | GooglePlus           | Footer   |
-    | LinkedIn             | Footer   |
-    | YouTube              | Footer   |
-    | Vimeo                | Footer   |
-    | Tumblr               | Footer   |
-    | Pinterest            | Footer   |
-    | Flickr               | Footer   |
-    | sunetid@stanford.edu | Footer   |
-    | Campus Map           | Footer   |
-    | Stanford University  | Footer   |
-    | Research at Stanford | Footer   |
-    | Stanford News        | Footer   |

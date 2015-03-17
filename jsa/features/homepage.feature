@@ -19,6 +19,8 @@ Feature: Homepage
     | News and Events       | Footer                |
     | Connect               | Footer                |
     | Contact Us            | Footer                |
+    | Optional Footer Block | Footer                |
+    | Related Links         | Footer                |
 
   Scenario Outline: Homepage content
     Given I am on the homepage
@@ -36,10 +38,7 @@ Feature: Homepage
 
   Examples:
     | Link                                | Region                |
-    | Example link                        | Main Top|
-    | More about us           | Content 3 column flow |
-    | Sample News: Smith Conference       | Content 3 column flow |
-    | See more news                       | Content 3 column flow |
+    | Example link                        | Main Top              |
     | About Us                            | Footer                |
     | Affiliated Programs                 | Footer                |
     | Location                            | Footer                |
@@ -55,3 +54,17 @@ Feature: Homepage
     | Subscribe                           | Footer                |
     | Staff                               | Footer                |
     | Campus Map                          | Footer                |
+    | Facebook                            | Footer                |
+    | Twitter                             | Footer                |
+    | GooglePlus                          | Footer                |
+    | LinkedIn                            | Footer                |
+    | YouTube                             | Footer                |
+    | Vimeo                               | Footer                |
+    | Tumblr                              | Footer                |
+    | Pinterest                           | Footer                |
+    | Flickr                              | Footer                |
+    | sunetid@stanford.edu                | Footer                |
+    | Campus Map                          | Footer                |
+    | Stanford University                 | Footer                |
+    | Research at Stanford                | Footer                |
+    | Stanford News                       | Footer                |
