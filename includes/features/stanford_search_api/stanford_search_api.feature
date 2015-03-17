@@ -6,7 +6,7 @@ Feature: Stanford Search API
 # Search block in top right
 @api
 Scenario: Search block is visible to anonymous users
-  Given I am on the home page
+  Given I am on the homepage
   Then I should see a "#stanford-search-api-search-block-form" element in the "Search Box" region
 
 # Search page exists with default text and search input
