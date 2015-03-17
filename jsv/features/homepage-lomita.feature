@@ -10,6 +10,7 @@ Feature: Lomita Homepage Layout
   #  Given the "stanford_jumpstart_home_lomita" homepage layout is not selected
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
     When I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
     Then I should see "Customized design options saved" in the "Console" region
 
@@ -17,6 +18,7 @@ Feature: Lomita Homepage Layout
   Scenario: Enable the Lomita homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
     When I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
     Then I should see "Customized design options saved" in the "Console" region
 
