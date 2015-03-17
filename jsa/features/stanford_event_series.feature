@@ -6,13 +6,13 @@ Feature: Stanford Event Series
   @api
   Scenario: Event series link in the main menu
     When I go to "events/series"
-    Then I should see "Event series" in the "First sidebar" region
-    Then I should see "Event Series" in "Content Head" region
+    Then I should see "Event Series" in the "First sidebar" region
+    Then I should see "Event Series" in the "Content Head" region
 
   @api
   Scenario: Event series content exists
     When I go to "events/series"
-    Then I should see 1 or more ".views-row" in the "Content Body" region
+    Then I should see 1 or more ".view-stanford-event-series-list .views-row" elements
 
   @api
   Scenario: Event series link in the site actions menu
