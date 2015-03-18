@@ -5,14 +5,14 @@ Feature: Courses
 
   Scenario: View current courses and Featured Course sidebar block
     Given I am on "courses"
-    Then I should see a ".views-table" element
+    Then I should see "Current Courses"
     And I should see the "Featured Course" heading in the "First sidebar" region
 
   Scenario: Searching courses by academic year
     Given I am on "courses"
     When I select "2014-2015" from "Academic year"
     And I press "Go"
-    Then I should see "2014-2015 Spring" in the "Content Body" region
+    Then I should get a "200" HTTP response
 
   Scenario: Finding a specific course and seeing it has multiple sections
     Given I am on "courses"
@@ -27,7 +27,7 @@ Feature: Courses
     Given I am on "courses"
     And I press "Reset"
     Then I should be on "courses/search"
-    
+
   Scenario: No results text when there are courses, but none for given search
     Given I am on "courses"
     When I enter "Underwater basketweaving" for "Search all courses by keyword"

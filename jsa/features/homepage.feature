@@ -3,6 +3,12 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
+  @api
+  Scenario: Enable the Panama new and events homepage layout as administrator
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/stanford-jumpstart/customize-design"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
+
   Scenario Outline: Header content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -36,10 +42,7 @@ Feature: Homepage
 
   Examples:
     | Link                                | Region                |
-    | Example link                        | Main Top|
-    | More about us           | Content 3 column flow |
-    | Sample News: Smith Conference       | Content 3 column flow |
-    | See more news                       | Content 3 column flow |
+    | Example link                        | Main Top              |
     | About Us                            | Footer                |
     | Affiliated Programs                 | Footer                |
     | Location                            | Footer                |
@@ -54,4 +57,15 @@ Feature: Homepage
     | Recent News                         | Footer                |
     | Subscribe                           | Footer                |
     | Staff                               | Footer                |
+    | Campus Map                          | Footer                |
+    | Facebook                            | Footer                |
+    | Twitter                             | Footer                |
+    | GooglePlus                          | Footer                |
+    | LinkedIn                            | Footer                |
+    | YouTube                             | Footer                |
+    | Vimeo                               | Footer                |
+    | Tumblr                              | Footer                |
+    | Pinterest                           | Footer                |
+    | Flickr                              | Footer                |
+    | sunetid@stanford.edu                | Footer                |
     | Campus Map                          | Footer                |

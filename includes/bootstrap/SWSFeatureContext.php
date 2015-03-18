@@ -300,6 +300,26 @@ class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
   }
 
   /**
+   * Press the element with the provided CSS Selector
+   *
+   * @When /^I press the element with css selector "([^"]*)"$/
+   */
+  public function iPressTheElementWithCSSSelector($cssSelector) {
+    $session = $this->getSession();
+    $xpath = $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector);
+    $element = $session->getPage()->find(
+        'xpath',
+        $xpath
+    );
+
+    if (null === $element) {
+        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+    }
+
+    $element->press();
+  }
+
+  /**
    * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
    */
   public function iShouldSeeElementsInTheRegion($num, $element, $region) {
@@ -361,6 +381,21 @@ class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
     }
 
     $ctx->fillField($radioId, $radioButton->getAttribute('value'));
+  }
+
+  /**
+   * Find an element in a region.
+   * see http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f
+   *
+   * @Then /^I should see a "([^"]*)" element in the "([^"]*)" region$/
+   */
+  public function assertRegionElement($tag, $region) {
+    $regionObj = $this->getRegion($region);
+    $elements = $regionObj->findAll('css', $tag);
+    if (!empty($elements)) {
+      return;
+    }
+    throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()->getCurrentUrl()));
   }
 
 }
