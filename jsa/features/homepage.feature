@@ -4,7 +4,7 @@ Feature: Homepage
   I want to check for the existence of content that should appear
 
   @api
-  Scenario: Enable the Palm homepage layout as administrator
+  Scenario: Enable the Panama new and events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
