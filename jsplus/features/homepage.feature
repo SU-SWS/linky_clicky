@@ -1,5 +1,5 @@
 Feature: Homepage
-  In order to ensure that the Jumpstart Academic website has the correct content
+  In order to ensure that the Jumpstart Plus website has the correct content
   As an end user
   I want to check for the existence of content that should appear
 
@@ -26,15 +26,10 @@ Feature: Homepage
 
   Examples:
     | Text | Region |
-    | Feature a tagline or website subtitle here | Main Top |
-    | To edit the block and remove this placeholder content | Main Top |
-    | Add a video, image, or other featured content to this block. | Main Top |
+    | Welcome to your site | Main Top |
+    | Edit this block to change the image and caption | Main Top |
     | Building Name Room 555 | Footer |
     | This is your Optional Footer Block | Footer   |
-
-  Scenario: Homepage video block
-    Given I am on the homepage
-    Then I should see an "iframe" element
 
   Scenario Outline: Homepage links
     Given I am on the homepage
