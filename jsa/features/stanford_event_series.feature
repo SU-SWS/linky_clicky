@@ -36,7 +36,7 @@ Feature: Stanford Event Series
     Then I click "Edit" in the "Tabs" region
     Then I check "Foo"
     Then I press "Save"
-    Then I should see "This event belongs to a series"
+    Then I should see "This event belongs to the following series"
     Then I go to "events/series/foo"
     Then I should see 1 or more ".views-row" elements
 
@@ -56,7 +56,7 @@ Feature: Stanford Event Series
     Then I click "Edit" in the "Tabs" region
     Then I check "Foo"
     Then I press "Save"
-    Then I should see "This event belongs to a series"
+    Then I should see "This event belongs to the following series"
     Then I go to "events/series/foo"
     Then I should see 1 or more ".views-row" elements
 
