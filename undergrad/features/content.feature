@@ -11,7 +11,7 @@ Scenario Outline: Homepage block and footer content
   | Header                 | Region                |
   | Undergrad Events       | Content 3 column flow |
   | Spotlight              | Content 3 column flow |
-  | Featured Class Project | Content 3 column flow |
+  | In the News | Content 3 column flow |
   | About This Site        | Footer                |
   | About VPUE             | Footer                |
   | See Also               | Footer                |
