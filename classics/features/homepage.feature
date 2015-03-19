@@ -9,7 +9,6 @@ Feature: Homepage
 
   Examples:
     | Header                         | Region                |
-    | Applying for an M.A. or Ph.D.? | Content 4 column flow |
     | Recent News                    | Content 4 column flow |
     | Upcoming Events                | Content 4 column flow |
     | Recent Publications            | Content 4 column flow |
@@ -28,7 +27,6 @@ Feature: Homepage
 
   Examples:
     | Text                                                                        | Region                |
-    | Applying for an M.A. or Ph.D.? The application deadline is December 2, 2014 | Content 4 column flow |
     | With these annual lectures                                                  | Content Lower         |
     | Stay connected to Classics @ Stanford.                                      | Content Lower         |
 
@@ -38,9 +36,6 @@ Feature: Homepage
 
   Examples:
     | Link                        | Region                |
-    | online application          | Content 4 column flow |
-    | graduate programs           | Content 4 column flow |
-    | graduate admissions process | Content 4 column flow |
     | See More News               | Content 4 column flow |
     | See More Events             | Content 4 column flow |
     | See More Publications       | Content 4 column flow |
