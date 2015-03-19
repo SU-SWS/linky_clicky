@@ -20,7 +20,6 @@ Scenario Outline: Homepage content
   Examples:
   | Text                     | Region        |
   | As the chief academic    | First sidebar |
-  | Read more about Stanford | First sidebar |
   | The latest publications  | Content Body  |
 
 Scenario Outline: About the Office content

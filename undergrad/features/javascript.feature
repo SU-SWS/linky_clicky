@@ -8,16 +8,16 @@ Scenario: Homepage carousel
   Given I am on the homepage
   When I click "›" in the "Main Upper" region
     And I wait 2 seconds
-  Then I should see "Introductory Seminars" in the "Main Upper" region
+  Then I should see "Bio-Cultural Diversity" in the "Main Upper" region
   When I click "›" in the "Main Upper" region
     And I wait 2 seconds
-  Then I should see "Getting Started in Earth Sciences" in the "Main Upper" region
+  Then I should see "Major Options" in the "Main Upper" region
   When I click "›" in the "Main Upper" region
     And I wait 2 seconds
-  Then I should see "What Is Love?" in the "Main Upper" region
+  Then I should see "Student Projects Gallery" in the "Main Upper" region
   When I click "›" in the "Main Upper" region
     And I wait 2 seconds
-  Then I should see "Ethical Reasoning" in the "Main Upper" region
+  Then I should see "Ask AI Faculty" in the "Main Upper" region
   When I click "‹" in the "Main Upper" region
     And I wait 2 seconds
-  Then I should see "What Is Love?" in the "Main Upper" region
+  Then I should see "Student Projects Gallery" in the "Main Upper" region

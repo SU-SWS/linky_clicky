@@ -8,4 +8,4 @@ Scenario: Homepage carousel
   Given I am on the homepage
   When I click "next" in the "Main Top" region
   And I wait 2 seconds
-  Then I should see "English is one of the piloting departments offering undergraduates a joint major that integrates the humanities and computer science in fall 2014" in the "Main Top" region
+  Then I should see "New online course in English" in the "Main Top" region

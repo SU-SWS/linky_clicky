@@ -16,7 +16,7 @@ Scenario: Searching events
  Given I am on "events/upcoming-events"
  When I select "Lecture" from "Filter by event type"
  And I press "Go"
- Then I should see "Studio Lecture Series" in the "Content Body" region
+ Then I should see "Christensen Distinguished Lecture" in the "Content Body" region
 
 Scenario: Searching exhibitions
  Given I am on "exhibitions/current-exhibitions"

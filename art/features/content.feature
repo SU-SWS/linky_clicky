@@ -11,7 +11,7 @@ Scenario Outline: Homepage block and footer content
   | Department Programs        | Content Body          |
   | News                       | Content 4 column flow |
   | Featured Events            | Content 4 column flow |
-  | Upcoming Exhibitions       | Content 4 column flow |
+  | Current Exhibitions        | Content 4 column flow |
   | Department Work            | Content Lower         |
   | About                      | Footer                |
   | Programs                   | Footer                |
