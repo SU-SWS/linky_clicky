@@ -37,7 +37,7 @@ Feature: Homepage
 
   Examples:
     | Link                 | Region   |
-    | About us             | Main Top |
+    | Example link         | Main Top |
     | Facebook             | Footer   |
     | Twitter              | Footer   |
     | GooglePlus           | Footer   |
