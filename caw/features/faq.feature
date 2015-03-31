@@ -8,4 +8,3 @@ Feature: FAQ
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views"
     Then I should see "Stanford show/hide FAQ hierarchy" in the "Content Body" region
-    And I should see "Journal Article" in the "Content Body" region
