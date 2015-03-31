@@ -6,7 +6,7 @@ Feature: FAQ
 @api
 Scenario: FAQ view is correctly placed
    Given I am on "welcome-center/managers-guide/frequently-asked-questions-faqs"
-   Then I should see a ".view-display-id-grouping_no_title_block" element in the "Content Body" region
+   Then I should see a ".view-display-id-grouping_no_title_block" element
 
 @api
 Scenario: FAQ expands when clicked
