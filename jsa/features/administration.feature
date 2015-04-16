@@ -22,7 +22,7 @@ Feature: Administration
     Then I should see "Help text"
 
   @api
-  Scenario: Help text and request assitance url changes
+  Scenario: Help text and request assistance url changes
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/stanford-jumpstart/settings"
     Then I fill in "Help text" with "My new and wonderful help text."
