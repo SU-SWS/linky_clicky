@@ -8,3 +8,8 @@ Scenario: Create a resource page
  Given I am logged in as a user with the "site owner" role 
  And go to "node/add/caw-course"
  Then I should see "Title" in the "Content Body" region 
+ 
+Scenario: Audience and Categories are in field to block region Content: Lower
+ Given I am on "learn-grow/courses/professional-development/course-catalog/test-course" 
+ Then I should see "Audience" in the "Content Lower" region 
+ 
