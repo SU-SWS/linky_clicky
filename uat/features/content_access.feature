@@ -10,6 +10,7 @@ Feature: Content Access
     And I am logged in as a user with the "administrator" role
     And I am on "admin/reports/status/rebuild"
     And I press the "Rebuild permissions" button
+    And I wait for the batch job to finish
     Then I should see " The content access permissions have been rebuilt"
     When I am on "admin/structure/types/manage/page/access"
     And I check the box "edit-per-node"
