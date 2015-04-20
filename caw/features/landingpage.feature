@@ -33,3 +33,8 @@ Scenario: Carousel is in correct region
   Then I press "Upload"
   And I press "Save"
   Then I should see ".view-stanford-landing-page" element in the "main-top" region
+
+@api
+Scenario: Carousel is in correct region
+  Given I am on "test-landing-page"
+  Then I should see ".view-stanford-landing-page" element in the "main-top" region
