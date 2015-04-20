@@ -16,4 +16,4 @@ Scenario: Do not see submitted date and author
 @api
 Scenario: Carousel is in correct region
   Given I am on "learn-grow"
-  Then I should see a ".block-views-6943fa3707bb21d9f83e6048be6419d2" element in the "main-top" region
+  Then I should see a ".block-views-6943fa3707bb21d9f83e6048be6419d2" element in the "main: top" region
