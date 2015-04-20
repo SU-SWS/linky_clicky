@@ -37,4 +37,4 @@ Scenario: Banner is in correct region
 @api
 Scenario: Banner is in correct region
   Given I am on "test-landing-page"
-  Then I should see "#block-views-stanford-landing-page-block" element in the "main-top" region
+  Then I should see a "#block-views-stanford-landing-page-block" element in the "main-top" region
