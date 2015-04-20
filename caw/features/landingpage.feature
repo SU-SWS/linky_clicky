@@ -22,7 +22,7 @@ Scenario: Content Notes field is available
  Then I should see "Content Notes" in the "Content Body" region
 
 @api @javascript
-Scenario: Carousel is in correct region
+Scenario: Banner is in correct region
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-landing-page"
   And I fill in "Title" with "Behat"
@@ -35,6 +35,6 @@ Scenario: Carousel is in correct region
   Then I should see ".view-stanford-landing-page" element in the "main-top" region
 
 @api
-Scenario: Carousel is in correct region
+Scenario: Banner is in correct region
   Given I am on "test-landing-page"
-  Then I should see ".view-stanford-landing-page" element
+  Then I should see "#block-views-stanford-landing-page-block" element in the "main-top" region
