@@ -12,3 +12,8 @@ Scenario: See carousel on subsites
 Scenario: Do not see submitted date and author
   Given I am on "benefits-rewards"
   Then I should not see a "div.submitted" element
+
+@api
+Scenario: Carousel is in correct region
+  Given I am on "learn-grow"
+  Then I should see a ".view-cardinal-at-work-subsite-carousel" element in the "main-top" region
