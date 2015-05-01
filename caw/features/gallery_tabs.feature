@@ -6,4 +6,4 @@ Feature: Gallery Tabs
 @api
 Scenario: See gallery tabs on homepage
   Given I am on "caw"
-  Then I should see a ".view-gallery-tabs" element
+  Then I should see a ".slick-track" element
