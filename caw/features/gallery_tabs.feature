@@ -3,7 +3,7 @@ Feature: Gallery Tabs
   As an authenticated user
   I want to check the customizations are present
 
-@api @javascript
+@api
 Scenario: See gallery tabs on homepage
   Given I am on the homepage
   Then I should see a ".slick-track" element
