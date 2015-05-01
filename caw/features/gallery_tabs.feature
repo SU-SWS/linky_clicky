@@ -5,5 +5,5 @@ Feature: Gallery Tabs
 
 @api
 Scenario: See gallery tabs on homepage
-  Given I am on "caw"
+  Given I am on the homeapge
   Then I should see a ".slick-track" element
