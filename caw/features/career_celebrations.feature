@@ -14,4 +14,4 @@ Scenario: Create Career Celebrations Content type
 Scenario: See existing Career Celebration
  Given I am logged in as a user with the "site owner" role
  And I am on "/node/5571"
- Then I should see "Years at Stanford" in the "Content Body" region
+ Then I should see "Years at Stanford" in the "#content-body" region
