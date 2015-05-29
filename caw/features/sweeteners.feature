@@ -83,7 +83,7 @@ Scenario: Sweetener Isotope Deep Link
 Scenario: Manage Sweeteners Items
  Given I am logged in as a user with the "site owner" role 
  And go to "admin/manage"
- Then I should see "Manage Sweeteners" in the "Second Sidebar" region
+ Then I should see "Manage Sweeteners" in the "Second sidebar" region
   
 @api
 Scenario: Manage Stanford Sweeteners Items page exists
