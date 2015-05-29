@@ -79,13 +79,13 @@ Scenario: Sweetener Isotope Deep Link
  Then I uncheck "Campus Resources"
  Then I should see 0 ".isotope-hidden" elements
 
-@api
+@api @javascript
 Scenario: Manage Sweeteners Items
   Given I am logged in as a user with the "administrator" role 
   And go to "admin/manage"
   Then I should see "Manage Sweeteners" in the "Second Sidebar" region
   
-@api
+@api @javascript
 Scenario: Manage Stanford Sweeteners Items page exists
   Given I am logged in as a user with the "administrator" role
   And go to "admin/manage/stanford_sweeteners_item"
