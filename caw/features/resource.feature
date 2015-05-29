@@ -25,5 +25,5 @@ Scenario: Manage Resource link exists
 Scenario: Manage Resource page exists
  Given I am logged in as a user with the "site owner" role
  And go to "admin/manage/stanford_resource"
- Then I should see a "Stanford Resources Content" page
+ Then I should see "Stanford Resources Content"
 
