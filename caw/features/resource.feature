@@ -19,7 +19,7 @@ Scenario: Filter on All Resources page
 Scenario: Manage Resource link exists
  Given I am logged in as a user with the "site owner" role
  And go to "admin/stanford/jumpstart/shortcuts/site-actions/manage-content"
- Then I should see "Manage Resources" in the "Second Sidebar" region
+ Then I should see "Manage Resources" in the "Second sidebar" region
 
 @api
 Scenario: Manage Resource page exists
