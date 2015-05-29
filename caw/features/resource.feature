@@ -14,3 +14,16 @@ Scenario: Filter on All Resources page
  Given I am logged in as a user with the "site owner" role
  And go to "resources"
  Then I should see "Search by keyword" in the "Content Upper" region
+
+@api
+Scenario: Manage Resource link exists
+ Given I am logged in as a user with the "site owner" role
+ And go to "admin/stanford/jumpstart/shortcuts/site-actions/manage-content"
+ Then I should see "Manage Resources" in the "Second Sidebar" region
+
+@api
+Scenario: Manage Resource page exists
+ Given I am logged in as a user with the "site owner" role
+ And go to "admin/manage/stanford_resource"
+ Then I should see a "Stanford Resources Content" page
+
