@@ -81,12 +81,12 @@ Scenario: Sweetener Isotope Deep Link
 
 @api @javascript
 Scenario: Manage Sweeteners Items
-  Given I am logged in as a user with the "site owner" role 
+  Given I am logged in as a user with the "administrator" role 
   And go to "admin/manage"
   Then I should see "Manage Sweeteners" in the "Second Sidebar" region
   
 @api @javascript
 Scenario: Manage Stanford Sweeteners Items page exists
-  Given I am logged in as a user with the "site owner" role
+  Given I am logged in as a user with the "administrator" role
   And go to "admin/manage/stanford_sweeteners_item"
   Then I should see "Stanford Sweeteners Item Content"
