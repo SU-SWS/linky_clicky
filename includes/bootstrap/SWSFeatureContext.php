@@ -39,8 +39,9 @@ class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
    * @Given /^the "([^"]*)" module is enabled$/
    */
   public function theModuleIsEnabled($arg1) {
-    if(!$this->invoke_code('module_enable', array('array("'. $arg1 . '")'), TRUE)) {
-      throw new PendingException();
+    $result = $this->getDriver()->drush("pm-enable -y " . $arg1);
+    if (preg_match('/(\[warning\]|\[error\])/', $result)) {
+      throw new Exception($result);
     }
   }
 
@@ -48,8 +49,9 @@ class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
    * @Given /^the "([^"]*)" module is disabled$/
    */
   public function theModuleIsDisabled($arg1) {
-    if(!$this->invoke_code('module_disable', array('array("'. $arg1 . '")'), TRUE)) {
-      throw new PendingException();
+    $result = $this->getDriver()->drush("pm-disable -y " . $arg1);
+    if (preg_match('/(\[warning\]|\[error\])/', $result)) {
+      throw new Exception($result);
     }
   }
 
