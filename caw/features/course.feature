@@ -16,6 +16,6 @@ Scenario: Audience and Categories are in field to block region Content: Lower
  
 @api
 Scenario: See registration link field
- Given I am logged in as a user with the "site owner" role 
+ Given I am logged in as a user with the "Site owner" role 
  And go to "node/add/caw-course"
  Then I should see "Registration link" in the "Content Body" region 
