@@ -14,7 +14,7 @@ Feature: Course
  # using fake content, need to replace path with actual course node
     Then I should see "Audience" in the "Content Lower" region 
  
-  @api
+  @api @javascript
   Scenario: See registration link field
   Given I am logged in as a user with the "site owner" role 
   And go to "node/add/caw-course"
