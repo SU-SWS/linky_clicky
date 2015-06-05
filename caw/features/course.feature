@@ -12,7 +12,7 @@ Feature: Course
   Scenario: Audience and Categories are in field to block region Content: Lower
     Given I am on "learn-grow/courses/professional-development/course-catalog/test-course" 
  # using fake content, need to replace path with actual course node
-  Then I should see "Audience" in the "Content Lower" region 
+    Then I should see "Audience" in the "Content Lower" region 
  
   @api
   Scenario: See registration link field
