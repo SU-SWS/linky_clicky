@@ -12,9 +12,4 @@ Feature: Course
   Scenario: Audience and Categories are in field to block region Content: Lower
     Given I am on "learn-grow/courses/professional-development/course-catalog/test-course" 
  # using fake content, need to replace path with actual course node
-    Then I should see "Audience" in the "Content Lower" region 
- 
-  Scenario: See registration link field
-    Given I am logged in as a user with the "site owner" role 
-    And go to "node/add/caw-course"
-    Then I should see "Registration link" in the "Content Body" region
+    Then I should see "Audience" in the "Content Lower" region
