@@ -25,5 +25,5 @@ Feature: File Field Paths
     And I press the "Upload" button
     And I press the "Save" button
     Then I should see "Basic page File Field Paths test has been created"
-    When I go to "sites/default/files/page/filefield_path.txt"
+    When I click "filefield_path.txt"
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit"
