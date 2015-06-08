@@ -15,7 +15,7 @@ Feature: Stanford Events Importer
     And I select "University Communications" from "edit-s-events-organization"
     And I select the radio button "Bookmarked"
     And I press the "Save" button
-    And I wait 5 seconds
+    And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
 #    And I should see "Created 5 nodes"
     When I am on "node/add/stanford-event-importer"
@@ -24,6 +24,7 @@ Feature: Stanford Events Importer
     And I select "Faculty Women's Forum" from "edit-s-events-organization"
     And I select the radio button "Unlisted"
     And I press the "Save" button
+    And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
 #    And I should see "Created 4 nodes"
     When I am on "node/add/stanford-event-importer"
@@ -32,6 +33,7 @@ Feature: Stanford Events Importer
     And I wait 1 second
     And I select "Film" from "edit-s-events-category"
     And I press the "Save" button
+    And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
 #    And I should see "Created 8 nodes"
 
