@@ -57,7 +57,7 @@ Scenario: Learn & Grow subsite
     Then I should see a "#block-bean-i-want-to-block-on-benefits-rew" element
     And I should see a "#block-bean-sweeteners-short-branding-bloc" element
     And I should see a "#block-bean-caw-homepage-sweetener-carousel" element
-    And I should see a "#block-views-a05282a7f2c9254a60df3d8dc581cb78" element
+    And I should see a ".view-cardinal-at-work-stanford-events-list" element
 
 @api @javascript
 Scenario: Create a News Highlight block
