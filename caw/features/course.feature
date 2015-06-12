@@ -9,7 +9,18 @@ Feature: Course
   And go to "node/add/caw-course"
   Then I should see "Title" in the "Content Body" region 
  
+  @api
   Scenario: Audience and Categories are in field to block region Content: Lower
     Given I am on "learn-grow/courses/professional-development/course-catalog/test-course" 
  # using fake content, need to replace path with actual course node
     Then I should see "Audience" in the "Content Lower" region
+
+@api
+Scenario: See CSS class on Event series page for Faculty Staff Help Center
+  Given I am on "faculty-staff-help-center/calendar/workshops-and-trainings"
+  Then I should see a "#views-row-lines" element
+
+@api
+Scenario: See CSS class on Event series page for Benefits and Rewards
+  Given I am on "benefits-rewards/worklife/activities-events/programs-seminars"
+  Then I should see a "#views-row-lines" element
