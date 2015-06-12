@@ -15,13 +15,38 @@ Scenario Outline: Homepage block and footer content
 
 Scenario: Benefits subsite
   Given I am on "benefits-rewards"
-  Then I should see "Health" in the "Main Navigation" region
+  Then I should see "My Offerings" in the "Main Navigation" region
+  And I should see "Health" in the "Main Navigation" region
   And I should see "Retirement" in the "Main Navigation" region
-  And I should see "Compensation" in the "Main Navigation" region
   And I should see "WorkLife" in the "Main Navigation" region
-  And I should see "Tuition" in the "Main Navigation" region
+  And I should see "Compensation" in the "Main Navigation" region
+  And I should see "Sweeteners" in the "Main Navigation" region
   And I should see "My Benefits" in the "Main Navigation" region
+  And I should see "Contact" in the "Main Navigation" region
+  And I should see "Resources" in the "Main Navigation" region
 
+Scenario: Learn & Grow subsite
+  Given I am on "learn-grow"
+  Then I should see "Getting Started" in the "Main Navigation" region
+  And I should see "Courses & Connections" in the "Main Navigation" region
+  And I should see "Career Tools" in the "Main Navigation" region
+  And I should see "Career Counseling" in the "Main Navigation" region
+  And I should see "Tuition" in the "Main Navigation" region
+  And I should see "Contact Us" in the "Main Navigation" region
+  And I should see "Resources" in the "Main Navigation" region 
+
+Scenario: Manage & Lead subsite
+  Given I am on "manage-lead"
+  Then I should see "Recruit & Hire" in the "Main Navigation" region
+  And I should see "Manage & Develop" in the "Main Navigation" region
+  And I should see "Exit & Departure" in the "Main Navigation" region
+  And I should see "Enhance Leadership Skills" in the "Main Navigation" region
+  And I should see "Resources" in the "Main Navigation" region 
+
+Scenario: Connect subsite
+  Given I am on "connect"
+  Then I should see "Search Jobs" in the "Main Navigation" region
+  
 Scenario: Learn & Grow subsite
   Given I am on "learn-grow"
   Then I should see "Learn &" in the "Header" region
@@ -30,6 +55,9 @@ Scenario: Learn & Grow subsite
   Scenario: View "I want to..." block
     Given I am on "benefits-rewards"
     Then I should see a "#block-bean-i-want-to-block-on-benefits-rew" element
+    And I should see a "#block-bean-sweeteners-short-branding-bloc" element
+    And I should see a "#block-bean-caw-homepage-sweetener-carousel" element
+    And I should see a "#block-views-a05282a7f2c9254a60df3d8dc581cb78" element
 
 @api @javascript
 Scenario: Create a News Highlight block
