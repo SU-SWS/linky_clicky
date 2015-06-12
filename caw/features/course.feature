@@ -18,9 +18,9 @@ Feature: Course
 @api
 Scenario: See CSS class on Event series page for Faculty Staff Help Center
   Given I am on "faculty-staff-help-center/calendar/workshops-and-trainings"
-  Then I should see a "#views-row-lines" element
+  Then I should see a ".views-row-lines" element
 
 @api
 Scenario: See CSS class on Event series page for Benefits and Rewards
   Given I am on "benefits-rewards/worklife/activities-events/programs-seminars"
-  Then I should see a "#views-row-lines" element
+  Then I should see a ".views-row-lines" element
