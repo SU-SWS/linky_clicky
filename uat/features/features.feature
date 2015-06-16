@@ -3,7 +3,7 @@ Feature: Features
   As an administrative user
   I want to ensure that the Features module is working properly
 
-  @api @javascript
+  @api @javascript @live
   Scenario: Features
     Given the "features" module is enabled
     And I am logged in as a user with the "administrator" role
