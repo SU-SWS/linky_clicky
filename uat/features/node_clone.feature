@@ -6,10 +6,8 @@ Feature: Node Clone
   @api @javascript
   Scenario: Node Clone
     Given I am logged in as a user with the "administrator" role
-      # for some reason it pukes when trying to use the "Given the 'clone' module is enabled" step, so going through the UI
-    And I am on "admin/modules"
-    And I check the box "edit-modules-other-clone-enable"
-    And I press the "Save configuration" button
+    And the "clone" module is enabled
+    And the cache has been cleared
     When I am on "node/add/page"
     And I enter "Node Clone Test" for "Title"
     And I select "Plain text" from "Text format"

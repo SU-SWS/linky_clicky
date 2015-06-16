@@ -14,6 +14,5 @@ Feature: Backup and Migrate
     And I press the "Restore now" button
     And the cache has been cleared
     When I go to the homepage
-#    And the cache has been cleared
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit"
     And I should see "Pancetta swine kielbasa, beef adipisicing kevin tri-tip"
