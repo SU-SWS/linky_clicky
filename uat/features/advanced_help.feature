@@ -8,7 +8,7 @@ Feature: Advanced Help
   Scenario: Advanced Help
     Given the "advanced_help" module is enabled
     And I am logged in as a user with the "administrator" role
-    And I am on "admin/advanced_help/advanced_help"
+    And I am on "admin/help/ah/advanced_help"
     Then I should see "Using advanced help"
     And I should see "Advanced help .ini file format"
     And I should see "Translating advanced help"
@@ -23,7 +23,7 @@ Feature: Advanced Help
     When I move backward one page
     And I click "Translating advanced help"
     Then I should be on "help/advanced_help/translation"
-    And I should see "To translate advanced help, first create a directory translations/help/language in the module directory"
+    And I should see "To translate a help-file indexed by Advanced help, first create a directory translations/help/language in the project's root directory"
     When I move backward one page
     And I click "Why advanced help?"
     Then I should be on "help/advanced_help/why-advanced-help"

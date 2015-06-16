@@ -7,7 +7,7 @@ Feature: Chaos Tools
   Scenario Outline: Chaos Tools
     Given the "ctools" module is enabled
     And I am logged in as a user with the "administrator" role
-    And I am on "admin/advanced_help/ctools"
+    And I am on "admin/help/ah/ctools"
     Then I should see "<Text>" in the "Content" region
 
   Examples:
