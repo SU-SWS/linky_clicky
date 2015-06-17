@@ -440,4 +440,15 @@ JS;
       $this->getSession()->switchToIFrame();
   }
 
+  /**
+   * @Then /^the response header "([^"]*)" should contain "([^"]*)"$/
+   */
+  public function theResponseHeaderShouldContain($arg1, $arg2) {
+    $headers = $this->getSession()->getResponseHeaders();
+    if (!in_array($arg2,$headers[$arg1])) {
+      throw new Exception('The HTTP header "' . $arg1 . '" did not contain "' . $arg2 . '"');
+    }
+  }
+
+
 }
