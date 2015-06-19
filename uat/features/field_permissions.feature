@@ -14,6 +14,7 @@ Feature: Field Permissions
     Then I should see "Saved Body configuration"
     When I go to "node/add/article"
     And I enter "Field Permissions Test" for "Title"
+    And I select "Plain text" from "Text format"
     And I enter "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit enim labore shankle tail in doner. Pork belly occaecat dolor turkey nulla do et. Jerky corned beef frankfurter, brisket jowl enim laborum ex ut turkey. Consequat filet mignon ullamco ground round pancetta sunt shank, adipisicing prosciutto boudin minim irure est ea commodo" for "Body"
     And I press the "Save" button
     Then I should be on "field-permissions-test"
