@@ -11,7 +11,7 @@ Feature: Content Access
     And I am on "admin/reports/status/rebuild"
     And I press the "Rebuild permissions" button
     And I wait for the batch job to finish
-    Then I should see " The content access permissions have been rebuilt"
+    Then I should see "The content access permissions have been rebuilt"
     When I am on "admin/structure/types/manage/page/access"
     And I check the box "edit-per-node"
     And I press the "Submit" button
@@ -31,3 +31,14 @@ Feature: Content Access
     And I am on "content-access-test"
     Then I should see "WebLogin"
     And I should see "SUNet ID"
+    Given the "content_access" module is disabled
+    And I am logged in as a user with the "administrator" role
+    And I am on "admin/reports/status/rebuild"
+    And I press the "Rebuild permissions" button
+    And I wait for the batch job to finish
+    Then I should see "Content permissions have been rebuilt"
+    When I am on "content-access-test"
+    Then I should see "Bacon ipsum dolor sit amet deserunt fatback"
+    Given I am an anonymous user
+    When I am on "content-access-test"
+    Then I should see "Bacon ipsum dolor sit amet deserunt fatback"

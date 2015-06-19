@@ -9,3 +9,4 @@ Feature: Stanford MetaTag NoBots
     And the cache has been cleared
     And I am on the homepage
     Then the response header "X-Robots-Tag" should contain "noindex,nofollow,noarchive"
+    Given the "stanford_metatag_nobots" module is disabled
