@@ -5,7 +5,7 @@ Feature: Field Permissions
 
   @api @javascript
   Scenario: Field Permissions
-    Given the "field_collection" module is enabled
+    Given the "field_permissions" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/types/manage/article/fields/body"
