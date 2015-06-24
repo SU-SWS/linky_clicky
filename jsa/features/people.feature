@@ -29,3 +29,40 @@ Feature: People
     Given I am on "people/students"
     Then I should see a ".views-row-first" element
     And I should see a ".views-row-lines" element
+
+  Scenario: Students layout with faculty 
+    Given I am on "people/students/faculty"
+    Then I should see "Faculty" in the "Content Head" region 
+    And I should see "Jacob Smith" in the "Content Body" region
+
+  Scenario: Faculty layout 
+    Given I am on "people/faculty"
+    Then I should see a ".views-exposed-form" element
+    And I should see "People" in the "First sidebar" region 
+    And I should see "Contact and Location" in the "First sidebar" region
+
+  Scenario: Students layout 
+    Given I am on "people/students"
+    Then I should see a ".views-exposed-form" element
+    And I should see "People" in the "First sidebar" region 
+
+  Scenario: Staff layout 
+    Given I am on "people/staff"
+    Then I should see a ".views-exposed-form" element
+    And I should see "People" in the "First sidebar" region 
+    And I should see "Contact and Location" in the "First sidebar" region
+
+  Scenario: Staff layout with faculty 
+    Given I am on "people/staff/faculty"
+    Then I should see "Faculty" in the "Content Head" region 
+    And I should see "Jacob Smith" in the "Content Body" region
+
+  Scenario: Faculty layout with staff 
+    Given I am on "people/faculty/staff"
+    Then I should see "Emily Jordan" in the "Content Body" region
+    And I should see "Staff" in the "Content Head" region 
+
+  Scenario: Affiliates on Manage Person
+    Given I am on "people/faculty/staff"
+    Then I should see "Emily Jordan" in the "Content Body" region
+    And I should see "Staff" in the "Content Head" region 
