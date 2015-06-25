@@ -7,6 +7,9 @@ Feature: People
     Given I am on "people/faculty"
     Then I should see a ".views-row-first" element
     And I should see a ".views-row-lines" element
+    And I should see the heading "Why I Teach" in the "First sidebar" region
+    And I should see the "People" heading in the "First sidebar" region
+    And I should see "This is your Why I Teach block" in the "First sidebar" region
 
   Scenario: Faculty node
     Given I am on "people/faculty"
