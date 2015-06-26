@@ -1,8 +1,38 @@
 Feature: People
+
   In order to ensure that the Jumpstart Academics website people are viewable
   As an end user
   I want to check for the existence of people content
 
+  Scenario: Faculty node on profiles page
+    Given I am on "people/faculty/profiles"
+    And I click "Jacob Smith" in the "Content Body" region
+    Then I should see "Professor of English" in the "Content Body" region
+
+  Scenario: Faculty node on a directory page
+    Given I am on "people/faculty/directory"
+    And I click "Jacob Smith" in the "Content Body" region
+    Then I should see "Professor of English" in the "Content Body" region
+
+  Scenario: Faculty node on a list page
+    Given I am on "people/faculty/list"
+    Then I should see "Jacob Smith" in the "Content Body" region
+
+  Scenario: Profiles of faculty
+    Given I am on "people/faculty/profiles"
+    Then I should see a ".views-row-first" element
+    And I should see a ".views-row-lines" element
+    
+  Scenario: List of students 
+    Given I am on "people/students/list"
+    Then I should see a ".views-row-first" element
+    And I should see a ".views-row-lines" element
+    
+  Scenario: Directory of staff 
+    Given I am on "people/staff/directory"
+    Then I should see a ".views-row-first" element
+    And I should see a ".views-row-lines" element
+    
   Scenario: List of faculty
     Given I am on "people/faculty"
     Then I should see a ".views-row-first" element
@@ -15,7 +45,7 @@ Feature: People
 
   Scenario: Faculty taxonomy filter
     Given I am on "people/faculty"
-    When I select "Professor" from "Filter by faculty status"
+    When I select "Professor" from "Filter by status"
     And I press "Go"
     Then I should see "Jacob Smith" in the "Content Body" region
     And I should not see "Jane Doe" in the "Content Body" region
