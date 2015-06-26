@@ -39,10 +39,22 @@ class SWSFeatureContext extends Drupal\DrupalExtension\Context\DrupalContext {
    * @Given /^the "([^"]*)" module is enabled$/
    */
   public function theModuleIsEnabled($arg1) {
-    $result = $this->getDriver()->drush("pm-enable -y " . $arg1);
-    if (preg_match('/(\[warning\]|\[error\])/', $result)) {
-      throw new Exception($result);
+    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
+    // This is a little ugly, but if the module is not found, $pmi is empty.
+    // For some reason, it does not get populated with "<modulename> was not found [warning]".
+    // So we check for the module name in the output of drush pm-info.
+    $found = preg_match("/$arg1/", $pmi);
+    if (!$found) {
+      throw new Exception($pmi);
     }
+    $enabled = preg_match('/Status\s{1,}\:\s{1,}enabled/', $pmi);
+    if (!$enabled) {
+      $result = $this->getDriver()->drush("pm-enable -y " . $arg1);
+      if (preg_match('/(\[warning\]|\[error\])/', $result)) {
+        throw new Exception($result);
+      }
+    }
+
   }
 
   /**
