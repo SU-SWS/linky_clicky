@@ -39,7 +39,7 @@ Feature: People
     Given I am on "people/faculty"
     Then I should see a ".views-exposed-form" element
     And I should see "People" in the "First sidebar" region 
-    And I should see "Contact and Location" in the "First sidebar" region
+    And I should see "Why I Teach" in the "First sidebar" region
 
   Scenario: Students layout 
     Given I am on "people/students"
