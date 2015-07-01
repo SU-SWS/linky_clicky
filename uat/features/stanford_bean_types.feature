@@ -6,7 +6,8 @@ Feature: Stanford BEAN Types
   @api
   Scenario: Stanford BEAN Types
     Given the "stanford_bean_types" module is enabled
-    Given I am logged in as a user with the "administrator" role
+    And the "stanford_bean_types_permissions" module is enabled
+    And I am logged in as a user with the "administrator" role
     And the cache has been cleared
     And I am on "block/add"
     Then I should see the link "stanford_banner" in the "Content" region
