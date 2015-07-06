@@ -9,7 +9,7 @@ default:
     features: 'features'
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: <<< THE FULL URL TO THE SITE HERE eg: https://sites.stanford.edu/jumpstart >>>
+      base_url: https://adminguide.stanford.edu/
     Drupal\DrupalExtension\Extension:
       drush:
-        alias: <<< sse.ds_example >>>
+        alias: sse.ds_adminguide

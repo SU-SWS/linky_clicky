@@ -20,7 +20,7 @@ Feature: Content
 
   Scenario: What's New page content
     Given I am on "whats-new"
-    Then I should see "Policy changes, deletions, additions" in the "Content Body" region
+    Then I should see "POLICY CHANGES, DELETIONS, ADDITIONS" in the "Content Body" region
 
   Scenario: Chapters content
     Given I am on "chapters"
