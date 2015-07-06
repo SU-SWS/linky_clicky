@@ -49,10 +49,10 @@ Scenario: Department Bookshelf page content
 
 Scenario: News page content
   Given I am on "news"
-  Then I should see the heading "Digital humanities on the rise at Stanford" in the "Content" region
+  Then I should see the heading "Wilfred Stone, professor emeritus of English passes away at 97" in the "Content" region
 
 Scenario: Events page content
   Given I am on "events"
   Then I should see the heading "Upcoming Events" in the "Content Body" region
-  And I should see "See Past Events" in the "Content Body" region
+  And I should see "View Past Events" in the "Content Body" region
 

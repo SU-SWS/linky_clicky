@@ -8,4 +8,7 @@ Scenario: Homepage carousel
   Given I am on the homepage
   When I click "next" in the "Main Top" region
   And I wait 2 seconds
+  Then I should see "Digital Humanities Minor" in the "Main Top" region
+  When I click "next" in the "Main Top" region
+  And I wait 2 seconds
   Then I should see "New online course in English" in the "Main Top" region
