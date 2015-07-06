@@ -9,4 +9,4 @@ Feature: Courses
 
   Scenario: See featured course sidebar block
     Given I am on "courses"
-    Then I should see the "NEW course in autumn quarter! Introduction to the Archaeology of Greece" heading in the "First sidebar" region
+    Then I should see the "NEW course in summer quarter! Intensive Biblical Greek" heading in the "First sidebar" region

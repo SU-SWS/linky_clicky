@@ -14,7 +14,7 @@ Feature: Contact
   Examples:
     | Text                                                 | Region       |
     | Department of Classics                               | Content Body |
-    | Administrative Services Manager: Valerie Kiszka      | Content Body |
+    | Academic Operations Manager: Valerie Kiszka          | Content Body |
     | Student Services Officer: Lori Lynn Taniguchi        | Content Body |
     | Department Coordinator: Lydia Hailu                  | Content Body |
     | Department Chair: Walter Scheidel                    | Content Body |

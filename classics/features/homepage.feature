@@ -7,43 +7,43 @@ Feature: Homepage
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
 
-  Examples:
-    | Header                         | Region                |
-    | Recent News                    | Content 4 column flow |
-    | Upcoming Events                | Content 4 column flow |
-    | Recent Publications            | Content 4 column flow |
-    | Why Classics?                  | Content Lower         |
-    | Lorenz Eitner Lectures         | Content Lower         |
-    | Alumni and Friends of Classics | Content Lower         |
-    | Quick Links                    | Footer                |
-    | People                         | Footer                |
-    | Connect                        | Footer                |
-    | Location                       | Footer                |
-    | Contact Us                     | Footer                |
+    Examples:
+      | Header                                             | Region                |
+      | Recent News                                        | Content 4 column flow |
+      | Upcoming Events                                    | Content 4 column flow |
+      | Recent Publications                                | Content 4 column flow |
+      | Points of View: Why Classics?                      | Content Lower         |
+      | Lorenz Eitner Lectures on Classics Art and Culture | Content Lower         |
+      | Alumni and Friends of Classics                     | Content Lower         |
+      | Quick Links                                        | Footer                |
+      | People                                             | Footer                |
+      | Connect                                            | Footer                |
+      | Location                                           | Footer                |
+      | Contact Us                                         | Footer                |
 
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
 
-  Examples:
-    | Text                                                                        | Region                |
-    | With these annual lectures                                                  | Content Lower         |
-    | Stay connected to Classics @ Stanford.                                      | Content Lower         |
+    Examples:
+      | Text                                   | Region        |
+      | With these annual lectures             | Content Lower |
+      | Stay connected to Classics @ Stanford. | Content Lower |
 
   Scenario Outline: Homepage links
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
 
-  Examples:
-    | Link                        | Region                |
-    | See More News               | Content 4 column flow |
-    | See More Events             | Content 4 column flow |
-    | See More Publications       | Content 4 column flow |
-    | Events                      | Footer                |
-    | Current Research            | Footer                |
-    | Eitner Lectures             | Footer                |
-    | Faculty                     | Footer                |
-    | Staff                       | Footer                |
-    | Graduate Students           | Footer                |
-    | Campus Map                  | Footer                |
-    | classics@stanford.edu       | Footer                |
+    Examples:
+      | Link                  | Region                |
+      | See More News         | Content 4 column flow |
+      | See More Events       | Content 4 column flow |
+      | See More Publications | Content 4 column flow |
+      | Events                | Footer                |
+      | Current Research      | Footer                |
+      | Eitner Lectures       | Footer                |
+      | Faculty               | Footer                |
+      | Staff                 | Footer                |
+      | Graduate Students     | Footer                |
+      | Campus Map            | Footer                |
+      | classics@stanford.edu | Footer                |
