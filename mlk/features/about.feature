@@ -46,6 +46,5 @@ Feature: About
     | Martin Luther King, Jr., Research & Education Institute | Content Body |
     | Phone                                                   | Content Body |
     | Fax                                                     | Content Body |
-    | Email                                                   | Content Body |
     | Contact a Staff Member                                  | Content Body |
 
