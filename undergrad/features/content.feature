@@ -23,14 +23,13 @@ Scenario: Approaching Stanford heading
 Scenario Outline: Approaching Stanford content
   Given I am on "advising/approaching/approaching-stanford"
   Then I should see "<Content>" in the "<Region>" region
-  
+
   Examples:
   | Content | Region |
   | Approaching Stanford is the process that will guide you in your transition to Stanford | Content Body |
   | We are delighted that you have chosen to spend the next few years here on The Farm     | Content Body |
-  | Connect with students and Stanford administrators on our new social media platform     | Content Body |
-  | Approaching Stanford is the process that will guide you in your transition to Stanford | Content Body |
-  | Browse the topics in this online guide to learn how to prepare for Stanford            | Content Body |
+  | The Approaching Stanford Guide is the online version of the Approaching Stanford Handbook     | Content Body |
+  | All incoming freshmen and transfers must complete these required forms            | Content Body |
 
 Scenario Outline: BOSP block and footer content
   Given I am on "programs/bosp"
