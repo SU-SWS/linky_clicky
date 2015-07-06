@@ -32,6 +32,7 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     public function __construct(array $parameters)
     {
         // Initialize your context here
+        $this->useContext('mink-extra', new \Weavora\MinkExtra\Context\MinkExtraContext());
     }
 
 
@@ -230,6 +231,89 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
     }
 
     $element->click();
+  }
+
+  /**
+   * Find the default value of a select element.
+   * See https://github.com/Behat/Mink/issues/300
+   * @Then /^I want to validate select field option "([^"]*)" default is "([^"]*)"$/
+   */
+  public function iWantToValidateSelectOptionDefaultIs($locator, $defaultValue) {
+       $optionElement = $this->getSession()->getPage()->find('xpath', '//select[@name="' . $locator . '"]/option[@selected]');
+       if (!$optionElement) {
+          throw new Exception('Could not find a select element with the "name" attribute of ' . $locator);
+       }
+
+      $selectedDefaultValue = (string)$optionElement->getText();
+       if ($selectedDefaultValue != $defaultValue) {
+          throw new Exception('Select option default value: "' . $selectedDefaultValue . '" does not match given: "' . $defaultValue . '"');
+       }
+  }
+
+  /**
+   * @Given /^I wait for the batch job to finish$/
+   * Wait until the id="updateprogress" element is gone,
+   * or timeout after 3 minutes (180,000 ms).
+   */
+  public function iWaitForTheBatchJobToFinish() {
+    $this->getSession()->wait(180000, 'jQuery("#updateprogress").length === 0');
+  }
+
+  /**
+   * @Given /^I wait for the Admin Menu to load$/
+   * Wait until we have a "#admin-menu" element,
+   * or timeout after 10 seconds (10,000 ms).
+   */
+  public function iWaitForTheAdminMenuToLoad() {
+    $this->getSession()->wait(10000, 'jQuery("#admin-menu").length > 0');
+  }
+
+  /**
+   * Click on the element with the provided CSS Selector
+   *
+   * @When /^I click on the element with css selector "([^"]*)"$/
+   */
+  public function iClickOnTheElementWithCSSSelector($cssSelector) {
+    $session = $this->getSession();
+    $element = $session->getPage()->find(
+        'xpath',
+        $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
+    );
+    if (null === $element) {
+        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+    }
+    $element->click();
+  }
+
+  /**
+   * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
+   */
+  public function iShouldSeeElementsInTheRegion($num, $element, $region) {
+    $regionObj = $this->getRegion($region);
+    $session = $this->getSession();
+
+    $selectElements = $regionObj->findAll(
+      'xpath',
+      $session->getSelectorsHandler()->selectorToXpath('css', $element) // just changed xpath to css
+    );
+
+    if (intval($num) !== count($selectElements)) {
+      $session = $this->getSession();
+      $message = sprintf('%d "%s" elements found when there should be %d.', count($selectElements), $element, $num);
+      throw new ExpectationException($message, $session);
+    }
+
+  }
+
+  /**
+   * @Given /^I follow meta refresh$/
+   */
+  public function iFollowMetaRefresh() {
+    while ($refresh = $this->getMainContext()->getSession()->getPage()->find('css', 'meta[http-equiv="Refresh"]')) {
+      $content = $refresh->getAttribute('content');
+      $url = str_replace('0; URL=', '', $content);
+      $this->getMainContext()->getSession()->visit($url);
+    }
   }
 
 }
