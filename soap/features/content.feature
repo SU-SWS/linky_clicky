@@ -24,11 +24,11 @@ Scenario Outline: Homepage content
 
 Scenario: Program Services content
   Given I am on "program-services"
-  Then I should see "Stanford’s Online Accessibility Program offers a number of services to Campus" in the "Content Body" region
+  Then I should see "Stanford’s Online Accessibility Program offers a number of services to campus" in the "Content Body" region
 
 Scenario: Getting Started content
   Given I am on "getting-started"
-  Then I should see "As you are learning about web accessibility" in the "Content Body" region
+  Then I should see "Information and resources to begin the journey to make your web content accessible to people with disabilities" in the "Content Body" region
 
 Scenario: Tips and Tools content
   Given I am on "tips-and-tools"
@@ -36,7 +36,7 @@ Scenario: Tips and Tools content
 
 Scenario: Guidelines and Standards content
   Given I am on "guidelines-and-standards"
-  Then I should see "There are a number of Standards and Policies that are related to Online accessibility gathered here" in the "Content Body" region
+  Then I should see "A number of standards, policies and guidelines related to online accessibility gathered here" in the "Content Body" region
 
 Scenario: Contact page content
   Given I am on "about/contact"
