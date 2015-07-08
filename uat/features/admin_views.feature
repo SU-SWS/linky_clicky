@@ -9,3 +9,10 @@ Feature: Administration Views
     And I am logged in as a user with the "administrator" role
     And I am on "admin/content"
     Then I should see a ".views-field-title" element
+    Given I am logged in as a user with the "authenticated user" role
+    And I am on "admin/content"
+    Then I should not see a ".views-field-title" element
+    And I should see "Access Denied"
+    Given I am an anonymous user
+    And I am on "admin/content"
+    Then I should not see a ".views-field-title" element
