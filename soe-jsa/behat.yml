@@ -9,7 +9,7 @@ default:
     features: 'features'
   extensions:
     Behat\MinkExtension\Extension:
-#      base_url: https://sites.stanford.edu/sws-build-jsa
+      base_url: https://sites.stanford.edu/sws-build-jsa
     Drupal\DrupalExtension\Extension:
       drush:
-#        alias: sse.ds_sws-build-jsa
+        alias: sse.ds_sws-build-jsa

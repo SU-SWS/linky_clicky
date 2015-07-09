@@ -1,5 +1,5 @@
 Feature: Related Events with SoE-JSA layouts
-  In order to ensure that events for SoE-JSA are configured correctly
+  In order to ensure that related events are configured correctly
   As an end user
   I want to check for the existence of content that should appear
 
