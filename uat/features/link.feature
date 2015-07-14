@@ -14,5 +14,6 @@ Feature: Link
     Then I should see "These settings apply to the [random:1] field everywhere it is used"
     When I press the "Save field settings" button
     Then I should see "Updated field [random:1] field settings"
-    When I press the "Save settings" button
+    When I check "Use field label as the label for the title field"
+    And I press the "Save settings" button
     Then I should see "Saved [random:1] configuration"
