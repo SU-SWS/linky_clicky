@@ -39,5 +39,6 @@ Feature: Date iCal
     And I select "iCal Entity" from "Feed row style"
     And I press the "Continue & edit" button
     Then I should be on "admin/structure/views/view/date_ical_views_test"
+    Given the "date_ical" module is disabled
 
 

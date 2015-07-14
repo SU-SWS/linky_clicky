@@ -12,7 +12,6 @@ Feature: Stanford Person
     And I am on "node/add/stanford-person"
     When I enter "Leland" for "First name *"
     And I enter "Stanford" for "Last Name *"
-    And I check the box "Faculty"
     And I press the "Save" button
     Then I should be on "people/leland-stanford"
     And I should see "Person Leland Stanford has been created"
