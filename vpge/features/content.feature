@@ -26,7 +26,7 @@ Scenario: Academic Guidance content
 
 Scenario: Diversity Initiatives content
   Given I am on "diversity-initiatives/overview"
-  Then I should see "Stanford’s nearly 9,000 graduate students comprise a wonderfully diverse mix of racial, ethnic, sexual orientation, religious, and socioeconomic backgrounds and life experiences" in the "Content Body" region
+  Then I should see "Stanford’s over 9,000 graduate students comprise a wonderfully diverse mix of racial, ethnic, sexual orientation, religious, and socioeconomic backgrounds and life experiences" in the "Content Body" region
 
 Scenario: Professional Development content
   Given I am on "professional-development/overview"
