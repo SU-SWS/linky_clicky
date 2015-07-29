@@ -14,3 +14,17 @@ sites:
     Drupal\DrupalExtension\Extension:
       drush:
         alias: sse.example <<< this is the custom drush alias for the sites environment
+
+## Use firefox instead of Chrome
+firefox:
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: https://sites.stanford.edu/example <<< This is the path to the website on stanford sites
+      javascript_session: selenium2
+      browser_name: firefox
+      selenium2:
+        browser: firefox
+    Drupal\DrupalExtension\Extension:
+      drush:
+        alias: sse.example <<< this is the custom drush alias for the sites environment
+
