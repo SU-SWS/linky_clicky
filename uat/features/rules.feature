@@ -18,7 +18,7 @@ Feature: Rules
     When I click "Add action"
     And I select "Send mail" from "Select the action to add"
     And I wait 3 seconds
-    And I enter "no-reply@stanford.edu" for "edit-parameter-to-settings-to"
+    And I enter "noreply@stanford.edu" for "edit-parameter-to-settings-to"
     And I enter "Page has been viewed" for "edit-parameter-subject-settings-subject"
     And I enter "The page has been viewed" for "edit-parameter-message-settings-message"
     And I press the "Save" button
