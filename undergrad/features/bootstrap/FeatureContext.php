@@ -10,6 +10,9 @@ use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 use Drupal\Component\Utility\Random;
 
+use Guzzle\Http\Client;
+
+
 //
 // Require 3rd-party libraries here:
 //
@@ -314,6 +317,71 @@ class FeatureContext extends Drupal\DrupalExtension\Context\DrupalContext
       $url = str_replace('0; URL=', '', $content);
       $this->getMainContext()->getSession()->visit($url);
     }
+  }
+  
+  /**
+   * @Given /^the events feed is available$/
+   */
+  public function theEventsFeedIsAvailable() {
+    $session = $this->getSession();
+    $client = new Client();
+    
+    $request = $client->get('http://events.stanford.edu/xml/today/eventlist.xml');
+    $response = $request->send();
+    $xml = $response->xml();
+    
+    //$element = $session->getPage()->find('css', '.views-row-1 .date-display-start')->getHtml();
+    //echo $element;
+    $lead_event_title = $session->getPage()->find('css', '.views-row-1 .event-title a')->getHtml();
+    echo $lead_event_title;
+    
+    $site_start_date = $session->getPage()->find('css', '.views-row-1 .date-display-start')->getAttribute('content');
+    $patterns = array();
+    $patterns[0] = '/T/';
+    $patterns[1] = '/\-07:00/';
+    $replacements = array();
+    $replacements[0] = '';
+    $replacements[1] = '';
+    $site_start_date = preg_replace($patterns, $replacements, $site_start_date);
+    echo $site_start_date . PHP_EOL;
+    
+    
+    if ($request) {
+      if ($xml->title == strtolower(date("l, F d, Y"))) {
+        //echo $xml->Event[0]->Instance->isoEventDate;
+        $events = $xml->Event;
+        $event_id = '';
+        foreach ($events as $event) {
+          //echo $event->title;
+          if (strstr($event->title, $lead_event_title)) {
+            $event_id = $event->eventID;
+            $feed_start_date = $event->Instance[0]->isoEventDate;
+            $patterns = array();
+            $patterns[0] = '/ /';
+            $patterns[1] = '/\-0700/';
+            $replacements = array();
+            $replacements[0] = '';
+            $replacements[1] = '';
+            $feed_start_date = preg_replace($patterns , $replacements, $feed_start_date);
+          }
+        }
+        echo $feed_start_date;
+        if($event_id != '' && $site_start_date == $feed_start_date) {
+          return TRUE;
+        }
+        else {
+          throw new PendingException('The start time doesn\'t match the feed');
+        }
+        
+      }
+      else {
+        throw new PendingException('Couldn\'t get today\'s event list.');
+      }    
+    }
+    else {
+      throw new PendingException('Couldn\'t get the feed');
+    }
+    
   }
 
 }
