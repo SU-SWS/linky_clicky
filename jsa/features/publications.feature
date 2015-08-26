@@ -22,7 +22,7 @@ Feature: Publications
     Then I should see "Sample Publication: Book Title Two" in the "Content Body" region
 
   Scenario: Click through to publication
-    Given I am on "Publications"
+    Given I am on "publications"
     When I click "Sample Publication: Book Title Two" in the "Content Body" region
     Then I should see "This is a publication." in the "Content Body" region
 
