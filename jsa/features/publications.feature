@@ -3,29 +3,34 @@ Feature: Publications
   As an end user
   I want to check for the existence of publication content
 
+  @content @live
   Scenario: Filter publications by title
     Given I am on "publications"
     When I fill in "Filter by title" with "book title two"
     And I press "Go"
     Then I should see "Sample Publication: Book Title Two" in the "Content Body" region
 
+  @content @live
   Scenario: Filter publications by author
     Given I am on "publications"
     When I fill in "Filter by author" with "Marvin C. Ferrell"
     And I press "Go"
     Then I should see "Marvin C. Ferrell" in the "Content Body" region
 
+  @content @live
   Scenario: Filter publications by type
     Given I am on "publications"
     When I select "Book" from "Filter by type"
     And I press "Go"
     Then I should see "Sample Publication: Book Title Two" in the "Content Body" region
 
+  @content @live
   Scenario: Click through to publication
     Given I am on "publications"
     When I click "Sample Publication: Book Title Two" in the "Content Body" region
     Then I should see "This is a publication." in the "Content Body" region
 
+  @content @live
   Scenario: Publication showing correct image size
     Given I am on "publications/sample-publication-book-title-two"
     Then I should see a ".view-mode-stanford-large-scaled" element
