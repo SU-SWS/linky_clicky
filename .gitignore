@@ -23,6 +23,7 @@ composer.lock
 .tmproj
 nbproject
 Thumbs.db
+assets
 
 # Folders to ignore
 .hg

@@ -8,9 +8,9 @@ use Behat\Behat\Context\Context,
     Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Context\TranslatedContextInterface,
     Behat\Behat\Context\BehatContext,
-    Behat\Behat\Context\MinkContext,
     Behat\Behat\Context\TranslatableContext,
-    Behat\Behat\Exception\PendingException;
+    Behat\Behat\Exception\PendingException,
+    Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Behat\Mink\Exception\ExpectationException,
     Behat\Mink\Session;
@@ -18,15 +18,34 @@ use Behat\Mink\Exception\ExpectationException,
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 
-use Drupal\Component\Utility\Random,
-    Drupal\DrupalExtension\Context\DrupalContext;
+use Drupal\Component\Utility\Random;
 
-use Weavora\MinkExtra\Context\MinkExtraContext;
+use Drupal\DrupalExtension\Context\RawDrupalContext,
+    Drupal\DrupalExtension\Context\MinkContext;
 
 /**
  * Features context.
  */
-class SWSFeatureContext extends DrupalContext implements Context, SnippetAcceptingContext {
+class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcceptingContext {
+
+  /**
+   * @var \Drupal\DrupalExtension\Context\DrupalContext
+   */
+  protected $drupalContext;
+
+  /**
+   * @var \Drupal\DrupalExtension\Context\MinkContext
+   */
+  protected $minkContext;
+
+  /**
+   * @BeforeScenario
+   */
+  public function gatherContexts(BeforeScenarioScope $scope) {
+    $environment = $scope->getEnvironment();
+    $this->drupalContext = $environment->getContext('Drupal\DrupalExtension\Context\DrupalContext');
+    $this->minkContext = $environment->getContext('Drupal\DrupalExtension\Context\MinkContext');
+  }
 
   /**
    * Initializes context.
@@ -203,6 +222,41 @@ class SWSFeatureContext extends DrupalContext implements Context, SnippetAccepti
 
   }
 
+  /**
+   * Find an element in a region.
+   * see http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f
+   *
+   * @Then /^I should see a "([^"]*)" element in the "([^"]*)" region$/
+   */
+  public function assertRegionElement($tag, $region) {
+
+    $mink = $this->minkContext;
+    $regionObj = $mink->getRegion($region);
+    $elements = $regionObj->findAll('css', $tag);
+    if (!empty($elements)) {
+      return;
+    }
+    throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()->getCurrentUrl()));
+  }
+
+   /**
+   * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
+   */
+  public function iShouldSeeElementsInTheRegion($num, $element, $region) {
+    $mink = $this->minkContext;
+    $regionObj = $mink->getRegion($region);
+    $session = $mink->getSession();
+    $selectElements = $regionObj->findAll(
+      'xpath',
+      $session->getSelectorsHandler()->selectorToXpath('css', $element) // just changed xpath to css
+    );
+    if (intval($num) !== count($selectElements)) {
+      $session = $this->getSession();
+      $message = sprintf('%d "%s" elements found when there should be %d.', count($selectElements), $element, $num);
+      throw new ExpectationException($message, $session);
+    }
+  }
+
     /**
    * @Then /^I should see (\d+) or fewer "([^"]*)" elements$/
    */
@@ -284,15 +338,6 @@ class SWSFeatureContext extends DrupalContext implements Context, SnippetAccepti
   }
 
   /**
-   * @Given /^I wait for the batch job to finish$/
-   * Wait until the id="updateprogress" element is gone,
-   * or timeout after 3 minutes (180,000 ms).
-   */
-  public function iWaitForTheBatchJobToFinish() {
-    $this->getSession()->wait(180000, 'jQuery("#updateprogress").length === 0');
-  }
-
-  /**
    * @Given /^I wait for the Admin Menu to load$/
    * Wait until we have a "#admin-menu" element,
    * or timeout after 10 seconds (10,000 ms).
@@ -339,26 +384,6 @@ class SWSFeatureContext extends DrupalContext implements Context, SnippetAccepti
   }
 
   /**
-   * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
-   */
-  public function iShouldSeeElementsInTheRegion($num, $element, $region) {
-    $regionObj = $this->getRegion($region);
-    $session = $this->getSession();
-
-    $selectElements = $regionObj->findAll(
-      'xpath',
-      $session->getSelectorsHandler()->selectorToXpath('css', $element) // just changed xpath to css
-    );
-
-    if (intval($num) !== count($selectElements)) {
-      $session = $this->getSession();
-      $message = sprintf('%d "%s" elements found when there should be %d.', count($selectElements), $element, $num);
-      throw new ExpectationException($message, $session);
-    }
-
-  }
-
-  /**
    * @Given /^I follow meta refresh$/
    */
   public function iFollowMetaRefresh() {
@@ -400,21 +425,6 @@ class SWSFeatureContext extends DrupalContext implements Context, SnippetAccepti
     }
 
     $ctx->fillField($radioId, $radioButton->getAttribute('value'));
-  }
-
-  /**
-   * Find an element in a region.
-   * see http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f
-   *
-   * @Then /^I should see a "([^"]*)" element in the "([^"]*)" region$/
-   */
-  public function assertRegionElement($tag, $region) {
-    $regionObj = $this->getRegion($region);
-    $elements = $regionObj->findAll('css', $tag);
-    if (!empty($elements)) {
-      return;
-    }
-    throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()->getCurrentUrl()));
   }
 
    /**
