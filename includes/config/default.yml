@@ -2,12 +2,14 @@ default:
   suites:
     default:
       contexts:
-        - Drupal\DrupalExtension\Context\MinkContext
+        # - Drupal\DrupalExtension\Context\MinkContext
+        # - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
-        - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MarkupContext
         - Drupal\DrupalExtension\Context\DrushContext
         - Drupal\DrupalExtension\Context\BatchContext
         - FeatureContext
         - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
