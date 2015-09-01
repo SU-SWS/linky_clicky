@@ -1,0 +1,18 @@
+default:
+  autoload:
+    - %paths.base%/features/bootstrap
+  suites:
+    default:
+      contexts:
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - FeatureContext
+        - SWSFeatureContext
+    local:
+      contexts:
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - FeatureContext
+        - SWSFeatureContext

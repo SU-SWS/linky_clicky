@@ -2,13 +2,13 @@ default:
   paths:
     features: 'features'
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       goutte: ~
       selenium2: ~
       base_url: https://sites.stanford.edu/drupal7-update-status/
-    Drupal\DrupalExtension\Extension:
+    Drupal\DrupalExtension:
       blackbox: ~
-      api_driver: 'drush' 
+      api_driver: 'drush'
       drush:
         alias: 'sse.d7up'
       region_map:

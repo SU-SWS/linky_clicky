@@ -1,30 +1,30 @@
 ## Local development settings:
 local:
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       base_url: http://example.su.dev <<< This should be your local url.
-    Drupal\DrupalExtension\Extension:
+    Drupal\DrupalExtension:
       drush:
         alias: example.dev <<< This is your local drush alias.
 
 sites:
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       base_url: https://sites.stanford.edu/example <<< This is the path to the website on stanford sites
-    Drupal\DrupalExtension\Extension:
+    Drupal\DrupalExtension:
       drush:
         alias: sse.example <<< this is the custom drush alias for the sites environment
 
 ## Use firefox instead of Chrome
 firefox:
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       base_url: https://sites.stanford.edu/example <<< This is the path to the website on stanford sites
       javascript_session: selenium2
       browser_name: firefox
       selenium2:
         browser: firefox
-    Drupal\DrupalExtension\Extension:
+    Drupal\DrupalExtension:
       drush:
         alias: sse.example <<< this is the custom drush alias for the sites environment
 
