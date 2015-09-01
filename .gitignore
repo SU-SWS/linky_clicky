@@ -11,6 +11,7 @@ index.php
 *.swp
 *.vi
 *~
+composer.lock
 
 # OS or Editor folders
 .DS_Store
@@ -22,12 +23,15 @@ index.php
 .tmproj
 nbproject
 Thumbs.db
+assets
 
 # Folders to ignore
 .hg
 .svn
 .CVS
 cgi-bin
+bin
+vendor
 
 # Local files
 linky-clicky-all-the-things.sh

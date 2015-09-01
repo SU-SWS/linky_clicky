@@ -1,10 +1,27 @@
 default:
+  autoload:
+    - %paths.base%/features/bootstrap
+  suites:
+    default:
+      contexts:
+        # - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - FeatureContext
+        - SWSFeatureContext
   extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      javascript_session: selenium2
+      browser_name: ~
+      selenium2: ~
+      base_url: http://jsvmake.su.dev
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drush'
       drush:
-        alias: sse.ds_example
+        alias: jsvmake.su.dev
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"

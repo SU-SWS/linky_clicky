@@ -8,8 +8,8 @@ default:
   paths:
     features: 'features'
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       base_url: https://sites.stanford.edu/sws-build-jsplus
-    Drupal\DrupalExtension\Extension:
+    Drupal\DrupalExtension:
       drush:
         alias: sse.ds_sws-build-jsplus

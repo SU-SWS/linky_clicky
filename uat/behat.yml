@@ -8,8 +8,8 @@ default:
   paths:
     features: 'features'
   extensions:
-    Behat\MinkExtension\Extension:
+    Behat\MinkExtension:
       base_url: https://sites-uat.stanford.edu/drupal7-update-status
-    Drupal\DrupalExtension\Extension:
+    Drupal\DrupalExtension:
       drush:
         alias: uat.ds_drupal7-update-status
