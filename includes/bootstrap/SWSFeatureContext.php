@@ -97,7 +97,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Given /^I wait (\d+) second(s)?$/
    */
   public function iWaitSeconds($seconds) {
-    $this->getSession()->wait(1000*$seconds);
+    $mink = $this->minkContext;
+    $mink->getSession()->wait(1000*$seconds);
   }
 
   /**
@@ -131,9 +132,10 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
     $container = $this->getSession()->getPage();
     $nodes = $container->findAll('css', $element);
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
 
     if (intval($num) > count($nodes)) {
-      $session = $this->getSession();
       $message = sprintf('%d "%s" elements found when there should be a minimum of %d.', count($nodes), $element, $num);
       throw new ExpectationException($message, $session);
     }
@@ -164,12 +166,12 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $mink = $this->minkContext;
     $regionObj = $mink->getRegion($region);
     $session = $mink->getSession();
+
     $selectElements = $regionObj->findAll(
       'xpath',
       $session->getSelectorsHandler()->selectorToXpath('css', $element) // just changed xpath to css
     );
     if (intval($num) !== count($selectElements)) {
-      $session = $this->getSession();
       $message = sprintf('%d "%s" elements found when there should be %d.', count($selectElements), $element, $num);
       throw new ExpectationException($message, $session);
     }
@@ -179,11 +181,12 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Then /^I should see (\d+) or fewer "([^"]*)" elements$/
    */
   public function iShouldSeeOrFewerElements($num, $element) {
-    $container = $this->getSession()->getPage();
+    $mink = $this->minkContext;
+    $container = $mink->getSession()->getPage();
     $nodes = $container->findAll('css', $element);
 
     if (intval($num) < count($nodes)) {
-      $session = $this->getSession();
+      $session = $mink->getSession();
       $message = sprintf('%d "%s" elements found when there should be a maximum of %d.', count($nodes), $element, $num);
       throw new ExpectationException($message, $session);
     }
@@ -193,7 +196,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @When /^I hover over the element "([^"]*)"$/
    */
   public function iHoverOverTheElement($locator) {
-    $session = $this->getSession(); // get the mink session
+    $mink = $this->minkContext;
+    $session = $mink->getSession(); // get the mink session
     $element = $session->getPage()->find('css', $locator); // runs the actual query and returns the element
 
     // errors must not pass silently
@@ -211,12 +215,13 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Then /^I wait for the Site Actions drop down to appear$/
    */
   public function iWaitForTheSiteActionsDropDownToAppear() {
+    $mink = $this->minkContext;
 
-    $this->getSession()->getDriver()->evaluateScript(
+    $mink->getSession()->getDriver()->evaluateScript(
     "jQuery('#block-menu-menu-admin-shortcuts ul.nav li.first.last, #block-menu-menu-admin-shortcuts ul.nav li.expanded:first').find('ul').show().css('z-index', '1000');"
     );
 
-    $this->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
+    $mink->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
 
   }
 
@@ -226,7 +231,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @When /^I click on the text "([^"]*)"$/
    */
   public function iClickOnTheText($text) {
-    $session = $this->getSession();
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
     $element = $session->getPage()->find(
       'xpath',
       $session->getSelectorsHandler()->selectorToXpath('xpath', '*//*[text()="'. $text .'"]')
@@ -244,7 +250,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Then /^I want to validate select field option "([^"]*)" default is "([^"]*)"$/
    */
   public function iWantToValidateSelectOptionDefaultIs($locator, $defaultValue) {
-       $optionElement = $this->getSession()->getPage()->find('xpath', '//select[@name="' . $locator . '"]/option[@selected]');
+        $mink = $this->minkContext;
+       $optionElement = $mink->getSession()->getPage()->find('xpath', '//select[@name="' . $locator . '"]/option[@selected]');
        if (!$optionElement) {
           throw new Exception('Could not find a select element with the "name" attribute of ' . $locator);
        }
@@ -261,7 +268,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * or timeout after 10 seconds (10,000 ms).
    */
   public function iWaitForTheAdminMenuToLoad() {
-    $this->getSession()->wait(10000, 'jQuery("#admin-menu").length > 0');
+    $mink = $this->minkContext;
+    $mink->getSession()->wait(10000, 'jQuery("#admin-menu").length > 0');
   }
 
   /**
@@ -270,7 +278,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @When /^I click on the element with css selector "([^"]*)"$/
    */
   public function iClickOnTheElementWithCSSSelector($cssSelector) {
-    $session = $this->getSession();
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
     $element = $session->getPage()->find(
         'xpath',
         $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
@@ -287,7 +296,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @When /^I press the element with css selector "([^"]*)"$/
    */
   public function iPressTheElementWithCSSSelector($cssSelector) {
-    $session = $this->getSession();
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
     $xpath = $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector);
     $element = $session->getPage()->find(
         'xpath',
@@ -305,10 +315,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Given /^I follow meta refresh$/
    */
   public function iFollowMetaRefresh() {
-    while ($refresh = $this->getMainContext()->getSession()->getPage()->find('css', 'meta[http-equiv="Refresh"]')) {
+    $mink = $this->minkContext;
+    while ($refresh = $mink->getSession()->getPage()->find('css', 'meta[http-equiv="Refresh"]')) {
       $content = $refresh->getAttribute('content');
       $url = str_replace('0; URL=', '', $content);
-      $this->getMainContext()->getSession()->visit($url);
+      $mink->getSession()->visit($url);
     }
   }
 
@@ -318,10 +329,12 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   public function iSelectTheRadioButton($labelText) {
     // Find the label by its text, then use that to get the radio item's ID
     $radioId = null;
-    $ctx = $this->getMainContext();
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    $page = $mink->getSession()->getPage();
 
     /** @var $label NodeElement */
-    foreach ($ctx->getSession()->getPage()->findAll('css', 'label') as $label) {
+    foreach ($session->getPage()->findAll('css', 'label') as $label) {
         if ($labelText === $label->getText()) {
             if ($label->hasAttribute('for')) {
                 $radioId = $label->getAttribute('for');
@@ -337,12 +350,12 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
     // Now use the ID to retrieve the button and click it
     /** @var NodeElement $radioButton */
-    $radioButton = $ctx->getSession()->getPage()->find('css', "#$radioId");
+    $radioButton = $session->getPage()->find('css', "#$radioId");
     if (!$radioButton) {
         throw new \Exception("$labelText radio button not found.");
     }
 
-    $ctx->fillField($radioId, $radioButton->getAttribute('value'));
+    $page->fillField($radioId, $radioButton->getAttribute('value'));
   }
 
    /**
@@ -362,10 +375,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 })()
 JS;
     try {
-      $this->getSession()->executeScript($function);
+      $mink = $this->minkContext;
+      $mink->getSession()->executeScript($function);
     }
     catch(Exception $e) {
-      throw new \Exception(sprintf('No iframe found in the element "%s" on the page "%s".', $element_id, $this->getSession()->getCurrentUrl()));
+      throw new \Exception(sprintf('No iframe found in the element "%s" on the page "%s".', $element_id, $mink->getSession()->getCurrentUrl()));
     }
   }
 
@@ -375,21 +389,25 @@ JS;
    * @Given /^(?:|I )fill in "(?P<text>[^"]*)" in WYSIWYG editor "(?P<iframe>[^"]*)"$/
    */
   public function iFillInInWYSIWYGEditor($text, $iframe) {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+
     try {
-      $this->getSession()->switchToIFrame($iframe);
+      $session->switchToIFrame($iframe);
     }
     catch (Exception $e) {
-      throw new \Exception(sprintf("No iframe with id '%s' found on the page '%s'.", $iframe, $this->getSession()->getCurrentUrl()));
+      throw new \Exception(sprintf("No iframe with id '%s' found on the page '%s'.", $iframe, $session->getCurrentUrl()));
     }
-      $this->getSession()->executeScript("document.body.innerHTML = '<p>".$text."</p>'");
-      $this->getSession()->switchToIFrame();
+      $session->executeScript("document.body.innerHTML = '<p>".$text."</p>'");
+      $session->switchToIFrame();
   }
 
   /**
    * @Then /^the response header "([^"]*)" should contain "([^"]*)"$/
    */
   public function theResponseHeaderShouldContain($arg1, $arg2) {
-    $headers = $this->getSession()->getResponseHeaders();
+    $mink = $this->minkContext;
+    $headers = $mink->getSession()->getResponseHeaders();
     if (!isset($headers[$arg1])) {
       throw new Exception('The HTTP header "' . $arg1 . '" does not appear to be set.');
     }
