@@ -3,6 +3,7 @@ Feature: Research
   As an end user
   I want to check for the existence of the page
 
+  @content @live
   Scenario: Check the contents of the "Research" page
     Given I am on "research"
     Then I should see 1 or more ".group_s_postcard_image" elements

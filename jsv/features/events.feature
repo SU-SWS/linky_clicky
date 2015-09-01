@@ -3,6 +3,7 @@ Feature: Events
   As an end user
   I want to check for the existence of the page
 
+  @content @live
   Scenario: Check the contents of the "Events" page
     Given I am on "events"
     Then I should see the heading "Sample Event" in the "Content Body" region
