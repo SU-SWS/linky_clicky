@@ -5,7 +5,7 @@ Feature: Events
 
   Scenario: See upcoming events on homepage
     Given I am on the homepage
-    Then I should see the "Upcoming" heading in the "Content 3 column flow" region
+    Then I should see "Employee Calendar" in the "Content Lower" region
 
   Scenario: See upcoming events content
     Given I am on "events/upcoming-events"
@@ -25,6 +25,8 @@ Feature: Events
     And I press the "Go" button
     # Then I should see "Currently, no future events are scheduled" in the "Content Body" region
 
+  @api
   Scenario: See entity reference field to event series
+    Given I am logged in as a user with the "administrator" role
     Given I am on "node/add/stanford-event"
-    Then I should see "Create Event"
+    Then I should see the heading "Create Event"
