@@ -8,7 +8,7 @@
         "weavora/mink-extra-context": "dev-master",
         "drupal/drupal-driver": "dev-master",
         "psr/log":  "*",
-        "emuse/behat-html-formatter": "0.1.*"
+        "emuse/behat-html-formatter": "dev-master"
     },
     "config": {
       "bin-dir": "bin/"
