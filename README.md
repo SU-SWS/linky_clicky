@@ -4,7 +4,7 @@ Linky Clicky
 Behat tests mean death to linky-clicky.
 
 Installation
-----–----–----–
+-------------
 
 You can either copy the values from the composer.json file to your local file or
 you can compile here. The files and directories that composer creates will be
@@ -48,7 +48,7 @@ The formatters and syntax that comes with Behat 3 has changed. By default Behat 
 Included in the composer build is an HTML formatter for behat but it needs to be configured in your behat.local.yml file or
 passed to the behat function through the command link with a number of parameters.
 
-See: [https://github.com/dutchiexl/BehatHtmlFormatterPlugin](https://github.com/dutchiexl/BehatHtmlFormatterPlugin)
+See: [https://github.com/dutchiexl/BehatHtmlFormatterPlugin](https://github.com/dutchiexl/BehatHtmlFormatterPlugin)    
 and: [http://docs.behat.org/en/latest/guides/7.run.html](http://docs.behat.org/en/latest/guides/7.run.html)
 
 Directory structure
