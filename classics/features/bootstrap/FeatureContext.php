@@ -1,17 +1,38 @@
 <?php
 
-/**
- * Require our global set.
- * @todo : change this to a USE statement.
- */
-require_once dirname(__FILE__) . "/../../../includes/bootstrap/SWSFeatureContext.php";
+use Behat\Behat\Context\Context,
+    Behat\Behat\Context\SnippetAcceptingContext,
+    Behat\Behat\Context\ClosuredContextInterface,
+    Behat\Behat\Context\TranslatedContextInterface,
+    Behat\Behat\Context\BehatContext,
+    Behat\Behat\Context\MinkContext,
+    Behat\Behat\Context\TranslatableContext,
+    Behat\Behat\Exception\PendingException,
+    Behat\Mink\Exception\ExpectationException,
+    Behat\Mink\Session;
+
+use Behat\Gherkin\Node\PyStringNode,
+    Behat\Gherkin\Node\TableNode;
+
+use Drupal\Component\Utility\Random,
+    Drupal\DrupalExtension\Context\DrupalContext;
 
 /**
- * Features context.
+ * Defines application features from the specific context.
  */
-class FeatureContext extends SWSFeatureContext {
+class FeatureContext implements Context, SnippetAcceptingContext {
+    /**
+     * Initializes context.
+     *
+     * Every scenario gets its own context instance.
+     * You can also pass arbitrary arguments to the
+     * context constructor through behat.yml.
+     */
+    public function __construct() {
 
-  /**
+    }
+
+    /**
    * This function causes the drop down. No need to add a hover step before.
    *
    * @Then /^I wait for the Classics Site Actions drop down to appear$/
@@ -25,6 +46,5 @@ class FeatureContext extends SWSFeatureContext {
     $this->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts-site-action ul.nav > ul.nav').children().length > 0");
 
   }
-
 
 }

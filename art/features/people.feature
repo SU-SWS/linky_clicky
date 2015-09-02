@@ -5,7 +5,7 @@ Feature: People
 
 Scenario: List of faculty
  Given I am on "people/faculty"
- Then I should see a ".views-row-first" element 
+ Then I should see a ".views-row-first" element
 
 Scenario: Click on a faculty member
  Given I am on "people/faculty"

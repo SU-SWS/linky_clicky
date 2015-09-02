@@ -11,4 +11,4 @@ default:
       base_url: https://sites.stanford.edu/caw
     Drupal\DrupalExtension:
       drush:
-        alias: sse.caw
+        alias: sse.ds_caw
