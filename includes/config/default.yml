@@ -13,3 +13,31 @@ default:
         - SWSFeatureContext
         - SWSMinkContext
         - SWSDrupalContext
+    # Tests that are safe for production and live sites.
+    live:
+      filters:
+        tags: '~dev,~destructive,~content,~contrib'
+    # Tests that are meant for development sites and can have config changes.
+    dev:
+      filters:
+        tags: '~contrib'
+    # A freshly deployed site/product that needs to be confirmed
+    deploy:
+      filters:
+        tags: '~dev,~destructive'
+    # Only content creating related tasks
+    content:
+      filters:
+        tags: 'content'
+    # For tests that are specific to the site it is testing.
+    site:
+      filters:
+        tags: 'site'
+    # Only contrib module tests.
+    contrib:
+      filters:
+        tags: 'contrib'
+    # Only contrib module tests.
+    stanford:
+      filters:
+        tags: 'stanford'

@@ -48,7 +48,7 @@ The formatters and syntax that comes with Behat 3 has changed. By default Behat 
 Included in the composer build is an HTML formatter for behat but it needs to be configured in your behat.local.yml file or
 passed to the behat function through the command link with a number of parameters.
 
-See: [https://github.com/dutchiexl/BehatHtmlFormatterPlugin](https://github.com/dutchiexl/BehatHtmlFormatterPlugin)    
+See: [https://github.com/dutchiexl/BehatHtmlFormatterPlugin](https://github.com/dutchiexl/BehatHtmlFormatterPlugin)
 and: [http://docs.behat.org/en/latest/guides/7.run.html](http://docs.behat.org/en/latest/guides/7.run.html)
 
 Directory structure
@@ -64,3 +64,31 @@ Directory structure
           |--SWSFeatureContext.php
           |--SWSDrupalContext.php
           |--SWSMinkContext.php
+
+
+
+Suites And Tags
+------------------------------
+
+When writing your tests please include the following tags where appropriate.
+
+### @live
+Safe for production or live site tests. These tests may not create any content, change any settings, or leave any trace that it has run.
+
+### @dev
+Only for development tests. This scenario may change configuration or leave lasting items/content/config on the site it is running on. Not safe for production.
+
+### @deploy
+For tests specific to a freshly deployed website. These tests may not be destructive and should be similar to the @live tag.
+
+### @content
+For tests that create content.
+
+### @contrib
+For anything that is testing a contributed module.
+
+### @stanford
+For anything that is testing a stanford module.
+
+### @site
+For site specific tests. Ie testing art.stanford.edu.
