@@ -26,7 +26,6 @@ Feature: Serra Homepage Layout
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
-    And I should see "This content has been restricted by the author or by the site administrator" in the "Content Body" region
 
   Scenario: Content in regions
     Given I am on the homepage
