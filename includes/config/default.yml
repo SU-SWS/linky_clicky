@@ -16,7 +16,7 @@ default:
     # Tests that are safe for production and live sites.
     live:
       filters:
-        tags: '~dev,~destructive,~content,~contrib'
+        tags: 'live,safe,prod'
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
@@ -24,7 +24,7 @@ default:
     # A freshly deployed site/product that needs to be confirmed
     deploy:
       filters:
-        tags: '~dev,~destructive'
+        tags: '~dev,~destructive,~content,~site'
     # Only content creating related tasks
     content:
       filters:

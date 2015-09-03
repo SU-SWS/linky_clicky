@@ -21,13 +21,28 @@ use Behat\Gherkin\Node\PyStringNode,
 use Drupal\Component\Utility\Random;
 
 use Drupal\DrupalExtension\Context\RawDrupalContext,
-    Drupal\DrupalExtension\Context\DrupalContext,
+    // Drupal\DrupalExtension\Context\DrupalContext,
     Drupal\DrupalExtension\Context\MinkContext;
+
+use SWSDrupalContext as DrupalContext;
 
 /**
  * Features context.
  */
 class SWSMinkContext extends MinkContext implements Context, SnippetAcceptingContext {
+
+  /**
+   * @var \Drupal\DrupalExtension\Context\DrupalContext
+   */
+  protected $drupalContext;
+
+  /**
+   * @BeforeScenario
+   */
+  public function gatherContexts(BeforeScenarioScope $scope) {
+    $environment = $scope->getEnvironment();
+    $this->drupalContext = $environment->getContext('SWSDrupalContext');
+  }
 
   /**
    * Override MinkContext::fixStepArgument().
@@ -48,7 +63,7 @@ class SWSMinkContext extends MinkContext implements Context, SnippetAcceptingCon
       }
       $name = substr($argument, $start + 1, $end - $start - 1);
       if ($name == 'random') {
-        $randomname = $this->getDrupal()->random->name(8);
+        $randomname = $this->drupalContext->random->name(8);
         $randomname = strtolower($randomname);
         $this->vars[$name] = $randomname;
         $random[] = $this->vars[$name];
