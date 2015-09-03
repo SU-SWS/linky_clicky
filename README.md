@@ -15,6 +15,18 @@ you can compile here. The files and directories that composer creates will be
 If you install locally there should be a `bin/behat` executable for you. You can
 either point your system to that behat install or use it in some other way.
 
+Updating an Existing Project from Behat 1.0
+----------------------------------------------------------
+If you have a `behat.local.yml` file (which is not tracked by git), update it to match the syntax in `behat.local.yml.default`. Specifically:
+
+* `Behat\MinkExtension\Extension` will need to be changed to `Behat\MinkExtension`
+* `Drupal\DrupalExtension\Extension` will need to be changed to `Drupal\DrupalExtension`
+
+Otherwise, you may get an error like:
+
+      [Behat\Testwork\ServiceContainer\Exception\ExtensionInitializationException]
+      `Behat\MinkExtension\Extension` extension file or class could not be located. 
+
 Creating a new project
 ----------------------------
 
