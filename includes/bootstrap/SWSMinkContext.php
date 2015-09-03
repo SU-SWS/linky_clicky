@@ -63,7 +63,8 @@ class SWSMinkContext extends MinkContext implements Context, SnippetAcceptingCon
       }
       $name = substr($argument, $start + 1, $end - $start - 1);
       if ($name == 'random') {
-        $randomname = $this->drupalContext->random->name(8);
+        $randomObj = new Drupal\Component\Utility\Random();
+        $randomname = $randomObj->name(8);
         $randomname = strtolower($randomname);
         $this->vars[$name] = $randomname;
         $random[] = $this->vars[$name];
