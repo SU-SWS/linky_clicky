@@ -103,4 +103,4 @@ For anything that is testing a contributed module.
 For anything that is testing a stanford module.
 
 ### @site
-For site specific tests. Ie testing art.stanford.edu.
+For site specific tests. E.g., testing art.stanford.edu.
