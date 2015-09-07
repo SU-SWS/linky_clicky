@@ -82,9 +82,11 @@ Directory structure
 Suites And Tags
 ------------------------------
 
-When writing your tests please include the following tags where appropriate.
+## Tags
 
-#### @live @safe
+When writing your tests please include the following tags where appropriate. These help create sets of tests that can be run on different environments with different contexts. For example, when running tests on a live site we don't want to change configuration and should tag our tests to indicate wether or not it changes config.
+
+#### @live @safe @prod
 Safe for production or live site tests. These tests may not create any content, change any settings, or leave any trace that it has run.
 
 #### @dev @destructive
@@ -105,5 +107,17 @@ For anything that is testing a stanford module.
 #### @site
 For site specific tests. E.g., testing art.stanford.edu.
 
-### Running suites and profiles
+## Suites
+
+The following suites are available to run:
+
+* default
+* live
+* dev
+* deploy
+* content
+* contrib
+* stanford
+
+## Running suites and profiles
 You can run a suite and a profile at the same time. eg: `behat --profile local --suite live`
