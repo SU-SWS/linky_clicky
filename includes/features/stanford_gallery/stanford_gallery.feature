@@ -3,7 +3,7 @@ Feature: Stanford Gallery
   as an administrator
   I want to be able to create gallery nodes with imagess.
 
-@api @javascript
+@api @javascript @content @dev
 Scenario: Create stanford gallery node
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-gallery"

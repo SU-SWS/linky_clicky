@@ -3,7 +3,7 @@ Feature: Sweeteners
   As an authenticated user
   I want to check that I can create edit and use the sweeteners module
 
-@api @javascript
+@api @javascript @content
 Scenario: Create a sweetener node
  Given I am logged in as a user with the "administrator" role
  And go to "node/add/stanford-sweetener"
@@ -22,7 +22,7 @@ Scenario: Create a sweetener node
  Then I should see "This is just a title" in the "Content Body" region
  Then I should see 1 ".field-name-field-s-sweet-image" element
 
-@api @javascript
+@api @javascript @content
 Scenario: Create a sweetener bean
  Given I am logged in as a user with the "administrator" role
  And go to "block/add/stanford-sweetener-carousel"
@@ -53,13 +53,13 @@ Scenario: Create a sweetener bean
  Then I should see 1 or more ".slick-slide" elements
 
 
-@api @javascript
+@api @javascript @safe @live @site
 Scenario: Carousel on the home page
  Given I am on the homepage
  Then I should see 1 ".slick-carousel" element in the "Content Bottom" region
 
 #
-# NEEDS A FIX
+# NEEDS A FIX. Elements absolute positioning is too far off screen.
 #
 # @api @javascript
 # Scenario: Sweetener Isotope
@@ -70,20 +70,20 @@ Scenario: Carousel on the home page
 #  Then I uncheck "Discounts"
 #  Then I should see 0 ".isotope-hidden" elements
 
-@api @javascript
+@api @javascript @safe @live @site
 Scenario: Sweetener Isotope Deep Link
  Given I am on "benefits-rewards/sweeteners/discounts"
  Then I should see 1 or more ".isotope-hidden" elements
  # Then I uncheck "Discounts"
  # Then I should see 0 ".isotope-hidden" elements
 
-@api
+@api @safe @live @site
 Scenario: Manage Sweeteners Items
  Given I am logged in as a user with the "site owner" role
  And go to "admin/manage"
  Then I should see "Manage Sweeteners" in the "Second sidebar" region
 
-@api
+@api @safe @live @site
 Scenario: Manage Stanford Sweeteners Items page exists
  Given I am logged in as a user with the "site owner" role
  And go to "admin/manage/stanford_sweeteners_item"

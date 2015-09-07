@@ -3,6 +3,7 @@ Feature: Content
   As an end user
   I want to check for the existence of content that should appear
 
+@safe @live @site
 Scenario Outline: Homepage block and footer content
   Given I am on the homepage
   Then I should see the "<Header>" heading in the "<Region>" region
@@ -13,6 +14,7 @@ Scenario Outline: Homepage block and footer content
   | Quick Links | Footer |
   | See Also | Footer |
 
+@safe @live @site
 Scenario: Benefits subsite
   Given I am on "benefits-rewards"
   Then I should see "My Offerings" in the "Main Navigation" region
@@ -25,6 +27,7 @@ Scenario: Benefits subsite
   And I should see "Contact" in the "Main Navigation" region
   And I should see "Resources" in the "Main Navigation" region
 
+@safe @live @site
 Scenario: Learn & Grow subsite
   Given I am on "learn-grow"
   Then I should see "Get Started" in the "Main Navigation" region
@@ -33,6 +36,7 @@ Scenario: Learn & Grow subsite
   And I should see "Career Counseling" in the "Main Navigation" region
   And I should see "Tuition" in the "Main Navigation" region
 
+@safe @live @site
 Scenario: Manage & Lead subsite
   Given I am on "manage-lead"
   Then I should see "Recruit" in the "Main Navigation" region
@@ -40,15 +44,18 @@ Scenario: Manage & Lead subsite
   And I should see "Exit" in the "Main Navigation" region
   And I should see "Leadership Skills" in the "Main Navigation" region
 
+@safe @live @site
 Scenario: Connect subsite
   Given I am on "connect"
   Then I should see "Search Jobs" in the "Main Navigation" region
 
+@safe @live @site
 Scenario: Learn & Grow subsite
   Given I am on "learn-grow"
   Then I should see "Learn &" in the "Header" region
   Then I should see "Grow" in the "Header" region
 
+@safe @live @site
 Scenario: View "I want to..." block
   Given I am on "benefits-rewards"
   Then I should see a "#block-bean-i-want-to-block-on-benefits-rew" element
@@ -59,7 +66,7 @@ Scenario: View "I want to..." block
 #
 # BROKEN AND NEEDS A FIX
 #
-# @api @javascript
+# @api @javascript @content
 # Scenario: Create a News Highlight block
 #   Given I am logged in as a user with the "site owner" role
 #   And go to "node/add/stanford-page"
