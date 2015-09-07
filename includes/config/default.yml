@@ -2,8 +2,6 @@ default:
   suites:
     default:
       contexts:
-        # - Drupal\DrupalExtension\Context\MinkContext
-        # - Drupal\DrupalExtension\Context\DrupalContext
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
         - Drupal\DrupalExtension\Context\MarkupContext
@@ -17,27 +15,98 @@ default:
     live:
       filters:
         tags: 'live,safe,prod'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
         tags: '~contrib'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
     # A freshly deployed site/product that needs to be confirmed
     deploy:
       filters:
         tags: '~dev,~destructive,~content,~site'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
     # Only content creating related tasks
     content:
       filters:
         tags: 'content'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
     # For tests that are specific to the site it is testing.
     site:
       filters:
         tags: 'site'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
     # Only contrib module tests.
     contrib:
       filters:
         tags: 'contrib'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
     # Only contrib module tests.
     stanford:
       filters:
         tags: 'stanford'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+
