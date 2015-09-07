@@ -25,7 +25,7 @@ If you have a `behat.local.yml` file (which is not tracked by git), update it to
 Otherwise, you may get an error like:
 
       [Behat\Testwork\ServiceContainer\Exception\ExtensionInitializationException]
-      `Behat\MinkExtension\Extension` extension file or class could not be located. 
+      `Behat\MinkExtension\Extension` extension file or class could not be located.
 
 Creating a new project
 ----------------------------
@@ -84,23 +84,26 @@ Suites And Tags
 
 When writing your tests please include the following tags where appropriate.
 
-### @live
+#### @live @safe
 Safe for production or live site tests. These tests may not create any content, change any settings, or leave any trace that it has run.
 
-### @dev
+#### @dev @destructive
 Only for development tests. This scenario may change configuration or leave lasting items/content/config on the site it is running on. Not safe for production.
 
-### @deploy
+#### @deploy
 For tests specific to a freshly deployed website. These tests may not be destructive and should be similar to the @live tag.
 
-### @content
+#### @content
 For tests that create content.
 
-### @contrib
+#### @contrib
 For anything that is testing a contributed module.
 
-### @stanford
+#### @stanford
 For anything that is testing a stanford module.
 
-### @site
+#### @site
 For site specific tests. E.g., testing art.stanford.edu.
+
+### Running suites and profiles
+You can run a suite and a profile at the same time. eg: `behat --profile local --suite live`
