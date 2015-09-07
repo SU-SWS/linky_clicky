@@ -1,10 +1,10 @@
+@contirb
 Feature: Advanced Help
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Advanced Help module is working properly
 
-#  @api @javascript
-@api
+  @api @safe @deploy
   Scenario: Advanced Help
     Given the "advanced_help" module is enabled
     And I am logged in as a user with the "administrator" role

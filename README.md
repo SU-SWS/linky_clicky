@@ -117,6 +117,7 @@ The following suites are available to run:
 * deploy
 * content
 * contrib
+* contrib-dev
 * stanford
 
 ## Running suites and profiles

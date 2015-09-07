@@ -1,9 +1,10 @@
+@contrib
 Feature: Site Verification
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Site Verification module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Site Verification
     Given the "site_verify" module is enabled
     And the cache has been cleared

@@ -1,9 +1,10 @@
+@contrib
 Feature: OpenLayers
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the OpenLayers module is working properly
 
-  @api
+  @api @deploy @safe
   Scenario: OpenLayers
     Given the "openlayers_ui" module is enabled
     And the cache has been cleared

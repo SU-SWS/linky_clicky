@@ -1,9 +1,10 @@
+@contrib
 Feature: WYSIWYG
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the WYSIWYG module is working properly
 
-  @api @javascript @live
+  @api @javascript @dev @content @destructive
   Scenario: WYSIWYG
     Given the "wysiwyg" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -16,7 +17,7 @@ Feature: WYSIWYG
     And I press the "Save" button
     Then I should see "Basic page Test has been created"
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: WYSIWYG Do Not Add Blank HTML to Empty Text Areas
     Given the "wysiwyg" module is enabled
     And I am logged in as a user with the "administrator" role

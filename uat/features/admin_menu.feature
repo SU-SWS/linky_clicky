@@ -1,9 +1,10 @@
+@contrib
 Feature: Administration Menu
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Administration Menu module is working properly
 
-  @api @javascript
+  @api @javascript @deploy @safe
   Scenario: Administration Menu General
     Given the "admin_menu" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -23,7 +24,7 @@ Feature: Administration Menu
     And the "Account links" checkbox should be checked
     And the "Shortcuts" checkbox should not be checked
 
-  @api @javascript
+  @api @javascript @deploy @safe
   Scenario: Administration Menu Hover
     Given the "admin_menu" module is enabled
     And I am logged in as a user with the "administrator" role

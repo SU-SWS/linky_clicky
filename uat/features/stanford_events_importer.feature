@@ -1,3 +1,4 @@
+@stanford
 Feature: Stanford Events Importer
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
@@ -6,7 +7,7 @@ Feature: Stanford Events Importer
   Background:
     Given the "stanford_events_importer" module is enabled
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Stanford Events Importer
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-event-importer"

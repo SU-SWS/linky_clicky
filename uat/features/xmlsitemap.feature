@@ -1,9 +1,10 @@
+@contrib
 Feature: XML Sitemap
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the XML Sitemap module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: XML Sitemap
     Given the "xmlsitemap_menu" module is enabled
     And I am logged in as a user with the "administrator" role

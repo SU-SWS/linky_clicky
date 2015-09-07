@@ -1,12 +1,14 @@
+@contrib
 Feature: Email
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Email module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Email
     Given the "email" module is enabled
     And I am logged in as a user with the "administrator" role
+    # This may have to change as basic page and article are going away.
     And I am on "admin/structure/types/manage/page/fields"
     When I enter "[random]" for "New field label"
     And I select "Email" from "edit-fields-add-new-field-type"

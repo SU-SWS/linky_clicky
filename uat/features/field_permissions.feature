@@ -1,17 +1,20 @@
+@contrib
 Feature: Field Permissions
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Field Permissions module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive @content
   Scenario: Field Permissions
     Given the "field_permissions" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
+    # This may have to change as article and basic page are being removed from our products.
     And I am on "admin/structure/types/manage/article/fields/body"
     And I select the radio button "Private (only author and administrators can edit and view)"
     And I press the "Save settings" button
     Then I should see "Saved Body configuration"
+    # This may have to change as article and basic page are being removed from our products.
     When I go to "node/add/article"
     And I enter "Field Permissions Test" for "Title"
     And I select "Plain text" from "Text format"

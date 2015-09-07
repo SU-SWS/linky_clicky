@@ -1,9 +1,10 @@
+@contrib
 Feature: Display Suite
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Display Suite module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Display Suite
     Given the "ds" module is enabled
     And the "ds_ui" module is enabled

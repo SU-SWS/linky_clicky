@@ -1,11 +1,12 @@
+@contrib
 Feature: Feeds JSONPath Parser
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Feeds JSONPath Parser module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Feeds JSONPath Parser
-    Given the cache has been cleared 
+    Given the cache has been cleared
     And the "feeds_jsonpath_parser" module is enabled
     And the "feeds_ui" module is enabled
     And the cache has been cleared

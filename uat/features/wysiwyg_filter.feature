@@ -1,9 +1,10 @@
+@contrib
 Feature: WYSIWYG Filter
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the WYSIWYG Filter module is working properly
 
-  @api @javascript @live
+  @api @javascript @dev @destructive
   Scenario: WYSIWYG Filter
     Given the "wysiwyg_filter" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -17,7 +18,7 @@ Feature: WYSIWYG Filter
     And I press the "Save configuration" button
     Then I should see "The text format Filtered HTML has been updated."
 
-  @api @javascript @live
+  @api @javascript @dev @destructive
   Scenario: WYSIWYG Filter Do Not Run Form Validation for Disabled Filters
     Given the "wysiwyg_filter" module is enabled
     And I am logged in as a user with the "administrator" role

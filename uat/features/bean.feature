@@ -1,9 +1,10 @@
+@contrib
 Feature: BEAN (Block Entities Aren't Nodes)
   In order to ensure that upgrades do not break existing functionality
   As an end user
   I want to check that the BEAN module is working correctly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: BEAN
     Given I am logged in as a user with the "administrator" role
     And the "bean" module is enabled

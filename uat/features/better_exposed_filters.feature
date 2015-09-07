@@ -1,9 +1,10 @@
+@contrib
 Feature: Better Exposed Filters
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Better Exposed Filters module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: Show Format Tips
     Given the "better_exposed_filters" module is enabled
       # should do this with permissions, rather than a role, but drush is failing on assertLoggedInWithPermissions()

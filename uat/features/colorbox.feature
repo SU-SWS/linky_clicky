@@ -1,9 +1,10 @@
+@contrib
 Feature: Colorbox
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Colorbox module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: Colorbox configuration page
     Given the "colorbox" module is enabled
     And the cache has been cleared
@@ -13,13 +14,14 @@ Feature: Colorbox
     And I should see "Extra features"
     And I should see "Styles and options"
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Colorbox Views plugin
     Given the "colorbox" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views/add"
     And I enter "Test Colorbox View" for "View name"
+    # This may have to change as we are removing article from our products.
     And I select "Article" from "of type"
     # Have to wait here because Views AJAX shuffles the DOM and otherwise we lose stuffs.
     And I wait 3 seconds

@@ -1,6 +1,8 @@
 default:
   suites:
     default:
+      filters:
+        tags: "~dev,~destructive"
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -14,7 +16,7 @@ default:
     # Tests that are safe for production and live sites.
     live:
       filters:
-        tags: 'live,safe,prod'
+        tags: 'live,safe,prod,~content'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -28,7 +30,7 @@ default:
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
-        tags: '~contrib'
+        tags: 'dev,~contrib'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -42,7 +44,7 @@ default:
     # A freshly deployed site/product that needs to be confirmed
     deploy:
       filters:
-        tags: '~dev,~destructive,~content,~site'
+        tags: 'deploy,~dev,~destructive,~content,~site'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -81,8 +83,22 @@ default:
         - SWSFeatureContext
         - SWSMinkContext
         - SWSDrupalContext
-    # Only contrib module tests.
+    # Only contrib module tests that are safe.
     contrib:
+      filters:
+        tags: 'contrib,~dev,~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+        # Any contrib module even if it is destructive.
+    contrib-dev:
       filters:
         tags: 'contrib'
       contexts:
@@ -95,10 +111,10 @@ default:
         - SWSFeatureContext
         - SWSMinkContext
         - SWSDrupalContext
-    # Only contrib module tests.
+    # Only stanford module tests.
     stanford:
       filters:
-        tags: 'stanford'
+        tags: 'stanford,~dev,~destructive'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext

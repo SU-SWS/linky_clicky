@@ -1,9 +1,10 @@
+@contrib
 Feature: Transliteration
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Transliteration module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Transliteration
     Given the "transliteration" module is enabled
     And the cache has been cleared

@@ -1,9 +1,10 @@
+@contrib
 Feature: Views Slideshow
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Views Slideshow module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Views Slideshow
     Given the "views_slideshow" module is enabled
     And the "views_slideshow_cycle" module is enabled

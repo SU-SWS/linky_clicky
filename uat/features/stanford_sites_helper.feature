@@ -1,9 +1,10 @@
+@stanford
 Feature: Stanford Sites Helper Module
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Stanford Sites Helper module is working properly
 
-  @live
+  @safe @deploy
   Scenario Outline: Homepage text content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -18,7 +19,7 @@ Feature: Stanford Sites Helper Module
     | Add functionality and features                                                   | Content Body    |
     | Edit the look and feel of your site                                              | Content Body    |
 
-  @live
+  @safe @deploy
   Scenario Outline: Homepage header content
     Given I am on the homepage
     Then I should see the heading "<Header>" in the "<Region>" region
@@ -30,7 +31,7 @@ Feature: Stanford Sites Helper Module
     | More advanced tasks:                   | Content Body  |
     | Going further:                         | Content Body  |
 
-  @api @live
+  @api @safe @deploy
   Scenario: Search box - authenticated user
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
@@ -44,7 +45,7 @@ Feature: Stanford Sites Helper Module
     And I should see "will match less than stanford university."
     And I should see "Consider loosening your query with OR: stanford university will match less than stanford OR university."
 
-  @api @javascript @live
+  @api @javascript @safe @deploy
   Scenario Outline: Quick Steps
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
@@ -64,7 +65,7 @@ Feature: Stanford Sites Helper Module
     | Add functionality and features          | Want to add a contact form to your site? Looking to do more with your site?        | Visit Your Modules           | admin/modules                                                           |
     | Edit the look and feel of your site     | Your site comes pre-packaged with the Stanford Light theme.                        | Edit Your Theme Settings     | admin/appearance/settings                                               |
 
-  @api @live
+  @api @safe @deploy
   Scenario Outline: Going Further
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
@@ -78,7 +79,7 @@ Feature: Stanford Sites Helper Module
     | Edit permissions       | admin/people/permissions       |
     | Create a new View      | admin/structure/views/add      |
 
-  @api @live @sites
+  @api @safe @sites @deploy
   Scenario: Link to HelpSU for administrative users
     Given I am logged in as a user with the "administrator" role
     And I am on "admin"
@@ -87,7 +88,7 @@ Feature: Stanford Sites Helper Module
     When I click "HelpSU request"
     Then I should be on "https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=sites"
 
-  @api @live
+  @api @safe @deploy
   Scenario: Stanford Sites Backup and Migrate profile
     Given I am logged in as a user with the "administrator" role
     And the "backup_migrate" module is enabled
@@ -97,7 +98,7 @@ Feature: Stanford Sites Helper Module
     When I go to "admin/config/system/backup_migrate/settings/profile"
     Then I should see "Stanford Sites Profile" in the "Content" region
 
-  @api @live @sites
+  @api @safe @sites @deploy
   Scenario: AFS file storage checking
     Given I am logged in as a user with the "administrator" role
     And the "stanford_afs_quota" module is enabled

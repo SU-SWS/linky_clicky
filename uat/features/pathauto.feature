@@ -1,9 +1,10 @@
+@contrib
 Feature: Pathauto
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Pathauto module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Pathautho
     # Enable entity_tokens to see if we can trigger the pathauto bug
     Given the "entity_token" module is enabled
@@ -11,6 +12,7 @@ Feature: Pathauto
     And the "pathauto" module is enabled
     And I am logged in as a user with the "administrator" role
     When I go to "admin/config/search/path/patterns"
+    # This may have to change as our products are removing article and basic_page content types.
     And I enter "articles/[node:title]" for "Pattern for all Article paths"
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved"

@@ -1,9 +1,10 @@
+@contrib
 Feature: Date iCal
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Date iCal module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: Date iCal README
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -11,7 +12,7 @@ Feature: Date iCal
     And I am on "help/date_ical/README.txt"
     Then I should see "This module allows users to create iCal feeds in Views, and import iCal feeds from other sites using the Feeds module"
 
-  @api
+  @api @safe @deploy
   Scenario: Date iCal README
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -19,7 +20,7 @@ Feature: Date iCal
     Then I should see "iCalcreator library is installed"
     And I should not see "iCalcreator library could not be found"
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Date iCal Node Display
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -29,7 +30,7 @@ Feature: Date iCal
     And I press the "Save" button
     Then I should see "Your settings have been saved."
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Date iCal Views Display
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role

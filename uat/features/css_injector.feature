@@ -1,9 +1,10 @@
+@contrib
 Feature: CSS Injector
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the CSS Injector module is working properly
 
-  @api
+  @api @content @dev @destructive
   Scenario: CSS Injector
     Given the "css_injector" module is enabled
     And the cache has been cleared

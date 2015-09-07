@@ -1,9 +1,10 @@
+@contrib
 Feature: Universally Unique ID
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Universally Unique ID module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: Universally Unique ID
     Given the "uuid" module is enabled
     And the cache has been cleared

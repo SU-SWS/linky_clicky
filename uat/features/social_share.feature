@@ -1,9 +1,10 @@
+@contrib
 Feature: Social Share
   In order to ensure that upgrades do not break existing functionality
   As an end user
   I want to check that the Social Share module is working correctly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Social Share
     Given the "social_share" module is enabled
     And I am logged in as a user with the "administrator" role

@@ -1,9 +1,10 @@
+@contrib
 Feature: Relation
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Relation module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Relation
     Given the "relation_ui" module is enabled
     And the cache has been cleared

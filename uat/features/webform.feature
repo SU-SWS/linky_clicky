@@ -1,10 +1,10 @@
+@contrib
 Feature: Webform
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Webform module is working properly
 
-
-  @api
+  @api @content @dev @destructive
   Scenario: Webform
     Given the "webform" module is enabled
     And the cache has been cleared

@@ -1,9 +1,10 @@
+@contrib
 Feature: External Repository Update Status
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the External Repository Update Status module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: External Repository Update Status
     Given the "erus" module is enabled
     And the cache has been cleared
@@ -22,7 +23,7 @@ Feature: External Repository Update Status
     And I click "Stanford WYSIWYG"
     Then I should be on "https://github.com/SU-SWS/stanford_wysiwyg"
 
-  @api
+  @api @safe @deploy
   Scenario: End users should not be able to enable ERUS
     Given the "erus" module is disabled
     And I am logged in as a user with the "administrator" role
