@@ -5,7 +5,7 @@ Feature: Homepage carousel Javascript
 
 # The carousel is random, so there's no good way to assert what text will be present
 # This test should be observed visually
-@javascript
+@javascript @safe @live @site
 Scenario: Homepage carousel
  Given I am on the homepage
   When I press the "Next Slide" button

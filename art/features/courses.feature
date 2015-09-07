@@ -3,12 +3,14 @@ Feature: Courses
  As an end user
  I want to check for the existence of courses content
 
+@safe @live @site
 Scenario: Searching courses by academic year
  Given I am on "courses"
  When I select "2014-2015" from "Academic year"
  And I press "Go"
  Then I should see "2014-2015 Autumn" in the "Content Body" region
 
+@safe @live @site
 Scenario: Finding a specific course and seeing it has multiple sections
  Given I am on "courses"
  When I fill in "Search by keyword or instructor" with "visual arts"

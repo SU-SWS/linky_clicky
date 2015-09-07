@@ -3,7 +3,7 @@ Feature: Content
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @safe @live @site
+  @safe @live @site
   Scenario Outline: Homepage block and footer content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region

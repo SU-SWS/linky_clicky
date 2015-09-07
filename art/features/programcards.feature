@@ -3,11 +3,12 @@ Feature: Program cards
  As an end user
  I want to interact with dynamic Program Cards on the homepage
 
+@safe @live @site
 Scenario: Homepage program cards content
  Given I am on the homepage
  Then I should see "Art History is a discipline that strives to understand works of art" in the "Content Body" region
 
-@javascript
+@safe @live @site @javascript
 Scenario: Homepage program cards
  Given I am on the homepage
  When I click "Design" in the "Content Body" region

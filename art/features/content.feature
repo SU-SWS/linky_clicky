@@ -3,6 +3,7 @@ Feature: Content
   As an end user
   I want to check for the existence of content that should appear
 
+  @safe @live @site
   Scenario Outline: Homepage block and footer content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -19,14 +20,17 @@ Feature: Content
       | Information For            | Footer                |
       | Art & Architecture Library | Footer                |
 
+  @safe @live @site
   Scenario: About the Department page content
     Given I am on "about/department-overview"
     Then I should see "Degrees Offered" in the "Content Body" region
 
+  @safe @live @site
   Scenario: Contact and Location page content
     Given I am on "about/contact-location"
     Then I should see "Mailing Address" in the "Content Body" region
 
+  @safe @live @site
   Scenario: PhD Art History page content
     Given I am on "academics/graduate-programs/phd-art-history"
     Then I should see "The doctoral program in the History of Art" in the "Content Body" region
