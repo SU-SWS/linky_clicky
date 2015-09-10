@@ -3,7 +3,8 @@ default:
     Behat\MinkExtension:
       goutte: ~
       javascript_session: selenium2
-      browser_name: ~
-      selenium2: ~
+      browser_name: firefox
+      selenium2:
+        browser: firefox
       base_url: http://sites.stanford.edu/example
       files_path: "."

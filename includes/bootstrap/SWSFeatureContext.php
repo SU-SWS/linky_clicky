@@ -277,17 +277,30 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    *
    * @When /^I click on the element with css selector "([^"]*)"$/
    */
-  public function iClickOnTheElementWithCSSSelector($cssSelector) {
+  public function iClickOnTheElementWithCSSSelector($css) {
     $mink = $this->minkContext;
     $session = $mink->getSession();
-    $element = $session->getPage()->find(
-        'xpath',
-        $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector) // just changed xpath to css
-    );
-    if (null === $element) {
-        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+    $element = $session->getPage()->find('css', $css);
+
+    if (NULL === $element) {
+      throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $css));
     }
     $element->click();
+  }
+
+    /**
+     * Click on the element with the provided CSS Selector
+     *
+     * @When /^I click on the element with css selector "([^"]*)" with javascript$/
+     */
+  public function iClickOnTheElementWithCSSSelectorWithJavascript($css) {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    $driver = $session->getDriver();
+
+    $driver->evaluateScript(
+    "jQuery('" . $css . "').click()"
+    );
   }
 
   /**
@@ -295,19 +308,13 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    *
    * @When /^I press the element with css selector "([^"]*)"$/
    */
-  public function iPressTheElementWithCSSSelector($cssSelector) {
+  public function iPressTheElementWithCSSSelector($css) {
     $mink = $this->minkContext;
     $session = $mink->getSession();
-    $xpath = $session->getSelectorsHandler()->selectorToXpath('css', $cssSelector);
-    $element = $session->getPage()->find(
-        'xpath',
-        $xpath
-    );
-
-    if (null === $element) {
-        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $cssSelector));
+    $element = $session->getPage()->findAll('css', $css);
+    if (NULL === $element) {
+      throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $css));
     }
-
     $element->press();
   }
 

@@ -3,7 +3,7 @@ Feature: Stanford BEAN Types
   As an end user
   I want to check that the Stanford BEAN Types module is working correctly
 
-  @api
+  @api @safe @live @deploy
   Scenario: Stanford BEAN Types
     Given I am logged in as a user with the "administrator" role
     And I am on "block/add"
@@ -12,3 +12,7 @@ Feature: Stanford BEAN Types
     And I should see the link "stanford_large_block" in the "Content Body" region
     And I should see the link "stanford_postcard" in the "Content Body" region
     And I should see the link "stanford_social_media_connect" in the "Content Body" region
+    And I should see the link "stanford_big_text_block" in the "Content Body" region
+    And I should see the link "stanford_testimonial_block" in the "Content Body" region
+
+
