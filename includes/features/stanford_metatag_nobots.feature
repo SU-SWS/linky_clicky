@@ -4,7 +4,7 @@ Feature: Stanford MetaTag NoBots
   As an administrative user
   I want to ensure that the Stanford MetaTag NoBots module is working properly
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: Stanford MetaTag NoBots
     Given the "stanford_metatag_nobots" module is enabled
     And the cache has been cleared
