@@ -53,6 +53,8 @@ The `SWSDrupalContext.php` file is the DrupalExtention DrupalContext override fi
 
 The `SWSMinkContext.php` file is the DrupalExtension MinkContext override file that contains an extra function.
 
+There are a number of starter or common feature tests you can use in your new project at `includes/features`. Simply copy these into your new projects features folder and start editing them to fit your new site or product.
+
 Formatters
 ----------------------------
 
