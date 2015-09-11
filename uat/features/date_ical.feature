@@ -4,7 +4,7 @@ Feature: Date iCal
   As an administrative user
   I want to ensure that the Date iCal module is working properly
 
-  @api @safe @deploy
+  @api @dev @destructive
   Scenario: Date iCal README
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -12,7 +12,7 @@ Feature: Date iCal
     And I am on "help/date_ical/README.txt"
     Then I should see "This module allows users to create iCal feeds in Views, and import iCal feeds from other sites using the Feeds module"
 
-  @api @safe @deploy
+  @api @dev @destructive
   Scenario: Date iCal README
     Given the "date_ical" module is enabled
     And I am logged in as a user with the "administrator" role

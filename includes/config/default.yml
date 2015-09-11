@@ -30,7 +30,7 @@ default:
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
-        tags: 'dev,~contrib'
+        tags: '~contrib'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext

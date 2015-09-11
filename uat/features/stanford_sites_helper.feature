@@ -88,7 +88,7 @@ Feature: Stanford Sites Helper Module
     When I click "HelpSU request"
     Then I should be on "https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=sites"
 
-  @api @safe @deploy
+  @api @dev @sites @destructive
   Scenario: Stanford Sites Backup and Migrate profile
     Given I am logged in as a user with the "administrator" role
     And the "backup_migrate" module is enabled

@@ -4,7 +4,7 @@ Feature: Universally Unique ID
   As an administrative user
   I want to ensure the Universally Unique ID module is working properly
 
-  @api @safe @deploy
+  @api @dev @destructive
   Scenario: Universally Unique ID
     Given the "uuid" module is enabled
     And the cache has been cleared

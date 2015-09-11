@@ -4,7 +4,7 @@ Feature: Colorbox
   As an administrative user
   I want to ensure that the Colorbox module is working properly
 
-  @api @safe @deploy
+  @api @dev @destructive
   Scenario: Colorbox configuration page
     Given the "colorbox" module is enabled
     And the cache has been cleared

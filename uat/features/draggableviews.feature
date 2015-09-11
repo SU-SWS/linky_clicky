@@ -4,7 +4,7 @@ Feature: Draggable Views
   As an administrative user
   I want to ensure that the Draggable Views module is working properly
 
-  @api @safe @deploy
+  @api @dev @destructive
   Scenario: Draggable Views README
     Given the "draggableviews" module is enabled
     And I am logged in as a user with the "administrator" role

@@ -4,7 +4,7 @@ Feature: Stanford BEAN Types
   As an end user
   I want to check that the Stanford BEAN Types module is working correctly
 
-  @api @safe @deploy
+  @api @dev @destructive
   Scenario: Stanford BEAN Types
     Given the "stanford_bean_types" module is enabled
     And the "stanford_bean_types_permissions" module is enabled

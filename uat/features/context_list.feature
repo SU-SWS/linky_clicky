@@ -4,7 +4,7 @@ Feature: Context List
   As an administrative user
   I want to ensure the Context List module is working properly
 
-  @api @deploy @safe
+  @api @dev @destructive
   Scenario: Context List
     Given the "context_list" module is enabled
     And the "context_ui" module is enabled

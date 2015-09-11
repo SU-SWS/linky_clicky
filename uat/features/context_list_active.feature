@@ -4,7 +4,7 @@ Feature: Context List Active
   As an administrative user
   I want to ensure the Context List Active module is working properly
 
-  @api @javascript @deploy @safe
+  @api @javascript @dev @destructive
   Scenario: Context List Active
     Given the "context_list_active" module is enabled
     And the "context_ui" module is enabled
