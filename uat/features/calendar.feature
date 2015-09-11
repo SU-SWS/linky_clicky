@@ -1,9 +1,10 @@
+@contrib
 Feature: Calendar
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Calendar module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Calendar
     Given the "calendar" module is enabled
     And the cache has been cleared

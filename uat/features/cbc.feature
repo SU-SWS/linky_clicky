@@ -1,9 +1,10 @@
+@contrib
 Feature: Contextual Block Class
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Contextual Block Class module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Contextual Block Class
     Given the "cbc" module is enabled
     And the "context_ui" module is enabled

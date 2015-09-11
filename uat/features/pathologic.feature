@@ -1,9 +1,10 @@
+@contrib
 Feature: Pathologic
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Pathologic module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Pathologic
     Given the "pathologic" module is enabled
     And the cache has been cleared

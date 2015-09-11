@@ -1,9 +1,10 @@
+@contrib
 Feature: Context List
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Context List module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Context List
     Given the "context_list" module is enabled
     And the "context_ui" module is enabled

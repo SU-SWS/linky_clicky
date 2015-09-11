@@ -89,7 +89,7 @@ Suites And Tags
 When writing your tests please include the following tags where appropriate. These help create sets of tests that can be run on different environments with different contexts. For example, when running tests on a live site we don't want to change configuration and should tag our tests to indicate wether or not it changes config.
 
 #### @live @safe @prod
-Safe for production or live site tests. These tests may not create any content, change any settings, or leave any trace that it has run.
+Safe for production or live site tests. These tests may not create any content, change any settings, or leave any trace that it has run. **Note**: some Scenarios tagged as `@safe` clear the cache. We have labeled clearing the cache as a "safe" operation.
 
 #### @dev @destructive
 Only for development tests. This scenario may change configuration or leave lasting items/content/config on the site it is running on. Not safe for production.
@@ -119,6 +119,7 @@ The following suites are available to run:
 * deploy
 * content
 * contrib
+* contrib-dev
 * stanford
 
 ## Running suites and profiles

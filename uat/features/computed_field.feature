@@ -1,9 +1,10 @@
+@contrib
 Feature: Computed Field
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Computed Field module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Computed Field
     Given the "computed_field" module is enabled
     And I am logged in as a user with the "administrator" role

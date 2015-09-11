@@ -1,9 +1,10 @@
+@contrib
 Feature: Services
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Services module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Services
     Given the "services" module is enabled
     And the "rest_server" module is enabled

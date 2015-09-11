@@ -1,10 +1,11 @@
+@stanford
 Feature: Stanford Date Formats
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Stanford Date Formats module is working properly
 
 
-  @api
+  @api @safe @deploy
   Scenario: Stanford Date Formats
     Given the "stanford_date_formats" module is enabled
     And the cache has been cleared

@@ -1,9 +1,10 @@
+@contrib @stanford
 Feature: Features
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Features module is working properly
 
-  @api @javascript @live
+  @api @javascript @safe @deploy
   Scenario: Features
     Given the "features" module is enabled
     And I am logged in as a user with the "administrator" role

@@ -1,9 +1,10 @@
+@contrib
 Feature: Context HTTP Header
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Context HTTP Header module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Create Context HTTP Header
     Given the "context_http_header" module is enabled
     And the "context_ui" module is enabled

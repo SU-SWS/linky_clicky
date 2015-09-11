@@ -1,9 +1,10 @@
+@stanford
 Feature: Stanford BEAN Types
   In order to ensure that upgrades do not break existing functionality
   As an end user
   I want to check that the Stanford BEAN Types module is working correctly
 
-  @api
+  @api @dev @destructive
   Scenario: Stanford BEAN Types
     Given the "stanford_bean_types" module is enabled
     And the "stanford_bean_types_permissions" module is enabled

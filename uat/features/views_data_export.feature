@@ -1,9 +1,10 @@
+@contrib
 Feature: Views Data Export
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Views Data Export module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Views Data Export
     Given the "views_data_export" module is enabled
     And the "admin_views" module is enabled

@@ -1,10 +1,11 @@
+@contrib
 Feature: Backup and Migrate
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Backup and Migrate module is working properly
 
 # fails on API only for some reason; must use @javascript
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Backup and Migrate
     Given the "backup_migrate" module is enabled
     And I am logged in as a user with the "administrator" role

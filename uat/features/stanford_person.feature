@@ -1,9 +1,10 @@
+@stanford
 Feature: Stanford Person
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Stanford Person module is working properly
 
-  @api @javascript
+  @api @javascript @content @destructive @dev
   Scenario: Stanford Person
     Given the "stanford_person" module is enabled
     And the "entity_token" module is enabled

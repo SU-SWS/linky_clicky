@@ -1,9 +1,10 @@
+@contrib
 Feature: Google Analytics
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Google Analytics module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Google Analytics Configure
     Given the "googleanalytics" module is enabled
     And the cache has been cleared

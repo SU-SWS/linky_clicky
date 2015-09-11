@@ -1,9 +1,10 @@
+@stanford
 Feature: Stanford Image
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Stanford Image module is working properly
 
-  @api @javascript
+  @api @javascript @safe @deploy
   Scenario: Stanford Image
     Given the "stanford_image" module is enabled
     And the "stanford_page" module is enabled

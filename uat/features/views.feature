@@ -1,9 +1,10 @@
+@contrib
 Feature: Views
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Views module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Views
     Given the "views" module is enabled
     And the "views_ui" module is enabled

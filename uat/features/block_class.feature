@@ -1,9 +1,10 @@
+@contrib
 Feature: Block Class
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Block Class module is working properly
 
-  @api
+  @api @content @dev @destructive
   Scenario: Block Class
     Given the "block_class" module is enabled
     And I am logged in as a user with the "administrator" role

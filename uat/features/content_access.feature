@@ -1,9 +1,10 @@
+@contrib
 Feature: Content Access
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Content Access module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Content Access
     Given the "content_access" module is enabled
     And the cache has been cleared

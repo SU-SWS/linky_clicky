@@ -1,9 +1,10 @@
+@contrib
 Feature: Node Clone
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Node Clone module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Node Clone
     Given I am logged in as a user with the "administrator" role
     And the "clone" module is enabled

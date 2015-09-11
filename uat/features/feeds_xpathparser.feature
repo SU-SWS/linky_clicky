@@ -1,9 +1,10 @@
+@contrib
 Feature: Feeds XPath Parser
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Feeds XPath Parser module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Feeds XPath Parser
     Given the cache has been cleared
     And the "feeds_xpathparser" module is enabled

@@ -1,9 +1,10 @@
+@contrib
 Feature: Redirect
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Redirect module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Add a redirect
     Given the "redirect" module is enabled
     And the cache has been cleared
@@ -21,7 +22,7 @@ Feature: Redirect
     Then I should see "The redirect has been deleted"
 
   # See https://www.drupal.org/node/1796596.
-  @api
+  @api @dev @destructive
   Scenario: Redirect a redirect
     Given the "redirect" module is enabled
     And the "pathauto" module is enabled

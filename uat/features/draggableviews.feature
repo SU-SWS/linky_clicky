@@ -1,16 +1,17 @@
+@contrib
 Feature: Draggable Views
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Draggable Views module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Draggable Views README
     Given the "draggableviews" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "help/draggableviews/README.txt"
     Then I should see "This module provides dragging entities and saving their order."
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Draggable Views
     Given the "draggableviews" module is enabled
     And I am logged in as a user with the "administrator" role

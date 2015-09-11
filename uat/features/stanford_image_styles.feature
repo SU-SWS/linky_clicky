@@ -1,9 +1,10 @@
+@stanford
 Feature: Stanford Image Styles
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Stanford Image Styles module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: Stanford Image Styles
     Given the "stanford_image_styles" module is enabled
     And the cache has been cleared

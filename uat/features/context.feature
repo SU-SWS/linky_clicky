@@ -1,9 +1,10 @@
+@contrib
 Feature: Context
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Context module is working properly
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Context
     Given the "context_ui" module is enabled
     And the cache has been cleared

@@ -1,3 +1,4 @@
+@stanford
 Feature: Stanford Courses
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
@@ -6,7 +7,7 @@ Feature: Stanford Courses
   Background:
     Given the "stanford_courses" module is enabled
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Stanford Courses
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared

@@ -1,9 +1,10 @@
+@contrib
 Feature: File Field Paths
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the File Field Paths module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive @content
   Scenario: File Field Paths
     Given the "filefield_paths" module is enabled
     And the cache has been cleared

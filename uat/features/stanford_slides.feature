@@ -1,3 +1,4 @@
+@stanford
 Feature: Stanford Slides
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
@@ -6,7 +7,7 @@ Feature: Stanford Slides
   Background:
     Given the "stanford_slides" module is enabled
 
-  @api @javascript
+  @api @javascript @content @dev @destructive
   Scenario: Stanford Slides
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-slide"

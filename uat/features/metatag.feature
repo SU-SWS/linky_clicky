@@ -1,9 +1,10 @@
+@contrib
 Feature: Metatag
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Metatag module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Metatag
     Given the "metatag" module is enabled
     And the cache has been cleared

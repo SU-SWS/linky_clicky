@@ -1,9 +1,10 @@
+@contrib
 Feature: Mollom
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Mollom module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Mollom protect user password form
     Given the "mollom" module is enabled
     And the cache has been cleared
@@ -15,6 +16,7 @@ Feature: Mollom
     Then I should see "The form protection has been added"
 
 # This will fail until we figure out a way to pass private key
+  @api @dev @destructive
   Scenario: Mollom check user password form CAPTCHA
     Given I am an anonymous user
     When I am on "user/password"

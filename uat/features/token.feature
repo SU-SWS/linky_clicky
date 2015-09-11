@@ -1,9 +1,10 @@
+@contrib
 Feature: Token
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Token module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Token
     Given the "token" module is enabled
     And the "pathauto" module is enabled

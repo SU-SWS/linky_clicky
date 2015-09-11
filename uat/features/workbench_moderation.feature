@@ -1,9 +1,10 @@
+@contrib
 Feature: Workbench Moderation
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Workbench Moderation module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Workbench Moderation
     Given the "workbench_moderation" module is enabled
     And I am logged in as a user with the "administrator" role

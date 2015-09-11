@@ -1,9 +1,10 @@
+@contrib
 Feature: Feeds Tamper
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Feeds Tamper module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Feeds Tamper
     Given the "feeds_tamper_ui" module is enabled
     And the cache has been cleared

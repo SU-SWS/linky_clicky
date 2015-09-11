@@ -1,9 +1,10 @@
+@contrib
 Feature: Views Datasource
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Views Datasource module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Views JSON
     Given the "views_json" module is enabled
     And the "admin_views" module is enabled
@@ -20,7 +21,7 @@ Feature: Views Datasource
     And I press the "Revert" button
     Then I should see "The view has been reverted"
 
-  @api
+  @api @dev @destructive
   Scenario: Views RDF
     Given the "views_rdf" module is enabled
     And the "admin_views" module is enabled
@@ -37,7 +38,7 @@ Feature: Views Datasource
     And I press the "Revert" button
     Then I should see "The view has been reverted"
 
-  @api
+  @api @dev @destructive
   Scenario: Views XHTML
     Given the "views_xhtml" module is enabled
     And the "admin_views" module is enabled
@@ -55,7 +56,7 @@ Feature: Views Datasource
     And I press the "Revert" button
     Then I should see "The view has been reverted"
 
-  @api
+  @api @dev @destructive
   Scenario: Views XML
     Given the "views_xml" module is enabled
     And the "admin_views" module is enabled

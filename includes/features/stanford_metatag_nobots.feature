@@ -1,9 +1,10 @@
+@stanford
 Feature: Stanford MetaTag NoBots
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Stanford MetaTag NoBots module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Stanford MetaTag NoBots
     Given the "stanford_metatag_nobots" module is enabled
     And the cache has been cleared

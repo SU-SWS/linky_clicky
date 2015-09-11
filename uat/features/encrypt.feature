@@ -1,9 +1,10 @@
+@contrib
 Feature: Encrypt
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Encrypt module is working properly
 
-  @api
+  @api @dev @destructive
   Scenario: Encrypt
     Given the "encrypt" module is enabled
     And the cache has been cleared

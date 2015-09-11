@@ -1,9 +1,10 @@
+@contrib
 Feature: Entity API
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Entity API module is working properly
 
-  @api
+  @api @safe @deploy
   Scenario: Entity API
     Given the "entity" module is enabled
     And I am logged in as a user with the "administrator" role

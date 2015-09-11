@@ -1,9 +1,10 @@
+@contrib
 Feature: Rules
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Rules module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Rules
     Given the "rules_admin" module is enabled
     And the cache has been cleared
