@@ -1,4 +1,4 @@
-@contirb
+@contrib
 Feature: Advanced Help
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
