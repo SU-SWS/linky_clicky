@@ -4,7 +4,7 @@ Feature: External Repository Update Status
   As an administrative user
   I want to ensure the External Repository Update Status module is working properly
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: External Repository Update Status
     Given the "erus" module is enabled
     And the cache has been cleared
