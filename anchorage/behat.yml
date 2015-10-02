@@ -9,7 +9,7 @@ default:
     features: 'features'
   extensions:
     Behat\MinkExtension\Extension:
-      base_url: https://vpge.stanford.edu/
+      base_url: https://siw.anchorage.stanford.edu
     Drupal\DrupalExtension\Extension:
       drush:
-        alias: sse.ds_vpge
+        alias: anc.siw

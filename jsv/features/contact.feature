@@ -3,6 +3,7 @@ Feature: Contact
   As an end user
   I want to check for the existence of page and block content
 
+  @content @live
   Scenario: Viewing information on the Contact page
     Given I am on "about/contact"
     # See the Accessibility contnent

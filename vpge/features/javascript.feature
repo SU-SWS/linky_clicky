@@ -6,13 +6,16 @@ Feature: Javascript
 @javascript
 Scenario: Homepage carousel
   Given I am on the homepage
-  Then I should see "Spring Offerings" in the "Content Body" region
+  Then I should see "Mixing it up with SIGF" in the "Content Body" region
   When I press "Next Slide" in the "Content Body" region
   And I wait 3 seconds
-  Then I should see "DARE Doctoral Fellowship" in the "Content Body" region
+  Then I should see "SPICE'ing up graduate education" in the "Content Body" region
+  When I press "Next Slide" in the "Content Body" region
+  And I wait 3 seconds
+  Then I should see "Explore, experience, and expand with SGSI" in the "Content Body" region
   When I press "Next Slide" in the "Content Body" region
   And I wait 3 seconds
   Then I should see "Fellowship questions?" in the "Content Body" region
   When I press "Previous Slide" in the "Content Body" region
   And I wait 3 seconds
-  Then I should see "DARE Doctoral Fellowship" in the "Content Body" region
+  Then I should see "Explore, experience, and expand with SGSI" in the "Content Body" region

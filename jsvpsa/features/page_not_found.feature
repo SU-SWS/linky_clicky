@@ -3,7 +3,7 @@ Feature: Page not Found - 404
   As an end user
   I want to check for the existence of the page
 
-  @javascript @content @live
+  @javascript
   Scenario: Check content of the custom 404 page
     Given I am on "purple-monkey-dishwasher"
     Then I should see "Oops" in the "Content Body" region

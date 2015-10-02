@@ -3,6 +3,7 @@ Feature: News
   As an end user
   I want to check for the existence of the page
 
+  @content @live
   Scenario: Check the content of the News page
     Given I am on "news"
     Then I should see the heading "Sample News" in the "Content Body" region

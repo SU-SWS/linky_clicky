@@ -3,6 +3,7 @@ Feature: Stanford Drupal Install Profile
   As an administrative user
   I want to ensure the Stanford Sites installation profile is working properly
 
+  @webauth
   Scenario Outline: Text content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -12,6 +13,7 @@ Feature: Stanford Drupal Install Profile
     | Home                                                                             | Main Navigation |
     | Log in with WebAuth                                                              | First sidebar   |
 
+  @webauth
   Scenario Outline: Header content
     Given I am on the homepage
     Then I should see the heading "<Header>" in the "<Region>" region
