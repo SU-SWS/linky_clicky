@@ -25,7 +25,7 @@ Feature: Mayfield Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @jsv
+  @api @javascript @jsv
   Scenario: Change homepage to mayfield static
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"

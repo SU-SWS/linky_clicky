@@ -31,7 +31,7 @@ Feature: Serra Homepage Layout
     Given I am on the homepage
     Then I should see a ".infotext" element in the "Main Top" region
 
-  @api @jsv
+  @api @javascript @jsv
   Scenario: Enable the Serra homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
