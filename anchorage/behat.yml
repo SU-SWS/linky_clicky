@@ -1,0 +1,15 @@
+imports:
+  - ../includes/extensions/drupal.extension.yml
+  - ../includes/extensions/mink.extension.yml
+  - behat.local.yml
+
+## Default Profile Settings (Sites)
+default:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      base_url: https://siw.anchorage.stanford.edu
+    Drupal\DrupalExtension\Extension:
+      drush:
+        alias: anc.siw
