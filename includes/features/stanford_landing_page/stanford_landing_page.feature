@@ -11,7 +11,7 @@ Feature: Stanford Landing Page
 
   @api @javascript @dev @content
   Scenario: Create Landing Page
-    Given I am logged in as a user with the "adminstrator" role
+    Given I am logged in as a user with the "administrator" role
     When I wait for the Site Actions drop down to appear
     And I click "Add Landing Page" in the "Admin Shortcuts" region
     Then I should see "Create Landing Page" in the "Branding" region
