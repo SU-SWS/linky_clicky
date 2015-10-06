@@ -4,7 +4,7 @@ Feature: Lomita Homepage Layout
   I want to check for the existence of content that should appear
   (Tests in this Feature should fail if Lomita is not the selected homepage layout)
 
-  @api @destructive @dev @javascript
+  @api @destructive @dev @javascript @jsa @jsv
   Scenario: Enable the Lomita homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
@@ -12,7 +12,7 @@ Feature: Lomita Homepage Layout
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
     Then I should see "Customized design options saved" in the "Console" region
 
-  @api @destructive @dev @javascript
+  @api @destructive @dev @javascript @jsa @jsv
   Scenario: Enable the Lomita homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
