@@ -3,13 +3,13 @@ Feature: Mayfield Homepage Layout
   As an end user
   I want to check for the existence of content that should appear
 
-  @api
+  @api @dev @destructive @jsa
   Scenario: Set the homepage to Mayfield news and events
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selector" button
 
-  @api
+  @deploy @jsa @live @safe
   Scenario Outline: Header content for mayfield with news and events.
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -20,6 +20,7 @@ Feature: Mayfield Homepage Layout
       | Recent News           | Content 3 column flow |
       | Upcoming Events       | Content 3 column flow |
 
+  @deploy @jsa @live @safe
   Scenario Outline: Homepage content for mayfield with news and events
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -33,6 +34,7 @@ Feature: Mayfield Homepage Layout
       | Recent News | Content 3 column flow |
       | Upcoming Events | Content 3 column flow |
 
+  @deploy @jsa @live @safe
   Scenario Outline: Homepage links for mayfield with news and events
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region

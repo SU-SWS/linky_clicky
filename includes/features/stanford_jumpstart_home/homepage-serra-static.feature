@@ -3,7 +3,7 @@ Feature: Serra Homepage Layout
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @javascript @jsv
+  @api @dev @destructive @javascript @jsa @jsv
   Scenario: Enable the Serra homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
@@ -13,7 +13,7 @@ Feature: Serra Homepage Layout
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-serra']"
     Then I should see "Customized design options saved" in the "Console" region
 
-  @api @javascript @jsv
+  @api @dev @destructive @javascript @jsa @jsv
   Scenario: Enable the Serra homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
@@ -21,23 +21,24 @@ Feature: Serra Homepage Layout
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-serra']"
     Then I should see "Customized design options saved" in the "Console" region
 
-  @api @jsv
+  @api @deploy @jsa @jsv @live @safe
   Scenario: Editor should not access Customize Design
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  Scenario: Content in regions
-    Given I am on the homepage
-    Then I should see a ".infotext" element in the "Main Top" region
-
-  @api @javascript @jsv
+  @api @dev @destructive @javascript @jsa @jsv
   Scenario: Enable the Serra homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
 
-  @jsv
+  @deploy @jsa @jsv @live @safe
+  Scenario: Content in regions
+    Given I am on the homepage
+    Then I should see a ".infotext" element in the "Main Top" region
+
+  @deploy @jsa @jsv @live @safe
   Scenario Outline: Header content for serra static
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -48,7 +49,7 @@ Feature: Serra Homepage Layout
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
 
-  @jsv
+  @deploy @jsa @jsv @live @safe
   Scenario Outline: Homepage content for serra static
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -65,7 +66,7 @@ Feature: Serra Homepage Layout
     | This is your Highlights block | Content 3 column flow |
     | This is your Announcements block | Content 3 column flow |
 
-  @jsv
+  @deploy @jsa @jsv @live @safe
   Scenario Outline: Homepage links for serra static
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
