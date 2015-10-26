@@ -30,6 +30,13 @@ use SWSDrupalContext as DrupalContext;
  */
 class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcceptingContext {
 
+
+  /**
+   * Track changed variables so we can revert them back after we are done.
+   * @var array
+   */
+  private $changedVariables = array();
+
   /**
    * @var \Drupal\DrupalExtension\Context\DrupalContext
    */
@@ -420,6 +427,33 @@ JS;
     }
     if (!in_array($arg2,$headers[$arg1])) {
       throw new Exception('The HTTP header "' . $arg1 . '" did not contain "' . $arg2 . '"');
+    }
+  }
+
+  /**
+   * Track the original state of a changed variable.
+   */
+  protected function trackChangedVariable($name, $value) {
+    if (!key_exists($name, $this->changedVariables)) {
+      $this->changedVariables[$name] = $value;
+    }
+  }
+
+  /**
+   * Set changed variables to their original state.
+   *
+   * @AfterScenario
+   */
+  public function resetVariables() {
+    foreach ($this->changedVariables as $var => $value) {
+      if (isset($value)) {
+        // If the original value was something other than NULL, set it back.
+        variable_set($var, $value);
+      }
+      else {
+        // Unset the variable if it didn't exist before.
+        variable_del($var);
+      }
     }
   }
 
