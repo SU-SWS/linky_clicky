@@ -3,6 +3,15 @@ Feature: Stanford Person
   As an end user and administrator
   I want to check for both the creation and display of the person content.
 
-  # Scenario: Viewing a featured image on the About page
-  #   Given I am on "about"
-  #   Then I should see "Arcade on the Quad" in the "Content Body" region
+  @api @javascript
+  Scenario: Stanford Person
+    Given the "stanford_person" module is enabled
+    And the "entity_token" module is enabled
+    And the cache has been cleared
+    And I am logged in as a user with the "administrator" role
+    And I am on "node/add/stanford-person"
+    When I enter "Leland" for "First name *"
+    And I enter "Stanford" for "Last Name *"
+    And I press the "Save" button
+    Then I should be on "people/leland-stanford"
+    And I should see "Person Leland Stanford has been created"
