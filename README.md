@@ -1,7 +1,7 @@
 Linky Clicky
 ============
 
-Behat tests mean death to linky-clicky.
+Behat tests mean death to linky-clicky!
 
 Installation
 -------------
