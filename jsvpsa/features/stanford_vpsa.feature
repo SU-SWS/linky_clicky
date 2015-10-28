@@ -33,3 +33,7 @@ Feature: Stanford VPSA
 
   # Check for javascripts on page types
   # https://github.com/SU-SWS/stanford_jumpstart_vpsa/blob/7.x-4.x/stanford_jumpstart_vpsa.module#L45
+
+  # Check for the chosen module and drop downs
+
+
