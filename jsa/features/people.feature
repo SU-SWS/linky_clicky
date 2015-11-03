@@ -81,3 +81,74 @@ Feature: People
    Given I am logged in as a user with the "administrator" role
    When I go to "admin/manage/people"
    Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
+
+  @content @live @new-url
+  Scenario: Faculty node on profiles page
+    Given I am on "people/faculty/profiles"
+    And I click "Jacob Smith" in the "Content Body" region
+    Then I should see "Professor of English" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Faculty node on list page
+    Given I am on "people/faculty/list"
+    Then I should see "Jacob Smith" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Faculty node on grid page
+    Given I am on "people/faculty/grid"
+    And I click "Jacob Smith" in the "Content Body" region
+    Then I should see "Professor of English" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Faculty node on directory page
+    Given I am on "people/faculty/directory"
+    And I click "Jacob Smith" in the "Content Body" region
+    Then I should see "Professor of English" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Staff node on profiles page
+    Given I am on "people/staff/profiles"
+    And I click "Emily Jordan" in the "Content Body" region
+    Then I should see "Department Manager" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Staff node on list page
+    Given I am on "people/staff/list"
+    Then I should see "Emily Jordan" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Staff node on grid page
+    Given I am on "people/staff/grid"
+    And I click "Emily Jordan" in the "Content Body" region
+    Then I should see "Department Manager" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Staff node on directory page
+    Given I am on "people/staff/directory"
+    And I click "Emily Jordan" in the "Content Body" region
+    Then I should see "Department Manager" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Students node on profiles page
+    Given I am on "people/students/profiles"
+    And I click "Haley Jackson" in the "Content Body" region
+    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: students node on list page
+    Given I am on "people/students/list"
+    Then I should see "Haley Jackson" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Students node on grid page
+    Given I am on "people/students/grid"
+    And I click "Haley Jackson" in the "Content Body" region
+    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
+
+  @content @live @new-url
+  Scenario: Students node on directory page
+    Given I am on "people/students/directory"
+    And I click "Haley Jackson" in the "Content Body" region
+    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
+
+
