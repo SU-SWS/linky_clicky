@@ -239,29 +239,57 @@ Feature: People
     And I should see the "People" heading in the "First sidebar" region
 
   @content @deploy
-  Scenario: Grid layout for professor
+  Scenario: Grid layout for department-administrator
     Given I am on "people/department-administrator/grid"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
     And I should see the "People" heading in the "First sidebar" region
 
   @content @deploy
-  Scenario: Profiles layout for professor
+  Scenario: Profiles layout for department-administrator
     Given I am on "people/department-administrator/profiles"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
     And I should see the "People" heading in the "First sidebar" region
 
   @content @deploy
-  Scenario: List layout for professor
+  Scenario: List layout for department-administrator
     Given I am on "people/department-administrator/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
     And I should see the "People" heading in the "First sidebar" region
 
   @content @deploy
-  Scenario: Directory layout for professor
+  Scenario: Directory layout for department-administrator
     Given I am on "people/department-administrator/directory"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-directory" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Grid layout for graduate-students
+    Given I am on "people/graduate-students/grid"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-grid" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Profiles layout for graduate-students
+    Given I am on "people/graduate-students/profiles"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-profiles" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: List layout for graduate-students
+    Given I am on "people/graduate-students/list"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-list" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Directory layout for graduate-students
+    Given I am on "people/graduate-students/directory"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
     And I should see the "People" heading in the "First sidebar" region
