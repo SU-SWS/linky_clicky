@@ -38,19 +38,6 @@ Feature: People
     Then I should see a ".views-row-first" element
     And I should see a ".views-row-lines" element
 
-  @content @deploy
-  Scenario: Students layout with faculty
-    Given I am on "people/students/faculty"
-    Then I should see "Faculty" in the "Content Head" region 
-    And I should see "Jacob Smith" in the "Content Body" region
-
-  @content @live
-  Scenario: Faculty layout
-    Given I am on "people/faculty"
-    Then I should see a ".views-exposed-form" element
-    And I should see "People" in the "First sidebar" region 
-    And I should see "Why I Teach" in the "First sidebar" region
-
   @content @live
   Scenario: Students layout
     Given I am on "people/students"
@@ -58,23 +45,11 @@ Feature: People
     And I should see "People" in the "First sidebar" region
 
   @content @live
-  Scenario: Staff layout
+  Scenario: Staff layout: exposed filter
     Given I am on "people/staff"
     Then I should see a ".views-exposed-form" element
     And I should see "People" in the "First sidebar" region 
     And I should see "Contact and Location" in the "First sidebar" region
-
-  @content @deploy
-  Scenario: Staff layout with faculty
-    Given I am on "people/staff/faculty"
-    Then I should see "Faculty" in the "Content Head" region 
-    And I should see "Jacob Smith" in the "Content Body" region
-
-  @content @deploy
-  Scenario: Faculty layout with staff
-    Given I am on "people/faculty/staff"
-    Then I should see "Emily Jordan" in the "Content Body" region
-    And I should see "Staff" in the "Content Head" region 
 
   @api
   Scenario: Affiliates column on Manage Person
@@ -156,8 +131,6 @@ Feature: People
     Given I am on "people/faculty/grid"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
-    And I should see the heading "Why I Teach" in the "First sidebar" region
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live
@@ -165,8 +138,6 @@ Feature: People
     Given I am on "people/faculty/profiles"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
-    And I should see the heading "Why I Teach" in the "First sidebar" region
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -174,8 +145,6 @@ Feature: People
     Given I am on "people/faculty/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
-    And I should see the heading "Why I Teach" in the "First sidebar" region
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -183,8 +152,6 @@ Feature: People
     Given I am on "people/faculty/directory"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
-    And I should see the heading "Why I Teach" in the "First sidebar" region
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -192,7 +159,6 @@ Feature: People
     Given I am on "people/staff/grid"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -200,7 +166,6 @@ Feature: People
     Given I am on "people/staff/profiles"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -208,7 +173,6 @@ Feature: People
     Given I am on "people/staff/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -216,7 +180,6 @@ Feature: People
     Given I am on "people/staff/directory"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live
@@ -224,7 +187,6 @@ Feature: People
     Given I am on "people/students/grid"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live 
@@ -232,7 +194,6 @@ Feature: People
     Given I am on "people/students/profiles"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live
@@ -240,7 +201,6 @@ Feature: People
     Given I am on "people/students/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live
@@ -248,6 +208,60 @@ Feature: People
     Given I am on "people/students/directory"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
-    And I should see "Search by name" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
 
+  @content @deploy
+  Scenario: Grid layout for professor
+    Given I am on "people/professor/grid"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-grid" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Profiles layout for professor
+    Given I am on "people/professor/profiles"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-profiles" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: List layout for professor
+    Given I am on "people/professor/list"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-list" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Directory layout for professor
+    Given I am on "people/professor/directory"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-directory" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Grid layout for professor
+    Given I am on "people/department-administrator/grid"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-grid" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Profiles layout for professor
+    Given I am on "people/department-administrator/profiles"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-profiles" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: List layout for professor
+    Given I am on "people/department-administrator/list"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-list" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy
+  Scenario: Directory layout for professor
+    Given I am on "people/department-administrator/directory"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-directory" element
+    And I should see the "People" heading in the "First sidebar" region
