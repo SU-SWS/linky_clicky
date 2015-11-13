@@ -48,14 +48,14 @@ Feature: People
   Scenario: Staff layout: exposed filter
     Given I am on "people/staff"
     Then I should see a ".views-exposed-form" element
-    And I should see "People" in the "First sidebar" region 
+    And I should see "People" in the "First sidebar" region
     And I should see "Contact and Location" in the "First sidebar" region
 
   @api @live @stanford
   Scenario: Affiliates column on Manage Person
-   Given I am logged in as a user with the "administrator" role
-   When I go to "admin/manage/people"
-   Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
+    Given I am logged in as a user with the "administrator" role
+    When I go to "admin/manage/people"
+    Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
 
   @content @deploy @stanford
   Scenario: Faculty node on profiles page
@@ -155,28 +155,28 @@ Feature: People
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live  @stanford
-  Scenario: Grid layout for staff 
+  Scenario: Grid layout for staff
     Given I am on "people/staff/grid"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live  @stanford
-  Scenario: Profiles layout for staff 
+  Scenario: Profiles layout for staff
     Given I am on "people/staff/profiles"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live  @stanford
-  Scenario: List layout for staff 
+  Scenario: List layout for staff
     Given I am on "people/staff/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live  @stanford
-  Scenario: Directory layout for staff 
+  Scenario: Directory layout for staff
     Given I am on "people/staff/directory"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
@@ -197,7 +197,7 @@ Feature: People
     And I should see the "People" heading in the "First sidebar" region
 
   @content @live @stanford
-  Scenario: List layout for students 
+  Scenario: List layout for students
     Given I am on "people/students/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
