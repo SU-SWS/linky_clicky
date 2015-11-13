@@ -113,14 +113,16 @@ For site specific tests. E.g., testing art.stanford.edu.
 
 The following suites are available to run:
 
-* default
-* live
-* dev
-* deploy
-* content
-* contrib
-* contrib-dev
-* stanford
+* all: Runs all the tests
+* default: Runs everything except for `@dev` and `@destructive` tags
+* live: Runs `@live`, `@safe`, and `@prod`, but not `@content`
+* dev: Runs everything except for `@contrib`
+* deploy: Runs `@deploy`, but not `@dev`, `@destructive`, `@content`, or `@site`
+* content: Runs only `@content`
+* site: Runs only `@site`
+* contrib: Runs `@contrib`, but not `@dev` or `@destructive`
+* contrib-dev: Runs all `@contrib`
+* stanford: Runs all `@stanford`, but not `@dev` or `@destructive`
 
 ## Running suites and profiles
 You can run a suite and a profile at the same time. eg: `behat --profile local --suite live`
