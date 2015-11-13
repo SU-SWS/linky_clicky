@@ -18,7 +18,7 @@ Feature: People
     And I click "Jacob Smith" in the "Content Body" region
     Then I should see "Professor of English" in the "Content Body" region
 
-  @content @live @deploy @stanford
+  @content @deploy @stanford
   Scenario: Faculty taxonomy filter
     Given I am on "people/faculty"
     When I select "Professor" from "Filter by faculty status"
