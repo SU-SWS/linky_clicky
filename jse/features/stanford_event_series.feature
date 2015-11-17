@@ -26,8 +26,11 @@ Feature: Stanford Event Series
     When I go to "node/add/stanford-event-series"
     Then I should see "Create Stanford Event Series" in the "Branding" region
     Then I fill in "edit-title" with "Foo"
+    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
+    Then I press "Upload"
     Then I press "Save"
     Then I should be on "events/series/foo"
+    Then I should see 1 or more ".field-name-field-s-image-image" elements
     Then I go to "admin/manage/events"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
     Then I click "Edit" in the "Tabs" region
@@ -43,8 +46,11 @@ Feature: Stanford Event Series
     When I go to "node/add/stanford-event-series"
     Then I should see "Create Stanford Event Series" in the "Branding" region
     Then I fill in "edit-title" with "Foo"
+    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
+    Then I press "Upload"
     Then I press "Save"
     Then I should be on "events/series/foo"
+    Then I should see 1 or more ".field-name-field-s-image-image" elements
     Then I go to "admin/manage/events"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
     Then I click "Edit" in the "Tabs" region
