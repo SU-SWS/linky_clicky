@@ -77,7 +77,7 @@ Feature: Stanford Private Page
     When I go to "admin/manage/private-page"
     Then I should see 1 or more ".view-stanford-private-page-manage" elements
 
-  @api @content @contrib @stanford @jse 
+  @api @content @contrib @stanford @jse
   Scenario: Site owner can create Private Page types
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
