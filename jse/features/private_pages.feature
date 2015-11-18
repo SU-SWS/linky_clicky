@@ -77,13 +77,13 @@ Feature: Stanford Private Page
     When I go to "admin/manage/private-page"
     Then I should see 1 or more ".view-stanford-private-page-manage" elements
 
-  @api @content @contrib @stanford @jse
+  @api @content @contrib @stanford @jse 
   Scenario: Site owner can create Private Page types
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
     Then I fill in "edit-title" with "Bar"
-    Then I attach the file "../img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
+    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I press "Upload"
     Then I press "Save"
     Then I should be on "private/bar"
