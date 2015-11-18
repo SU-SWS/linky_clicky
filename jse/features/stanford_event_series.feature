@@ -40,7 +40,7 @@ Feature: Stanford Event Series
     #Then I go to "events/series/foo"
     #Then I should see 1 or more ".views-row" elements
 
-  @api @content @jse @jsa @contrib @stanford 
+  @api @content @jse @jsa @contrib @stanford
   Scenario: Site owner can create event series types
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-event-series"
