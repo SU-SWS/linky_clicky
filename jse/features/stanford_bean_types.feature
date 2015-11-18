@@ -3,7 +3,7 @@ Feature: Stanford BEAN Types
   As an end user
   I want to check that the Stanford BEAN Types module is working correctly
 
-  @api
+  @api @deploy @live @prod @jse @safe @contrib @stanford
   Scenario: Stanford BEAN Types
     Given I am logged in as a user with the "administrator" role
     And I am on "block/add"
