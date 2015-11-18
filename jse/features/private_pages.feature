@@ -77,7 +77,7 @@ Feature: Stanford Private Page
     When I go to "admin/manage/private-page"
     Then I should see 1 or more ".view-stanford-private-page-manage" elements
 
-  @api @content @contrib @stanford @test
+  @api @content @contrib @stanford @jse
   Scenario: Site owner can create Private Page types
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
@@ -90,7 +90,6 @@ Feature: Stanford Private Page
     Then I go to "admin/manage/private-page"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
     Then I click "Edit" in the "Tabs" region
-    Then I check "Bar"
     Then I press "Save"
     Then I go to "private/bar"
     And I should see "Bar" in the "Content Head" region
