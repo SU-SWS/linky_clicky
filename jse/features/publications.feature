@@ -3,7 +3,7 @@ Feature: Publications
   As an end user
   I want to check for the existence of publication content
 
-  @content @deploy @prod @jsa @jse @pub-test
+  @content @deploy @prod @jsa @jse 
   Scenario: Filter publications by title
     Given I am on "publications"
     Then I should see "Have something to add?" in the "Content Body" region
