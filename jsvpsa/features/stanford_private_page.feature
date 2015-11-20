@@ -3,7 +3,7 @@ Feature: Stanford Private Page
   As all types of users
   I want to check for CRUD permissions.
 
-  @live @stanford @content
+  @dev @stanford @content
   Scenario: Create Private Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
