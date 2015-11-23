@@ -15,3 +15,17 @@ Feature: Stanford Person
     And I press the "Save" button
     Then I should be on "people/leland-stanford"
     And I should see "Person Leland Stanford has been created"
+    
+  @content @live  @stanford
+  Scenario: Stanford Person Styles and Layout
+    Given I am on "people"
+    Then I should see a ".person-details:before" element
+    And I should see a ".views-grid-four" element
+    And I should see the heading "People" in the "Content Head" region
+    And I should see the heading "Jacob Smith" in the "Content Body" region
+  
+  @content @live  @stanford
+  Scenario: Stanford Person Profile
+    Given I am on "people/jacob-smith"
+    Then I should see a ".postcard-left" element
+    And I should see the heading "Jacob Smith I Teach" in the "Content Body" region
