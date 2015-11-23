@@ -11,8 +11,3 @@ Feature: Stanford Jumpstart
     Then I should see "Request Assistance"
     Then I should see an "a" element
     Then the href in element "a" should contain "source=soe"
-
-
-
-
-    
