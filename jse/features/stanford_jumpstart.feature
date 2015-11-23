@@ -9,10 +9,10 @@ Feature: Stanford Jumpstart
     And I am on "admin/stanford-jumpstart"
     Then I should see "Jumpstart User Guide" in the "Content Body" region
     Then I should see "Request Assistance"
+    Then I should see an "a" element
+    Then the href in element "a" should contain "source=soe"
 
-    Then the "a" element should contain  "source=soe"
-    Then I should see "source=soe" in the "a" element
-    Given I wait 10 seconds
+
 
 
     
