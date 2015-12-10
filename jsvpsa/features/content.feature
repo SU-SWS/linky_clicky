@@ -48,4 +48,4 @@ Feature: Stanford VPSA Content
   Scenario: Check for new and events block title changes
   Given I am on the homepage
   Then I should see the heading "Upcoming Events" in the "Main Content" region
-  Then I should see the heading "Recent News" in the "Main Content" region
+  Then I should see the heading "Announcements & News" in the "Main Content" region
