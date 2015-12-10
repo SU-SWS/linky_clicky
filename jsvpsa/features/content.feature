@@ -20,8 +20,8 @@ Feature: Stanford VPSA Content
 
   @api @safe @deploy
   Scenario: Check for deployed content
-  Given I am on "news/recent-news"
-  Then I should see "Recent News" in the "Main Content" region
+  Given I am on "news/announcements"
+  Then I should see "Announcements" in the "Main Content" region
   Then I should see "Sample News" in the "Main Content" region
   Given I am on "events/upcoming-events"
   Then I should see "Upcoming Events" in the "Main Content" region
@@ -29,9 +29,9 @@ Feature: Stanford VPSA Content
   Given I am on "events/past-events"
   Then I should see "Past Events" in the "Main Content" region
   # Typo needs to change when fixed.. future -> past
-  Then I should see "Currently, no future events are scheduled"
+  Then I should see "No upcoming events currently scheduled."
   Given I am on "people"
-  Then I should see "This is your People page" in the "Main Content" region
+  Then I should see "People" in the "Main Content" region
   Given I am on "about"
   Then I should see "This is your About page" in the "Main Content" region
   Given I am on "about/contact"
