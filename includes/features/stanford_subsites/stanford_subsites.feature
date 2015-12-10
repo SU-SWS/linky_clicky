@@ -1,5 +1,5 @@
 Feature: Stanford Subsites
-  In order to make uniquely branded sections of the CAW website
+  In order to make uniquely branded sections of a website
   As an authenticated user
   I want to be able to make and view subsites
 
