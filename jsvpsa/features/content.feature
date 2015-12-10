@@ -12,10 +12,10 @@ Feature: Stanford VPSA Content
   Scenario: Check for main menu items
   Given I am on the homepage
   Then I should see "Home" in the "Main Navigation" region
-  Then I should see "NEWS" in the "Main Navigation" region
-  Then I should see "EVENTS" in the "Main Navigation" region
-  Then I should see "PEOPLE" in the "Main Navigation" region
-  Then I should see "ABOUT" in the "Main Navigation" region
+  Then I should see "Announcements & News" in the "Main Navigation" region
+  Then I should see "Events" in the "Main Navigation" region
+  Then I should see "People" in the "Main Navigation" region
+  Then I should see "About" in the "Main Navigation" region
   Then I should see "Programs" in the "Main Navigation" region
 
   @api @safe @deploy
