@@ -17,6 +17,13 @@ Scenario: See manage subsites in the shortcuts
   Then I should be on "admin/config/subsites/dashboard"
 
 @api @javascript
+Scenario: Ability to Add Subsite
+  Given I am logged in as a user with the "site owner" role
+  And I am on the homepage
+  When I click "Site Actions" in the "Admin Shortcuts" region
+  Then I should see "Add Subsite" in the "Content Body" region
+
+@api @javascript
 Scenario: Create subsite content
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-subsite"
