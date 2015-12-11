@@ -23,7 +23,7 @@ Scenario: Create stanford gallery node
   Then I press "edit-field-s-gallery-image-info-und-0-field-s-image-image-und-0-upload-button"
   Then I click on the element with css selector ".field-name-field-s-gallery-image-info .field-multiple-table tr:nth-child(1) a.fieldset-title" with javascript
   Then I fill in "edit-field-s-gallery-image-info-und-0-field-s-image-caption-und-0-value" with "This is caption 1"
-  Then I fill in "edit-field-s-gallery-image-info-und-0-field-s-image-credits-und-0-value" with "credit 1"
+  Then I fill in "edit-field-s-gallery-image-info-und-0-field-s-image-credits-und-0-value" with "This is credit 1"
 
   # Add new field collection element.
   Then I press "field_s_gallery_image_info_add_more"
@@ -34,7 +34,7 @@ Scenario: Create stanford gallery node
   Then I press "edit-field-s-gallery-image-info-und-1-field-s-image-image-und-0-upload-button"
   Then I click on the element with css selector ".field-name-field-s-gallery-image-info .field-multiple-table tr:nth-child(2) a.fieldset-title" with javascript
   Then I fill in "edit-field-s-gallery-image-info-und-1-field-s-image-caption-und-0-value" with "This is caption 2"
-  Then I fill in "edit-field-s-gallery-image-info-und-1-field-s-image-credits-und-0-value" with "credit 2"
+  Then I fill in "edit-field-s-gallery-image-info-und-1-field-s-image-credits-und-0-value" with "This is credit 2"
 
   # Add new field collection element.
   Then I press "field_s_gallery_image_info_add_more"
@@ -45,7 +45,7 @@ Scenario: Create stanford gallery node
   Then I press "edit-field-s-gallery-image-info-und-2-field-s-image-image-und-0-upload-button"
   Then I click on the element with css selector ".field-name-field-s-gallery-image-info .field-multiple-table tr:nth-child(3) a.fieldset-title" with javascript
   Then I fill in "edit-field-s-gallery-image-info-und-2-field-s-image-caption-und-0-value" with "This is caption 1"
-  Then I fill in "edit-field-s-gallery-image-info-und-2-field-s-image-credits-und-0-value" with "credit 6"
+  Then I fill in "edit-field-s-gallery-image-info-und-2-field-s-image-credits-und-0-value" with "This is credit 6"
 
   # Save the Node
   Then I press "Save"
