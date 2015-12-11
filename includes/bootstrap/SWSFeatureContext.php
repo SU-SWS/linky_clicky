@@ -33,6 +33,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
   /**
    * Track changed variables so we can revert them back after we are done.
+   *
    * @var array
    */
   private $changedVariables = array();
@@ -105,20 +106,20 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function iWaitSeconds($seconds) {
     $mink = $this->minkContext;
-    $mink->getSession()->wait(1000*$seconds);
+    $mink->getSession()->wait(1000 * $seconds);
   }
 
   /**
-  * Invoking a php code with drush.
-  *
-  * @param $function
-  * The function name to invoke.
-  * @param $arguments
-  * Array contain the arguments for function.
-  * @param $debug
-  * Set as TRUE/FALSE to display the output the function print on the screen.
-  * See https://github.com/openscholar/openscholar/blob/SCHOLAR-3.x/openscholar/behat/features/bootstrap/FeatureContext.php#L658
-  */
+   * Invoking a php code with drush.
+   *
+   * @param $function
+   *   The function name to invoke.
+   * @param $arguments
+   *   Array contain the arguments for function.
+   * @param $debug
+   *   Set as TRUE/FALSE to display the output the function print on the screen.
+   *   See https://github.com/openscholar/openscholar/blob/SCHOLAR-3.x/openscholar/behat/features/bootstrap/FeatureContext.php#L658
+   */
   private function invoke_code($function, $arguments = NULL, $debug = FALSE) {
     $code = !empty($arguments) ? "$function(" . implode(',', $arguments) . ");" : "$function();";
 
@@ -151,7 +152,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
   /**
    * Find an element in a region.
-   * see http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f
+   * see http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f.
    *
    * @Then /^I should see a "([^"]*)" element in the "([^"]*)" region$/
    */
@@ -166,7 +167,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()->getCurrentUrl()));
   }
 
-   /**
+  /**
    * @Then /^I should see (\d+) "([^"]*)" element[s]? in the "([^"]*)" region$/
    */
   public function iShouldSeeElementsInTheRegion($num, $element, $region) {
@@ -176,7 +177,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
     $selectElements = $regionObj->findAll(
       'xpath',
-      $session->getSelectorsHandler()->selectorToXpath('css', $element) // just changed xpath to css
+      $session->getSelectorsHandler()->selectorToXpath('css', $element)
+    // Just changed xpath to css.
     );
     if (intval($num) !== count($selectElements)) {
       $message = sprintf('%d "%s" elements found when there should be %d.', count($selectElements), $element, $num);
@@ -184,7 +186,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     }
   }
 
-    /**
+  /**
    * @Then /^I should see (\d+) or fewer "([^"]*)" elements$/
    */
   public function iShouldSeeOrFewerElements($num, $element) {
@@ -204,15 +206,17 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function iHoverOverTheElement($locator) {
     $mink = $this->minkContext;
-    $session = $mink->getSession(); // get the mink session
-    $element = $session->getPage()->find('css', $locator); // runs the actual query and returns the element
+    $session = $mink->getSession();
+    // Get the mink session.
+    $element = $session->getPage()->find('css', $locator);
+    // Runs the actual query and returns the element.
 
-    // errors must not pass silently
-    if (null === $element) {
+    // Errors must not pass silently.
+    if (NULL === $element) {
       throw new \InvalidArgumentException(sprintf('Could not evaluate CSS selector: "%s"', $locator));
     }
 
-    // ok, let's hover it
+    // ok, let's hover it.
     $element->mouseOver();
   }
 
@@ -233,7 +237,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   }
 
   /**
-   * Click some text
+   * Click some text.
    *
    * @When /^I click on the text "([^"]*)"$/
    */
@@ -242,9 +246,9 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $session = $mink->getSession();
     $element = $session->getPage()->find(
       'xpath',
-      $session->getSelectorsHandler()->selectorToXpath('xpath', '*//*[text()="'. $text .'"]')
+      $session->getSelectorsHandler()->selectorToXpath('xpath', '*//*[text()="' . $text . '"]')
     );
-    if (null === $element) {
+    if (NULL === $element) {
       throw new \InvalidArgumentException(sprintf('Cannot find text: "%s"', $text));
     }
 
@@ -253,20 +257,21 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
   /**
    * Find the default value of a select element.
-   * See https://github.com/Behat/Mink/issues/300
+   * See https://github.com/Behat/Mink/issues/300.
+   *
    * @Then /^I want to validate select field option "([^"]*)" default is "([^"]*)"$/
    */
   public function iWantToValidateSelectOptionDefaultIs($locator, $defaultValue) {
-        $mink = $this->minkContext;
-       $optionElement = $mink->getSession()->getPage()->find('xpath', '//select[@name="' . $locator . '"]/option[@selected]');
-       if (!$optionElement) {
-          throw new Exception('Could not find a select element with the "name" attribute of ' . $locator);
-       }
+    $mink = $this->minkContext;
+    $optionElement = $mink->getSession()->getPage()->find('xpath', '//select[@name="' . $locator . '"]/option[@selected]');
+    if (!$optionElement) {
+      throw new Exception('Could not find a select element with the "name" attribute of ' . $locator);
+    }
 
-      $selectedDefaultValue = (string)$optionElement->getText();
-       if ($selectedDefaultValue != $defaultValue) {
-          throw new Exception('Select option default value: "' . $selectedDefaultValue . '" does not match given: "' . $defaultValue . '"');
-       }
+    $selectedDefaultValue = (string) $optionElement->getText();
+    if ($selectedDefaultValue != $defaultValue) {
+      throw new Exception('Select option default value: "' . $selectedDefaultValue . '" does not match given: "' . $defaultValue . '"');
+    }
   }
 
   /**
@@ -280,7 +285,31 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   }
 
   /**
-   * Click on the element with the provided CSS Selector
+   * Click on the element with the provided xpath query.
+   *
+   * @When /^I click on the element with xpath "([^"]*)"$/
+   */
+  public function iClickOnTheElementWithXPath($xpath) {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    $element = $session->getPage()->find(
+      'xpath',
+      $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath)
+    );
+    // Runs the actual query and returns the element.
+
+    // Errors must not pass silently.
+    if (NULL === $element) {
+      throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
+    }
+
+    // ok, let's click on it.
+    $element->click();
+
+  }
+
+  /**
+   * Click on the element with the provided CSS Selector.
    *
    * @When /^I click on the element with css selector "([^"]*)"$/
    */
@@ -295,11 +324,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $element->click();
   }
 
-    /**
-     * Click on the element with the provided CSS Selector
-     *
-     * @When /^I click on the element with css selector "([^"]*)" with javascript$/
-     */
+  /**
+   * Click on the element with the provided CSS Selector.
+   *
+   * @When /^I click on the element with css selector "([^"]*)" with javascript$/
+   */
   public function iClickOnTheElementWithCSSSelectorWithJavascript($css) {
     $mink = $this->minkContext;
     $session = $mink->getSession();
@@ -311,7 +340,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   }
 
   /**
-   * Press the element with the provided CSS Selector
+   * Press the element with the provided CSS Selector.
    *
    * @When /^I press the element with css selector "([^"]*)"$/
    */
@@ -337,45 +366,46 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     }
   }
 
-/**
- * @When /^I select the "([^"]*)" radio button$/
- */
+  /**
+   * @When /^I select the "([^"]*)" radio button$/
+   */
   public function iSelectTheRadioButton($labelText) {
-    // Find the label by its text, then use that to get the radio item's ID
-    $radioId = null;
+    // Find the label by its text, then use that to get the radio item's ID.
+    $radioId = NULL;
     $mink = $this->minkContext;
     $session = $mink->getSession();
     $page = $mink->getSession()->getPage();
 
     /** @var $label NodeElement */
     foreach ($session->getPage()->findAll('css', 'label') as $label) {
-        if ($labelText === $label->getText()) {
-            if ($label->hasAttribute('for')) {
-                $radioId = $label->getAttribute('for');
-                break;
-            } else {
-                throw new \Exception("Radio button's label needs the 'for' attribute to be set");
-            }
+      if ($labelText === $label->getText()) {
+        if ($label->hasAttribute('for')) {
+          $radioId = $label->getAttribute('for');
+          break;
         }
+        else {
+          throw new \Exception("Radio button's label needs the 'for' attribute to be set");
+        }
+      }
     }
     if (!$radioId) {
-        throw new \InvalidArgumentException("Label '$labelText' not found.");
+      throw new \InvalidArgumentException("Label '$labelText' not found.");
     }
 
-    // Now use the ID to retrieve the button and click it
+    // Now use the ID to retrieve the button and click it.
     /** @var NodeElement $radioButton */
     $radioButton = $session->getPage()->find('css', "#$radioId");
     if (!$radioButton) {
-        throw new \Exception("$labelText radio button not found.");
+      throw new \Exception("$labelText radio button not found.");
     }
 
     $page->fillField($radioId, $radioButton->getAttribute('value'));
   }
 
-   /**
+  /**
    * Sets an id for the first iframe situated in the element specified by id.
    * Needed when wanting to fill in WYSIWYG editor situated in an iframe without identifier.
-   * See https://www.drupal.org/node/1826016#comment-7753999
+   * See https://www.drupal.org/node/1826016#comment-7753999.
    *
    * @Given /^the iframe in element "(?P<element>[^"]*)" has id "(?P<id>[^"]*)"$/
    */
@@ -392,14 +422,15 @@ JS;
       $mink = $this->minkContext;
       $mink->getSession()->executeScript($function);
     }
-    catch(Exception $e) {
+    catch (Exception $e) {
       throw new \Exception(sprintf('No iframe found in the element "%s" on the page "%s".', $element_id, $mink->getSession()->getCurrentUrl()));
     }
   }
 
   /**
    * Fills in WYSIWYG editor with specified id.
-   * See https://www.drupal.org/node/1826016#comment-7753963
+   * See https://www.drupal.org/node/1826016#comment-7753963.
+   *
    * @Given /^(?:|I )fill in "(?P<text>[^"]*)" in WYSIWYG editor "(?P<iframe>[^"]*)"$/
    */
   public function iFillInInWYSIWYGEditor($text, $iframe) {
@@ -412,8 +443,8 @@ JS;
     catch (Exception $e) {
       throw new \Exception(sprintf("No iframe with id '%s' found on the page '%s'.", $iframe, $session->getCurrentUrl()));
     }
-      $session->executeScript("document.body.innerHTML = '<p>".$text."</p>'");
-      $session->switchToIFrame();
+    $session->executeScript("document.body.innerHTML = '<p>" . $text . "</p>'");
+    $session->switchToIFrame();
   }
 
   /**
@@ -425,7 +456,7 @@ JS;
     if (!isset($headers[$arg1])) {
       throw new Exception('The HTTP header "' . $arg1 . '" does not appear to be set.');
     }
-    if (!in_array($arg2,$headers[$arg1])) {
+    if (!in_array($arg2, $headers[$arg1])) {
       throw new Exception('The HTTP header "' . $arg1 . '" did not contain "' . $arg2 . '"');
     }
   }
@@ -460,7 +491,6 @@ JS;
 
   /**
    * @Then the href in element :arg1 should contain :arg2
-   *
    */
   public function theHrefInElementShouldContain($element_id, $pattern) {
     $mink = $this->minkContext;
@@ -473,9 +503,10 @@ JS;
         throw new \Exception(sprintf('Text %s not found with element %s".', $pattern, $element_id));
       }
       echo $el->getAttribute('href');
-    } else {
+    }
+    else {
       throw new \Exception(sprintf('No %s element found".', $element_id));
     }
   }
-}
 
+}
