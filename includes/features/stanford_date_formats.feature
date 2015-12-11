@@ -3,7 +3,6 @@ Feature: Stanford Date Formats
   As an administrative user
   I want to ensure that the Stanford Date Formats module is working properly
 
-
   @api
   Scenario: Stanford Date Formats
     Given the "stanford_date_formats" module is enabled
@@ -24,3 +23,4 @@ Feature: Stanford Date Formats
     And I should see "Long Day of Week, Date, Year - Time with space"
     And I should see "Short Month Day | Time"
     And I should see "Short Month Day | Time with space"
+
