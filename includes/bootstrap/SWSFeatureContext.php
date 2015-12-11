@@ -285,13 +285,14 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @When /^I click on the element with xpath "([^"]*)"$/
    */
   public function iClickOnTheElementWithXPath($xpath) {
-    $session = $this->getSession(); // get the mink session
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
     $element = $session->getPage()->find(
       'xpath',
       $session->getSelectorsHandler()->selectorToXpath('xpath', $xpath)
-    ); // runs the actual query and returns the element
+    ); // runs the actual query and returns the element.
 
-    // errors must not pass silently
+    // errors must not pass silently.
     if (null === $element) {
       throw new \InvalidArgumentException(sprintf('Could not evaluate XPath: "%s"', $xpath));
     }
