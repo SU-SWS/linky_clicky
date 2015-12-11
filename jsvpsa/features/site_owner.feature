@@ -11,6 +11,14 @@ Feature: Site Owner
     And I click "Manage Content" in the "Admin Shortcuts" region
     Then I should see 11 or more "tr" elements
 
+  @api @javascript @safe @deploy @live
+  Scenario: Clicking on Manage Users
+    Given I am logged in as a user with the "site owner" role
+    When I wait for the Site Actions drop down to appear
+    And I click "Manage Users" in the "Admin Shortcuts" region
+    Then I should see "People" in the "Branding" region
+    And I should see "Howard" in the "Content Body" region
+
   @api @javascript @dev @content
   Scenario: Add Stanford Page
     Given I am logged in as a user with the "site owner" role
@@ -26,6 +34,20 @@ Feature: Site Owner
     And I should be on "foo"
 
   @api @javascript @dev @content
+  Scenario: Add Private Page
+    Given I am logged in as a user with the "site owner" role
+    When I wait for the Site Actions drop down to appear
+    And I click "Add Private Page" in the "Admin Shortcuts" region
+    Then I should see "Create Private Page" in the "Branding" region
+    And the "Text format" field should contain "content_editor_text_format"
+    When I click "Show Add/Edit Image"
+    Then I should see "Source Info" in the "Content Body" region
+    When I enter "Foo" for "Title"
+    And I press the "Save" button
+    Then I should see "Private Page Foo has been created" in the "Console" region
+    And I should be on the homepage
+
+  @api @javascript @dev @content
   Scenario: Add Landing Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -36,6 +58,20 @@ Feature: Site Owner
     And I press the "Save" button
     Then I should see "Landing Page Foo has been created" in the "Console" region
     And I should be on "foo"
+
+  @api @javascript @dev @content
+  Scenario: Add Gallery
+    Given I am logged in as a user with the "site owner" role
+    When I wait for the Site Actions drop down to appear
+    And I click "Add Gallery" in the "Admin Shortcuts" region
+    Then I should see "Create Gallery" in the "Branding" region
+    When I enter "Foo" for "Title *"
+    Then I click on the element with css selector ".vertical-tab-button:nth-child(2)"
+    Then I select "Large" from "Thumbnail Size"
+    And I press the "Save" button
+    Then I should see "Gallery Foo has been created" in the "Console" region
+    And I should be on "foo"
+
 
   @api @javascript @dev @destructive
   Scenario: Edit Social Media Links

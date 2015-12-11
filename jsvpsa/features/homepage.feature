@@ -4,14 +4,10 @@ Feature: Homepage
   I want to check for the existence of content that should appear
 
   @api @javascript @safe @deploy
-  Scenario: Homepage slider and content
+  Scenario: Homepage full width banner and content
   Given I am on the homepage
-  Then I should see 1 ".view-stanford-carousel" element
-  And I should see 2 or more ".carousel-block" elements
-  And I click on the element with css selector ".carousel-control.right"
-  Then I wait 3 seconds
-  And I click on the element with css selector ".carousel-control.left"
-  Then I should see "Welcome to our website" in the "Main Upper" region
+  Then I should see 1 ".view-mode-stanford-full-width-banner-short" element
+
 
   @api @safe @deploy
   Scenario Outline: Homepage blocks are available
@@ -20,10 +16,12 @@ Feature: Homepage
 
     Examples:
       | Header                | Region |
-      | Connect               | Second sidebar |
-      | About                 | Second sidebar |
+      | Connect               | Main Lower |
+      | About Us              | Main Content |
       | Upcoming Events       | Main Content |
-      | Recent News           | Main Content |
+      | Announcements & News  | Main Content |
+      | Quick Links           | Main Content |
+      | Custom Content        | Main Content |
       | Helpful Links         | Footer |
       | Contact Us            | Footer |
 
@@ -34,7 +32,6 @@ Feature: Homepage
 
     Examples:
       | Text                                            | Region   |
-      | Welcome to our website                          | Main Upper |
       | Building Name Room 555                          | Footer   |
       | The XXX is proud to be part of Student Affairs  | Footer   |
       | Get emergency assistance or find help           | Footer   |
