@@ -23,7 +23,7 @@ Scenario: Ability to Add Subsite
   When I click "Site Actions" in the "Admin Shortcuts" region
   Then I should see "Add Subsite" in the "Content Body" region
 
-@api @javascript
+@api @javascript @destructive
 Scenario: Create subsite content
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-subsite"
