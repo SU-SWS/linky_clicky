@@ -4,7 +4,7 @@ Feature: Stanford Date Formats
   I want to ensure that the Stanford Date Formats module is working properly
 
 
-  @api
+  @api @live @safe @prod
   Scenario: Stanford Date Formats
     Given the "stanford_date_formats" module is enabled
     And the cache has been cleared
@@ -18,9 +18,9 @@ Feature: Stanford Date Formats
     And I should see "Two Digit Day"
     And I should see "Short Month"
     And I should see "Short Month Day"
+    And I should see "Short Month Day | Time"
+    And I should see "Short Month Day | Time with space"
     And I should see "Month Two-Digit Day, Year"
     And I should see "Long Day of Week, Date, Year"
     And I should see "Long Day of Week, Date, Year - Time"
     And I should see "Long Day of Week, Date, Year - Time with space"
-    And I should see "Short Month Day | Time"
-    And I should see "Short Month Day | Time with space"
