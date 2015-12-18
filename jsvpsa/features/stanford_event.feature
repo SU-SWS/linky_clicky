@@ -7,6 +7,8 @@ Feature: Stanford Event
   Scenario: The module is enabled
     Given the "stanford_events_importer" module is enabled
 
+# Scenario: Stanford Events Importer has an error on selecting "university communications"
+
   @api @javascript @dev @content
   Scenario: Stanford Events Importer
     Given I am logged in as a user with the "administrator" role
@@ -35,8 +37,10 @@ Feature: Stanford Event
     And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
 
-  @api @safe @live @deploy
-  Scenario: See upcoming events on homepage
+# Scenario: See upcoming events on homepage has an error on Content Body region
+
+	@api @safe @live @deploy
+  	Scenario: See upcoming events on homepage
     Given I am on the homepage
     Then I should see the "Upcoming Events" heading in the "Content Body" region
 
