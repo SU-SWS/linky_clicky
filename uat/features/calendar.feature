@@ -16,9 +16,11 @@ Feature: Calendar
     And I enter "Calendar Test" for "View name"
     And I press the "Continue" button
     Then I should be on "admin/structure/views/view/calendar_test/edit"
-    When I press the "Save" button
+    When I wait for AJAX to finish
+    And I press the "Save" button
     Then I should see "The view Calendar Test has been saved." in the "Console" region
-    When I go to "admin/structure/views/view/calendar_test/delete"
+    When I wait for AJAX to finish
+    And I go to "admin/structure/views/view/calendar_test/delete"
     Then I should see "This action will permanently remove the view from your database."
     When I press the "Delete" button
     Then I should see "The view has been deleted" in the "Console" region
