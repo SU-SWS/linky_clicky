@@ -4,7 +4,7 @@ Feature: Administration Views
   As an administrative user
   I want to ensure that the Administration Views module is working properly
 
-  @api @safe @deploy
+  @api @safe @deploy @javascript
   Scenario: Administration Views
     Given the "admin_views" module is enabled
     And I am logged in as a user with the "administrator" role
