@@ -12,7 +12,7 @@ Feature: Views Datasource
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views/view/admin_views_node/edit"
     And I click "Table"
-    And I select the radio button "JSON data document"
+    And I select the "JSON data document" radio button
     And I press the "Apply" button
     And I press the "Apply" button
     When I press the "Save" button
@@ -29,7 +29,7 @@ Feature: Views Datasource
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views/view/admin_views_node/edit"
     And I click "Table"
-    And I select the radio button "RDF data document"
+    And I select the "RDF data document" radio button
     And I press the "Apply" button
     And I press the "Apply" button
     When I press the "Save" button
@@ -46,9 +46,9 @@ Feature: Views Datasource
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views/view/admin_views_node/edit"
     And I click "Table"
-    And I select the radio button "XHTML data document"
+    And I select the "XHTML data document" radio button
     And I press the "Apply" button
-    And I select the radio button "Default: text/xhtml"
+    And I select the "Default: text/xhtml" radio button
     And I press the "Apply" button
     When I press the "Save" button
     Then I should see "The view Administration: Nodes has been saved"
@@ -64,7 +64,7 @@ Feature: Views Datasource
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views/view/admin_views_node/edit"
     And I click "Table"
-    And I select the radio button "XML data document"
+    And I select the "XML data document" radio button
     And I press the "Apply" button
     And I press the "Apply" button
     When I press the "Save" button
