@@ -24,14 +24,20 @@ Feature: Colorbox
     # This may have to change as we are removing article from our products.
     And I select "Article" from "of type"
     # Have to wait here because Views AJAX shuffles the DOM and otherwise we lose stuffs.
-    And I wait 3 seconds
+    And I wait for AJAX to finish
     And I select "fields" from "of"
     And I press the "Continue & edit" button
+    And I wait for AJAX to finish
     And I click "views-add-field"
+    # Have to wait here because Views AJAX shuffles the DOM and otherwise we lose stuffs.
+    And I wait for AJAX to finish
     And I check the box "Content: Image"
     And I press the "Apply (all displays)" button
+    # Have to wait here because Views AJAX shuffles the DOM and otherwise we lose stuffs.
+    And I wait for AJAX to finish
     And I select "Colorbox" from "Formatter"
     And I press the "Apply" button
+    And I wait for AJAX to finish
     And I press the "Save" button
     Then I should see "The view Test Colorbox View has been saved"
     When I go to "admin/structure/views/view/test_colorbox_view/delete"
