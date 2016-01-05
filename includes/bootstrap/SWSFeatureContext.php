@@ -458,4 +458,24 @@ JS;
   }
 
 
+  /**
+   * @Then the href in element :arg1 should contain :arg2
+   *
+   */
+  public function theHrefInElementShouldContain($element_id, $pattern) {
+    $mink = $this->minkContext;
+    $page = $mink->getSession()->getPage();
+    $el = $page->find('css', '.btn');
+
+    if ($el->hasAttribute('href')) {
+      $attr = $el->getAttribute('href');
+      if (!(strstr($attr, $pattern))) {
+        throw new \Exception(sprintf('Text %s not found with element %s".', $pattern, $element_id));
+      }
+      echo $el->getAttribute('href');
+    } else {
+      throw new \Exception(sprintf('No %s element found".', $element_id));
+    }
+  }
 }
+
