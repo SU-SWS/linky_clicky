@@ -11,4 +11,4 @@ default:
       base_url: https://sites.stanford.edu/jumpstart-diversityworks
     Drupal\DrupalExtension:
       drush:
-        alias: sse.jumpstart-diversityworks
+        alias: "sse.jumpstart-diversityworks"
