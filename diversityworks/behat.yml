@@ -8,7 +8,7 @@ imports:
 default:
   extensions:
     Behat\MinkExtension:
-      base_url: https://kinginstitute.stanford.edu/
+      base_url: https://sites.stanford.edu/jumpstart-diversityworks
     Drupal\DrupalExtension:
       drush:
-        alias: sse.ds_mlk
+        alias: sse.jumpstart-diversityworks
