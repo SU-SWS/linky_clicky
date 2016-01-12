@@ -30,7 +30,6 @@ Feature: Hoover Homepage Layout
     | Text                                            | Region                |
     | This is your About block                        | Main Top              |
     | You can use this block to highlight content     | Content Lower         |
-    | Text  | Main Bottom  |
     | This is your custom        | Footer             |
 
   @deploy  @live @safe
@@ -46,3 +45,8 @@ Feature: Hoover Homepage Layout
     | See more news                 | Content 3 column flow |
     | See more events               | Content 3 column flow |
 
+@deploy @safe @stanford @test
+Scenario: Affiliate Organizations page is visible and link in the main menu
+  Given I am on the homepage
+  Then I should see "Affiliates" in the "Main Bottom" region
+  Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
