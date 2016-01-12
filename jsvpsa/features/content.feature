@@ -12,16 +12,16 @@ Feature: Stanford VPSA Content
   Scenario: Check for main menu items
   Given I am on the homepage
   Then I should see "Home" in the "Main Navigation" region
-  Then I should see "NEWS" in the "Main Navigation" region
-  Then I should see "EVENTS" in the "Main Navigation" region
-  Then I should see "PEOPLE" in the "Main Navigation" region
-  Then I should see "ABOUT" in the "Main Navigation" region
+  Then I should see "Announcements & News" in the "Main Navigation" region
+  Then I should see "Events" in the "Main Navigation" region
+  Then I should see "People" in the "Main Navigation" region
+  Then I should see "About" in the "Main Navigation" region
   Then I should see "Programs" in the "Main Navigation" region
 
   @api @safe @deploy
   Scenario: Check for deployed content
-  Given I am on "news/recent-news"
-  Then I should see "Recent News" in the "Main Content" region
+  Given I am on "news/announcements"
+  Then I should see "Announcements" in the "Main Content" region
   Then I should see "Sample News" in the "Main Content" region
   Given I am on "events/upcoming-events"
   Then I should see "Upcoming Events" in the "Main Content" region
@@ -29,9 +29,9 @@ Feature: Stanford VPSA Content
   Given I am on "events/past-events"
   Then I should see "Past Events" in the "Main Content" region
   # Typo needs to change when fixed.. future -> past
-  Then I should see "Currently, no future events are scheduled"
+  Then I should see "No upcoming events currently scheduled."
   Given I am on "people"
-  Then I should see "This is your People page" in the "Main Content" region
+  Then I should see "People" in the "Main Content" region
   Given I am on "about"
   Then I should see "This is your About page" in the "Main Content" region
   Given I am on "about/contact"
@@ -48,4 +48,4 @@ Feature: Stanford VPSA Content
   Scenario: Check for new and events block title changes
   Given I am on the homepage
   Then I should see the heading "Upcoming Events" in the "Main Content" region
-  Then I should see the heading "Recent News" in the "Main Content" region
+  Then I should see the heading "Announcements & News" in the "Main Content" region
