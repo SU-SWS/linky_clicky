@@ -41,11 +41,11 @@ Feature: Editor
     Then I should see "Create Stanford Event" in the "Branding" region
 
   @api @javascript @safe @deploy
-  Scenario: Create news item
+  Scenario: Create announcement/news item
     Given I am logged in as a user with the "editor" role
     And I wait for the Site Actions drop down to appear
-    And I click "Add News Item" in the "Admin Shortcuts" region
-    Then I should see "Create News Item" in the "Branding" region
+    And I click "Add Announcement/News" in the "Admin Shortcuts" region
+    Then I should see "Create Announcement/News" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
 
   @api @javascript @safe @deploy
@@ -61,4 +61,3 @@ Feature: Editor
     And I wait for the Site Actions drop down to appear
     And I click "Add Web Video" in the "Admin Shortcuts" region
     Then I should see "Create Stanford Web Video" in the "Branding" region
-

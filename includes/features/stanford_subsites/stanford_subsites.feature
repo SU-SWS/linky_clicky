@@ -1,22 +1,29 @@
 Feature: Stanford Subsites
-  In order to make uniquely branded sections of the CAW website
+  In order to make uniquely branded sections of a website
   As an authenticated user
   I want to be able to make and view subsites
 
-@api @javascript
+@api @javascript @live @safe @prod
 Scenario: See the subsite module settings page
   Given I am logged in as a user with the "administrator" role
   And I am on "admin/config/subsites"
   Then I should see "SUBSITE MENU PLACEMENT" in the "Content Body" region
 
-@api @javascript
+@api @javascript @live @safe @prod
 Scenario: See manage subsites in the shortcuts
   Given I am logged in as a user with the "site owner" role
   And I am on the homepage
   When I click "Manage Subsites" in the "Admin Shortcuts" region
   Then I should be on "admin/config/subsites/dashboard"
 
-@api @javascript
+@api @javascript @content
+Scenario: Ability to Add Subsite
+  Given I am logged in as a user with the "site owner" role
+  And I am on the homepage
+  When I click "Site Actions" in the "Admin Shortcuts" region
+  Then I should see "Add Subsite" in the "Content Body" region
+
+@api @javascript @destructive @content
 Scenario: Create subsite content
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-subsite"
@@ -36,7 +43,7 @@ Scenario: Create subsite content
   Then I should see 1 "#site-title-second-line" element
   Then I should see 1 "#site-slogan" element
 
-@api @javascript
+@api @javascript @live @safe @prod
 Scenario: See subsite stuff
   Given I am logged in as a user with the "administrator" role
   And I am on "admin/content"
