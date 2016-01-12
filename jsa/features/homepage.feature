@@ -3,9 +3,10 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
-  @api
+  @api @destructive @dev @stanford
   Scenario: Enable the Panama new and events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
+    And the cache has been cleared
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
 
