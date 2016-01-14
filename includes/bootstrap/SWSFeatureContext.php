@@ -347,7 +347,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   public function iPressTheElementWithCSSSelector($css) {
     $mink = $this->minkContext;
     $session = $mink->getSession();
-    $element = $session->getPage()->findAll('css', $css);
+    $element = $session->getPage()->find('css', $css);
     if (NULL === $element) {
       throw new \InvalidArgumentException(sprintf('Could not evaluate CSS Selector: "%s"', $css));
     }
