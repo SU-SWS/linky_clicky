@@ -20,6 +20,7 @@ Feature: Taxonomy Manager
     And I press the "Add" button
     Then I should see "Terms added: dog, cat, sheep, cow, turtle"
     When I click "turtle"
+    And I wait for AJAX to finish
     Then the "Name" field should contain "turtle"
     When I check the box "turtle"
     And I check the box "dog"

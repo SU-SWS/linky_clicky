@@ -16,7 +16,7 @@ Scenario: See manage subsites in the shortcuts
   When I click "Manage Subsites" in the "Admin Shortcuts" region
   Then I should be on "admin/config/subsites/dashboard"
 
-@api @javascript @content
+@api @javascript
 Scenario: Ability to Add Subsite
   Given I am logged in as a user with the "site owner" role
   And I am on the homepage

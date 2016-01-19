@@ -4,7 +4,7 @@ Feature: Feeds XPath Parser
   As an administrative user
   I want to ensure that the Feeds XPath Parser module is working properly
 
-  @api @dev @destructive
+  @api @dev @destructive @javascript
   Scenario: Feeds XPath Parser
     Given the cache has been cleared
     And the "feeds_xpathparser" module is enabled

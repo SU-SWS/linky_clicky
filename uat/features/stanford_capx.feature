@@ -7,6 +7,7 @@ Feature: Stanford CAP Extensible
   @api @javascript @dev @destructive
   Scenario: Stanford CAP Extensible
     Given the "stanford_capx" module is enabled
+    And the cache has been cleared
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx"
     Then I should see "Not Connected"

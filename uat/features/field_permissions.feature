@@ -11,7 +11,7 @@ Feature: Field Permissions
     And I am logged in as a user with the "administrator" role
     # This may have to change as article and basic page are being removed from our products.
     And I am on "admin/structure/types/manage/article/fields/body"
-    And I select the radio button "Private (only author and administrators can edit and view)"
+    And I select the "Private (only author and administrators can edit and view)" radio button
     And I press the "Save settings" button
     Then I should see "Saved Body configuration"
     # This may have to change as article and basic page are being removed from our products.
@@ -27,7 +27,7 @@ Feature: Field Permissions
     Then I should not see "Bacon ipsum dolor sit amet deserunt fatback"
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/structure/types/manage/article/fields/body"
-    And I select the radio button "Public (author and administrators can edit, everyone can view)"
+    And I select the "Public (author and administrators can edit, everyone can view)" radio button
     And I press the "Save settings" button
     Then I should see "Saved Body configuration"
     When I go to "field-permissions-test"
