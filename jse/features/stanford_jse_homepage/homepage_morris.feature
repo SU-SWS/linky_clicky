@@ -40,9 +40,13 @@ Feature: Morris Homepage Layout
 
   Examples:
     | Link                          | Region                |
-    | About us                      | Main Top              |
-    | Example link                  | Main Top              |
-    | More about us                 | Content 3 column flow |
+    | More about us                 | Main Top              |
+    | Learn more                    | Content 3 column flow |
     | See more news                 | Content 3 column flow |
     | See more events               | Content 3 column flow |
 
+  @deploy @safe @stanford
+  Scenario: Homepage image Morris
+    Given I am on the homepage
+    Then I should see 1 ".field-name-field-s-image-image" element in the "Main Top" region
+ 
