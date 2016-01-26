@@ -318,3 +318,17 @@ Feature: Stanford Person
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/people"
     Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
+    
+  @content @live  @stanford
+  Scenario: Stanford Person Styles and Layout
+    Given I am on "people"
+    Then I should see a ".person-details:before" element
+    And I should see a ".views-grid-four" element
+    And I should see the heading "People" in the "Content Head" region
+    And I should see the heading "Jacob Smith" in the "Content Body" region
+  
+  @content @live  @stanford
+  Scenario: Stanford Person Profile
+    Given I am on "people/jacob-smith"
+    Then I should see a ".postcard-left" element
+    And I should see the heading "Jacob Smith I Teach" in the "Content Body" region
