@@ -4,7 +4,7 @@ Feature: Hoover Homepage Layout
   I want to check for the existence of content that should appear
 
   @api @dev @destructive
-  Scenario: Enable the Hoover News & Events homepage layout as administrator
+  Scenario: Enable the Hoover homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-hoover-selector" button
@@ -18,6 +18,7 @@ Feature: Hoover Homepage Layout
     | Header                | Region                |
     | About                 | Main Top              |
     | Small Custom Block    | Content Lower         |
+    | Large Custom Block    | Content Lower         |
     | Affiliates            | Main Bottom           |
     | Contact Us            | Footer                |
 
@@ -30,20 +31,19 @@ Feature: Hoover Homepage Layout
     | Text                                            | Region                |
     | This is your About block                        | Main Top              |
     | You can use this block to highlight content     | Content Lower         |
-    | This is your custom        | Footer             |
+    | This is your large custom block                 | Content Lower         |
+    | This is your custom                             | Footer                |
 
-  @deploy  @live @safe
-  Scenario Outline: Homepage links hoover news and events
+  @deploy  @live @safe @test
+  Scenario Outline: Homepage links on hoover
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
 
   Examples:
     | Link                          | Region                |
-    | About us                      | Main Top              |
-    | Example link                  | Main Top              |
-    | More about us                 | Content 3 column flow |
-    | See more news                 | Content 3 column flow |
-    | See more events               | Content 3 column flow |
+    | More about us                 | Main Top              |
+    | Learn more                    | Content Lower         |
+    | Learn more                    | Content Lower         |
 
 @deploy @safe @stanford @test
 Scenario: Affiliate Organizations page is visible and link in the main menu
