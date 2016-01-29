@@ -17,11 +17,6 @@ Feature: Stanford Person
     Then I should be on "people/leland-stanford"
     And I should see "Person Leland Stanford has been created"
 
-  @content @live @deploy @stanford @safe @contrib @stanford
-  Scenario: Stanford Person Profile
-    Given I am on "people/jacob-smith"
-    Then I should see a ".postcard-left" element
-
   @content @live  @stanford @prod
   Scenario: List of faculty
     Given I am on "people/faculty"
@@ -30,12 +25,6 @@ Feature: Stanford Person
     And I should see the heading "Why I Teach" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
     And I should see "This is your Why I Teach block" in the "First sidebar" region
-
-  @content @deploy @stanford
-  Scenario: Faculty node
-    Given I am on "people/faculty"
-    And I click "Jacob Smith" in the "Content Body" region
-    Then I should see "Professor of English" in the "Content Body" region
 
   @content @deploy @stanford
   Scenario: Faculty taxonomy filter
@@ -77,33 +66,9 @@ Feature: Stanford Person
     Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
 
   @content @deploy @stanford
-  Scenario: Faculty node on profiles page
-    Given I am on "people/faculty/profiles"
-    And I click "Jacob Smith" in the "Content Body" region
-    Then I should see "Professor of English" in the "Content Body" region
-
-  @content @deploy @stanford
   Scenario: Faculty node on list page
     Given I am on "people/faculty/list"
     Then I should see "Jacob Smith" in the "Content Body" region
-
-  @content @deploy  @stanford
-  Scenario: Faculty node on grid page
-    Given I am on "people/faculty/grid"
-    And I click "Jacob Smith" in the "Content Body" region
-    Then I should see "Professor of English" in the "Content Body" region
-
-  @content @deploy @stanford
-  Scenario: Faculty node on directory page
-    Given I am on "people/faculty/directory"
-    And I click "Jacob Smith" in the "Content Body" region
-    Then I should see "Professor of English" in the "Content Body" region
-
-  @content @deploy @stanford
-  Scenario: Staff node on profiles page
-    Given I am on "people/staff/profiles"
-    And I click "Emily Jordan" in the "Content Body" region
-    Then I should see "Department Manager" in the "Content Body" region
 
   @content @deploy @stanford
   Scenario: Staff node on list page
@@ -111,39 +76,9 @@ Feature: Stanford Person
     Then I should see "Emily Jordan" in the "Content Body" region
 
   @content @deploy @stanford
-  Scenario: Staff node on grid page
-    Given I am on "people/staff/grid"
-    And I click "Emily Jordan" in the "Content Body" region
-    Then I should see "Department Manager" in the "Content Body" region
-
-  @content @deploy @stanford
-  Scenario: Staff node on directory page
-    Given I am on "people/staff/directory"
-    And I click "Emily Jordan" in the "Content Body" region
-    Then I should see "Department Manager" in the "Content Body" region
-
-  @content @deploy @stanford
-  Scenario: Students node on profiles page
-    Given I am on "people/students/profiles"
-    And I click "Haley Jackson" in the "Content Body" region
-    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
-
-  @content @deploy @stanford
   Scenario: students node on list page
     Given I am on "people/students/list"
     Then I should see "Haley Jackson" in the "Content Body" region
-
-  @content @deploy @stanford
-  Scenario: Students node on grid page
-    Given I am on "people/students/grid"
-    And I click "Haley Jackson" in the "Content Body" region
-    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
-
-  @content @deploy @stanford
-  Scenario: Students node on directory page
-    Given I am on "people/students/directory"
-    And I click "Haley Jackson" in the "Content Body" region
-    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
 
   @content @live @prod @stanford
   Scenario: Grid layout for faculty
