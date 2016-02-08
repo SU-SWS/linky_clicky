@@ -15,6 +15,7 @@ Feature: Block Title Link
     # Assign an id to an element without an id. Tricksy little hobbitses.
     And the iframe in element "cke_contents_edit-body-value" has id "cke_contents_edit-body-value-iframe"
     And I fill in "This is a test block for the Block Title Link module" in WYSIWYG editor "cke_contents_edit-body-value-iframe"
+    # Between 7.x-1.3 and 7.x-1.5 the default collapsed state of this fieldset changed. The below works for 7.x-1.5
     And I click "Block Title Link Settings"
     And I wait for AJAX to finish
     And I enter "user" for "Title Path"
