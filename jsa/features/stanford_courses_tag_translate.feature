@@ -94,31 +94,3 @@ Feature: Stanford Courses Tag Translate
     Then I should see "Translation One"
     And I should see "This is Three"
 
-# Create a course importer using http://explorecourses.stanford.edu/search?view=xml-20130201&filter-coursestatus-Active=on&page=0&catalog=&academicYear=&q=IR%3A%3Awim&collapse=
-# Find a course that was imported and review the tags that are attached
-# Go to: admin/config/stanford/courses/tag-translate and create a few new tag translations
-# Go back to importer and re-import
-# Go back to the course you reviewed earlier and check the human readable field for the new values.
-# Go to admin/config/stanford/courses/tag-translate/export and keep that information handy
-# Part II: Import / Export
-
-# Install a new JSA website somewhere else
-# Check out this branch and enable stanford_courses_tag_translate
-# Go to admin/config/stanford/courses/tag-translate/import and import the values from the steps above.
-# Go to admin/config/stanford/courses/tag-translate and verify they imported correctly.
-# Part III: Additional checks.
-
-# Check that the content type has the human readable field
-# Check that the feed importer has a mapping to the human readable field
-# Check that the feeds tamper has the new custom plugin on the human readable field
-# Try to import bad values.
-# Disable and uninstall to ensure that everything goes away correctly.
-# Before enabling the stanford_courses_tag_translate modify the feeds importer, feeds tampers, and content type.
-# Part IV: More things to check
-
-# Set the default value for the import to [original] and run an import
-# Set the default value for the import to nothing (empty field) and run an import
-# Set the default value for the import to "Some random string" and run import
-# Check to see that admin/structure/views/view/stanford_courses_ref_human_tag installs on enable
-# Check to see that admin/structure/views/view/stanford_courses_ref_human_tag uninstalls on uninstall
-# Check that Deprecated field group is on courses with two tag fields in them.
