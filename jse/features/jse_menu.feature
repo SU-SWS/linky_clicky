@@ -18,79 +18,79 @@ Feature: Stanford Jumpstart Engineering Menus
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct About navigation items
     Given I am on the homepage
-    When I click on "About"
+    When I click "About"
     Then I should be on "about/mission"
-    When I click on "Programs"
+    When I click "Programs"
     Then I should be on "about/affiliated-programs"
-    When I click on "Affiliates"
+    When I click "Affiliates"
     Then I should be on "about/affiliate-organizations"
-    When I click on "Courses"
+    When I click "Courses"
     Then I should be on "courses"
-    When I click on "Contact"
+    When I click "Contact"
     Then I should be on "about/contact"
 
 
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct People navigation items
     Given I am on the homepage
-    When I click on "People"
+    When I click "People"
     Then I should be on "people/all/grid/grouped"
-    When I click on "Faculty"
+    When I click "Faculty"
     Then I should be on "people/faculty"
-    When I click on "Students"
+    When I click "Students"
     Then I should be on "people/students/cap-list"
-    When I click on "Staff"
+    When I click "Staff"
     Then I should be on "people/staff"
 
 
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct People navigation items
     Given I am on the homepage
-    When I click on "Research"
+    When I click "Research"
     Then I should be on "research/overview"
-    When I click on "Research Example"
+    When I click "Research Example"
     Then I should be on "research/research-example"
-    When I click on "Project Example"
+    When I click "Project Example"
     Then I should be on "research/project-example"
 
 
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct Publications navigation items
     Given I am on the homepage
-    When I click on "Publications"
+    When I click "Publications"
     Then I should be on "publications"
 
 
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct News navigation items
     Given I am on the homepage
-    When I click on "News"
+    When I click "News"
     Then I should be on "news/recent-news"
-    When I click on "Newsletter"
+    When I click "Newsletter"
     Then I should be on "news/department-newsletter"
-    When I click on "Subscribe"
+    When I click "Subscribe"
     Then I should be on "news/subscribe"
-    When I click on "Gallery"
+    When I click "Gallery"
     Then I should be on "news/gallery"
 
 
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct Events navigation items
     Given I am on the homepage
-    When I click on "Events"
+    When I click "Events"
     Then I should be on "events/upcoming-events"
-    When I click on "Past Events"
+    When I click "Past Events"
     Then I should be on "events/past-events"
-    When I click on "Event Series"
+    When I click "Event Series"
     Then I should be on "events/series"
 
 
   @safe @site @jse @deploy
   Scenario: Verify that we have the correct Resources navigation items
     Given I am on the homepage
-    When I click on "Resources"
+    When I click "Resources"
     Then I should be on "resources/overview"
-    When I click on "Software Resources"
+    When I click "Software Resources"
     Then I should be on "resources/software"
-    When I click on "References"
+    When I click "References"
     Then I should be on "resources/references"

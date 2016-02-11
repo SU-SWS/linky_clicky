@@ -190,6 +190,34 @@ Feature: Stanford Person
     And I should see a ".view-stanford-person-directory" element
     And I should see the "People" heading in the "First sidebar" region
 
+  @content @deploy @stanford @cjw
+  Scenario: Grouped Grid layout for professor
+    Given I am on "people/professor/grid/grouped"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-grid" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy @stanford @cjw
+  Scenario: Grouped Profiles layout for professor
+    Given I am on "people/professor/profiles/grouped"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-profiles" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy @stanford @cjw
+  Scenario: Grouped List layout for professor
+    Given I am on "people/professor/list/grouped"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-list" element
+    And I should see the "People" heading in the "First sidebar" region
+
+  @content @deploy @stanford @cjw
+  Scenario: Grouped Directory layout for professor
+    Given I am on "people/professor/directory/grouped"
+    Then I should see a ".views-row-first" element
+    And I should see a ".view-stanford-person-directory" element
+    And I should see the "People" heading in the "First sidebar" region
+
   @content @deploy @stanford
   Scenario: Grid layout for department-administrator
     Given I am on "people/department-administrator/grid"
@@ -251,3 +279,19 @@ Feature: Stanford Person
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/people"
     Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
+
+
+  @content @deploy @safe
+  Scenario Outline: Check that the correct headings exist on people page of a newly deployed site.
+    Given I am on the homepage
+    And I click "People" in the "Main Navigation" region
+    And I should see the "People" heading in the "Content Head" region
+    Then I should see the "<Header>" heading in the "<Region>" region
+
+  Examples:
+  | Header   | Region       |
+  | Faculty  | Content Body |
+  | Students | Content Body |
+  | Staff    | Content Body |
+
+
