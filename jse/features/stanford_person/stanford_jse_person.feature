@@ -17,11 +17,12 @@ Feature: Stanford Person
     Then I should be on "people/leland-stanford"
     And I should see "Person Leland Stanford has been created"
 
-  @content @live  @stanford @prod @deploy
+  @content @live  @stanford @deploy
   Scenario: List of faculty
     Given I am on "people/faculty"
     Then I should see a ".views-row-first" element
     And I should see a ".views-row-lines" element
+    And I should not see "Why I Teach" in the "First sidebar" region
 
   @content @deploy @stanford
   Scenario: Faculty taxonomy filter

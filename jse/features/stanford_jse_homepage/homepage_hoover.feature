@@ -3,7 +3,7 @@ Feature: Hoover Homepage Layout
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @dev @destructive
+  @api @dev @destructive @javascript
   Scenario: Enable the Hoover homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
