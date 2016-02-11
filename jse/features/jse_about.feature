@@ -1,5 +1,5 @@
 Feature: About
-  In order to ensure that the Jumpstart Academic and Jumpstart Engineering website About content is visible
+  In order to ensure that the Jumpstart Engineering website About content is visible
   As an end user
   I want to check for the existence of page and block content
 
