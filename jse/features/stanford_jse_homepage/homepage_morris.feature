@@ -49,4 +49,8 @@ Feature: Morris Homepage Layout
   Scenario: Homepage image Morris
     Given I am on the homepage
     Then I should see 1 ".field-name-field-s-image-image" element in the "Main Top" region
- 
+
+  Scenario: Affiliate Organizations page is visible and link on the main menu
+    Given I am on the homepage
+    Then I should see "Affiliates" in the "Main Bottom" region
+    Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
