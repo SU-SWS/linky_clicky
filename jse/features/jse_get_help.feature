@@ -1,4 +1,4 @@
-Feature: Stanford Jumpstart
+Feature: Stanford Jumpstart Engineering Get help
   In order to ensure that the Jumpstart Help page is configured correctly
   As a site owner
   I want to check for the correct content and configuration on the Jumpstart Help page
