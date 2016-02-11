@@ -7,7 +7,7 @@ Feature: Morris Homepage Layout
   Scenario: Enable the Morris News & Events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-morris" button
+    Then I press the "edit-layouts-stanford-jumpstart-home-morris-selector" button
 
   @deploy  @live @safe
   Scenario Outline: Header content for Morris
