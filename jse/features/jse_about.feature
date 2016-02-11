@@ -22,6 +22,6 @@ Feature: About
   @content @deploy
   Scenario: Clicking the sidebar menu
     Given I am on "about/contact"
-    And I click "Overview" in the "First sidebar" region
-    Then I should see "This is your About page" in the "Content Body" region
+    And I click "Mission" in the "First sidebar" region
+    Then I should see "This is your Mission page" in the "Content Body" region
 
