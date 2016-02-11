@@ -26,6 +26,7 @@ Feature: Colorbox
     # Have to wait here because Views AJAX shuffles the DOM and otherwise we lose stuffs.
     And I wait for AJAX to finish
     And I select "fields" from "of"
+    And I wait for AJAX to finish
     And I press the "Continue & edit" button
     And I wait for AJAX to finish
     And I click "views-add-field"
