@@ -1,1 +1,1 @@
-./../../includes/features/stanford_person/stanford_person_cap_node_display.feature
+../../../includes/features/stanford_person/stanford_person_cap_node_display.feature
