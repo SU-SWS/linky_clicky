@@ -14,7 +14,7 @@ Feature: Research Section
   @content @deploy @safe
   Scenario: Check that the correct pages exist in research section of a newly deployed site.
     Given I am on the homepage
-    And I click on "Research" in the "Main Navigation" region
+    And I click "Research" in the "Main Navigation" region
     Then I should see "This is your Research" in the "Content Body" region
     And I click "Research Example" in the "First sidebar" region
     Then I should see "This is an example of a research" in the "Content Body" region
