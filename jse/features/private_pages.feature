@@ -3,81 +3,23 @@ Feature: Stanford Private Page
   As an administrator, site owner, or editor
   I want to be able to create, edit, delete, view, and manage private page nodes.
 
-  @api @deploy @prod @safe @contrib @stanford
+  @api @deploy @prod @safe @stanford
   Scenario: Check that the Internal Login button directs to the Private Pages Section
     Given I am logged in as a user with the "administrator" role
     Given I am on the homepage
     And I click "Internal Login" in the "Footer" region
     Then I should see "Private Pages" in the "First sidebar" region
+    # TODO: The .block-menu selector is super generic. This could be better.
     And I should see a ".block-menu" element
     And I should see "Private Pages" in the "Content Head" region
 
-  @api @deploy @safe @contrib @stanford
-  Scenario: On deploy, check that the site member can view all private pages
-    Given I am logged in as a user with the "site member" role
-    Given I am on the homepage
-    And I click "Internal Login" in the "Footer" region
-    And I should see "Private Pages" in the "First sidebar" region
-    And I should see a ".block-menu" element
-    And I should see "Private Pages" in the "Content Head" region
-
-    And I click "For Faculty" in the "First sidebar" region
-    And I should see "Private Pages" in the "First sidebar" region
-    And I should see a ".block-menu" element
-    And I should see "For Faculty" in the "Content Head" region
-
-    And I click "Faculty Sub-Page" in the "First sidebar" region
-    And I should see "Private Pages" in the "First sidebar" region
-    And I should see a ".block-menu" element
-    And I should see "Faculty Sub-Page" in the "Content Head" region
-
-    And I click "For Students" in the "First sidebar" region
-    And I should see "Private Pages" in the "First sidebar" region
-    And I should see a ".block-menu" element
-    And I should see "For Students" in the "Content Head" region
-
-    And I click "For Staff" in the "First sidebar" region
-    And I should see "Private Pages" in the "First sidebar" region
-    And I should see a ".block-menu" element
-    And I should see "For Staff" in the "Content Head" region
-
-  @api @deploy @prod  @safe @contrib @stanford
-  Scenario: On a production site check site member can view Private Pages Section
-    Given I am logged in as a user with the "site member" role
-    Given I am on the homepage
-    And I click "Internal Login" in the "Footer" region
-    And I should see a ".block-menu" element
-
-  @api @deploy @prod  @safe @contrib @stanford
-  Scenario: On a production site check site owner can view Private Pages Section
-    Given I am logged in as a user with the "site owner" role
-    Given I am on the homepage
-    And I click "Internal Login" in the "Footer" region
-    And I should see a ".block-menu" element
-
-
-  @api @deploy @prod  @safe @contrib @stanford
-  Scenario: On a production site check site owner can view Private Pages Section
-    Given I am logged in as a user with the "editor" role
-    Given I am on the homepage
-    And I click "Internal Login" in the "Footer" region
-    And I should see a ".block-menu" element
-
-
-  @api @deploy @prod  @safe @contrib @stanford
-  Scenario: On a production site check site owner can view Private Pages Section
-    Given I am logged in as a user with the "administrator" role
-    Given I am on the homepage
-    And I click "Internal Login" in the "Footer" region
-    And I should see a ".block-menu" element
-
-  @api  @deploy @prod  @safe @contrib @stanford
+  @api @prod @safe @stanford
   Scenario: Private Page view on manage Private Page
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/private-page"
     Then I should see 1 or more ".view-stanford-private-page-manage" elements
 
-  @api @content @contrib @stanford
+  @api @content @stanford
   Scenario: Site owner can create Private Page types
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
@@ -93,3 +35,12 @@ Feature: Stanford Private Page
     Then I press "Save"
     Then I go to "private/bar"
     And I should see "Bar" in the "Content Head" region
+
+  # TODO: This should be changed to:
+  # Given the module always_visible is enabled.
+  @live @contrib
+  Scenario: Test that the Always Visble module is enabled
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/modules"
+    Then I should see 1 "#edit-modules-other-always-visible-enable" element
+    And the checkbox is checked
