@@ -7,7 +7,7 @@ Feature: Stanford Private Page Content
   As all types of users
   I want to check for that the pages exist
 
-  @api @deploy @safe @contrib @stanford
+  @api @deploy @safe @stanford
   Scenario: On deploy, check that the site member can view all private pages
     Given I am logged in as a user with the "site member" role
     Given the "stanford_private_page_section" module is enabled
