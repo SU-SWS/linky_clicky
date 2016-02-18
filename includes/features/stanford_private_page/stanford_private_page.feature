@@ -13,7 +13,7 @@ Feature: Stanford Private Page
     And I press the "Save" button
     Then I should see "Private Page Private Page Test has been created" in the "Console" region
 
-  @api @content @contrib @stanford
+  @api @content @stanford
   Scenario: Site owner can create and edit Private Page types
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
