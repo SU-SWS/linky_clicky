@@ -1,6 +1,11 @@
 {
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/sherakama/Behat"
+        }
+    ],
     "require": {
-        "behat/behat": "~3.0.6",
         "behat/mink": "*",
         "behat/mink-selenium2-driver": "*",
         "behat/mink-goutte-driver": "*",
@@ -8,7 +13,8 @@
         "weavora/mink-extra-context": "dev-master",
         "drupal/drupal-driver": "dev-master",
         "psr/log":  "*",
-        "emuse/behat-html-formatter": "dev-master"
+        "emuse/behat-html-formatter": "dev-master",
+        "behat/behat":  "dev-symlink as 3.0.x-dev"
     },
     "config": {
       "bin-dir": "bin/"

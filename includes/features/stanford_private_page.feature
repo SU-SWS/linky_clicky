@@ -3,7 +3,7 @@ Feature: Stanford Private Page
   As all types of users
   I want to check for CRUD permissions.
 
-  @dev @stanford @content
+  @api @dev @stanford @content
   Scenario: Create Private Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -35,24 +35,3 @@ Feature: Stanford Private Page
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/private-page"
     Then I should see 1 or more ".view-stanford-private-page-manage" elements
-
-  # TODO: This should be changed to: Given the module always_visible is enabled.
-  # And only on VPSA/JSE.
-  #
-  # @live @contrib
-  # Scenario: Test that the Always Visble module is enabled
-  #   Given I am logged in as a user with the "administrator" role
-  #   And I am on "admin/modules"
-  #   Then I should see 1 "#edit-modules-other-always-visible-enable" element
-  #   And the checkbox is checked
-
-  # TODO: This check assumes JSE login button and needs to be changed.
-  #
-  # @api @deploy @prod @safe @contrib @stanford
-  # Scenario: Check that the Internal Login button directs to the Private Pages Section
-  #   Given I am logged in as a user with the "administrator" role
-  #   Given I am on the homepage
-  #   And I click "Internal Login" in the "Footer" region
-  #   Then I should see "Private Pages" in the "First sidebar" region
-  #   And I should see a ".block-menu" element
-  #   And I should see "Private Pages" in the "Content Head" region

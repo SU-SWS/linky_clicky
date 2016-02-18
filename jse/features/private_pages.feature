@@ -38,9 +38,9 @@ Feature: Stanford Private Page
 
   # TODO: This should be changed to:
   # Given the module always_visible is enabled.
-  @live @contrib
+  @api @live @contrib
   Scenario: Test that the Always Visble module is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/modules"
     Then I should see 1 "#edit-modules-other-always-visible-enable" element
-    And the checkbox is checked
+    And the "modules[Other][always_visible][enable]" checkbox should be checked
