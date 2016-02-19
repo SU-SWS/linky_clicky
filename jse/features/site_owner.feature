@@ -67,7 +67,7 @@ Feature: Site Owner
     When I enter "Millennium Falcon" for "Site name"
     And I press the "Save" button
     And I go to the homepage
-    Then I should see "Millennium Falcon" in the "Site Name" region
+    Then I should see "Millennium Falcon" in the "Header" region
 
   @api @javascript @deploy @live @prod   @safe @contrib @stanford
   Scenario: View the Get Help Page
