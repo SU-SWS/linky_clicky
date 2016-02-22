@@ -5,9 +5,9 @@ Feature: Stanford Affiliate Organization
   I want to be able to create, edit, delete, view, and manage affiliate organization nodes.
 
 @deploy @safe @stanford
-Scenario: Affiliate Organizations page is visible and link in the main menu
+Scenario: Affiliates page is visible and link in the main menu
   When I go to "about/affiliate-organizations"
-  Then I should see "Affiliate Organizations" in the "First sidebar" region
+  Then I should see "Affiliates" in the "First sidebar" region
   Then I should see "Affiliates" in the "Content Head" region
   Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
 
@@ -25,7 +25,7 @@ Scenario: Site owner can create and manage affiliate organizations
   Then I should see 1 or more ".views-field-field-s-affiliate-image" elements
 
 @deploy @safe @stanford
-Scenario: Affiliate Organizations page is visible and link in the main menu
+Scenario: Affiliates block is visible
   Given I am on the homepage
   Then I should see "Affiliates" in the "Main Bottom" region
   Then I should see 5 or more ".views-field-field-s-affiliate-image" elements

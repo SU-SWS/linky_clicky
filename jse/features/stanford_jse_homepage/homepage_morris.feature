@@ -3,11 +3,11 @@ Feature: Morris Homepage Layout
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @dev @destructive
+  @api @dev @destructive @javascript
   Scenario: Enable the Morris News & Events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-morris" button
+    Then I press the "edit-layouts-stanford-jumpstart-home-morris-selector" button
 
   @deploy  @live @safe
   Scenario Outline: Header content for Morris
@@ -49,4 +49,8 @@ Feature: Morris Homepage Layout
   Scenario: Homepage image Morris
     Given I am on the homepage
     Then I should see 1 ".field-name-field-s-image-image" element in the "Main Top" region
- 
+
+  Scenario: Affiliate Organizations page is visible and link on the main menu
+    Given I am on the homepage
+    Then I should see "Affiliates" in the "Main Bottom" region
+    Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
