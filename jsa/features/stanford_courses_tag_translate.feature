@@ -72,7 +72,7 @@ Feature: Stanford Courses Tag Translate
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
     Then I click on the element with xpath "//table//a[1]"
-    Then I should be on "admin/config/stanford/courses/tag-translate/edit/1"
+    Then I should be on "admin/config/stanford/courses/tag-translate/edit/3"
     Then I enter "MCS::BIOTRACK_CORE" for "edit-ctag"
     Then I enter "Biology Track Core" for "edit-chuman"
     Then I press "Save"
