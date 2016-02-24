@@ -509,4 +509,15 @@ JS;
     }
   }
 
+  /**
+   * @Given /^I fill in "([^"]*)" with$/
+   */
+  public function iFillInWith($field, PyStringNode $value) {
+    $raw = $value->getRaw();
+    $mink = $this->minkContext;
+
+    $element = $mink->getSession()->getPage();
+    $element->fillField($field, $raw);
+  }
+
 }
