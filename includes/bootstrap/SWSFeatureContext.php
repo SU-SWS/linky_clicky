@@ -462,34 +462,6 @@ JS;
   }
 
   /**
-   * Track the original state of a changed variable.
-   */
-  protected function trackChangedVariable($name, $value) {
-    if (!key_exists($name, $this->changedVariables)) {
-      $this->changedVariables[$name] = $value;
-    }
-  }
-
-  /**
-   * Set changed variables to their original state.
-   *
-   * @AfterScenario
-   */
-  public function resetVariables() {
-    foreach ($this->changedVariables as $var => $value) {
-      if (isset($value)) {
-        // If the original value was something other than NULL, set it back.
-        variable_set($var, $value);
-      }
-      else {
-        // Unset the variable if it didn't exist before.
-        variable_del($var);
-      }
-    }
-  }
-
-
-  /**
    * @Then the href in element :arg1 should contain :arg2
    */
   public function theHrefInElementShouldContain($element_id, $pattern) {

@@ -30,6 +30,32 @@ use Drupal\DrupalExtension\Context\RawDrupalContext,
 class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptingContext {
 
   /**
+   * Track changed variables so we can revert them back after we are done.
+   *
+   * @var array
+   */
+  private $changedVariables = array();
+
+  /**
+   * @var \Drupal\DrupalExtension\Context\DrupalContext
+   */
+  protected $drupalContext;
+
+  /**
+   * @var \Drupal\DrupalExtension\Context\MinkContext
+   */
+  protected $minkContext;
+
+  /**
+   * @BeforeScenario
+   */
+  public function gatherContexts(BeforeScenarioScope $scope) {
+    $environment = $scope->getEnvironment();
+    $this->drupalContext = $environment->getContext('SWSDrupalContext');
+    $this->minkContext = $environment->getContext('SWSMinkContext');
+  }
+
+  /**
    * Override DrupalContext::login
    * The WebAuth Module for Drupal (WMD) hides the user login form in a collapsible fieldset.
    * We need to open that fieldset up to be able to fill out the fields
@@ -69,5 +95,95 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
     }
   }
 
+
+  /**
+   * @When I track variable :arg1
+   */
+  public function iTrackVariable($arg1) {
+    $value = $this->variableGet($arg1);
+    $this->trackChangedVariable($arg1, $value);
+  }
+
+  /**
+   * Track the original state of a changed variable.
+   */
+  protected function trackChangedVariable($name, $value) {
+    if (!key_exists($name, $this->changedVariables)) {
+      $this->changedVariables[$name] = $value;
+    }
+  }
+
+  /**
+   * Set changed variables to their original state.
+   *
+   * @AfterScenario
+   */
+  public function resetVariables() {
+    foreach ($this->changedVariables as $var => $value) {
+      if (!is_null($value)) {
+        // If the original value was something other than NULL, set it back.
+        $this->variableSet($var, $value);
+      }
+      else {
+        // Unset the variable if it didn't exist before.
+        $this->variableDel($var);
+      }
+    }
+  }
+
+  /**
+   * [variableGet description]
+   * @param  [type] $arg [description]
+   * @return [type]      [description]
+   */
+  protected function variableGet($arg) {
+    $driver = $this->getDriver();
+    $arguments = array($arg);
+    $options = array(
+      'exact' => TRUE,
+      'format' => "json",
+    );
+
+    try {
+      $json = $driver->drush("vget", $arguments, $options);
+    } catch (RuntimeException $e) {
+      return NULL;
+    }
+
+    $result = json_decode($json);
+
+    return $result;
+  }
+
+  /**
+   * [variableSet description]
+   * @param  [type] $arg [description]
+   * @return [type]      [description]
+   */
+  protected function variableSet($name, $arg) {
+    $driver = $this->getDriver();
+    $options = array(
+      'exact' => TRUE,
+      'format' => "json",
+    );
+    $value = "\"" . addslashes(json_encode($arg)) . "\"";
+    $arguments = array($name, $value);
+    $driver->drush("vset", $arguments, $options);
+  }
+
+  /**
+   * [variableGet description]
+   * @param  [type] $name [description]
+   * @return [type]      [description]
+   */
+  protected function variableDel($name) {
+    $driver = $this->getDriver();
+    $options = array(
+      'exact' => TRUE,
+      'yes' => TRUE,
+    );
+    $arguments = array($name);
+    $driver->drush("vdel", $arguments, $options);
+  }
 
 }

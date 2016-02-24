@@ -25,6 +25,7 @@ Feature: Administration
   Scenario: Help text and request assistance url changes
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/stanford-jumpstart/settings"
+    And I track variable "stanford_jumpstart_help_settings"
     Then I fill in "Help text" with "My new and wonderful help text."
     Then I fill in "Request assistance url" with "https://test.stanford.edu"
     Then I press "Save"
