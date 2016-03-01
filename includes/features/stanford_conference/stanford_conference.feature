@@ -178,10 +178,21 @@ Feature: Stanford Conference
 
     Then I go to "conferences/conference-overview-behat"
     Then I should see "Conference Overview Behat"
-    Then I wait 60 seconds
+    Then I should see "My Reg Link Title"
+    Then I should see a ".field-name-field-s-conference-date" element
+    Then I should see a ".field-name-field-s-conference-location" element
+    Then I should see a ".field-name-field-s-conference-map-link" element
+    Then I should see a ".view-s-conference-link-to-agenda" element
+    Then I should see a ".view-conference-image" element
+    Then I should see a ".view-conference-contact-info" element
+    Then I should see a "#block-views-conference-sponsors-block" element
 
     Then I go to "conferences/conference-overview-behat/agenda"
     Then I should see "Agenda: Conference Overview Behat"
-    Then I wait 60 seconds
+    Then I should see "March 31, 2019"
+    Then I should see "April 1, 2019"
+    Then I should see "Behat Session One"
+    Then I should see "Behat Session Two"
+    Then I should see a ".view-conference-link-to-overview" element
 
 
