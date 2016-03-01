@@ -257,18 +257,25 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
   /**
    * Find the default value of a select element.
-   * See https://github.com/Behat/Mink/issues/300.
+     * See https://github.com/Behat/Mink/issues/300.
    *
    * @Then /^I want to validate select field option "([^"]*)" default is "([^"]*)"$/
    */
   public function iWantToValidateSelectOptionDefaultIs($locator, $defaultValue) {
     $mink = $this->minkContext;
-    $optionElement = $mink->getSession()->getPage()->find('xpath', '//select[@name="' . $locator . '"]/option[@selected]');
-    if (!$optionElement) {
-      throw new Exception('Could not find a select element with the "name" attribute of ' . $locator);
+    $session = $mink->getSession();
+    $page = $session->getPage();
+
+    // //select[@id=\"$locator\"]/option[@selected]
+    // //select[@class=\"$locator\"]/option[@selected]
+    // //select[@name=\"$locator\"]/option[@selected]
+
+    $element = $page->find("xpath", "//select[@id=\"$locator\"]/option[@selected]|//select[@class=\"$locator\"]/option[@selected]|//select[@name=\"$locator\"]/option[@selected]");
+    if (!$element) {
+      throw new Exception('Could not find a select element with an attribute of ' . $locator);
     }
 
-    $selectedDefaultValue = (string) $optionElement->getText();
+    $selectedDefaultValue = (string) $element->getText();
     if ($selectedDefaultValue != $defaultValue) {
       throw new Exception('Select option default value: "' . $selectedDefaultValue . '" does not match given: "' . $defaultValue . '"');
     }
