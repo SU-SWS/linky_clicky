@@ -186,4 +186,22 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
     $driver->drush("vdel", $arguments, $options);
   }
 
+  /**
+   * Deletes the URL alias provided.
+   *
+   * @param string $path_alias
+   *   The alias to delete (this is the alias entered by the user or generated
+   *   by pathauto, not the system path)
+   *
+   * @Then I cleanup the :path_alias alias
+   */
+  public function cleanupTheAlias($path_alias) {
+    $driver = $this->getDriver();
+    $statement = "echo drupal_get_normal_path('" . $path_alias . "')";
+    $raw_path =  $driver->drush("php-eval \"" . $statement . "\"");
+
+    $statement_delete = "path_delete(array('source' => '" . $raw_path . "'))";
+    $deleted = $driver->drush("php-eval \"" . $statement_delete . "\"");
+  }
+
 }

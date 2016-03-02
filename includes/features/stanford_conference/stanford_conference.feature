@@ -195,4 +195,7 @@ Feature: Stanford Conference
     Then I should see "Behat Session Two"
     Then I should see a ".view-conference-link-to-overview" element
 
+    Then I cleanup the "conferences/conference-overview-behat" alias
+    Then I cleanup the "conferences/session-behat-session-one" alias
+    Then I cleanup the "conferences/session-behat-session-two" alias
 
