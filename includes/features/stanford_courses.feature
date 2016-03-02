@@ -1,3 +1,4 @@
+@api
 Feature: Stanford Courses
   In order to ensure that stanford courses was install succesfully.
   As an administrative user
