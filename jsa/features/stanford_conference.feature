@@ -1,1 +1,0 @@
-../../includes/features/stanford_conference/stanford_conference.feature
