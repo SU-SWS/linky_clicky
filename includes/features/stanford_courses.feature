@@ -1,6 +1,6 @@
 @api
 Feature: Stanford Courses
-  In order to ensure that stanford courses was install succesfully.
+  In order to ensure that stanford courses was installed succesfully.
   As an administrative user
   I want to ensure that the Stanford Courses module is working properly
 
