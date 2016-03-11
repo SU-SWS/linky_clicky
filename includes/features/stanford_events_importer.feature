@@ -3,7 +3,6 @@ Feature: Stanford Events Importer
   As an administrative user
   I want to ensure that the Stanford Events Importer module is working properly
 
-  @dev @destructive
   Background:
     Given the "stanford_events_importer" module is enabled
 
