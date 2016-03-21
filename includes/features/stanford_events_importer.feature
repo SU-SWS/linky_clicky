@@ -1,9 +1,9 @@
+@dev @destructive
 Feature: Stanford Events Importer
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure that the Stanford Events Importer module is working properly
 
-  @dev @destructive
   Background:
     Given the "stanford_events_importer" module is enabled
 
