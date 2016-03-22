@@ -15,22 +15,20 @@ sites:
       drush:
         alias: sse.example <<< this is the custom drush alias for the sites environment
 
-
 ## Formatters
 # default:
 #   extensions:
-#       emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
-#         name: html
-#         renderer: Twig,Behat2
-#         file_name: index
-#         print_args: true
-#         print_outp: true
-#         loop_break: true
-#     formatters:
-#       html:
-#         output_path: %paths.base%
-#       pretty: true
-
+#     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+#       name: html
+#       renderer: Twig,Behat2
+#       file_name: index
+#       print_args: true
+#       print_outp: true
+#       loop_break: true
+#   formatters:
+#     html:
+#       output_path: %paths.base%
+#     pretty: true
 
 ## Use firefox
 # default:
