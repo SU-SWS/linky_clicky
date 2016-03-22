@@ -1,0 +1,48 @@
+## Local development settings:
+local:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://jsv.su.dev
+    Drupal\DrupalExtension:
+      drush:
+        alias: jsv.su.dev
+
+sites:
+  extensions:
+    Behat\MinkExtension:
+      base_url: https://sites.stanford.edu/sws-build-jsv
+    Drupal\DrupalExtension:
+      drush:
+        alias: sse.sws-build-jsv
+
+
+# Formatters
+default:
+  extensions:
+      emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+        name: html
+        renderer: Twig,Behat2
+        file_name: index
+        print_args: true
+        print_outp: true
+        loop_break: true
+    formatters:
+      html:
+        output_path: %paths.base%
+      pretty: true
+
+## Use firefox
+# default:
+#   extensions:
+#     Behat\MinkExtension:
+#       browser_name: firefox
+#       selenium2:
+#         browser: firefox
+
+## Use chrome
+# default:
+#   extensions:
+#     Behat\MinkExtension:
+#       browser_name: googlechrome
+#       selenium2:
+#         browser: chrome
