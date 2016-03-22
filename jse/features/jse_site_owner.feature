@@ -1,5 +1,5 @@
 Feature: Site Owner
-  In order to ensure that the Jumpstart Academic administration functions are working properly
+  In order to ensure that the Jumpstart Engineering administration functions are working properly
   As a Site Owner
   I want to check for my ability to complete my tasks
 

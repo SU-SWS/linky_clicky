@@ -9,12 +9,10 @@ Feature: Stanford Courses
     Given the "stanford_courses" module is enabled
 
   @api
-  Scenario: Enable Stanford Courses
+  Scenario: Verify Stanford Courses is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/modules"
-    And I check the box "Stanford Courses"
-    And I press "Save configuration"
-    Then I should see "The configuration options have been saved"
+    Then the checkbox "Stanford Courses" should be checked
 
   @content @live
   Scenario: View current courses and Featured Course sidebar block
