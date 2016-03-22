@@ -12,25 +12,25 @@ Feature: Stanford Private Page
     Then I fill in "edit-title" with "Private Page Test"
     And I press the "Save" button
     Then I should see "Private Page Private Page Test has been created" in the "Console" region
-    
+
   @live @stanford
   Scenario: Site owner can see private pages
     Given I am logged in as a user with the "site owner" role
     And I am on "private"
     Then I should see 1 ".node-type-stanford-private-page" element
-    
+
   @live @stanford
   Scenario: Anonymous users can not see private pages
     Given I am on "private"
     Then I should see 1 ".node-type-stanford-private-page" element
-    
+
   @live @contrib
   Scenario: Test that the Always Visble module is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/modules"
     Then I should see 1 "#edit-modules-other-always-visible-enable" element
     And the checkbox is checked
-    
+
     @api @deploy @prod @safe @contrib @stanford
   Scenario: Check that the Internal Login button directs to the Private Pages Section
     Given I am logged in as a user with the "administrator" role
