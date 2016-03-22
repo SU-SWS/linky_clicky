@@ -35,3 +35,12 @@ Feature: Stanford Private Page
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/private-page"
     Then I should see 1 or more ".view-stanford-private-page-manage" elements
+
+  # TODO: This should be changed to:
+  # Given the module always_visible is enabled.
+  @api @live @contrib
+  Scenario: Test that the Always Visble module is enabled
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/modules"
+    Then I should see 1 "#edit-modules-other-always-visible-enable" element
+    And the "modules[Other][always_visible][enable]" checkbox should be checked
