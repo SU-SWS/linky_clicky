@@ -1,4 +1,4 @@
-@api
+@api @dev
 Feature: Stanford Courses
   In order to ensure that stanford courses was installed succesfully.
   As an administrative user
@@ -64,7 +64,7 @@ Feature: Stanford Courses
     And I press "Go"
     Then I should see "ENGLISH 9CE" in the "Content Body" region
 
-  @api @javascript @destructive @prod @safe
+  @api @javascript @dev
   Scenario: Stanford Courses
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared

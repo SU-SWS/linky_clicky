@@ -3,7 +3,6 @@ Feature: Stanford Event
   As an end user and administrator
   I want to check for both the creation and display of the event content.
 
-  @api @dev @destructive
   Scenario: The module is enabled
     Given the "stanford_events_importer" module is enabled
 
