@@ -26,3 +26,11 @@ Scenario: Homepage carousel
  When I press the "Previous Slide" button
    And I wait 2 seconds
  Then I should see a ".slide-title" element
+
+ @javascript @safe @live @site
+ Scenario: Homepage carousel works with ">" and "<"
+  Given I am on the homepage
+  When I click "›" in the "Main Upper" region
+  And I wait 2 seconds
+  When I click "‹" in the "Main Upper" region
+  And I wait 2 seconds

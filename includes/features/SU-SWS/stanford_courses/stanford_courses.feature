@@ -4,8 +4,15 @@ Feature: Stanford Courses
   As an administrative user
   I want to ensure that the Stanford Courses module is working properly
 
+
   Background:
     Given the "stanford_courses" module is enabled
+
+  @api
+  Scenario: Verify Stanford Courses is enabled
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/admin/modules"
+    Then the checkbox "Stanford Courses" should be checked
 
   @content @live
   Scenario: View current courses and Featured Course sidebar block
