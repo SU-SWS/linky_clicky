@@ -5,8 +5,7 @@ Feature: Stanford Date Formats
 
   @api
   Scenario: Stanford Date Formats
-    Given the "stanford_date_formats" module is enabled
-    And the cache has been cleared
+    Given the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/config/regional/date-time"
     Then I should see "Date Type"
