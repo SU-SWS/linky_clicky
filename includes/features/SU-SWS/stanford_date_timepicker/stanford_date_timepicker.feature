@@ -12,3 +12,10 @@ Feature: Stanford Date TimePicker
     And I should see "The default time format used by the timepicker"
     And I should see "The default separator used between date/time. eg: | or -"
     And I should see "Minute interval increment"
+
+  @api @safe @deploy @live
+  Scenario: Check to see that the jquery library is installed
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/config/stanford/datetimepicker"
+    Then I should see "admin/reports/status"
+
