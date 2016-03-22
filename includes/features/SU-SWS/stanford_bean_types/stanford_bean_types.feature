@@ -23,19 +23,15 @@ Feature: Stanford BEAN Types
     Then I fill in "Label" with "BeHat Test Icon Block"
     Then I fill in "Title" with "BeHat Test Icon Block Title"
     Then I select "Apple" from "Icon"
-    Then I fill in "Hello, my name is Nick" in WYSIWYG editor "cke_contents_edit-body-und-0-value-iframe"
+    # TODO: Fix this step definition as the iframe does not have an id.
+    # Then I fill in "Hello, my name is Nick" in WYSIWYG editor "cke_contents_edit-body-und-0-value-iframe"
     Then I press "Save"
-    Then I should see the message "stanford_icon_block BeHat Test Icon Block has been created"
+    Then I should see the message "stanford_icon_block BeHat Test Icon Block Title has been created"
 
   @api @safe @live @site
   Scenario: Callouts view mode is available
     Given I am logged in as a user with the "administrator" role
     And I am on "block/add/stanford-postcard"
-    Then I select "Callouts" from "View Mode"
-
-  @api @safe @live @site
-  Scenario: Cards view mode is available
-    Given I am logged in as a user with the "administrator" role
-    And I am on "block/add/stanford-postcard"
-    Then I select "Cards" from "View Mode"
-
+    Then I select "Header 3 Column" from "View Mode"
+    Then I select "Header 4 Column" from "View Mode"
+    Then I select "Photo Landscape 6 Column" from "View Mode"
