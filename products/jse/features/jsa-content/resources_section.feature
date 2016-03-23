@@ -1,1 +1,1 @@
-../../../includes/features/jsa-content/resources_section.feature
+../../../../includes/features/jsa-content/resources_section.feature

@@ -1,1 +1,1 @@
-../../../includes/features/jsa-content/courses_page.feature
+../../../../includes/features/jsa-content/courses_page.feature
