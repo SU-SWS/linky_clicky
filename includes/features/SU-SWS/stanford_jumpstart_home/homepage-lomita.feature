@@ -4,29 +4,29 @@ Feature: Lomita Homepage Layout
   I want to check for the existence of content that should appear
   (Tests in this Feature should fail if Lomita is not the selected homepage layout)
 
-  @api @destructive @dev @javascript @jsa @jsv
+  @api @destructive @dev
   Scenario: Enable the Lomita homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
-    Then I should see "Customized design options saved" in the "Console" region
+    Then I should see "Customized design options saved"
 
-  @api @destructive @dev @javascript @jsa @jsv
+  @api @destructive @dev
   Scenario: Enable the Lomita homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
     When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
-    Then I should see "Customized design options saved" in the "Console" region
+    Then I should see "Customized design options saved"
 
-  @api @deploy @jsa @jsv @live @safe
+  @api @deploy @live @safe
   Scenario: Editor should not access Customize Design
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @deploy @jsa @jsv @live @safe
+  @deploy @live @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -38,7 +38,7 @@ Feature: Lomita Homepage Layout
     | Add a video, image, or other featured content to this block. | Main Top |
     | Building Name Room 555 | Footer   |
 
-  @deploy @jsa @jsv @live @safe
+  @deploy @live @safe
   Scenario: Homepage video block
     Given I am on the homepage
     Then I should see an "iframe" element

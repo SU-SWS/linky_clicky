@@ -3,13 +3,13 @@ Feature: Palm Homepage Layout
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @dev @destructive @jsa
+  @api @dev @destructive
   Scenario: Change homepage to palm news and events
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-news-events-selector" button
 
-  @deploy @jsa @live @safe
+  @deploy @live @safe
   Scenario Outline: Header content for palm news and events
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -21,7 +21,7 @@ Feature: Palm Homepage Layout
     | Recent News           | Content 3 column flow |
     | Upcoming Events       | Content 3 column flow |
 
-  @deploy @jsa @live @safe
+  @deploy @live @safe
   Scenario Outline: Homepage content for plam news and events
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -32,7 +32,7 @@ Feature: Palm Homepage Layout
     | This is your About block. | Content 3 column flow |
     | Sample News | Content 3 column flow |
 
-  @deploy @jsa @live @safe
+  @deploy @live @safe
   Scenario Outline: Homepage links for palm news and events
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
