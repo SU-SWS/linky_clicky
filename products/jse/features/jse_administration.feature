@@ -1,5 +1,5 @@
 Feature: Administration
-  In order to ensure that the Jumpstart Academic website can be configured
+  In order to ensure that the Jumpstart Engineering website can be configured
   As an administrator, site owner, or editor
   I want to check for the access to and options available on adminstration pages.
 
