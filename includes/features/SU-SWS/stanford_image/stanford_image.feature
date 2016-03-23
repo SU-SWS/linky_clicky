@@ -3,11 +3,9 @@ Feature: Stanford Image
   As an administrative user
   I want to ensure that the Stanford Image module is working properly
 
-  @api @javascript
+  @api @safe
   Scenario: Stanford Image
-    Given the "stanford_image" module is enabled
-    And the "stanford_page" module is enabled
-    And the cache has been cleared
+    Given the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/field-collections"
     Then I should see "field_s_image_info"
@@ -19,3 +17,9 @@ Feature: Stanford Image
     And I should see "field_s_image_caption"
     When I go to "admin/structure/field-collections/field-s-image-info/display"
     Then I should see "group_s_image_border_style"
+
+  @api @safe
+  Scenario: Stanford Image Views
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/stanford/images"
+    Then I should see "Bulk Image Operations"
