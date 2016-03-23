@@ -20,3 +20,15 @@ Feature: Stanford Landing Page
     And I press the "Save" button
     Then I should see "Landing Page Foo has been created" in the "Console" region
     And I should be on "foo"
+
+  # TEST FOR:
+  #####################
+
+  # Field formatter modules have been enabled
+  # Node convert module is available
+  # The correct fields are on the landing page
+  # The field collection is available
+  # The view modes are available
+  # The view mode changes change the display
+  # The manage view is available
+  # The view mode css class is on the field
