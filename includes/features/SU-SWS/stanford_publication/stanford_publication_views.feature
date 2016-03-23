@@ -1,7 +1,7 @@
-Feature: Publications
-  In order to ensure that the Jumpstart Academic website publication items are viewable
+Feature: Publication views
+  In order to verify the functionality of the publication views
   As an end user
-  I want to check for the existence of publication content
+  I want to check for the existence of publication content on views pages
 
   @safe
   Scenario: Filter publications by title
