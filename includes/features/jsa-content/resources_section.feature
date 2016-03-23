@@ -3,7 +3,7 @@ Feature: Resources Section
   As an end user
   I want to check for the existence of page and menu content
 
-  @content @deploy @safe
+  @deploy
   Scenario: Check that the correct menu items exist in resources section of a newly deployed site.
     Given I am on "resources/overview"
     Then I should see "This is your Resources" in the "Content Body" region
@@ -11,7 +11,7 @@ Feature: Resources Section
     Then I should see "Software Resources" in the "First sidebar" region
     Then I should see "References" in the "First sidebar" region
 
-  @content @deploy @safe
+  @deploy
   Scenario: Check that the correct pages exist in research section of a newly deployed site.
     Given I am on the homepage
     And I click "Resources" in the "Main Navigation" region
