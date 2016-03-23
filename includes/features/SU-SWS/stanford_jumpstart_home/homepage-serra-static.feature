@@ -8,16 +8,7 @@ Feature: Serra Homepage Layout
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
-    Then I press the "edit-layouts-stanford-jumpstart-home-serra-news-events-selector" button
     Then I should see "Customized design options saved"
-    Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
-    Then I should see "Customized design options saved"
-
-  @api @dev @destructive
-  Scenario: Enable the Serra homepage layout as site owner
-    Given I am logged in as a user with the "site owner" role
-    And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
     Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
     Then I should see "Customized design options saved"
 
@@ -26,12 +17,6 @@ Feature: Serra Homepage Layout
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
-
-  @api @dev @destructive
-  Scenario: Enable the Serra homepage layout as administrator
-    Given I am logged in as a user with the "administrator" role
-    And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
 
   @api @deploy @live @safe
   Scenario: Content in regions

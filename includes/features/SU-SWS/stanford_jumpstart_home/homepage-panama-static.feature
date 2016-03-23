@@ -9,16 +9,8 @@ Feature: Panama Homepage Layout
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
-    Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
     Then I should see "Customized design options saved"
-    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
-    Then I should see "Customized design options saved"
-
-  @api @dev @destructive
-  Scenario: Enable the Panama homepage layout as site owner
-    Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
     Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
     Then I should see "Customized design options saved"
 
@@ -28,20 +20,14 @@ Feature: Panama Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @dev @destructive
-  Scenario: Enable the Panama homepage layout as administrator
-    Given I am logged in as a user with the "administrator" role
-    And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
-
   @api @deploy @live @safe
   Scenario Outline: Header content for panama static
     Given I am on the homepage
     And the cache has been cleared
-    Then I should see "<Text>" in the "<Region>" region
+    Then I should see the "<Header>" heading in the "<Region>" region
 
   Examples:
-    | Text                  | Region                |
+    | Header                  | Region                |
     | Welcome to your site! | Main Top              |
     | About                 | Content 3 column flow |
     | In the Spotlight      | Content 3 column flow |
