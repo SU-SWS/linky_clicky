@@ -3,13 +3,7 @@ Feature: Stanford Landing Page
   As an administrative user
   I want create and view a landing page node.
 
-  @api
-  Scenario: Landing page installed
-
-  @api
-  Scenario: Landing page from content server
-
-  @api @dev @content
+  @api @dev @content @javascript
   Scenario: Create Landing Page
     Given I am logged in as a user with the "administrator" role
     When I wait for the Site Actions drop down to appear
@@ -17,17 +11,22 @@ Feature: Stanford Landing Page
     Then I should see "Create Landing Page" in the "Branding" region
     Then I fill in "edit-title" with "Foo Landing Page"
     And I select "Blocks" from "Layout"
+    Then I fill in "edit-field-landing-page-item-und-0-field-s-lp-item-title-und-0-value" with "LPITEM"
+    Then I click on the element with css selector "a.fieldset-title" with javascript
+    Then I wait 2 seconds
+    Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][title]" with "Primary link"
+    Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "https://www.stanford.edu"
     And I press the "Save" button
-    Then I should see "Landing Page Foo Landing Page has been created" in the "Console" region
+    Then I should see "Landing Page Foo Landing Page has been created"
     And I should be on "foo-landing-page"
     Then I should see 1 or more ".view-mode-stanford_4_col_header" elements
     # The view mode changes change the display.
-    Then I click the "Edit" link
+    Then I click "Edit"
     And I select "List" from "Layout"
     And I press the "Save" button
     Then I should see 1 or more ".view-mode-stanford_medium_square" elements
 
-    Then I click the "Edit" link
+    Then I click "Edit"
     And I select "Cards" from "Layout"
     And I press the "Save" button
     Then I should see 1 or more ".view-mode-large_landscape" elements
@@ -78,6 +77,6 @@ Feature: Stanford Landing Page
   @api @safe
   Scenario: The manage view is available
     Given I am logged in as a user with the "administrator" role
-    And I am on "dmin/manage/landing-page"
-    Then I should see "Manage Landing Page"
+    And I am on "admin/manage/landing-page"
+    Then I should see the heading "Manage Landing Page"
 
