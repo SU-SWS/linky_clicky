@@ -13,7 +13,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     default:
       filters:
         tags: "~dev,~destructive"
@@ -28,7 +28,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # Tests that are safe for production and live sites.
     live:
       filters:
@@ -44,7 +44,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
@@ -60,7 +60,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # A freshly deployed site/product that needs to be confirmed
     deploy:
       filters:
@@ -76,7 +76,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # Only content creating related tasks
     content:
       filters:
@@ -92,7 +92,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # For tests that are specific to the site it is testing.
     site:
       filters:
@@ -108,7 +108,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # Only contrib module tests that are safe.
     contrib:
       filters:
@@ -124,7 +124,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
         # Any contrib module even if it is destructive.
     contrib-dev:
       filters:
@@ -140,7 +140,7 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
     # Only stanford module tests.
     stanford:
       filters:
@@ -156,4 +156,4 @@ default:
         - SWSDrupalContext
       paths:
         - %paths.base%/features
-        - %paths.base%/../includes/features
+        - %paths.base%/../../includes/features
