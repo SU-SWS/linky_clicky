@@ -15,8 +15,8 @@ Feature: Mayfield Homepage Layout
   Scenario: Enable the Mayfield homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-mayfield']"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    Then I press the "edit-layouts-stanford-jumpstart-home-mayfield-selector" button
     Then I should see "Customized design options saved"
 
   @api @deploy @live @safe
@@ -32,34 +32,37 @@ Feature: Mayfield Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-mayfield-selector" button
     Then I should see "Customized design options saved"
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario Outline: Header content for mayfield without news and events.
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see the "<Header>" heading in the "<Region>" region
 
   Examples:
-    | Header                | Region                |
-    | About                 | Content 3 column flow |
-    | In the Spotlight      | Content 3 column flow |
-    | Announcements         | Content 3 column flow |
+    | Header           | Region                |
+    | About            | Content 3 column flow |
+    | In the Spotlight | Content 3 column flow |
+    | Announcements    | Content 3 column flow |
 
-  @deploy @live @safe
+  @deploy @live @safe @api @javascript
   Scenario Outline: Homepage content for mayfield without news and events
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
-    | Text                                                                                          | Region                |
-    | Feature a tagline or website subtitle here                                                    | Main Top              |
-    | Do the right thing. It will gratify some people and astonish the rest.                        | Main Top              |
-    | Mark Twain                                                                                    | Main Top              |
+    | Text | Region |
+    | Feature a tagline or website subtitle here | Main Top |
+    | Do the right thing. It will gratify some people and astonish the rest. | Main Top |
+    | Mark Twain | Main Top |
     | This is your About block. Here you can post a short description of your group or organization | Content 3 column flow |
-    | This is your Highlights block                                                                 | Content 3 column flow |
-    | This is your Announcements block                                                              | Content 3 column flow |
+    | This is your Highlights block | Content 3 column flow |
+    | This is your Announcements block | Content 3 column flow |
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario Outline: Homepage links for mayfield without news and events
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see the link "<Link>" in the "<Region>" region
 
   Examples:

@@ -10,15 +10,15 @@ Feature: Serra Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
     Then I press the "edit-layouts-stanford-jumpstart-home-serra-news-events-selector" button
     Then I should see "Customized design options saved"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-serra']"
+    Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
     Then I should see "Customized design options saved"
 
   @api @dev @destructive
   Scenario: Enable the Serra homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-serra']"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
     Then I should see "Customized design options saved"
 
   @api @deploy @live @safe
@@ -33,25 +33,28 @@ Feature: Serra Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario: Content in regions
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see a ".infotext" element in the "Main Top" region
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario Outline: Header content for serra static
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
+    And the cache has been cleared
+    Then I should see "<Text>" in the "<Region>" region
 
   Examples:
-    | Header                | Region                |
-    | About                 | Content 3 column flow |
-    | In the Spotlight      | Content 3 column flow |
-    | Announcements         | Content 3 column flow |
+    | Text             | Region                |
+    | About            | Content 3 column flow |
+    | In the Spotlight | Content 3 column flow |
+    | Announcements    | Content 3 column flow |
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario Outline: Homepage content for serra static
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
@@ -66,9 +69,10 @@ Feature: Serra Homepage Layout
     | This is your Highlights block | Content 3 column flow |
     | This is your Announcements block | Content 3 column flow |
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario Outline: Homepage links for serra static
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see the link "<Link>" in the "<Region>" region
 
   Examples:

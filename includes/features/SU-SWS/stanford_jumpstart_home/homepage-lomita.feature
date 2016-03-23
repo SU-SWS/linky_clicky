@@ -8,16 +8,16 @@ Feature: Lomita Homepage Layout
   Scenario: Enable the Lomita homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    Then I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
     Then I should see "Customized design options saved"
 
   @api @destructive @dev
   Scenario: Enable the Lomita homepage layout as site owner
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-panama']"
-    When I press the element with css selector ".homepage-layout > input[id*='jumpstart-home-lomita']"
+    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    Then I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
     Then I should see "Customized design options saved"
 
   @api @deploy @live @safe
@@ -26,9 +26,10 @@ Feature: Lomita Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
@@ -38,7 +39,8 @@ Feature: Lomita Homepage Layout
     | Add a video, image, or other featured content to this block. | Main Top |
     | Building Name Room 555 | Footer   |
 
-  @deploy @live @safe
+  @api @deploy @live @safe
   Scenario: Homepage video block
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see an "iframe" element
