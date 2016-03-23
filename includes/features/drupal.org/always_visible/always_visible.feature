@@ -3,7 +3,7 @@ Feature: Always Visible
   As all types of users
   I want to functionality
 
-  @safe
+  @safe @api
   Scenario: Test that the Always Visble module is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/modules"

@@ -4,10 +4,7 @@ Feature: Stanford Events Importer
   As an administrative user
   I want to ensure that the Stanford Events Importer module is working properly
 
-  Background:
-    Given the "stanford_events_importer" module is enabled
-
-  @api @javascript @dev @content
+  @api @javascript @dev @destructive
   Scenario: Stanford Events Importer
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-event-importer"
