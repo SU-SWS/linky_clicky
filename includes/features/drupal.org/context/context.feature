@@ -3,7 +3,7 @@ Feature: module
   As administrator
   I want to verify functionality of the context module
 
-  @api @javascript @destructive @dev
+  @dev @api @javascript @destructive
   Scenario: Enable Context HTTP Header
     Given the "context_http_header" module is enabled
     And the "context_ui" module is enabled

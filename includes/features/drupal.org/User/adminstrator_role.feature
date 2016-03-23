@@ -3,9 +3,9 @@ Feature: module
   As administrator
   I want to verify permissions and access
 
-@api
-Scenario: User is logged in
-Given I am logged in as a user with the "administrator" role
-And I am on "/user"
-Then I should see "History"
+  @safe @api
+  Scenario: User is logged in
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/user"
+    Then I should see "History"
 
