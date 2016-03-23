@@ -35,30 +35,4 @@ Feature: Stanford Events Importer
     And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
 
-  @api @safe @live @deploy
-  Scenario: See upcoming events on homepage
-    Given I am on the homepage
-    Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
-
-  @api @safe @live @deploy
-  Scenario: See upcoming events content
-    Given I am on "events/upcoming-events"
-    Then I should see a ".event-title" element
-
-  @api @safe @live @deploy
-  Scenario: See calendar nav block
-    Given I am on "events/upcoming-events"
-    Then I should see a ".date-nav-wrapper" element
-
-  @api @safe @live @deploy
-  Scenario: See past events - check for pager
-    Given I am on "events/past-events"
-    Then I should see 5 or fewer ".event-title" elements
-
-  @api @safe @live @deploy
-  Scenario: Searching events
-    Given I am on "events/upcoming-events"
-    When I select "Lecture" from "Filter by type"
-    And I press the "Go" button
-    Then I should see "Currently, no future events are scheduled" in the "Content Body" region
 

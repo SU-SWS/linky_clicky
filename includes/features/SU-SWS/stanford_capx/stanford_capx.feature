@@ -3,7 +3,7 @@ Feature: Stanford CAP Extensible
   As an administrative user
   I want to ensure that the Stanford CAP Extensible module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Stanford CAP Extensible
     Given the "stanford_capx" module is enabled
     Given I am logged in as a user with the "administrator" role
