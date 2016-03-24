@@ -102,6 +102,8 @@ default:
     sites:
       filters:
         tags: 'safe,sites&&~content&&~destructive'
+        #@Shea what do you think here?
+        #tags: 'dev&&~live&&~prod'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -183,6 +185,8 @@ default:
     drupal:
       filters:
         tags: 'safe,drupal&&~content&&~destructive'
+        #@Shea what do you think here?
+        #tags: 'deploy&&~dev&&~destructive&&~content'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
