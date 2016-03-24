@@ -10,7 +10,4 @@ Feature: NoBots
 #   Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
 
   @dev
-  Scenario: robots.txt disallows crawling
-    When I go to "robots.txt"
-    #   Then I should see the text "Disallow"
-    # See: http://stackoverflow.com/questions/30689119/there-is-no-element-matching-xpath-html-behat-mink-exception-driverexceptio
+  Scenario: As a robot to the site I want to be sent a no index header

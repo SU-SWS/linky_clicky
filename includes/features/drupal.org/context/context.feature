@@ -3,18 +3,9 @@ Feature: module
   As administrator
   I want to verify functionality of the context module
 
-  @dev @api @javascript @destructive
-  Scenario: Enable Context HTTP Header
-    Given the "context_http_header" module is enabled
-    And the "context_ui" module is enabled
-    And I am logged in as a user with the "administrator" role
-    And the cache has been cleared
-    And I am on "/admin/structure/context"
-    And I click "Add"
-    When I enter "test" for "Name"
-    And I select "Sitewide context" from "edit-conditions-selector"
-    And I check the box "edit-conditions-plugins-sitewide-values-1"
-    And I select "HTTP Headers" from "edit-reactions-selector"
-    And I enter "X-Infinite-Improbability-Drive:42" for "edit-reactions-plugins-http-header-http-header-extra-headers"
-    And I press "Save"
-    Then I should see "test has been created"
+  @safe @api
+  Scenario: Verify Context is enabled
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/modules"
+    Then I should see 1 "#edit-modules-context-context-enable" element
+    And the "modules[Context][context][enable]" checkbox should be checked
