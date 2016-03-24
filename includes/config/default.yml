@@ -16,7 +16,7 @@ default:
         - %paths.base%/../../includes/features
     default:
       filters:
-        tags: "~dev,~destructive"
+        tags: "~dev&&~destructive"
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -32,7 +32,7 @@ default:
     # Tests that are safe for production and live sites.
     live:
       filters:
-        tags: 'live,safe,prod,~content'
+        tags: "prod,live,safe&&~dev&&~content&&~destructive"
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -48,7 +48,7 @@ default:
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
-        tags: '~contrib'
+        tags: 'dev&&~live&&~prod'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -64,7 +64,7 @@ default:
     # A freshly deployed site/product that needs to be confirmed
     deploy:
       filters:
-        tags: 'deploy,~dev,~destructive,~content,~site'
+        tags: 'deploy&&~dev&&~destructive&&~content'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -112,7 +112,7 @@ default:
     # Only contrib module tests that are safe.
     contrib:
       filters:
-        tags: 'contrib,~dev,~destructive'
+        tags: 'contrib&&~dev&&~destructive'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -144,7 +144,7 @@ default:
     # Only stanford module tests.
     stanford:
       filters:
-        tags: 'stanford,~dev,~destructive'
+        tags: 'stanford&&~dev&&~destructive'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext

@@ -23,7 +23,7 @@ Feature: Stanford Manage Content
     Then I should see the heading "Manage Landing Page"
 
   @api @safe
-  Scenario: Check to see that manage content landing pages
+  Scenario: Check to see that manage content stanford pages
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/manage/page"
     Then I should see the heading "Manage Stanford Page"
