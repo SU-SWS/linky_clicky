@@ -11,4 +11,4 @@ Feature: Stanford Jumpstart Permissions Feature
   @api @deploy @safe
   Scenario: Permissions feature is enabled
     Given I am on "admin/modules"
-    Then the "edit-modules-stanford-stanford-bean-types-permissions-enable" checkbox should be checked
+    Then the "edit-modules-stanford-sites-jumpstart-stanford-jumpstart-permissions-enable" checkbox should be checked
