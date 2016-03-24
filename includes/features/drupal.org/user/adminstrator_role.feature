@@ -8,4 +8,3 @@ Feature: module
     Given I am logged in as a user with the "administrator" role
     And I am on "/user"
     Then I should see "History"
-
