@@ -1,6 +1,6 @@
 default:
   suites:
-    # ALL THE THINGS
+    # ALL THE THINGS - for development
     all:
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
@@ -16,7 +16,7 @@ default:
         - %paths.base%/../../includes/features
     default:
       filters:
-        tags: "~dev,~destructive"
+        tags: "safe&&~destructive&&~content"
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -29,26 +29,13 @@ default:
       paths:
         - %paths.base%/features
         - %paths.base%/../../includes/features
-    # Tests that are safe for production and live sites.
-    live:
-      filters:
-        tags: 'live,safe,prod,~content'
-      contexts:
-        - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\DrupalExtension\Context\DrushContext
-        - Drupal\DrupalExtension\Context\MarkupContext
-        - Drupal\DrupalExtension\Context\BatchContext
-        - FeatureContext
-        - SWSFeatureContext
-        - SWSMinkContext
-        - SWSDrupalContext
-      paths:
-        - %paths.base%/features
-        - %paths.base%/../../includes/features
+
+    # --- Lifecyle Phases Suites ---
     # Tests that are meant for development sites and can have config changes.
     dev:
       filters:
-        tags: '~contrib'
+        tags: 'safe,deploy,dev&&~live&&~launch'
+        #'safe,deploy,dev'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -64,7 +51,7 @@ default:
     # A freshly deployed site/product that needs to be confirmed
     deploy:
       filters:
-        tags: 'deploy,~dev,~destructive,~content,~site'
+        tags: 'safe,deploy&&~destructive&&~content&&~launch&&~live'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -77,6 +64,139 @@ default:
       paths:
         - %paths.base%/features
         - %paths.base%/../../includes/features
+    # Is the site ready for launch? Any placeholder content?
+    launch:
+      filters:
+        tags: 'safe,launch&&~destructive&&~content&&~deploy&&~dev&&~live'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+    # Tests that are safe for production and live sites.
+    live:
+      filters:
+        tags: 'live,safe,prod&&~content&&~destructive&&~deploy&&~dev&&~live'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+
+    # --- Hosting Suites ---
+    # Tests for Stanford Sites hosting.
+    sites:
+      filters:
+        tags: 'safe,sites&&~content&&~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+    # Tests for Anchorage hosting.
+    anchorage:
+      filters:
+        tags: 'safe,anchorage&&~content&&~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+    # Tests for local hosting.
+    local:
+      filters:
+        tags: 'safe,local&&~content&&~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+    # -- Authentication Suites ---
+    # Tests for SAML authentication.
+    saml:
+      filters:
+        tags: 'safe,saml&&~content&&~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+    # Tests for webauth authentication.
+    webauth:
+      filters:
+        tags: 'safe,webauth&&~content&&~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+    # Tests for Drupal authentication.
+    drupal:
+      filters:
+        tags: 'safe,drupal&&~content&&~destructive'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        - %paths.base%/features
+        - %paths.base%/../../includes/features
+
+    # --- Additonal Suites ---
     # Only content creating related tasks
     content:
       filters:
@@ -112,7 +232,7 @@ default:
     # Only contrib module tests that are safe.
     contrib:
       filters:
-        tags: 'contrib,~dev,~destructive'
+        tags: 'contrib&&~dev&&~destructive'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
@@ -144,7 +264,7 @@ default:
     # Only stanford module tests.
     stanford:
       filters:
-        tags: 'stanford,~dev,~destructive'
+        tags: 'stanford&&~dev&&~destructive'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext

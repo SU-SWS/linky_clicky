@@ -3,7 +3,7 @@ Feature: module
   As administrator
   I want to verify permissions and access
 
-  @safe @api
+  @safe @api @core
   Scenario: User is logged in
     Given I am logged in as a user with the "administrator" role
     And I am on "/user"

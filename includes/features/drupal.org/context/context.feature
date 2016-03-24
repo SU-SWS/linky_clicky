@@ -3,7 +3,7 @@ Feature: module
   As administrator
   I want to verify functionality of the context module
 
-  @safe @api
+  @safe @api @contrib
   Scenario: Verify Context is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/modules"
