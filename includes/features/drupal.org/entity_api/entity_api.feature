@@ -1,7 +1,7 @@
 Feature: Entity API
   Verify entity api functionality
 
-  @safe @api @contrib
+  @safe @api
   Scenario: Entity API
     Given I am logged in as a user with the "administrator" role
     And I am on "/help/entity/README.txt"

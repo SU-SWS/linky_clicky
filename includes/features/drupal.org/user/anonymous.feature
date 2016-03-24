@@ -3,7 +3,7 @@ Feature: module
   As anonymous user
   I want to verify permissions and access
 
-  @safe @javascript @core
+  @safe @javascript
   Scenario: User login
     Given I am on "/user"
     When I click "Local User Login"

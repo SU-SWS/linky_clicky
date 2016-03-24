@@ -3,14 +3,14 @@ Feature: Context HTTP Header module
   As administrator
   I want to verify functionality of the Context HTTP Header module
 
-  @safe @api @contrib
+  @safe @api
   Scenario: Verify Context HTTP Headeris enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/modules"
     Then I should see 1 "#edit-modules-context-context-http-header-enable" element
     And the "modules[Context][context_http_header][enable]" checkbox should be checked
 
-  @dev @api @javascript @destructive @contrib
+  @dev @api @javascript @destructive
   Scenario: Verify Context HTTP Header functionality
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared
