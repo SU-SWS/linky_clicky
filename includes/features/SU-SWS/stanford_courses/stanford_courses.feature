@@ -1,12 +1,7 @@
-@api @dev
 Feature: Stanford Courses
   In order to ensure that stanford courses was installed succesfully.
   As an administrative user
   I want to ensure that the Stanford Courses module is working properly
-
-
-  Background:
-    Given the "stanford_courses" module is enabled
 
   @api
   Scenario: Verify Stanford Courses is enabled

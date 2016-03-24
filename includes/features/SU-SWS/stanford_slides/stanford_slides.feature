@@ -3,9 +3,6 @@ Feature: Stanford Slides
   As an administrative user
   I want to ensure that the Stanford Slides module is working properly
 
-  Background:
-    Given the "stanford_slides" module is enabled
-
   @api @javascript
   Scenario: Stanford Slides
     Given I am logged in as a user with the "administrator" role
