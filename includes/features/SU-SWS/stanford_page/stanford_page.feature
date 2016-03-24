@@ -33,11 +33,11 @@ Feature: Stanford Page
     When I click "Show Add/Edit Image"
     Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I should see "Source Info" in the "Content Body" region
-    When I enter "Foo" for "Title"
+    When I enter "Foo Stanford Page" for "Title"
     # Then I fill in "Hello, this is a nice body" in WYSIWYG editor "cke_contents_edit-body-und-0-value-iframe"
     And I press the "Save" button
-    Then I should see "Stanford Page Foo has been created" in the "Console" region
-    And I should be on "foo"
+    Then I should see "Stanford Page Foo Stanford Page has been created"
+    And I should be on "foo-stanford-page"
     And I should see 1 ".field-name-field-s-image-image" element
 
   @api @safe

@@ -21,10 +21,10 @@ Feature: Site Owner
     When I click "Show Add/Edit Image"
     #And I click on “Choose File”  in the "Content Body" region
     Then I should see "Source Info" in the "Content Body" region
-    When I enter "Foo" for "Title"
+    When I enter "Foo Stanford Page Site Owner" for "Title"
     And I press the "Save" button
-    Then I should see "Stanford Page Foo has been created" in the "Console" region
-    And I should be on "foo"
+    Then I should see "Stanford Page Foo Stanford Page Site Owner has been created" in the "Console" region
+    And I should be on "foo-stanford-page-site-owner"
 
   @api @javascript
   Scenario: Add Landing Page
@@ -32,11 +32,11 @@ Feature: Site Owner
     When I wait for the Site Actions drop down to appear
     And I click "Add Landing Page" in the "Admin Shortcuts" region
     Then I should see "Create Landing Page" in the "Branding" region
-    When I enter "Foo" for "Title *"
+    When I enter "Foo Landing Page Site Owner" for "Title *"
     And I select "Blocks" from "Layout"
     And I press the "Save" button
-    Then I should see "Landing Page Foo has been created" in the "Console" region
-    And I should be on "foo"
+    Then I should see "Landing Page Foo Landing Page Site Owner has been created" in the "Console" region
+    And I should be on "foo-landing-page-site-owner"
 
   @api @javascript
   Scenario: Edit Contact Information
