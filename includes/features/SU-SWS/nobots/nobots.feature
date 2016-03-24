@@ -8,3 +8,6 @@ Feature: NoBots
 #   Then I should see "Affiliates" in the "First sidebar" region
 #   Then I should see "Affiliates" in the "Content Head" region
 #   Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
+
+  @dev
+  Scenario: As a robot to the site I want to be sent a no index header

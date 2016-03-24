@@ -3,7 +3,7 @@ Feature: Courses page
   As an end user
   I want to check for the existence of the page
 
-  @content @deploy @prod
+  @deploy
   Scenario: Check content of the research page
     Given I am on "courses"
     Then I should see "This is your Courses page" in the "Content Body" region

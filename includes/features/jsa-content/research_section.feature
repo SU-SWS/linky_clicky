@@ -3,7 +3,7 @@ Feature: Research Section
   As an end user
   I want to check for the existence of page and menu content
 
-  @content @deploy @safe
+  @deploy
   Scenario: Check that the correct menu items exist in research section of a newly deployed site.
     Given I am on "research"
     Then I should see "This is your Research page" in the "Content Body" region
@@ -11,7 +11,7 @@ Feature: Research Section
     Then I should see "Research Example" in the "First sidebar" region
     Then I should see "Project Example" in the "First sidebar" region
 
-  @content @deploy @safe
+  @deploy
   Scenario: Check that the correct pages exist in research section of a newly deployed site.
     Given I am on the homepage
     And I click "Research" in the "Main Navigation" region

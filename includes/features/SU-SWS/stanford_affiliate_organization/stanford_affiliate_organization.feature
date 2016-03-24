@@ -1,17 +1,10 @@
 Feature: Stanford Affiliate Organization
-  In order to ensure that the Affiliates pages are viewable
+  In order to verify the functionality of Affiliates Organizations
   As a visitor to the site I want to be able to view pages.
   As an administrator, site owner, or editor
   I want to be able to create, edit, delete, view, and manage affiliate organization nodes.
 
-  @deploy @safe @stanford
-  Scenario: Affiliates page is visible and link in the main menu
-    When I go to "affiliate-organizations"
-    Then I should see "Affiliates" in the "First sidebar" region
-    Then I should see "Affiliates" in the "Content Head" region
-    Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
-
-  @api @safe @deploy @live
+@api @safe
   Scenario: Check for fields
     Given I am logged in as a user with the "administrator" role
     Given I am on "node/add/stanford-affiliate-organization"
@@ -20,19 +13,7 @@ Feature: Stanford Affiliate Organization
     Then I should see "Link" in the "Content" region
     Then I should see "About" in the "Content" region
 
-  @api @safe @deploy @live
-  Scenario: Check for manage affiliates view
-    Given I am logged in as a user with the "administrator" role
-    Given I am on "admin/manage/stanford_affiliate_organizations"
-    Then I should see "Manage Stanford Affiliate Organizations" in the "Branding" region
-
-  @api @safe @deploy @live
-  Scenario: Check for manage affiliates view manage link
-    Given I am logged in as a user with the "administrator" role
-    Given I am on "admin/manage"
-    Then I should see "Manage Affiliate Organizations" in the "Second sidebar" region
-
-  @api @content @stanford
+  @api @dev @destructive
   Scenario: Site owner can create and manage affiliate organizations
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-affiliate-organization"
@@ -44,15 +25,3 @@ Feature: Stanford Affiliate Organization
     Then I should see 1 or more ".field-name-field-s-affiliate-image" elements
     Then I go to "admin/manage/stanford_affiliate_organizations"
     Then I should see 1 or more ".views-field-field-s-affiliate-image" elements
-
-  @deploy @safe @stanford
-  Scenario: Affiliates block is visible
-    Given I am on the homepage
-    Then I should see "Affiliates" in the "Main Bottom" region
-    Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
-
-  @api @safe @deploy @live
-  Scenario: Check for affiliates view
-    Given I am logged in as a user with the "administrator" role
-    Given I am on "admin/structure/views"
-    Then I should see "Affiliates" in the "Content" region
