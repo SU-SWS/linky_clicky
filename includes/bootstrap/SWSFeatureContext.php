@@ -469,6 +469,19 @@ JS;
   }
 
   /**
+   * @Then /^the response header should not have "([^"]*)"$/
+   */
+  public function theResponseHeaderShouldNotHave($arg1) {
+    $mink = $this->minkContext;
+    $headers = $mink->getSession()->getResponseHeaders();
+
+    if (isset($headers[$arg1])) {
+      throw new Exception('The HTTP header "' . $arg1 . '" is set to: ' . array_pop($headers[$arg1]) . '.');
+    }
+
+  }
+
+  /**
    * @Then the href in element :arg1 should contain :arg2
    */
   public function theHrefInElementShouldContain($element_id, $pattern) {
