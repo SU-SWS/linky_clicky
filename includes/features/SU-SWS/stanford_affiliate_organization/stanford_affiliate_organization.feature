@@ -4,7 +4,7 @@ Feature: Stanford Affiliate Organization
   As an administrator, site owner, or editor
   I want to be able to create, edit, delete, view, and manage affiliate organization nodes.
 
-@api @safe
+  @api @safe
   Scenario: Check for fields
     Given I am logged in as a user with the "administrator" role
     Given I am on "node/add/stanford-affiliate-organization"
