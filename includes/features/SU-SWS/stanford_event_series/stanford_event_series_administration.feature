@@ -2,7 +2,7 @@ Feature: Stanford Event Series Administration
   In order to ensure that the Event series functionality is complete
   As an administrator I want to verify the manage content page exists
 
-  @api @deploy @live @prod  @safe @contrib @stanford
+  @api @safe
   Scenario: Event series column on manage events page
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/events"

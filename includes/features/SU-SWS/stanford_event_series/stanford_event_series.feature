@@ -3,7 +3,7 @@ Feature: Stanford Event Series
   As an administrator, site owner, or editor
   I want to be able to create, edit, delete, and view event series nodes.
 
-@api @safe
+  @api @safe
   Scenario: Event series link in the site actions menu
     Given I am logged in as a user with the "editor" role
     When I go to "node/add/stanford-event-series"

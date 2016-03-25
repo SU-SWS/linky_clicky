@@ -8,7 +8,7 @@ Scenario: Create stanford gallery node
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-gallery"
 
-  Then I fill in "edit-title" with "BeHat Test Gallery"
+  Then I fill in "edit-title" with "BeHat Test Gallery For Block"
   Then I click on the element with css selector ".vertical-tabs-list li:nth-child(2) a" with javascript
   Then I select "Small" from "Thumbnail Size"
   Then I select "Large" from "Thumbnail Size"
@@ -37,7 +37,7 @@ Scenario: Create stanford gallery node
   Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-gallery-image-info-und-5-field-s-image-image-und-0-upload"
 
   Then I press "Save"
-  Then I should see "Gallery BeHat Test Gallery has been created."
+  Then I should see "Gallery BeHat Test Gallery For Block has been created."
   Then I click "Edit"
 
   # Swtich to images tab.
@@ -72,7 +72,7 @@ Scenario: Create stanford gallery node
 
   # Confirm Node has been created
   # Then I should see "Gallery BeHat Test Gallery has been created." in the "Content Head" region
-  Then I should be on "behat-test-gallery"
+  Then I should be on "behat-test-gallery-block"
 
   # Test for the images.
   Then I should see 6 or more ".stanford-gallery-image" elements
@@ -84,14 +84,49 @@ Scenario: Create stanford gallery node
   # Then I should see 1 "#colorbox .caption" element
   # Then I should see 1 "#colorbox .credits" element
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  Then I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  Then I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  Then I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  Then I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  Then I wait for AJAX to finish
   Then I click on the element with css selector "#cboxClose"
-  And I wait 2 seconds
+  Then I wait for AJAX to finish
+
+  # TEST THE BEAN BLOCK...
+  And go to "block/add/stanford-gallery"
+  Then I fill in "edit-label" with "My BeHat Test Label"
+  Then I fill in "edit-title" with "My BeHat Test Gallery Block"
+  Then I select "BeHat Test Gallery For Block" from "edit-field-s-gallery-reference-und"
+  Then I select "Large Scaled" from "edit-field-s-gallery-view-mode-und"
+  Then I select "Large" from "edit-field-s-gallery-view-mode-und"
+  Then I select "Medium" from "edit-field-s-gallery-view-mode-und"
+  Then I select "Small" from "edit-field-s-gallery-view-mode-und"
+  Then I press "Save"
+  Then I should see "Stanford Gallery My BeHat Test Gallery Block has been created." in the "Content Head" region
+
+  # Test for the images.
+  Then I should see 6 or more ".stanford-gallery-image" elements
+  Then I click on the element with css selector ".field-name-field-s-gallery-image-info .field-item:nth-child(1) .stanford-gallery-image"
+
+  Then I should see 1 "#colorbox" element
+  When I hover over the element "#cboxContent"
+  Then I click on the element with css selector "#cboxNext"
+  Then I wait for AJAX to finish
+  Then I click on the element with css selector "#cboxNext"
+  Then I wait for AJAX to finish
+  Then I click on the element with css selector "#cboxNext"
+  Then I wait for AJAX to finish
+  Then I click on the element with css selector "#cboxNext"
+  Then I wait for AJAX to finish
+  Then I click on the element with css selector "#cboxNext"
+  Then I wait for AJAX to finish
+
+  # TODO: Make these work...
+  # Then I should see 1 "#colorbox .caption" element
+  # Then I should see 1 "#colorbox .credits" element
+  Then I click on the element with css selector "#cboxClose"
+

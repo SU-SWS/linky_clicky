@@ -3,9 +3,6 @@ Feature: Stanford Courses Tag Translate
   As an administrative user
   I want to ensure that the Stanford Courses Tag Translate module is working properly
 
-  Background:
-    Given the "stanford_courses_tag_translate" module is enabled
-
   @api @content @dev
   Scenario: Validate main admin page is there.
     Given I am logged in as a user with the "administrator" role

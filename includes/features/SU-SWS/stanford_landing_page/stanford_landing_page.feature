@@ -9,7 +9,7 @@ Feature: Stanford Landing Page
     When I wait for the Site Actions drop down to appear
     And I click "Add Landing Page" in the "Admin Shortcuts" region
     Then I should see "Create Landing Page" in the "Branding" region
-    Then I fill in "edit-title" with "Foo Landing Page"
+    Then I fill in "edit-title" with "Foo Stanford Landing Page"
     And I select "Blocks" from "Layout"
     Then I fill in "edit-field-landing-page-item-und-0-field-s-lp-item-title-und-0-value" with "LPITEM"
     Then I click on the element with css selector "a.fieldset-title" with javascript
@@ -17,8 +17,8 @@ Feature: Stanford Landing Page
     Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][title]" with "Primary link"
     Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "https://www.stanford.edu"
     And I press the "Save" button
-    Then I should see "Landing Page Foo Landing Page has been created"
-    And I should be on "foo-landing-page"
+    Then I should see "Landing Page Foo Stanford Landing Page has been created"
+    And I should be on "foo-stanford-landing-page"
     Then I should see 1 or more ".view-mode-stanford_4_col_header" elements
     # The view mode changes change the display.
     Then I click "Edit"
