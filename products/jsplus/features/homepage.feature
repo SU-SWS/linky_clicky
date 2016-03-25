@@ -12,6 +12,7 @@ Feature: Homepage
 
   Scenario Outline: Header content
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see the "<Header>" heading in the "<Region>" region
 
     Examples:
@@ -23,6 +24,7 @@ Feature: Homepage
 
   Scenario Outline: Homepage content
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see "<Text>" in the "<Region>" region
 
     Examples:
@@ -34,6 +36,7 @@ Feature: Homepage
 
   Scenario Outline: Homepage links
     Given I am on the homepage
+    And the cache has been cleared
     Then I should see the link "<Link>" in the "<Region>" region
 
     Examples:

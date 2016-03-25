@@ -9,6 +9,7 @@ Feature: Serra Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
     Then I should see "Customized design options saved"
+    And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-serra-selector" button
     Then I should see "Customized design options saved"
 

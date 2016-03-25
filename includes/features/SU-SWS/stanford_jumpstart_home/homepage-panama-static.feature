@@ -11,7 +11,7 @@ Feature: Panama Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
     Then I should see "Customized design options saved"
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-panama-selector" button
+    Then I press the element with css selector "#edit-layouts-stanford-jumpstart-home-panama-selector"
     Then I should see "Customized design options saved"
 
   @api @deploy @live @safe
@@ -20,20 +20,20 @@ Feature: Panama Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @deploy @live @safe
+  @api @deploy @live @safe @javascript
   Scenario Outline: Header content for panama static
     Given I am on the homepage
     And the cache has been cleared
     Then I should see the "<Header>" heading in the "<Region>" region
 
   Examples:
-    | Header                  | Region                |
+    | Header                | Region                |
     | Welcome to your site! | Main Top              |
     | About                 | Content 3 column flow |
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
 
-  @api @deploy @live @safe
+  @api @deploy @live @safe @javascript
   Scenario Outline: Homepage content panama static
     Given I am on the homepage
     And the cache has been cleared

@@ -16,6 +16,7 @@ Feature: Stanford Date TimePicker
   @api @safe @deploy @live
   Scenario: Check to see that the jquery library is installed
     Given I am logged in as a user with the "administrator" role
-    And I am on "admin/config/stanford/datetimepicker"
-    Then I should see "admin/reports/status"
+    And I am on "admin/reports/status"
+    Then I should see "jquery-ui-timepicker-addon.js"
+    Then I should see "The required jquery-ui-timepicker library is installed"
 

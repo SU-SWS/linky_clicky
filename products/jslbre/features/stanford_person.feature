@@ -141,188 +141,188 @@ Feature: Stanford Person
 
   @content @deploy @stanford
   Scenario: Students node on directory page
-    Given I am on "people/students/directory"
-    And I click "Haley Jackson" in the "Content Body" region
-    Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
+    Given I am on "people/haley-jackson"
+    Then I should see a ".postcard-left" element
+    And I should see "mysunetid@stanford.edu" in the "Content Body" region
 
   @content @live @prod @stanford
   Scenario: Grid layout for faculty
     Given I am on "people/faculty/grid"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-grid" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".views-grid-four" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live  @stanford
   Scenario: Profiles layout for faculty
     Given I am on "people/faculty/profiles"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-profiles" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live @prod @stanford
   Scenario: List layout for faculty
     Given I am on "people/faculty/list"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-list" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live @prod @stanford
   Scenario: Directory layout for faculty
     Given I am on "people/faculty/directory"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-directory" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live  @stanford @prod
   Scenario: Grid layout for staff
     Given I am on "people/staff/grid"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-grid" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".views-grid-four" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live @stanford @prod
   Scenario: Profiles layout for staff
     Given I am on "people/staff/profiles"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-profiles" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live  @stanford @prod
   Scenario: List layout for staff
     Given I am on "people/staff/list"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-list" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live  @stanford @prod
   Scenario: Directory layout for staff
     Given I am on "people/staff/directory"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-directory" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live @prod
   Scenario: Grid layout for students
     Given I am on "people/students/grid"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-grid" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".views-grid-four" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live  @stanford @prod
   Scenario: Profiles layout for students
     Given I am on "people/students/profiles"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-profiles" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live @stanford @prod
   Scenario: List layout for students
     Given I am on "people/students/list"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-list" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @live @stanford @prod
   Scenario: Directory layout for students
     Given I am on "people/students/directory"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-directory" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Grid layout for professor
     Given I am on "people/professor/grid"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-grid" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".views-grid-four" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Profiles layout for professor
     Given I am on "people/professor/profiles"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-profiles" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: List layout for professor
     Given I am on "people/professor/list"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-list" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Directory layout for professor
     Given I am on "people/professor/directory"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-directory" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Grid layout for department-administrator
     Given I am on "people/department-administrator/grid"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-grid" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".views-grid-four" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Profiles layout for department-administrator
     Given I am on "people/department-administrator/profiles"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-profiles" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: List layout for department-administrator
     Given I am on "people/department-administrator/list"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-list" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Directory layout for department-administrator
     Given I am on "people/department-administrator/directory"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-directory" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-id-stanford_person_vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Grid layout for graduate-students
     Given I am on "people/graduate-students/grid"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-grid" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".views-grid-four" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Profiles layout for graduate-students
     Given I am on "people/graduate-students/profiles"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-profiles" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-stanford-person-vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: List layout for graduate-students
     Given I am on "people/graduate-students/list"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-list" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-stanford-person-vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @content @deploy @stanford
   Scenario: Directory layout for graduate-students
     Given I am on "people/graduate-students/directory"
     Then I should see a ".views-row-first" element
-    And I should see a ".view-stanford-person-directory" element
-    And I should see the "People" heading in the "First sidebar" region
+    And I should see a ".view-stanford-person-vpsa" element
+    And I should see the "People" heading in the "Content Head" region
 
   @api @prod @dev @deploy @stanford @live
   Scenario: Affiliates column on Manage Person
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/people"
-    Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
+    Then I should see 1 or more ".views-field-field-s-person-profile-picture" elements
     
   @content @live  @stanford
   Scenario: Stanford Person Styles and Layout
     Given I am on "people"
-    Then I should see a ".person-details:before" element
+    Then I should see a ".person-details" element
     And I should see a ".views-grid-four" element
     And I should see the heading "People" in the "Content Head" region
     And I should see the heading "Jacob Smith" in the "Content Body" region
@@ -331,4 +331,4 @@ Feature: Stanford Person
   Scenario: Stanford Person Profile
     Given I am on "people/jacob-smith"
     Then I should see a ".postcard-left" element
-    And I should see the heading "Jacob Smith I Teach" in the "Content Body" region
+    And I should see the heading "Jacob Smith" in the "Content Body" region

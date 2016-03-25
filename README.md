@@ -15,6 +15,16 @@ you can compile here. The files and directories that composer creates will be
 If you install locally there should be a `bin/behat` executable for you. You can
 either point your system to that behat install or use it in some other way.
 
+Updating an Existing Project from branch behat3
+----------------------------------------------------------
+
+#### Todo
+1. Update behat.yml paths
+2. Update behat.local.yml paths
+3. Update symlinks from features/bootstrap
+4. Update symlinks that were to shared tests eg: includes/jumpstart_home
+
+
 Updating an Existing Project from Behat 1.0
 ----------------------------------------------------------
 If you have a `behat.local.yml` file (which is not tracked by git), update it to match the syntax in `behat.local.yml.default`. Specifically:
