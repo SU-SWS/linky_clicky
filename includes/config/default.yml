@@ -34,7 +34,7 @@ default:
     # Tests that are meant for development sites and can make changes.
     dev:
       filters:
-        tags: '&&~live&&~launch'
+        tags: '~live&&~launch'
         #'safe,deploy,dev'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
@@ -83,7 +83,7 @@ default:
     # Did the site launch okay? URLs, robots.txt, are correct?
     live:
       filters:
-        tags: 'safe,live,launch&&~destructive&&~deploy&&~dev&&~live'
+        tags: 'safe,live&&~launch&&~destructive&&~deploy&&~dev'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
