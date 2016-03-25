@@ -3,7 +3,7 @@ Feature: Stanford Private Page
   As all types of users
   I want to check for CRUD permissions.
 
-  @api @javascript @dev
+  @api @javascript @dev @destructive
   Scenario: Create Private Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -31,7 +31,7 @@ Feature: Stanford Private Page
     And I should see "Bar" in the "Content Head" region
 
   @api @javascript @safe
-  Scenario: Create Private Page
+  Scenario: As a site owner I can see Create Private Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Add Private Page" in the "Admin Shortcuts" region
