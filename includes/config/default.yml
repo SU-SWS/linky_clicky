@@ -83,7 +83,7 @@ default:
     # Did the site launch okay? URLs, robots.txt, are correct?
     live:
       filters:
-        tags: 'safe,live,launch&&~destructive&&~deploy&&~dev&&'
+        tags: 'safe,live,launch&&~destructive&&~deploy&&~dev&&~live'
       contexts:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\DrushContext
