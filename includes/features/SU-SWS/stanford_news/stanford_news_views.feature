@@ -19,7 +19,7 @@ Feature: Stanford News Views
     Then I should see "Master"
     Then I should see "Feed"
     Then I should see "2 Item Recent News List"
-    Then I should see "5 Items News List Block"
+    Then I should see "5 Item News List Block"
     Then I should see "5 Item News List Page"
     Then I should see "3 Item News List Block"
 
@@ -32,12 +32,12 @@ Feature: Stanford News Views
   @safe
   Scenario: Manage view operations are available
     Given I am on "admin/manage/stanford_news_item"
-    Then I should see 1 "edit-title" element
-    Then I should see 1 "edit-status" element
-    Then I should see 1 "edit-tid" element
-    Then I should see 1 "edit-submit-admin-manage-stanford-news-item" element
-    Then I should see 1 "edit-reset" element
-    Then I should see 1 "edit-operation" element
+    Then I should see 1 "#edit-title" element
+    Then I should see 1 "#edit-status" element
+    Then I should see 1 "#edit-tid" element
+    Then I should see 1 "#edit-submit-admin-manage-stanford-news-item" element
+    Then I should see 1 "#edit-reset" element
+    Then I should see 1 "#edit-operation" element
     Then I select "Delete" from "edit-operation"
     Then I select "Modify News Categories" from "edit-operation"
     Then I select "Publish" from "edit-operation"
@@ -48,5 +48,5 @@ Feature: Stanford News Views
     Given I am on "news.xml"
     Given I am on "news/recent-news"
     Then I should see "Recent News"
-    Then I should see 1 ".view-stanford-news" item
+    Then I should see 1 ".view-stanford-news" element
 

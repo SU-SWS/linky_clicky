@@ -70,8 +70,8 @@
     Then I fill in "edit-field-s-news-link-und-0-title" with "This is the external link title field"
     Then I fill in "edit-field-s-news-link-und-0-url" with "http://www.stanford.edu"
     Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-news-image-insert-und-0-upload"
-    Then I check the "edit-field-s-news-featured-und" checkbox
-    Then I uncheck the "path[pathauto]" checkbox
+    Then I check the box "edit-field-s-news-featured-und"
+    Then I uncheck the box "path[pathauto]"
     Then I fill in "edit-path-alias" with "[random]"
     Then I press the "Save" button
     Then I should see "News Item Behat Stanford News Item has been created"
@@ -84,6 +84,6 @@
     Then I should see "This is the image caption field"
     Then I should see "This is the body field"
     Then I should see "This is the external link title field"
-    Then I click on "This is the external link title field"
+    Then I click "This is the external link title field"
     Then I should be on "http://www.google.com"
 
