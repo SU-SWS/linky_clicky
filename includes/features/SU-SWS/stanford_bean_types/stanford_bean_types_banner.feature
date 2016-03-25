@@ -29,7 +29,7 @@ Feature: Stanford Banner bean Type
     Then the "Banner 12 Column" checkbox should be checked
     Then the "Banner 12 Column Tall" checkbox should be checked
     Then the "Banner 9 Column" checkbox should be checked
-    Then the "BannerFull Width Short" checkbox should be checked
+    Then the "Banner Full Width Short" checkbox should be checked
 
   @safe
   Scenario: Stanford Banner Type Display Mode 12 Column
@@ -54,12 +54,12 @@ Feature: Stanford Banner bean Type
   @dev @destructive
   Scenario: Create stanford banner block
     And I am on "block/add/stanford-banner"
-    Then I fill "edit-label" with "Behat Banner Block"
-    Then I fill "edit-title" with "Behat Banner Block"
+    Then I fill in "edit-label" with "Behat Banner Block"
+    Then I fill in "edit-title" with "Behat Banner Block"
     Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
-    Then I fill "field_s_image_info[und][0][field_s_image_credits][und][0][value]" with "This is the credits"
-    Then I fill "field_s_image_info[und][0][field_s_image_source_info][und][0][value]" with "This is the source"
-    Then I fill "field_s_image_info[und][0][field_s_image_caption][und][0][format]" with "This is the caption"
+    Then I fill in "field_s_image_info[und][0][field_s_image_credits][und][0][value]" with "This is the credits"
+    Then I fill in "field_s_image_info[und][0][field_s_image_source_info][und][0][value]" with "This is the source"
+    Then I fill in "field_s_image_info[und][0][field_s_image_caption][und][0][value]" with "This is the caption"
     Then I select "Banner 12 Column" from "edit-view-mode"
     Then I select "Banner 12 Column Tall" from "edit-view-mode"
     Then I select "Banner 9 Column" from "edit-view-mode"
@@ -73,4 +73,4 @@ Feature: Stanford Banner bean Type
     Then I should see 1 ".field-name-field-s-image-image img" element
     Then I click "Delete Block"
     Then I press "Delete"
-    Then I shold see "stanford_banner Behat Banner Block has been deleted."
+    Then I should see "stanford_banner Behat Banner Block has been deleted."

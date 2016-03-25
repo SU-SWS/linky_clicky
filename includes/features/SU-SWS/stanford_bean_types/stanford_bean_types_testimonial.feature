@@ -1,3 +1,4 @@
+@api
 Feature: Stanford testimonial bean Type
   In order to ensure that the testimonial bean exists
   As an administrator
@@ -6,7 +7,7 @@ Feature: Stanford testimonial bean Type
   Background:
     Given I am logged in as a user with the "administrator" role
 
-  @api @safe
+  @safe
   Scenario: Stanford testimonial type exists
     And I am on "block/add"
     Then I should see the link "stanford_testimonial_block" in the "Content Body" region
@@ -52,16 +53,16 @@ Feature: Stanford testimonial bean Type
   @dev @destructive
   Scenario: Create stanford banner block
     And I am on "block/add/stanford-testimonial-block"
-    Then I fill "edit-label" with "Behat Testimonial Block"
-    Then I fill "edit-title" with "Behat Testimonial Block"
+    Then I fill in "edit-label" with "Behat Testimonial Block"
+    Then I fill in "edit-title" with "Behat Testimonial Block"
     Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
-    Then I fill "field_s_image_info[und][0][field_s_image_credits][und][0][value]" with "This is the credits"
-    Then I fill "field_s_image_info[und][0][field_s_image_source_info][und][0][value]" with "This is the source"
-    Then I fill "field_s_image_info[und][0][field_s_image_caption][und][0][format]" with "This is the caption"
+    Then I fill in "field_s_image_info[und][0][field_s_image_credits][und][0][value]" with "This is the credits"
+    Then I fill in "field_s_image_info[und][0][field_s_image_source_info][und][0][value]" with "This is the source"
+    Then I fill in "field_s_image_info[und][0][field_s_image_caption][und][0][format]" with "This is the caption"
     Then I fill in "field_s_testimonial_quote[und][0][value]" with "This is the quote"
     Then I fill in "field_s_testimonial_credits[und][0][value]" with "This is the credits"
-    Then I fill "field_testimonial_more_link[und][0][title]" with "This is the read more link title"
-    Then I fill "field_testimonial_more_link[und][0][url]" with "http://www.stanford.edu"
+    Then I fill in "field_testimonial_more_link[und][0][title]" with "This is the read more link title"
+    Then I fill in "field_testimonial_more_link[und][0][url]" with "http://www.stanford.edu"
     Then I press "Save"
     Then I should see "stanford_testimonial_block Behat Testimonial Block has been created."
     Then I should see "Behat Testimonial Block"
@@ -71,4 +72,4 @@ Feature: Stanford testimonial bean Type
     Then I should see 1 ".field-collection-item-field-s-image-info img" element
     Then I click "Delete Block"
     Then I press "Delete"
-    Then I shold see "stanford_testimonial_block Behat Testimonial Block has been deleted."
+    Then I should see "stanford_testimonial_block Behat Testimonial Block has been deleted."

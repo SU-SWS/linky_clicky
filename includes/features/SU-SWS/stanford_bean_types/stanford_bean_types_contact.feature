@@ -45,8 +45,8 @@ Feature: Stanford contact bean Type
   @dev @destructive
   Scenario: Create stanford contact block
     And I am on "block/add/stanford-contact"
-    Then I fill "edit-label" with "Behat Contact Block"
-    Then I fill "edit-title" with "Behat Contact Block"
+    Then I fill in "edit-label" with "Behat Contact Block"
+    Then I fill in "edit-title" with "Behat Contact Block"
     Then I fill in "field_s_contact_address_line_1[und][0][value]" with "Line one"
     Then I fill in "field_s_contact_address_line_2[und][0][value]" with "Line two"
     Then I fill in "field_s_contact_address_line_3[und][0][value]" with "Line three"
@@ -69,4 +69,4 @@ Feature: Stanford contact bean Type
     Then I should see "Link title is me"
     Then I click "Delete Block"
     Then I press "Delete"
-    Then I shold see "stanford_contact Behat Contact Block has been deleted."
+    Then I should see "stanford_contact Behat Contact Block has been deleted."

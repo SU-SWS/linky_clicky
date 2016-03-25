@@ -42,18 +42,18 @@ Feature: Stanford icon_block bean Type
   Scenario: Create Icon block
     And I am on "block/add/stanford-icon-block"
     Then I fill in "Label" with "BeHat Test Icon Block"
-    Then I fill in "Title" with "BeHat Test Icon Block Title"
+    Then I fill in "Title" with "BeHat Test Icon Block"
     Then I select "Apple" from "Icon"
     Then I fill in "field_s_icon_body[und][0][value]" with "This is the body content"
     Then I fill in "field_s_icon_link[und][0][title]" with "This is the more link"
     Then I fill in "field_s_icon_link[und][0][url]" with "http://www.stanford.edu"
     Then I press "Save"
-    Then I should see the message "stanford_icon_block BeHat Test Icon Block Title has been created"
+    Then I should see the message "stanford_icon_block BeHat Test Icon Block has been created"
     Then I should see "This is the body content"
     Then I should see 1 ".icon-apple" element
     Then I should see "BeHat Test Icon Block"
     Then I should see "This is the more link"
     Then I click "Delete Block"
     Then I press "Delete"
-    Then I shold see "stanford_icon_block BeHat Test Icon Block has been deleted."
+    Then I should see "stanford_icon_block BeHat Test Icon Block has been deleted."
 

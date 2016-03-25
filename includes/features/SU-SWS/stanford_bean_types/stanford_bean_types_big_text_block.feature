@@ -29,20 +29,22 @@ Feature: Stanford big_text_block bean Type
     Then I should see "group_s_big_text_style"
     Then I should see "Lead Text"
     Then I should see "body"
-    Then I should see "More Link" # Group label
+    # Group label
+    Then I should see "More Link"
     Then I should see "group_s_more_link"
-    Then I should see "More link" # field label
+    # Field label
+    Then I should see "More link"
     Then I want to validate select field option "fields[field_s_big_text_block_more_link][type]" default is "Title, as link (default)"
 
   @dev @destructive
   Scenario: Create stanford banner block
     And I am on "block/add/stanford-big-text-block"
-    Then I fill "edit-label" with "Behat Big Text Block"
-    Then I fill "edit-title" with "Behat Big Text Block"
-    Then I fill "field_s_big_text_block_lead_text[und][0][value]" with "This is the lead text"
-    Then I fill "field_s_big_text_block_body[und][0][value]" with "This is in the body"
-    Then I fill "field_s_big_text_block_more_link[und][0][title]" with "The link title is this"
-    Then I fill "field_s_big_text_block_more_link[und][0][url]" with "http://www.stanford.edu"
+    Then I fill in "edit-label" with "Behat Big Text Block"
+    Then I fill in "edit-title" with "Behat Big Text Block"
+    Then I fill in "field_s_big_text_block_lead_text[und][0][value]" with "This is the lead text"
+    Then I fill in "field_s_big_text_block_body[und][0][value]" with "This is in the body"
+    Then I fill in "field_s_big_text_block_more_link[und][0][title]" with "The link title is this"
+    Then I fill in "field_s_big_text_block_more_link[und][0][url]" with "http://www.stanford.edu"
     Then I press "Save"
     Then I should see "stanford_big_text_block Behat Big Text Block has been created."
     Then I should see "This is the lead text"
@@ -50,4 +52,4 @@ Feature: Stanford big_text_block bean Type
     Then I should see 1 ".field-name-field-s-big-text-block-more-link" element
     Then I click "Delete Block"
     Then I press "Delete"
-    Then I shold see "stanford_big_text_block Behat Big Text Block has been deleted."
+    Then I should see "stanford_big_text_block Behat Big Text Block has been deleted."
