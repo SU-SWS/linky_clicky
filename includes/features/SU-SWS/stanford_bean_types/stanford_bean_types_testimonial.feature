@@ -42,7 +42,7 @@ Feature: Stanford testimonial bean Type
     Then I should see "Credits"
     Then I should see "group_s_credits_style"
     Then I should see "More Link"
-    Then I should see "groups_s_more_link_style"
+    Then I should see "group_s_more_link_style"
     Then I should see "postcard-right"
     Then I should see "group-s-circle-image-style field-group-div"
     Then I should see "group-s-quote-style field-group-div quote"
