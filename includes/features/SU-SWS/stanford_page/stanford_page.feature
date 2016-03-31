@@ -23,11 +23,10 @@ Feature: Stanford Page
     And I should see "View mode: Large Scaled"
     Then I want to validate select field option "edit-fields-field-s-page-file-type" default is "Generic file"
 
-  @api @javascript @content @dev
+  @api @content @dev
   Scenario: Add Stanford Page
     Given I am logged in as a user with the "administrator" role
-    When I wait for the Site Actions drop down to appear
-    And I click "Add Page" in the "Admin Shortcuts" region
+    And I am on "node/add/stanford-page"
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
