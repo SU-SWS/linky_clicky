@@ -1,5 +1,5 @@
 Feature: Resources Section
-  In order to ensure that the Jumpstart Engineering Resources section content is visible
+  In order to ensure that the Jumpstart Engineering Resources section content is visible when expected
   As an end user
   I want to check for the existence of page and menu content
 
