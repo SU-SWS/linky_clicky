@@ -38,3 +38,7 @@ linky-clicky-all-the-things.sh
 uatd6
 behat.local.yml
 */rerun.txt
+
+# CJW
+*.out
+
