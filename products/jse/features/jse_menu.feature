@@ -2,7 +2,7 @@ Feature: Stanford Jumpstart Engineering Menus
   In order to ensure that the JSE menus are configured correctly
   I want to check for the correct menu items
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct main navigation items
     Given I am on the homepage
     Then I should see "Home" in the "Main Navigation" region
@@ -15,7 +15,7 @@ Feature: Stanford Jumpstart Engineering Menus
     And I should see "Resources" in the "Main Navigation" region
 
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct About navigation items
     Given I am on the homepage
     When I click "About"
@@ -23,14 +23,14 @@ Feature: Stanford Jumpstart Engineering Menus
     When I click "Programs"
     Then I should be on "about/affiliated-programs"
     When I click "Affiliates"
-    Then I should be on "about/affiliate-organizations"
+    Then I should be on "affiliate-organizations"
     When I click "Courses"
     Then I should be on "courses"
     When I click "Contact"
     Then I should be on "about/contact"
 
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct People navigation items
     Given I am on the homepage
     When I click "People"
@@ -43,7 +43,8 @@ Feature: Stanford Jumpstart Engineering Menus
     Then I should be on "people/staff"
 
 
-  @safe @site @content @deploy
+
+  @deploy
   Scenario: Verify that we have the correct People navigation items
     Given I am on the homepage
     When I click "Research"
@@ -54,14 +55,14 @@ Feature: Stanford Jumpstart Engineering Menus
     Then I should be on "research/project-example"
 
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct Publications navigation items
     Given I am on the homepage
     When I click "Publications"
     Then I should be on "publications"
 
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct News navigation items
     Given I am on the homepage
     When I click "News"
@@ -74,7 +75,7 @@ Feature: Stanford Jumpstart Engineering Menus
     Then I should be on "news/gallery"
 
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct Events navigation items
     Given I am on the homepage
     When I click "Events"
@@ -85,7 +86,7 @@ Feature: Stanford Jumpstart Engineering Menus
     Then I should be on "events/series"
 
 
-  @safe @site @content @deploy
+  @deploy
   Scenario: Verify that we have the correct Resources navigation items
     Given I am on the homepage
     When I click "Resources"

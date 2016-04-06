@@ -3,16 +3,6 @@ Feature: Stanford Private Page
   As all types of users
   I want to check for CRUD permissions.
 
-  @api @javascript @dev @destructive
-  Scenario: Create Private Page
-    Given I am logged in as a user with the "site owner" role
-    When I wait for the Site Actions drop down to appear
-    And I click "Add Private Page" in the "Admin Shortcuts" region
-    Then I should see "Create Private Page" in the "Branding" region
-    Then I fill in "edit-title" with "Private Page Test"
-    And I press the "Save" button
-    Then I should see "Private Page Private Page Test has been created" in the "Console" region
-
   @api @dev @destructive
   Scenario: Site owner can create and edit Private Page types
     Given I am logged in as a user with the "site owner" role
@@ -30,9 +20,8 @@ Feature: Stanford Private Page
     Then I go to "private/bar"
     And I should see "Bar" in the "Content Head" region
 
-  @api @javascript @safe
+  @api @safe
   Scenario: As a site owner I can see Create Private Page
     Given I am logged in as a user with the "site owner" role
-    When I wait for the Site Actions drop down to appear
-    And I click "Add Private Page" in the "Admin Shortcuts" region
+    When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
