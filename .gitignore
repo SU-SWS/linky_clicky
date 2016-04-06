@@ -39,6 +39,6 @@ uatd6
 behat.local.yml
 */rerun.txt
 
-# CJW
+# Files to capture behat output
 *.out
 
