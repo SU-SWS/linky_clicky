@@ -180,8 +180,8 @@ Along with lifecycle, tags can identify other situations.
     <td>For testing Drupal core modules</td>
   </tr>
   <tr>
-    <td>Authentication - Under consideration</td>
     <td></td>
+    <td>Authentication - Under consideration</td>
   </tr>
   <tr>
     <td>@saml</td>
@@ -192,8 +192,8 @@ Along with lifecycle, tags can identify other situations.
     <td></td>
   </tr>
   <tr>
-    <td>Hosting - Under consideration</td>
     <td></td>
+    <td>Hosting - Under consideration</td>
   </tr>
   <tr>
     <td>@sites</td>
@@ -264,13 +264,11 @@ Suites target the various phases of the product and site life cycles. Here are t
 ## Directory Structures 
 
 Separate products and sites into subdirectories
+
 Linky Clicky 
-
- |--products
-
- |--sites
-
- |--includes
+    |--products
+    |--sites
+    |--includes
 
 Sitename | Product name
 |--behat.yml
