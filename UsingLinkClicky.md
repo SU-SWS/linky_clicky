@@ -26,8 +26,15 @@ Let’s examine the various considerations of testing our products and sites.
 
 Testing for our product development and subsequent sites has a sort of timeline or lifecycle. Which looks roughly like this:
 
-Requirements > Development > Deployment > Customization > Production > Launch > Live
-
+    Requirements
+        > Development
+            > Deployment
+                > Customization
+                    > Production
+                        > Launch
+                            > Live
+                                
+                           
 For each phase of this lifecycle, we may need a specific set of tests. Although individual tests may overlap between phases, there are many tests that are only relevant to a particular phase. 
 
 #### Requirements
@@ -152,34 +159,6 @@ Along with lifecycle, tags can identify other situations.
     <td>Only for development tests. This scenario may change configuration or leave lasting items/content/config on the site it is running on. Not safe for production. </td>
   </tr>
   <tr>
-    <td>@dependent</td>
-    <td>Indicates a scenario is dependent on a previous scenario</td>
-  </tr>
-  <tr>
-    <td>@content</td>
-    <td>For tests that create content. Can this just be replaced with a @destructive tag?</td>
-  </tr>
-  <tr>
-    <td>@disabled</td>
-    <td>If we have disabled a feature that is normally enabled for that product</td>
-  </tr>
-  <tr>
-    <td>Modules </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>@contrib</td>
-    <td>For testing a contributed module.</td>
-  </tr>
-  <tr>
-    <td>@stanford</td>
-    <td>For testing a stanford module. Is this really ever necessary?</td>
-  </tr>
-  <tr>
-    <td>@core</td>
-    <td>For testing Drupal core modules</td>
-  </tr>
-  <tr>
     <td></td>
     <td>Authentication - Under consideration</td>
   </tr>
@@ -265,21 +244,25 @@ Suites target the various phases of the product and site life cycles. Here are t
 
 Separate products and sites into subdirectories
 
-Linky Clicky 
+
+    linky_clicky
     |--products
     |--sites
     |--includes
 
-Sitename | Product name
-|--behat.yml
-|--behat.local.yml
-|--features
-   |--featurename.feature
-   |--bootstrap - ??
-      |--FeatureContext.php
-      |--SWSFeatureContext.php
-      |--SWSDrupalContext.php
-      |--SWSMinkContext.php
+
+
+    sitename | product_name
+    |--behat.yml
+    |--behat.local.yml
+    |--features
+       |--featurename.feature
+       |--bootstrap
+          |--FeatureContext.php
+          |--SWSFeatureContext.php
+          |--SWSDrupalContext.php
+          |--SWSMinkContext.php
+
 
 ## Conventions for Naming Structures
 
