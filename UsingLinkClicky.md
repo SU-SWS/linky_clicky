@@ -1,6 +1,6 @@
 # Using Behat
 
-The purpose of testing is to ensure that requirements are met. Additionally regression testing ensures that changes to the code or the site do not make unexpected changes elsewhere. Best practices dictate that we want full testing coverage, yet we want our set of tests DRY (don’t repeat yourself). So, what are the best practices for testing?
+The purpose of testing is to ensure that requirements are met. Additionally, regression testing ensures that changes to the code or the site do not make unexpected changes elsewhere. Best practices dictate that we want full testing coverage, yet we want our set of tests DRY (don’t repeat yourself). So, what are the best practices for testing?
 
 Also see [Writing BDD tests for Drupal.org](https://www.drupal.org/node/1578324), [Feature/Scenario Review Checklist](https://www.drupal.org/node/1782858), 
 
@@ -10,7 +10,7 @@ Let’s examine the various considerations of testing our products and sites.
 
 ### Functionality
 
- In our product development we need to test functionality of the site. For our websites this includes:
+ In our product development we need to test the functionality of a site. For our websites this includes:
 
 1. Behaviour: Does the site behave or function as expected?
 
@@ -89,7 +89,7 @@ By default, Behat executes the tests in the ‘features’ subdirectory within t
 
 A feature is the human-readable stories that describe the behavior of your application. It is with these Behat features that we actually navigate and verify the requirements for site. Each feature resides in its own file (*.feature) and is either symlinked or located in the ‘features’ directory. To keep things DRY, in applying Behat features to our domain, each feature should contain specific functionality. 
 
-If we are testing the functionality of a Jumpstart ‘feature’ each Behat feature file should correspond with a module that can be enabled or disabled. For example, if you are testing a content type, say "Stanford Private Page," the corresponding Behat feature might be “stanford_private_page.feature.” Whereas if you are testing the “manage content” functionality for Stanford Private Page, the corresponding feature would be “stanford_private_page_administration.feature”
+If we are testing the functionality of a Jumpstart ‘feature’ each Behat feature file should correspond with a module that can be enabled or disabled. For example, if you are testing a content type, say "Stanford Private Page," the corresponding Behat feature might be “stanford\_private\_page.feature.” Whereas if you are testing the “manage content” functionality for Stanford Private Page, the corresponding feature would be “stanford\_private\_page\_administration.feature”
 
 As well, we might want to have a "Feature disabled" set of tests. In JSE, we have the situation where we roll out a site then disable the features that the client doesn’t need.
 
@@ -214,7 +214,7 @@ Suites target the various phases of the product and site life cycles. Here are t
   </tr>
   <tr>
     <td>dev</td>
-    <td>Everything but >></td>
+    <td>Everything</td>
     <td>@live @launch</td>
   </tr>
   <tr>
@@ -246,22 +246,29 @@ Separate products and sites into subdirectories
 
 
     linky_clicky
+    |--environment
     |--products
+    	|--productname
+	    	|--features
+		    	|--featurename.feature
     |--sites
+		| --sitename
+			|--behat.yml
+			|--behat.local.yml
+			|--features
+				|--featurename.feature
+				|--bootstrap
+					|--FeatureContext.php
+					|--SWSFeatureContext.php
+					|--SWSDrupalContext.php
+					|--SWSMinkContext.php
     |--includes
-
-
-
-    sitename | product_name
-    |--behat.yml
-    |--behat.local.yml
-    |--features
-       |--featurename.feature
-       |--bootstrap
-          |--FeatureContext.php
-          |--SWSFeatureContext.php
-          |--SWSDrupalContext.php
-          |--SWSMinkContext.php
+	    |--features
+	    	|--namespace
+	    	  |--feature
+	    	  	|--featurename.feature
+    |--uat
+   
 
 
 ## Conventions for Naming Structures
