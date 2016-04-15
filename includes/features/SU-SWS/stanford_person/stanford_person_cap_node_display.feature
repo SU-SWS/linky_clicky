@@ -5,8 +5,6 @@ Feature: Stanford CAP Person Node Display
 
   @api @dev @destructive
   Scenario: Stanford Person
-    Given the "stanford_person" module is enabled
-    And the "entity_token" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-person"
@@ -17,7 +15,7 @@ Feature: Stanford CAP Person Node Display
     Then I should be on "people/leland-stanford"
     And I should see "Person Leland Stanford has been created"
 
-  @api @live
+  @api @safe
   Scenario: Affiliates column on Manage Person
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/people"
@@ -26,5 +24,5 @@ Feature: Stanford CAP Person Node Display
   @deploy
   Scenario: Stanford Person CAP node page
     Given I am on "people/jacob-smith"
-    Then I should not see a ".postcard-left" element
+    Then I should see "People" in the "First sidebar" region
 
