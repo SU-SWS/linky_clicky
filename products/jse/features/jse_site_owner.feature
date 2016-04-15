@@ -76,8 +76,9 @@ Feature: Site Owner
 
   @api @javascript @safe
   Scenario: View the Get Help Page
-    Given I am logged in as a user with the "site owner" role
-    And I am on "admin/stanford-jumpstart"
+    Given the cache has been cleared
+    Then I am logged in as a user with the "site owner" role
+    Then I am on "admin/stanford-jumpstart"
     Then I should see the heading "Jumpstart User Guide"
     And I should see the heading "Drupal resources at Stanford"
     And I should see the heading "Connect with the Drupal Community"
@@ -104,3 +105,9 @@ Feature: Site Owner
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
     Then I should see "Site Cache Cleared" in the "Console" region
+
+  @api @safe
+  Scenario: As a site owner I can see Create Private Page
+    Given I am logged in as a user with the "site owner" role
+    When I go to "node/add/stanford-private-page"
+    Then I should see "Create Private Page" in the "Branding" region

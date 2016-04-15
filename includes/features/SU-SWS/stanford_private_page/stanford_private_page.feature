@@ -4,8 +4,8 @@ Feature: Stanford Private Page
   I want to check for CRUD permissions.
 
   @api @dev @destructive
-  Scenario: Site owner can create and edit Private Page types
-    Given I am logged in as a user with the "site owner" role
+  Scenario: Adminstrator can create and edit Private Page types
+    Given I am logged in as a user with the "administrator" role
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
     Then I fill in "edit-title" with "Bar"
@@ -22,6 +22,6 @@ Feature: Stanford Private Page
 
   @api @safe
   Scenario: As a site owner I can see Create Private Page
-    Given I am logged in as a user with the "site owner" role
+    Given I am logged in as a user with the "administrator" role
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
