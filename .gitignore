@@ -41,4 +41,5 @@ behat.local.yml
 
 # Files to capture behat output
 *.out
+*.out*
 
