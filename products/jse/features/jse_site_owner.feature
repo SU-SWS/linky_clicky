@@ -3,6 +3,11 @@ Feature: Site Owner
   As a Site Owner
   I want to check for my ability to complete my tasks
 
+  @api @safe
+  Scenario: Can see Manage Content page
+    Given I am logged in as a user with the "site owner" role
+    And I am on "admin/manage"
+    Then I should see 1 or more "tr" elements
 
   @api @javascript @safe
   Scenario: Clicking on Manage Content
@@ -69,7 +74,7 @@ Feature: Site Owner
     And I go to the homepage
     Then I should see "Millennium Falcon" in the "Header" region
 
-  @api @javascript @live
+  @api @javascript @safe
   Scenario: View the Get Help Page
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart"
@@ -79,7 +84,7 @@ Feature: Site Owner
     And I should see the heading "Need assistance with your site?"
     And I should see the link "Request Assistance" in the "Content Body" region
 
-  @api @javascript @live
+  @api @javascript @safe
   Scenario: View the Ready to Launch page
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/launch-checklist"
@@ -93,7 +98,7 @@ Feature: Site Owner
     And I should see the heading "Are you ready to launch your site?"
     And I should see the link "Request Site Launch" in the "Content Body" region
 
-  @api @javascript @live
+  @api @javascript @safe
   Scenario: Clear caches
     Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear
