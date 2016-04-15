@@ -4,7 +4,7 @@ Feature: Stanford CAP Person Node Display
   I want to verify the CAP display of people content.
 
   @api @dev @destructive
-  Scenario: Stanford Person
+  Scenario: Administrator can create a Stanford Person
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-person"
