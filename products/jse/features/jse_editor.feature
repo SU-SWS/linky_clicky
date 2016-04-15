@@ -27,13 +27,6 @@ Feature: Editor
     And I should see the heading "Are you ready to launch your site?"
     And I should see the link "Request Site Launch" in the "Content Body" region
 
-  @api @javascript @safe
-  Scenario: Clear caches
-    Given I am logged in as a user with the "editor" role
-    And I wait for the Site Actions drop down to appear
-    And I click "Clear Site Cache" in the "Admin Shortcuts" region
-    Then I should see "Site Cache Cleared" in the "Console" region
-
   @api @javascript @dev @destructive
   Scenario: Edit Contact Information
     Given I am logged in as a user with the "editor" role
@@ -60,9 +53,22 @@ Feature: Editor
     Then I should see "Create Stanford Event" in the "Branding" region
 
   @api @javascript @safe
-  Scenario: Create news item
+  Scenario: Site editor can create a news item
     Given I am logged in as a user with the "editor" role
     And I wait for the Site Actions drop down to appear
     And I click "Add News Item" in the "Admin Shortcuts" region
     Then I should see "Create News Item" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
+
+  @api @safe
+  Scenario: Site owner is denied access to add an Event series node
+    Given I am logged in as a user with the "editor" role
+    When I go to "node/add/stanford-event-series"
+    Then I should see "Access denied"
+
+  @api @javascript @safe
+  Scenario: Site editor can clear caches
+    Given I am logged in as a user with the "editor" role
+    And I wait for the Site Actions drop down to appear
+    And I click "Clear Site Cache" in the "Admin Shortcuts" region
+    Then I should see "Site Cache Cleared" in the "Console" region
