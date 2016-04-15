@@ -1,7 +1,5 @@
 Feature: Stanford Private Page
-  In order to ensure that the Stanford Private Page.
-  As all types of users
-  I want to check for CRUD permissions.
+  In order to ensure that the Stanford Private Page as administrator I want to verify I can create a private page.
 
   @api @dev @destructive
   Scenario: Adminstrator can create and edit Private Page types
@@ -21,7 +19,7 @@ Feature: Stanford Private Page
     And I should see "Bar" in the "Content Head" region
 
   @api @safe
-  Scenario: As a site owner I can see Create Private Page
+  Scenario: As a administrator I can see Create Private Page
     Given I am logged in as a user with the "administrator" role
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
