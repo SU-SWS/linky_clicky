@@ -283,7 +283,6 @@ Separate products and sites into subdirectories
 
 * Namespace any feature that is specific to a product or site by pre-pending it with the site or product name.
 
-* Should the directory structure in the Behat includes directory mirror the structure on Github?
 
 <table>
   <tr>
@@ -333,11 +332,9 @@ In the future, consider:  [https://www.drupal.org/project/behatrunner](https://w
 
 Product owners/developers should be kept informed about changes to tests in the includes directory. This would include new tests and breaking tests into more specialized files. 
 
-- Part of the staff meeting agenda?
-
 ## Tips and Best Practices
 
-If you don’t specify a suite it’ll run all sorts of test, and take *forever*. Specify a suite!
+Specify a suite! If you don’t specify a suite it’ll run all sorts of test, and take *forever*. 
 
 ### Test coverage
 
