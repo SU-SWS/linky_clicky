@@ -90,49 +90,6 @@ Directory structure
           |--SWSMinkContext.php
 
 
-
-Suites And Tags
-------------------------------
-
-## Tags
-
-When writing your tests please include the following tags where appropriate. These help create sets of tests that can be run on different environments with different contexts. For example, when running tests on a live site we don't want to change configuration and should tag our tests to indicate wether or not it changes config.
-
-#### @live @safe @prod
-Safe for production or live site tests. These tests may not create any content, change any settings, or leave any trace that it has run. **Note**: some Scenarios tagged as `@safe` clear the cache. We have labeled clearing the cache as a "safe" operation.
-
-#### @dev @destructive
-Only for development tests. This scenario may change configuration or leave lasting items/content/config on the site it is running on. Not safe for production.
-
-#### @deploy
-For tests specific to a freshly deployed website. These tests may not be destructive and should be similar to the @live tag.
-
-#### @content
-For tests that create content.
-
-#### @contrib
-For anything that is testing a contributed module.
-
-#### @stanford
-For anything that is testing a stanford module.
-
-#### @site
-For site specific tests. E.g., testing art.stanford.edu.
-
-## Suites
-
-The following suites are available to run:
-
-* all: Runs all the tests
-* default: Runs everything except for `@dev` and `@destructive` tags
-* live: Runs `@live`, `@safe`, and `@prod`, but not `@content`
-* dev: Runs everything except for `@contrib`
-* deploy: Runs `@deploy`, but not `@dev`, `@destructive`, `@content`, or `@site`
-* content: Runs only `@content`
-* site: Runs only `@site`
-* contrib: Runs `@contrib`, but not `@dev` or `@destructive`
-* contrib-dev: Runs all `@contrib`
-* stanford: Runs all `@stanford`, but not `@dev` or `@destructive`
-
-## Running suites and profiles
-You can run a suite and a profile at the same time. eg: `behat --profile local --suite live`
+[Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/jse-dev/README.md)
+------------------
+See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/jse-dev/README.md)
