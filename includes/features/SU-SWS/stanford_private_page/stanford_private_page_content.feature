@@ -38,22 +38,11 @@ Feature: Stanford Private Page Content
     And I should see "For Staff" in the "Content Head" region
 
   @api @safe
-  Scenario: Site owner can see private pages
-    Given I am logged in as a user with the "site owner" role
-    And I am on "private"
-    Then I should see 1 ".node-type-stanford-private-page" element
-
-  @api @safe
   Scenario: Site member can see private pages
     Given I am logged in as a user with the "site member" role
     And I am on "private"
     Then I should see 1 ".node-type-stanford-private-page" element
 
-  @api @safe
-  Scenario: Check editor can view Private Pages Section
-    Given I am logged in as a user with the "editor" role
-    And I am on "private"
-    Then I should see 1 ".node-type-stanford-private-page" element
 
   @api @safe
   Scenario: Check administrator can view Private Pages Section

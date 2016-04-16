@@ -111,3 +111,31 @@ Feature: Site Owner
     Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
+
+  @api @safe
+  Scenario Outline: Verify site owner can see items on the Customized Design Page
+    Given I am logged in as a user with the "site owner" role
+    And I am on "admin/stanford-jumpstart/customize-design"
+    Then I should see "<Text>" in the "<Region>" region
+
+    Examples:
+      | Text          | Region       |
+      | Hoover        | Content Body |
+      | Morris        | Content Body |
+      | Terman        | Content Body |
+      | Pettit        | Content Body |
+      | Light         | Content Body |
+      | Plain         | Content Body |
+      | Rich          | Content Body |
+      | High Contrast | Content Body |
+      | Cardinal      | Content Body |
+      | Sans Serif    | Content Body |
+      | Serif         | Content Body |
+      | Slab Serif    | Content Body |
+
+
+  @api
+  Scenario: Site Owner denied access to Jumpstart help
+    Given I am logged in as a user with the "site owner" role
+    When I go to "admin/stanford-jumpstart/settings"
+    Then I should see "Access denied"

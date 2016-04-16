@@ -61,7 +61,7 @@ Feature: Editor
     And the "Text format" field should contain "content_editor_text_format"
 
   @api @safe
-  Scenario: Site owner is denied access to add an Event series node
+  Scenario: Site editor is denied access to add an Event series node
     Given I am logged in as a user with the "editor" role
     When I go to "node/add/stanford-event-series"
     Then I should see "Access denied"
@@ -72,3 +72,21 @@ Feature: Editor
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
     Then I should see "Site Cache Cleared" in the "Console" region
+
+  @api @safe
+  Scenario: Check editor can view Private Pages Section
+    Given I am logged in as a user with the "editor" role
+    And I am on "private"
+    Then I should see 1 ".node-type-stanford-private-page" element
+
+  @api @safe
+  Scenario: Event series link in the site actions menu
+    Given I am logged in as a user with the "editor" role
+    When I go to "node/add/stanford-event-series"
+    Then I should see "Access denied"
+
+  @api @safe
+  Scenario: Editor denied access to Jumpstart help
+    Given I am logged in as a user with the "editor" role
+    When I go to "admin/stanford-jumpstart/settings"
+    Then I should see "Access denied"

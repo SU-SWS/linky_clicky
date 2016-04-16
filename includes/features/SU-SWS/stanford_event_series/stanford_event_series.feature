@@ -1,6 +1,6 @@
 Feature: Stanford Event Series
   In order to ensure that the Event series functionality is complete
-  As an administrator, site owner, or editor
+  As an administrator
   I want to be able to create, edit, delete, and view event series nodes.
 
   @api @safe
