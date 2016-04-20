@@ -15,7 +15,6 @@ Feature: Stanford Private Page
     Then I click on the element with css selector ".views-row-first .views-field-title a"
     Then I click "Edit" in the "Tabs" region
     Then I press "Save"
-    Then I go to "private/bar"
     And I should see "Bar" in the "Content Head" region
 
   @api @safe
