@@ -3,22 +3,22 @@ Feature: Site Owner
   As a Site Owner
   I want to check for my ability to complete my tasks
 
+  Background:
+      Given I am logged in as a user with the "site owner" role
+
   @api @safe
   Scenario: Can see Manage Content page
-    Given I am logged in as a user with the "site owner" role
     And I am on "admin/manage"
     Then I should see 1 or more "tr" elements
 
   @api @javascript @safe
   Scenario: Clicking on Manage Content
-    Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
     Then I should see 1 or more "tr" elements
 
   @api @javascript @dev @destructive
   Scenario: Add Stanford Page
-    Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Add Page" in the "Admin Shortcuts" region
     Then I should see "Create Stanford Page" in the "Branding" region
@@ -32,7 +32,6 @@ Feature: Site Owner
 
   @api @javascript @dev @destructive
   Scenario: Add Landing Page
-    Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Add Landing Page" in the "Admin Shortcuts" region
     Then I should see "Create Landing Page" in the "Branding" region
@@ -44,7 +43,6 @@ Feature: Site Owner
 
   @api @javascript @dev @destructive
   Scenario: Edit Contact Information
-    Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Edit Contact Information" in the "Admin Shortcuts" region
     Then I should see "Edit stanford_contact: Jumpstart Footer Contact Block" in the "Branding" region
@@ -53,7 +51,6 @@ Feature: Site Owner
 
   @api @javascript @dev @destructive
   Scenario: Edit Social Media Links
-    Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
     Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
@@ -62,7 +59,6 @@ Feature: Site Owner
 
   @api @javascript @dev @destructive
   Scenario: Edit Site Name
-    Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Edit Site Name" in the "Admin Shortcuts" region
     Then I should see "Site information" in the "Branding" region
@@ -77,7 +73,6 @@ Feature: Site Owner
   @api @javascript @safe
   Scenario: View the Get Help Page
     Given the cache has been cleared
-    Then I am logged in as a user with the "site owner" role
     Then I am on "admin/stanford-jumpstart"
     Then I should see the heading "Jumpstart User Guide"
     And I should see the heading "Drupal resources at Stanford"
@@ -87,7 +82,6 @@ Feature: Site Owner
 
   @api @javascript @safe
   Scenario: View the Ready to Launch page
-    Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/launch-checklist"
     Then I should see the heading "Content Cleanup"
     And I should see the heading "Blocks"
@@ -101,20 +95,17 @@ Feature: Site Owner
 
   @api @javascript @safe
   Scenario: Clear caches
-    Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
     Then I should see "Site Cache Cleared" in the "Console" region
 
   @api @safe
   Scenario: As a site owner I can see Create Private Page
-    Given I am logged in as a user with the "site owner" role
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
 
   @api @safe
   Scenario Outline: Verify site owner can see items on the Customized Design Page
-    Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see "<Text>" in the "<Region>" region
 
@@ -136,6 +127,5 @@ Feature: Site Owner
 
   @api
   Scenario: Site Owner denied access to Jumpstart help
-    Given I am logged in as a user with the "site owner" role
     When I go to "admin/stanford-jumpstart/settings"
     Then I should see "Access denied"
