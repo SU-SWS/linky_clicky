@@ -1,6 +1,6 @@
 Feature: Stanford Affiliate Organization Administration
   In order to ensure that I can administer Affiliate Organizations
-  As an administrator, or site owner
+  As an administrator
   I want to be able verify functionality of the manage content pages
 
   @api @safe

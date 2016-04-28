@@ -38,3 +38,8 @@ linky-clicky-all-the-things.sh
 uatd6
 behat.local.yml
 */rerun.txt
+
+# Files to capture behat output
+*.out
+*.out*
+
