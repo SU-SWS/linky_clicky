@@ -1,23 +1,25 @@
+@api
 Feature: Site Owner
   In order to ensure that the Jumpstart Engineering administration functions are working properly
   As a Site Owner
   I want to check for my ability to complete my tasks
 
+
   Background:
       Given I am logged in as a user with the "site owner" role
 
-  @api @safe
+  @safe
   Scenario: Can see Manage Content page
     And I am on "admin/manage"
     Then I should see 1 or more "tr" elements
 
-  @api @javascript @safe
+  @javascript @safe
   Scenario: Clicking on Manage Content
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
     Then I should see 1 or more "tr" elements
 
-  @api @javascript @dev @destructive
+  @javascript @dev @destructive
   Scenario: Add Stanford Page
     When I wait for the Site Actions drop down to appear
     And I click "Add Page" in the "Admin Shortcuts" region
@@ -30,7 +32,7 @@ Feature: Site Owner
     Then I should see "Stanford Page Foo has been created" in the "Console" region
     And I should be on "foo"
 
-  @api @javascript @dev @destructive
+  @javascript @dev @destructive
   Scenario: Add Landing Page
     When I wait for the Site Actions drop down to appear
     And I click "Add Landing Page" in the "Admin Shortcuts" region
@@ -41,7 +43,7 @@ Feature: Site Owner
     Then I should see "Landing Page Foo has been created" in the "Console" region
     And I should be on "foo"
 
-  @api @javascript @dev @destructive
+  @javascript @dev @destructive
   Scenario: Edit Contact Information
     When I wait for the Site Actions drop down to appear
     And I click "Edit Contact Information" in the "Admin Shortcuts" region
@@ -49,7 +51,7 @@ Feature: Site Owner
     When I press the "Save" button
     Then I should see "stanford_contact Contact Us has been updated" in the "Console" region
 
-  @api @javascript @dev @destructive
+  @javascript @dev @destructive
   Scenario: Edit Social Media Links
     And I wait for the Site Actions drop down to appear
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
@@ -57,7 +59,7 @@ Feature: Site Owner
     When I press the "Save" button
     Then I should see "stanford_social_media_connect Connect has been updated." in the "Console" region
 
-  @api @javascript @dev @destructive
+  @javascript @dev @destructive
   Scenario: Edit Site Name
     When I wait for the Site Actions drop down to appear
     And I click "Edit Site Name" in the "Admin Shortcuts" region
@@ -70,7 +72,7 @@ Feature: Site Owner
     And I go to the homepage
     Then I should see "Millennium Falcon" in the "Header" region
 
-  @api @javascript @safe
+   @javascript @safe
   Scenario: View the Get Help Page
     Given the cache has been cleared
     Then I am on "admin/stanford-jumpstart"
@@ -80,7 +82,7 @@ Feature: Site Owner
     And I should see the heading "Need assistance with your site?"
     And I should see the link "Request Assistance" in the "Content Body" region
 
-  @api @javascript @safe
+  @javascript @safe
   Scenario: View the Ready to Launch page
     And I am on "admin/stanford-jumpstart/launch-checklist"
     Then I should see the heading "Content Cleanup"
@@ -93,18 +95,18 @@ Feature: Site Owner
     And I should see the heading "Are you ready to launch your site?"
     And I should see the link "Request Site Launch" in the "Content Body" region
 
-  @api @javascript @safe
+  @javascript @safe
   Scenario: Clear caches
     And I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
     Then I should see "Site Cache Cleared" in the "Console" region
 
-  @api @safe
+  @safe
   Scenario: As a site owner I can see Create Private Page
     When I go to "node/add/stanford-private-page"
     Then I should see "Create Private Page" in the "Branding" region
 
-  @api @safe
+  @safe
   Scenario Outline: Verify site owner can see items on the Customized Design Page
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see "<Text>" in the "<Region>" region
@@ -125,7 +127,7 @@ Feature: Site Owner
       | Slab Serif    | Content Body |
 
 
-  @api
+
   Scenario: Site Owner denied access to Jumpstart help
     When I go to "admin/stanford-jumpstart/settings"
     Then I should see "Access denied"
