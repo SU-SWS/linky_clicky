@@ -54,7 +54,7 @@ Feature: Stanford Banner bean Type
   @dev @destructive
   Scenario: Create stanford banner block
     And I am on "block/add/stanford-banner"
-    Then I fill in "label" with "Behat Banner Block"
+    Then I fill in "edit-label" with "Behat Banner Block"
     Then I fill in "edit-title" with "Behat Banner Block"
     Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
     Then I fill in "field_s_image_info[und][0][field_s_image_credits][und][0][value]" with "This is the credits"
