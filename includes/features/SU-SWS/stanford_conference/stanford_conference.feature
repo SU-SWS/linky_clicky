@@ -5,7 +5,7 @@ Feature: Stanford Conference
   I want to ensure that the Stanford Conference module is working properly
 
   Background:
-    And I am logged in as a user with the "administrator" role
+    Given I am logged in as a user with the "administrator" role
 
   @api @safe @deploy
   Scenario: Check that the content types exist
