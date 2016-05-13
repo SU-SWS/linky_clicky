@@ -1,6 +1,5 @@
 imports:
   - ../../includes/config/default.yml
-  - ../../includes/extensions/mink.extension.yml
 
 ## Default Profile Settings (Sites)
 default:
@@ -55,3 +54,6 @@ default:
           message_selector: '.alert'
           error_message_selector: '.alert.alert-error'
           success_message_selector: '.alert.alert-success'
+        text:
+          password_field: "edit-pass"
+          username_field: "edit-name"
