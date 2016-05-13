@@ -55,7 +55,6 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
     $this->minkContext = $environment->getContext('SWSMinkContext');
   }
 
-
   /**
    * @When I track variable :arg1
    */
