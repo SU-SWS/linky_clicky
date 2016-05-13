@@ -10,5 +10,4 @@ default:
       base_url: http://localhost/
     Drupal\DrupalExtension:
       drush:
-        alias: local
         root: /var/www/html
