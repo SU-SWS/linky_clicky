@@ -5,6 +5,10 @@ imports:
 ## Default Profile Settings (Sites)
 default:
   extensions:
+      Behat\MinkExtension:
+        goutte: ~
+        selenium2: ~
+        base_url: http://localhost
       Drupal\DrupalExtension:
         blackbox: ~
         api_driver: 'drush'
