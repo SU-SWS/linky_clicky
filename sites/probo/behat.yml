@@ -1,0 +1,14 @@
+imports:
+  - ../../includes/config/default.yml
+  - ../../includes/extensions/drupal.extension.yml
+  - ../../includes/extensions/mink.extension.yml
+
+## Default Profile Settings (Sites)
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://localhost/
+    Drupal\DrupalExtension:
+      drush:
+        alias: local
+        root: /var/www/html
