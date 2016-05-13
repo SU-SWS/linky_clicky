@@ -1,5 +1,6 @@
 imports:
   - ../../includes/config/default.yml
+  - ../../includes/extensions/mink.extension.yml
 
 ## Default Profile Settings (Sites)
 default:
