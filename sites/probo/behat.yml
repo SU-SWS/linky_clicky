@@ -1,5 +1,6 @@
 imports:
   - ../../includes/config/default.yml
+  - ../../includes/extensions/mink.extension.yml
 
 ## Default Profile Settings (Sites)
 default:
@@ -54,14 +55,3 @@ default:
           message_selector: '.alert'
           error_message_selector: '.alert.alert-error'
           success_message_selector: '.alert.alert-success'
-
-default:
-  extensions:
-    Behat\MinkExtension:
-      goutte: ~
-      javascript_session: selenium2
-      browser_name: firefox
-      selenium2:
-        browser: firefox
-      base_url: http://localhost
-      files_path: "."
