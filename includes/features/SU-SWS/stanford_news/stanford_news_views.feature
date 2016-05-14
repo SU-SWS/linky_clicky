@@ -39,7 +39,7 @@ Feature: Stanford News Views
     Then I should see 1 "#edit-reset" element
     Then I should see 1 "#edit-operation" element
     Then I select "Delete" from "edit-operation"
-    Then I select "Modify News Categories" from "edit-operation"
+    Then I select "Modify" from "edit-operation"
     Then I select "Publish" from "edit-operation"
     Then I select "Unpublish" from "edit-operation"
 
@@ -49,4 +49,3 @@ Feature: Stanford News Views
     Given I am on "news/recent-news"
     Then I should see "Recent News"
     Then I should see 1 ".view-stanford-news" element
-

@@ -10,7 +10,7 @@ Feature: Stanford MetaTag NoBots
     And I am on the homepage
     Then the response header "X-Robots-Tag" should contain "noindex,nofollow,noarchive"
 
-  @api @prod @safe
+  @api @live @safe
   Scenario: Stanford MetaTag NoBots
     And the cache has been cleared
     And I am on the homepage

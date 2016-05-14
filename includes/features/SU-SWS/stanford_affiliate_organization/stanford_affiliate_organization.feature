@@ -14,8 +14,8 @@ Feature: Stanford Affiliate Organization
     Then I should see "About" in the "Content" region
 
   @api @dev @destructive
-  Scenario: Site owner can create and manage affiliate organizations
-    Given I am logged in as a user with the "site owner" role
+  Scenario: administrator can create and manage affiliate organizations
+    Given I am logged in as a user with the "administrator" role
     When I go to "node/add/stanford-affiliate-organization"
     Then I should see "Create Affiliate Organization" in the "Branding" region
     Then I fill in "edit-title" with "Foo"

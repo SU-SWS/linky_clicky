@@ -1,0 +1,51 @@
+imports:
+  - ../../includes/config/default.yml
+  - ../../includes/extensions/mink.extension.yml
+
+## Default Profile Settings (Sites)
+default:
+  extensions:
+      Behat\MinkExtension:
+        goutte: ~
+        selenium2: ~
+        base_url: http://localhost
+      Drupal\DrupalExtension:
+        blackbox: ~
+        api_driver: 'drush'
+        drush:
+          root: /var/www/html
+        region_map:
+          # Seven Regions
+          Content: "#content"
+          Help: "#help"
+          Page top: "#page_top"
+          Page bottom: "#page_bottom"
+          First sidebar: "#sidebar_first"
+          # Bartik "Regions"
+          Header: "#header"
+          Help: "#help"
+          Page top: "#page_top"
+          Page bottom: "#page_bottom"
+          Highlighted: "#highlighted"
+          Featured: "#featured"
+          Content: "#content"
+          Sidebar first: "#sidebar_first"
+          Sidebar second: "#sidebar_second"
+          Triptych first: "#triptych_first"
+          Triptych middle: "#triptych_middle"
+          Triptych last: "#triptych_last"
+          Footer first column: "#footer_firstcolumn"
+          Footer second column: "#footer_secondcolumn"
+          Footer third column: "#footer_thirdcolumn"
+          Footer fourth column: "#footer_fourthcolumn"
+          Footer: "#footer"
+          Tabs: ".tabs"
+          # Patch up regions to help the tests:
+          Content Body: "#content"
+        selectors:
+          message_selector: '.alert'
+          error_message_selector: '.alert.alert-error'
+          success_message_selector: '.alert.alert-success'
+        text:
+          password_field: "edit-pass"
+          username_field: "edit-name"

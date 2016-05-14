@@ -10,7 +10,6 @@ Feature: Stanford Private Page Content
   @api @deploy
   Scenario: On deploy, check that the site member can view all private pages
     Given I am logged in as a user with the "site member" role
-    Given the "stanford_private_page_section" module is enabled
     Given I am on "private"
 
     Then I should see "Private Pages" in the "First sidebar" region
@@ -38,22 +37,11 @@ Feature: Stanford Private Page Content
     And I should see "For Staff" in the "Content Head" region
 
   @api @safe
-  Scenario: Site owner can see private pages
-    Given I am logged in as a user with the "site owner" role
-    And I am on "private"
-    Then I should see 1 ".node-type-stanford-private-page" element
-
-  @api @safe
   Scenario: Site member can see private pages
     Given I am logged in as a user with the "site member" role
     And I am on "private"
     Then I should see 1 ".node-type-stanford-private-page" element
 
-  @api @safe
-  Scenario: Check editor can view Private Pages Section
-    Given I am logged in as a user with the "editor" role
-    And I am on "private"
-    Then I should see 1 ".node-type-stanford-private-page" element
 
   @api @safe
   Scenario: Check administrator can view Private Pages Section
@@ -61,7 +49,7 @@ Feature: Stanford Private Page Content
     And I am on "private"
     Then I should see 1 ".node-type-stanford-private-page" element
 
-  @api @stanford @deploy @safe
+  @safe
   Scenario: Anonymous users can not see private pages
     Given I am on "private"
     Then I should not see an ".node-type-stanford-private-page" element
