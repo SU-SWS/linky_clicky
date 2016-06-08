@@ -90,6 +90,6 @@ Directory structure
           |--SWSMinkContext.php
 
 
-[Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/jse-dev/README.md)
+[Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
 ------------------
-See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/jse-dev/README.md)
+See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
