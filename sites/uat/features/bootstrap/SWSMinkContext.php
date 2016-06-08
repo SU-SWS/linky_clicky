@@ -1,1 +1,1 @@
-../../../includes/bootstrap/SWSMinkContext.php
+../../../../includes/bootstrap/SWSMinkContext.php
