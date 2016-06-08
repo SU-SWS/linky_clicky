@@ -90,6 +90,6 @@ Directory structure
           |--SWSMinkContext.php
 
 
-[Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkClicky.md)
+[Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkyClicky.md)
 ------------------
-See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkClicky.md)
+See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkyClicky.md)
