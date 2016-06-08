@@ -16,6 +16,7 @@ Feature: Insert
     When I press the "Save field settings" button
     Then I should see "Updated field [random:1] field settings"
     When I click "Show Insert"
+    And I wait for AJAX to finish
     And I check the box "Enable insert button"
     When I press the "Save settings" button
     Then I should see "Saved [random:1] configuration"
