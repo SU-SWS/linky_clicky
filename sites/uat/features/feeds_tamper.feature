@@ -13,7 +13,8 @@ Feature: Feeds Tamper
     When I click "Add importer"
     And I enter "Feeds Tamper Test" for "Name"
     And I press the "Create" button
-    And I go to "admin/structure/feeds/feeds_tamper_test/settings/FeedsNodeProcessor"
+    Then I should be on "admin/structure/feeds/feeds_tamper_test"
+    When I go to "admin/structure/feeds/feeds_tamper_test/settings/FeedsNodeProcessor"
     And I select "Basic page" from "Bundle"
     And I press the "Save" button
     And I go to "admin/structure/feeds/feeds_tamper_test/mapping"
@@ -23,6 +24,7 @@ Feature: Feeds Tamper
     And I go to "admin/structure/feeds/feeds_tamper_test/tamper"
     And I click "Add plugin"
     And I select "Convert case" from "The plugin to add"
+    And I wait for AJAX to finish
     And I press the "Add" button
     Then I should see "Plugin Convert case was successfully added to Title"
     And I should see "Normal"
