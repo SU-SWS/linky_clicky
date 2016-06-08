@@ -6,12 +6,12 @@ Feature: Stanford MetaTag NoBots
 
   @api @dev @safe
   Scenario: Stanford MetaTag NoBots
-    And the cache has been cleared
+    Given the cache has been cleared
     And I am on the homepage
     Then the response header "X-Robots-Tag" should contain "noindex,nofollow,noarchive"
 
   @api @live @safe
   Scenario: Stanford MetaTag NoBots
-    And the cache has been cleared
+    Given the cache has been cleared
     And I am on the homepage
     Then the response header should not have "X-Robots-Tag"
