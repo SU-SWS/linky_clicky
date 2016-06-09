@@ -84,7 +84,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $enabled = preg_match('/Status\s{1,}\:\s{1,}enabled/', $pmi);
     if (!$enabled) {
       $result = $this->getDriver()->drush("pm-enable -y " . $arg1);
-      if (preg_match('/(\[warning\]|\[error\])/', $result)) {
+      if (preg_match('/\[error\]/', $result)) {
         throw new Exception($result);
       }
     }
@@ -96,7 +96,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function theModuleIsDisabled($arg1) {
     $result = $this->getDriver()->drush("pm-disable -y " . $arg1);
-    if (preg_match('/(\[warning\]|\[error\])/', $result)) {
+    if (preg_match('/\[error\]/', $result)) {
       throw new Exception($result);
     }
   }
