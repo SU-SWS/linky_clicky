@@ -1,17 +1,35 @@
 <?php
 
-/**
- * Require our global set.
- * @todo : change this to a USE statement.
- */
-require_once dirname(__FILE__) . "/../../../includes/bootstrap/SWSFeatureContext.php";
+use Behat\Behat\Context\Context,
+    Behat\Behat\Context\SnippetAcceptingContext,
+    Behat\Behat\Context\ClosuredContextInterface,
+    Behat\Behat\Context\TranslatedContextInterface,
+    Behat\Behat\Context\BehatContext,
+    Behat\Behat\Context\MinkContext,
+    Behat\Behat\Context\TranslatableContext,
+    Behat\Behat\Exception\PendingException,
+    Behat\Mink\Exception\ExpectationException,
+    Behat\Mink\Session;
+
+use Behat\Gherkin\Node\PyStringNode,
+    Behat\Gherkin\Node\TableNode;
+
+use Drupal\Component\Utility\Random,
+    Drupal\DrupalExtension\Context\DrupalContext;
 
 /**
- * Features context.
+ * Defines application features from the specific context.
  */
-class FeatureContext extends SWSFeatureContext {
+class FeatureContext implements Context, SnippetAcceptingContext {
+    /**
+     * Initializes context.
+     *
+     * Every scenario gets its own context instance.
+     * You can also pass arbitrary arguments to the
+     * context constructor through behat.yml.
+     */
+    public function __construct() {
 
-  // Custom steps here...
-
+    }
 
 }
