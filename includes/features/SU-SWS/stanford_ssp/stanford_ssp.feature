@@ -26,3 +26,30 @@ Feature: Stanford SimpleSAML PHP
     When I am an anonymous user
     And I am on "user"
     Then I should see "SUNet Login"
+
+  @api @dev @destructive
+  Scenario: Enable Local Drupal Login
+    Given the "stanford_ssp" module is enabled
+    And I am logged in as a user with the "administrator" role
+    And I am on "admin/config/stanford/stanford_ssp"
+    And I check the box "edit-simplesamlphp-auth-allowdefaultlogin"
+    And I press the "Save configuration" button
+    Then I should see "The configuration options have been saved."
+    When I am an anonymous user
+    And I am on "user"
+    Then I should see "Drupal Login"
+
+# This locks us out of being able to log back in.
+# TODO: Fix this.
+#  @api @dev @destructive
+#  Scenario: Disable Local Drupal Login
+#    Given the "stanford_ssp" module is enabled
+#    And I am logged in as a user with the "administrator" role
+#    And I am on "admin/config/stanford/stanford_ssp"
+#    And I uncheck the box "edit-simplesamlphp-auth-allowdefaultlogin"
+#    And I press the "Save configuration" button
+#    Then I should see "The configuration options have been saved."
+#    When I am an anonymous user
+#    And I am on "user"
+#    Then I should not see "Drupal Login"
+
