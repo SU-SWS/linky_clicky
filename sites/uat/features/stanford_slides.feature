@@ -7,12 +7,13 @@ Feature: Stanford Slides
   Background:
     Given the "stanford_slides" module is enabled
 
-  @api @javascript @content @dev @destructive
+  @api @content @dev @destructive @javascript
   Scenario: Stanford Slides
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-slide"
     When I enter "[random]" for "Title *"
     And I click "Add/Edit Image"
+    And I wait for AJAX to finish
     And I attach the file "bacon.png" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     And I press the "Upload" button
     And I press the "Save" button
