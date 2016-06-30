@@ -16,7 +16,7 @@ For this example we'll run tests for sites running the JSE product, and the curr
 `linky_clicky/products/jse`
 
 1. Define the site profile in the behat.local.yml file in JSE product directory.
-For this example, the profile will be: `local-jse-dev`.
+For this example, the profile will be: `local-jse-dev`
 
 1. Use the version of Behat included with the repository.
 Because the tests in this directory use this version of Behat, and this version of Behat may include patches, you'll want to use it for running these tests. To access the Behat executable from the JSE product directory, at the command prompt you'll use `../../bin/behat`
