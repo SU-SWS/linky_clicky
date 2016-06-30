@@ -23,8 +23,9 @@ You will need a behat.local.yml file in each test directory. For this example, t
 Because the tests in this directory use this version of Behat, and this version of Behat may include patches, you'll want to use it for running these tests. To access the Behat executable from the JSE product directory, at the command prompt you'll use `../../bin/behat`
 
 1. **Build your Behat command for running your tests.**
-In the documentation above we describe how many Behat options will be used. When testing, you'll need to identify and use the appropriate options.  
+In [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkyClicky.md) we describe how many Behat options will be used. When testing, you'll need to identify and use the appropriate options.  
 For our purposes we'll use the following options: profile (-p), suite (-s), and path, and the resulting command is this:
+
 ```$ ../../bin/behat -p local-jse-dev -s live features```
 
 See [README] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
