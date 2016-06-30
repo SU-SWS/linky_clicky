@@ -1,8 +1,8 @@
-# Using Behat
+# Using Linky Clicky
 
 The purpose of testing is to ensure that requirements are met. Additionally, regression testing ensures that changes to the code or the site do not make unexpected changes elsewhere. Best practices dictate that we want full testing coverage, yet we want our set of tests DRY (don’t repeat yourself). So, what are the best practices for testing?
 
-Also see [Writing BDD tests for Drupal.org](https://www.drupal.org/node/1578324), [Feature/Scenario Review Checklist](https://www.drupal.org/node/1782858), 
+Also see [Writing BDD tests for Drupal.org](https://www.drupal.org/node/1578324), [Feature/Scenario Review Checklist](https://www.drupal.org/node/1782858),
 
 ## Analysis
 
@@ -18,7 +18,7 @@ Let’s examine the various considerations of testing our products and sites.
 
 3. Content: Did our placeholder content and help text get imported properly?
 
-4. Hosting Environment: Where is this site hosted? Is it local on your machine? Is it on sites? On Anchorage? 
+4. Hosting Environment: Where is this site hosted? Is it local on your machine? Is it on sites? On Anchorage?
 
 5. Authentication Scheme: What approach do use to authenticate? Native Drupal? Webauth? SamL?
 
@@ -33,13 +33,13 @@ Testing for our product development and subsequent sites has a sort of timeline 
                     > Production
                         > Launch
                             > Live
-                                
-                           
-For each phase of this lifecycle, we may need a specific set of tests. Although individual tests may overlap between phases, there are many tests that are only relevant to a particular phase. 
+
+
+For each phase of this lifecycle, we may need a specific set of tests. Although individual tests may overlap between phases, there are many tests that are only relevant to a particular phase.
 
 #### Requirements
 
-In the requirements phase we define the functionality. This functionality might be for a new or updated product, theme, behavior, content, etc. Ideally, this is the phase in which we identify and draft our first Behat tests. 
+In the requirements phase we define the functionality. This functionality might be for a new or updated product, theme, behavior, content, etc. Ideally, this is the phase in which we identify and draft our first Behat tests.
 
 #### Development
 
@@ -51,15 +51,15 @@ The deployment phase signals that we are no longer in development. When we deplo
 
 #### Customization
 
-For some of our clients we build extensive and unique functionality for their site. Although development occurs during this phase, it often occurs in tandem with the production phase on a site and we cannot expect the site to be rebuilt. Testing in the phases verifies functionality yet cannot change anything on the site. 
+For some of our clients we build extensive and unique functionality for their site. Although development occurs during this phase, it often occurs in tandem with the production phase on a site and we cannot expect the site to be rebuilt. Testing in the phases verifies functionality yet cannot change anything on the site.
 
 #### Production
 
-In the production phase, as the customer replaces placeholder content, removes and adds pages to the menu, and customizes their site, we use regression testing to verify that any changes to the site such as patches and security updates do not break anything on the site.  Any testing for this phase here should be safe at all phases of the lifecycle and should be used for regression testing on live sites. 
+In the production phase, as the customer replaces placeholder content, removes and adds pages to the menu, and customizes their site, we use regression testing to verify that any changes to the site such as patches and security updates do not break anything on the site.  Any testing for this phase here should be safe at all phases of the lifecycle and should be used for regression testing on live sites.
 
 #### Launch
 
-When we launch a site, we perform tasks on the site to prepare it for the public view. Tests at this point would verify if these launch prep tasks were completed properly. 
+When we launch a site, we perform tasks on the site to prepare it for the public view. Tests at this point would verify if these launch prep tasks were completed properly.
 
 #### Live
 
@@ -67,7 +67,7 @@ Once a site has been launched, its URL will have changed and pages on the site w
 
 ## Introducing Behat
 
-If we think of a web site as a city, our Behat tests would then be our guide for to exploring the city. In testing a site, Behat uses the tests we have defined to navigate and verify a site’s functionality. 
+If we think of a web site as a city, our Behat tests would then be our guide for to exploring the city. In testing a site, Behat uses the tests we have defined to navigate and verify a site’s functionality.
 
 As evidenced in the analysis above, our testing needs are complex. We will need to take care in structuring our testing so that we can verify our requirements yet remain DRY. To meet this goal, Behat provides various approaches to structuring our tests. Let’s review these approaches and propose how we can map them to our domain.
 
@@ -75,11 +75,11 @@ As evidenced in the analysis above, our testing needs are complex. We will need 
 
 #### Profile == Site
 
-A profile is a custom name that defines a testing configuration in a behat.yml file. Inherent to a profile is the site which is to be tested. We can use the behat.yml and behat.local.yml files to define a site to be tested and some parameters for that testing. 
+A profile is a custom name that defines a testing configuration in a behat.yml file. Inherent to a profile is the site which is to be tested. We can use the behat.yml and behat.local.yml files to define a site to be tested and some parameters for that testing.
 
-#### Suite == Lifecycle 
+#### Suite == Lifecycle
 
-A suite represents a group of concrete features together with the information on how to test them. We can use suites to address testing needs for the various phases of our product and site life cycles. We’ll delve more into suites below. 
+A suite represents a group of concrete features together with the information on how to test them. We can use suites to address testing needs for the various phases of our product and site life cycles. We’ll delve more into suites below.
 
 #### Directory == Product or Customized Site
 
@@ -87,17 +87,17 @@ By default, Behat executes the tests in the ‘features’ subdirectory within t
 
 #### Feature (file) == Functionality
 
-A feature is the human-readable stories that describe the behavior of your application. It is with these Behat features that we actually navigate and verify the requirements for site. Each feature resides in its own file (*.feature) and is either symlinked or located in the ‘features’ directory. To keep things DRY, in applying Behat features to our domain, each feature should contain specific functionality. 
+A feature is the human-readable stories that describe the behavior of your application. It is with these Behat features that we actually navigate and verify the requirements for site. Each feature resides in its own file (*.feature) and is either symlinked or located in the ‘features’ directory. To keep things DRY, in applying Behat features to our domain, each feature should contain specific functionality.
 
 If we are testing the functionality of a Jumpstart ‘feature’ each Behat feature file should correspond with a module that can be enabled or disabled. For example, if you are testing a content type, say "Stanford Private Page," the corresponding Behat feature might be “stanford\_private\_page.feature.” Whereas if you are testing the “manage content” functionality for Stanford Private Page, the corresponding feature would be “stanford\_private\_page\_administration.feature”
 
 As well, we might want to have a "Feature disabled" set of tests. In JSE, we have the situation where we roll out a site then disable the features that the client doesn’t need.
 
-Other areas of specific functionality for Behat features might include verifying the structure of the main menu, block layout for the homepage, logos, fonts, colors, etc. Each of these item would reside in a separate *.feature file. 
+Other areas of specific functionality for Behat features might include verifying the structure of the main menu, block layout for the homepage, logos, fonts, colors, etc. Each of these item would reside in a separate *.feature file.
 
 ##### Examples of functionality beyond modules:
 
-* Menus - Verify the menu structure for a custom site or newly deployed product site 
+* Menus - Verify the menu structure for a custom site or newly deployed product site
 
 * specific pages - about, courses, research, academics, Homepages   
 
@@ -105,9 +105,9 @@ Other areas of specific functionality for Behat features might include verifying
 
 * Placeholder Content - should be designated by deploy tag
 
-#### Tags == Lifecycle 
+#### Tags == Lifecycle
 
-Tags provide a great way to organize your features and scenarios. Tags can be used to identify the lifecycle phase to which this scenario or feature applies. We’ll delve more into tags below. 
+Tags provide a great way to organize your features and scenarios. Tags can be used to identify the lifecycle phase to which this scenario or feature applies. We’ll delve more into tags below.
 
 #### Scenarios == Functionality
 
@@ -115,7 +115,7 @@ Consisting of one or more steps, scenarios map to requirements and phases of the
 
 #### Steps == Functionality
 
-Using human readable phrases and beginning with words such as Given, When, and Then, each step plays a part in navigating and verifying functionality. 
+Using human readable phrases and beginning with words such as Given, When, and Then, each step plays a part in navigating and verifying functionality.
 
 ### More on Tags
 
@@ -123,7 +123,7 @@ I love using tags. I can tag one test with my initials, then using the --tags <m
 
 #### Lifecycle Tags - *Required for every scenario*
 
-All scenarios should be tagged with a single lifecycle tag. 
+All scenarios should be tagged with a single lifecycle tag.
 
 <table>
   <tr>
@@ -191,7 +191,7 @@ Along with lifecycle, tags can identify other situations.
 
 #### Considerations for Tags
 
-* Unless a scenario is tagged with @destructive it is assumed it will not make destructive changes to the site. 
+* Unless a scenario is tagged with @destructive it is assumed it will not make destructive changes to the site.
 
 * All scenarios should have exactly one lifecycle tag: (@dev, @deploy, @safe, @launch, and @live)
 
@@ -240,7 +240,7 @@ Suites target the various phases of the product and site life cycles. Here are t
 </table>
 
 
-## Directory Structures 
+## Directory Structures
 
 Separate products and sites into subdirectories
 
@@ -268,7 +268,7 @@ Separate products and sites into subdirectories
 	    	  |--feature
 	    	  	|--featurename.feature
     |--uat
-   
+
 
 
 ## Conventions for Naming Structures
@@ -279,7 +279,7 @@ Separate products and sites into subdirectories
 
 * If your Behat feature/directory can be used across multiple products or sites, it should reside in the includes directory
 
-* If your Behat feature/directory is customized for a product or site, it should reside in the product or site directory 
+* If your Behat feature/directory is customized for a product or site, it should reside in the product or site directory
 
 * Namespace any feature that is specific to a product or site by pre-pending it with the site or product name.
 
@@ -291,7 +291,7 @@ Separate products and sites into subdirectories
   </tr>
   <tr>
     <td>Product or Site Directory</td>
-    <td> site name | product name 
+    <td> site name | product name
 Ex: jse or caw</td>
   </tr>
   <tr>
@@ -300,13 +300,13 @@ Ex: jse or caw</td>
 Ex. Roles or private_pages </td>
   </tr>
   <tr>
-    <td>Custom Feature 
+    <td>Custom Feature
 (in site or product directory)</td>
     <td>[product|site][_module name][_functionality].feature
 Ex. jse_news.feature or caw_menus.feature</td>
   </tr>
   <tr>
-    <td>General Feature 
+    <td>General Feature
 (in includes directory)</td>
     <td>[module name]_[functionality].feature
 Ex. private_pages_administration.feature</td>
@@ -322,7 +322,7 @@ Ex. private_pages_administration.feature</td>
 
 ## Versioning - Handled on a per site, per product basis
 
-An individual site is deployed with specific versions of modules, and the Behat feature files or scenarios should correspond with the correct version of a feature for that site. When a site is deployed and the @deploy tests succeed, all @safe scenarios corresponding to that site should be copied into the Behat directory for that site. 
+An individual site is deployed with specific versions of modules, and the Behat feature files or scenarios should correspond with the correct version of a feature for that site. When a site is deployed and the @deploy tests succeed, all @safe scenarios corresponding to that site should be copied into the Behat directory for that site.
 
 However, a product in development would work with the latest Behat versions. Presumably, these work with the latest versions of the modules and Drupal features. If a development diverges and Behat tests fail, either break the tests into separate files and exclude the failing tests, or don’t link to the test and create a product specific set of tests. The directory for a product then will either contain files specific to that product, or link to the corresponding Behat features.
 
@@ -330,15 +330,15 @@ In the future, consider:  [https://www.drupal.org/project/behatrunner](https://w
 
 ## Communications
 
-Product owners/developers should be kept informed about changes to tests in the includes directory. This would include new tests and breaking tests into more specialized files. 
+Product owners/developers should be kept informed about changes to tests in the includes directory. This would include new tests and breaking tests into more specialized files.
 
 ## Tips and Best Practices
 
-Specify a suite! If you don’t specify a suite it’ll run all sorts of test, and take *forever*. 
+Specify a suite! If you don’t specify a suite it’ll run all sorts of test, and take *forever*.
 
 ### Test coverage
 
-The more tests that we have, the more that we get to maintain. At the same time, we want to verify that a site is healthy and functions as expected after getting deployed and after a feature update or security updates. 
+The more tests that we have, the more that we get to maintain. At the same time, we want to verify that a site is healthy and functions as expected after getting deployed and after a feature update or security updates.
 
 We have two types of testing:
 
@@ -380,7 +380,7 @@ Tests such as "Given the module is enabled" will enable a module. However, we wa
 
 ### Aim for @safe!
 
-If a feature is @safe, it will most likely succeed on a production site. We want good tests for production sites. If you create a @dev test that creates and saves a node, also create a @safe test that verifies that the current user can see the "create node" page. 
+If a feature is @safe, it will most likely succeed on a production site. We want good tests for production sites. If you create a @dev test that creates and saves a node, also create a @safe test that verifies that the current user can see the "create node" page.
 
 ### Keep Homepage and custom page tests at the site/product level
 
@@ -392,9 +392,13 @@ Homepage testing belongs with a product, site, or homepage module (ex. stanford_
 
 * The "all" suite does not accept tags.
 
-* Including the ~ doesn’t work. Unless it is the only tag in the list, It doesn’t exclude the tag 
+* Including the ~ doesn’t work. Unless it is the only tag in the list, It doesn’t exclude the tag
 
 ## Summary
 
-Testing needs for SWS range from features to products to sites. Adopting best practices will help keep a minimal, effective set of tests. 
+Testing needs for SWS range from features to products to sites. Adopting best practices will help keep a minimal, effective set of tests.
 
+
+Go to [README] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
+
+Go to [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/RunningLinkyClicky.md)
