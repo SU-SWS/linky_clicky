@@ -399,6 +399,6 @@ Homepage testing belongs with a product, site, or homepage module (ex. stanford_
 Testing needs for SWS range from features to products to sites. Adopting best practices will help keep a minimal, effective set of tests.
 
 
-Go to [README] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
+See [README] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
 
-Go to [Running Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/RunningLinkyClicky.md)
+See [Running Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/RunningLinkyClicky.md)
