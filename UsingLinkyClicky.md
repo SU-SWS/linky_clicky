@@ -401,4 +401,4 @@ Testing needs for SWS range from features to products to sites. Adopting best pr
 
 Go to [README] (https://github.com/SU-SWS/linky_clicky/blob/5.x/README.md)
 
-Go to [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/RunningLinkyClicky.md)
+Go to [Running Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/RunningLinkyClicky.md)
