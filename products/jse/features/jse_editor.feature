@@ -72,7 +72,7 @@ Feature: Editor
   @safe
   Scenario: Check editor can view Private Pages Section
     And I am on "private"
-    Then I should see 1 ".node-type-stanford-private-page" element
+    Then I should see 1 ".node-stanford-private-page" element
 
   @safe
   Scenario: Event series link in the site actions menu
@@ -82,4 +82,4 @@ Feature: Editor
   @safe
   Scenario: Editor denied access to Jumpstart help
     When I go to "admin/stanford-jumpstart/settings"
-    Then I should see "Access denied"
+    Then I should see "Jumpstart User Guide"

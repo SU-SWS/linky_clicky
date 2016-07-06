@@ -47,7 +47,7 @@
     Then I want to validate select field option "edit-fields-field-s-news-source-type" default is "Title, as link (default)"
     # teaser display
     Given I am on "admin/structure/types/manage/stanford-news-item/display/teaser"
-    Then I should see "Trim length: 600"
+    Then I should see "Trimmed limit: 600 characters"
     Then I want to validate select field option "edit-fields-body-type" default is "Summary or trimmed"
 
   @safe
@@ -86,4 +86,3 @@
     Then I should see "This is the external link title field"
     Then I click "This is the external link title field"
     Then I should be on "http://www.google.com"
-
