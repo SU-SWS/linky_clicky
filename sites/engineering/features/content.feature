@@ -61,7 +61,6 @@ Scenario: Verify that the magnifying glass is visible
   And I should see the "#block-stanford-search-api-search-api-search-block" element in the "Main Navigation" region
 
 #Figure out which HTML element has the click function for "When I click..."
-
 #Scenario: Verify that clicking on the magnifying glass gives user the search box
 #  Given I am on the homepage
 #  When I click on the element with css selector ".form-item"
