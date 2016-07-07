@@ -61,18 +61,18 @@ Scenario: Verify that the magnifying glass is visible
   And I should see the "#block-stanford-search-api-search-api-search-block" element in the "Main Navigation" region
 
 #Figure out which HTML element has the click function for "When I click..."
-@km
-Scenario: Verify that clicking on the magnifying glass gives user the search box
-  Given I am on the homepage
-  When I click on the element with css selector ".form-item"
-  Then I should see the ".contextual-links-trigger" element in the "#block-stanford-search-api-search-api-search-block" region
+
+#Scenario: Verify that clicking on the magnifying glass gives user the search box
+#  Given I am on the homepage
+#  When I click on the element with css selector ".form-item"
+#  Then I should see the ".contextual-links-trigger" element in the "#block-stanford-search-api-search-api-search-block" region
 
 #Find another scenario that has search function or input field
-@km
-Scenario: Verify that the search function for "internet" works
-  Given I am on the homepage
-  When I fill in "#edit-keywords" with "internet"
-  #And I press the "enter" key in the ".input-medium" field
+
+#Scenario: Verify that the search function for "internet" works
+#  Given I am on the homepage
+#  When I fill in "#edit-keywords" with "internet"
+#  #And I press the "enter" key in the ".input-medium" field
 
 @safe
 Scenario: Verify that the homepage has the correct headings
@@ -122,20 +122,20 @@ Scenario: Intranet button
   Then I should see "Intranet" in the "Footer" region
   And I should see 1 "a[href='https://insidesoe.stanford.edu/']" element
 
-Scenario:
-  Given I am on "node/148/edit?"
-  #When I click on the a tag
-  Then the "#edit-status" checkbox should be checked
+#Scenario:
+#  Given I am on "node/148/edit?"
+#  #When I click on the a tag
+#  Then the "#edit-status" checkbox should be checked
 
 
-Scenario: Thumbnail visibility
-  Given I am on the homepage
-  Then I should see the CSS selector "#block-views-9bf4ec9695a5b13242ba5a4898a6b635"
+#Scenario: Thumbnail visibility
+#  Given I am on the homepage
+#  Then I should see the CSS selector "#block-views-9bf4ec9695a5b13242ba5a4898a6b635"
 
 
-Scenario: Thumbnail links
-  Given I click on a "thumbnail"
-  Then I should be taken to the respective link
+#Scenario: Thumbnail links
+#  Given I click on a "thumbnail"
+#  Then I should be taken to the respective link
 
 @safe
 Scenario: Verify that the buttons in Admissions are the correct style
@@ -219,12 +219,12 @@ Scenario: Verify that there is a Twitter widget in the left sidebar
   Then I should see a "#block-bean-jumpstart-twitter-block" element in the "First sidebar" region
 
 #Test should be written for news article pages
-Scenario: Verify there is no text that says "Banner" nor "Banner Overlay", has "See more news" and no left nav
-  Given I am on "/news/../"
-  And I should not see "Banner" in the "#block-ds-extras-banner" element in the "Top Full Width" region
-  And I should not see "Banner Overlay" in the "#block-ds-extras-banner" element in the "Top Full Width" region
-  And I should see the text "See more news"
-  And I should not see a "#block-bean-jumpstart-twitter-block" element
+#Scenario: Verify there is no text that says "Banner" nor "Banner Overlay", has "See more news" and no left nav
+#  Given I am on "/news/../"
+#  And I should not see "Banner" in the "#block-ds-extras-banner" element in the "Top Full Width" region
+#  And I should not see "Banner Overlay" in the "#block-ds-extras-banner" element in the "Top Full Width" region
+#  And I should see the text "See more news"
+#  And I should not see a "#block-bean-jumpstart-twitter-block" element
 
 @safe
 Scenario: Verify there is no text that says "Banner" nor "Banner Overlay", has "See more news" and no left nav
@@ -242,19 +242,19 @@ Scenario: Verify there is no text that says "Banner" nor "Banner Overlay", has "
   And I should not see an "div[id='sidebar-first']" element
 
 #Test should be written for news article pages
-Scenario: Verify there is "See more news" in /news/..
-  Given I am on "/news/../"
-  Then I should see the text "See more news"
+#Scenario: Verify there is "See more news" in /news/..
+#  Given I am on "/news/../"
+#  Then I should see the text "See more news"
 
 #Test should be written for news article pages
-Scenario: Verify that there is not a left nav in /news/..
-  Given I am on "/news/../"
-  Then I should not see an "div[id='sidebar-first']" element
+#Scenario: Verify that there is not a left nav in /news/..
+#  Given I am on "/news/../"
+#  Then I should not see an "div[id='sidebar-first']" element
 
 #Cannot test, ">" is in ::after and idk how to access ::after
-Scenario: Verify that all department links have ">" symbol
-  Given I am on "/research-and-faculty/departments"
-  Then I should see ">" in the "h3" element
+#Scenario: Verify that all department links have ">" symbol
+#  Given I am on "/research-and-faculty/departments"
+#  Then I should see ">" in the "h3" element
 
 @safe
 Scenario: Verify that Connect has the correct heading

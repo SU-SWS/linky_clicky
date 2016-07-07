@@ -42,10 +42,3 @@ Feature: Stanford News Views
     Then I select "Modify" from "edit-operation"
     Then I select "Publish" from "edit-operation"
     Then I select "Unpublish" from "edit-operation"
-
-  @safe
-  Scenario: The user facing views are available
-    Given I am on "news.xml"
-    Given I am on "news/recent-news"
-    Then I should see "Recent News"
-    Then I should see 1 ".view-stanford-news" element
