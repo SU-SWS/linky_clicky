@@ -541,3 +541,4 @@ Feature: Stanford Person layout Views
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/people"
     Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
+    
