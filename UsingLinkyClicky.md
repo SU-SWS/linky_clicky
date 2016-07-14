@@ -160,7 +160,7 @@ Along with lifecycle, tags can identify other situations.
   </tr>
   <tr>
     <td>@javascript</td>
-    <td>For excuting javascript on the page. </td>
+    <td>For executing javascript on the page. </td>
   </tr>
   <tr>
     <td>@api</td>
