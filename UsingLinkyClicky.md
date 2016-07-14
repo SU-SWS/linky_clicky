@@ -159,32 +159,12 @@ Along with lifecycle, tags can identify other situations.
     <td>Only for development tests. This scenario may change configuration or leave lasting items/content/config on the site it is running on. Not safe for production. </td>
   </tr>
   <tr>
-    <td></td>
-    <td>Authentication - Under consideration</td>
+    <td>@javascript</td>
+    <td>For excuting javascript on the page. </td>
   </tr>
   <tr>
-    <td>@saml</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>@webauth</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>Hosting - Under consideration</td>
-  </tr>
-  <tr>
-    <td>@sites</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>@local</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>@anchorage</td>
-    <td></td>
+    <td>@api</td>
+    <td>Needed when logging into the site. For example, when testing functionality for Site Owner or Editor. </td>
   </tr>
 </table>
 
