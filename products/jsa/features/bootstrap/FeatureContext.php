@@ -5,27 +5,22 @@ use Behat\Behat\Context\Context,
     Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Context\TranslatedContextInterface,
     Behat\Behat\Context\BehatContext,
+    Behat\Behat\Context\MinkContext,
     Behat\Behat\Context\TranslatableContext,
     Behat\Behat\Exception\PendingException,
-    Behat\Behat\Hook\Scope\BeforeScenarioScope;
-
-use Behat\Mink\Exception\ExpectationException,
+    Behat\Mink\Exception\ExpectationException,
     Behat\Mink\Session;
 
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 
-use Drupal\Component\Utility\Random;
-
-use Drupal\DrupalExtension\Context\RawDrupalContext;
-
-use SWSMinkContext as MinkContext;
-use SWSDrupalContext as DrupalContext;
+use Drupal\Component\Utility\Random,
+    Drupal\DrupalExtension\Context\DrupalContext;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext extends RawDrupalContext implements Context, SnippetAcceptingContext {
+class FeatureContext implements Context, SnippetAcceptingContext {
     /**
      * Initializes context.
      *
@@ -36,6 +31,5 @@ class FeatureContext extends RawDrupalContext implements Context, SnippetAccepti
     public function __construct() {
 
     }
-
 
 }

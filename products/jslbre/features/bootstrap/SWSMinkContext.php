@@ -1,1 +1,1 @@
-../../../includes/bootstrap/SWSMinkContext.php
+/Users/kmakitan/Documents/behat/linky_clicky/includes/bootstrap/SWSMinkContext.php

@@ -1,1 +1,1 @@
-../../../includes/bootstrap/SWSFeatureContext.php
+/Users/kmakitan/Documents/behat/linky_clicky/includes/bootstrap/SWSFeatureContext.php
