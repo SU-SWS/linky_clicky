@@ -9,11 +9,6 @@ Feature: Every page will be checked for the following regions, elements and func
     Then I should see the "img" element in the "Header" region
 
   @deploy
-  Scenario: Verify that the Main Navigation region exists on the homepage
-    Given I am on the homepage
-    Then I should see an "#main-nav" element
-
-  @deploy
   Scenario: See the nav bar region
     Given I am on the homepage
     Then I should see an "#main-nav" element
