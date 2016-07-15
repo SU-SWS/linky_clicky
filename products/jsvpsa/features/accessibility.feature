@@ -1,5 +1,5 @@
-Feature: Events
-  In order to ensure that Jumpstart Academics site has the accessibility content
+Feature: Verifies that the Accessibility text appears
+  In order to ensure that JSVPSA site has the accessibility content
   As an end user
   I want to check for the accessibility content
 

@@ -1,4 +1,4 @@
-Feature: Events
+Feature: Verifies that the Accessibility text appears
   In order to ensure that Jumpstart Academics site has the accessibility content
   As an end user
   I want to check for the accessibility content
