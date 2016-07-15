@@ -1,1 +1,1 @@
-/Users/kmakitan/Documents/behat/linky_clicky/includes/features/all_sites.feature
+../../../includes/features/all_sites.feature
