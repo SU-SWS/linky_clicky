@@ -1,1 +1,1 @@
-/Users/kmakitan/Documents/behat/linky_clicky/includes/bootstrap/SWSDrupalContext.php
+../../../../includes/bootstrap/SWSDrupalContext.php
