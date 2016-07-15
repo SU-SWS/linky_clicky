@@ -11,4 +11,4 @@ default:
       base_url: https://sites.stanford.edu/jse-soe-new-dev
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.ds_jse-soe-new-dev'
+        alias: 'sse.jse-soe-new-dev'

@@ -3,42 +3,20 @@ Feature: Stanford Jumpstart Home Feature
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @safe
-  Scenario Outline: Verify items on the Customized Design Page
+  @api @safe @javascript
+  Scenario: Verify items on the Customized Design Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-  | Text          | Region       |
-  | Hoover        | Content Body |
-  | Morris        | Content Body |
-  | Terman        | Content Body |
-  | Pettit        | Content Body |
-  | Light         | Content Body |
-  | Plain         | Content Body |
-  | Rich          | Content Body |
-  | High Contrast | Content Body |
-  | Cardinal      | Content Body |
-  | Sans Serif    | Content Body |
-  | Serif         | Content Body |
-  | Slab Serif    | Content Body |
-
-
-  @api @safe
-  Scenario Outline: Verify items on the Customized Design Page
-    Given I am logged in as a user with the "administrator" role
-    And I am on "admin/stanford-jumpstart/customize-design"
-    Then I should not see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text          | Region       |
-    | Serra         | Content Body |
-    | Lomita        | Content Body |
-    | Panama        | Content Body |
-    | Mayfield      | Content Body |
-    | Dark          | Content Body |
-    | Bright        | Content Body |
-
-
-
+    And I wait 5 seconds
+    Then I should see "Hoover" in the "Content Body" region
+    And I should see "Morris" in the "Content Body" region
+    And I should see "Terman" in the "Content Body" region
+    And I should see "Pettit" in the "Content Body" region
+    And I should see "Light" in the "Content Body" region
+    And I should see "Plain" in the "Content Body" region
+    And I should see "Rich" in the "Content Body" region
+    And I should see "High Contrast" in the "Content Body" region
+    And I should see "Cardinal" in the "Content Body" region
+    And I should see "Sans Serif" in the "Content Body" region
+    And I should see "Serif" in the "Content Body" region
+    And I should see "Slab Serif" in the "Content Body" region
