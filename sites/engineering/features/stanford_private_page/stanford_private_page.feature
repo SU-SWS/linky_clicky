@@ -1,1 +1,1 @@
-/Users/kmakitan/Documents/behat/linky_clicky/includes/features/SU-SWS/stanford_private_page/stanford_private_page.feature
+../../../includes/features/SU-SWS/stanford_private_page/stanford_private_page.feature
