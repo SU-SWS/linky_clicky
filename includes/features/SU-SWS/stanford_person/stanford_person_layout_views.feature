@@ -350,7 +350,7 @@ Feature: Stanford Person layout Views
 
     Examples:
       | Header             | Region       |
-      | Students  | Content Body |
+      | Graduate Students  | Content Body |
 
 
   @deploy
