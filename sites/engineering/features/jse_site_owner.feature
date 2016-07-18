@@ -26,6 +26,7 @@ Feature: Site Owner
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
     Then I fill in "edit-title" with "Foo"
     And I press the "Save" button
@@ -57,20 +58,7 @@ Feature: Site Owner
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
     Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
     When I press the "Save" button
-    Then I should see "stanford_social_media_connect Connect has been updated." in the "Console" region
-
-  @javascript @dev @destructive
-  Scenario: Edit Site Name
-    When I wait for the Site Actions drop down to appear
-    And I click "Edit Site Name" in the "Admin Shortcuts" region
-    Then I should see "Site information" in the "Branding" region
-    And I should not see "Slogan"
-    And I should not see "Front page"
-    And I should not see "Error pages"
-    When I enter "Millennium Falcon" for "Site name"
-    And I press the "Save" button
-    And I go to the homepage
-    Then I should see "Millennium Falcon" in the "Header" region
+    Then I should see "has been updated." in the "Console" region
 
    @javascript @safe
   Scenario: View the Get Help Page
@@ -107,27 +95,17 @@ Feature: Site Owner
     Then I should see "Create Private Page" in the "Branding" region
 
   @safe
-  Scenario Outline: Verify site owner can see items on the Customized Design Page
+  Scenario: Verify site owner can see items on the Customized Design Page
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I should see "<Text>" in the "<Region>" region
-
-    Examples:
-      | Text          | Region       |
-      | Hoover        | Content Body |
-      | Morris        | Content Body |
-      | Terman        | Content Body |
-      | Pettit        | Content Body |
-      | Light         | Content Body |
-      | Plain         | Content Body |
-      | Rich          | Content Body |
-      | High Contrast | Content Body |
-      | Cardinal      | Content Body |
-      | Sans Serif    | Content Body |
-      | Serif         | Content Body |
-      | Slab Serif    | Content Body |
-
-
-
-  Scenario: Site Owner denied access to Jumpstart help
-    When I go to "admin/stanford-jumpstart/settings"
-    Then I should see "Access denied"
+    Then I should see "Hoover" in the "Content Body" region
+    And I should see "Morris" in the "Content Body" region
+    And I should see "Terman" in the "Content Body" region
+    And I should see "Pettit" in the "Content Body" region
+    And I should see "Light" in the "Content Body" region
+    And I should see "Plain" in the "Content Body" region
+    And I should see "Rich" in the "Content Body" region
+    And I should see "High Contrast" in the "Content Body" region
+    And I should see "Cardinal" in the "Content Body" region
+    And I should see "Sans Serif" in the "Content Body" region
+    And I should see "Serif" in the "Content Body" region
+    And I should see "Slab Serif" in the "Content Body" region
