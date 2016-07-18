@@ -6,25 +6,25 @@ Feature: Stanford Courses Tag Translate
   Background:
     Given the "stanford_courses_tag_translate" module is enabled
 
-  @api @content @dev
+  @api @dev
   Scenario: Validate main admin page is there.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford/courses/tag-translate"
     Then I should see "New tag translation"
 
-  @api @content @dev
+  @api @dev
   Scenario: Validate import admin page is there.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate/import"
     Then I should see "Import" in the "Content" region
 
-  @api @content @dev
+  @api @dev
   Scenario: Validate Export admin page is there.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate/export"
     # No content on this page is permanent so it is impossible to check for some without a scenario breaking.
 
-  @api @content @dev
+  @api @dev
   Scenario: Import content
     Given I am logged in as a user with the "administrator" role
     Given I am on "admin/config/stanford/courses/tag-translate/import"
@@ -43,7 +43,7 @@ Feature: Stanford Courses Tag Translate
     And I should see "IR::wim"
     And I should see "IR::core"
 
-  @api @content @dev
+  @api @dev
   Scenario: Create tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
@@ -54,7 +54,7 @@ Feature: Stanford Courses Tag Translate
     Then I press the "Save" button
     Then I should see "Tag translation was saved successfully"
 
-  @api @content @dev
+  @api @dev
   Scenario: Delete tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
@@ -67,7 +67,7 @@ Feature: Stanford Courses Tag Translate
     Then I should not see "zzzzzzzZZZZZzzzzzz"
 
   # This scenario only works if the import scenario about has been run
-  @api @content @dev @deploy
+  @api @dev @deploy
   Scenario: Edit tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
@@ -79,7 +79,7 @@ Feature: Stanford Courses Tag Translate
     Then I go to "admin/config/stanford/courses/tag-translate"
     And I should see "Biology Track Core"
 
-  @api @content @dev @javascript
+  @api @dev @javascript
   Scenario: Validate translations
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared

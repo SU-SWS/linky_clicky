@@ -3,7 +3,7 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @destructive @dev @stanford
+  @api @destructive @dev
   Scenario: Enable the Panama new and events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared
