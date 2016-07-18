@@ -18,8 +18,6 @@ Feature: Homepage
     | Header                | Region                |
     | Welcome to your site! | Main Top              |
     | About                 | Content 3 column flow |
-    | Recent News           | Content 3 column flow |
-    | Upcoming Events       | Content 3 column flow |
     | About                 | Footer                |
     | Academics             | Footer                |
     | People                | Footer                |

@@ -35,7 +35,7 @@ Feature: Publications
     Given I am on "publications/sample-publication-book-title-two"
     Then I should see a ".view-mode-stanford-large-scaled" element
 
- @api
+ @api @live
   Scenario: Publication Type Terms
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/structure/taxonomy_manager/voc/publication_type"
