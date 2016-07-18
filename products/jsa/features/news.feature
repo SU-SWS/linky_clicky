@@ -3,6 +3,7 @@ Feature: News
   As an end user
   I want to check for the existence of news content
 
+  #Should succeed but fails
   @content @live
   Scenario: See more news
     Given I am on the homepage

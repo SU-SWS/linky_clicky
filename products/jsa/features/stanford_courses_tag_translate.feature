@@ -59,7 +59,7 @@ Feature: Stanford Courses Tag Translate
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
     Then I click on the element with xpath "//table//tr[last()]//td[last()]//a[last()]"
-    Then I should be on "admin/config/stanford/courses/tag-translate/delete/4"
+    Then I should be on "admin/config/stanford/courses/tag-translate/delete/8"
     Then I should see "This action cannot be un-done. Choose wisely."
     Then I press "Yes, delete this forever"
     Then I should see "Tag translation was successfully removed."
@@ -72,7 +72,7 @@ Feature: Stanford Courses Tag Translate
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
     Then I click on the element with xpath "//table//a[1]"
-    Then I should be on "admin/config/stanford/courses/tag-translate/edit/3"
+    Then I should be on "admin/config/stanford/courses/tag-translate/edit/6"
     Then I enter "MCS::BIOTRACK_CORE" for "edit-ctag"
     Then I enter "Biology Track Core" for "edit-chuman"
     Then I press "Save"
@@ -93,4 +93,3 @@ Feature: Stanford Courses Tag Translate
     Then I click "Edit"
     Then I should see "Translation One"
     And I should see "This is Three"
-

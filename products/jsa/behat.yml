@@ -8,7 +8,7 @@ imports:
 default:
   extensions:
     Behat\MinkExtension:
-      base_url: https://sites.stanford.edu/sws-build-jsa
+      base_url: https://sws-build-jsa.stanford.edu/
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.ds_sws-build-jsa'
+        alias: 'sse.sws-build-jsa'

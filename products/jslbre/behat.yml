@@ -1,14 +1,14 @@
 imports:
-  - ../includes/config/default.yml
-  - ../includes/extensions/drupal.extension.yml
-  - ../includes/extensions/mink.extension.yml
+  - ../../includes/config/default.yml
+  - ../../includes/extensions/drupal.extension.yml
+  - ../../includes/extensions/mink.extension.yml
   - behat.local.yml
 
 ## Default Profile Settings (Sites)
 default:
   extensions:
     Behat\MinkExtension:
-      base_url: https://sites.stanford.edu/sws-build-jslbre
+      base_url: https://sites.stanford.edu/lbre-dev
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.sws-build-jslbre'
+        alias: 'sse.lbre-dev'

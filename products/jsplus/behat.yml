@@ -11,4 +11,4 @@ default:
       base_url: https://sites.stanford.edu/sws-build-jsplus
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.ds_sws-build-jsplus'
+        alias: 'sse.sws-build-jsplus'

@@ -6,7 +6,6 @@ Feature: Stanford Event Series
   @api
   Scenario: Event series link in the main menu
     When I go to "events/series"
-    Then I should see "Event Series" in the "First sidebar" region
     Then I should see "Event Series" in the "Content Head" region
 
   @api
@@ -29,7 +28,7 @@ Feature: Stanford Event Series
     Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I press "Upload"
     Then I press "Save"
-    Then I should be on "events/series/foo"
+    Then I should be on "events/series/foo-0"
     Then I should see 1 or more ".field-name-field-s-image-image" elements
     Then I go to "admin/manage/events"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
@@ -49,7 +48,7 @@ Feature: Stanford Event Series
     Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I press "Upload"
     Then I press "Save"
-    Then I should be on "events/series/foo"
+    Then I should be on "events/series/foo-0"
     Then I should see 1 or more ".field-name-field-s-image-image" elements
     Then I go to "admin/manage/events"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
@@ -65,5 +64,3 @@ Feature: Stanford Event Series
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/events"
     Then I should see 1 or more ".views-field-field-s-event-series" elements
-
-
