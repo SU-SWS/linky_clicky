@@ -4,11 +4,6 @@ Feature: Events
   I want to check for the existence of events content
 
   @live
-  Scenario: See upcoming events on homepage
-    Given I am on the homepage
-    Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
-
-  @live
   Scenario: See upcoming events content
     Given I am on "events/upcoming-events"
     Then I should see a ".event-title" element

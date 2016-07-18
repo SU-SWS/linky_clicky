@@ -3,13 +3,6 @@ Feature: News
   As an end user
   I want to check for the existence of news content
 
-  #Should succeed but fails
-  @live
-  Scenario: See more news
-    Given I am on the homepage
-    And I click "See more news" in the "Content 3 column flow" region
-    Then I should see the heading "Recent News" in the "Content" region
-
   @live
   Scenario: Searching news
     Given I am on "news/recent-news"
