@@ -13,13 +13,13 @@ Feature: Lomita Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-lomita-selector" button
     Then I should see "Customized design options saved"
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario: Editor should not access Customize Design
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
     And the cache has been cleared
@@ -32,7 +32,7 @@ Feature: Lomita Homepage Layout
     | Add a video, image, or other featured content to this block. | Main Top |
     | Building Name Room 555 | Footer   |
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario: Homepage video block
     Given I am on the homepage
     And the cache has been cleared

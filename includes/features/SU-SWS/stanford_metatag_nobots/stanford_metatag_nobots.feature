@@ -1,4 +1,3 @@
-@stanford
 Feature: Stanford MetaTag NoBots
   In order to ensure that upgrades do not break existing functionality
   As an administrative user

@@ -3,7 +3,7 @@ Feature: Stanford Jumpstart Home Feature
   As an administrator
   I want to check for the existence of content that should appear
 
-  @api @safe @deploy @live
+  @api @safe
   Scenario Outline: Verify items on the Customized Design Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"

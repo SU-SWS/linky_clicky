@@ -13,7 +13,7 @@ Feature: Stanford Jumpstart Plus Layouts Feature
     Then I should see "Main Menu - Primary - 1 Depth"
     Then I should see "Main Menu - Secondary - 2 Depths"
 
-  @safe @deploy
+  @safe
   Scenario: Verify contexts
     Given I am on "admin/structure/context"
     Then I should see "all_pages_but_homepage"
@@ -29,7 +29,7 @@ Feature: Stanford Jumpstart Plus Layouts Feature
   # Do we want to test to see if the blocks are in the right places?
   # Yes
 
-  @safe @deploy
+  @safe
   Scenario: Test enabled contexts for block existance in region
     Given I am on the homepage
     # Sitewide context

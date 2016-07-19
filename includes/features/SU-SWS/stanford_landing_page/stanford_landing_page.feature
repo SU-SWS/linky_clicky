@@ -3,7 +3,7 @@ Feature: Stanford Landing Page
   As an administrative user
   I want create and view a landing page node.
 
-  @api @dev @content @javascript
+  @api @dev @javascript
   Scenario: Create Landing Page
     Given I am logged in as a user with the "administrator" role
     When I wait for the Site Actions drop down to appear
@@ -79,4 +79,3 @@ Feature: Stanford Landing Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/manage/landing-page"
     Then I should see the heading "Manage Landing Page"
-
