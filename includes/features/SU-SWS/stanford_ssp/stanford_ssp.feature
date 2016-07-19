@@ -11,7 +11,8 @@ Feature: Stanford SimpleSAML PHP
     And I uncheck the box "edit-simplesamlphp-auth-activate"
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved."
-    When I am an anonymous user
+    Given the cache has been cleared
+    And I am an anonymous user
     And I am on "user"
     Then I should not see "SUNet Login"
 
