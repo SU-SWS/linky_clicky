@@ -14,23 +14,7 @@ Feature: Stanford Jumpstart Feature
     Then I should see "Content Cleanup"
     Then I am on "admin/stanford-jumpstart/settings"
     Then I should see "Settings"
-    Then I should see "Help text"
-    Then I should see "Request assistance url"
-    Then I should see "Browse available tokens"
-
-  @api @dev
-  Scenario: Verify help text and request assistance url changes
-    Given I am logged in as a user with the "administrator" role
-    Then I track variable "stanford_jumpstart_help_settings"
-    And I am on "admin/stanford-jumpstart/settings"
-    And I fill in "edit-jumpstart-help-text" with "This is my new help text."
-    And I fill in "edit-jumpstart-request-help-url" with "http://www.google.com"
-    Then I press the "Save" button
-    Then I should see "Your settings have been saved."
-    Then I am on "admin/stanford-jumpstart"
-    Then I should see "This is my new help text"
-    Then I click "Request Assistance"
-    Then I should be on "http://www.google.com"
+    Then I should see "Request Assistance"
 
   @api @safe
   Scenario: Verify custom permissions are available
@@ -63,4 +47,3 @@ Feature: Stanford Jumpstart Feature
     Then I should not see "administrator" in the "#edit-remove-roles" element
     Then I am on "admin/structure/services"
     Then I should not see "Services"
-

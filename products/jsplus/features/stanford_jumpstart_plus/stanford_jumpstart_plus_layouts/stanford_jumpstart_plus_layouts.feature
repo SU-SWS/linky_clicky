@@ -53,8 +53,8 @@ Feature: Stanford Jumpstart Plus Layouts Feature
     Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "Second sidebar" region
     # Past Events
     Then I am on "events/past-events"
-    Then I should see 1 "#block-views-ad215e0528148b386833fa3db1f3b7dc" element in the "Second sidebar" region
-    Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "First sidebar" region
+    Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "Second sidebar" region
+    Then I should see 1 "#block-views-ad215e0528148b386833fa3db1f3b7dc" element in the "First sidebar" region
     # Upcoming Events
     Then I am on "events/upcoming-events"
     Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "Second sidebar" region
