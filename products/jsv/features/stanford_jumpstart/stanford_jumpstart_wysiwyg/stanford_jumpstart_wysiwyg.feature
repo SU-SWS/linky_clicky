@@ -6,12 +6,12 @@ Feature: Stanford Jumpstart WYSIWYG Feature
   Background:
     Given I am logged in as a user with the "administrator" role
 
-  @api @deploy @safe
+  @api @safe
   Scenario: Stanford WYSIWYG module is enabled
     Given I am on "admin/modules"
     Then the "edit-modules-stanford-sites-jumpstart-stanford-jumpstart-wysiwyg-enable" checkbox should be checked
 
-  @api @deploy @safe
+  @api @safe
   Scenario: Filter format is available and has the appropriate settings
     Given I am on "admin/config/content/formats"
     Then I should see "Content Editor Text Format"
@@ -22,7 +22,7 @@ Feature: Stanford Jumpstart WYSIWYG Feature
     Then the "#edit-filters-wysiwyg-settings-rule-valid-classes" element should contain "btn-large"
     Then the "#edit-filters-wysiwyg-settings-nofollow-domains" element should contain "stanford.edu"
 
-  @api @deploy @safe @javascript
+  @api @safe @javascript
   Scenario: The WYSIWYG editor appears on a node edit page
     Given I am on "admin/content"
     Then I select "Stanford Page" from "Type"
@@ -30,4 +30,3 @@ Feature: Stanford Jumpstart WYSIWYG Feature
     Then I wait for AJAX to finish
     Then I click on the element with css selector ".views-field-edit-node a"
     Then I should see 1 "#cke_edit-body-und-0-value" element
-

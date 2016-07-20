@@ -3,7 +3,7 @@ Feature: Stanford Date Formats
   As an administrative user
   I want to ensure that the Stanford Date Formats module is working properly
 
-  @api
+  @api @safe
   Scenario: Stanford Date Formats
     Given the cache has been cleared
     And I am logged in as a user with the "administrator" role
@@ -25,5 +25,3 @@ Feature: Stanford Date Formats
     And I should see "Long"
     And I should see "Medium"
     And I should see "Short"
-
-

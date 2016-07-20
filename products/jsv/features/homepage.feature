@@ -3,12 +3,13 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
-  @api
+  @api @safe
   Scenario: Enable the Palm homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
 
+  @api @safe
   Scenario Outline: Header content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -20,6 +21,7 @@ Feature: Homepage
     | Optional Footer Block | Footer |
     | Related Links         | Footer |
 
+  @api @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -31,6 +33,7 @@ Feature: Homepage
     | Building Name Room 555 | Footer   |
     | This is your Optional Footer | Footer   |
 
+  @api @safe
   Scenario Outline: Homepage links
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
