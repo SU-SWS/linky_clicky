@@ -19,6 +19,7 @@ Feature: Site Owner
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     #And I click on “Choose File”  in the "Content Body" region
     Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo Stanford Page Site Owner" for "Title"
