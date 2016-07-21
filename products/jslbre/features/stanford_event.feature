@@ -7,7 +7,7 @@ Feature: Stanford Event
   Scenario: The module is enabled
     Given the "stanford_events_importer" module is enabled
 
-  @api @javascript @dev @content
+  @api @javascript @dev
   Scenario: Stanford Events Importer
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-event-importer"
@@ -35,22 +35,22 @@ Feature: Stanford Event
     And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
 
-  @api @safe @live @deploy
+  @api @safe
   Scenario: See upcoming events on homepage
     Given I am on the homepage
     Then I should see the "Upcoming Events" heading in the "Content Body" region
 
-  @api @safe @live @deploy
+  @api @safe
   Scenario: See upcoming events content
     Given I am on "events/upcoming-events"
     Then I should see a ".event-title" element
 
-  @api @safe @live @deploy
+  @api @safe
   Scenario: See calendar nav block
     Given I am on "events/upcoming-events"
     Then I should see a ".date-nav-wrapper" element
 
-  @api @safe @live @deploy
+  @api @safe
   Scenario: See past events - check for pager
     Given I am on "events/past-events"
     Then I should see 5 or fewer ".event-title" elements

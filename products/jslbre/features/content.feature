@@ -8,7 +8,7 @@ Feature: Stanford LBRE Content
   #   Then I should see "Arcade on the Quad" in the "Content Body" region
 
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check for main menu items
   Given I am on the homepage
   Then I should see "Home" in the "Main Navigation" region
@@ -18,7 +18,7 @@ Feature: Stanford LBRE Content
   Then I should see "About" in the "Main Navigation" region
   Then I should see "Programs" in the "Main Navigation" region
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check for deployed content
   Given I am on "news/announcements"
   Then I should see "Announcements" in the "Main Content" region
@@ -44,7 +44,7 @@ Feature: Stanford LBRE Content
   # Check for block titles
   # https://github.com/SU-SWS/stanford_sites_jumpstart_vpsa/blob/7.x-4.x/includes/JumpstartSitesVPSA.php#L677
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check for new and events block title changes
   Given I am on the homepage
   Then I should see the heading "Upcoming Events" in the "Main Content" region

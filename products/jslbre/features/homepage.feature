@@ -3,13 +3,13 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @javascript @safe @deploy
+  @api @javascript @safe
   Scenario: Homepage full width banner and content
   Given I am on the homepage
   Then I should see 1 ".view-mode-stanford-full-width-banner-short" element
 
 
-  @api @safe @deploy
+  @api @safe
   Scenario Outline: Homepage blocks are available
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -25,7 +25,7 @@ Feature: Homepage
       | Helpful Links         | Footer |
       | Contact Us            | Footer |
 
-  @api @safe @deploy
+  @api @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
