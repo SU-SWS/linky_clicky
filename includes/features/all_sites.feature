@@ -39,12 +39,13 @@ Feature: Every page will be checked for the following regions, elements and func
     Then I should see the text "WebAuth Login"
     And I should see the text "Local User Login"
 
-  @safe
+  @safe @javascript
   Scenario: Verify that entering a search yields the correct result
     Given I am on the homepage
     Then I should see a "#edit-search-block-form--2" element
     When I enter "purple monkey dishwasher" for "Search"
     And I press the "Search" button
+    And I wait 2 seconds
     Then I should be on "search/node/purple%20monkey%20dishwasher"
     And I should see the heading "Your search did not yield any results"
     And I should see "Remove quotes around phrases to match each word individually:"
