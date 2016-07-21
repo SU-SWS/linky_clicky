@@ -49,6 +49,3 @@ Feature: Every page will be checked for the following regions, elements and func
     Then I should be on "search/node/purple%20monkey%20dishwasher"
     And I should see the heading "Your search did not yield any results"
     And I should see "Remove quotes around phrases to match each word individually:"
-    And I should see "stanford university"
-    And I should see "will match less than stanford university."
-    And I should see "Consider loosening your query with OR: stanford university will match less than stanford OR university."
