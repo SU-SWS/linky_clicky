@@ -73,8 +73,8 @@
     Then I press the "Save" button
     Then I should see "Behat Stanford News Item has been created"
     # Display
-    #Then I should see 1 ".field-name-field-s-news-date" element
-    #Then I should see 1 ".field-name-field-s-news-source" element
+    Then I should see 1 ".field-name-field-s-news-date" element
+    Then I should see 1 ".field-name-field-s-news-source" element
     Then I should see 1 ".field-name-body" element
     Then I should see 1 ".field-collection-item-field-s-image-info" element
     Then I should see "This is the image credits field"
