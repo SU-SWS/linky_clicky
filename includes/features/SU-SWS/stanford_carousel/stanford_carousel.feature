@@ -5,7 +5,7 @@ Feature: Homepage carousel Javascript
 
 # The carousel is random, so there's no good way to assert what text will be present
 # This test should be observed visually
-@javascript @safe @live @site
+@javascript @live
 Scenario: Homepage carousel
  Given I am on the homepage
   When I press the "Next Slide" button
@@ -27,7 +27,7 @@ Scenario: Homepage carousel
    And I wait 2 seconds
  Then I should see a ".slide-title" element
 
- @javascript @safe @live @site
+ @javascript @live
  Scenario: Homepage carousel works with ">" and "<"
   Given I am on the homepage
   When I click "›" in the "Main Upper" region

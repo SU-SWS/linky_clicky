@@ -53,7 +53,7 @@
     Then I should see "News Categories"
     Then I am on "admin/structure/taxonomy/news_categories"
 
-  @safe
+  @dev @destructive
   Scenario: Create news item and validate display
     Given I am on "node/add/stanford-news-item"
     Then I fill in "edit-title" with "Behat Stanford News Item"

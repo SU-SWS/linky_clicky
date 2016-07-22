@@ -3,25 +3,25 @@ Feature: Stanford Courses Tag Translate
   As an administrative user
   I want to ensure that the Stanford Courses Tag Translate module is working properly
 
-  @api @content @dev
+  @api @safe
   Scenario: Validate main admin page is there.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford/courses/tag-translate"
     Then I should see "New tag translation"
 
-  @api @content @dev
+  @api @safe
   Scenario: Validate import admin page is there.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate/import"
     Then I should see "Import" in the "Content" region
 
-  @api @content @dev
+  @api @safe
   Scenario: Validate Export admin page is there.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate/export"
     # No content on this page is permanent so it is impossible to check for some without a scenario breaking.
 
-  @api @content @dev
+  @api @dev @destructive
   Scenario: Import content
     Given I am logged in as a user with the "administrator" role
     Given I am on "admin/config/stanford/courses/tag-translate/import"
@@ -40,7 +40,7 @@ Feature: Stanford Courses Tag Translate
     And I should see "IR::wim"
     And I should see "IR::core"
 
-  @api @content @dev
+  @api @dev @destructive
   Scenario: Create tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
@@ -51,7 +51,7 @@ Feature: Stanford Courses Tag Translate
     Then I press the "Save" button
     Then I should see "Tag translation was saved successfully"
 
-  @api @content @dev
+  @api @dev @destructive
   Scenario: Delete tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
@@ -64,7 +64,7 @@ Feature: Stanford Courses Tag Translate
     Then I should not see "zzzzzzzZZZZZzzzzzz"
 
   # This scenario only works if the import scenario about has been run
-  @api @content @dev @deploy
+  @api @dev @deploy @destructive
   Scenario: Edit tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
@@ -76,7 +76,7 @@ Feature: Stanford Courses Tag Translate
     Then I go to "admin/config/stanford/courses/tag-translate"
     And I should see "Biology Track Core"
 
-  @api @content @dev @javascript
+  @api @dev @javascript @destructive
   Scenario: Validate translations
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared
@@ -90,4 +90,3 @@ Feature: Stanford Courses Tag Translate
     Then I click "Edit"
     Then I should see "Translation One"
     And I should see "This is Three"
-

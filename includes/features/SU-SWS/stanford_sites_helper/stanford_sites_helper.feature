@@ -78,7 +78,7 @@ Feature: Stanford Sites Helper Module
     | Edit permissions       | admin/people/permissions       |
     | Create a new View      | admin/structure/views/add      |
 
-  @api @live
+  @api @safe
   Scenario: Link to HelpSU for administrative users
     Given I am logged in as a user with the "administrator" role
     And I am on "admin"

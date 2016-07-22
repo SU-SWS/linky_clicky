@@ -9,7 +9,7 @@ Feature: Mayfield Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selector" button
 
-  @safe
+  @deploy
   Scenario Outline: Header content for mayfield with news and events.
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region

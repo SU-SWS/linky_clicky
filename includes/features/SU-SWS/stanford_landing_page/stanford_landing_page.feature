@@ -3,7 +3,7 @@ Feature: Stanford Landing Page
   As an administrative user
   I want create and view a landing page node.
 
-  @api @dev @javascript
+  @api @dev @javascript @destructive
   Scenario: Create Landing Page
     Given I am logged in as a user with the "administrator" role
     When I wait for the Site Actions drop down to appear

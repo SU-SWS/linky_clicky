@@ -3,7 +3,7 @@ Feature: Stanford MetaTag NoBots
   As an administrative user
   I want to ensure that the Stanford MetaTag NoBots module is working properly
 
-  @api @safe
+  @api @deploy
   Scenario: Stanford MetaTag NoBots
     Given the cache has been cleared
     And I am on the homepage

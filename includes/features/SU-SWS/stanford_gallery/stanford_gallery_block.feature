@@ -3,7 +3,7 @@ Feature: Stanford Gallery
   as an administrator
   I want to be able to create gallery nodes with imagess.
 
-@api @javascript @dev
+@api @javascript @dev @destructive
 Scenario: Create stanford gallery node
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-gallery"
@@ -129,4 +129,3 @@ Scenario: Create stanford gallery node
   # Then I should see 1 "#colorbox .caption" element
   # Then I should see 1 "#colorbox .credits" element
   Then I click on the element with css selector "#cboxClose"
-

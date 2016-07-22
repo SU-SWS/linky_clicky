@@ -9,13 +9,13 @@ Feature: Stanford Courses
     And I am on "/admin/modules"
     Then the checkbox "Stanford Courses" should be checked
 
-  @live
+  @safe
   Scenario: View current courses and Featured Course sidebar block
     Given I am on "courses"
     Then I should see "Current Courses"
     And I should see the "Featured Course" heading in the "First sidebar" region
 
-  @live
+  @deploy
   Scenario: Searching courses by academic year
     Given I am on "courses"
     When I select "2014-2015" from "Academic year"

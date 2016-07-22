@@ -19,7 +19,7 @@ Feature: Lomita Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @safe
+  @api @deploy
   Scenario Outline: Homepage content
     Given I am on the homepage
     And the cache has been cleared
