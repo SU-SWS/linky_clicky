@@ -6,7 +6,7 @@ Feature: Site Owner
   @api @javascript
   Scenario: Clicking on Manage Content
     Given I am logged in as a user with the "site owner" role
-    And I wait for the Classics Site Actions drop down to appear
+    And I wait for the Site Actions drop down to appear
     When I click "Manage Content"
     Then I should see "Filter by Title" in the "Content Body" region
 
