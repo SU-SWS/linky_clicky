@@ -9,7 +9,7 @@ Feature: Morris Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-morris-selector" button
 
-  @safe
+  @deploy
   Scenario Outline: Header content for Morris
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -21,7 +21,7 @@ Feature: Morris Homepage Layout
     | Recent News           | Content 3 column flow |
     | Upcoming Events       | Content 3 column flow |
 
-  @safe
+  @deploy
   Scenario Outline: Homepage content Morris
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -33,7 +33,7 @@ Feature: Morris Homepage Layout
     | You can use this block to highlight content     | Content 3 column flow |
     | See more events                                 | Content 3 column flow |
 
-  @safe
+  @deploy
   Scenario Outline: Homepage links Morris
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
@@ -45,11 +45,12 @@ Feature: Morris Homepage Layout
     | See more news                 | Content 3 column flow |
     | See more events               | Content 3 column flow |
 
-  @safe
+  @deploy
   Scenario: Homepage image Morris
     Given I am on the homepage
     Then I should see 1 ".field-name-field-s-image-image" element in the "Main Top" region
 
+  @deploy
   Scenario: Affiliate Organizations page is visible and link on the main menu
     Given I am on the homepage
     Then I should see "Affiliates" in the "Main Bottom" region

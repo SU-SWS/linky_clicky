@@ -9,7 +9,7 @@ Feature: Hoover Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-hoover-selector" button
 
-  @safe
+  @deploy
   Scenario Outline: Header content for hoover homepage
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -22,7 +22,7 @@ Feature: Hoover Homepage Layout
     | Affiliates            | Main Bottom           |
     | Contact Us            | Footer                |
 
-  @safe
+  @deploy
   Scenario Outline: Homepage content hoover
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -45,13 +45,13 @@ Feature: Hoover Homepage Layout
     | Learn more                    | Content Lower         |
     | Learn more                    | Content Lower         |
 
-@safe
-Scenario: Affiliate Organizations page is visible and link in the main menu
-  Given I am on the homepage
-  Then I should see "Affiliates" in the "Main Bottom" region
-  Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
+  @deploy
+  Scenario: Affiliate Organizations page is visible and link in the main menu
+    Given I am on the homepage
+    Then I should see "Affiliates" in the "Main Bottom" region
+    Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
 
-  @safe
+  @deploy
   Scenario: Homepage image Hoover
     Given I am on the homepage
     Then I should see 1 ".field-name-field-s-image-image" element in the "Main Top" region
