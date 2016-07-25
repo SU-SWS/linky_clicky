@@ -27,6 +27,7 @@ Feature: Site Owner
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo" for "Title"
     And I press the "Save" button
@@ -41,11 +42,11 @@ Feature: Site Owner
     Then I should see "Create Private Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo" for "Title"
     And I press the "Save" button
     Then I should see "Private Page Foo has been created" in the "Console" region
-    And I should be on the homepage
 
   @api @javascript @dev
   Scenario: Add Landing Page
@@ -57,7 +58,6 @@ Feature: Site Owner
     And I select "Blocks" from "Layout"
     And I press the "Save" button
     Then I should see "Landing Page Foo has been created" in the "Console" region
-    And I should be on "foo"
 
   @api @javascript @dev
   Scenario: Add Gallery

@@ -15,15 +15,14 @@ Feature: Homepage
     Then I should see the "<Header>" heading in the "<Region>" region
 
     Examples:
-      | Header                | Region |
-      | Connect               | Main Lower |
-      | About Us              | Main Content |
-      | Upcoming Events       | Main Content |
-      | Announcements & News  | Main Content |
-      | Quick Links           | Main Content |
-      | Custom Content        | Main Content |
-      | Helpful Links         | Footer |
-      | Contact Us            | Footer |
+      | Header                 | Region       |
+      | Connect                | Main Lower   |
+      | Upcoming Events        | Main Content |
+      | Announcements & News   | Main Content |
+      | Project Management     | Main Content |
+      | Maintenance & Services | Main Content |
+      | Helpful Links          | Footer       |
+      | Contact LBRE           | Footer       |
 
   @api @safe
   Scenario Outline: Homepage content
@@ -32,7 +31,7 @@ Feature: Homepage
 
     Examples:
       | Text                                            | Region   |
-      | Building Name Room 555                          | Footer   |
-      | The XXX is proud to be part of Student Affairs  | Footer   |
-      | Get emergency assistance or find help           | Footer   |
-      | Student Affairs                                 | Footer   |
+      | 3160 Porter Drive                               | Footer   |
+      | Helpful Links                                   | Footer   |
+      | Overarching a collective of ten departments     | Footer   |
+      | Caretakers of a Legacy                          | Footer   |

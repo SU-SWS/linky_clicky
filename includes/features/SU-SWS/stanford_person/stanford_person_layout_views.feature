@@ -261,7 +261,7 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Graduate Students" heading in the "Content Head" region
 
-  @safe @cjw
+  @safe
   Scenario: List layout for graduate-students
     Given I am on "people/graduate-students/list"
     Then I should see a ".views-row-first" element
