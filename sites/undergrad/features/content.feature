@@ -9,13 +9,13 @@ Feature: Content
     Then I should see the "<Header>" heading in the "<Region>" region
 
     Examples:
-      | Header           | Region                |
-      | Undergrad Events | Content 3 column flow |
-      | Spotlight        | Content 3 column flow |
-      | Student Projects | Content 3 column flow |
-      | About This Site  | Footer                |
-      | About VPUE       | Footer                |
-      | See Also         | Footer                |
+      | Header                            | Region                |
+      | Undergrad Events                  | Content 3 column flow |
+      | UAR Welcomes Louis E. Newman      | Content 3 column flow |
+      | BASS UNIVERSITY FELLOWS 2015-2016 | Content 3 column flow |
+      | About This Site                   | Footer                |
+      | About VPUE                        | Footer                |
+      | See Also                          | Footer                |
 
   @safe @live @site
   Scenario: Approaching Stanford heading
@@ -28,11 +28,13 @@ Feature: Content
     Then I should see "<Content>" in the "<Region>" region
 
     Examples:
-      | Content                                                                                   | Region       |
-      | Approaching Stanford is the process that will guide you in your transition to Stanford    | Content Body |
-      | We are delighted that you have chosen to spend the next few years here on The Farm        | Content Body |
-      | The Approaching Stanford Guide is the online version of the Approaching Stanford Handbook | Content Body |
-      | All incoming freshmen and transfers must complete these required forms                    | Content Body |
+      | Content                              | Region       |
+      | Welcome to Stanford                  | Content Body |
+      | Approaching Stanford                 | Content Body |
+      | Important Dates and Deadlines        | Content Body |
+      | Three Books                          | Content Body |
+      | Stanford Canvas                      | Content Body |
+      | Mailings, Publications & Newsletters | Content Body |
 
   @safe @live @site
   Scenario Outline: BOSP block and footer content
@@ -53,7 +55,7 @@ Feature: Content
   @safe @live @site
   Scenario: Checking Your Stanford Email Account page content
     Given I am on "advising/student-guides/checking-your-stanford-email-account"
-    Then I should see "As a matriculated student, your Stanford email account is now active. You are responsible for knowing the information sent to your Stanford email account, even during the summer" in the "Content Body" region
+    Then I should see "As a matriculated student, your Stanford email account is now active. You are responsible for knowing the information sent to your Stanford email account, including during the summer" in the "Content Body" region
 
   @safe @live @site
   Scenario: Majors and Minors page content
