@@ -28,7 +28,7 @@ Feature: Stanford Event Series
     Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I press "Upload"
     Then I press "Save"
-    Then I should be on "events/series/foo-0"
+    Then I should be on "events/series/foo"
     Then I should see 1 or more ".field-name-field-s-image-image" elements
     Then I go to "admin/manage/events"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
@@ -48,7 +48,7 @@ Feature: Stanford Event Series
     Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I press "Upload"
     Then I press "Save"
-    Then I should be on "events/series/foo-0"
+    Then I should be on "events/series/foo"
     Then I should see 1 or more ".field-name-field-s-image-image" elements
     Then I go to "admin/manage/events"
     Then I click on the element with css selector ".views-row-first .views-field-title a"
