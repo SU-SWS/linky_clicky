@@ -17,20 +17,20 @@ Feature: Contact
     | Academic Operations Manager: Valerie Kiszka          | Content Body |
     | Student Services Officer: Lori Lynn Taniguchi        | Content Body |
     | Department Coordinator: Lydia Hailu                  | Content Body |
-    | Department Chair: Walter Scheidel                    | Content Body |
-    | Director of Graduate Studies: Grant Parker           | Content Body |
-    | Director of Undergraduate Studies: Giovanna Ceserani | Content Body |
+    | Department Chair: Grant Parker                       | Content Body |
+    | Director of Graduate Studies: SUSAN STEPHENS         | Content Body |
+    | Director of Undergraduate Studies: JOHN KLOPACZ       | Content Body |
 
   Scenario: Contact page links
-    Given I am on "contact-us/contact"
-    When I click "Walter Scheidel"
-    Then I should be on "people/walter-scheidel"
     Given I am on "contact-us/contact"
     When I click "Grant Parker"
     Then I should be on "people/grant-parker"
     Given I am on "contact-us/contact"
-    When I click "Giovanna Ceserani"
-    Then I should be on "people/giovanna-ceserani"
+    When I click "SUSAN STEPHENS"
+    Then I should be on "people/susan-stephens"
+    Given I am on "contact-us/contact"
+    When I click "JOHN KLOPACZ"
+    Then I should be on "people/john-klopacz"
 
   Scenario: Clicking the sidebar menu
     Given I am on "contact-us/contact"

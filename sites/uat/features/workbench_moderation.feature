@@ -23,3 +23,5 @@ Feature: Workbench Moderation
     When I press the "Save" button
     Then I should see "Your settings have been saved."
     And I should see "Depending on the changes you have made it may be necessary to reconfigure Views that leverage Workbench Moderation such as workbench_moderation"
+    # Disable when finished.
+    Given the "workbench_moderation" module is disabled.
