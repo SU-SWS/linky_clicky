@@ -1,12 +1,12 @@
 @contrib
-Feature: Better Exposed Filters
+Feature: Better Formats
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
-  I want to ensure that the Better Exposed Filters module is working properly
+  I want to ensure that the Better Formats module is working properly
 
   @api @dev @destructive
   Scenario: Show Format Tips
-    Given the "better_exposed_filters" module is enabled
+    Given the "better_formats" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "node/add/article"
     Then I should see "Allowed HTML tags"
