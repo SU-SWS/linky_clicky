@@ -20,7 +20,7 @@ Feature: Stanford Page
     Then I should see "Postcard"
     And I should see "Postcard Image"
     And I should see "Postcard Content"
-    And I should see "View mode: Large Scaled"
+    #And I should see "View mode: Large Scaled"
     Then I want to validate select field option "edit-fields-field-s-page-file-type" default is "Generic file"
 
   @api @dev

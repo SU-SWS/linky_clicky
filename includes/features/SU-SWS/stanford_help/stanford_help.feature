@@ -3,7 +3,7 @@ Feature: Help Content Type
   As a site admin
   I want to have a Help content type and menu structure behind webauth
 
-@api @safe @live @stanford
+@api @safe
 Scenario: Create Help Content type and Menu item
  Given I am logged in as a user with the "administrator" role
  And I am on "/node/add/stanford-help-page"

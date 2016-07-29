@@ -1,7 +1,7 @@
 imports:
-  - ../includes/config/default.yml
-  - ../includes/extensions/drupal.extension.yml
-  - ../includes/extensions/mink.extension.yml
+  - ../../includes/config/default.yml
+  - ../../includes/extensions/drupal.extension.yml
+  - ../../includes/extensions/mink.extension.yml
   - behat.local.yml
 
 ## Default Profile Settings (Sites)
@@ -11,4 +11,4 @@ default:
       base_url: https://sites.stanford.edu/sws-build-jsvpsa
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.ds_sws-build-jsvpsa'
+        alias: 'sse.sws-build-jsvpsa'

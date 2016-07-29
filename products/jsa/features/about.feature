@@ -3,17 +3,17 @@ Feature: About
   As an end user
   I want to check for the existence of page and block content
 
-  @content @live
+  @live
   Scenario: Viewing a featured image on the About page
     Given I am on "about/about-us"
     Then I should see "Arcade on the Quad" in the "Content Body" region
 
-  @content @live
+  @live
   Scenario: Viewing a postcard block with Google Maps embed on the Location page
     Given I am on "about/location"
     Then I should see the link "View Larger Map"
 
-  @content @live
+  @live
   Scenario: Clicking the sidebar menu
     Given I am on "about/contact"
     And I click "Overview" in the "First sidebar" region

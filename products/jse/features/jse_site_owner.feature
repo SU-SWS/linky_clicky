@@ -26,6 +26,7 @@ Feature: Site Owner
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
     Then I fill in "edit-title" with "Foo"
     And I press the "Save" button
@@ -107,27 +108,17 @@ Feature: Site Owner
     Then I should see "Create Private Page" in the "Branding" region
 
   @safe
-  Scenario Outline: Verify site owner can see items on the Customized Design Page
+  Scenario: Verify site owner can see items on the Customized Design Page
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I should see "<Text>" in the "<Region>" region
-
-    Examples:
-      | Text          | Region       |
-      | Hoover        | Content Body |
-      | Morris        | Content Body |
-      | Terman        | Content Body |
-      | Pettit        | Content Body |
-      | Light         | Content Body |
-      | Plain         | Content Body |
-      | Rich          | Content Body |
-      | High Contrast | Content Body |
-      | Cardinal      | Content Body |
-      | Sans Serif    | Content Body |
-      | Serif         | Content Body |
-      | Slab Serif    | Content Body |
-
-
-
-  Scenario: Site Owner denied access to Jumpstart help
-    When I go to "admin/stanford-jumpstart/settings"
-    Then I should see "Access denied"
+    Then I should see "Hoover" in the "Content Body" region
+    And I should see "Morris" in the "Content Body" region
+    And I should see "Terman" in the "Content Body" region
+    And I should see "Pettit" in the "Content Body" region
+    And I should see "Light" in the "Content Body" region
+    And I should see "Plain" in the "Content Body" region
+    And I should see "Rich" in the "Content Body" region
+    And I should see "High Contrast" in the "Content Body" region
+    And I should see "Cardinal" in the "Content Body" region
+    And I should see "Sans Serif" in the "Content Body" region
+    And I should see "Serif" in the "Content Body" region
+    And I should see "Slab Serif" in the "Content Body" region

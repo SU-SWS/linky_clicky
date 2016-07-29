@@ -3,7 +3,7 @@ Feature: Stanford Jumpstart Engineering Get help
   As a site owner
   I want to check for the correct content and configuration on the Jumpstart Help page
 
-  @api @deploy @dev @prod @live @safe @javascript @jse @stanford
+  @api @safe @javascript
   Scenario: Verify that we have the correct Qualtrics form
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart"

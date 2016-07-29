@@ -7,7 +7,7 @@ Feature: Stanford Conference
   Background:
     And I am logged in as a user with the "administrator" role
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check the conference administration view is there.
     And I am on "admin/manage/conferences"
     Then I should see "Manage All Content"

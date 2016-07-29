@@ -1,1 +1,0 @@
-../../../../includes/features/jsa-content/resources_section.feature

@@ -12,7 +12,7 @@ Feature: Stanford Jumpstart Layouts Feature
     Then I should see "Main Menu - Primary - 1 Depth"
     Then I should see "Main Menu - Secondary - 2 Depths"
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Verify contexts
     Given I am on "admin/structure/context"
     Then I should see "12-col-banner-nsb-homepage"
@@ -26,7 +26,7 @@ Feature: Stanford Jumpstart Layouts Feature
   # Do we want to test to see if the blocks are in the right places?
   # Yes
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Test enabled contexts for block existance in region
     Given I am on the homepage
     # Sitewide context

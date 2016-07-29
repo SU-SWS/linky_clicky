@@ -14,13 +14,13 @@ Feature: Panama Homepage Layout
     Then I press the element with css selector "#edit-layouts-stanford-jumpstart-home-panama-selector"
     Then I should see "Customized design options saved"
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario: Editor should not access Customize Design
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @deploy @live @safe @javascript
+  @api @safe @javascript
   Scenario Outline: Header content for panama static
     Given I am on the homepage
     And the cache has been cleared
@@ -33,7 +33,7 @@ Feature: Panama Homepage Layout
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
 
-  @api @deploy @live @safe @javascript
+  @api @safe @javascript
   Scenario Outline: Homepage content panama static
     Given I am on the homepage
     And the cache has been cleared
@@ -47,7 +47,7 @@ Feature: Panama Homepage Layout
     | This is your Highlights block                   | Content 3 column flow |
     | This is your Announcements block                | Content 3 column flow |
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario Outline: Homepage links panama static
     Given I am on the homepage
     And the cache has been cleared
