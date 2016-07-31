@@ -43,20 +43,13 @@ Feature: Editor
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region
     Then I should see "Edit stanford_social_media_connect: Jumpstart Footer Social Media Connect Block" in the "Branding" region
     When I press the "Save" button
-    Then I should see "stanford_social_media_connect Connect has been updated." in the "Console" region
+    Then I should see "has been updated." in the "Console" region
 
   @javascript @safe
   Scenario: Create Stanford event
     And I wait for the Site Actions drop down to appear
     And I click "Add Event" in the "Admin Shortcuts" region
     Then I should see "Create Stanford Event" in the "Branding" region
-
-  @javascript @safe
-  Scenario: Site editor can create a news item
-    And I wait for the Site Actions drop down to appear
-    And I click "Add News Item" in the "Admin Shortcuts" region
-    Then I should see "Create News Item" in the "Branding" region
-    And the "Text format" field should contain "content_editor_text_format"
 
   @safe
   Scenario: Site editor is denied access to add an Event series node
@@ -70,16 +63,6 @@ Feature: Editor
     Then I should see "Site Cache Cleared" in the "Console" region
 
   @safe
-  Scenario: Check editor can view Private Pages Section
-    And I am on "private"
-    Then I should see 1 ".node-type-stanford-private-page" element
-
-  @safe
   Scenario: Event series link in the site actions menu
     When I go to "node/add/stanford-event-series"
-    Then I should see "Access denied"
-
-  @safe
-  Scenario: Editor denied access to Jumpstart help
-    When I go to "admin/stanford-jumpstart/settings"
     Then I should see "Access denied"

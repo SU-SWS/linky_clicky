@@ -7,13 +7,13 @@ Feature: Stanford Conference
   Background:
     Given I am logged in as a user with the "administrator" role
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check that the content types exist
     And I am on "admin/structure/types"
     Then I should see "Conference Overview"
     And I should see "Conference Session"
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check that the session fields are available
     And I am on "admin/structure/types/manage/stanford-conference-session/fields"
     Then I should see "title"
@@ -21,7 +21,7 @@ Feature: Stanford Conference
     And I should see "field_s_session_date_time"
     And I should see "field_s_session_speaker"
 
-  @api @safe @deploy
+  @api @safe
   Scenario: Check that the overview fields are available
     And I am on "admin/structure/types/manage/stanford-conference-overview/fields"
     Then I should see "title"
@@ -38,23 +38,23 @@ Feature: Stanford Conference
     And I should see "field_s_conference_sponsors"
     And I should see "group_s_conference_contact"
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: Check that the custom displays are available for conference overview
     And I am on "admin/structure/types/manage/stanford-conference-overview/display"
     And the "edit-additional-settings-modes-view-modes-custom-full" checkbox should be checked
     And the "edit-additional-settings-modes-view-modes-custom-teaser" checkbox should be checked
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: Check that the custom displays are available for conference session
     And I am on "admin/structure/types/manage/stanford-conference-session/display"
     And the "edit-additional-settings-modes-view-modes-custom-teaser" checkbox should be checked
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: Check the custom display mode of the conference session teaser
     And I am on "admin/structure/types/manage/stanford-conference-session/display/teaser"
     Then I should see "No field is displayed"
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: Check the custom display mode of the conference overview full content
     And I am on "admin/structure/types/manage/stanford-conference-overview/display/full"
     Then I should see "group_conf_lead_text_styles"
@@ -84,7 +84,7 @@ Feature: Stanford Conference
   #   Then I should see "Body"
   #   Then I want to validate select field option "edit-fields-body-region" default is "Content" // Does not exist...
 
-  @api @safe @deploy @javascript
+  @api @deploy @javascript
   Scenario: Check the context conference_agenda is available and correct.
     And I am on "admin/structure/context/list/conference_agenda/edit"
     Then I click on the element with css selector ".context-plugin-views.active a"
@@ -92,7 +92,7 @@ Feature: Stanford Conference
     Then I click on the element with css selector ".context-plugin-block.active a"
     Then I should see "View: Conference: Link to Overview"
 
-  @api @safe @deploy @javascript
+  @api @deploy @javascript
   Scenario: Check the context conference_overview is available and correct.
     And I am on "admin/structure/context/list/conference_overview/edit"
     Then I click on the element with css selector ".context-plugin-node.active a"
@@ -103,7 +103,7 @@ Feature: Stanford Conference
     Then I should see "View: Conference: Contact Info"
     Then I should see "View: Conference: Sponsors"
 
-  @api @safe @deploy
+  @api @deploy
   Scenario: Check the conference views are all there.
     And I am on "admin/structure/views"
     Then I go to "admin/structure/views/view/conference_session_agenda/edit"
@@ -114,7 +114,7 @@ Feature: Stanford Conference
     Then I go to "admin/structure/views/view/conference_sponsors/edit"
     Then I go to "admin/structure/views/view/conferences/edit"
 
-  @api @safe @deploy @content
+  @api @dev @destructive
   Scenario: Check that conference content can be created and displays correctly.
     And I am on "node/add/stanford-conference-overview"
 
@@ -196,4 +196,3 @@ Feature: Stanford Conference
     Then I cleanup the "conferences/conference-overview-behat" alias
     Then I cleanup the "conferences/session-behat-session-one" alias
     Then I cleanup the "conferences/session-behat-session-two" alias
-

@@ -12,15 +12,13 @@ Scenario Outline: Footer content
   | Contact Us  | Footer |
   | Quick Links | Footer |
 
-Scenario Outline: Homepage content
+Scenario: Homepage content
   Given I am on the homepage
-  Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-  | Text                                             | Region        |
-  | provides resources for Stanford web designers    | First sidebar |
-  | Often, when people think about web accessibility | First sidebar |
-  | Announcements                                    | Content Body  |
+  Then I should see "provides resources for Stanford web designers" in the "Main Top" region
+  And I should see the heading "About SOAP" in the "Main Top" region
+  And I should see the heading 'The "SOAP" Box' in the "Content 3 column flow" region
+  And I should see the heading "Recent News" in the "Content 3 column flow" region
+  And I should see the heading "Upcoming Events" in the "Content 3 column flow" region
 
 Scenario: Program Services content
   Given I am on "program-services"
@@ -36,7 +34,7 @@ Scenario: Tips and Tools content
 
 Scenario: Guidelines and Standards content
   Given I am on "guidelines-and-standards"
-  Then I should see "A number of standards, policies and guidelines related to online accessibility gathered here" in the "Content Body" region
+  Then I should see "A number of policies, guidelines and standards related to online accessibility are gathered here" in the "Content Body" region
 
 Scenario: Contact page content
   Given I am on "about/contact"

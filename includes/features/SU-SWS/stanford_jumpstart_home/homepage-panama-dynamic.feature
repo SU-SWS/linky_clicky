@@ -9,7 +9,7 @@ Feature: Panama Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
 
-  @deploy @live @safe
+  @safe
   Scenario Outline: Header content for panama news and events
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -21,7 +21,7 @@ Feature: Panama Homepage Layout
     | Recent News           | Content 3 column flow |
     | Upcoming Events       | Content 3 column flow |
 
-  @deploy @live @safe
+  @safe
   Scenario Outline: Homepage content panama news and events
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -33,7 +33,7 @@ Feature: Panama Homepage Layout
     | This is your About block                        | Content 3 column flow |
     | Sample News                 | Content 3 column flow |
 
-  @deploy @live @safe
+  @safe
   Scenario Outline: Homepage links panama news and events
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
@@ -45,4 +45,3 @@ Feature: Panama Homepage Layout
     | More about us                 | Content 3 column flow |
     | See more news                 | Content 3 column flow |
     | See more events               | Content 3 column flow |
-

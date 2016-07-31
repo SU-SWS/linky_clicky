@@ -9,7 +9,7 @@ Feature: Stanford Jumpstart Plus Permissions Feature
 
   #dont bother checking all of the permissions. Like, that is waaaay too much work man.
 
-  @deploy @safe
+  @safe
   Scenario: Permissions feature is enabled
     Given I am on "admin/modules"
     Then the "modules[Stanford Sites Jumpstart][stanford_jsplus_permissions][enable]" checkbox should be checked

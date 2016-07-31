@@ -78,7 +78,7 @@ Feature: Stanford Sites Helper Module
     | Edit permissions       | admin/people/permissions       |
     | Create a new View      | admin/structure/views/add      |
 
-  @api @live @sites
+  @api @safe
   Scenario: Link to HelpSU for administrative users
     Given I am logged in as a user with the "administrator" role
     And I am on "admin"
@@ -97,7 +97,7 @@ Feature: Stanford Sites Helper Module
     When I go to "admin/config/system/backup_migrate/settings/profile"
     Then I should see "Stanford Sites Profile" in the "Content" region
 
-  @api @live @sites
+  @api @live
   Scenario: AFS file storage checking
     Given I am logged in as a user with the "administrator" role
     And the "stanford_afs_quota" module is enabled
@@ -108,5 +108,3 @@ Feature: Stanford Sites Helper Module
     When I am on "admin/reports/status"
     And I click "request more storage" in the "File Storage Limit" row
     Then I should be on "https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=sites"
-
-

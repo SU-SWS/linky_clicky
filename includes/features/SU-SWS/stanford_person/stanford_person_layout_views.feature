@@ -229,7 +229,7 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Department Administrator" heading in the "Content Head" region
 
-  @deploy
+  @safe
   Scenario: Grid layout for graduate-students
     Given I am on "people/graduate-students/grid"
     Then I should see a ".views-row-first" element
@@ -237,7 +237,7 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Graduate Students" heading in the "Content Head" region
 
-  @deploy
+  @safe
   Scenario: Profiles layout for graduate-students
     Given I am on "people/graduate-students/profiles"
     Then I should see a ".views-row-first" element
@@ -245,7 +245,7 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Graduate Students" heading in the "Content Head" region
 
-  @deploy
+  @safe
   Scenario: Directory layout for graduate-students
     Given I am on "people/graduate-students/directory"
     Then I should see a ".views-row-first" element
@@ -253,7 +253,7 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Graduate Students" heading in the "Content Head" region
 
-  @deploy
+  @safe
   Scenario: CAP List layout for graduate-students
     Given I am on "people/graduate-students/cap-list"
     Then I should see a ".views-row-first" element
@@ -261,15 +261,13 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Graduate Students" heading in the "Content Head" region
 
-  @deploy
+  @safe
   Scenario: List layout for graduate-students
     Given I am on "people/graduate-students/list"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "Graduate Students" heading in the "Content Head" region
-
-
 
   @safe
   Scenario: CAP List layout for all people
@@ -278,9 +276,8 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "First sidebar" region
     And I should see the "People" heading in the "Content Head" region
 
-
-  @deploy
-  Scenario Outline: Grouped Grid layout for professor
+  @safe
+  Scenario Outline: Grouped Grid layout
     Given I am on "people/all/grid/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
@@ -293,10 +290,8 @@ Feature: Stanford Person layout Views
   | Students | Content Body |
   | Staff    | Content Body |
 
-
-
-  @deploy
-  Scenario Outline: Grouped Profiles layout for professor
+  @safe
+  Scenario Outline: Grouped Profiles layout
     Given I am on "people/all/profiles/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
@@ -309,9 +304,8 @@ Feature: Stanford Person layout Views
   | Students | Content Body |
   | Staff    | Content Body |
 
-
-  @deploy
-  Scenario Outline: Grouped List layout for professor
+  @safe
+  Scenario Outline: Grouped List layout
     Given I am on "people/all/list/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
@@ -324,9 +318,8 @@ Feature: Stanford Person layout Views
   | Students | Content Body |
   | Staff    | Content Body |
 
-
-  @deploy
-  Scenario Outline: Grouped Directory layout for professor
+  @safe
+  Scenario Outline: Grouped Directory layout
     Given I am on "people/all/directory/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
@@ -339,9 +332,8 @@ Feature: Stanford Person layout Views
   | Students | Content Body |
   | Staff    | Content Body |
 
-
-  @deploy
-  Scenario Outline: Grouped CAP List layout for students
+  @safe
+  Scenario Outline: Grouped CAP List layout
     Given I am on "people/all/cap-list/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-cap-list" element
@@ -350,7 +342,6 @@ Feature: Stanford Person layout Views
     Examples:
       | Header             | Region       |
       | People             | Content Head |
-      | Graduate Students  | Content Body |
 
 
   @deploy
@@ -541,4 +532,3 @@ Feature: Stanford Person layout Views
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/people"
     Then I should see 1 or more ".views-field-field-s-person-affiliation" elements
-    

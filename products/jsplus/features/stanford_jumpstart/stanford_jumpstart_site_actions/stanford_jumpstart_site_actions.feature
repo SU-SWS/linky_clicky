@@ -6,11 +6,9 @@ Feature: Stanford Jumpstart Site Actions Feature
   Background:
     Given I am logged in as a user with the "administrator" role
 
-  @api @deploy @safe
+  @api @safe
   Scenario: Urls redirect appropriately
     Given I am on "admin/stanford/jumpstart/shortcuts/site-actions/contact-block"
     Then I should be on "block/jumpstart-footer-contact-block/edit"
     Given I am on "admin/stanford/jumpstart/shortcuts/site-actions/social-block"
     Then I should be on "block/jumpstart-footer-social-media--0/edit"
-
-

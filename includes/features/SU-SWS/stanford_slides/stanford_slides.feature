@@ -3,7 +3,7 @@ Feature: Stanford Slides
   As an administrative user
   I want to ensure that the Stanford Slides module is working properly
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Stanford Slides
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-slide"

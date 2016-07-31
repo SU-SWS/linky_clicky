@@ -3,14 +3,14 @@ Feature: Stanford Content Status
   As a content creator
   I need to be able to know which content has a given status
 
-@api @safe @live
+@api @safe
 Scenario: See Content Status and Notes in the node edit form
   Given I am logged in as a user with the "site owner" role
   And I am on "node/add/stanford-page"
   Then I should see "Content Status"
   And I should see "Content Notes"
 
-@api @safe @live @site
+@api @safe
 Scenario: See the Manager Dashbaord
   Given I am logged in as a user with the "site owner" role
   And I am on "admin/stanford/jumpstart/manager-dashboard"

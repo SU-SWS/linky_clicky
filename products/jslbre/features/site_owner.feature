@@ -4,14 +4,14 @@ Feature: Site Owner
   I want to check for my ability to complete my tasks
 
 
-  @api @javascript @safe @deploy @live
+  @api @javascript @safe
   Scenario: Clicking on Manage Content
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
     Then I should see 11 or more "tr" elements
 
-  @api @javascript @safe @deploy @live
+  @api @javascript @safe
   Scenario: Clicking on Manage Users
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -19,7 +19,7 @@ Feature: Site Owner
     Then I should see "People" in the "Branding" region
     And I should see "Howard" in the "Content Body" region
 
-  @api @javascript @dev @content
+  @api @javascript @dev
   Scenario: Add Stanford Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -27,13 +27,14 @@ Feature: Site Owner
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo" for "Title"
     And I press the "Save" button
     Then I should see "Stanford Page Foo has been created" in the "Console" region
     And I should be on "foo"
 
-  @api @javascript @dev @content
+  @api @javascript @dev
   Scenario: Add Private Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -41,13 +42,13 @@ Feature: Site Owner
     Then I should see "Create Private Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     When I click "Show Add/Edit Image"
+    And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo" for "Title"
     And I press the "Save" button
     Then I should see "Private Page Foo has been created" in the "Console" region
-    And I should be on the homepage
 
-  @api @javascript @dev @content
+  @api @javascript @dev
   Scenario: Add Landing Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -57,9 +58,8 @@ Feature: Site Owner
     And I select "Blocks" from "Layout"
     And I press the "Save" button
     Then I should see "Landing Page Foo has been created" in the "Console" region
-    And I should be on "foo"
 
-  @api @javascript @dev @content
+  @api @javascript @dev
   Scenario: Add Gallery
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -94,7 +94,7 @@ Feature: Site Owner
   #   And I go to the homepage
   #   Then I should see "Millennium Falcon" in the "Site Name" region
 
-  @api @javascript @safe @deploy @live
+  @api @javascript @safe
   Scenario: View the Get Help Page
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart"
@@ -107,7 +107,7 @@ Feature: Site Owner
 #  When I click "Request Assistance"
 #    Then I should be on "https://jfe.qualtrics.com/form/SV_1EK9guIGepRtvwh?Name=Lindsey&Email=sws-developers+lindsey%40lists.stanford.edu&URL=https%3A%2F%2Fsites.stanford.edu%2Fsws-build-jsv"
 
-  @api @javascript @safe @deploy @live
+  @api @javascript @safe
   Scenario: View the Ready to Launch page
     Given I am logged in as a user with the "site owner" role
     And I am on "admin/stanford-jumpstart/launch-checklist"
@@ -124,7 +124,7 @@ Feature: Site Owner
 #  When I click "Request Site Launch"
 #    Then I should be on "https://stanforduniversity.qualtrics.com/SE/?SID=SV_01I4MJkFACIhhIN"
 
-  @api @javascript @safe @deploy
+  @api @javascript @safe
   Scenario: Clear caches
     Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear

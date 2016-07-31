@@ -3,13 +3,14 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @destructive @dev @stanford
+  @api @destructive @dev
   Scenario: Enable the Palm News and Events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And the cache has been cleared
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-news-events-selector" button
 
+  @api @destructive @dev
   Scenario Outline: Header content
     Given I am on the homepage
     And the cache has been cleared
@@ -22,6 +23,7 @@ Feature: Homepage
       | Optional Footer Block | Footer |
       | Related Links         | Footer |
 
+  @api @destructive @dev
   Scenario Outline: Homepage content
     Given I am on the homepage
     And the cache has been cleared
@@ -34,6 +36,7 @@ Feature: Homepage
       | Building Name Room 555                          | Footer   |
       | This is your Optional Footer Block              | Footer   |
 
+  @api @destructive @dev
   Scenario Outline: Homepage links
     Given I am on the homepage
     And the cache has been cleared
@@ -42,8 +45,6 @@ Feature: Homepage
     Examples:
       | Link                 | Region                |
       | More about us        | Content 3 column flow |
-      | See more news        | Content 3 column flow |
-      | See more events      | Content 3 column flow |
       | Facebook             | Footer                |
       | Twitter              | Footer                |
       | GooglePlus           | Footer                |

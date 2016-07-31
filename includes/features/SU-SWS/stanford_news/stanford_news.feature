@@ -10,7 +10,7 @@
   @safe
   Scenario: News Item Content type is available
     Given I am on "admin/structure/types"
-    Then I should see "News item"
+    Then I should see "Announcement/News"
     Then I should see "stanford_news_item"
 
   @safe
@@ -35,17 +35,18 @@
     Then the "edit-additional-settings-modes-view-modes-custom-teaser" checkbox should be checked
 
   @safe
-  Scenario: The display modes are set
+  Scenario: The full content display mode
     # Full content display
     Given I am on "admin/structure/types/manage/stanford-news-item/display/full"
     Then I should see "postcard-image group_s_postcard_image"
-    Then I should see "View mode: Large Scaled"
-    Then I should see "Display dates using the Short"
     Then I should see "postcard-postedin group_s_news_postedin"
     Then I want to validate select field option "edit-fields-field-s-image-info-type" default is "Field collection items"
     Then I want to validate select field option "edit-fields-field-s-news-date-type" default is "Date and time"
-    Then I want to validate select field option "edit-fields-field-s-news-source-type" default is "Title, as link (default)"
-    # teaser display
+    Then I want to validate select field option "edit-fields-field-s-news-link-type" default is "Title, as link (default)"
+
+@safe
+    Scenario: The teaser display mode
+        # teaser display
     Given I am on "admin/structure/types/manage/stanford-news-item/display/teaser"
     Then I should see "Trimmed limit: 600 characters"
     Then I want to validate select field option "edit-fields-body-type" default is "Summary or trimmed"
@@ -56,7 +57,7 @@
     Then I should see "News Categories"
     Then I am on "admin/structure/taxonomy/news_categories"
 
-  @safe
+  @dev @destructive
   Scenario: Create news item and validate display
     Given I am on "node/add/stanford-news-item"
     Then I fill in "edit-title" with "Behat Stanford News Item"
@@ -74,10 +75,10 @@
     Then I uncheck the box "path[pathauto]"
     Then I fill in "edit-path-alias" with "[random]"
     Then I press the "Save" button
-    Then I should see "News Item Behat Stanford News Item has been created"
+    Then I should see "Behat Stanford News Item has been created"
     # Display
-    Then I should see 1 ".field-name-field-s-news-date" element
-    Then I should see 1 ".field-name-field-s-news-source" element
+    #Then I should see 1 ".field-name-field-s-news-date" element
+    #Then I should see 1 ".field-name-field-s-news-source" element
     Then I should see 1 ".field-name-body" element
     Then I should see 1 ".field-collection-item-field-s-image-info" element
     Then I should see "This is the image credits field"

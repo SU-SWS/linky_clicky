@@ -13,7 +13,7 @@ Feature: Stanford Jumpstart Plus Layouts Feature
     Then I should see "Main Menu - Primary - 1 Depth"
     Then I should see "Main Menu - Secondary - 2 Depths"
 
-  @safe @deploy
+  @safe
   Scenario: Verify contexts
     Given I am on "admin/structure/context"
     Then I should see "all_pages_but_homepage"
@@ -29,7 +29,7 @@ Feature: Stanford Jumpstart Plus Layouts Feature
   # Do we want to test to see if the blocks are in the right places?
   # Yes
 
-  @safe @deploy
+  @safe
   Scenario: Test enabled contexts for block existance in region
     Given I am on the homepage
     # Sitewide context
@@ -53,8 +53,8 @@ Feature: Stanford Jumpstart Plus Layouts Feature
     Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "Second sidebar" region
     # Past Events
     Then I am on "events/past-events"
-    Then I should see 1 "#block-views-ad215e0528148b386833fa3db1f3b7dc" element in the "Second sidebar" region
-    Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "First sidebar" region
+    Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "Second sidebar" region
+    Then I should see 1 "#block-views-ad215e0528148b386833fa3db1f3b7dc" element in the "First sidebar" region
     # Upcoming Events
     Then I am on "events/upcoming-events"
     Then I should see 1 "#block-views-934c9b9d8d2d2f2b37f050dcd3bba83c" element in the "Second sidebar" region

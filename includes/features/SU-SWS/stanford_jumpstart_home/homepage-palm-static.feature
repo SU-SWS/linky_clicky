@@ -12,13 +12,13 @@ Feature: Palm Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
     Then I should see "Customized design options saved"
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario: Editor should not access Customize Design
     Given I am logged in as a user with the "editor" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario Outline: Header content for palm static
     Given I am on the homepage
     And the cache has been cleared
@@ -31,7 +31,7 @@ Feature: Palm Homepage Layout
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario Outline: Homepage content for plam static
     Given I am on the homepage
     And the cache has been cleared
@@ -44,7 +44,7 @@ Feature: Palm Homepage Layout
     | This is your Highlights block | Content 3 column flow |
     | This is your Announcements block | Content 3 column flow |
 
-  @api @deploy @live @safe
+  @api @safe
   Scenario Outline: Homepage links for palm static
     Given I am on the homepage
     And the cache has been cleared
@@ -56,4 +56,3 @@ Feature: Palm Homepage Layout
     | More about us                 | Content 3 column flow |
     | More information              | Content 3 column flow |
     | Learn more about our programs | Content 3 column flow |
-

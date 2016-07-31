@@ -43,3 +43,4 @@ behat.local.yml
 *.out
 *.out*
 
+composer.phar

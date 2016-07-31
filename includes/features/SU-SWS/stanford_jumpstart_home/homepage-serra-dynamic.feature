@@ -9,7 +9,7 @@ Feature: Serra Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-serra-news-events-selector" button
 
-  @deploy @live @safe
+  @safe
   Scenario Outline: Header content for serra news and events
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -20,7 +20,7 @@ Feature: Serra Homepage Layout
     | Recent News           | Content 3 column flow |
     | Upcoming Events       | Content 3 column flow |
 
-  @deploy @live @safe
+  @safe
   Scenario Outline: Homepage content for serra news and events
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -35,7 +35,7 @@ Feature: Serra Homepage Layout
     | Use this block to list facts or highlight information | Main Top |
     | This is your About block.  | Content 3 column flow |
 
-  @deploy @live @safe
+  @safe
   Scenario Outline: Homepage links for serra news and events
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region
@@ -46,4 +46,3 @@ Feature: Serra Homepage Layout
     | More about us                 | Content 3 column flow |
     | See more news                 | Content 3 column flow |
     | See more events               | Content 3 column flow |
-

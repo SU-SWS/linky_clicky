@@ -8,7 +8,8 @@ imports:
 default:
   extensions:
     Behat\MinkExtension:
-      base_url: https://sites.stanford.edu/sws-build-jse
+      #base_url: https://sites.stanford.edu/sws-build-jse
+      base_url: https://sites.stanford.edu/jse-dev
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.ds_sws-build-jse'
+        alias: 'sse.jse-dev'

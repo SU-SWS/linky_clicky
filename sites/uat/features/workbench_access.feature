@@ -28,3 +28,5 @@ Feature: Workbench Access
     Then I should see "administrator" in the "admin" row
     When I go to "admin/config/workbench/access"
     Then I should see "1 editor" in the "Museum" row
+    # Disable when finished.
+    Given the "workbench_access" module is disabled
