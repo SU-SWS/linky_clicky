@@ -25,13 +25,6 @@ Feature: Administration
     When I go to "admin/stanford-jumpstart"
     Then I should see "Request Assistance"
 
-
-  @api @dev
-  Scenario: Help text and request assistance url changes
-    Given I am logged in as a user with the "administrator" role
-    When I go to "admin/stanford-jumpstart/settings"
-
-
   #TODO: Do we still need this test?
   #@api @dev @destructive
   #Scenario: Help text and request assistance url changes
