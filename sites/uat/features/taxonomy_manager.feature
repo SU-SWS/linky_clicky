@@ -9,6 +9,7 @@ Feature: Taxonomy Manager
     Given the "taxonomy_manager" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/taxonomy_manager/voc/tags"
+    And I wait for AJAX to finish
     When I fill in "Terms" with:
     """
   dog
