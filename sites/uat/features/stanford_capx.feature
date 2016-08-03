@@ -19,7 +19,6 @@ Feature: Stanford CAP Extensible
     When I click "Settings"
     Then I should be on "admin/config/capx/settings"
     And I should see "Organizations & schema"
-    # Fix when typo is fixed
     And I should see "Synchronization settings"
     When I click "Map"
     Then I should be on "admin/config/capx/mapper"
@@ -36,7 +35,6 @@ Feature: Stanford CAP Extensible
     When I click "Create new importer"
     Then I should be on "admin/config/capx/importer/new"
     And I should see "Configuration"
-    # Fix when typo is fixed
     And I should see "Automatic synchronization options (CRON)"
     And I should see "Add groups and individuals"
     When I click "Profiles"
@@ -48,3 +46,13 @@ Feature: Stanford CAP Extensible
     And I should see "CAP data - Choosing fields"
     And I should see "Resources for developers"
     And I should see "Authentication credentials"
+    # Connect to API. Don't commit this to git.
+    # When I go to "admin/config/capx/connect"
+    # And I enter "*********" for "Client ID"
+    # And I enter "***********" for "Password"
+    # And I press the "Save connection settings" button
+    # And I wait for the batch job to finish
+    # Then I should see "Configuration options were saved."
+    # And I should see "Schema information refreshed"
+    # And I should see "Organization codes have been updated."
+    # And I should see "Connected!"
