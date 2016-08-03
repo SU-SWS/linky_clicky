@@ -21,10 +21,10 @@ Feature: BEAN (Block Entities Aren't Nodes)
     And I press the "Save Block type" button
     Then I should see "Foo"
     When I go to "admin/people/permissions"
-    And I check "edit-3-create-any-foo-bean"
-    And I check "edit-3-edit-any-foo-bean"
-    And I check "edit-3-view-any-foo-bean"
-    And I check "edit-3-delete-any-foo-bean"
+    And I check "edit-6-create-any-foo-bean"
+    And I check "edit-6-edit-any-foo-bean"
+    And I check "edit-6-view-any-foo-bean"
+    And I check "edit-6-delete-any-foo-bean"
     And I press the "Save permissions" button
     Then I should see "The changes have been saved." in the "Console" region
     When I go to "block/add/foo"
