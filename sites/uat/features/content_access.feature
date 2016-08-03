@@ -4,7 +4,7 @@ Feature: Content Access
   As an administrative user
   I want to ensure the Content Access module is working properly
 
-  @api @javascript @content @dev @destructive
+  @api @javascript @content @dev @destructive @webauth
   Scenario: Content Access
     Given the "content_access" module is enabled
     And the cache has been cleared
