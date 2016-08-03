@@ -4,9 +4,13 @@ Feature: Stanford Sites Helper Module
   As an administrative user
   I want to ensure the Stanford Sites Helper module is working properly
 
-  @safe @deploy
+  Background:
+    Given I am logged in as a user with the "administrator" role
+
+  @api @safe @deploy
   Scenario Outline: Homepage text content
-    Given I am on the homepage
+    Given I am an anonymous user
+    And I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
 
   Examples:
@@ -19,9 +23,10 @@ Feature: Stanford Sites Helper Module
     | Add functionality and features                                                   | Content Body    |
     | Edit the look and feel of your site                                              | Content Body    |
 
-  @safe @deploy
+  @api @safe @deploy
   Scenario Outline: Homepage header content
-    Given I am on the homepage
+    Given I am an anonymous user
+    And I am on the homepage
     Then I should see the heading "<Header>" in the "<Region>" region
 
   Examples:
@@ -33,8 +38,7 @@ Feature: Stanford Sites Helper Module
 
   @api @safe @deploy
   Scenario: Search box - authenticated user
-    Given I am logged in as a user with the "administrator" role
-    And I am on the homepage
+    Given I am on the homepage
     Then I should see a "#edit-search-block-form--2" element
     When I enter "purple monkey dishwasher" for "Search"
     And I press the "Search" button
@@ -47,9 +51,9 @@ Feature: Stanford Sites Helper Module
 
   @api @javascript @safe @deploy
   Scenario Outline: Quick Steps
-    Given I am logged in as a user with the "administrator" role
-    And I am on the homepage
+    Given I am on the homepage
     When I click "<Link>"
+    And I wait for AJAX to finish
     Then I should see "<Text>"
     When I click "<Second Link>"
     Then I should be on "<Destination>"
@@ -67,8 +71,7 @@ Feature: Stanford Sites Helper Module
 
   @api @safe @deploy
   Scenario Outline: Going Further
-    Given I am logged in as a user with the "administrator" role
-    And I am on the homepage
+    Given I am on the homepage
     When I click "<Link>"
     Then I should be on "<Destination>"
 
@@ -81,8 +84,7 @@ Feature: Stanford Sites Helper Module
 
   @api @safe @sites @deploy
   Scenario: Link to HelpSU for administrative users
-    Given I am logged in as a user with the "administrator" role
-    And I am on "admin"
+    Given I am on "admin"
     Then I should see the heading "Get Help" in the "Help" region
     And I should see "Problems using this service? Submit a HelpSU request." in the "Help" region
     When I click "HelpSU request"
@@ -90,8 +92,7 @@ Feature: Stanford Sites Helper Module
 
   @api @dev @sites @destructive
   Scenario: Stanford Sites Backup and Migrate profile
-    Given I am logged in as a user with the "administrator" role
-    And the "backup_migrate" module is enabled
+    Given the "backup_migrate" module is enabled
     And the cache has been cleared
     And I am on "admin/config/system/backup_migrate"
     Then I want to validate select field option "profile_id" default is "Stanford Sites Profile"
@@ -100,8 +101,7 @@ Feature: Stanford Sites Helper Module
 
   @api @safe @sites @deploy
   Scenario: AFS file storage checking
-    Given I am logged in as a user with the "administrator" role
-    And the "stanford_afs_quota" module is enabled
+    Given the "stanford_afs_quota" module is enabled
     And I am on "admin/reports/status"
     Then I should see "File Storage Limit"
     When I click "Check again" in the "File Storage Limit" row
