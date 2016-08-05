@@ -11,7 +11,7 @@ Feature: Site Owner
     And I click "Manage Content" in the "Admin Shortcuts" region
     Then I should see 11 or more "tr" elements
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Add Landing Page
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -23,7 +23,7 @@ Feature: Site Owner
     Then I should see "Landing Page Foo has been created" in the "Console" region
     And I should be on "foo"
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Edit Contact Information
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
@@ -32,7 +32,7 @@ Feature: Site Owner
     When I press the "Save" button
     Then I should see "stanford_contact Contact Us has been updated" in the "Console" region
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Edit Social Media Links
     Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear
@@ -41,7 +41,7 @@ Feature: Site Owner
     When I press the "Save" button
     Then I should see "stanford_social_media_connect Connect has been updated." in the "Console" region
 
-  @api @javascript
+  @api @javascript @dev @destructive
   Scenario: Edit Site Name
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
