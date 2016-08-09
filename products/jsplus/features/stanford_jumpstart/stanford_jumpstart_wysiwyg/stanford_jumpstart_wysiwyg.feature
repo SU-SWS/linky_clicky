@@ -29,4 +29,4 @@ Feature: Stanford Jumpstart WYSIWYG Feature
     Then I press the "Apply" button
     Then I wait for AJAX to finish
     Then I click on the element with css selector ".views-field-edit-node a"
-    Then I should see 1 "#cke_edit-body-und-0-value" element
+    Then I should see 1 "#edit-body-und-0-value" element
