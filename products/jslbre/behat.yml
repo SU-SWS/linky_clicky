@@ -12,3 +12,11 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: 'sse.lbre-dev'
+
+production:
+    extensions:
+        Behat\MinkExtension:
+            base_url: https://sites.stanford.edu/lbre-production
+        Drupal\DrupalExtension:
+            drush:
+                alias: 'sse.lbre-production'
