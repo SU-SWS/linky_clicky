@@ -8,16 +8,16 @@ Feature: Content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
 
-  Examples:
-    | Header                   | Region                       |
-    | About                    | Footer                       |
-    | Chapters                 | Footer                       |
-    | Actions                  | Footer                       |
-    | Other Policy Handbooks   | Footer                       |
-    | About the Guide          | Content 2 column stacked (1) |
-    | Chapters                 | Content 2 column stacked (1) |
-    | Commonly Viewed Policies | Content 2 column stacked (1) |
-    | Browse by Category       | Content 2 column stacked (2) |
+    Examples:
+      | Header                   | Region                       |
+      | About                    | Footer                       |
+      | Chapters                 | Footer                       |
+      | Actions                  | Footer                       |
+      | Related Resources        | Footer                       |
+      | About the Guide          | Content 2 column stacked (1) |
+      | Chapters                 | Content 2 column stacked (1) |
+      | Commonly Viewed Policies | Content 2 column stacked (1) |
+      | Browse by Category       | Content 2 column stacked (2) |
 
   @safe @live @site
   Scenario: What's New page content
