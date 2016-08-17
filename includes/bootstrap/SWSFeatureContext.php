@@ -229,7 +229,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $mink = $this->minkContext;
 
     $mink->getSession()->getDriver()->evaluateScript(
-    "jQuery('#block-menu-menu-admin-shortcuts ul.nav li.first.last, #block-menu-menu-admin-shortcuts ul.nav li.expanded:first').find('ul').show().css('z-index', '1000');"
+    "jQuery('#block-menu-menu-admin-shortcuts ul.nav li.first.last, #block-menu-menu-admin-shortcuts ul.nav li.expanded:first, #block-menu-menu-admin-shortcuts-site-action ul.nav li.expanded:first').find('ul').show().css('z-index', '1000');"
     );
 
     $mink->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
