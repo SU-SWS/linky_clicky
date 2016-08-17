@@ -12,7 +12,5 @@ Feature: Page not Found - 404
     When I click "Homepage"
     Then I should be on the homepage
     When I move backward one page
-    And I wait 10 seconds
     And I click "Search this site..."
-    And I wait 10 seconds
     Then I should be on "search/content"
