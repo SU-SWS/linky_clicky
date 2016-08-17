@@ -18,8 +18,10 @@ Feature: Ensure Site Owners can add, edit and delete users
   Then I should see "Created a new user account for deleteMe" in the "Console" region
   And I am on "admin/people"
   Then I should see the text "deleteMe" in the "Content Body" region
-  And I am on "user/deleteMe"
+  And I am on "users/deleteMe"
   And I click "Edit" in the "Content Head" region
   And I press the "Cancel account" button
-  And I select the radio button "edit-user-cancel-method--5"
+  And I select the radio button "Delete the account and its content."
   And I press the "Cancel account" button
+  And I wait 2 seconds
+  Then I should see "deleteMe has been deleted" in the "Console" region
