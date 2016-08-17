@@ -29,7 +29,7 @@ Feature: Ensure Site Owners can create and delete people
   Then I should see the text "Person Foo Bar has been deleted" in the "Console" region
 
   @api @dev @destructive @javascript
-  Scenario: Create, edit, then delete people as site owner
+  Scenario: Create people as site owner, edit as editor, then delete as site owner
   Given I am logged in as a user with the "site owner" role
   When I wait for the Site Actions drop down to appear
   And I click "Add Person" in the "Admin Shortcuts" region

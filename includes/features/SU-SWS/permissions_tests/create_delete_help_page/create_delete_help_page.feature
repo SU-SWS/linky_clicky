@@ -1,7 +1,7 @@
 Feature: Ensure Site Owners can create and delete help pages
-  In order to ensure that site owners can create, edit and delete people
+  In order to ensure that site owners can create, edit and delete the help page
   As a site owner
-  I want to be able create, edit and delete people
+  I want to be able create, edit and delete the help page
 
   @api @dev @destructive @javascript
   Scenario: Create, edit, then delete a help page as site owner

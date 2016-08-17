@@ -1,4 +1,4 @@
-Feature: Ensure Site Owners can create and delete event series, Editors can edit events
+Feature: Ensure Site Owners can create and delete event series, Editors can edit event series
   In order to ensure that site owners can create, edit and delete event series, Editors can edit events
   As a site owner
   I want to be able create, edit and delete event series
@@ -26,7 +26,7 @@ Feature: Ensure Site Owners can create and delete event series, Editors can edit
   Then I should see the text "Stanford Event Series Bar has been deleted" in the "Console" region
 
   @api @dev @destructive @javascript
-  Scenario: Create, edit, then delete event series as site owner
+  Scenario: Create event series as site owner, edit as editor, then delete event series as site owner
   Given I am logged in as a user with the "site owner" role
   When I wait for the Site Actions drop down to appear
   And I click "Add Event Series" in the "Admin Shortcuts" region

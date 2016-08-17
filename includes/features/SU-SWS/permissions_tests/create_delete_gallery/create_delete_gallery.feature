@@ -7,7 +7,7 @@ Feature: Ensure Site Owners can create and delete galleries
   Given I am logged in as a user with the "site owner" role
 
   @api @dev @destructive @javascript
-  Scenario: Create, edit, then delete gallery
+  Scenario: Create, edit, then delete gallery as site owner
   When I wait for the Site Actions drop down to appear
   And I click "Add Gallery" in the "Admin Shortcuts" region
   Then I should see "Create Gallery" in the "Branding" region
@@ -28,7 +28,7 @@ Feature: Ensure Site Owners can create and delete galleries
   Then I should see the text "Gallery Bar has been deleted" in the "Console" region
 
   @api @dev @destructive @javascript
-  Scenario: Create, edit, then delete gallery
+  Scenario: Create as site owner, edit as editor, then delete gallery as site owner
   When I wait for the Site Actions drop down to appear
   And I click "Add Gallery" in the "Admin Shortcuts" region
   Then I should see "Create Gallery" in the "Branding" region

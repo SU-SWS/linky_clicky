@@ -1,7 +1,7 @@
 Feature: Ensure Site Owners and Editors can access manage all pages
-  In order to ensure that site owners can create, edit and delete people
-  As a site owner
-  I want to be able create, edit and delete people
+  In order to ensure that site owners can access manage all pages
+  As a site owner or editor
+  I want to be able to access manage all pages
 
   @api @safe @javascript
   Scenario: Access manage all content as a site owner
@@ -17,7 +17,7 @@ Feature: Ensure Site Owners and Editors can access manage all pages
   Then I should see "Edit" in the "Branding" region
 
   @api @safe @javascript
-  Scenario: Access manage all content as a site owner
+  Scenario: Access manage all content as a editor
   Given I am logged in as a user with the "editor" role
   When I wait for the Site Actions drop down to appear
   And I click "Manage Content" in the "Admin Shortcuts" region
