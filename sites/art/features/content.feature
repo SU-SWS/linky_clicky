@@ -8,17 +8,17 @@ Feature: Content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
     Examples:
-      | Header                     | Region                |
-      | Department Programs        | Content Body          |
-      | News                       | Content 4 column flow |
-      | Featured Events            | Content 4 column flow |
-      | Upcoming Exhibitions       | Content 4 column flow |
-      | Department Work            | Content Lower         |
-      | About                      | Footer                |
-      | Programs                   | Footer                |
-      | News and Events            | Footer                |
-      | Information For            | Footer                |
-      | Art & Architecture Library | Footer                |
+      | Header                           | Region                |
+      | Department Programs              | Content Body          |
+      | News                             | Content 4 column flow |
+      | Featured Events                  | Content 4 column flow |
+      | Current Exhibitions              | Content 4 column flow |
+      | Department Work                  | Content Lower         |
+      | About                            | Footer                |
+      | Programs                         | Footer                |
+      | News and Events                  | Footer                |
+      | Information For                  | Footer                |
+      | Bowes Art & Architecture Library | Footer                |
 
   @safe @live @site
   Scenario: About the Department page content
