@@ -10,7 +10,7 @@ Scenario Outline: Homepage block and footer content
 
   Examples:
   | Header                            | Region                |
-  | Departments, Institutes and Labs  | Content 3 column flow |
+  | About the School                  | Content 3 column flow |
   | Recent News                       | Content 3 column flow |
   | Research                          | Content 3 column flow |
 
