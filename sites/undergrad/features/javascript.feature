@@ -3,10 +3,10 @@ Feature: Javascript
   As an end user
   I want to interact with dynamic Javascript elements on the page
 
-@javascript @safe @live @site
-Scenario: Homepage carousel
-  Given I am on the homepage
-  When I click "›" in the "Main Upper" region
-  And I wait 2 seconds
-  When I click "‹" in the "Main Upper" region
-  And I wait 2 seconds
+  @javascript @safe @live @site
+  Scenario: Homepage carousel
+    Given I am on the homepage
+    When I click "›" in the "Main Upper" region
+    And I wait 2 seconds
+    When I click "‹" in the "Main Upper" region
+    And I wait 2 seconds

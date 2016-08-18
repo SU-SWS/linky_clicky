@@ -3,7 +3,7 @@ Feature: Site Owner
   As a Site Owner
   I want to check that I can access, edit, and create site content
 
-  @api @javascript
+  @api @javascript @safe
   Scenario: Clicking on Manage Content
     Given I am logged in as a user with the "site owner" role
     And I wait for the Site Actions drop down to appear

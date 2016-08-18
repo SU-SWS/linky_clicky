@@ -3,6 +3,7 @@ Feature: Academics
   As an end user
   I want to check for the existence of page and block content
 
+  @safe @live
   Scenario: Viewing a featured image on the Undergraduate Programs page
     Given I am on "academics/undergraduate-program"
     Then I should see "Aly Bossert (BA, 2010) helps out at an information reception for prospective freshmen." in the "Content Body" region
@@ -12,6 +13,7 @@ Feature: Academics
     And I should see the heading "Coterminal Masters" in the "Content Body" region
     And I should see the heading "Study Abroad" in the "Content Body" region
 
+  @safe @live
   Scenario: Viewing a postcard block on the Graduate Programs page
     Given I am on "academics/graduate-programs"
     Then I should see the link "Doctoral Program" in the "First sidebar" region
@@ -21,6 +23,7 @@ Feature: Academics
     And I should see the link "Forms" in the "First sidebar" region
     And I should see the link "Resources" in the "First sidebar" region
 
+  @safe @live
   Scenario: Clicking the sidebar menu
     Given I am on "academics/graduate-programs"
     And I click "Overview" in the "First sidebar" region
