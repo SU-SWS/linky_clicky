@@ -16,3 +16,4 @@ Feature: Ensure Site Owners and Editors can clear the site cache
     When I wait for the Site Actions drop down to appear
     And I click "Clear Site Cache" in the "Admin Shortcuts" region
     Then I should see "Site Cache Cleared" in the "Console" region
+    
