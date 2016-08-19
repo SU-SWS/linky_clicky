@@ -1,13 +1,15 @@
-Feature: Ensure Site Owners can create and delete galleries
-  In order to ensure that a site owners can create, edit and delete galleries
+Feature: Ensure Site Owners can create and delete galleries, editors can edit galleries
+  In order to ensure that a site owners can create, edit and delete galleries and editors can edit galleries but not delete them
   As a site owner
   I want to be able create, edit and delete galleries
+  As an editor
+  I want to be able to edit any galleries
 
   Background:
   Given I am logged in as a user with the "site owner" role
 
   @api @dev @destructive @javascript
-  Scenario: Create, edit, then delete gallery as site owner
+  Scenario: Ensure site owners can create, edit and delete galleries
   When I wait for the Site Actions drop down to appear
   And I click "Add Gallery" in the "Admin Shortcuts" region
   Then I should see "Create Gallery" in the "Branding" region
@@ -28,7 +30,7 @@ Feature: Ensure Site Owners can create and delete galleries
   Then I should see the text "Gallery Bar has been deleted" in the "Console" region
 
   @api @dev @destructive @javascript
-  Scenario: Create as site owner, edit as editor, then delete gallery as site owner
+  Scenario: Ensure editors can edit any gallery, should not be able to delete.
   When I wait for the Site Actions drop down to appear
   And I click "Add Gallery" in the "Admin Shortcuts" region
   Then I should see "Create Gallery" in the "Branding" region
@@ -45,6 +47,8 @@ Feature: Ensure Site Owners can create and delete galleries
   And I press the "Save" button
   Then I should see "Gallery Bar has been updated" in the "Console" region
   And I should be on "bar"
+  When I click "Edit" in the "Content Head" region
+  I should not see an "#edit-delete" eleme
   Given I am logged in as a user with the "site owner" role
   And I am on "/bar"
   And I click "Edit" in the "Content Head" region

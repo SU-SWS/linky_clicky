@@ -1,7 +1,9 @@
-Feature: Ensure Site Owners and Editors can create, edit and delete events
-  In order to ensure that site owners and editors can create, edit and delete events
-  As a user with site permissions
-  I want to be able create, edit and delete events
+Feature: Ensure Site Owners can create, edit and delete any events. Ensure editors can create and delete their own events, edit any events.
+  In order to ensure site owners and editors have their respective permissions
+  As a Site Owner
+  I want to be able to create, edit and delete any events
+  As an Editor
+  I want to be able to create and delete my own events, edit any events
 
   @api @dev @destructive @javascript
   Scenario: Ensure site owners can create, edit and delete their own events
