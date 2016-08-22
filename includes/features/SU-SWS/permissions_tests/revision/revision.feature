@@ -4,7 +4,7 @@ Feature: Ensure Site Owners and Editors can create, change and edit revisions
   I want to be able to go to previous revisions, delete revisions and create revisions
 
     @api @dev @destructive @javascript
-    Scenario: Create, change and delete revision as site owner
+    Scenario: Ensure Site Owners can create, edit, revert back and delete their own revisions
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
@@ -28,7 +28,7 @@ Feature: Ensure Site Owners and Editors can create, change and edit revisions
     Then I should see "has been deleted" in the "Console" region
 
     @api @dev @destructive @javascript
-    Scenario: Create, change and delete revision as editor
+    Scenario: Ensure editors can create, edit and revert back their own revisions
     Given I am logged in as a user with the "editor" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
@@ -49,7 +49,7 @@ Feature: Ensure Site Owners and Editors can create, change and edit revisions
     Then I should see "has been reverted back" in the "Console" region
 
     @api @dev @destructive @javascript
-    Scenario: Create revision as site owner, revise back as editor
+    Scenario: Ensure editors can create revisions to any content
     Given I am logged in as a user with the "site owner" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
@@ -73,7 +73,7 @@ Feature: Ensure Site Owners and Editors can create, change and edit revisions
 
 
     @api @dev @destructive @javascript
-    Scenario: Create revision as editor, revise back and delete revision as site owner
+    Scenario: Ensure site owners can edit and delete any revision
     Given I am logged in as a user with the "editor" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
