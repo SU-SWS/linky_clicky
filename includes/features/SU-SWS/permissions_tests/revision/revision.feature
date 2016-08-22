@@ -28,7 +28,7 @@ Feature: Ensure Site Owners and Editors can create, change and edit revisions
     Then I should see "has been deleted" in the "Console" region
 
     @api @dev @destructive @javascript
-    Scenario: Ensure editors can create, edit and revert back their own revisions
+    Scenario: Ensure editors can create, edit and revert back and delete their own revisions
     Given I am logged in as a user with the "editor" role
     When I wait for the Site Actions drop down to appear
     And I click "Manage Content" in the "Admin Shortcuts" region
@@ -47,6 +47,9 @@ Feature: Ensure Site Owners and Editors can create, change and edit revisions
     And I click on the element with css selector ".diff-revision:last-child td a[href$='revert']"
     And I click on the element with css selector "#edit-submit"
     Then I should see "has been reverted back" in the "Console" region
+    And I click on the element with css selector ".diff-revision:nth-child(2) td a[href$='delete']"
+    And I click on the element with css selector "#edit-submit"
+    Then I should see "has been deleted" in the "Console" region
 
     @api @dev @destructive @javascript
     Scenario: Ensure editors can create revisions to any content
