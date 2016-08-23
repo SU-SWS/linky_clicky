@@ -3,7 +3,7 @@ Feature: Stanford Courses
   As an administrative user
   I want to ensure that the Stanford Courses module is working properly
 
-  @api @safe
+  @api @safe @javascript
   Scenario: Verify Stanford Courses is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/modules"
@@ -25,7 +25,7 @@ Feature: Stanford Courses
   @live
   Scenario: Finding a specific course and seeing it has multiple sections
     Given I am on "courses"
-    When I enter "e" for "Search all courses by keyword"
+    When I enter "english" for "Search all courses by keyword"
     And I press "Go"
     Then I should see "ENGLISH 9CE" in the "Content Body" region
     When I enter "Underwater basketweaving" for "Search all courses by keyword"
