@@ -75,11 +75,11 @@ As evidenced in the analysis above, our testing needs are complex. We will need 
 When using Behat to test functionality we need to recognize its capabilities and limitations. 
 
 <table>
-  <th>
+  <tr>
     <td>Functionality</td>
     <td>Yes, Some, or No</td>
     <td>Comments</td>
-  </th>
+  </tr>
   <tr>
     <td>Behaviour</td>
     <td>Yes</td>
@@ -243,11 +243,11 @@ If you want to explore other uses of tags, [Learn about d.o tags] (https://www.d
 Suites target the various phases of the product and site life cycles.
 
 <table>
-  <th>
+  <tr>
     <td>Suite</td>
     <td>Runs only...</td>
     <td>Excludes (~)</td>
-  </th>
+  </tr>
   <tr>
     <td>default</td>
     <td>@safe</td>
@@ -293,10 +293,10 @@ Suites target the various phases of the product and site life cycles.
 * Namespace any feature that is specific to a product or site by pre-pending it with the site or product name.
 
 <table>
-  <th>
+  <tr>
     <td>Structure</td>
     <td>Naming convention</td>
-  </th>
+  </tr>
   <tr>
     <td>Product or Site Directory</td>
     <td> site name | product name
