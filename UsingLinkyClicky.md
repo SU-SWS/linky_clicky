@@ -111,28 +111,28 @@ The Linky Clicky repository is structured as follows:
 
 
 linky_clicky
->environment
->products
-    >productname
-        >features
-            >featurename.feature
->sites
-    >sitename
-        >behat.yml
-        >behat.local.yml
-        >features
-            >featurename.feature
-            >bootstrap
-                >FeatureContext.php
-                >SWSFeatureContext.php
-                >SWSDrupalContext.php
-                >SWSMinkContext.php
->includes
-    >features
-        >namespace
-          >feature
-            >featurename.feature
->uat
+|--environment
+|--products
+    |--productname
+        |--features
+            |--featurename.feature
+|--sites
+    |--sitename
+        |--behat.yml
+        |--behat.local.yml
+        |--features
+            |--featurename.feature
+            |--bootstrap
+                |--FeatureContext.php
+                |--SWSFeatureContext.php
+                |--SWSDrupalContext.php
+                |--SWSMinkContext.php
+|--includes
+    |--features
+        |--namespace
+            |--feature
+                |--featurename.feature
+|--uat
 
 ### Our Organizing Structures for Linky Clicky
 
