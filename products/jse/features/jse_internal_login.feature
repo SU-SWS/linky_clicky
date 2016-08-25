@@ -4,7 +4,7 @@ Feature: Ensure Site Owners can edit the internal login button
   I want to be able to configure and customize the internal login button
 
   @api @dev @destructive @javascript
-  Scenario: Site owners can edit their internal login buttons
+  Scenario: Site owners can edit the internal login buttons
   Given I am logged in as a user with the "site owner" role
   And I am on "admin/structure/block/manage/stanford_private_page/stanford_internal_login"
   And I fill in "edit-internal-login-title" with "asdf"
