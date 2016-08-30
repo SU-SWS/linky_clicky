@@ -24,6 +24,7 @@ Feature: Contextual Block Class
     And I press the "Save" button
     And I go to "admin/structure/block/manage/system/powered-by/configure"
     And I click "Contextual Block Class(es)"
+    # Collapsed fieldset
     And I wait for AJAX to finish
     And I enter "cbc-test-class" for "cbc-test-context"
     And I select "Footer" from "Stanford Light (default theme)"
