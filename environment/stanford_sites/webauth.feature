@@ -5,6 +5,6 @@ Feature: Webauth login
 
   @safe
   Scenario: Verify that /user page has the appropriate content
-    Given I am on "user"
-    Then I should see the text "WebAuth Login"
-    And I should see the text "Local User Login"
+  Given I am on "user"
+  Then I should see the text "WebAuth Login"
+  And I should see the text "Local User Login"

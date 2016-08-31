@@ -36,7 +36,7 @@ Feature: Every page will be checked for the following regions, elements and func
   @safe
   Scenario: Verify that /user page has the appropriate content
     Given I am on "user"
-    Then I should see the text "Local User Login"
+    Then I should see the text "Login"
 
   @safe @javascript
   Scenario: Verify that entering a search yields the correct result
