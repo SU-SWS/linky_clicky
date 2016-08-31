@@ -87,6 +87,7 @@ Feature: Ensure Site Owners can create and delete, editors can edit landing page
 
   @api @dev @destructive @javascript
   Scenario: Ensure editors can edit landing pages
+  Given I am logged in as a user with the "site owner" role
   When I wait for the Site Actions drop down to appear
   And I click "Add Landing Page" in the "Admin Shortcuts" region
   Then I should see "Create Landing Page" in the "Branding" region

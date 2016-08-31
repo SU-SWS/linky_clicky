@@ -29,8 +29,9 @@ Feature: Ensure Site Owners can create and delete event series, Editors can edit
 
   @safe
   Scenario: Site editor is denied access to add an Event series node
-    When I go to "node/add/stanford-event-series"
-    Then I should see "Access denied"
+  Given I am logged in as a user with the "editor" role
+  When I go to "node/add/stanford-event-series"
+  Then I should see "Access denied"
 
   @api @dev @destructive @javascript
   Scenario: Ensure editors can edit event series, should not be able to delete them.
