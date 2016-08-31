@@ -13,7 +13,7 @@ Feature: Ensure Site Owners can create, edit and delete pages, editors can edit 
   Then I should see "Create Stanford Page" in the "Branding" region
   And the "Text format" field should contain "content_editor_text_format"
   When I click "Show Add/Edit Image"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I should see "Source Info" in the "Content Body" region
   Then I fill in "edit-title" with "Foo"
   And I press the "Save" button
@@ -37,7 +37,7 @@ Feature: Ensure Site Owners can create, edit and delete pages, editors can edit 
   Then I should see "Create Stanford Page" in the "Branding" region
   And the "Text format" field should contain "content_editor_text_format"
   When I click "Show Add/Edit Image"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I should see "Source Info" in the "Content Body" region
   Then I fill in "edit-title" with "Foo"
   And I press the "Save" button

@@ -13,7 +13,7 @@ Feature: Ensure site owners can import events
   And I select "Chi Omega" from "edit-s-events-organization"
   And I select the radio button "Unlisted"
   And I press the "Save" button
-  And I wait 2 seconds
+  And I wait for the batch job to finish
   Then I should be on "foo"
   And I should see "Stanford Event Importer Foo has been created" in the "Console" region
   And I click "Edit" in the "Content Head" region
