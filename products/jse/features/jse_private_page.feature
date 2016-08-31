@@ -23,10 +23,6 @@ Feature: Ensure Site Owners can create private pages
   And I click on the element with css selector "#edit-delete"
   And I click on the element with css selector "#edit-submit"
   Then I should see the text "Private Page Bar has been deleted" in the "Console" region
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/5.x
 
   @api @dev @destructive @javascript
   Scenario: Editors can edit and view private pages

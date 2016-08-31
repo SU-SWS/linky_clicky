@@ -50,7 +50,7 @@ Feature: Ensure Site Owners can create, edit and delete pages, editors can edit 
   And I press the "Save" button
   Then I should see "Stanford Page Bar has been updated" in the "Console" region
   And I should be on "bar"
-  Given I am logged in as a user with the "site owner role"
+  Given I am logged in as a user with the "site owner" role
   And I am on "bar"
   And I click "Edit" in the "Content Head" region
   And I click on the element with css selector "#edit-delete"

@@ -27,6 +27,11 @@ Feature: Ensure Site Owners can create and delete event series, Editors can edit
   And I click on the element with css selector "#edit-submit"
   Then I should see the text "Stanford Event Series Bar has been deleted" in the "Console" region
 
+  @safe
+  Scenario: Site editor is denied access to add an Event series node
+    When I go to "node/add/stanford-event-series"
+    Then I should see "Access denied"
+
   @api @dev @destructive @javascript
   Scenario: Ensure editors can edit event series, should not be able to delete them.
   Given I am logged in as a user with the "site owner" role
