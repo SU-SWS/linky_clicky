@@ -3,6 +3,7 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
+  @safe @live
   Scenario Outline: Header content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region
@@ -21,6 +22,7 @@ Feature: Homepage
       | Location                                           | Footer                |
       | Contact Us                                         | Footer                |
 
+  @safe @live
   Scenario Outline: Homepage content
     Given I am on the homepage
     Then I should see "<Text>" in the "<Region>" region
@@ -30,6 +32,7 @@ Feature: Homepage
       | With these annual lectures             | Content Lower |
       | Stay connected to Classics @ Stanford. | Content Lower |
 
+  @safe @live
   Scenario Outline: Homepage links
     Given I am on the homepage
     Then I should see the link "<Link>" in the "<Region>" region

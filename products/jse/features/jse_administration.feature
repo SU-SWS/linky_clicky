@@ -3,21 +3,25 @@ Feature: Administration
   As an administrator, site owner, or editor
   I want to check for the access to and options available on adminstration pages.
 
-  @api @deploy
-  Scenario: Editor denied access to Jumpstart help
+  @api @safe
+  Scenario: Editor access to Jumpstart help
     Given I am logged in as a user with the "editor" role
-    When I go to "admin/stanford-jumpstart"
+    When I go to "admin/stanford-jumpstart/settings"
+    Then I should see "Jumpstart User Guide"
     Then I should see "Request Assistance"
 
-  @api @deploy
-  Scenario: Site Owner denied access to Jumpstart help
+  @api @safe
+  Scenario: Site Owner access to Jumpstart help
     Given I am logged in as a user with the "site owner" role
-    When I go to "admin/stanford-jumpstart"
+    When I go to "admin/stanford-jumpstart/settings"
+    Then I should see "Jumpstart User Guide"
     Then I should see "Request Assistance"
 
-  @api @deploy
+  @api @safe
   Scenario: Administrator access to Jumpstart help
     Given I am logged in as a user with the "administrator" role
+    When I go to "admin/stanford-jumpstart/settings"
+    Then I should see "Jumpstart User Guide"
     When I go to "admin/stanford-jumpstart"
     Then I should see "Request Assistance"
 

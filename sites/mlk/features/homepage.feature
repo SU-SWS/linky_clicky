@@ -3,10 +3,12 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
+  @safe @live
   Scenario: Site title
     Given I am on the homepage
     Then I should see "The Martin Luther King, Jr. Research and Education Institute" in the "Header" region
 
+  @safe @live
   Scenario Outline: Header content
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region

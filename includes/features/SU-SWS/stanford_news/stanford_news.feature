@@ -35,7 +35,7 @@
     Then the "edit-additional-settings-modes-view-modes-custom-teaser" checkbox should be checked
 
   @safe
-  Scenario: The display modes are set
+  Scenario: The full content display mode
     # Full content display
     Given I am on "admin/structure/types/manage/stanford-news-item/display/full"
     Then I should see "postcard-image group_s_postcard_image"
@@ -43,8 +43,12 @@
     Then I want to validate select field option "edit-fields-field-s-image-info-type" default is "Field collection items"
     Then I want to validate select field option "edit-fields-field-s-news-date-type" default is "Date and time"
     Then I want to validate select field option "edit-fields-field-s-news-link-type" default is "Title, as link (default)"
-    # teaser display
+
+@safe
+    Scenario: The teaser display mode
+        # teaser display
     Given I am on "admin/structure/types/manage/stanford-news-item/display/teaser"
+    Then I should see "Trimmed limit: 600 characters"
     Then I want to validate select field option "edit-fields-body-type" default is "Summary or trimmed"
 
   @safe

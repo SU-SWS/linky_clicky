@@ -36,8 +36,7 @@ Feature: Every page will be checked for the following regions, elements and func
   @safe
   Scenario: Verify that /user page has the appropriate content
     Given I am on "user"
-    Then I should see the text "WebAuth Login"
-    And I should see the text "Local User Login"
+  #  And I should see the text "Local User Login"
 
   @safe @javascript
   Scenario: Verify that entering a search yields the correct result
@@ -47,5 +46,5 @@ Feature: Every page will be checked for the following regions, elements and func
     And I press the "Search" button
     And I wait 2 seconds
     Then I should be on "search/node/purple%20monkey%20dishwasher"
-    And I should see the heading "Your search did not yield any results"
-    And I should see "Remove quotes around phrases to match each word individually:"
+    And I should see the heading "Search"
+    And I should see "Remove quotes"

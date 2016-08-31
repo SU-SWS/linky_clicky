@@ -26,6 +26,7 @@ Feature: External Repository Update Status
   @api @safe @deploy
   Scenario: End users should not be able to enable ERUS
     Given the "erus" module is disabled
+    And the "update" module is disabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/modules"
     Then I should not see a "edit-modules-administration-erus-enable" element
