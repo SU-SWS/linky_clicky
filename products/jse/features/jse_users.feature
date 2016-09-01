@@ -23,5 +23,5 @@ Feature: Ensure Site Owners can add, edit and delete users
   And I press the "Cancel account" button
   And I select the radio button "Delete the account and its content."
   And I press the "Cancel account" button
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I should see "deleteMe has been deleted" in the "Console" region
