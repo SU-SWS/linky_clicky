@@ -36,7 +36,7 @@ Feature: Every page will be checked for the following regions, elements and func
   @safe
   Scenario: Verify that /user page has the appropriate content
     Given I am on "user"
-  #  And I should see the text "Local User Login"
+    Then I should see the text "Login"
 
   @safe @javascript
   Scenario: Verify that entering a search yields the correct result
@@ -46,5 +46,5 @@ Feature: Every page will be checked for the following regions, elements and func
     And I press the "Search" button
     And I wait 2 seconds
     Then I should be on "search/node/purple%20monkey%20dishwasher"
-    And I should see the heading "Search"
+    And I should see "Search" in the "Content Head" region
     And I should see "Remove quotes"
