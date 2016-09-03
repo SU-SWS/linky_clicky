@@ -19,4 +19,4 @@ Feature: Ensure Site Owners can edit the page url
   And I click "Edit" in the "Content Head" region
   And I click on the element with css selector "#edit-delete"
   And I click on the element with css selector "#edit-submit"
-  Then I should see the text "Landing Page Bar has been deleted" in the "Console" region
+  Then I should see the text "Stanford Page Foo has been deleted" in the "Console" region
