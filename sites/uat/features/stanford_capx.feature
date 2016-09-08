@@ -11,15 +11,13 @@ Feature: Stanford CAP Extensible
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx"
     Then I should see "Not Connected"
-    When I click "CAPx connection"
-    Then I should be on "admin/config/capx/connect"
+    When I click "CAPx settings"
+    Then I should be on "admin/config/capx/settings"
     And I should see "Please enter your authentication information for the CAP API."
     When I click "Show Advanced"
     Then I should see "Advanced setting for CAP API and authentication URIs"
     When I click "Settings"
     Then I should be on "admin/config/capx/settings"
-    And I should see "Organizations & schema"
-    And I should see "Synchronization settings"
     When I click "Map"
     Then I should be on "admin/config/capx/mapper"
     And I should see "After you have connected to CAP, create a Mapping to link CAP’s fields with your fields."
@@ -47,12 +45,11 @@ Feature: Stanford CAP Extensible
     And I should see "Resources for developers"
     And I should see "Authentication credentials"
     # Connect to API. Don't commit this to git.
-    # When I go to "admin/config/capx/connect"
+    # When I go to "admin/config/capx/settings"
     # And I enter "*********" for "Client ID"
     # And I enter "***********" for "Password"
-    # And I press the "Save connection settings" button
+    # And I press the "Save settings" button
     # And I wait for the batch job to finish
-    # Then I should see "Configuration options were saved."
+    # Then I should see "Configuration options saved."
     # And I should see "Schema information refreshed"
     # And I should see "Organization codes have been updated."
-    # And I should see "Connected!"
