@@ -30,7 +30,9 @@ Scenario: Homepage carousel
  @javascript @live
  Scenario: Homepage carousel works with ">" and "<"
   Given I am on the homepage
-  When I click "›" in the "Main Upper" region
+  When I press the "›" button
   And I wait 2 seconds
-  When I click "‹" in the "Main Upper" region
+  Then I should see a ".slide-title" element
+  When I press the "‹" button
   And I wait 2 seconds
+  Then I should see a ".slide-title" element
