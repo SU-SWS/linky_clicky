@@ -4,7 +4,7 @@ Feature: Chaos Tools
   As an administrative user
   I want to ensure the Chaos Tools module is working properly
 
-  @api @deploy @safe
+  @api @deploy @safe @javascript
   Scenario: Chaos Tools
     Given the "ctools" module is enabled
     And I am logged in as a user with the "administrator" role

@@ -7,7 +7,7 @@ Feature: Stanford Sites Helper Module
   Background:
     Given I am logged in as a user with the "administrator" role
 
-  @api @safe @deploy
+  @api @safe @deploy @javascript
   Scenario Outline: Homepage text content
     Given I am an anonymous user
     And I am on the homepage
@@ -36,7 +36,7 @@ Feature: Stanford Sites Helper Module
     | More advanced tasks:                   | Content Body  |
     | Going further:                         | Content Body  |
 
-  @api @safe @deploy
+  @api @safe @deploy @javascript
   Scenario: Search box - authenticated user
     Given I am on the homepage
     Then I should see a "#edit-search-block-form--2" element

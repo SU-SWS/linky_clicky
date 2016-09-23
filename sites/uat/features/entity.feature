@@ -4,7 +4,7 @@ Feature: Entity API
   As an administrative user
   I want to ensure that the Entity API module is working properly
 
-  @api @safe @deploy
+  @api @safe @deploy @javascript
   Scenario: Entity API
     Given the "entity" module is enabled
     And I am logged in as a user with the "administrator" role
