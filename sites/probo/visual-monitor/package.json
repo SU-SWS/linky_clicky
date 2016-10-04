@@ -1,0 +1,36 @@
+{
+  "name": "generator-shoov",
+  "version": "0.4.6",
+  "description": "Shoov generator.",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "shoov/generator-shoov",
+  "author": {
+    "name": "Gizra",
+    "email": "info@gizra.com",
+    "url": "https://github.com/Gizra"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "visual-regression",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^1.1.0",
+    "fs-extra": "^0.22.1",
+    "glob": "^5.0.14",
+    "opn": "^3.0.2",
+    "tilde-expansion": "0.0.0",
+    "yeoman-generator": "^0.20.2",
+    "shoov-webdrivercss": "~0.1.8",
+    "yosay": "^1.0.5"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
