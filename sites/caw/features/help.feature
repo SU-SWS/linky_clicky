@@ -3,16 +3,16 @@ Feature: Help Content Type
   As a site admin
   I want to have a Help content type and menu structure behind webauth
 
-@api @safe @live @stanford
-Scenario: Create Help Content type and Menu item
- Given I am logged in as a user with the "administrator" role
- And I am on "/node/add/stanford-help-page"
- Then I should see the heading "Create Help Page"
- And I check "Provide a menu link"
- Then I should see "Help for Cardinal at Work"
+  @api @safe @live @stanford
+  Scenario: Create Help Content type and Menu item
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/node/add/stanford-help-page"
+    Then I should see the heading "Create Help Page"
+    And I check "Provide a menu link"
+    Then I should see "Help for Cardinal at Work"
 
-@api @safe @live @site
-Scenario: See existing Help content
- Given I am logged in as a user with the "administrator" role
- And I am on "/node/157"
- Then I should see "Overview" in the "Second sidebar" region
+  @api @safe @live @site
+  Scenario: See existing Help content
+    Given I am logged in as a user with the "administrator" role
+    And I am on "/node/157"
+    Then I should see "Overview" in the "Second sidebar" region
