@@ -14,4 +14,3 @@ Scenario: Cards view mode is available
  Given I am logged in as a user with the "administrator" role
  And I am on "block/add/stanford-postcard"
  Then I select "Cards" from "View Mode"
-

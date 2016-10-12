@@ -80,4 +80,3 @@ Scenario: View "I want to..." block
 #   Then I press "OK"
 #   Then I press "Save"
 #   Then I should see "test div of news hightlight block" in the "Content Body"
-

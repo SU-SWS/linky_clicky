@@ -28,8 +28,8 @@ Feature: Events
     Given I am on "events/upcoming-events"
     When I select "Seminar" from "Filter by type"
     And I press the "Go" button
-    # Then I should see "Currently, no future events are scheduled" in the "Content Body" region
 
+  # Then I should see "Currently, no future events are scheduled" in the "Content Body" region
   @api @safe @live @site
   Scenario: See entity reference field to event series
     Given I am logged in as a user with the "administrator" role
