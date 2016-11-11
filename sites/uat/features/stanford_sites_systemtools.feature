@@ -41,7 +41,7 @@ Feature: Stanford Sites System Tools Module
     When I go to "admin/config/system/backup_migrate/settings/destination/edit/manual"
     And I enter "/tmp" for "Directory path"
     And I press the "Save destination" button
-    Then I should see the error message "You must enter a relative path for your destination directory."
+    Then I should see "You must enter a relative path for your destination directory."
 
   @api @destructive @dev
   Scenario: Prevent user saving Backup and Migrate archives to path outside of Drupal root
@@ -51,7 +51,7 @@ Feature: Stanford Sites System Tools Module
     When I go to "admin/config/system/backup_migrate/settings/destination/edit/manual"
     And I enter "../../foo" for "Directory path"
     And I press the "Save destination" button
-    Then I should see the error message "You may not choose a destination outside of your Drupal directory."
+    Then I should see "You may not choose a destination outside of your Drupal directory."
 
   # We use a Scenario Outline here because we want to test each item independently.
   @api @destructive @dev @javascript
@@ -59,6 +59,7 @@ Feature: Stanford Sites System Tools Module
     Given the "stanford_sites_systemtools" module is enabled
     And I am logged in as a user with the "administrator" role
     When I go to "admin/modules"
+    And I wait for AJAX to finish
     Then I should not see an "<Element>" element
 
     Examples:
