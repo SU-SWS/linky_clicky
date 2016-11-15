@@ -42,6 +42,8 @@ Feature: Stanford Sites System Tools Module
     And I enter "/tmp" for "Directory path"
     And I press the "Save destination" button
     Then I should see "You must enter a relative path for your destination directory."
+    And I should not see "Your destination was saved"
+    And I should be on "admin/config/system/backup_migrate/settings/destination/edit/manual"
 
   @api @destructive @dev
   Scenario: Prevent user saving Backup and Migrate archives to path outside of Drupal root
@@ -52,6 +54,8 @@ Feature: Stanford Sites System Tools Module
     And I enter "../../foo" for "Directory path"
     And I press the "Save destination" button
     Then I should see "You may not choose a destination outside of your Drupal directory."
+    And I should not see "Your destination was saved"
+    And I should be on "admin/config/system/backup_migrate/settings/destination/edit/manual"
 
   # We use a Scenario Outline here because we want to test each item independently.
   @api @destructive @dev @javascript
