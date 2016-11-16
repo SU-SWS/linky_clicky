@@ -2,7 +2,7 @@
 Feature: Block Title Link
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
-  I want to ensure the Block title Link module is working properly
+  I want to ensure the Block Title Link module is working properly
 
   @api @destructive @dev @javascript
   Scenario: Block Title Link
