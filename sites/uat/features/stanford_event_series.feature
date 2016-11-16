@@ -1,4 +1,4 @@
-Feature: Stanford Event Series Setup
+Feature: Stanford Event Series
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
   I want to ensure the Stanford Event Series module is working properly
