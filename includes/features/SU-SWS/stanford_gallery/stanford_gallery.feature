@@ -80,18 +80,21 @@ Scenario: Create stanford gallery node
 
   Then I should see 1 "#colorbox" element
   When I hover over the element "#cboxContent"
+  And I wait for AJAX to finish
   # TODO: Make these work...
   # Then I should see 1 "#colorbox .caption" element
   # Then I should see 1 "#colorbox .credits" element
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I click on the element with css selector "#cboxNext"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
   Then I click on the element with css selector "#cboxClose"
-  And I wait 2 seconds
+  And I wait for AJAX to finish
+  Then I should be on "behat-test-gallery"
+  And I should see "Behat Test Gallery"
