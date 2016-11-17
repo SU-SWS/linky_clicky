@@ -16,7 +16,6 @@ Feature: Stanford News Views
   @safe
   Scenario: News view displays are available
     Given I am on "admin/structure/views/view/stanford_news/edit"
-    Then I should see "Master"
     Then I should see "Feed"
     Then I should see "2 Item Recent News List"
     Then I should see "5 Item News List Block"
@@ -26,7 +25,6 @@ Feature: Stanford News Views
   @safe
   Scenario: News admin view displays are available
     Given I am on "admin/structure/views/view/admin_manage_stanford_news_item/edit"
-    Then I should see "Master"
     Then I should see "Page"
 
   @safe
