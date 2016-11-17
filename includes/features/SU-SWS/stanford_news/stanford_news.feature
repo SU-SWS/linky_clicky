@@ -10,7 +10,7 @@
   @safe
   Scenario: News Item Content type is available
     Given I am on "admin/structure/types"
-    Then I should see "Announcement/News"
+    Then I should see "News Item"
     Then I should see "stanford_news_item"
 
   @safe
