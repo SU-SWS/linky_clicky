@@ -3,7 +3,7 @@ Feature: Stanford Publication
   As an administrative user
   I want to ensure the Stanford Publication module is working properly
 
-  @api @dev @destructive @javascript
+  @api @dev @destructive
   Scenario: Create Publication
     Given the "stanford_publication" module is enabled
     And I am logged in as a user with the "administrator" role
