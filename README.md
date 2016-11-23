@@ -90,7 +90,12 @@ Directory structure
           |--SWSMinkContext.php
 
 
+git-crypt
+-----------
+Some files in this repository are encrypted with [git-crypt](https://github.com/AGWA/git-crypt). For instructions on how to decrypt these files, see the [directions on SWS Confluence](https://asconfluence.stanford.edu/confluence/display/SWS/Encrypting+Files+with+git-crypt) (authentication required).
 
+See Also
+------------
 See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkyClicky.md)
 
 See [Running Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/RunningLinkyClicky.md)

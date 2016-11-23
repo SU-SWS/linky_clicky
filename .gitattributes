@@ -1,0 +1,2 @@
+sites/uat/features/mollom.feature filter=git-crypt diff=git-crypt
+sites/uat/features/stanford_capx.feature filter=git-crypt diff=git-crypt
