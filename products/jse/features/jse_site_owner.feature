@@ -76,3 +76,4 @@ Feature: Site Owner
     And I should see "Sans Serif" in the "Content Body" region
     And I should see "Serif" in the "Content Body" region
     And I should see "Slab Serif" in the "Content Body" region
+    And I should see "Kays" in the "Content Body" region
