@@ -9,7 +9,7 @@ Feature: Ensure Site Users can view, select, and reset the filter by related con
   @safe @dev @javascript
   Scenario: Verify users can view the filter by related content section on the news and events page
     Then I should see "Filter by related content" in the "First sidebar" region
-    And I should see "Go" 
+    And I should see "Go"
     And I should see "op" 
 
   @safe @dev @javascript
