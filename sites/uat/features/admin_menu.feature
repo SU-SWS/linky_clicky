@@ -12,6 +12,7 @@ Feature: Administration Menu
     And I wait for the Admin Menu to load
     Then I should see a "#admin-menu" element
     When I go to "admin/content"
+    And I wait for the Admin Menu to load
     Then I should see a "#admin-menu" element
     When I go to "admin/config/administration/admin_menu"
     Then I should see "The administration menu module provides a dropdown menu"
