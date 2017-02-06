@@ -15,7 +15,3 @@ Feature: Stanford Jumpstart Engineering Site Specific Help
     And I am on "admin/stanford-jumpstart"
     Then I should see "Jumpstart User Guide" in the "Content Body" region
 
-  @safe
-  Scenario: Anonymous user cannot access help
-    Given I am on "site-help"
-    Then I should see "Access denied"

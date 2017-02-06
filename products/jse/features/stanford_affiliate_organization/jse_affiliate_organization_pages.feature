@@ -8,8 +8,3 @@ Feature: Stanford Affiliate Organization for JSE
     Then I should see "Affiliates" in the "Content Head" region
     Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
 
-  @deploy
-  Scenario: Affiliates block is visible when site is deployed
-    Given I am on the homepage
-    Then I should see "Affiliates" in the "Main Bottom" region
-    Then I should see 5 or more ".views-field-field-s-affiliate-image" elements
