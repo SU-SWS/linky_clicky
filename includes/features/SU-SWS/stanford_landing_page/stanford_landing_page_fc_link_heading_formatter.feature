@@ -15,3 +15,20 @@ Feature: Stanford Landing Page FC Link Heading Formatter
     And I press the "Save" button
     Then I should see "Heading tag: h2"
     And I should see "Links to: field_s_lp_item_link"
+
+  @api @safe
+  Scenario: Create Landing Page and check FC Link Heading Formatter
+    Given I am logged in as a user with the "administrator" role
+    And I am on "node/add/stanford-landing-page"
+    Then I fill in "title" with "FC Link Formatter Test"
+    And I select "Cards" from "field_s_landing_page_layout[und]"
+    And I fill in "field_landing_page_item[und][0][field_s_lp_item_title][und][0][value]" with "Card #1"
+    And I attach the file "img/ooooaaaahhh.jpg" to "files[field_landing_page_item_und_0_field_s_lp_item_image_und_0]"
+    Then I press the "Save" button
+    And I should see "Primary link is required"
+    Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "http://google.com"
+    And I press the "Save" button
+    Then I should see the heading "Card #1"
+    And I click on the element with css selector ".field-name-field-s-lp-item-title a"
+    Then I should see "Google"
+    And I should be on "http://google.com"

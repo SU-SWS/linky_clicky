@@ -15,3 +15,20 @@ Feature: Stanford Landing Page FC Link Formatter
     And I press the "Save" button
     Then I should see "Image style: large-landscape"
     And I should see "field-s-lp-item-link"
+
+  @api @safe
+  Scenario: Create Landing Page and check FC Link Formatter
+    Given I am logged in as a user with the "administrator" role
+    And I am on "node/add/stanford-landing-page"
+    Then I fill in "title" with "FC Link Formatter Test"
+    And I select "Cards" from "field_s_landing_page_layout[und]"
+    And I fill in "field_landing_page_item[und][0][field_s_lp_item_title][und][0][value]" with "Card #1"
+    And I attach the file "img/ooooaaaahhh.jpg" to "files[field_landing_page_item_und_0_field_s_lp_item_image_und_0]"
+    Then I press the "Save" button
+    And I should see "Primary link is required"
+    Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "http://google.com"
+    And I press the "Save" button
+    Then I should see a "img" element in the "Content" region
+    And I click on the element with css selector ".field-name-field-s-lp-item-image a"
+    Then I should see "Google"
+    And I should be on "http://google.com"
