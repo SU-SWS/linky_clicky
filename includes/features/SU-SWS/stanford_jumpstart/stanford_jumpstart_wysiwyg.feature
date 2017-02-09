@@ -21,7 +21,7 @@ Feature: Stanford Sites Jumpstart WYSIWYG
     And the "filters[filter_htmlcorrector][status]" checkbox should be checked
     And the "filters[pathologic][status]" checkbox should be checked
 
-  @api @safe @mikes
+  @api @safe
   Scenario: Check if wysiwyg is configured for filter format.
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/content/wysiwyg/profile/content_editor_text_format/edit"
