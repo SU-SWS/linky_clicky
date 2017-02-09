@@ -3,7 +3,7 @@ Feature: Stanford Site Actions
   As an administrative user
   I want to ensure the links exist.
 
-  @api @safe @mikes
+  @api @safe
   Scenario: Check if menu Links exist
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
