@@ -3,7 +3,7 @@ Feature: Stanford Sites Jumpstart Academic Roles and Permissions
   As an administrator
   I want to check for context and menus
 
-  @api @safe @mikes
+  @api @safe
   Scenario: Check for Roles and permissons except taxonomy
     Given I run drush "rls" "--filter='access administration pages'"
     And drush output should contain "administrator"
