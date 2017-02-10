@@ -3,7 +3,7 @@ Feature: Stanford Image Styles
   As an administrative user
   I want to ensure that the Stanford Image Styles module is working properly
 
-  @api @safe @mikes
+  @api @safe
   Scenario: Stanford Image Styles
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
