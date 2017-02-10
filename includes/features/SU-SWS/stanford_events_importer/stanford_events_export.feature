@@ -3,7 +3,7 @@ Feature: Stanford Events Export
   As an administrative user
   I want to ensure that
 
-  @api @dev @mikes
+  @api @dev
   Scenario: Test the events export pages.
     Given the cache has been cleared
     And I am logged in as a user with the "administrator" role
