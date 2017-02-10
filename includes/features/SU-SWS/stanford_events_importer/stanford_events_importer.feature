@@ -118,5 +118,3 @@ Feature: Stanford Events Importer
     And I press the "Save" button
     And I wait for the batch job to finish
     Then I should see "Stanford Event Importer [random:1] has been created"
-
-
