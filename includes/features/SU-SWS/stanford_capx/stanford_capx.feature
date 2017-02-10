@@ -1,24 +1,18 @@
-Feature: Stanford CAP Extensible
+Feature: Stanford CAPx
   In order to ensure that the capx module is installed and functional
   As an administrative user
   I want to ensure that the Stanford CAP Extensible module is working properly
 
-  @api @javascript @dev @destructive
+  @api @dev @destructive @mikes
   Scenario: Stanford CAP Extensible
     Given the "stanford_capx" module is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx"
     Then I should see "Not Connected"
-    When I click "CAPx connection"
-    Then I should be on "admin/config/capx/connect"
-    And I should see "Please enter your authentication information for the CAP API."
-    When I click "Show Advanced"
-    Then I should see "Advanced setting for CAP API and authentication URIs"
-    When I click "Settings"
+    When I click "CAPx settings"
     Then I should be on "admin/config/capx/settings"
-    And I should see "Organizations & schema"
-    # Fix when typo is fixed
-    And I should see "Synchronization settings"
+    And I should see "Please enter your authentication information for the CAP API."
+    And I should see "Advanced setting for CAP API and authentication URIs"
     When I click "Map"
     Then I should be on "admin/config/capx/mapper"
     And I should see "After you have connected to CAP, create a Mapping to link CAP’s fields with your fields."
@@ -37,9 +31,9 @@ Feature: Stanford CAP Extensible
     # Fix when typo is fixed
     And I should see "Automatic synchronization options (CRON)"
     And I should see "Add groups and individuals"
-    When I click "Profiles"
-    Then I should be on "admin/config/capx/profiles"
-    And I should see "Sorry, but there are no profiles available. Please create a mapping and an importer to import profiles."
+#    When I click "Profiles"
+#    Then I should be on "admin/config/capx/profiles"
+#    And I should see "Sorry, but there are no profiles available. Please create a mapping and an importer to import profiles."
     When I click "Help"
     Then I should be on "admin/config/capx/help"
     And I should see "Getting started"
