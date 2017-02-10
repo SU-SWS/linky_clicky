@@ -7,8 +7,6 @@ Feature: Stanford Image
   Scenario: Stanford Image
     Given the cache has been cleared
     And I am logged in as a user with the "administrator" role
-    And I am on "admin/structure/field-collections"
-    Then I should see "field_s_image_info"
     When I go to "admin/structure/field-collections/field-s-image-info/fields"
     Then I should see "group_s_image"
     And I should see "field_s_image_image"
@@ -22,4 +20,4 @@ Feature: Stanford Image
   Scenario: Stanford Image Views
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford/images"
-    Then I should see "Bulk Image Operations"
+    Then I should see the heading "Bulk Image Operations"
