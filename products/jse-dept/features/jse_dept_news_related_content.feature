@@ -11,8 +11,7 @@ Feature: Ensure Site Users can view, select, and reset the filter by related con
     And I should see "op" 
 
   @api @dev @destructive @javascript
-  Scenario: Verify terms are visible in the filter by related content section on the news 
-  page
+  Scenario: Verify terms are visible in the filter by related content section on the news page
     Given I am logged in as a user with the "site owner" role   
     When I wait for the Site Actions drop down to appear
     And I click "Manage Taxonomies" in the "Admin Shortcuts" region
