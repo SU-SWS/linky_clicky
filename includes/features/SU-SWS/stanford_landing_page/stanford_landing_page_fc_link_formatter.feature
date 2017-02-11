@@ -23,7 +23,7 @@ Feature: Stanford Landing Page FC Link Formatter
     Then I fill in "title" with "FC Link Formatter Test"
     And I select "Cards" from "field_s_landing_page_layout[und]"
     And I fill in "field_landing_page_item[und][0][field_s_lp_item_title][und][0][value]" with "Card #1"
-    And I attach the file "img/ooooaaaahhh.jpg" to "files[field_landing_page_item_und_0_field_s_lp_item_image_und_0]"
+    And I attach the file "features/stanford_landing_page/img/ooooaaaahhh.jpg" to "files[field_landing_page_item_und_0_field_s_lp_item_image_und_0]"
     Then I press the "Save" button
     And I should see "Primary link is required"
     Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "http://google.com"
