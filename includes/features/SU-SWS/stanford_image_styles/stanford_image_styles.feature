@@ -9,7 +9,6 @@ Feature: Stanford Image Styles
     And I run drush "fr" "stanford_image_styles"
     And I am logged in as a user with the "administrator" role
     When I am on "admin/config/media/image-styles"
-    And I should see "Mikes Style"
     And I should see "12-col-banner"
     And I should see "12-col-banner-tall"
     And I should see "3-col-header"
