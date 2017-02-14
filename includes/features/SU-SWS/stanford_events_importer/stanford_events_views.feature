@@ -5,8 +5,7 @@ Feature: Stanford Events Views
 
   @api @safe
   Scenario: See upcoming events content
-    Given the "stanford_events_views" module is enabled
-    And the cache has been cleared
+    Given the cache has been cleared
     And I am on "events/upcoming-events"
     Then I should see a ".event-title" element
     And I should see a ".event-date-long" element
