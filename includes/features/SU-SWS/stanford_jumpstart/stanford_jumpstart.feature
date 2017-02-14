@@ -29,7 +29,6 @@ Feature: Stanford Jumpstart
   @api @safe
   Scenario: Check permissions function correctly
     Given I run drush "rcrt" "Behat"
-    And the "stanford_bean_types" module is enabled
     And I run drush "rap" "Behat 'access administration menu, administer permissions, administer users, administer site configuration, administer beans, administer blocks, view bean page, create stanford_page content, view the administration theme, administer nodes'"
     And I am logged in as a user with the "Behat" role
     And I am on "admin/structure/block"
