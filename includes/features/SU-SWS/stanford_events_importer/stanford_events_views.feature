@@ -3,11 +3,13 @@ Feature: Stanford Events Views
   As an end user
   I want to check for the existence of events content
 
-  @safe
+  @api @safe
   Scenario: See upcoming events content
-    Given I am on "events/upcoming-events"
+    Given the "stanford_events_views" module is enabled
+    And the cache has been cleared
+    And I am on "events/upcoming-events"
     Then I should see a ".event-title" element
-    Then I should see a ".event-date-long" element
+    And I should see a ".event-date-long" element
 
   @safe
   Scenario: See past events - check for pager

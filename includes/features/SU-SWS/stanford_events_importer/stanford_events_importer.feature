@@ -6,6 +6,7 @@ Feature: Stanford Events Importer
   @api @dev
   Scenario: Test the Events Importer content type fields
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_events_importer" module is enabled
     And I am on "admin/structure/types/manage/stanford-event-importer/fields"
     Then I should see the heading "Stanford Event Importer"
 

@@ -5,7 +5,8 @@ Feature: Stanford Events Export
 
   @api @dev
   Scenario: Test the events export pages.
-    Given the cache has been cleared
+    Given the "stanford_events_export" module is enabled
+    And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/views/view/stanford_events_export/edit"
     Then I should see the heading "Stanford Events Export (Content)"
