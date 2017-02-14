@@ -20,7 +20,7 @@ Feature: Panama Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see the heading "Access denied" in the "Branding" region
 
-  @api @safe @javascript
+  @api @safe
   Scenario Outline: Header content for panama static
     Given I am on the homepage
     And the cache has been cleared
@@ -33,7 +33,7 @@ Feature: Panama Homepage Layout
     | In the Spotlight      | Content 3 column flow |
     | Announcements         | Content 3 column flow |
 
-  @api @safe @javascript
+  @api @safe
   Scenario Outline: Homepage content panama static
     Given I am on the homepage
     And the cache has been cleared
