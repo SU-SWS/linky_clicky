@@ -6,7 +6,6 @@ Feature: Stanford Image Styles
   @api @safe
   Scenario: Stanford Image Styles
     Given the cache has been cleared
-    And I run drush "fr" "stanford_image_styles"
     And I am logged in as a user with the "administrator" role
     When I am on "admin/config/media/image-styles"
     And I should see "12-col-banner"
