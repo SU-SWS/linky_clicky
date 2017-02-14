@@ -54,14 +54,14 @@ Feature: Stanford Paragraph Types
     And I press the "Add new Paragraph" button
     Then I should see "Paragraph type: Teaser Cards"
     # First Card.
-    Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_page_sections_und_0_field_p_cards_card_und_0_field_p_card_image_und_0]"
+    Then I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "files[field_s_page_sections_und_0_field_p_cards_card_und_0_field_p_card_image_und_0]"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][0][field_p_card_title][und][0][value]" with "Card #1"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][0][field_p_card_text][und][0][value]" with "A blurb about the card"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][0][field_p_card_cta][und][0][title]" with "Call to Action Button 1"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][0][field_p_card_cta][und][0][url]" with "google.com"
     # Second Card.
     Then I press the "Add another item" button
-    And I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_page_sections_und_0_field_p_cards_card_und_1_field_p_card_image_und_0]"
+    And I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "files[field_s_page_sections_und_0_field_p_cards_card_und_1_field_p_card_image_und_0]"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][1][field_p_card_title][und][0][value]" with "Card #2"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][1][field_p_card_text][und][0][value]" with "Another blurb about this card"
     And I fill in "field_s_page_sections[und][0][field_p_cards_card][und][1][field_p_card_cta][und][0][title]" with "Call to Action Button 2"
@@ -81,7 +81,7 @@ Feature: Stanford Paragraph Types
     When I select "Hero" from "Paragraph type"
     And I press the "Add new Paragraph" button
     Then I should see "Paragraph type: Hero"
-    Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_page_sections_und_0_field_p_hero_image_und_0]"
+    Then I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "files[field_s_page_sections_und_0_field_p_hero_image_und_0]"
 
     And I fill in "field_s_page_sections[und][0][field_p_hero_superhead][und][0][value]" with "Super Head Text"
     And I fill in "field_s_page_sections[und][0][field_p_hero_headline][und][0][value]" with "Headline Text"
