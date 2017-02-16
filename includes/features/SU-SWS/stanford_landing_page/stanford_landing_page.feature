@@ -15,7 +15,7 @@ Feature: Stanford Landing Page
     Then I should see "Body"
     Then I should see "Landing Page Item"
 
-  @api @safe @mikes
+  @api @safe
   Scenario: Create Landing Page
     Given the cache has been cleared
     And I am logged in as a user with the "administrator" role
