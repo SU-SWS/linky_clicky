@@ -15,9 +15,10 @@ Feature: Stanford Landing Page
     Then I should see "Body"
     Then I should see "Landing Page Item"
 
-  @api @safe
+  @api @safe @mikes
   Scenario: Create Landing Page
-    Given I am logged in as a user with the "administrator" role
+    Given the cache has been cleared
+    And I am logged in as a user with the "administrator" role
     And I am on "node/add"
     Then I click "Landing Page"
     Then I should see "Create Landing Page" in the "Branding" region
@@ -41,11 +42,16 @@ Feature: Stanford Landing Page
     And I press the "Save" button
     Then I should see 1 or more ".view-mode-large_landscape" elements
 
+    Then I click "Edit"
+    And I select "Checkered" from "Layout"
+    And I press the "Save" button
+    Then I should see 1 or more ".stanford-6-col-banner-view-mode" elements
+    And I should see 1 or more ".group-side-info" elements
+
   # Field formatter modules have been enabled
   @api @safe
   Scenario: Field formatter modules have been enabled and are on view modes
     Given I am logged in as a user with the "administrator" role
-
     And I am on "admin/structure/field-collections/field-landing-page-item/display"
     Then I should see "Title"
     Then I should see "Image"
@@ -70,6 +76,13 @@ Feature: Stanford Landing Page
     Then I should see "Card Style"
     Then I want to validate select field option "edit-fields-field-s-lp-item-title-type" default is "Link Heading - Stanford Landing Page"
     Then I want to validate select field option "edit-fields-field-s-lp-item-image-type" default is "Image - Stanford Landing Page"
+
+    And I am on "admin/structure/field-collections/field_landing_page_item/display/stanford_6_col_banner"
+    Then I should see "Side Info"
+    Then I should see "Title Wrap"
+    And I should see "More Link Style"
+    Then I want to validate select field option "edit-fields-field-s-lp-item-title-type" default is "Default"
+    Then I want to validate select field option "edit-fields-field-s-lp-item-image-type" default is "Image"
 
   # The manage view is available
   @api @safe
