@@ -13,7 +13,6 @@ Feature: Stanford Manage Content
   # Can't test location of block since seven module doesn't have correct region.
   @api @safe
   Scenario: Check to see that manage content context
-    Given the "context_ui" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/context"
     Then I should see "manage_content_sub_pages"

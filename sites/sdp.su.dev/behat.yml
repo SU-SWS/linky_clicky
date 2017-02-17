@@ -1,0 +1,14 @@
+imports:
+  - ../../includes/config/default.yml
+  - ../../includes/extensions/drupal.extension.yml
+  - ../../includes/extensions/mink.extension.yml
+  - behat.local.yml
+
+## Default Profile Settings (Sites)
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://sdp.su.dev
+    Drupal\DrupalExtension:
+      drush:
+        alias: 'sdp.su.dev'
