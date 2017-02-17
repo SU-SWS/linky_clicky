@@ -12,12 +12,8 @@ Feature: Stanford Page
     And I should see "body"
     And I should see "field_s_page_image_insert"
     And I should see "field_s_page_file"
-
-  @api @safe
-  Scenario: Check for display on manage display page
-    Given I am logged in as a user with the "administrator" role
-    And I am on "admin/structure/types/manage/stanford_page/display"
-    Then I should see "Postcard"
+    Then I am on "admin/structure/types/manage/stanford_page/display"
+    And I should see "Postcard"
     And I should see "Postcard Image"
     And I should see "Postcard Content"
     #And I should see "View mode: Large Scaled"
@@ -27,17 +23,17 @@ Feature: Stanford Page
   Scenario: Add Stanford Page
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-page"
-    Then I should see "Create Stanford Page" in the "Branding" region
+    Then I should see the heading "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
-    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
-    Then I should see "Source Info" in the "Content Body" region
+    Then I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
+    Then I should see "Source Info" in the "Content" region
     When I enter "Foo Stanford Page" for "Title"
     Then I fill in "body[und][0][value]" with "Hello, this is a nice body"
     And I press the "Save" button
     Then I should see "Stanford Page Foo Stanford Page has been created"
     And I should be on "foo-stanford-page"
     And I should see 1 ".field-name-field-s-image-image" element
-    Then I should see "Hello, this is a nice body"
+    And I should see "Hello, this is a nice body"
 
   @api @safe
   Scenario: Check for display on manage pages view

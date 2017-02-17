@@ -8,6 +8,6 @@ Feature: Stanford News Setup
     Given the "stanford_news" module is enabled
     And the "stanford_news_administration" module is enabled
 #    And the "stanford_news_extras" module is enabled
-    And the "stanford_news_extras_importer" module is enabled
+#    And the "stanford_news_extras_importer" module is enabled
 #   And the "stanford_news_extras_views" module is enabled
     And the "stanford_news_views" module is enabled
