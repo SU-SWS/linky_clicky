@@ -50,7 +50,6 @@ Feature: Stanford Paragraph Types
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/structure/paragraphs/p-menu/fields"
     Then I should see "field_p_menu_menu"
-    And I should see "field_p_menu_below_menu"
     And I should see "field_p_menu_header"
     And I should see "field_p_menu_image"
     And I should see "field_p_menu_image_caption"
