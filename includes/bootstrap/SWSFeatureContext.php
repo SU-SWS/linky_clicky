@@ -9,7 +9,7 @@ use Behat\Behat\Context\Context,
     Behat\Behat\Context\TranslatedContextInterface,
     Behat\Behat\Context\BehatContext,
     Behat\Behat\Context\TranslatableContext,
-    Behat\Behat\Exception\PendingException,
+    Behat\Behat\Tester\Exception\PendingException,
     Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Behat\Mink\Exception\ExpectationException,
@@ -107,6 +107,25 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   public function iWaitSeconds($seconds) {
     $mink = $this->minkContext;
     $mink->getSession()->wait(1000 * $seconds);
+  }
+
+  /**
+   * @Given the :arg1 module version is between :arg2 and :arg3
+   */
+  public function theModuleVersionIsBetweenAnd($arg1, $arg2, $arg3) {
+    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
+    $found = preg_match("/$arg1/", $pmi);
+    if (!$found) {
+      throw new Exception($pmi);
+    }
+    preg_match('/Version\s{1,}\:\s{1,}7.x-(.*)/', $pmi, $matches);
+    $installed_version=floatval($matches[1]);
+    if (!$installed_version) {
+      throw new Exception($pmi);
+    }
+    if ($installed_version < floatval($arg2) || $installed_version > floatval($arg3)) {
+      throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
+    }
   }
 
   /**
