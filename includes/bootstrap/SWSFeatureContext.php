@@ -129,6 +129,44 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   }
 
   /**
+   * @Given the :arg1 module version is greater than or equal to :arg2
+   */
+  public function theModuleVersionIsGreaterThanOrEqualTo($arg1, $arg2) {
+    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
+    $found = preg_match("/$arg1/", $pmi);
+    if (!$found) {
+      throw new Exception($pmi);
+    }
+    preg_match('/Version\s{1,}\:\s{1,}7.x-(.*)/', $pmi, $matches);
+    $installed_version=floatval($matches[1]);
+    if (!$installed_version) {
+      throw new Exception($pmi);
+    }
+    if ($installed_version <= floatval($arg2)) {
+      throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
+    }
+  }
+
+  /**
+   * @Given the :arg1 module version is less than or equal to :arg2
+   */
+  public function theModuleVersionIsLessThanOrEqualTo($arg1, $arg2) {
+    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
+    $found = preg_match("/$arg1/", $pmi);
+    if (!$found) {
+      throw new Exception($pmi);
+    }
+    preg_match('/Version\s{1,}\:\s{1,}7.x-(.*)/', $pmi, $matches);
+    $installed_version=floatval($matches[1]);
+    if (!$installed_version) {
+      throw new Exception($pmi);
+    }
+    if ($installed_version >= floatval($arg2)) {
+      throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
+    }
+  }
+
+  /**
    * Invoking a php code with drush.
    *
    * @param $function
