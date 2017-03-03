@@ -114,7 +114,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function theModuleVersionIsBetweenAnd($arg1, $arg2, $arg3) {
     $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
-    preg_match('/"version";s:7:"7.x-([0-9]{1,2}.[0-9]{1,3})"/', $version_query, $matches);
+    $version_array=unserialize($version_query);
+    preg_match('/7.x-([0-9]{1,2}.[0-9]{1,3})/', $version_array["version"], $matches);
     $installed_version=floatval($matches[1]);
     if (!$installed_version) {
       throw new Exception($version_query);
@@ -129,8 +130,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function theModuleVersionIsGreaterThanOrEqualTo($arg1, $arg2) {
     $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
-    preg_match('/"version";s:7:"7.x-([0-9]{1,2}.[0-9]{1,3})"/', $version_query, $matches);
-    $installed_version=floatval($matches[1]);
+    $version_array=unserialize($version_query);
+    preg_match('/7.x-([0-9]{1,2}.[0-9]{1,3})/', $version_array["version"], $matches);
     if (!$installed_version) {
       throw new Exception($version_query);
     }
@@ -144,7 +145,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function theModuleVersionIsLessThanOrEqualTo($arg1, $arg2) {
     $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
-    preg_match('/"version";s:7:"7.x-([0-9]{1,2}.[0-9]{1,3})"/', $version_query, $matches);
+    $version_array=unserialize($version_query);
+    preg_match('/7.x-([0-9]{1,2}.[0-9]{1,3})/', $version_array["version"], $matches);
     $installed_version=floatval($matches[1]);
     if (!$installed_version) {
       throw new Exception($version_query);
