@@ -113,15 +113,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Given the :arg1 module version is between :arg2 and :arg3
    */
   public function theModuleVersionIsBetweenAnd($arg1, $arg2, $arg3) {
-    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
-    $found = preg_match("/$arg1/", $pmi);
-    if (!$found) {
-      throw new Exception($pmi);
-    }
-    preg_match('/Version\s{1,}\:\s{1,}7.x-(.*)/', $pmi, $matches);
+    $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
+    preg_match('/"version";s:7:"7.x-([0-9]{1,2}.[0-9]{1,3})"/', $version_query, $matches);
     $installed_version=floatval($matches[1]);
     if (!$installed_version) {
-      throw new Exception($pmi);
+      throw new Exception($version_query);
     }
     if ($installed_version < floatval($arg2) || $installed_version > floatval($arg3)) {
       throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
@@ -132,15 +128,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Given the :arg1 module version is greater than or equal to :arg2
    */
   public function theModuleVersionIsGreaterThanOrEqualTo($arg1, $arg2) {
-    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
-    $found = preg_match("/$arg1/", $pmi);
-    if (!$found) {
-      throw new Exception($pmi);
-    }
-    preg_match('/Version\s{1,}\:\s{1,}7.x-(.*)/', $pmi, $matches);
+    $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
+    preg_match('/"version";s:7:"7.x-([0-9]{1,2}.[0-9]{1,3})"/', $version_query, $matches);
     $installed_version=floatval($matches[1]);
     if (!$installed_version) {
-      throw new Exception($pmi);
+      throw new Exception($version_query);
     }
     if ($installed_version <= floatval($arg2)) {
       throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
@@ -151,15 +143,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @Given the :arg1 module version is less than or equal to :arg2
    */
   public function theModuleVersionIsLessThanOrEqualTo($arg1, $arg2) {
-    $pmi = $this->getDriver()->drush('pm-info ' . $arg1);
-    $found = preg_match("/$arg1/", $pmi);
-    if (!$found) {
-      throw new Exception($pmi);
-    }
-    preg_match('/Version\s{1,}\:\s{1,}7.x-(.*)/', $pmi, $matches);
+    $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
+    preg_match('/"version";s:7:"7.x-([0-9]{1,2}.[0-9]{1,3})"/', $version_query, $matches);
     $installed_version=floatval($matches[1]);
     if (!$installed_version) {
-      throw new Exception($pmi);
+      throw new Exception($version_query);
     }
     if ($installed_version >= floatval($arg2)) {
       throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
