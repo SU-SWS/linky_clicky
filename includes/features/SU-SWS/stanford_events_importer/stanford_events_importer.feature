@@ -89,6 +89,39 @@ Feature: Stanford Events Importer
     And the "xpath[sources][xpathparser:17]" field should contain "mapUrl"
     And the "xpath[sources][xpathparser:18]" field should contain "eventStatus"
 
+  @api @dev @mikes
+  Scenario: Test the archived feeds importer
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/structure/feeds/stanford_event_archived_importer"
+    Then I should see the heading "Stanford Event Archived Importer"
+    And I should see "Attached to: [none]"
+    And I should see "Periodic import: off"
+    And I should see "Import on submission"
+    And I should see "HTTP Fetcher"
+    And I should see "XPath XML parser"
+    And I should see "Node processor"
+    Then I am on "admin/structure/feeds/stanford_event_archived_importer/settings/FeedsXPathParserXML"
+    And the "xpath[context]" field should contain "//EventList/Event"
+    And the "xpath[sources][xpathparser:0]" field should contain "title"
+    And the "xpath[sources][xpathparser:1]" field should contain "eventID"
+    And the "xpath[sources][xpathparser:2]" field should contain "description"
+    And the "xpath[sources][xpathparser:3]" field should contain "isoBeginDate"
+    And the "xpath[sources][xpathparser:4]" field should contain "eventStatus"
+    And the "xpath[sources][xpathparser:5]" field should contain "Audience/audienceName"
+    And the "xpath[sources][xpathparser:7]" field should contain "contactPhone"
+    And the "xpath[sources][xpathparser:8]" field should contain "Media/imageUrl"
+    And the "xpath[sources][xpathparser:9]" field should contain "sponsor"
+    And the "xpath[sources][xpathparser:10]" field should contain "url"
+    And the "xpath[sources][xpathparser:11]" field should contain "locationText"
+    And the "xpath[sources][xpathparser:12]" field should contain "admissionDescription"
+    And the "xpath[sources][xpathparser:13]" field should contain "Category/categoryName"
+    And the "xpath[sources][xpathparser:14]" field should contain "contactEmail"
+    And the "xpath[sources][xpathparser:15]" field should contain "isoEndDate"
+    And the "xpath[sources][xpathparser:16]" field should contain "concat('http://events.stanford.edu/ical/download.php?id=',eventID)"
+    And the "xpath[sources][xpathparser:17]" field should contain "mapUrl"
+    And the "xpath[sources][xpathparser:18]" field should contain "eventStatus"
+    And the "xpath[sources][xpathparser:19]" field should contain "People/person"
+
 
   @api @javascript @dev @destructive
   Scenario: Stanford Events Importer
