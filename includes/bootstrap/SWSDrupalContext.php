@@ -80,8 +80,6 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       // See Behat\Mink\Element\TraversableElement::clickLink
       $element->clickLink("Local User Login");
     }
-    // Shamelessly stolen from iWaitForAjaxToFinish().
-    $this->getSession()->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
     $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
     $submit = $element->findButton($this->getDrupalText('log_in'));
