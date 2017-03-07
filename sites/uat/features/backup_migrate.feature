@@ -8,6 +8,7 @@ Feature: Backup and Migrate
   @api @javascript @dev @destructive
   Scenario: Backup and Migrate
     Given the "backup_migrate" module is enabled
+    And the "webauth" module is disabled
     And I am logged in as a user with the "administrator" role
     And the cache has been cleared
     And I go to "admin/structure/types/manage/article"
@@ -85,3 +86,4 @@ Feature: Backup and Migrate
     And I press the "Delete" button
     # It says "Database backup file deleted" even for Public Files directory. Ya rly.
     Then I should see "Database backup file deleted"
+    Given the "webauth" module is enabled
