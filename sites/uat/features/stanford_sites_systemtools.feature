@@ -5,7 +5,7 @@ Feature: Stanford Sites System Tools Module
   I want to ensure the Stanford Sites System Tools module is working properly
 
   # We use a Scenario Outline here because we want to test each item independently.
-  @api @destructive @dev @javascript
+  @api @destructive @dev
   Scenario Outline: Prevent user from changing file system settings
     Given the "stanford_sites_systemtools" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -19,7 +19,7 @@ Feature: Stanford Sites System Tools Module
       | #edit-file-temporary-path |
 
   # We use a Scenario Outline here because we want to test each item independently.
-  @api @destructive @dev @javascript
+  @api @destructive @dev
   Scenario Outline: Prevent user from disabling/enabling certain modules
     Given the "stanford_sites_systemtools" module is enabled
     And I am logged in as a user with the "administrator" role
@@ -33,7 +33,7 @@ Feature: Stanford Sites System Tools Module
       | #edit-modules-stanford-stanford-sites-systemtools-enable |
       | #edit-modules-core-update-enable                         |
 
-  @api @destructive @dev @javascript
+  @api @destructive @dev
   Scenario: Prevent user saving Backup and Migrate archives to absolute path
     Given the "stanford_sites_systemtools" module is enabled
     And the "backup_migrate" module is enabled
@@ -45,7 +45,7 @@ Feature: Stanford Sites System Tools Module
     And I should not see "Your destination was saved"
     And I should be on "admin/config/system/backup_migrate/settings/destination/edit/manual"
 
-  @api @destructive @dev @javascript
+  @api @destructive @dev
   Scenario: Prevent user saving Backup and Migrate archives to path outside of Drupal root
     Given the "stanford_sites_systemtools" module is enabled
     And the "backup_migrate" module is enabled
