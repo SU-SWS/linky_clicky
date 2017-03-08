@@ -61,8 +61,9 @@ Feature: Backup and Migrate
     When I go to "admin/config/system/backup_migrate/backups"
     Then I should see "bam-behat-archive-6q73custtmo9hq3e.mysql.gz"
     When I click "restore" in the "bam-behat-archive-6q73custtmo9hq3e.mysql.gz" row
-    Then I should be on "admin/config/system/backup_migrate/settings/destination/list/restorefile/manual/bam-behat-archive-6q73custtmo9hq3e.mysql.gz"
-    When I select "Default Database" from "edit-source-id"
+    Then I should see "Are you sure you want to restore the database from the backup file"
+    # Then I should be on "admin/config/system/backup_migrate/settings/destination/list/restorefile/manual/bam-behat-archive-6q73custtmo9hq3e.mysql.gz"
+    # When I select "Default Database" from "edit-source-id"
     And I press the "Restore" button
     # Restore the Public Files Directory.
     When I go to "admin/config/system/backup_migrate/backups"
