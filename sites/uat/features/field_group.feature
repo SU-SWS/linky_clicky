@@ -37,4 +37,9 @@ Feature: Field Group
     And I click "delete" in the "group_field_group_test" row
     And I press the "Delete" button
     Then I should see "The group Field Group Test has been deleted from the Article content type."
+    When I go to "admin/structure/taxonomy/tags"
+    And I click "edit" in the "tag1" row
+    And I press the "Delete" button
+    And I press the "Delete" button
+    Then I should see " Deleted term tag1"
 
