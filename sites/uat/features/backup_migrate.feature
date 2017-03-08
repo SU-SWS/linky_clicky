@@ -62,14 +62,14 @@ Feature: Backup and Migrate
     Then I should see "bam-behat-archive-6q73custtmo9hq3e.mysql.gz"
     When I click "restore" in the "bam-behat-archive-6q73custtmo9hq3e.mysql.gz" row
     Then I should be on "admin/config/system/backup_migrate/settings/destination/list/restorefile/manual/bam-behat-archive-6q73custtmo9hq3e.mysql.gz"
-    When I select "Default Database" from "Restore to"
+    When I select "Default Database" from "edit-source-id"
     And I press the "Restore" button
     # Restore the Public Files Directory.
     When I go to "admin/config/system/backup_migrate/backups"
     Then I should see "bam-behat-archive-bzqdzodi07y8nrst.tar.gz"
     When I click "restore" in the "bam-behat-archive-bzqdzodi07y8nrst.tar.gz" row
     Then I should be on "admin/config/system/backup_migrate/settings/destination/list/restorefile/manual/bam-behat-archive-bzqdzodi07y8nrst.tar.gz"
-    When I select "Public Files Directory" from "Restore to"
+    When I select "Public Files Directory" from "edit-source-id"
     And I press the "Restore" button
     And the cache has been cleared
     When I go to "bam-test-0s8obvunuj1ulflx"
