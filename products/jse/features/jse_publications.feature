@@ -1,4 +1,4 @@
-Feature: Ensure Site Owners can create and delete publications
+Feature: Ensure Site Owners can create and delete publications and Editors can edit publications
   In order to ensure that users with permissions can create, edit and delete publications
   As a user with site permissions
   I want to be able create, edit and delete publications
