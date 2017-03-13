@@ -38,13 +38,13 @@ Feature: Every page will be checked for the following regions, elements and func
     Given I am on "user"
     Then I should see the text "Log in"
 
-  @safe @javascript
+  @safe
   Scenario: Verify that entering a search yields the correct result
     Given I am on the homepage
     Then I should see a "#edit-search-block-form--2" element
     When I enter "purple monkey dishwasher" for "Search"
     And I press the "Search" button
-    And I wait for AJAX to finish
+    # And I wait for AJAX to finish
     Then I should be on "search/node/purple%20monkey%20dishwasher"
     And I should see "Search" in the "Content Head" region
     And I should see "Remove quotes"
