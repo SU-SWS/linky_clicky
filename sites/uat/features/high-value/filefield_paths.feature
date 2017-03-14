@@ -22,7 +22,7 @@ Feature: File Field Paths
     Then I should see "Saved [random:1] configuration"
     When I go to "node/add/page"
     And I enter "File Field Paths test" for "Title"
-    And I attach the file "filefield_path.txt" to "edit-field-[random:1]-und-0-upload"
+    And I attach the file "features/img/filefield_path.txt" to "edit-field-[random:1]-und-0-upload"
     And I press the "Upload" button
     And I press the "Save" button
     Then I should see "Basic page File Field Paths test has been created"
