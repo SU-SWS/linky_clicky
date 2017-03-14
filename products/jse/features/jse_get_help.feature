@@ -10,4 +10,3 @@ Feature: Stanford Jumpstart Engineering Get help
     Then I should see "Jumpstart User Guide" in the "Content Body" region
     Then I should see "Request Assistance"
     Then I should see an "a" element
-    Then the href in element "a" should contain "source=soe"

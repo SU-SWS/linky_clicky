@@ -36,15 +36,20 @@ Feature: Every page will be checked for the following regions, elements and func
   @safe
   Scenario: Verify that /user page has the appropriate content
     Given I am on "user"
-    Then I should see the text "Log in"
+    Then I should see the text "Login"
 
-  @safe
-  Scenario: Verify that entering a search yields the correct result
+  @safe @javascript
+  Scenario: Verify that the search field exists on the homepage
     Given I am on the homepage
     Then I should see a "#edit-search-block-form--2" element
-    When I enter "purple monkey dishwasher" for "Search"
-    And I press the "Search" button
-    # And I wait for AJAX to finish
+
+  @safe @javascript
+  Scenario: Verify that the search element works
+    Given I am on "search/node"
+    Then I should see "Search" in the "Content Head" region
+    And I should see "Enter your keywords"
+    When I enter "purple monkey dishwasher" for "edit-keys"
+    And I click on the element with css selector "#edit-submit"
     Then I should be on "search/node/purple%20monkey%20dishwasher"
     And I should see "Search" in the "Content Head" region
     And I should see "Remove quotes"
