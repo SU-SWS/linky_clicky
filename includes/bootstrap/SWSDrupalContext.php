@@ -70,22 +70,24 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       throw new \Exception('Tried to login without a user.');
     }
 
-    $this->getSession()->visit($this->locatePath('/user'));
-    $element = $this->getSession()->getPage();
-    // find the Local User Login link - it's only findable in the browser, with Javascript
-    // See Behat\Mink\Element\TraversableElement::findLink
-    $localuserlogin = $element->findLink("Local User Login");
-    // If we can find a link, that means we're using Javascript.
-    if (!is_null($localuserlogin)) {
+    // @todo, find out if there is a more concrete way of if JS is enabled.
+    $session = $this->getSession();
+    $element = $session->getPage();
+    $javascript_enabled = method_exists($session, 'executeScript');
+
+    if ($javascript_enabled) {
       // click on the Local User Login link to expose the user name and password fields
       // See Behat\Mink\Element\TraversableElement::clickLink
       $element->clickLink("Local User Login");
+
       // Since we're using Javascript, we can use wait().
       $this->getSession()->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     }
+
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
     $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
     $submit = $element->findButton($this->getDrupalText('log_in'));
+
     if (empty($submit)) {
       throw new \Exception(sprintf("No submit button at %s", $this->getSession()->getCurrentUrl()));
     }
