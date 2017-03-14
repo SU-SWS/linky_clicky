@@ -5,7 +5,7 @@ Feature: Backup and Migrate
   I want to ensure that the Backup and Migrate module is working properly
 
 # fails on API only for some reason; must use @javascript
-  @api @javascript @dev @destructive
+  @api @dev @destructive @javascript
   Scenario: Backup and Migrate
     Given the "backup_migrate" module is enabled
     And I track variable "site_403"
