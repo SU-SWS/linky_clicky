@@ -83,6 +83,7 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       // Since we're using Javascript, we can use wait().
       $this->getSession()->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     }
+    // Shamelessly stolen from iWaitForAjaxToFinish().
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
     $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
     $submit = $element->findButton($this->getDrupalText('log_in'));
