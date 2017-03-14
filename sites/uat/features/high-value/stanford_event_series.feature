@@ -10,7 +10,7 @@ Feature: Stanford Event Series
     When I go to "node/add/stanford-event-series"
     Then I should see "Create Stanford Event Series" in the "Branding" region
     Then I fill in "edit-title" with "Foo"
-    Then I attach the file "features/img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
+    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I press "Upload"
     Then I press "Save"
     Then I should be on "events/series/foo"
