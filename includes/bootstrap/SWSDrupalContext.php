@@ -70,10 +70,12 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       throw new \Exception('Tried to login without a user.');
     }
 
+
     // @todo, find out if there is a more concrete way of if JS is enabled.
     $session = $this->getSession();
     $element = $session->getPage();
     $javascript_enabled = method_exists($session, 'executeScript');
+    $session->visit($this->locatePath('/user'));
 
     if ($javascript_enabled) {
       // click on the Local User Login link to expose the user name and password fields
@@ -81,7 +83,7 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       $element->clickLink("Local User Login");
 
       // Since we're using Javascript, we can use wait().
-      $this->getSession()->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
+      $session->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     }
 
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
@@ -89,7 +91,7 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
     $submit = $element->findButton($this->getDrupalText('log_in'));
 
     if (empty($submit)) {
-      throw new \Exception(sprintf("No submit button at %s", $this->getSession()->getCurrentUrl()));
+      throw new \Exception(sprintf("No submit button at %s", $session->getCurrentUrl()));
     }
 
     // Log in.
