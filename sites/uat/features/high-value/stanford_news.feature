@@ -6,6 +6,7 @@
 
   Background:
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_news" module is enabled
 
   @safe
   Scenario: News Item Content type is available
