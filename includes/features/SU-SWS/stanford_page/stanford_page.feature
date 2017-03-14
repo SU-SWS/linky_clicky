@@ -27,7 +27,7 @@ Feature: Stanford Page
     And the "Text format" field should contain "content_editor_text_format"
     Then I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I should see "Source Info" in the "Content" region
-    When I enter "Foo Stanford Page" for "Title"
+    When I enter "Foo Stanford Page" for "edit-title"
     Then I fill in "body[und][0][value]" with "Hello, this is a nice body"
     And I press the "Save" button
     Then I should see "Stanford Page Foo Stanford Page has been created"
