@@ -49,20 +49,23 @@ Feature: Stanford Paragraph Types
     And I should see "Link #1"
 
 
-  @safe
+  @safe @javascript
   Scenario: Create a Stanford Story Page with Teaser Cards Type
     When I select "Teaser Cards" from "Paragraph type"
     And I press the "Add new Paragraph" button
+    And I wait for AJAX to finish
     Then I should see "Paragraph type: Teaser Cards"
     # First Card.
-    Then I attach the file "features/stanford_story_page/img/Card.jpg" to "files[field_s_story_sections_und_0_field_p_cards_card_und_0_field_p_card_image_und_0]"
+    Then I select the "File" radio button
+    And I should not see "Read More Link"
+    Then I select the "Link" radio button
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][0][field_p_card_title][und][0][value]" with "Card #1"
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][0][field_p_card_text][und][0][value]" with "A blurb about the card"
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][0][field_p_card_cta][und][0][title]" with "Call to Action Button 1"
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][0][field_p_card_cta][und][0][url]" with "google.com"
     # Second Card.
     Then I press the "Add another item" button
-    And I attach the file "features/stanford_story_page/img/Card.jpg" to "files[field_s_story_sections_und_0_field_p_cards_card_und_1_field_p_card_image_und_0]"
+    And I wait for AJAX to finish
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][1][field_p_card_title][und][0][value]" with "Card #2"
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][1][field_p_card_text][und][0][value]" with "Another blurb about this card"
     And I fill in "field_s_story_sections[und][0][field_p_cards_card][und][1][field_p_card_cta][und][0][title]" with "Call to Action Button 2"
@@ -77,13 +80,24 @@ Feature: Stanford Paragraph Types
     And I should see "Another blurb about this card"
     And I should see "Call to Action Button 2"
 
-  @safe @mikes
+  @safe @javascript
   Scenario: Create a Stanford Story Page with Hero Type
     When I select "Hero" from "Paragraph type"
     And I press the "Add new Paragraph" button
+    And I wait for AJAX to finish
     Then I should see "Paragraph type: Hero"
-    Then I attach the file "features/stanford_story_page/img/hero.jpg" to "files[field_s_story_sections_und_0_field_p_hero_image_und_0]"
+    Then I select the "Image Only" radio button
+    And I should see "Hero Image"
+    And I should not see "Hero Video"
+    Then I select the "Video Only" radio button
+    And I should not see "Hero Image"
+    And I should see "Hero Video"
+    Then I select the "Video W/ Image Overlay" radio button
+    And I should see "Hero Image"
+    And I should see "Hero Video"
 
+    Then I select the "Image Only" radio button
+    Then I attach the file "features/stanford_story_page/img/hero.jpg" to "files[field_s_story_sections_und_0_field_p_hero_image_und_0]"
     And I fill in "field_s_story_sections[und][0][field_p_hero_superhead][und][0][value]" with "Super Head Text"
     And I fill in "field_s_story_sections[und][0][field_p_hero_headline][und][0][value]" with "Headline Text"
     And I fill in "field_s_story_sections[und][0][field_p_hero_more_link][und][0][title]" with "Read More"
