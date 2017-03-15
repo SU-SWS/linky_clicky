@@ -96,10 +96,10 @@ Feature: Stanford Paragraph Types
     And I should see "Hero Image"
     And I should see "Hero Video"
 
-    Then I select the "Image Only" radio button
-    Then I attach the file "features/stanford_story_page/img/hero.jpg" to "files[field_s_story_sections_und_0_field_p_hero_image_und_0]"
-    And I fill in "field_s_story_sections[und][0][field_p_hero_superhead][und][0][value]" with "Super Head Text"
-    And I fill in "field_s_story_sections[und][0][field_p_hero_headline][und][0][value]" with "Headline Text"
+    Then I select the "Video Only" radio button
+    Then I fill in "Video URL" with "https://youtu.be/uLcS7uIlqPo"
+    And I fill in "Superhead" with "Super Head Text"
+    And I fill in "Headline" with "Headline Text"
     And I fill in "field_s_story_sections[und][0][field_p_hero_more_link][und][0][title]" with "Read More"
     And I fill in "field_s_story_sections[und][0][field_p_hero_more_link][und][0][url]" with "google.com"
 
