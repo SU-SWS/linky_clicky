@@ -12,7 +12,7 @@ Feature: Stanford Person Affiliation Views
   @deploy
   Scenario: Stanford Person node page
     Given I am on "people/jacob-smith"
-    Then I should see a ".postcard-left" element
+    And I should see the "Jacob Smith" heading in the "Content Body" region 
 
   @deploy
   Scenario: Faculty node on directory page and node page
@@ -101,6 +101,4 @@ Feature: Stanford Person Affiliation Views
     Given I am on "people/faculty"
     Then I should see a ".views-row-first" element
     And I should see a ".views-row-lines" element
-    And I should see the heading "Why I Teach" in the "First sidebar" region
     And I should see the "People" heading in the "First sidebar" region
-    And I should see "This is your Why I Teach block" in the "First sidebar" region
