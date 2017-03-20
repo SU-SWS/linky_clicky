@@ -11,8 +11,8 @@ Feature: Mollom
     And I am logged in as a user with the "administrator" role
     And I go to "admin/config/content/mollom/settings"
     # This file is encrypted with git-crypt, so credentials are OK here.
-    And I enter "d74823bf09b54034be31a41be55e9430" for "Public key"
-    And I enter "07edf35b2ce1e5a2c119545ec0d07b99" for "Private key"
+    And I enter "0a804e2aff1665b21a41573e064622a0" for "Public key"
+    And I enter "f28ec666ab762c847972047736e547f4" for "Private key"
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved"
     And I should not see " The Mollom API keys are not configured yet"
@@ -23,7 +23,7 @@ Feature: Mollom
     Then I should see "The form protection has been added"
 
 # This will fail until we figure out a way to pass private key
-  @api @dev @destructive
+  @api @dev @destructive @javascript
   Scenario: Mollom check user password form CAPTCHA
     Given I am an anonymous user
     When I am on "user/password"
