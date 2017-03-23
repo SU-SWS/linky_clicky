@@ -13,3 +13,16 @@ Feature: Stanford Jumpstart Home Feature
     And I should see "Mayfield" in the "Content Body" region
     And I should see "Dark" in the "Content Body" region
     And I should see "Bright" in the "Content Body" region
+
+  @api @safe
+  Scenario: Verify the big text checkbox is available
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/stanford-jumpstart/customize-design"
+    Then I should see "Include BIG text"
+    Then I track variable "stanford_jumpstart_home_include_flat_styles"
+    And I track variable "preprocess_css"
+    Then I run drush "vset" "preprocess_css 0"
+    And I check the box "Include BIG text"
+    And I press the "Save settings" button
+    Then I am on the homepage
+    And I should see "stanford_jumpstart_home_typography.css"

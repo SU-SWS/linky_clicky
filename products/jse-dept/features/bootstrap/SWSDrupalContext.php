@@ -75,13 +75,10 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
     // find the Local User Login link - it's only findable in the browser, with Javascript
     // See Behat\Mink\Element\TraversableElement::findLink
     $localuserlogin = $element->findLink("Local User Login");
-    // If we can find a link, that means we're using Javascript.
     if (!is_null($localuserlogin)) {
       // click on the Local User Login link to expose the user name and password fields
       // See Behat\Mink\Element\TraversableElement::clickLink
       $element->clickLink("Local User Login");
-      // Since we're using Javascript, we can use wait().
-      $this->getSession()->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     }
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
     $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
