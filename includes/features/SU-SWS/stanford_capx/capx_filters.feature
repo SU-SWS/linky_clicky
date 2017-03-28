@@ -6,15 +6,12 @@ Feature: CAPx Filters
   @api @dev @javascript @destructive
   Scenario: Stanford CAPx Filters
     Given I am authenticated with CAPx
-    And the "capx_filters" module is enabled
     And I am logged in as a user with the "administrator" role
 
     # Update organization codes
-    And I am on "admin/config/capx/settings"
-    Then I click "Get organization data"
+    Then I am on "admin/config/capx/organizations/sync?destination=admin/config/capx/settings"
     And I wait for the batch job to finish
     And I should see "Organization codes have been updated."
-
 
     # Create a mapper
     Then I am on "admin/config/capx/mapper/new"
