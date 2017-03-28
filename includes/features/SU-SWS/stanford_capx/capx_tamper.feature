@@ -6,7 +6,6 @@ Feature: CAPx Tamper
   @api @dev @javascript @destructive
   Scenario: Stanford CAPx Mapper & Importer
     Given I am authenticated with CAPx
-    And the "capx_tamper" module is enabled
     And I am logged in as a user with the "administrator" role
     # Update organization codes
     Then I am on "admin/config/capx/organizations/sync?destination=admin/config/capx/settings"
