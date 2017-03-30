@@ -4,8 +4,9 @@ Feature: Backup and Migrate
   As an administrative user
   I want to ensure that the Backup and Migrate module is working properly
 
-# fails on API only for some reason; must use @javascript
-  @api @dev @destructive @javascript
+  # fails on API only for some reason; must use @javascript
+  # fails on Anchorage because of https://www.drupal.org/node/2415421
+  @api @dev @destructive @javascript @notanchorage
   Scenario: Backup and Migrate
     Given the "backup_migrate" module is enabled
     And I track variable "site_403"
