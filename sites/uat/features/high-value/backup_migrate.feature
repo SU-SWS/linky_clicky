@@ -4,8 +4,9 @@ Feature: Backup and Migrate
   As an administrative user
   I want to ensure that the Backup and Migrate module is working properly
 
-# fails on API only for some reason; must use @javascript
-  @api @dev @destructive @javascript
+  # fails on API only for some reason; must use @javascript
+  # fails on Anchorage because of https://www.drupal.org/node/2415421
+  @api @dev @destructive @javascript @notanchorage
   Scenario: Backup and Migrate
     Given the "backup_migrate" module is enabled
     And I track variable "site_403"
@@ -19,7 +20,7 @@ Feature: Backup and Migrate
     And I go to "node/add/article"
     # Arbitrary hash for the Title to ensure that it's unique.
     And I enter "BAM Test 0s8obvunuj1ulflx" for "Title"
-    And I attach the file "features/img/love-bacon.png" to "edit-field-image-und-0-upload"
+    And I attach the file "img/love-bacon.png" to "edit-field-image-und-0-upload"
     And I select "Plain text" from "Text format"
     And I enter "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit" for "edit-body-und-0-value"
     And I press the "Save" button

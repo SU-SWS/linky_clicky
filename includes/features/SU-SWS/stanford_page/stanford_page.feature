@@ -19,7 +19,7 @@ Feature: Stanford Page
     #And I should see "View mode: Large Scaled"
     Then I want to validate select field option "edit-fields-field-s-page-file-type" default is "Generic file"
 
-  @api @dev
+  @api @dev @destructive 
   Scenario: Add Stanford Page
     Given I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-page"
@@ -27,7 +27,7 @@ Feature: Stanford Page
     And the "Text format" field should contain "content_editor_text_format"
     Then I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I should see "Source Info" in the "Content" region
-    When I enter "Foo Stanford Page" for "edit-title"
+    When I enter "Foo Stanford Page" for "Title"
     Then I fill in "body[und][0][value]" with "Hello, this is a nice body"
     And I press the "Save" button
     Then I should see "Stanford Page Foo Stanford Page has been created"

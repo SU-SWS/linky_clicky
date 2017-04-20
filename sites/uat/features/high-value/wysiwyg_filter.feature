@@ -11,6 +11,7 @@ Feature: WYSIWYG Filter
     And the cache has been cleared
     And I am on "admin/config/content/formats/filtered_html"
     And I check the box "WYSIWYG Filter"
+    And I enter "stanford.edu" for "Domains list"
     And I press the "Save configuration" button
     Then I should see "The text format Filtered HTML has been updated."
     When I am on "admin/config/content/formats/filtered_html"
