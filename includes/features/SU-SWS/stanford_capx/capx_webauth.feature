@@ -26,6 +26,7 @@ Feature: CAPx WebAuth Integration
     | field-mapping[user-properties][mail]       | $.uid  |
     | field-mapping[user-properties][feed_nid]   | $.uid  |
     | field-mapping[user-properties][feed_node]  | $.uid  |
+    | field-mapping[user-properties][uuid]       | $.uid  |
 
     Then I press the "Save mapping" button
     And I should be on "admin/config/capx/mapper"

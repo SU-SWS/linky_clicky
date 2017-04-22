@@ -195,7 +195,7 @@ Feature: CAPx Tamper
 
     Then I select "URL Encode" from "The plugin to add"
     And I wait for AJAX to finish
-    And I should see "Encode method"
+    And I should see "Configure URL Encode"
 
     Then I select "Find replace" from "The plugin to add"
     And I wait for AJAX to finish
