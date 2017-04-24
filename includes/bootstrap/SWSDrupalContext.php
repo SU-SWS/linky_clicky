@@ -227,14 +227,24 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
    */
   public function iAmAuthenticatedWithCapx() {
     // todo: Replace with environment variables.
-    $file = fopen(__DIR__ . '/capx.csv', 'r');
-    list($username, $password) = fgetcsv($file);
-    fclose($file);
+    if ($username = getenv('CAPX_USER')) {
+      $password = getenv('CAPX_PASSWORD');
+    }
+    else {
+      $file = fopen(__DIR__ . '/capx.csv', 'r');
+      list($username, $password) = fgetcsv($file);
+      fclose($file);
+    }
 
-    $this->iTrackVariable('stanford_capx_username');
-    $this->iTrackVariable('stanford_capx_password');
-    $this->iSetEncryptedVariable('stanford_capx_username', $username);
-    $this->iSetEncryptedVariable('stanford_capx_password', $password);
+    if ($username && $password) {
+      $this->iTrackVariable('stanford_capx_username');
+      $this->iTrackVariable('stanford_capx_password');
+      $this->iSetEncryptedVariable('stanford_capx_username', $username);
+      $this->iSetEncryptedVariable('stanford_capx_password', $password);
+    }
+    else {
+      throw new \Exception(sprintf("Unable to authenticate with CAPX"));
+    }
   }
 
 }
