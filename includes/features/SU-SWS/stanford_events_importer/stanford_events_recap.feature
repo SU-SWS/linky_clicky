@@ -24,5 +24,5 @@ Feature: Stanford Events Recap
     And I should see "Event Recap"
     And I should see 1 ".field-name-field-s-event-post-video iframe" element
     And I should see "Download the audio"
-    And I should see "View a gallery of images"
+    And I should see "View gallery"
     And I should see "Recap Link 1"
