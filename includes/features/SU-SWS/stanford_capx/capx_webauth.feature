@@ -3,7 +3,7 @@ Feature: CAPx WebAuth Integration
   As an administrative user
   I want to ensure that the Stanford CAP Extensible module is working properly
 
-  @api @dev @javascript @destructive @mikes
+  @api @dev @javascript @destructive
   Scenario: Stanford CAPx webauth user is created and populated in authmap table
     Given I am authenticated with CAPx
     And the "capx_webauth" module is enabled

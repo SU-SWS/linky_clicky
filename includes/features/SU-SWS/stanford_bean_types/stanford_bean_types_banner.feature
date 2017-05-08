@@ -10,7 +10,7 @@ Feature: Stanford Banner bean Type
   @safe
   Scenario: Stanford Banner Type Exists
     Given I am on "block/add"
-    Then I should see the link "stanford_banner" in the "Content Body" region
+    Then I should see the link "stanford_banner" in the "Content" region
 
   @safe
   Scenario: Stanford Banner Type Fields Exist

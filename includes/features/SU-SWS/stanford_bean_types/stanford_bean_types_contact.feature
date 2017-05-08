@@ -10,7 +10,7 @@ Feature: Stanford contact bean Type
   @safe
   Scenario: Stanford contact type exists
     And I am on "block/add"
-    Then I should see the link "stanford_contact" in the "Content Body" region
+    Then I should see the link "stanford_contact" in the "Content" region
 
   @safe
   Scenario: Stanford Contact Block Type Fields Exist
