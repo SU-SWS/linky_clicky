@@ -10,7 +10,7 @@ Feature: Stanford large block bean Type
   @safe
   Scenario: Stanford large block type exists
     And I am on "block/add"
-    Then I should see the link "stanford_large_block" in the "Content Body" region
+    Then I should see the link "stanford_large_block" in the "Content" region
 
   @safe
   Scenario: Stanford Large Block Type Fields Exist
