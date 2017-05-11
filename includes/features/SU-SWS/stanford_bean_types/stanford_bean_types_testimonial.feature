@@ -10,7 +10,7 @@ Feature: Stanford testimonial bean Type
   @safe
   Scenario: Stanford testimonial type exists
     And I am on "block/add"
-    Then I should see the link "stanford_testimonial_block" in the "Content Body" region
+    Then I should see the link "stanford_testimonial_block" in the "Content" region
 
   @safe
   Scenario: Stanford Testimonial Block Type Fields Exist

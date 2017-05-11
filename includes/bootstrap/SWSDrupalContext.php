@@ -4,25 +4,25 @@
  */
 
 use Behat\Behat\Context\Context,
-    Behat\Behat\Context\SnippetAcceptingContext,
-    Behat\Behat\Context\ClosuredContextInterface,
-    Behat\Behat\Context\TranslatedContextInterface,
-    Behat\Behat\Context\BehatContext,
-    Behat\Behat\Context\TranslatableContext,
-    Behat\Behat\Exception\PendingException,
-    Behat\Behat\Hook\Scope\BeforeScenarioScope;
+  Behat\Behat\Context\SnippetAcceptingContext,
+  Behat\Behat\Context\ClosuredContextInterface,
+  Behat\Behat\Context\TranslatedContextInterface,
+  Behat\Behat\Context\BehatContext,
+  Behat\Behat\Context\TranslatableContext,
+  Behat\Behat\Exception\PendingException,
+  Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Behat\Mink\Exception\ExpectationException,
-    Behat\Mink\Session;
+  Behat\Mink\Session;
 
 use Behat\Gherkin\Node\PyStringNode,
-    Behat\Gherkin\Node\TableNode;
+  Behat\Gherkin\Node\TableNode;
 
 use Drupal\Component\Utility\Random;
 
 use Drupal\DrupalExtension\Context\RawDrupalContext,
-    Drupal\DrupalExtension\Context\DrupalContext as DrupalContext,
-    Drupal\DrupalExtension\Context\MinkContext;
+  Drupal\DrupalExtension\Context\DrupalContext as DrupalContext,
+  Drupal\DrupalExtension\Context\MinkContext;
 
 /**
  * Features context.
@@ -81,13 +81,15 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       // See Behat\Mink\Element\TraversableElement::clickLink
       $element->clickLink("Local User Login");
       // Since we're using Javascript, we can use wait().
-      $this->getSession()->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
+      $this->getSession()
+        ->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     }
     $element->fillField($this->getDrupalText('username_field'), $this->user->name);
     $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
     $submit = $element->findButton($this->getDrupalText('log_in'));
     if (empty($submit)) {
-      throw new \Exception(sprintf("No submit button at %s", $this->getSession()->getCurrentUrl()));
+      throw new \Exception(sprintf("No submit button at %s", $this->getSession()
+        ->getCurrentUrl()));
     }
 
     // Log in.
@@ -149,7 +151,8 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
 
     try {
       $json = $driver->drush("vget", $arguments, $options);
-    } catch (RuntimeException $e) {
+    }
+    catch (RuntimeException $e) {
       return NULL;
     }
 
@@ -201,10 +204,47 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
   public function cleanupTheAlias($path_alias) {
     $driver = $this->getDriver();
     $statement = "echo drupal_get_normal_path('" . $path_alias . "')";
-    $raw_path =  $driver->drush("php-eval \"" . $statement . "\"");
+    $raw_path = $driver->drush("php-eval \"" . $statement . "\"");
 
     $statement_delete = "path_delete(array('source' => '" . $raw_path . "'))";
     $deleted = $driver->drush("php-eval \"" . $statement_delete . "\"");
+  }
+
+  /**
+   * @Then I set encrypted variable :name :value
+   */
+  public function iSetEncryptedVariable($name, $value) {
+    /** @var \Drupal\Driver\DrushDriver $driver */
+    $driver = $this->getDriver();
+    $eval = '"return encrypt(\'' . addslashes($value) . '\');"';
+    $value = $driver->drush('eval', array($eval));
+    $arguments = array($name, $value);
+    $driver->drush("vset", $arguments);
+  }
+
+  /**
+   * @Given I am authenticated with CAPx
+   */
+  public function iAmAuthenticatedWithCapx() {
+    // todo: Replace with environment variables.
+    if ($username = getenv('CAPX_USER')) {
+      $password = getenv('CAPX_PASSWORD');
+    }
+    else {
+      $file = fopen(__DIR__ . '/capx.csv', 'r');
+      list($username, $password) = fgetcsv($file);
+      fclose($file);
+    }
+
+    if ($username && $password) {
+      $this->iTrackVariable('stanford_capx_username');
+      $this->iTrackVariable('stanford_capx_password');
+      $this->iSetEncryptedVariable('stanford_capx_username', $username);
+      $this->iSetEncryptedVariable('stanford_capx_password', $password);
+    }
+    else {
+      throw new \Exception(sprintf("Unable to authenticate with CAPX"));
+    }
   }
 
 }

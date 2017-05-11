@@ -10,7 +10,7 @@ Feature: Stanford postcard bean Type
   @safe
   Scenario: Stanford postcard type exists
     And I am on "block/add"
-    Then I should see the link "stanford_postcard" in the "Content Body" region
+    Then I should see the link "stanford_postcard" in the "Content" region
 
   @safe
   Scenario: Stanford Postcard Block Type Fields Exist
