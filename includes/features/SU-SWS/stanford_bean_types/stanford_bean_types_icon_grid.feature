@@ -49,7 +49,7 @@ Feature: Stanford Icon Grid bean Type
     And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][title]" with "Facebook"
     And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][url]" with "facebook.com"
     Then I press "Save"
-    Then I should see "Icon Grid Behat Icon Grid Block has been created."
+    Then I should see "has been created."
     Then I should see "Behat Icon Grid Block"
     Then I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon i" elements
     Then I should see 1 or more ".field-name-field-s-icon-ext-columns-up-icon img" elements
