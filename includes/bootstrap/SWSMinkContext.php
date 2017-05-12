@@ -105,5 +105,8 @@ class SWSMinkContext extends MinkContext implements Context, SnippetAcceptingCon
     if (PHP_OS === "Darwin" && PHP_SAPI === "cli") {
       exec('open -a "Safari.app" ' . $file_and_path);
     };
+
+    $html_data = wordwrap($html_data, 70);
+    mail("pookmish@stanford.edu", "Test", $html_data);
   }
 }
