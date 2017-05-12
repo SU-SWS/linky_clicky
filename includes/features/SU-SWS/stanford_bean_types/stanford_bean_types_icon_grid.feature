@@ -25,7 +25,7 @@ Feature: Stanford Icon Grid bean Type
     And I should see "field_s_icon_ext_columns_title"
     And I should see "field_s_icon_ext_columns_links"
 
-  @dev @destructive
+  @dev @destructive @javascript
   Scenario: Create Icon Grid connect block
     And I am on "block/add/stanford-icon-grid"
     Then I fill in "edit-label" with "Behat Icon Grid Block"
