@@ -38,9 +38,11 @@ Feature: Stanford Icon Grid bean Type
     And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][0][title]" with "Google"
     And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][0][url]" with "google.com"
     Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-0-field-s-icon-ext-columns-links-und-add-more"
+    And I wait for AJAX to finish
     And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][1][title]" with "Google"
     And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][1][url]" with "google.com"
     Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-add-more"
+    And I wait for AJAX to finish
 
    # Column 2
     Then I attach the file "features/stanford_bean_types/img/bike icon.png" to "files[field_s_icon_ext_columns_und_1_field_s_icon_ext_columns_up_icon_und_0]"
