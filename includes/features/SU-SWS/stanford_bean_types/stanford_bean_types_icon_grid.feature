@@ -81,6 +81,7 @@ Feature: Stanford Icon Grid bean Type
     Then I should see "Invalid background color choice"
     And I select "Deep Blue" from "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_bg_colo][und]"
     Then I press the "Save" button
+    And I should be on "block/behat-icon-grid-block/view"
     And I should see "Behat Icon Grid Block"
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon i" elements
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-up-icon img" elements
