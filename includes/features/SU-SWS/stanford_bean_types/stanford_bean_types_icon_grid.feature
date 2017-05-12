@@ -52,36 +52,35 @@ Feature: Stanford Icon Grid bean Type
     Then I Select the "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_style][und]" radio button with "icon" value
     And I select "Map" from "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_fa_icon][und][0][icon]"
     And I select "Dark Taupe" from "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_bg_colo][und]"
-#    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_title][und][0][value]" with "Column #1"
-#    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][0][title]" with "Google"
-#    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][0][url]" with "google.com"
-#    Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-0-field-s-icon-ext-columns-links-und-add-more"
-#    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][1][title]" with "Google"
-#    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][1][url]" with "google.com"
-#    Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-add-more"
-#
-#   # Column 2
-#    Then I Select the "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_style][und]" radio button with "image" value
-#    And I attach the file "features/stanford_bean_types/img/bike icon.png" to "files[field_s_icon_ext_columns_und_1_field_s_icon_ext_columns_up_icon_und_0]"
-#    And I select "Cool Gray" from "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_bg_colo][und]"
-#    And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_title][und][0][value]" with "Column #2"
-#    And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][title]" with "Facebook"
-#    And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][url]" with "facebook.com"
-#    Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-add-more"
-#
-#    # Column 3
-#    Then I Select the "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_style][und]" radio button with "text" value
-#    And I select "Light Taupe" from "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_bg_colo][und]"
-#    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_text][und][0][value]" with "9090"
-#    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_title][und][0][value]" with "Column #3"
-#    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_links][und][0][title]" with "Facebook"
-#    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_links][und][0][url]" with "facebook.com"
-#
-#    Then I press "Save"
-#    Then I should see "Invalid background color choice"
-#    And I select "Deep Blue" from "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_bg_colo][und]"
+    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_title][und][0][value]" with "Column #1"
+    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][0][title]" with "Google"
+    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][0][url]" with "google.com"
+    Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-0-field-s-icon-ext-columns-links-und-add-more"
+    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][1][title]" with "Google"
+    And I fill in "field_s_icon_ext_columns[und][0][field_s_icon_ext_columns_links][und][1][url]" with "google.com"
+    Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-add-more"
+
+   # Column 2
+    Then I Select the "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_style][und]" radio button with "image" value
+    And I attach the file "features/stanford_bean_types/img/bike icon.png" to "files[field_s_icon_ext_columns_und_1_field_s_icon_ext_columns_up_icon_und_0]"
+    And I select "Cool Gray" from "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_bg_colo][und]"
+    And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_title][und][0][value]" with "Column #2"
+    And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][title]" with "Facebook"
+    And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][url]" with "facebook.com"
+    Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-add-more"
+
+    # Column 3
+    Then I Select the "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_style][und]" radio button with "text" value
+    And I select "Light Taupe" from "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_bg_colo][und]"
+    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_text][und][0][value]" with "9090"
+    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_title][und][0][value]" with "Column #3"
+    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_links][und][0][title]" with "Facebook"
+    And I fill in "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_links][und][0][url]" with "facebook.com"
+
+    Then I press "Save"
+    Then I should see "Invalid background color choice"
+    And I select "Deep Blue" from "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_bg_colo][und]"
     Then I press the "Save" button
-    Then I should see "has been created."
     And I should see "Behat Icon Grid Block"
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon i" elements
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-up-icon img" elements
