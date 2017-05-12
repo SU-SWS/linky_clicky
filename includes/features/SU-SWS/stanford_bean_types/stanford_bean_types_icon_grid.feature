@@ -43,7 +43,7 @@ Feature: Stanford Icon Grid bean Type
     Then I click on the element with css selector "#edit-field-s-icon-ext-columns-und-add-more"
 
    # Column 2
-    Then I attach the file "features/stanford_bean_types/img/ooooaaaahhh.png" to "files[field_s_icon_ext_columns_und_1_field_s_icon_ext_columns_up_icon_und_0]"
+    Then I attach the file "features/stanford_bean_types/img/bike icon.png" to "files[field_s_icon_ext_columns_und_1_field_s_icon_ext_columns_up_icon_und_0]"
     And I select "Cool Gray" from "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_bg_colo][und]"
     And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_title][und][0][value]" with "Column #2"
     And I fill in "field_s_icon_ext_columns[und][1][field_s_icon_ext_columns_links][und][0][title]" with "Facebook"
