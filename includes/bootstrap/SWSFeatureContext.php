@@ -265,8 +265,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * Find the default value of a select element.
    * See https://github.com/Behat/Mink/issues/300.
    *
-   * @Then /^I want to validate select field option "([^"]*)" default is
-   *   "([^"]*)"$/
+   * @Then /^I want to validate select field option "([^"]*)" default is "([^"]*)"$/
    */
   public function iWantToValidateSelectOptionDefaultIs($locator, $defaultValue) {
     $mink = $this->minkContext;
@@ -341,8 +340,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   /**
    * Click on the element with the provided CSS Selector.
    *
-   * @When /^I click on the element with css selector "([^"]*)" with
-   *   javascript$/
+   * @When /^I click on the element with css selector "([^"]*)" with javascript$/
    */
   public function iClickOnTheElementWithCSSSelectorWithJavascript($css) {
     $mink = $this->minkContext;
@@ -446,8 +444,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * without identifier. See
    * https://www.drupal.org/node/1826016#comment-7753999.
    *
-   * @Given /^the iframe in element "(?P<element>[^"]*)" has id
-   *   "(?P<id>[^"]*)"$/
+   * @Given /^the iframe in element "(?P<element>[^"]*)" has id "(?P<id>[^"]*)"$/
    */
   public function theIframeInElementHasId($element_id, $iframe_id) {
     $function = <<<JS
@@ -472,8 +469,7 @@ JS;
    * Fills in WYSIWYG editor with specified id.
    * See https://www.drupal.org/node/1826016#comment-7753963.
    *
-   * @Given /^(?:|I )fill in "(?P<text>[^"]*)" in WYSIWYG editor
-   *   "(?P<iframe>[^"]*)"$/
+   * @Given /^(?:|I )fill in "(?P<text>[^"]*)" in WYSIWYG editor "(?P<iframe>[^"]*)"$/
    */
   public function iFillInInWYSIWYGEditor($text, $iframe) {
     $mink = $this->minkContext;
