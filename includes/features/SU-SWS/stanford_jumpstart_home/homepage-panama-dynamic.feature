@@ -1,3 +1,4 @@
+@deploy
 Feature: Panama Homepage Layout
   In order to ensure that the Jumpstart "Panama" dynamic page layout is configured correctly
   As an end user

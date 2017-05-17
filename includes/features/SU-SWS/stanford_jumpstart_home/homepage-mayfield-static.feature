@@ -1,3 +1,4 @@
+@deploy
 Feature: Mayfield Homepage Layout
   In order to ensure that the Jumpstart "Mayfield" page layout is configured correctly
   As an end user

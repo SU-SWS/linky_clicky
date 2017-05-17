@@ -1,3 +1,4 @@
+@deploy
 Feature: Serra Homepage Layout
   In order to ensure that the Jumpstart "Serra" page layout is configured correctly
   As an end user
