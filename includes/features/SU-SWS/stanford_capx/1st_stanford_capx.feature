@@ -5,7 +5,8 @@ Feature: Stanford CAPx
 
   @api @dev @javascript @destructive
   Scenario: Stanford CAPx Mapper & Importer
-    Given I am authenticated with CAPx
+    Given the "stanford_capx" module is enabled
+    And I am authenticated with CAPx
     And the "stanford_capx" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx"

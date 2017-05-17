@@ -6,7 +6,7 @@ Feature: Stanford Courses Tag Translate
   @api @safe
   Scenario: Validate main admin page is there.
     Given I am logged in as a user with the "administrator" role
-    And I am on "admin/stanford/courses/tag-translate"
+    And I am on "admin/config/stanford/courses/tag-translate"
     Then I should see "New tag translation"
 
   @api @safe
@@ -55,21 +55,20 @@ Feature: Stanford Courses Tag Translate
   Scenario: Delete tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
-    Then I click on the element with xpath "//table//tr[last()]//td[last()]//a[last()]"
-    Then I should be on "admin/config/stanford/courses/tag-translate/delete/4"
+    Then I click on the element with css selector "tr:last-child a[href*='/tag-translate/delete/']"
     Then I should see "This action cannot be un-done. Choose wisely."
     Then I press "Yes, delete this forever"
     Then I should see "Tag translation was successfully removed."
     Then I should be on "admin/config/stanford/courses/tag-translate"
-    Then I should not see "zzzzzzzZZZZZzzzzzz"
+    And I should see "Tag translation was successfully removed"
 
   # This scenario only works if the import scenario about has been run
   @api @dev @deploy @destructive
   Scenario: Edit tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"
-    Then I click on the element with xpath "//table//a[1]"
-    Then I should be on "admin/config/stanford/courses/tag-translate/edit/1"
+    Then I click on the element with css selector "tr:first-child a[href*='/tag-translate/edit/']"
+    Then I should see "Edit tag translation"
     Then I enter "MCS::BIOTRACK_CORE" for "edit-ctag"
     Then I enter "Biology Track Core" for "edit-chuman"
     Then I press "Save"
@@ -85,6 +84,11 @@ Feature: Stanford Courses Tag Translate
     And I fill in "Title" with "BeHat Test Course Importer"
     Then I press "Save"
     And I wait for the batch job to finish
+
+  # Relies on the above test
+  @api @dev @destructive @mytest
+  Scenario: Validate translations
+    Given I am logged in as a user with the "administrator" role
     Then I go to "admin/content"
     Then I click "International Law and International Relations"
     Then I click "Edit"

@@ -4,7 +4,8 @@ Feature: Stanford Sites Jumpstart Permissions
 
   @api @safe
   Scenario: Validate permissions are configured correctly
-    Given I run drush "rls" "--filter='access administration pages'"
+    Given the "stanford_jumpstart_permissions" module is enabled
+    Then I run drush "rls" "--filter='access administration pages'"
     Then drush output should contain "administrator"
     And drush output should contain "editor"
     And drush output should contain "site owner"

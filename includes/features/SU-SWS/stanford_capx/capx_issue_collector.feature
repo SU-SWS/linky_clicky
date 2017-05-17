@@ -5,6 +5,7 @@ Feature: Stanford CAPx Issue Collector
 
   @api @dev @safe
   Scenario: Stanford CAP Extensible
+    Given the "capx_issue_collector" module is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx/settings"
     Then I should see "capx_issue_collector.js"

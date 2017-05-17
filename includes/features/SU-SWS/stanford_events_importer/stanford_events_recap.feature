@@ -5,7 +5,8 @@ Feature: Stanford Events Recap
 
   @api @dev @safe
   Scenario: Test the recap fields.
-    Given I am logged in as a user with the "administrator" role
+    Given the "stanford_events_recap" module is enabled
+    And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/types/manage/stanford-event/fields"
     Then I should see "group_post_events"
     And I should see "field_s_event_post_video"
