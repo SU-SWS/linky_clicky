@@ -42,7 +42,7 @@ Feature: Stanford Icon Grid bean Type
     And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default is "Default"
     And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default is "<Hidden>"
 
-  @dev @destructive @mikest
+  @dev @destructive
   Scenario: Create Icon Grid connect block
     And I am on "block/add/stanford-icon-grid"
     Then I fill in "edit-label" with "Behat Icon Grid Block"
