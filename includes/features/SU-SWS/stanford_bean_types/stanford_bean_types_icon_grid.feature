@@ -4,46 +4,71 @@ Feature: Stanford Icon Grid bean Type
   As an administrator
   I want to check that the Stanford Icon Grid bean types module is working correctly
 
-  Background:
-    Given I am logged in as a user with the "administrator" role
-
   @safe
   Scenario: Stanford Icon Grid type exists
+    Given I am logged in as a user with the "administrator" role
     And I am on "block/add"
     Then I should see the link "stanford_social_media_connect" in the "Content" region
 
   @safe
   Scenario: Icon Grid Block Type Fields Exist
-    Given I am on "admin/structure/block-types/manage/stanford-icon-grid/fields"
-    Then I should see "Label"
-    And I should see "Title"
-    And I should see "field_s_icon_ext_columns"
-    Then I am on "admin/structure/field-collections/field_s_icon_ext_columns"
-    And I should see "field_s_icon_ext_columns_fa_icon"
-    And I should see "field_s_icon_ext_columns_up_icon"
-    And I should see "field_s_icon_ext_columns_bg_colo"
-    And I should see "field_s_icon_ext_columns_title"
-    And I should see "field_s_icon_ext_columns_links"
-    And I should see "field_s_icon_ext_columns_style"
-    And I should see "field_s_icon_ext_columns_text"
-    # Default display mode
-    Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/display"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_fa_icon][type]" default is "Icons"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default is "<Hidden>"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default is "<Hidden>"
-    # Block display mode
-    Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/display/stanford_block"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_fa_icon][type]" default is "<Hidden>"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default is "<Hidden>"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default is "Image"
-    # List display mode
-    Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/display/stanford_list"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_fa_icon][type]" default is "<Hidden>"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default is "Default"
-    And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default is "<Hidden>"
+    Given I am logged in as a user with the "administrator" role
+        Then I am on "admin/structure/block-types/manage/stanford_icon_grid/fields"
+        And I should see "field_s_icon_ext_columns"
+
+        Then I am on "admin/structure/block-types/manage/stanford_icon_grid/display/default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns][type]" default value is "field_collection_view"
+
+        Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/fields"
+        And I should see "field_s_icon_ext_columns_bg_colo"
+        And I should see "field_s_icon_ext_columns_caption"
+        And I should see "field_s_icon_ext_columns_fa_icon"
+        And I should see "field_s_icon_ext_columns_links"
+        And I should see "field_s_icon_ext_columns_style"
+        And I should see "field_s_icon_ext_columns_text"
+        And I should see "field_s_icon_ext_columns_title"
+        And I should see "field_s_icon_ext_columns_up_icon"
+
+        Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/display/default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_bg_colo][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_caption][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_fa_icon][type]" default value is "fontawesome_icon_formatter"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_links][type]" default value is "link_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_links][parent]" default value is "group_s_more_link_style"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_style][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_title][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_title][parent]" default value is "group_s_title_styles"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default value is "hidden"
+
+        Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/display/stanford_block"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_bg_colo][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_caption][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_fa_icon][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_links][type]" default value is "link_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_links][parent]" default value is "group_more_link"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_style][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_title][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_title][parent]" default value is "group_title_styles"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default value is "image"
+
+        Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/display/stanford_list"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_bg_colo][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_caption][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_fa_icon][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_links][type]" default value is "link_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_links][parent]" default value is "group_read_more"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_style][type]" default value is "hidden"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_text][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_title][type]" default value is "text_default"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_title][parent]" default value is "group_title_style"
+        And I want to validate select field option "fields[field_s_icon_ext_columns_up_icon][type]" default value is "hidden"
+
 
   @dev @destructive
   Scenario: Create Icon Grid connect block
+    Given I am logged in as a user with the "administrator" role
     And I am on "block/add/stanford-icon-grid"
     Then I fill in "edit-label" with "Behat Icon Grid Block"
     And I fill in "edit-title" with "Behat Icon Grid Block"
@@ -81,9 +106,8 @@ Feature: Stanford Icon Grid bean Type
     Then I should see "Invalid background color choice"
     And I select "Deep Blue" from "field_s_icon_ext_columns[und][2][field_s_icon_ext_columns_bg_colo][und]"
     Then I press the "Save" button
-    And I should be on "block/behat-icon-grid-block/view"
     And I should see "Behat Icon Grid Block"
-    # And I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon" elements
+    And I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon i" elements
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-up-icon img" elements
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-links a" elements
     And I should see "9090"
