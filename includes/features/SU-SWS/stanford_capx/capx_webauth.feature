@@ -5,9 +5,9 @@ Feature: CAPx WebAuth Integration
 
   @api @dev @javascript @destructive
   Scenario: Stanford CAPx webauth user is created and populated in authmap table
-    Given I am authenticated with CAPx
-    And the "capx_webauth" module is enabled
+    Given the "capx_webauth" module is enabled
     And the "capx_ssp" module is disabled
+    And I am authenticated with CAPx
     And I am logged in as a user with the "administrator" role
     # Update organization codes
 #    Then I am on "admin/config/capx/organizations/sync?destination=admin/config/capx/settings"

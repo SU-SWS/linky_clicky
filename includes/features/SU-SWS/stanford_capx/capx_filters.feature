@@ -5,7 +5,8 @@ Feature: CAPx Filters
 
   @api @dev @javascript @destructive
   Scenario: Stanford CAPx Filters
-    Given I am authenticated with CAPx
+    Given the "capx_filters" module is enabled
+    And I am authenticated with CAPx
     And I am logged in as a user with the "administrator" role
 
     # Update organization codes

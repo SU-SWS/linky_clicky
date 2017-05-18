@@ -1,3 +1,4 @@
+@deploy
 Feature: Mayfield Homepage Layout
   In order to ensure that the Jumpstart "Mayfield" dynamic page layout is configured correctly
   As an end user
@@ -9,7 +10,7 @@ Feature: Mayfield Homepage Layout
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-mayfield-news-events-selector" button
 
-  @deploy
+  @dev
   Scenario Outline: Header content for mayfield with news and events.
     Given I am on the homepage
     Then I should see the "<Header>" heading in the "<Region>" region

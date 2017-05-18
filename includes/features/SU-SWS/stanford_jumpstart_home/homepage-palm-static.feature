@@ -1,3 +1,4 @@
+@deploy
 Feature: Palm Homepage Layout
   In order to ensure that the Jumpstart "Palm" page layout is configured correctly
   As an end user

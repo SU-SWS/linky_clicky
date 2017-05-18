@@ -5,6 +5,7 @@ Feature: Stanford Gallery
 
 @api @javascript @dev @destructive
 Scenario: Create stanford gallery node
+  Given the "stanford_gallery_block" module is enabled
   Given I am logged in as a user with the "administrator" role
   And I am on "node/add/stanford-gallery"
 

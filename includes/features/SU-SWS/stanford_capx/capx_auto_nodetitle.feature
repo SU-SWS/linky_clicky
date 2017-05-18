@@ -5,7 +5,8 @@ Feature: CAPX Auto Node Title Support
 
   @api @dev @destructive
   Scenario: Stanford CAP Auto Node Title
-    Given I am logged in as a user with the "administrator" role
+    Given the "capx_auto_nodetitle" module is enabled
+    And I am logged in as a user with the "administrator" role
     Then I am on "admin/config/capx/mapper/new"
 
     Then I select "Node" from "entity-type"

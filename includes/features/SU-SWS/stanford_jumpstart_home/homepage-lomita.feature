@@ -1,3 +1,4 @@
+@deploy
 Feature: Lomita Homepage Layout
   In order to ensure that the Jumpstart "Lomita" page layout is configured correctly
   As an end user
