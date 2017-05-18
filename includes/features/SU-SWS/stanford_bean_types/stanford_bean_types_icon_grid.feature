@@ -83,7 +83,7 @@ Feature: Stanford Icon Grid bean Type
     Then I press the "Save" button
     And I should be on "block/behat-icon-grid-block/view"
     And I should see "Behat Icon Grid Block"
-    And I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon" elements
+    # And I should see 1 or more ".field-name-field-s-icon-ext-columns-fa-icon" elements
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-up-icon img" elements
     And I should see 1 or more ".field-name-field-s-icon-ext-columns-links a" elements
     And I should see "9090"
