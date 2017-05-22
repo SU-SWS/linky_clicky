@@ -9,7 +9,7 @@ use Behat\Behat\Context\Context,
     Behat\Behat\Context\TranslatedContextInterface,
     Behat\Behat\Context\BehatContext,
     Behat\Behat\Context\TranslatableContext,
-    Behat\Behat\Exception\PendingException,
+    Behat\Behat\Tester\Exception\PendingException,
     Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Behat\Mink\Exception\ExpectationException,
@@ -107,6 +107,53 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   public function iWaitSeconds($seconds) {
     $mink = $this->minkContext;
     $mink->getSession()->wait(1000 * $seconds);
+  }
+
+  /**
+   * @Given the :arg1 module version is between :arg2 and :arg3
+   */
+  public function theModuleVersionIsBetweenAnd($arg1, $arg2, $arg3) {
+    $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
+    $version_array=unserialize($version_query);
+    preg_match('/7.x-([0-9]{1,2}.[0-9]{1,3})/', $version_array["version"], $matches);
+    $installed_version=floatval($matches[1]);
+    if (!$installed_version) {
+      throw new Exception($version_query);
+    }
+    if ($installed_version < floatval($arg2) || $installed_version > floatval($arg3)) {
+      throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
+    }
+  }
+
+  /**
+   * @Given the :arg1 module version is greater than or equal to :arg2
+   */
+  public function theModuleVersionIsGreaterThanOrEqualTo($arg1, $arg2) {
+    $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
+    $version_array=unserialize($version_query);
+    preg_match('/7.x-([0-9]{1,2}.[0-9]{1,3})/', $version_array["version"], $matches);
+    if (!$installed_version) {
+      throw new Exception($version_query);
+    }
+    if ($installed_version <= floatval($arg2)) {
+      throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
+    }
+  }
+
+  /**
+   * @Given the :arg1 module version is less than or equal to :arg2
+   */
+  public function theModuleVersionIsLessThanOrEqualTo($arg1, $arg2) {
+    $version_query = $this->getDriver()->drush('sql-query "SELECT info FROM system WHERE name like \'' . $arg1 . '\'"');
+    $version_array=unserialize($version_query);
+    preg_match('/7.x-([0-9]{1,2}.[0-9]{1,3})/', $version_array["version"], $matches);
+    $installed_version=floatval($matches[1]);
+    if (!$installed_version) {
+      throw new Exception($version_query);
+    }
+    if ($installed_version >= floatval($arg2)) {
+      throw new PendingException("Skipping Scenario, module version is: " . $installed_version . ".");
+    }
   }
 
   /**
