@@ -4,19 +4,19 @@
  */
 
 use Behat\Behat\Context\Context,
-    Behat\Behat\Context\SnippetAcceptingContext,
-    Behat\Behat\Context\ClosuredContextInterface,
-    Behat\Behat\Context\TranslatedContextInterface,
-    Behat\Behat\Context\BehatContext,
-    Behat\Behat\Context\TranslatableContext,
-    Behat\Behat\Exception\PendingException,
-    Behat\Behat\Hook\Scope\BeforeScenarioScope;
+  Behat\Behat\Context\SnippetAcceptingContext,
+  Behat\Behat\Context\ClosuredContextInterface,
+  Behat\Behat\Context\TranslatedContextInterface,
+  Behat\Behat\Context\BehatContext,
+  Behat\Behat\Context\TranslatableContext,
+  Behat\Behat\Exception\PendingException,
+  Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Behat\Mink\Exception\ExpectationException,
-    Behat\Mink\Session;
+  Behat\Mink\Session;
 
 use Behat\Gherkin\Node\PyStringNode,
-    Behat\Gherkin\Node\TableNode;
+  Behat\Gherkin\Node\TableNode;
 
 use Drupal\Component\Utility\Random;
 
@@ -117,8 +117,10 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    * @param $arguments
    *   Array contain the arguments for function.
    * @param $debug
-   *   Set as TRUE/FALSE to display the output the function print on the screen.
-   *   See https://github.com/openscholar/openscholar/blob/SCHOLAR-3.x/openscholar/behat/features/bootstrap/FeatureContext.php#L658
+   *   Set as TRUE/FALSE to display the output the function print on the
+   *   screen.
+   *   See
+   *   https://github.com/openscholar/openscholar/blob/SCHOLAR-3.x/openscholar/behat/features/bootstrap/FeatureContext.php#L658
    */
   private function invoke_code($function, $arguments = NULL, $debug = FALSE) {
     $code = !empty($arguments) ? "$function(" . implode(',', $arguments) . ");" : "$function();";
@@ -152,7 +154,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
   /**
    * Find an element in a region.
-   * see http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f.
+   * see
+   * http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f.
    *
    * @Then /^I should see a "([^"]*)" element in the "([^"]*)" region$/
    */
@@ -164,7 +167,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     if (!empty($elements)) {
       return;
     }
-    throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()->getCurrentUrl()));
+    throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()
+      ->getCurrentUrl()));
   }
 
   /**
@@ -229,10 +233,11 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $mink = $this->minkContext;
 
     $mink->getSession()->getDriver()->evaluateScript(
-    "jQuery('#block-menu-menu-admin-shortcuts ul.nav li.first.last, #block-menu-menu-admin-shortcuts ul.nav li.expanded:first, #block-menu-menu-admin-shortcuts-site-action ul.nav li.expanded:first').find('ul').show().css('z-index', '1000');"
+      "jQuery('#block-menu-menu-admin-shortcuts ul.nav li.first.last, #block-menu-menu-admin-shortcuts ul.nav li.expanded:first, #block-menu-menu-admin-shortcuts-site-action ul.nav li.expanded:first').find('ul').show().css('z-index', '1000');"
     );
 
-    $mink->getSession()->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
+    $mink->getSession()
+      ->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
 
   }
 
@@ -246,7 +251,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $session = $mink->getSession();
     $element = $session->getPage()->find(
       'xpath',
-      $session->getSelectorsHandler()->selectorToXpath('xpath', '*//*[text()="' . $text . '"]')
+      $session->getSelectorsHandler()
+        ->selectorToXpath('xpath', '*//*[text()="' . $text . '"]')
     );
     if (NULL === $element) {
       throw new \InvalidArgumentException(sprintf('Cannot find text: "%s"', $text));
@@ -257,7 +263,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
 
   /**
    * Find the default value of a select element.
-     * See https://github.com/Behat/Mink/issues/300.
+   * See https://github.com/Behat/Mink/issues/300.
    *
    * @Then /^I want to validate select field option "([^"]*)" default is "([^"]*)"$/
    */
@@ -276,6 +282,33 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     }
 
     $selectedDefaultValue = (string) $element->getText();
+    if ($selectedDefaultValue != $defaultValue) {
+      throw new Exception('Select option default value: "' . $selectedDefaultValue . '" does not match given: "' . $defaultValue . '"');
+    }
+  }
+
+    /**
+   * Find the default value of a select element.
+   * See https://github.com/Behat/Mink/issues/300.
+   *
+   * @Then /^I want to validate select field option "([^"]*)" default value is "([^"]*)"$/
+   */
+  public function iWantToValidateSelectOptionDefaultValueIs($locator, $defaultValue) {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    $page = $session->getPage();
+
+    // //select[@id=\"$locator\"]/option[@selected]
+    // //select[@class=\"$locator\"]/option[@selected]
+    // //select[@name=\"$locator\"]/option[@selected]
+
+    $element = $page->find("xpath", "//select[@id=\"$locator\"]/option[@selected]|//select[@class=\"$locator\"]/option[@selected]|//select[@name=\"$locator\"]/option[@selected]");
+    if (!$element) {
+      throw new Exception('Could not find a select element with an attribute of ' . $locator);
+    }
+
+
+    $selectedDefaultValue = (string) $element->getValue();
     if ($selectedDefaultValue != $defaultValue) {
       throw new Exception('Select option default value: "' . $selectedDefaultValue . '" does not match given: "' . $defaultValue . '"');
     }
@@ -342,7 +375,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $driver = $session->getDriver();
 
     $driver->evaluateScript(
-    "jQuery('" . $css . "').click()"
+      "jQuery('" . $css . "').click()"
     );
   }
 
@@ -366,7 +399,9 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   public function iFollowMetaRefresh() {
     $mink = $this->minkContext;
-    while ($refresh = $mink->getSession()->getPage()->find('css', 'meta[http-equiv="Refresh"]')) {
+    while ($refresh = $mink->getSession()
+      ->getPage()
+      ->find('css', 'meta[http-equiv="Refresh"]')) {
       $content = $refresh->getAttribute('content');
       $url = str_replace('0; URL=', '', $content);
       $mink->getSession()->visit($url);
@@ -410,9 +445,31 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   }
 
   /**
+   * @Then I Select the :arg1 radio button with :arg2 value
+   */
+  public function iSelectTheRadioButtonWithValue($element, $value) {
+    $page = $this->getSession()->getPage();
+    $elements = $page->findAll('css', 'input[type="radio"][name="' . $element . '"]');
+
+    if (!$element) {
+      throw new \Exception("$element radio button not found.");
+    }
+
+    foreach ($elements as $radio) {
+      if ($radio->getAttribute('value') == $value) {
+        $page->fillField($radio->getAttribute('id'), $value);
+        return TRUE;
+      }
+    }
+
+    throw new \Exception("$value for radio button $element not found.");
+  }
+
+  /**
    * Sets an id for the first iframe situated in the element specified by id.
-   * Needed when wanting to fill in WYSIWYG editor situated in an iframe without identifier.
-   * See https://www.drupal.org/node/1826016#comment-7753999.
+   * Needed when wanting to fill in WYSIWYG editor situated in an iframe
+   * without identifier. See
+   * https://www.drupal.org/node/1826016#comment-7753999.
    *
    * @Given /^the iframe in element "(?P<element>[^"]*)" has id "(?P<id>[^"]*)"$/
    */
@@ -430,7 +487,8 @@ JS;
       $mink->getSession()->executeScript($function);
     }
     catch (Exception $e) {
-      throw new \Exception(sprintf('No iframe found in the element "%s" on the page "%s".', $element_id, $mink->getSession()->getCurrentUrl()));
+      throw new \Exception(sprintf('No iframe found in the element "%s" on the page "%s".', $element_id, $mink->getSession()
+        ->getCurrentUrl()));
     }
   }
 
