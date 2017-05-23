@@ -15,6 +15,7 @@ Feature: Content
     And I should see "Steering Groups"
     And I should see "Guiding Questions"
     And I should see "FAQ"
+    And I should see a "#block-bean-jumpstart-homepage-tall-banner" element
     And I should see the heading "The Purposeful University"
     And I should see the link "Read our guiding questions"
     And I should see the heading "Creating a shared vision"
@@ -86,6 +87,7 @@ Feature: Content
     And I should see "Steering Groups"
     And I should see "Guiding Questions"
     And I should see "FAQ"
+    And I should see a "#block-bean-jumpstart-homepage-tall-banner" element
     And I should see the heading "The Purposeful University"
     And I should see the link "Read our guiding questions"
     And I should see the heading "Creating a shared vision"
