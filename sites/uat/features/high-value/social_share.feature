@@ -9,7 +9,7 @@ Feature: Social Share
     Given the "social_share" module is enabled
     And I am logged in as a user with the "administrator" role
     And the cache has been cleared
-    And I am on "admin/config/content/social-share"
+    And I am on "admin/config/services/social-share"
     And I check the box "Article"
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved"
