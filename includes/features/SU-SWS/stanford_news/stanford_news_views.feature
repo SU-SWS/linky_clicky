@@ -43,7 +43,15 @@ Feature: Stanford News Views
 
   @safe
   Scenario: The user facing views are available
-    Given I am on "news.xml"
     Given I am on "news/recent-news"
     Then I should see "Recent News"
     Then I should see 1 ".view-stanford-news" element
+
+  @destructive @mikest
+  Scenario: The masonry views are visible
+    Given the "stanford_jumpstart_masonry" module is enabled
+    And I am on "news/recent-news/masonry"
+    Then I should see "Recent News"
+    And I should see 1 or more ".view.masonry" elements
+    And I should see "js/stanford_jumpstart_masonry.js"
+    And I should see "vendor/masonry.min.js"
