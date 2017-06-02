@@ -5,7 +5,7 @@ Feature: Stanford Events and Deadlines Calendar
 
   @api @dev
   Scenario: Test the Events content type fields
-    Given the "stanford_events_and_deadline_calendar" module is enabled
+    Given the "stanford_events_and_deadlines_calendar" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/types/manage/stanford-event/fields"
     Then I should see the heading "Stanford Event"
