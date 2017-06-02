@@ -15,17 +15,15 @@ Feature: Content
     And I should see "Steering Groups"
     And I should see "Guiding Questions"
     And I should see "FAQ"
-    And I should see a "#block-bean-jumpstart-homepage-tall-banner" element
+    And I should see a ".view-id-stanford_carousel" element
     And I should see the heading "The Purposeful University"
     And I should see the link "Read our guiding questions"
     And I should see the heading "Creating a shared vision"
     And I should see the heading "Key areas"
     And I should see the link "Learn more about our key areas"
-    And I should see the link "Submit your idea/proposal"
-    And I should see the heading "Phase 1: Call for Ideas & Proposals"
-    And I should see the heading "Phase 2: Area Steering Group Proposal Analysis"
-    And I should see the heading "Phase 3: Leadership Visioning & Consultation"
-    And I should see the link "Learn more about our timeline"
+    And I should see the link "Submit your ideas now"
+    And I should see the heading "Thanks for your ideas!"
+    And I should see the heading "University affiliation of community members who have submitted ideas"
     And I should see "live such lives that it will be said of you that you are true to the best you know"
     And I should see the heading "Contact"
     And I should see the heading "Quick Links"
@@ -68,13 +66,10 @@ Feature: Content
     Then I should see the heading "WebLogin"
     And I should not see the heading "Key Areas"
     When I am on the homepage
-    And I click "Submit your idea/proposal"
+    And I click "Submit your ideas now"
     Then I should see the heading "WebLogin"
     And I should not see the heading "Submit Your Ideas & Proposals"
     When I am on the homepage
-    And I click "Learn more about our timeline"
-    Then I should see the heading "WebLogin"
-    And I should not see the heading "Timeline"
 
   @api @live @safe
   Scenario: Homepage Authenticated Access
@@ -87,17 +82,15 @@ Feature: Content
     And I should see "Steering Groups"
     And I should see "Guiding Questions"
     And I should see "FAQ"
-    And I should see a "#block-bean-jumpstart-homepage-tall-banner" element
+    And I should see a ".view-id-stanford_carousel" element
     And I should see the heading "The Purposeful University"
     And I should see the link "Read our guiding questions"
     And I should see the heading "Creating a shared vision"
     And I should see the heading "Key areas"
     And I should see the link "Learn more about our key areas"
-    And I should see the link "Submit your idea/proposal"
-    And I should see the heading "Phase 1: Call for Ideas & Proposals"
-    And I should see the heading "Phase 2: Area Steering Group Proposal Analysis"
-    And I should see the heading "Phase 3: Leadership Visioning & Consultation"
-    And I should see the link "Learn more about our timeline"
+    And I should see the link "Submit your ideas now"
+    And I should see the heading "Thanks for your ideas!"
+    And I should see the heading "University affiliation of community members who have submitted ideas"
     And I should see "live such lives that it will be said of you that you are true to the best you know"
     And I should see the heading "Contact"
     And I should see the heading "Quick Links"
@@ -132,8 +125,5 @@ Feature: Content
     And I click "Learn more about our key areas"
     And I should see the heading "Key Areas"
     When I am on the homepage
-    And I click "Submit your idea/proposal"
+    And I click "Submit your ideas now"
     And I should see the heading "Submit Your Ideas & Proposals"
-    When I am on the homepage
-    And I click "Learn more about our timeline"
-    And I should see the heading "Timeline"
