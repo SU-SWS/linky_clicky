@@ -4,18 +4,17 @@ Feature: Stanford News Views
   As an end user
   I want to check for the existence of news pages and content on views pages
 
-  Background:
-    Given I am logged in as a user with the "administrator" role
-
   @safe
   Scenario: Views are available
-    Given I am on "admin/structure/views"
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/structure/views"
     Then I should see "News"
     Then I should see "News: Manage"
 
   @safe
   Scenario: News view displays are available
-    Given I am on "admin/structure/views/view/stanford_news/edit"
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/structure/views/view/stanford_news/edit"
     Then I should see "Feed"
     Then I should see "2 Item Recent News List"
     Then I should see "5 Item News List Block"
@@ -24,12 +23,14 @@ Feature: Stanford News Views
 
   @safe
   Scenario: News admin view displays are available
-    Given I am on "admin/structure/views/view/admin_manage_stanford_news_item/edit"
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/structure/views/view/admin_manage_stanford_news_item/edit"
     Then I should see "Page"
 
   @safe
   Scenario: Manage view operations are available
-    Given I am on "admin/manage/stanford_news_item"
+    Given I am logged in as a user with the "administrator" role
+    And I am on "admin/manage/stanford_news_item"
     Then I should see 1 "#edit-title" element
     Then I should see 1 "#edit-status" element
     Then I should see 1 "#edit-tid" element
@@ -53,5 +54,6 @@ Feature: Stanford News Views
     And I am on "news/recent-news/masonry"
     Then I should see "Recent News"
     And I should see 1 or more ".view.masonry" elements
-    And I should see "js/stanford_jumpstart_masonry.js"
-    And I should see "vendor/masonry.min.js"
+    Then show me the HTML page
+    And I should see "stanford_jumpstart_masonry.js"
+    And I should see "masonry.min.js"
