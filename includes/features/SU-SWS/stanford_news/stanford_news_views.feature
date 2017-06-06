@@ -47,7 +47,7 @@ Feature: Stanford News Views
     Then I should see "Recent News"
     Then I should see 1 ".view-stanford-news" element
 
-  @destructive @mikest
+  @safe
   Scenario: The masonry views are visible
     Given the "stanford_jumpstart_masonry" module is enabled
     And I am on "news/recent-news/masonry"
