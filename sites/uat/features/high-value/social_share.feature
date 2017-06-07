@@ -16,8 +16,6 @@ Feature: Social Share
     When I go to "admin/structure/types/manage/article"
     # Vertical Tabs gives us some weird labels for fieldsets
     And I click "Social ShareEnabled"
-    And I click "Social Networks"
-    And I wait for AJAX to finish
     And I check the box "Twitter"
     And I check the box "Facebook"
     And I press the "Save content type" button
