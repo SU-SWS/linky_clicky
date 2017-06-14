@@ -5,33 +5,27 @@ Feature: Stanford Sites Helper Module
   I want to ensure the Stanford Sites Helper module is working properly
 
   @api @safe @deploy @javascript
-  Scenario Outline: Homepage text content
+  Scenario: Homepage text content
+    # We don't use "Scenario Outline" here because it's too slow.
     Given I am an anonymous user
     And I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text                                                                             | Region          |
-    | Once you have logged in, you will be able to remove this text from your homepage | Content Body    |
-    | Create a new page on your site                                                   | Content Body    |
-    | Change your site's name and information                                          | Content Body    |
-    | Get rid of this                                                                  | Content Body    |
-    | Edit your navigation menus                                                       | Content Body    |
-    | Add functionality and features                                                   | Content Body    |
-    | Edit the look and feel of your site                                              | Content Body    |
+    Then I should see "Once you have logged in, you will be able to remove this text from your homepage" in the "Content Body" region
+    And I should see "Create a new page on your site" in the "Content Body" region
+    And I should see "Change your site's name and information" in the "Content Body" region
+    And I should see "Get rid of this" in the "Content Body" region
+    And I should see "Edit your navigation menus" in the "Content Body" region
+    And I should see "Add functionality and features" in the "Content Body" region
+    And I should see "Edit the look and feel of your site" in the "Content Body" region
 
   @api @safe @deploy
-  Scenario Outline: Homepage header content
+  Scenario: Homepage header content
+    # We don't use "Scenario Outline" here because it's too slow.
     Given I am an anonymous user
     And I am on the homepage
-    Then I should see the heading "<Header>" in the "<Region>" region
-
-  Examples:
-    | Header                                 | Region        |
-    | Welcome to Your Stanford Sites Website | Content Body  |
-    | Quick Steps to Get Started             | Content Body  |
-    | More advanced tasks:                   | Content Body  |
-    | Going further:                         | Content Body  |
+    Then I should see the heading "Welcome to Your Stanford Sites Website" in the "Content Body" region
+    And I should see the heading "Quick Steps to Get Started" in the "Content Body" region
+    And I should see the heading "More advanced tasks:" in the "Content Body" region
+    And I should see the heading "Going further:" in the "Content Body" region
 
   @api @safe @deploy
   Scenario: Search box - authenticated user
@@ -48,39 +42,74 @@ Feature: Stanford Sites Helper Module
     And I should see "Consider loosening your query with OR: stanford university will match less than stanford OR university."
 
   @api @javascript @safe @deploy
-  Scenario Outline: Quick Steps
+  Scenario: Quick Steps
+    # We don't use "Scenario Outline" here because it's too slow.
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
-    When I click "<Link>"
+    When I click "Create a new page on your site"
     And I wait for AJAX to finish
-    Then I should see "<Text>"
-    When I click "<Second Link>"
-    Then I should be on "<Destination>"
-
-  Examples:
-    | Link                                    | Text                                                                               | Second Link                  | Destination                                                             |
-    | Create a new page on your site          | Do you want an                                                                     | Create a New Page            | node/add/page                                                           |
-    | Change your site's name and information | You can rename your site, add a slogan, or set an existing page to be the homepage | Edit Your Site's Information | admin/config/system/site-information                                    |
-    | Get rid of this                         | Want to make these                                                                 | Hide This Block              | admin/structure/block/manage/stanford_sites_helper/firststeps/configure |
-    | Get rid of this                         | Drupal uses a system called                                                        | Configure All Blocks         | admin/structure/block                                                   |
-    | Edit your navigation menus              | Drupal comes pre-packaged with a Main menu navigation                              | Edit Your Main Menu          | admin/structure/menu/manage/main-menu                                   |
-    | Edit your navigation menus              | First create new pages, and then add them to your menu                             | Create a New Menu            | admin/structure/menu/add                                                |
-    | Add functionality and features          | Want to add a contact form to your site? Looking to do more with your site?        | Visit Your Modules           | admin/modules                                                           |
-    | Edit the look and feel of your site     | Your site comes pre-packaged with the Stanford Light theme.                        | Edit Your Theme Settings     | admin/appearance/settings                                               |
+    Then I should see "Do you want an"
+    When I click "Create a New Page"
+    Then I should be on "node/add/page"
+    Given I am on the homepage
+    When I click "Change your site's name and information"
+    And I wait for AJAX to finish
+    Then I should see "You can rename your site, add a slogan, or set an existing page to be the homepage"
+    When I click "Edit Your Site's Information"
+    Then I should be on "admin/config/system/site-information"
+    Given I am on the homepage
+    When I click "Get rid of this"
+    And I wait for AJAX to finish
+    Then I should see "Want to make these"
+    When I click "Hide This Block"
+    Then I should be on "admin/structure/block/manage/stanford_sites_helper/firststeps/configure"
+    Given I am on the homepage
+    When I click "Get rid of this"
+    And I wait for AJAX to finish
+    Then I should see "Drupal uses a system called"
+    When I click "Configure All Blocks"
+    Then I should be on "admin/structure/block"
+    Given I am on the homepage
+    When I click "Edit your navigation menus"
+    And I wait for AJAX to finish
+    Then I should see "Drupal comes pre-packaged with a Main menu navigation"
+    When I click "Edit Your Main Menu"
+    Then I should be on "admin/structure/menu/manage/main-menu"
+    Given I am on the homepage
+    When I click "Edit your navigation menus"
+    And I wait for AJAX to finish
+    Then I should see "First create new pages, and then add them to your menu"
+    When I click "Create a New Menu"
+    Then I should be on "admin/structure/menu/add"
+    Given I am on the homepage
+    When I click "Add functionality and features"
+    And I wait for AJAX to finish
+    Then I should see "Want to add a contact form to your site? Looking to do more with your site?"
+    When I click "Visit Your Modules"
+    Then I should be on "admin/modules"
+    Given I am on the homepage
+    When I click "Edit the look and feel of your site"
+    And I wait for AJAX to finish
+    Then I should see "Your site comes pre-packaged with the Stanford Light theme."
+    When I click "Edit Your Theme Settings"
+    Then I should be on "admin/appearance/settings"
 
   @api @safe @deploy
-  Scenario Outline: Going Further
+  Scenario: Going Further
+    # We don't use "Scenario Outline" here because it's too slow.
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
-    When I click "<Link>"
-    Then I should be on "<Destination>"
-
-  Examples:
-    | Link                   | Destination                    |
-    | Add a new user         | admin/people/create            |
-    | Create a new user role | admin/people/permissions/roles |
-    | Edit permissions       | admin/people/permissions       |
-    | Create a new View      | admin/structure/views/add      |
+    When I click "Add a new user"
+    Then I should be on "admin/people/create"
+    Given I am on the homepage
+    When I click "Create a new user role"
+    Then I should be on "admin/people/permissions/roles"
+    Given I am on the homepage
+    When I click "Edit permissions"
+    Then I should be on "admin/people/permissions"
+    Given I am on the homepage
+    When I click "Create a new View"
+    Then I should be on "admin/structure/views/add"
 
   @api @safe @sites @deploy
   Scenario: Link to ServiceNow for administrative users
