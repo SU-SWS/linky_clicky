@@ -7,5 +7,4 @@ Feature: Stanford BEAN Types
   Scenario: Stanford BEAN Types
     Given I am logged in as a user with the "administrator" role
     And I am on "block/add"
-
-
+    Then I should see "Add Block"

@@ -83,13 +83,13 @@ Feature: Stanford Sites Helper Module
     | Create a new View      | admin/structure/views/add      |
 
   @api @safe @sites @deploy
-  Scenario: Link to HelpSU for administrative users
+  Scenario: Link to ServiceNow for administrative users
     Given I am logged in as a user with the "administrator" role
     And I am on "admin"
     Then I should see the heading "Get Help" in the "Help" region
-    And I should see "Problems using this service? Submit a HelpSU request." in the "Help" region
-    When I click "HelpSU request"
-    Then I should be on "https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=sites"
+    And I should see "Problems using this service? Submit a service request." in the "Help" region
+    When I click "service request"
+    Then I should be on "https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=c44652e04f13ae0054c23f828110c7d9"
 
   @api @dev @sites @destructive
   Scenario: Stanford Sites Backup and Migrate profile
@@ -111,6 +111,6 @@ Feature: Stanford Sites Helper Module
     Then I should be on "admin/config/stanford-sites-helper/filequota/check"
     When I am on "admin/reports/status"
     And I click "request more storage" in the "File Storage Limit" row
-    Then I should be on "https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=sites"
+    Then I should be on "https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=c44652e04f13ae0054c23f828110c7d9"
 
 

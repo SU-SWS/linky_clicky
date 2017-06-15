@@ -10,7 +10,7 @@ Feature: Stanford big_text_block bean Type
   @safe
   Scenario: Stanford Big Text Block Type Exists
     Given I am on "block/add"
-    Then I should see the link "stanford_big_text_block" in the "Content Body" region
+    Then I should see the link "stanford_big_text_block" in the "Content" region
 
   @safe
   Scenario: Stanford Big Text Block Type Fields Exist

@@ -1,3 +1,4 @@
+@deploy
 Feature: Stanford Jumpstart Home Feature
   In order to ensure that the Stanford Jumpstart Home feature is configured correctly
   As an administrator

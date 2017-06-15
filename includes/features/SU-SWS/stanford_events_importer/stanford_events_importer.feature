@@ -89,7 +89,7 @@ Feature: Stanford Events Importer
     And the "xpath[sources][xpathparser:17]" field should contain "mapUrl"
     And the "xpath[sources][xpathparser:18]" field should contain "eventStatus"
 
-  @api @dev @mikes
+  @api @dev
   Scenario: Test the archived feeds importer
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/structure/feeds/stanford_event_archived_importer"

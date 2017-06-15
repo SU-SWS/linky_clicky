@@ -3,66 +3,66 @@ Feature: Stanford Person Affiliation Views
   As an end user
   I want to verify the display of people content.
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Faculty node
     Given I am on "people/faculty"
     And I click "Jacob Smith" in the "Content Body" region
     Then I should see "Professor of English" in the "Content Body" region
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Stanford Person node page
     Given I am on "people/jacob-smith"
     And I should see the "Jacob Smith" heading in the "Content Body" region 
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Faculty node on directory page and node page
     Given I am on "people/faculty/directory"
     And I click "Jacob Smith" in the "Content Body" region
     Then I should see "Professor of English" in the "Content Body" region
 
-   @deploy
+   # @deploy Need to create the content before testing for it
   Scenario: Staff node on profiles page and node page
     Given I am on "people/staff/profiles"
     And I click "Emily Jordan" in the "Content Body" region
     Then I should see "Department Manager" in the "Content Body" region
 
-   @deploy
+   # @deploy Need to create the content before testing for it
   Scenario: Staff node on grid page and node page
     Given I am on "people/staff/grid"
     And I click "Emily Jordan" in the "Content Body" region
     Then I should see "Department Manager" in the "Content Body" region
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Staff node on directory page and node page
     Given I am on "people/staff/directory"
     And I click "Emily Jordan" in the "Content Body" region
     Then I should see "Department Manager" in the "Content Body" region
 
-   @deploy
+   # @deploy Need to create the content before testing for it
   Scenario: Students node on profiles page and node page
     Given I am on "people/students/profiles"
     And I click "Haley Jackson" in the "Content Body" region
     Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Students node on grid page and node page
     Given I am on "people/students/grid"
     And I click "Haley Jackson" in the "Content Body" region
     Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
 
-   @deploy
+   # @deploy Need to create the content before testing for it
   Scenario: Students node on directory page and node page
     Given I am on "people/students/directory"
     And I click "Haley Jackson" in the "Content Body" region
     Then I should see "B.A., Stanford University, 2012" in the "Content Body" region
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Faculty node on profiles page
     Given I am on "people/faculty/profiles"
     And I click "Jacob Smith" in the "Content Body" region
     Then I should see "Professor of English" in the "Content Body" region
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: Faculty taxonomy filter
     Given I am on "people/faculty"
     When I select "Professor" from "Filter by faculty status"
@@ -96,7 +96,7 @@ Feature: Stanford Person Affiliation Views
     And I should see "Contact and Location" in the "First sidebar" region
 
 
-  @deploy
+  # @deploy Need to create the content before testing for it
   Scenario: List of faculty
     Given I am on "people/faculty"
     Then I should see a ".views-row-first" element
