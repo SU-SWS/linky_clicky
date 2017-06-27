@@ -9,8 +9,6 @@ Feature: Field Collection
     Given the "field_collection" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
-    And I am on "admin/structure/field-collections"
-    Then I should see "No field collections have been defined yet. To do so attach a field collection field to any entity."
     When I go to "admin/structure/types/manage/page/fields"
     And I enter "Test Field Collection" for "New field label"
     And I select "Field collection" from "edit-fields-add-new-field-type"
