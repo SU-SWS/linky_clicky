@@ -5,6 +5,7 @@ Feature: Stanford Sites Jumpstart Layouts
 
   @api @safe @javascript
   Scenario: Validate contexts exist and the blocks reations are accurate.
+    Given the "stanford_jumpstart_layouts" module is enabled
     And I am logged in as a user with the "administrator" role
     Then I am on "admin/structure/block"
     And I should see "Main Menu - Primary - 1 Depth"

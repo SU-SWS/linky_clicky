@@ -94,6 +94,17 @@ git-crypt
 -----------
 Some files in this repository are encrypted with [git-crypt](https://github.com/AGWA/git-crypt). For instructions on how to decrypt these files, see the [directions on SWS Confluence](https://asconfluence.stanford.edu/confluence/display/SWS/Encrypting+Files+with+git-crypt) (authentication required).
 
+Travis Integration
+==================
+CAPx
+------------------
+Included is a custom step definition for CAPx credentials. To use this definition in travis-ci.org, go to settings of 
+the repository to be tested withint travis-ci.org. Add two environment variables "CAPX_USER" and "CAPX_PASSWORD".
+Verify the values are not displayed in the log report. Then in the behat tests, use the step definition "Given I am
+authenticated with CAPx". This will track existing credentials and encrypt the new credentials from the travis
+environment variables. This will only set the variables. Any additional testing may require organization codes to be
+updated during the test.
+
 See Also
 ------------
 See [Using Linky Clicky] (https://github.com/SU-SWS/linky_clicky/blob/5.x/UsingLinkyClicky.md)

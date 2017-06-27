@@ -26,7 +26,7 @@ Feature: Stanford Page
     Then I should see the heading "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
     Then I attach the file "features/stanford_page/img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
-    Then I should see "Source Info" in the "Content" region
+    Then I should see "Source Info" in the "Content Body" region
     When I enter "Foo Stanford Page" for "Title"
     Then I fill in "body[und][0][value]" with "Hello, this is a nice body"
     And I press the "Save" button

@@ -4,25 +4,25 @@
  */
 
 use Behat\Behat\Context\Context,
-    Behat\Behat\Context\SnippetAcceptingContext,
-    Behat\Behat\Context\ClosuredContextInterface,
-    Behat\Behat\Context\TranslatedContextInterface,
-    Behat\Behat\Context\BehatContext,
-    Behat\Behat\Context\TranslatableContext,
-    Behat\Behat\Exception\PendingException,
-    Behat\Behat\Hook\Scope\BeforeScenarioScope;
+  Behat\Behat\Context\SnippetAcceptingContext,
+  Behat\Behat\Context\ClosuredContextInterface,
+  Behat\Behat\Context\TranslatedContextInterface,
+  Behat\Behat\Context\BehatContext,
+  Behat\Behat\Context\TranslatableContext,
+  Behat\Behat\Exception\PendingException,
+  Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 use Behat\Mink\Exception\ExpectationException,
-    Behat\Mink\Session;
+  Behat\Mink\Session;
 
 use Behat\Gherkin\Node\PyStringNode,
-    Behat\Gherkin\Node\TableNode;
+  Behat\Gherkin\Node\TableNode;
 
 use Drupal\Component\Utility\Random;
 
 use Drupal\DrupalExtension\Context\RawDrupalContext,
-    // Drupal\DrupalExtension\Context\DrupalContext,
-    Drupal\DrupalExtension\Context\MinkContext;
+  // Drupal\DrupalExtension\Context\DrupalContext,
+  Drupal\DrupalExtension\Context\MinkContext;
 
 use SWSDrupalContext as DrupalContext;
 
@@ -49,14 +49,15 @@ class SWSMinkContext extends MinkContext implements Context, SnippetAcceptingCon
    *
    * Make it possible to use [random].
    * If you want to use the previous random value [random:1].
-   * See http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f
+   * See
+   * http://cgit.drupalcode.org/panopoly/tree/tests/behat/features/bootstrap/FeatureContext.php?id=18a2ccbdad8c8064aa36f8c57ae7416ee018b92f
    */
   protected function fixStepArgument($argument) {
     $argument = str_replace('\\"', '"', $argument);
 
     // Token replace the argument.
     static $random = array();
-    for ($start = 0; ($start = strpos($argument, '[', $start)) !== FALSE; ) {
+    for ($start = 0; ($start = strpos($argument, '[', $start)) !== FALSE;) {
       $end = strpos($argument, ']', $start);
       if ($end === FALSE) {
         break;
@@ -90,4 +91,19 @@ class SWSMinkContext extends MinkContext implements Context, SnippetAcceptingCon
     return $argument;
   }
 
+  /**
+   * This works for the Goutte driver and I assume other HTML-only ones.
+   *
+   * @Then /^show me the HTML page$/
+   */
+  public function showMeHtmlPageInBrowser() {
+
+    $html_data = $this->getSession()->getDriver()->getContent();
+    $file_and_path = '/tmp/behat_page.html';
+    file_put_contents($file_and_path, $html_data);
+
+    if (PHP_OS === "Darwin" && PHP_SAPI === "cli") {
+      exec('open -a "Safari.app" ' . $file_and_path);
+    };
+  }
 }

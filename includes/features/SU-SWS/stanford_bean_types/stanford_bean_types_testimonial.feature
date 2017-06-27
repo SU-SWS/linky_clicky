@@ -10,7 +10,7 @@ Feature: Stanford testimonial bean Type
   @safe
   Scenario: Stanford testimonial type exists
     And I am on "block/add"
-    Then I should see the link "stanford_testimonial_block" in the "Content Body" region
+    Then I should see the link "stanford_testimonial_block" in the "Content" region
 
   @safe
   Scenario: Stanford Testimonial Block Type Fields Exist
@@ -55,7 +55,7 @@ Feature: Stanford testimonial bean Type
     And I am on "block/add/stanford-testimonial-block"
     Then I fill in "edit-label" with "Behat Testimonial Block"
     Then I fill in "edit-title" with "Behat Testimonial Block"
-    Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
+    Then I attach the file "features/stanford_bean_types/img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
     Then I fill in "field_s_image_info[und][0][field_s_image_credits][und][0][value]" with "This is the credits"
     Then I fill in "field_s_image_info[und][0][field_s_image_source_info][und][0][value]" with "This is the source"
     Then I fill in "field_s_image_info[und][0][field_s_image_caption][und][0][value]" with "This is the caption"

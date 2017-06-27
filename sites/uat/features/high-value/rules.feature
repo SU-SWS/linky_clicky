@@ -4,7 +4,7 @@ Feature: Rules
   As an administrative user
   I want to ensure the Rules module is working properly
 
-  @api @javascript @dev @destructive
+  @api @javascript @dev @destructive @email
   Scenario: Rules
     Given the "rules_admin" module is enabled
     And the cache has been cleared

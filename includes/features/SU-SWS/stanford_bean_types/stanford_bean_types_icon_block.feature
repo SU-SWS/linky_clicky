@@ -10,7 +10,7 @@ Feature: Stanford icon_block bean Type
   @safe
   Scenario: Stanford icon_block type exists
     And I am on "block/add"
-    Then I should see the link "stanford_icon_block" in the "Content Body" region
+    Then I should see the link "stanford_icon_block" in the "Content" region
 
   @safe
   Scenario: Stanford Icon Block Type Fields Exist
