@@ -12,3 +12,8 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: uat.ds_drupal7-update-status
+    Imbo\BehatApiExtension:
+      apiClient:
+        base_uri: "https://sites-uat.stanford.edu/drupal7-update-status"
+#    Behat\WebApiExtension:
+#      base_url: https://sites-uat.stanford.edu/drupal7-update-status
