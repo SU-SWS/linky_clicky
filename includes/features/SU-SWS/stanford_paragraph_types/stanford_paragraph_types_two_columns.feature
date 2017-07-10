@@ -6,6 +6,7 @@ Feature: Stanford Paragraph Two Columns
 
   @safe
   Scenario: Check for two columns paragraph type
+    Given I am logged in as a user with the "administrator" role
     Then I am on "admin/structure/paragraphs/p_two_columns/fields"
     And I should see "field_p_2p_body"
 
