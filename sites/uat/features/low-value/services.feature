@@ -35,7 +35,8 @@ Feature: Services
     Then I should see "Basic page Second Page for Services Test has been created."
     When I go to "services/rest/"
     Then I should see "Services Endpoint \"foo\" has been setup successfully."
-#    And I should see "Second Page for Services Test"
+    When I go to "services/rest/node.json"
+    Then the response status code should be 200
     When I go to "admin/structure/services"
     When I click "Delete" in the "foo" row
     Then I should be on "admin/structure/services/list/foo/delete"
