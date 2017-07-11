@@ -33,19 +33,9 @@ Feature: Services
     And I enter "Second Page for Services Test" for "Title"
     And I press the "Save" button
     Then I should see "Basic page Second Page for Services Test has been created."
-    When I request "services/rest/node.json"
-    Then the response body contains JSON:
-      """
-      {
-      title	"First Page for Services Test"
-      }
-      """
-    And the response body contains JSON:
-      """
-      {
-      title	"Second Page for Services Test"
-      }
-      """
+    When I go to "services/rest/"
+    Then I should see "Services Endpoint \"foo\" has been setup successfully."
+#    And I should see "Second Page for Services Test"
     When I go to "admin/structure/services"
     When I click "Delete" in the "foo" row
     Then I should be on "admin/structure/services/list/foo/delete"
