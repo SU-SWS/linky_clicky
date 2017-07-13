@@ -2,7 +2,7 @@ Feature: Stanford Full Width Banner
   In order to ensure that the full width banner pages are viewable
   As a visitor to the site I want to be able to view pages.
 
-@api @dev @destructive @javascript @mikes
+@api @dev @destructive @javascript
 Scenario: Test Full width banner
   Given I am logged in as a user with the "administrator" role
   And I am on "admin/structure/views/view/stanford_slides_full_width_banner/edit"
