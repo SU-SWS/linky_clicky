@@ -88,21 +88,6 @@ Feature: Stanford Courses
     And I want to validate select field option "fields[field_s_course_tag_org][type]" default value is "hidden"
     And I want to validate select field option "fields[field_s_course_year][type]" default value is "hidden"
 
-  @safe
-  Scenario: View current courses and Featured Course sidebar block
-    Given I am on "courses"
-    And I should see "Current Courses"
-    When I select "2014-2015" from "field_s_course_section_year_value"
-    And I press "Go"
-    Then I should get a "200" HTTP response
-    Given I am on "courses"
-    And I press "Reset"
-    Then I should be on "courses/search"
-    Given I am on "courses"
-    When I enter "Underwater basketweaving" for "Search all courses by keyword"
-    And I press "Go"
-    Then I should see "No courses are available based on your search." in the "Content Body" region
-
   @api @dev
   Scenario: Create courses and see if they exist on the page.
     Given I am logged in as a user with the "administrator" role
@@ -112,13 +97,12 @@ Feature: Stanford Courses
     Then I press the "Save" button
     And I should see "Courses Behat Test"
     Then the cache has been cleared
-    And I am on "courses"
+    And I am on "courses?field_s_course_section_year_value=2014"
     And I select "2014-2015" from "Academic year"
     Then I press the "Go" button
     Then show me the HTML page
     And I should see "Courses Behat Test"
-    When I enter "Underwater basketweaving" for "Search all courses by keyword"
-    And I press "Go"
+    When I am on "courses?combine=UnderwaterBasket"
     Then I should see "No courses are available based on your search." in the "Content Body" region
 
   @api @javascript @dev
