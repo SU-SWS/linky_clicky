@@ -98,9 +98,6 @@ Feature: Stanford Courses
     And I should see "Courses Behat Test"
     Then the cache has been cleared
     And I am on "courses?field_s_course_section_year_value=2014"
-    And I select "2014-2015" from "Academic year"
-    Then I press the "Go" button
-    Then show me the HTML page
     And I should see "Courses Behat Test"
     When I am on "courses?combine=UnderwaterBasket"
     Then I should see "No courses are available based on your search." in the "Content Body" region
