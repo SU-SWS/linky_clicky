@@ -25,7 +25,7 @@ Feature: Stanford Bean Types Hero
     And I want to validate select field option "fields[field_hero_block_hero][parent]" default value is "group_hero_static"
     And I want to validate select field option "fields[field_hero_block_style][type]" default value is "hidden"
 
-  @api @destructive @javascript @mikest
+  @api @destructive @javascript
   Scenario: Create Hero Block
     Given I am logged in as a user with the "administrator" role
     And I am on "block/add/stanford-hero-block"
