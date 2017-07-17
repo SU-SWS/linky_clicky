@@ -5,7 +5,7 @@ Feature: Stanford Paragraph Types Dynamic
   I want to verify the display of content.
 
   @safe
-  Scenario: Check for all paragraph types
+  Scenario: Check for dynamic paragraph type
     Given I am logged in as a user with the "administrator" role
 
     Then I am on "admin/structure/paragraphs/p_views/fields"
