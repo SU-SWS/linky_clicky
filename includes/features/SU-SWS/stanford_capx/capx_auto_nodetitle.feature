@@ -23,3 +23,4 @@ Feature: CAPX Auto Node Title Support
 
     Then I am on "admin/config/capx/mapper/delete/capx_auto_nodetitle_mapper"
     And I press the "Yes, please delete" button
+    Then I am on "user/logout"
