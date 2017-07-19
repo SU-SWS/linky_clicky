@@ -9,3 +9,5 @@ Feature: Stanford CAPx Issue Collector
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx/settings"
     Then I should see "capx_issue_collector.js"
+    # Travis hangs at the end for some unknown reason. The logout step is silly, but prevents the hang.
+    Then I am on "user/logout"
