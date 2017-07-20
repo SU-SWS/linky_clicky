@@ -97,7 +97,7 @@ Feature: Stanford Courses
     Then I press the "Save" button
     And I should see "Courses Behat Test"
     Then the cache has been cleared
-    And I am on "courses/search?field_s_course_section_year_value=2014"
+    And I am on "courses/search?field_s_course_section_year_value_selective=2014"
     And I should see "Courses Behat Test"
     When I am on "courses/search?combine=UnderwaterBasket"
     Then I should see "No courses are available based on your search." in the "Content Body" region
