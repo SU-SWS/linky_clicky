@@ -28,7 +28,7 @@ Feature: Palm Homepage Layout
   @safe
   Scenario Outline: Homepage links for palm news and events
     Given I am on the homepage
-    Then I should see the link "Example link " in the "Main Top" region
+    Then I should see the link "Example link" in the "Main Top" region
     Then I should see the link "More about us" in the "Content 3 column flow" region
     Then I should see the link "See more news" in the "Content 3 column flow" region
     Then I should see the link "See more events" in the "Content 3 column flow" region
