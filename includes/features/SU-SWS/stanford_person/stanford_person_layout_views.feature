@@ -282,13 +282,9 @@ Feature: Stanford Person layout Views
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
     And I should see the "People" heading in the "Content Head" region
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-  | Header   | Region       |
-  | Faculty  | Content Body |
-  | Students | Content Body |
-  | Staff    | Content Body |
+    Then I should see the "Faculty" heading in the "Content Body" region
+    Then I should see the "Students" heading in the "Content Body" region
+    Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
   Scenario Outline: Grouped Profiles layout
@@ -296,13 +292,9 @@ Feature: Stanford Person layout Views
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
     And I should see the "People" heading in the "Content Head" region
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-  | Header   | Region       |
-  | Faculty  | Content Body |
-  | Students | Content Body |
-  | Staff    | Content Body |
+    Then I should see the "Faculty" heading in the "Content Body" region
+    Then I should see the "Students" heading in the "Content Body" region
+    Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
   Scenario Outline: Grouped List layout
@@ -310,13 +302,9 @@ Feature: Stanford Person layout Views
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
     And I should see the "People" heading in the "Content Head" region
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-  | Header   | Region       |
-  | Faculty  | Content Body |
-  | Students | Content Body |
-  | Staff    | Content Body |
+    Then I should see the "Faculty" heading in the "Content Body" region
+    Then I should see the "Students" heading in the "Content Body" region
+    Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
   Scenario Outline: Grouped Directory layout
@@ -324,25 +312,16 @@ Feature: Stanford Person layout Views
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
     And I should see the "People" heading in the "Content Head" region
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-  | Header   | Region       |
-  | Faculty  | Content Body |
-  | Students | Content Body |
-  | Staff    | Content Body |
+    Then I should see the "Faculty" heading in the "Content Body" region
+    Then I should see the "Students" heading in the "Content Body" region
+    Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
   Scenario Outline: Grouped CAP List layout
     Given I am on "people/all/cap-list/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-cap-list" element
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-    Examples:
-      | Header             | Region       |
-      | People             | Content Head |
-
+    Then I should see the "People" heading in the "Content Head" region
 
   # @deploy Need to create the content before testing for it
   Scenario: Faculty node on list page
