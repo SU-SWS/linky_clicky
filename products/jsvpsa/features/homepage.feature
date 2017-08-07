@@ -12,27 +12,19 @@ Feature: Homepage
   @api @safe
   Scenario Outline: Homepage blocks are available
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-    Examples:
-      | Header                | Region |
-      | Connect               | Main Lower |
-      | About Us              | Main Content |
-      | Upcoming Events       | Main Content |
-      | Announcements & News  | Main Content |
-      | Quick Links           | Main Content |
-      | Custom Content        | Main Content |
-      | Helpful Links         | Footer |
-      | Contact Us            | Footer |
+    Then I should see the "Connect" heading in the "Main Lower" region
+    Then I should see the "About Us" heading in the "Main Content" region
+    Then I should see the "Upcoming Events" heading in the "Main Content" region
+    Then I should see the "Announcements & News" heading in the "Main Content" region
+    Then I should see the "Quick Links" heading in the "Main Content" region
+    Then I should see the "Custom Content" heading in the "Main Content" region
+    Then I should see the "Helpful Links" heading in the "Footer" region
+    Then I should see the "Contact Us" heading in the "Footer" region
 
   @api @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-    Examples:
-      | Text                                            | Region   |
-      | Building Name Room 555                          | Footer   |
-      | The XXX is proud to be part of Student Affairs  | Footer   |
-      | Get emergency assistance or find help           | Footer   |
-      | Student Affairs                                 | Footer   |
+    Then I should see "Building Name Room 555" in the "Footer" region
+    Then I should see "The XXX is proud to be part of Student Affairs" in the "Footer" region
+    Then I should see "Get emergency assistance or find help" in the "Footer" region
+    Then I should see "Student Affairs" in the "Footer" region
