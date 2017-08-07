@@ -1,4 +1,0 @@
-1
-00:00:00,940 --> 00:00:03,229
-My very eager mother just served us nine pickles.
-

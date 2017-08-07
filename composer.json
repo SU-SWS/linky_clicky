@@ -1,4 +1,7 @@
 {
+    "name": "su-sws/linky_clicky",
+    "description": "Custom step definitions for behat.",
+    "type": "project",
     "require": {
         "behat/mink": "^1.7.0",
         "behat/mink-selenium2-driver": "^1.3.1",

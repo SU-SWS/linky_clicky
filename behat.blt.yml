@@ -1,0 +1,86 @@
+imports:
+  - ../local.yml
+  - drupal.extension.yml
+
+local:
+  suites:
+    # ALL THE THINGS
+    all:
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+      paths:
+        features: /var/www/se3_blt
+        bootstrap: /var/www/se3_blt/tests/behat/linky-clicky/features/bootstrap
+    default:
+      paths:
+        features: /var/www/se3_blt
+        bootstrap: /var/www/se3_blt/tests/behat/linky-clicky/features/bootstrap
+      filters:
+        tags: "safe&&~destructive"
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - FeatureContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+
+    # --- Lifecyle Phases Suites ---
+    # Tests that are meant for development sites and can make changes.
+    dev:
+      filters:
+        tags: '~live&&~launch'
+        #'safe,deploy,dev'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+    # Did the site deploy correctly? Are all the pages & placeholder content in place?
+    deploy:
+      filters:
+        tags: 'safe,deploy&&~destructive&&~dev&&~launch&&~live'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+    # Is the site ready for launch? Any placeholder content?
+    launch:
+      filters:
+        tags: 'safe,launch&&~destructive&&~dev&&~deploy&&~live'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
+    # Did the site launch okay? URLs, robots.txt, are correct?
+    live:
+      filters:
+        tags: 'safe,live&&~launch&&~destructive&&~deploy&&~dev'
+      contexts:
+        - Drupal\DrupalExtension\Context\MessageContext
+        - Drupal\DrupalExtension\Context\DrushContext
+        - Drupal\DrupalExtension\Context\MarkupContext
+        - Drupal\DrupalExtension\Context\BatchContext
+        - SWSFeatureContext
+        - SWSMinkContext
+        - SWSDrupalContext
