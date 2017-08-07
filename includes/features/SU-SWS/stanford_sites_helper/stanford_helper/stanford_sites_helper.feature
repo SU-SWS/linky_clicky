@@ -44,30 +44,37 @@ Feature: Stanford Sites Helper Module
     Then I should see "Do you want an"
     When I click "Create a New Page"
     Then I should be on "node/add/page"
+
     When I click "Change your site's name and information"
     Then I should see "You can rename your site, add a slogan, or set an existing page to be the homepage"
     When I click "Edit Your Site's Information"
     Then I should be on "admin/config/system/site-information"
+
     When I click "Get rid of this"
     Then I should see "Want to make these"
     When I click "Hide This Block"
     Then I should be on "admin/structure/block/manage/stanford_sites_helper/firststeps/configure"
+
     When I click "Get rid of this"
     Then I should see "Drupal uses a system called"
     When I click "Configure All Blocks"
     Then I should be on "admin/structure/block"
+
     When I click "Edit your navigation menus"
     Then I should see "Drupal comes pre-packaged with a Main menu navigation"
     When I click "Edit Your Main Menu"
     Then I should be on "admin/structure/menu/manage/main-menu"
+
     When I click "Edit your navigation menus"
     Then I should see "First create new pages, and then add them to your menu"
     When I click "Create a New Menu"
     Then I should be on "admin/structure/menu/add"
+
     When I click "Add functionality and features"
     Then I should see "Want to add a contact form to your site? Looking to do more with your site?"
     When I click "Visit Your Modules"
     Then I should be on "admin/modules"
+
     When I click "Edit the look and feel of your site"
     Then I should see "Your site comes pre-packaged with the Stanford Light theme."
     When I click "Edit Your Theme Settings"
