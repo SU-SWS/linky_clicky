@@ -3,8 +3,6 @@ default:
     Drupal\DrupalExtension:
       blackbox: ~
       api_driver: 'drush'
-      drush:
-        alias: sse.ds_example
       region_map:
         # Open Framework regions
         Admin Shortcuts: "#admin-shortcuts"

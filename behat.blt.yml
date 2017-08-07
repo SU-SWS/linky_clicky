@@ -1,5 +1,5 @@
 imports:
-  - ../local.yml
+  - ../../../tests/behat/local.yml
   - drupal.extension.yml
 
 local:
