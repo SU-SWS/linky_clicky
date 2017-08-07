@@ -13,37 +13,25 @@ Feature: Serra Homepage Layout
   @safe
   Scenario Outline: Header content for serra news and events
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-    | Header                | Region                |
-    | About                 | Content 3 column flow |
-    | Recent News           | Content 3 column flow |
-    | Upcoming Events       | Content 3 column flow |
+    Then I should see the "About" heading in the "Content 3 column flow" region
+    Then I should see the "Recent News" heading in the "Content 3 column flow" region
+    Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
 
   @safe
   Scenario Outline: Homepage content for serra news and events
     Given I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text | Region |
-    | Feature a tagline or website subtitle here | Main Top |
-    | To edit the block and remove this placeholder | Main Top |
-    | 99.9% | Main Top |
-    | This is your first Mission block. | Content 2 column flow |
-    | This is your second Mission block. | Content 2 column flow |
-    | Use this block to list facts or highlight information | Main Top |
-    | This is your About block.  | Content 3 column flow |
+    Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
+    Then I should see "To edit the block and remove this placeholder" in the "Main Top" region
+    Then I should see "99.9%" in the "Main Top" region
+    Then I should see "This is your first Mission block." in the "Content 2 column flow" region
+    Then I should see "This is your second Mission block." in the "Content 2 column flow" region
+    Then I should see "Use this block to list facts or highlight information" in the "Main Top" region
+    Then I should see "This is your About block." in the "Content 3 column flow" region
 
   @safe
   Scenario Outline: Homepage links for serra news and events
     Given I am on the homepage
-    Then I should see the link "<Link>" in the "<Region>" region
-
-  Examples:
-    | Link                          | Region                |
-    | About us                      | Main Top              |
-    | More about us                 | Content 3 column flow |
-    | See more news                 | Content 3 column flow |
-    | See more events               | Content 3 column flow |
+    Then I should see the link "About us" in the "Main Top" region
+    Then I should see the link "More about us" in the "Content 3 column flow" region
+    Then I should see the link "See more news" in the "Content 3 column flow" region
+    Then I should see the link "See more events" in the "Content 3 column flow" region
