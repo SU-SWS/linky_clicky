@@ -12,46 +12,34 @@ Feature: Homepage
   @api @safe
   Scenario Outline: Header content
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-    | Header                | Region |
-    | Connect               | Footer |
-    | Contact Us            | Footer |
-    | Optional Footer Block | Footer |
-    | Related Links         | Footer |
+    Then I should see the "Connect" heading in the "Footer" region
+    Then I should see the "Contact Us" heading in the "Footer" region
+    Then I should see the "Optional Footer Block" heading in the "Footer" region
+    Then I should see the "Related Links" heading in the "Footer" region
 
   @api @safe
   Scenario Outline: Homepage content
     Given I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text | Region   |
-    | Welcome to your site | Main Top |
-    | Edit this block to change the image and caption | Main Top |
-    | Building Name Room 555 | Footer   |
-    | This is your Optional Footer | Footer   |
+    Then I should see "Welcome to your site" in the "Main Top" region
+    Then I should see "Edit this block to change the image and caption" in the "Main Top" region
+    Then I should see "Building Name Room 555" in the "Footer" region
+    Then I should see "This is your Optional Footer" in the "Footer" region
 
   @api @safe
   Scenario Outline: Homepage links
     Given I am on the homepage
-    Then I should see the link "<Link>" in the "<Region>" region
-
-  Examples:
-    | Link                 | Region   |
-    | Example link         | Main Top |
-    | Facebook             | Footer   |
-    | Twitter              | Footer   |
-    | GooglePlus           | Footer   |
-    | LinkedIn             | Footer   |
-    | YouTube              | Footer   |
-    | Vimeo                | Footer   |
-    | Tumblr               | Footer   |
-    | Pinterest            | Footer   |
-    | Flickr               | Footer   |
-    | sunetid@stanford.edu | Footer   |
-    | Campus Map           | Footer   |
-    | Stanford University  | Footer   |
-    | Research at Stanford | Footer   |
-    | Stanford News        | Footer   |
+    Then I should see the link "Example link" in the "Main Top" region
+    Then I should see the link "Facebook" in the "Footer" region
+    Then I should see the link "Twitter" in the "Footer" region
+    Then I should see the link "GooglePlus" in the "Footer" region
+    Then I should see the link "LinkedIn" in the "Footer" region
+    Then I should see the link "YouTube" in the "Footer" region
+    Then I should see the link "Vimeo" in the "Footer" region
+    Then I should see the link "Tumblr" in the "Footer" region
+    Then I should see the link "Pinterest" in the "Footer" region
+    Then I should see the link "Flickr" in the "Footer" region
+    Then I should see the link "sunetid@stanford.edu" in the "Footer" region
+    Then I should see the link "Campus Map" in the "Footer" region
+    Then I should see the link "Stanford University" in the "Footer" region
+    Then I should see the link "Research at Stanford" in the "Footer" region
+    Then I should see the link "Stanford News" in the "Footer" region
