@@ -13,36 +13,24 @@ Feature: Panama Homepage Layout
   @safe
   Scenario Outline: Header content for panama news and events
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-    | Header                | Region                |
-    | Welcome to your site! | Main Top              |
-    | About                 | Content 3 column flow |
-    | Recent News           | Content 3 column flow |
-    | Upcoming Events       | Content 3 column flow |
+    Then I should see the "Welcome to your site!" heading in the "Main Top" region
+    Then I should see the "About" heading in the "Content 3 column flow" region
+    Then I should see the "Recent News" heading in the "Content 3 column flow" region
+    Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
 
   @safe
   Scenario Outline: Homepage content panama news and events
     Given I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text                                            | Region                |
-    | Feature a tagline or website subtitle here      | Main Top              |
-    | Edit this block to change the image and caption | Main Top              |
-    | This is your About block                        | Content 3 column flow |
-    | Sample News                 | Content 3 column flow |
+    Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
+    Then I should see "Edit this block to change the image and caption" in the "Main Top" region
+    Then I should see "This is your About block" in the "Content 3 column flow" region
+    Then I should see "Sample News" in the "Content 3 column flow" region
 
   @safe
   Scenario Outline: Homepage links panama news and events
     Given I am on the homepage
-    Then I should see the link "<Link>" in the "<Region>" region
-
-  Examples:
-    | Link                          | Region                |
-    | About us                      | Main Top              |
-    | Example link                  | Main Top              |
-    | More about us                 | Content 3 column flow |
-    | See more news                 | Content 3 column flow |
-    | See more events               | Content 3 column flow |
+    Then I should see the link "About us" in the "Main Top" region
+    Then I should see the link "Example link" in the "Main Top" region
+    Then I should see the link "More about us" in the "Content 3 column flow" region
+    Then I should see the link "See more news" in the "Content 3 column flow" region
+    Then I should see the link "See more events" in the "Content 3 column flow" region
