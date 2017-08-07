@@ -32,7 +32,7 @@ Feature: Mayfield Homepage Layout
     Given I am on the homepage
     And the cache has been cleared
     Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
-    Then I should see "Do the right thing " in the "Main Top" region
+    Then I should see "Do the right thing" in the "Main Top" region
     Then I should see "Mark Twain" in the "Main Top" region
     Then I should see "This is your About block. Here you can post a short description of your group or organization" in the "Content 3 column flow" region
     Then I should see "This is your Highlights block" in the "Content 3 column flow" region
