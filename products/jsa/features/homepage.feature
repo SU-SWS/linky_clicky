@@ -12,59 +12,47 @@ Feature: Homepage
 
   Scenario Outline: Header content
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-  Examples:
-    | Header                | Region                |
-    | Welcome to your site! | Main Top              |
-    | About                 | Content 3 column flow |
-    | About                 | Footer                |
-    | Academics             | Footer                |
-    | People                | Footer                |
-    | News and Events       | Footer                |
-    | Connect               | Footer                |
-    | Contact Us            | Footer                |
+    Then I should see the "Welcome to your site!" heading in the "Main Top" region
+    Then I should see the "About" heading in the "Content 3 column flow" region
+    Then I should see the "About" heading in the "Footer" region
+    Then I should see the "Academics" heading in the "Footer" region
+    Then I should see the "People" heading in the "Footer" region
+    Then I should see the "News and Events" heading in the "Footer" region
+    Then I should see the "Connect" heading in the "Footer" region
+    Then I should see the "Contact Us" heading in the "Footer" region
 
   Scenario Outline: Homepage content
     Given I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text                                                                 | Region                |
-    | Feature a tagline or website subtitle here                    | Main Top|
-    | Edit this block to change the image and caption               | Main Top |
-    | This is your About block                                             | Content 3 column flow  |
+    Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
+    Then I should see "Edit this block to change the image and caption" in the "Main Top" region
+    Then I should see "This is your About block" in the "Content 3 column flow" region
 
   Scenario Outline: Homepage links
     Given I am on the homepage
-    Then I should see the link "<Link>" in the "<Region>" region
-
-  Examples:
-    | Link                                | Region                |
-    | Example link                        | Main Top              |
-    | About Us                            | Footer                |
-    | Affiliated Programs                 | Footer                |
-    | Location                            | Footer                |
-    | Contact                             | Footer                |
-    | Make a Gift                         | Footer                |
-    | Undergraduate Program               | Footer                |
-    | Graduate Programs                   | Footer                |
-    | Courses                             | Footer                |
-    | Faculty                             | Footer                |
-    | Students                            | Footer                |
-    | Department Newsletter               | Footer                |
-    | Recent News                         | Footer                |
-    | Subscribe                           | Footer                |
-    | Staff                               | Footer                |
-    | Campus Map                          | Footer                |
-    | Facebook                            | Footer                |
-    | Twitter                             | Footer                |
-    | GooglePlus                          | Footer                |
-    | LinkedIn                            | Footer                |
-    | YouTube                             | Footer                |
-    | Vimeo                               | Footer                |
-    | Tumblr                              | Footer                |
-    | Pinterest                           | Footer                |
-    | Flickr                              | Footer                |
-    | sunetid@stanford.edu                | Footer                |
-    | Campus Map                          | Footer                |
+    Then I should see the link "Example link" in the "Main Top" region
+    Then I should see the link "About Us" in the "Footer" region
+    Then I should see the link "Affiliated Programs" in the "Footer" region
+    Then I should see the link "Location" in the "Footer" region
+    Then I should see the link "Contact" in the "Footer" region
+    Then I should see the link "Make a Gift" in the "Footer" region
+    Then I should see the link "Undergraduate Program" in the "Footer" region
+    Then I should see the link "Graduate Programs" in the "Footer" region
+    Then I should see the link "Courses" in the "Footer" region
+    Then I should see the link "Faculty" in the "Footer" region
+    Then I should see the link "Students" in the "Footer" region
+    Then I should see the link "Department Newsletter" in the "Footer" region
+    Then I should see the link "Recent News" in the "Footer" region
+    Then I should see the link "Subscribe" in the "Footer" region
+    Then I should see the link "Staff" in the "Footer" region
+    Then I should see the link "Campus Map" in the "Footer" region
+    Then I should see the link "Facebook" in the "Footer" region
+    Then I should see the link "Twitter" in the "Footer" region
+    Then I should see the link "GooglePlus" in the "Footer" region
+    Then I should see the link "LinkedIn" in the "Footer" region
+    Then I should see the link "YouTube" in the "Footer" region
+    Then I should see the link "Vimeo" in the "Footer" region
+    Then I should see the link "Tumblr" in the "Footer" region
+    Then I should see the link "Pinterest" in the "Footer" region
+    Then I should see the link "Flickr" in the "Footer" region
+    Then I should see the link "sunetid@stanford.edu" in the "Footer" region
+    Then I should see the link "Campus Map" in the "Footer" region
