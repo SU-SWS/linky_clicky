@@ -10,7 +10,7 @@ Feature: Homepage
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
 
   @api @safe
-  Scenario Outline: Header content
+  Scenario: Header content
     Given I am on the homepage
     Then I should see the "Connect" heading in the "Footer" region
     Then I should see the "Contact Us" heading in the "Footer" region
@@ -18,7 +18,7 @@ Feature: Homepage
     Then I should see the "Related Links" heading in the "Footer" region
 
   @api @safe
-  Scenario Outline: Homepage content
+  Scenario: Homepage content
     Given I am on the homepage
     Then I should see "Welcome to your site" in the "Main Top" region
     Then I should see "Edit this block to change the image and caption" in the "Main Top" region
@@ -26,7 +26,7 @@ Feature: Homepage
     Then I should see "This is your Optional Footer" in the "Footer" region
 
   @api @safe
-  Scenario Outline: Homepage links
+  Scenario: Homepage links
     Given I am on the homepage
     Then I should see the link "Example link" in the "Main Top" region
     Then I should see the link "Facebook" in the "Footer" region
