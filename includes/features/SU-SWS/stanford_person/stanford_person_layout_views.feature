@@ -277,7 +277,7 @@ Feature: Stanford Person layout Views
     And I should see the "People" heading in the "Content Head" region
 
   @safe
-  Scenario Outline: Grouped Grid layout
+  Scenario: Grouped Grid layout
     Given I am on "people/all/grid/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-grid" element
@@ -287,7 +287,7 @@ Feature: Stanford Person layout Views
     Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
-  Scenario Outline: Grouped Profiles layout
+  Scenario: Grouped Profiles layout
     Given I am on "people/all/profiles/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-profiles" element
@@ -297,7 +297,7 @@ Feature: Stanford Person layout Views
     Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
-  Scenario Outline: Grouped List layout
+  Scenario: Grouped List layout
     Given I am on "people/all/list/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-list" element
@@ -307,7 +307,7 @@ Feature: Stanford Person layout Views
     Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
-  Scenario Outline: Grouped Directory layout
+  Scenario: Grouped Directory layout
     Given I am on "people/all/directory/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-directory" element
@@ -317,7 +317,7 @@ Feature: Stanford Person layout Views
     Then I should see the "Staff" heading in the "Content Body" region
 
   @safe
-  Scenario Outline: Grouped CAP List layout
+  Scenario: Grouped CAP List layout
     Given I am on "people/all/cap-list/grouped"
     Then I should see a ".views-row-first" element
     And I should see a ".view-stanford-person-cap-list" element
