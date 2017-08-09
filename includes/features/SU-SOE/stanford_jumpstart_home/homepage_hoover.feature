@@ -10,7 +10,7 @@ Feature: Hoover Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-hoover-selector" button
 
   @deploy
-  Scenario Outline: Header content for hoover homepage
+  Scenario: Header content for hoover homepage
     Given I am on the homepage
     Then I should see the "About" heading in the "Main Top" region
     Then I should see the "Small Custom Block" heading in the "Content Lower" region
@@ -19,7 +19,7 @@ Feature: Hoover Homepage Layout
     Then I should see the "Contact Us" heading in the "Footer" region
 
   @deploy
-  Scenario Outline: Homepage content hoover
+  Scenario: Homepage content hoover
     Given I am on the homepage
     Then I should see "This is your About block" in the "Main Top" region
     Then I should see "You can use this block to highlight content" in the "Content Lower" region
@@ -27,7 +27,7 @@ Feature: Hoover Homepage Layout
     Then I should see "This is your custom" in the "Footer" region
 
   @safe
-  Scenario Outline: Homepage links on hoover
+  Scenario: Homepage links on hoover
     Given I am on the homepage
     Then I should see the link "More about us" in the "Main Top" region
     Then I should see the link "Learn more" in the "Content Lower" region

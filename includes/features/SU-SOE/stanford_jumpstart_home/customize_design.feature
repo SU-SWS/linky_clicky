@@ -4,7 +4,7 @@ Feature: Stanford Jumpstart Home Feature
   I want to check for the existence of content that should appear
 
   @api @safe
-  Scenario Outline: Verify items on the Customized Design Page
+  Scenario: Verify items on the Customized Design Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should see "Hoover" in the "Content Body" region
@@ -21,7 +21,7 @@ Feature: Stanford Jumpstart Home Feature
     Then I should see "Slab Serif" in the "Content Body" region
 
   @api @safe
-  Scenario Outline: Verify items on the Customized Design Page
+  Scenario: Verify items on the Customized Design Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I should not see "Serra" in the "Content Body" region

@@ -10,7 +10,7 @@ Feature: Morris Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-morris-selector" button
 
   @deploy
-  Scenario Outline: Header content for Morris
+  Scenario: Header content for Morris
     Given I am on the homepage
     Then I should see the "About" heading in the "Main Top" region
     Then I should see the "Small Custom Block" heading in the "Content 3 column flow" region
@@ -18,7 +18,7 @@ Feature: Morris Homepage Layout
     Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
 
   @deploy
-  Scenario Outline: Homepage content Morris
+  Scenario: Homepage content Morris
     Given I am on the homepage
     Then I should see "This is your About block" in the "Main Top" region
     Then I should see "Sample News" in the "Content 3 column flow" region
@@ -26,7 +26,7 @@ Feature: Morris Homepage Layout
     Then I should see "See more events" in the "Content 3 column flow" region
 
   @deploy
-  Scenario Outline: Homepage links Morris
+  Scenario: Homepage links Morris
     Given I am on the homepage
     Then I should see the link "More about us" in the "Main Top" region
     Then I should see the link "Learn more" in the "Content 3 column flow" region
