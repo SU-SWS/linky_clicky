@@ -2,7 +2,30 @@ imports:
   - ../../../tests/behat/local.yml
   - drupal.extension.yml
 
+default:
+  extensions:
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
+  formatters:
+    html:
+      output_path: /var/www/se3_blt/reports/behat/
 local:
+  formatters:
+    html:
+      output_path: /var/www/se3_blt/reports/behat/
+  extensions:
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
   suites:
     # ALL THE THINGS
     all:
@@ -17,11 +40,11 @@ local:
         - SWSDrupalContext
       paths:
         features: /var/www/se3_blt
-        bootstrap: /var/www/se3_blt/tests/behat/linky-clicky/features/bootstrap
+        bootstrap: /var/www/se3_blt/vendor/su-sws/linky_clicky/features/bootstrap
     default:
       paths:
         features: /var/www/se3_blt
-        bootstrap: /var/www/se3_blt/tests/behat/linky-clicky/features/bootstrap
+        bootstrap: /var/www/se3_blt/vendor/su-sws/linky_clicky/features/bootstrap
       filters:
         tags: "safe&&~destructive"
       contexts:
