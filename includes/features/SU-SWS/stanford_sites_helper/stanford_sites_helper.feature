@@ -4,7 +4,7 @@ Feature: Stanford Sites Helper Module
   I want to ensure the Stanford Sites Helper module is working properly
 
   @live
-  Scenario Outline: Homepage text content
+  Scenario: Homepage text content
     Given I am on the homepage
     Then I should see "Once you have logged in, you will be able to remove this text from your homepage" in the "Content Body" region
     Then I should see "Create a new page on your site" in the "Content Body" region
@@ -15,7 +15,7 @@ Feature: Stanford Sites Helper Module
     Then I should see "Edit the look and feel of your site" in the "Content Body" region
 
   @live
-  Scenario Outline: Homepage header content
+  Scenario: Homepage header content
     Given I am on the homepage
     Then I should see the heading "Welcome to Your Stanford Sites Website" in the "Content Body" region
     Then I should see the heading "Quick Steps to Get Started" in the "Content Body" region
@@ -37,7 +37,7 @@ Feature: Stanford Sites Helper Module
     And I should see "Consider loosening your query with OR: stanford university will match less than stanford OR university."
 
   @api @javascript @live
-  Scenario Outline: Quick Steps
+  Scenario: Quick Steps
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
     When I click "Create a new page on your site"
@@ -74,7 +74,7 @@ Feature: Stanford Sites Helper Module
     Then I should be on "admin/appearance/settings"                                       |
 
   @api @live
-  Scenario Outline: Going Further
+  Scenario: Going Further
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
     When I click "Add a new user"
