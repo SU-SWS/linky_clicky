@@ -10,7 +10,7 @@ Feature: Homepage
 
 
   @api @safe
-  Scenario Outline: Homepage blocks are available
+  Scenario: Homepage blocks are available
     Given I am on the homepage
     Then I should see the "Connect" heading in the "Main Lower" region
     Then I should see the "Upcoming Events" heading in the "Main Content" region
@@ -21,7 +21,7 @@ Feature: Homepage
     Then I should see the "Contact LBRE" heading in the "Footer" region
 
   @api @safe
-  Scenario Outline: Homepage content
+  Scenario: Homepage content
     Given I am on the homepage
     Then I should see "3160 Porter Drive" in the "Footer" region
     Then I should see "Helpful Links" in the "Footer" region
