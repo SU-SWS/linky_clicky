@@ -11,7 +11,7 @@ Feature: Panama Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
 
   @safe
-  Scenario Outline: Header content for panama news and events
+  Scenario: Header content for panama news and events
     Given I am on the homepage
     Then I should see the "Welcome to your site!" heading in the "Main Top" region
     Then I should see the "About" heading in the "Content 3 column flow" region
@@ -19,7 +19,7 @@ Feature: Panama Homepage Layout
     Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
 
   @safe
-  Scenario Outline: Homepage content panama news and events
+  Scenario: Homepage content panama news and events
     Given I am on the homepage
     Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
     Then I should see "Edit this block to change the image and caption" in the "Main Top" region
@@ -27,7 +27,7 @@ Feature: Panama Homepage Layout
     Then I should see "Sample News" in the "Content 3 column flow" region
 
   @safe
-  Scenario Outline: Homepage links panama news and events
+  Scenario: Homepage links panama news and events
     Given I am on the homepage
     Then I should see the link "About us" in the "Main Top" region
     Then I should see the link "Example link" in the "Main Top" region

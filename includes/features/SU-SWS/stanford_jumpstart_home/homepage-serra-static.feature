@@ -27,7 +27,7 @@ Feature: Serra Homepage Layout
     Then I should see a ".infotext" element in the "Main Top" region
 
   @api @safe
-  Scenario Outline: Header content for serra static
+  Scenario: Header content for serra static
     Given I am on the homepage
     And the cache has been cleared
     Then I should see "About" in the "Content 3 column flow" region
@@ -35,7 +35,7 @@ Feature: Serra Homepage Layout
     Then I should see "Announcements" in the "Content 3 column flow" region
 
   @api @safe
-  Scenario Outline: Homepage content for serra static
+  Scenario: Homepage content for serra static
     Given I am on the homepage
     And the cache has been cleared
     Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
@@ -49,7 +49,7 @@ Feature: Serra Homepage Layout
     Then I should see "This is your Announcements block" in the "Content 3 column flow" region
 
   @api @safe
-  Scenario Outline: Homepage links for serra static
+  Scenario: Homepage links for serra static
     Given I am on the homepage
     And the cache has been cleared
     Then I should see the link "About us" in the "Main Top" region

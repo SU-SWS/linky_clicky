@@ -11,7 +11,7 @@ Feature: Palm Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-news-events-selector" button
 
   @safe
-  Scenario Outline: Header content for palm news and events
+  Scenario: Header content for palm news and events
     Given I am on the homepage
     Then I should see the "Welcome to your site!" heading in the "Main Top" region
     Then I should see the "About" heading in the "Content 3 column flow" region
@@ -19,14 +19,14 @@ Feature: Palm Homepage Layout
     Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
 
   @safe
-  Scenario Outline: Homepage content for palm news and events
+  Scenario: Homepage content for palm news and events
     Given I am on the homepage
     Then I should see "Edit this block to change the image and caption." in the "Main Top" region
     Then I should see "This is your About block." in the "Content 3 column flow" region
     Then I should see "Sample News" in the "Content 3 column flow" region
 
   @safe
-  Scenario Outline: Homepage links for palm news and events
+  Scenario: Homepage links for palm news and events
     Given I am on the homepage
     Then I should see the link "Example link" in the "Main Top" region
     Then I should see the link "More about us" in the "Content 3 column flow" region

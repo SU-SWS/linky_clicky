@@ -20,7 +20,7 @@ Feature: Mayfield Homepage Layout
     Then I should see the heading "Access denied" in the "Branding" region
 
   @api @safe
-  Scenario Outline: Header content for mayfield without news and events.
+  Scenario: Header content for mayfield without news and events.
     Given I am on the homepage
     And the cache has been cleared
     Then I should see the "About" heading in the "Content 3 column flow" region
@@ -28,7 +28,7 @@ Feature: Mayfield Homepage Layout
     Then I should see the "Announcements" heading in the "Content 3 column flow" region
 
   @api @safe
-  Scenario Outline: Homepage content for mayfield without news and events
+  Scenario: Homepage content for mayfield without news and events
     Given I am on the homepage
     And the cache has been cleared
     Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
@@ -39,7 +39,7 @@ Feature: Mayfield Homepage Layout
     Then I should see "This is your Announcements block" in the "Content 3 column flow" region
 
   @api @safe
-  Scenario Outline: Homepage links for mayfield without news and events
+  Scenario: Homepage links for mayfield without news and events
     Given I am on the homepage
     And the cache has been cleared
     Then I should see the link "About us" in the "Main Top" region

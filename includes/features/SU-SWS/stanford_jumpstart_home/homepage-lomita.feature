@@ -21,7 +21,7 @@ Feature: Lomita Homepage Layout
     Then I should see the heading "Access denied" in the "Branding" region
 
   @api @deploy
-  Scenario Outline: Homepage content
+  Scenario: Homepage content
     Given I am on the homepage
     And the cache has been cleared
     Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
