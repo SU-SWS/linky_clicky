@@ -11,7 +11,7 @@ Feature: Homepage
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-news-events-selector" button
 
   @api @destructive @dev
-  Scenario Outline: Header content
+  Scenario: Header content
     Given I am on the homepage
     And the cache has been cleared
     Then I should see the "Connect" heading in the "Footer" region
@@ -20,7 +20,7 @@ Feature: Homepage
     Then I should see the "Related Links" heading in the "Footer" region
 
   @api @destructive @dev
-  Scenario Outline: Homepage content
+  Scenario: Homepage content
     Given I am on the homepage
     And the cache has been cleared
     Then I should see "Welcome to your site" in the "Main Top" region
@@ -29,7 +29,7 @@ Feature: Homepage
     Then I should see "This is your Optional Footer Block" in the "Footer" region
 
   @api @destructive @dev
-  Scenario Outline: Homepage links
+  Scenario: Homepage links
     Given I am on the homepage
     And the cache has been cleared
     Then I should see the link "More about us" in the "Content 3 column flow" region
