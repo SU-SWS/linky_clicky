@@ -13,11 +13,11 @@ default:
       loop_break: true
   formatters:
     html:
-      output_path: /var/www/se3_blt/reports/behat/
+      output_path: "{{ container_webserver_root }}{{ sitename }}/reports/behat/"
 local:
   formatters:
     html:
-      output_path: /var/www/se3_blt/reports/behat/
+      output_path: "{{ container_webserver_root }}{{ sitename }}/reports/behat/"
   extensions:
     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
       name: html
@@ -39,12 +39,12 @@ local:
         - SWSMinkContext
         - SWSDrupalContext
       paths:
-        features: /var/www/se3_blt
-        bootstrap: /var/www/se3_blt/vendor/su-sws/linky_clicky/features/bootstrap
+        features: "{{ container_webserver_root }}{{ sitename }}"
+        bootstrap: "{{ container_webserver_root }}{{ sitename }}/vendor/su-sws/linky_clicky/features/bootstrap"
     default:
       paths:
-        features: /var/www/se3_blt
-        bootstrap: /var/www/se3_blt/vendor/su-sws/linky_clicky/features/bootstrap
+        features: "{{ container_webserver_root }}{{ sitename }}"
+        bootstrap: "{{ container_webserver_root }}{{ sitename }}/vendor/su-sws/linky_clicky/features/bootstrap"
       filters:
         tags: "safe&&~destructive"
       contexts:
@@ -83,19 +83,6 @@ local:
         - SWSFeatureContext
         - SWSMinkContext
         - SWSDrupalContext
-    # Is the site ready for launch? Any placeholder content?
-    launch:
-      filters:
-        tags: 'safe,launch&&~destructive&&~dev&&~deploy&&~live'
-      contexts:
-        - Drupal\DrupalExtension\Context\MessageContext
-        - Drupal\DrupalExtension\Context\DrushContext
-        - Drupal\DrupalExtension\Context\MarkupContext
-        - Drupal\DrupalExtension\Context\BatchContext
-        - SWSFeatureContext
-        - SWSMinkContext
-        - SWSDrupalContext
-    # Did the site launch okay? URLs, robots.txt, are correct?
     live:
       filters:
         tags: 'safe,live&&~launch&&~destructive&&~deploy&&~dev'
