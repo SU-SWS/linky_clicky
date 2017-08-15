@@ -1,1 +1,0 @@
-../../../../includes/features/SU-SWS/stanford_person/stanford_person_cap_node_display.feature

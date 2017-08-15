@@ -25,5 +25,3 @@ Feature: Stanford Person
   Scenario: Stanford Person node page
     Given I am on "people/jacob-smith"
     Then I should see "People" in the "First sidebar" region
-    Then I should see "Contact" in the "Second sidebar" region
-    Then I should see "Office Hours" in the "Second sidebar" region
