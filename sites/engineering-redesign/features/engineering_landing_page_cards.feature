@@ -5,9 +5,8 @@ Feature: Ensure the landing page cards are collapsing responsively
 
   @safe 
   Scenario: Verify landing page cards are collapsing responsively
-    Given I am on "students/overview"
-    Then I should see "Students" in the "Main Upper" region
-    And I should see 1 or more ".well" elements
+    Given I am on "students-and-academics"
+    Then I should see "Students and Academics" in the "Main Upper" region
     And I should see 1 or more ".field-items" elements
     And I should see 1 or more ".field-item" elements
     And I should see 1 or more ".more-link" elements

@@ -4,9 +4,9 @@ Feature: Ensure the news story is formatting correctly
   I want to be able to format news stories
 
   @safe @javascript
-  Scenario: Verify users can view the images on the faculty profiles
-    Given I am on "news/recent-news"
-    Then I should see "Recent News" in the "Main Content" region
+  Scenario: Verify users can view the school news stories
+    Given I am on "news/school-news"
+    Then I should see "School News" in the "Main Top" region
     And I should see 1 or more ".view-content" elements
     When I click on the element with css selector ".image-style-sm-square"
     Then I should see 1 or more ".field-items" elements
