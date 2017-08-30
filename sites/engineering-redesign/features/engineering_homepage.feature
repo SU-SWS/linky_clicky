@@ -36,7 +36,7 @@ Feature: Ensure items on the homepage appear as expected
  Scenario: Verify users can view the second postcard linked block
     Given I am on the homepage
     Then I should see a "a" element in the "Full Width Middle" region
-    Then I should see a "#block-bean-homepage-pl-block-3" element
+    Then I should see a "#block-bean-homepage-pl-block-2" element
 
  @safe
  Scenario: Verify users can view the third postcard linked block
