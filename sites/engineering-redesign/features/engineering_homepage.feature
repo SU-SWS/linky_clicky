@@ -3,7 +3,7 @@ Feature: Ensure items on the homepage appear as expected
   As a Site User
   I want to be able to view all the homepage blocks in their appropriate regions
 
-  @safe 
+  @safe
   Scenario: Verify users can view the top banner
     Given I am on the homepage
     Then I should see the "img" element in the "Top Full Width" region
@@ -24,25 +24,25 @@ Feature: Ensure items on the homepage appear as expected
   Scenario: Verify users can view the two column block
     Given I am on the homepage
     Then I should see a "a" element in the "Full Width Middle" region
-    #Then I should see a "#block-bean-homepage-2-column-1-button-block--2" element
+    Then I should see an "#block-bean-homepage-2-column-1-button-block" element
 
  @safe
   Scenario: Verify users can view the first postcard linked block
     Given I am on the homepage
     Then I should see a "a" element in the "Full Width Middle" region
-    #Then I should see a "#block-bean-homepage-pl-block-1--2" element
+    Then I should see a "#block-bean-homepage-pl-block-1" element
 
  @safe
  Scenario: Verify users can view the second postcard linked block
     Given I am on the homepage
     Then I should see a "a" element in the "Full Width Middle" region
-    #Then I should see a "#block-bean-homepage-pl-block-3--2" element
+    Then I should see a "#block-bean-homepage-pl-block-3" element
 
  @safe
  Scenario: Verify users can view the third postcard linked block
     Given I am on the homepage
     Then I should see a "a" element in the "Full Width Middle" region
-    #Then I should see a "#block-bean-homepage-pl-block-3--2" element
+    Then I should see a "#block-bean-homepage-pl-block-3" element
 
   @safe
   Scenario: Verify users can view the people spotlight
@@ -51,4 +51,3 @@ Feature: Ensure items on the homepage appear as expected
     Then I should see the "img" element in the "Full Width Middle" region
     Then I should see a "a" element in the "Full Width Middle" region
     Then I should see the text "More Stories"
-
