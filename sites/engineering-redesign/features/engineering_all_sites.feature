@@ -4,9 +4,10 @@ Feature: Every page will be checked for the following regions, elements and func
   I want to check whether the content exists
 
   @safe
-  Scenario: Verify that the logo exists in the header region of the homepage
+  Scenario: Verify that the logo exists on the homepage
     Given I am on the homepage
-    Then I should see the "img" element in the "Header" region
+    Then I should see a "#logo" element
+    Then I should see a "#name-and-slogan" element
 
   @safe
   Scenario: See the nav bar region
@@ -44,7 +45,5 @@ Feature: Every page will be checked for the following regions, elements and func
     Then I should see a "#stanford-search-api-search-block-form" element
     When I enter "purple monkey dishwasher" for "Search"
     And I press the "Search" button
-    # And I wait for AJAX to finish
-    Then I should be on "search/node/purple%20monkey%20dishwasher"
     And I should see "Search" in the "Content Head" region
-    And I should see "Remove quotes"
+    And I should see "Keyword search"
