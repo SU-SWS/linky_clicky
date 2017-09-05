@@ -61,5 +61,5 @@ Feature: Ensure items on the AA landing page appear as expected
   Scenario: Verify users can view the Recent News view
     Given I am on "faculty-research/departments/aeronautics-astronautics"
     Then I should see a "a" element in the "Content Bottom" region
-    Then I should see a "#block-views-28988c53fc831d8e60271440e3450bde" element
+    Then I should see a "#block-views-98ef3755ed7cc9ac83eba0d66243ce4c" element
     Then I should see the text "Visit the"
