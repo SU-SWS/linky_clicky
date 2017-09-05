@@ -19,9 +19,8 @@ Feature: Stanford School of Engineering Menus
     Then I should be on "about"
     When I click "Dean"
     Then I should be on "about/dean"
-    #Then show me the HTML page
-    #When I click "Dean’s Office"
-    #Then I should be on "about/dean-s-office"
+    When I click "Dean’s Office"
+    Then I should be on "about/dean-s-office"
     When I click "Heroes"
     Then I should be on "about/heroes"
     When I click "School News"
