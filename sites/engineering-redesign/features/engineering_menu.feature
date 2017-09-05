@@ -11,7 +11,7 @@ Feature: Stanford School of Engineering Menus
     Then I should see "Get Involved" in the "Main Navigation" region
     And I should see "About" in the "Main Navigation" region
 
-  @deploy
+  @live
   Scenario: Verify that we have the correct Admission & Aid navigation items
     Given I am on the homepage
     When I click "Admission & Aid"
@@ -23,11 +23,11 @@ Feature: Stanford School of Engineering Menus
     When I click "Financial Aid"
     Then I should be on "admission-aid/financial-aid"
 
-  @deploy
+  @live
   Scenario: Verify that we have the correct Students & Academics navigation items
     Given I am on the homepage
     When I click "Students & Academics"
-    Then I should be on "students-academics"
+    Then I should be on "students-and-academics"
     When I click "Academics"
     Then I should be on "students-academics/academics"
     When I click "Support and Resources"
@@ -39,7 +39,7 @@ Feature: Stanford School of Engineering Menus
     When I click "The Student Experience"
     Then I should be on "students-academics/student-experience"
 
-  @deploy
+  @live
   Scenario: Verify that we have the correct Faculty & Research navigation items
     Given I am on the homepage
     When I click "Faculty & Research"
@@ -55,7 +55,7 @@ Feature: Stanford School of Engineering Menus
     When I click "Faculty Awards"
     Then I should be on "faculty-research/faculty-awards"
 
-  @deploy
+  @live
   Scenario: Verify that we have the correct Get Involved navigation items
     Given I am on the homepage
     When I click "Get Involved"
