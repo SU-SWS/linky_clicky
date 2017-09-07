@@ -1,4 +1,4 @@
-# Tips and Tricks Linky Clicky
+# Tips and Tricks for Using Linky Clicky
 
 Troubleshooting, tips, and tricks for running Behat and using Linky Clicky.
 
