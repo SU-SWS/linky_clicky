@@ -10,7 +10,7 @@ Feature: Stanford School of Engineering Menus
     Then I should see "Faculty & Research" in the "Main Navigation" region
     Then I should see "Get Involved" in the "Main Navigation" region
     And I should see "About" in the "Main Navigation" region
-
+    
   @live
   Scenario: Verify that we have the correct Admission & Aid navigation items
     Given I am on the homepage
