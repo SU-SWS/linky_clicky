@@ -16,10 +16,15 @@ Feature: Stanford School of Engineering Menus
     Given I am on the homepage
     When I click "Admission & Aid"
     Then I should be on "admission-aid"
+
     When I click "Graduate Admission"
     Then I should be on "admission-aid/graduate-admission"
+
     When I click "Coterm"
     Then I should be on "admission-aid/coterminal-study-engineering"
+    When I click "Financial Support"
+    Then I should be on "admission-aid/coterm/applying-deans-office-financial-support"
+
     When I click "Financial Aid"
     Then I should be on "admission-aid/financial-aid"
 
@@ -28,14 +33,27 @@ Feature: Stanford School of Engineering Menus
     Given I am on the homepage
     When I click "Students & Academics"
     Then I should be on "students-and-academics"
+
     When I click "Academics"
     Then I should be on "students-academics/academics"
+    When I click "Undergraduate Degree Programs"
+    Then I should be on "students-academics/academics/undergraduate-degree-programs"
+    When I click "Graduate Degree Programs"
+    Then I should be on "students-academics/academics/graduate-degree-programs"
+    When I click "Online Learning"
+    Then I should be on "students-academics/academics/online-learning"
+    When I click "Student Awards"
+    Then I should be on "students-academics/academics/frederick-emmons-terman-engineering-scholastic-award"
+
     When I click "Support and Resources"
     Then I should be on "students-academics/support-and-resources"
+
     When I click "Global Engineering Programs"
     Then I should be on "students-academics/global-engineering-programs"
+
     When I click "Engineering Diversity Programs"
     Then I should be on "students-academics/engineering-diversity-programs"
+
     When I click "The Student Experience"
     Then I should be on "students-academics/student-experience"
 
@@ -44,14 +62,19 @@ Feature: Stanford School of Engineering Menus
     Given I am on the homepage
     When I click "Faculty & Research"
     Then I should be on "faculty-research"
+
     When I click "Faculty"
     Then I should be on "people/faculty/grid"
+
     When I click "Events"
     Then I should be on "events/upcoming-events"
+
     When I click "Departments"
     Then I should be on "faculty-research/departments"
+
     When I click "Institutes, Labs and Centers"
     Then I should be on "faculty-research/institutes-labs-and-centers"
+
     When I click "Faculty Awards"
     Then I should be on "faculty-research/faculty-awards"
 
@@ -60,12 +83,16 @@ Feature: Stanford School of Engineering Menus
     Given I am on the homepage
     When I click "Get Involved"
     Then I should be on "get-involved"
+
     When I click "Give"
     Then I should be on "get-involved/give"
+
     When I click "Collaborations"
     Then I should be on "get-involved/collaborations"
+
     When I click "Alumni"
     Then I should be on "get-involved/alumni"
+
     When I click "Letters from Department Chairs"
     Then I should be on "get-involved/letters-department-chairs"
 
