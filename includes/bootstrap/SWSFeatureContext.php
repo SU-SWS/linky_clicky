@@ -588,13 +588,13 @@ JS;
 
 
   /**
-   * @Then I should see all timestamps for :arg1 in descending order
+   * @Then I should see all timestamps for :arg1 in :arg2 order
    *
    * This assumes there's a string something like:
    * content="2017-08-28T00:00:00-07:00">
    * associated with the inner HTML of the given element
    */
-  public function iShouldSeeAllTimestampsForInDescendingOrder($element) {
+  public function iShouldSeeAllTimestampsForInOrder($element, $direction) {
     $container = $this->getSession()->getPage();
     $nodes = $container->findAll('css', $element);
     $needle_end = '">';
@@ -612,10 +612,19 @@ JS;
 
     foreach ($nodes as $node) {
       $cur_time = $this->getStringBetween($node->getHTML(), $needle_start, $needle_end);
-      var_dump($cur_time);
-      if ($prev_time < $cur_time) {
-        $message = sprintf('Previous timestamp: %s, Current timestamp: %s', $prev_time, $cur_time);
-        throw new ExpectationException($message, $session);
+      if ($direction == "descending") {
+        if ($prev_time < $cur_time) {
+          $message = sprintf('Timestamps are not in %s order. Previous timestamp: %s, Current timestamp: %s',
+            $direction, $prev_time, $cur_time);
+          throw new ExpectationException($message, $session);
+        }
+      }
+      elseif ($direction == "ascending") {
+        if ($prev_time >= $cur_time) {
+          $message = sprintf('Timestamps are not in %s order. Previous timestamp: %s, Current timestamp: %s',
+            $direction, $prev_time, $cur_time);
+          throw new ExpectationException($message, $session);
+        }
       }
 
       $prev_time = $cur_time;

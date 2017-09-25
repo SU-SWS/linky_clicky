@@ -5,4 +5,4 @@ Feature: Stanford Magazine Articles
   @safe
   Scenario: Verify order of articles on a page
     Given I am on "magazine/all"
-    Then I should see all timestamps for ".mag-article-date" in descending order
+    Then I should see all timestamps for ".mag-article-date" in "descending" order
