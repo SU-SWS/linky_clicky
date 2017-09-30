@@ -26,6 +26,8 @@ Feature: Date iCal
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/types/manage/page/display"
     And I click "Custom display settings"
+    # Testing to see if Travis will comply
+    And I wait one second
     And I wait for AJAX to finish
     And I check the box "iCal"
     And I press the "Save" button
