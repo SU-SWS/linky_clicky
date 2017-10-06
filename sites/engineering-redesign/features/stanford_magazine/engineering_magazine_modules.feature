@@ -1,7 +1,7 @@
 Feature: Magazine modules
   In order to ensure the Magazine modules are enabled
   As an administrator
-  I want to be able to view the CAPx modules for magazines as enabled
+  I want to be able to view the modules for magazines as enabled
 
   @api @safe @javascript
   Scenario: Verify Magazine modules are enabled

@@ -38,6 +38,22 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
    */
   private $changedVariables = array();
 
+
+  /**
+   * Helper function to return a string between two strings
+   *
+   * @param $haystack
+   * @param $needle_start
+   * @param $needle_end
+   * @return bool|string
+   */
+  private function getStringBetween($haystack, $needle_start, $needle_end) {
+    $start = strpos($haystack, $needle_start) + strlen($needle_start);
+    $length = strpos($haystack, $needle_end, $start) - $start;
+    $between = substr($haystack, $start, $length);
+    return $between;
+  }
+
   /**
    * @var \Drupal\DrupalExtension\Context\DrupalContext
    */
@@ -570,4 +586,48 @@ JS;
     $element->fillField($field, $raw);
   }
 
+
+  /**
+   * @Then I should see all timestamps for :arg1 in :arg2 order
+   *
+   * This assumes there's a string something like:
+   * content="2017-08-28T00:00:00-07:00">
+   * associated with the inner HTML of the given element
+   */
+  public function iShouldSeeAllTimestampsForInOrder($element, $direction) {
+    $container = $this->getSession()->getPage();
+    $nodes = $container->findAll('css', $element);
+    $needle_end = '">';
+    $needle_start = 'content="';
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+
+    if (count($nodes) == 0) {
+      $message = sprintf('%d "%s" elements found when there should be a minimum of 1.', count($nodes), $element);
+      throw new ExpectationException($message, $session);
+    }
+
+    // Get the first timestamp.
+    $prev_time = $this->getStringBetween($nodes[0]->getHTML(), $needle_start, $needle_end);
+
+    foreach ($nodes as $node) {
+      $cur_time = $this->getStringBetween($node->getHTML(), $needle_start, $needle_end);
+      if ($direction == "descending") {
+        if ($prev_time < $cur_time) {
+          $message = sprintf('Timestamps are not in %s order. Previous timestamp: %s, Current timestamp: %s',
+            $direction, $prev_time, $cur_time);
+          throw new ExpectationException($message, $session);
+        }
+      }
+      elseif ($direction == "ascending") {
+        if ($prev_time >= $cur_time) {
+          $message = sprintf('Timestamps are not in %s order. Previous timestamp: %s, Current timestamp: %s',
+            $direction, $prev_time, $cur_time);
+          throw new ExpectationException($message, $session);
+        }
+      }
+
+      $prev_time = $cur_time;
+    }
+  }
 }
