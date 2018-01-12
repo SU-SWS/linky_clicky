@@ -16,9 +16,20 @@ Feature: PHP
   Scenario: Permissions
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/people/permissions"
+    And the "auto_nodetitle" module is enabled
+    And the "ctools" module is enabled
+    And the "custom_breadcrumbs" module is enabled
+    And the "googleanalytics" module is enabled
     Then I should see "Use PHP for title patterns Disabled by paranoia module."
     And I should see "Use CTools importer Disabled by paranoia module."
     And I should see "Use PHP in Custom Breadcrumbs Disabled by paranoia module."
+    And I should see "Use PHP for tracking visibility Disabled by paranoia module."
+
+  @api
+  Scenario: Modify User 1
+    Given I am logged in as a user with the "administrator" role
+    And I am on "user/1/edit"
+    Then I should see "You must login as this user (user/1) to modify the name, email address, and password for this account."
 
   @api
   Scenario: Automatic Nodetitles
@@ -87,6 +98,50 @@ Feature: PHP
     Then I should see "Access denied"
     And I should see "You are not authorized to access this page."
     And the response status code should be 403
+
+  @api
+  Scenario: Feeds Import Form
+    Given I am logged in as a user with the "administrator" role
+    And the "feeds_ui" module is enabled
+    And the cache has been cleared
+    When I am on "admin/structure/feeds/import"
+    Then I should see "Access denied"
+    And I should see "You are not authorized to access this page."
+    And the response status code should be 403
+
+  @api @javascript
+  Scenario: Flag Import Form
+    Given I am logged in as a user with the "administrator" role
+    And the "flag" module is enabled
+    And the cache has been cleared
+    When I am on "admin/structure/flags/import"
+    And I should see "This form is disabled"
+
+  @api
+  Scenario: Page Manager Import Form
+    Given I am logged in as a user with the "administrator" role
+    And the "page_manager" module is enabled
+    And the cache has been cleared
+    When I am on "admin/structure/pages/import"
+    Then I should see "Access denied"
+    And I should see "You are not authorized to access this page."
+    And the response status code should be 403
+
+  @api @javascript
+  Scenario: Relation Import Form
+    Given I am logged in as a user with the "administrator" role
+    And the "relation_ui" module is enabled
+    And the cache has been cleared
+    When I am on "admin/structure/relation/import"
+    And I should see "This form is disabled"
+
+  @api @javascript
+  Scenario: Rules Import Form
+    Given I am logged in as a user with the "administrator" role
+    And the "rules_admin" module is enabled
+    And the cache has been cleared
+    When I am on "admin/config/workflow/rules/components/import"
+    And I should see "This form is disabled"
 
   @api
   Scenario: Custom Breadcrumbs
