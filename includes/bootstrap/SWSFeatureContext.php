@@ -586,7 +586,6 @@ JS;
     $element->fillField($field, $raw);
   }
 
-
   /**
    * @Then I should see all timestamps for :arg1 in :arg2 order
    *
@@ -630,4 +629,22 @@ JS;
       $prev_time = $cur_time;
     }
   }
+
+  /**
+   * @Then the :arg1 checkbox should be disabled
+   */
+  public function theCheckboxShouldBeDisabled($selector) {
+    $session = $this->getSession();
+    $element = $session->getPage()->find('named', array('checkbox', $selector));
+    if (is_null($element)) {
+      throw new \Exception(sprintf('"%s" checkbox not found".', $selector));
+    }
+
+    if ($element->hasAttribute('disabled')) {
+      return TRUE;
+    }
+
+    throw new \Exception(sprintf('The "%s" checkbox is not disabled', $selector));
+  }
+
 }
