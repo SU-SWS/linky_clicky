@@ -633,15 +633,14 @@ JS;
   /**
    * @Then the :arg1 checkbox should be disabled
    */
-  public function theCheckboxShouldBeDisabled($selector)
-  {
+  public function theCheckboxShouldBeDisabled($selector) {
     $session = $this->getSession();
     $element = $session->getPage()->find('named', array('checkbox', $selector));
     if (is_null($element)) {
       throw new \Exception(sprintf('"%s" checkbox not found".', $selector));
     }
 
-    if($element->hasAttribute('disabled')) {
+    if ($element->hasAttribute('disabled')) {
       return TRUE;
     }
 
