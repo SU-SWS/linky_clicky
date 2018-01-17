@@ -109,7 +109,7 @@ Feature: PHP
     And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
-  @api @javascript
+  @api
   Scenario: Flag Import Form
     Given I am logged in as a user with the "administrator" role
     And the "flag" module is enabled
@@ -127,7 +127,7 @@ Feature: PHP
     And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
-  @api @javascript
+  @api
   Scenario: Relation Import Form
     Given I am logged in as a user with the "administrator" role
     And the "relation_ui" module is enabled
@@ -135,7 +135,7 @@ Feature: PHP
     When I am on "admin/structure/relation/import"
     And I should see "This form is disabled"
 
-  @api @javascript
+  @api
   Scenario: Rules Import Form
     Given I am logged in as a user with the "administrator" role
     And the "rules_admin" module is enabled
@@ -160,8 +160,19 @@ Feature: PHP
     And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
-  @api @javascript
+  @api
   Scenario: Views Bulk Operations Chainsaw Mode
+    Given I am logged in as a user with the "administrator" role
+    And the "views_bulk_operations" module is enabled
+    And I am on "admin/structure/views/view/admin_views_node"
+    When I click "Bulk operations: Content"
+    Then the "Execute arbitrary PHP script" checkbox should be disabled
+    When I am on "admin/structure/views/view/admin_views_user"
+    When I click "Bulk operations: User"
+    Then the "Execute arbitrary PHP script" checkbox should be disabled
+
+  @api @javascript
+  Scenario: Views Bulk Operations Chainsaw Mode - with Javascript
     Given I am logged in as a user with the "administrator" role
     And the "views_bulk_operations" module is enabled
     And I am on "admin/structure/views/view/admin_views_node"
