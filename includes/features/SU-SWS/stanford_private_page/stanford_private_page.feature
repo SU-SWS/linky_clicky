@@ -36,6 +36,8 @@ Feature: Stanford Private Page
       And I am on the homepage
       Then I go to "system/files/sample.pdf"
       Then I should see "Access denied"
+      When I go to "private/bar"
+      Then I should see "Access denied"
       Given I am logged in as a user with the "administrator" role
       When I go to "private/bar"
       And I click "Edit" in the "Content Head" region
