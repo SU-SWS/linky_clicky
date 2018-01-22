@@ -21,17 +21,13 @@ Feature: Lomita Homepage Layout
     Then I should see the heading "Access denied" in the "Branding" region
 
   @api @deploy
-  Scenario Outline: Homepage content
+  Scenario: Homepage content
     Given I am on the homepage
     And the cache has been cleared
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text | Region   |
-    | Feature a tagline or website subtitle here | Main Top |
-    | To edit the block and remove this placeholder content, hover over the block, click on the gear widget and select | Main Top |
-    | Add a video, image, or other featured content to this block. | Main Top |
-    | Building Name Room 555 | Footer   |
+    Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
+    Then I should see "To edit the block and remove this placeholder content, hover over the block, click on the gear widget and select" in the "Main Top" region
+    Then I should see "Add a video, image, or other featured content to this block." in the "Main Top" region
+    Then I should see "Building Name Room 555" in the "Footer" region
 
   @api @safe
   Scenario: Homepage video block
