@@ -74,6 +74,13 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   }
 
   /**
+   * @AfterScenario
+   */
+  public function after($event) {
+    $user = $this->drupalContext->logout();
+  }
+
+  /**
    * Initializes context.
    *
    * Every scenario gets its own context object.
@@ -646,5 +653,15 @@ JS;
 
     throw new \Exception(sprintf('The "%s" checkbox is not disabled', $selector));
   }
+
+  /**
+   * @Given I am logged in as User One
+   */
+  public function iAmLoggedInAsUserOne()
+  {
+    $url = $this->getDriver()->drush('user-login 1 --browser=0');
+    $this->visitPath($url);
+  }
+
 
 }
