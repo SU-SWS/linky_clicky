@@ -3,7 +3,7 @@ Feature: Magazine modules
   As an administrator
   I want to be able to view the modules for magazines as enabled
 
-  @api @safe @javascript
+  @api @safe
   Scenario: Verify Magazine modules are enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "/admin/modules"
