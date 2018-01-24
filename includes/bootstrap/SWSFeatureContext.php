@@ -659,6 +659,10 @@ JS;
    */
   public function iAmLoggedInAsUserOne()
   {
+    // Check if logged in.
+    if ($this->loggedIn()) {
+      $this->logout();
+    }
     $url = $this->getDriver()->drush('user-login 1 --browser=0');
     $this->visitPath($url);
   }
