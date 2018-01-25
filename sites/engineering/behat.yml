@@ -8,7 +8,56 @@ imports:
 default:
   extensions:
     Behat\MinkExtension:
-      base_url: https://sites.stanford.edu/jse-soe-new-dev
+      base_url: https://sites.stanford.edu/drupal7-update-status/
     Drupal\DrupalExtension:
       drush:
-        alias: 'sse.jse-soe-new-dev'
+        alias: 'sse.d7up'
+      region_map:
+        # SOE Regions
+        Full Width Super Hero: "#full-width-super-hero"
+        Digital Magazine Menu: "#digital-magazine-menu"
+        Digital Magazine Megamenu: "#digital-magazine-megamenu"
+        Content Body Lower: "#content-body-lower"
+        Full Width Middle: "#full-width-middle"
+        Content Body Bottom: "#content-body-bottom"
+        # Open Framework regions
+        Admin Shortcuts: "#admin-shortcuts"
+        Site Login: "#site-login"
+        Header: "#header"
+        Site Name: "#site-name"
+        Branding: "#branding"
+        Navigation: "#navigation"
+        Search Box: "#nav-search"
+        Main Navigation: "#main-nav"
+        Main Top: "#main-top"
+        Main Upper: "#main-upper"
+        First sidebar: "#sidebar-first"
+        Highlighted: "#highlighted"
+        Help: "#help"
+        Console: "#console"
+        Content Head: "#content-head"
+        Content Top: "#content-top"
+        Content Upper: "#content-upper"
+        Content Body: "#content-body"
+        Content 2 column flow: "#content-row2"
+        Content 2 column stacked (1): "#content-col2-1"
+        Content 2 column stacked (2): "#content-col2-2"
+        Content 3 column flow: "#content-row3"
+        Content 3 column stacked (1): "#content-col3-1"
+        Content 3 column stacked (2): "#content-col3-2"
+        Content 3 column stacked (3): "#content-col3-3"
+        Content 4 column flow: "#content-row4"
+        Content 4 column stacked (1): "#content-col4-1"
+        Content 4 column stacked (2): "#content-col4-2"
+        Content 4 column stacked (3): "#content-col4-3"
+        Content 4 column stacked (4): "#content-col4-4"
+        Content Lower: "#content-lower"
+        Content Bottom: "#content-bottom"
+        Second sidebar: "#sidebar-second"
+        Main Lower: "#main-lower"
+        Main Bottom: "#main-bottom"
+        Main Content: "#main-content"
+        Footer: "#footer"
+        Content: "#content"
+        Tabs: ".tabs"
+        Top Full Width: "#fullwidth-top"

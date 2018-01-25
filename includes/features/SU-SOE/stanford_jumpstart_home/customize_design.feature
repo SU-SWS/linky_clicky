@@ -4,41 +4,29 @@ Feature: Stanford Jumpstart Home Feature
   I want to check for the existence of content that should appear
 
   @api @safe
-  Scenario Outline: Verify items on the Customized Design Page
+  Scenario: Verify items on the Customized Design Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I should see "<Text>" in the "<Region>" region
-
-  Examples:
-  | Text          | Region       |
-  | Hoover        | Content Body |
-  | Morris        | Content Body |
-  | Terman        | Content Body |
-  | Pettit        | Content Body |
-  | Light         | Content Body |
-  | Plain         | Content Body |
-  | Rich          | Content Body |
-  | High Contrast | Content Body |
-  | Cardinal      | Content Body |
-  | Sans Serif    | Content Body |
-  | Serif         | Content Body |
-  | Slab Serif    | Content Body |
-
+    Then I should see "Hoover" in the "Content Body" region
+    Then I should see "Morris" in the "Content Body" region
+    Then I should see "Terman" in the "Content Body" region
+    Then I should see "Pettit" in the "Content Body" region
+    Then I should see "Light" in the "Content Body" region
+    Then I should see "Plain" in the "Content Body" region
+    Then I should see "Rich" in the "Content Body" region
+    Then I should see "High Contrast" in the "Content Body" region
+    Then I should see "Cardinal" in the "Content Body" region
+    Then I should see "Sans Serif" in the "Content Body" region
+    Then I should see "Serif" in the "Content Body" region
+    Then I should see "Slab Serif" in the "Content Body" region
 
   @api @safe
-  Scenario Outline: Verify items on the Customized Design Page
+  Scenario: Verify items on the Customized Design Page
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I should not see "<Text>" in the "<Region>" region
-
-  Examples:
-    | Text          | Region       |
-    | Serra         | Content Body |
-    | Lomita        | Content Body |
-    | Panama        | Content Body |
-    | Mayfield      | Content Body |
-    | Dark          | Content Body |
-    | Bright        | Content Body |
-
-
-
+    Then I should not see "Serra" in the "Content Body" region
+    Then I should not see "Lomita" in the "Content Body" region
+    Then I should not see "Panama" in the "Content Body" region
+    Then I should not see "Mayfield" in the "Content Body" region
+    Then I should not see "Dark" in the "Content Body" region
+    Then I should not see "Bright" in the "Content Body" region

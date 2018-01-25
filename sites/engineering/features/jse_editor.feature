@@ -45,10 +45,9 @@ Feature: Editor
     When I press the "Save" button
     Then I should see "has been updated." in the "Console" region
 
-  @javascript @safe
+  @safe
   Scenario: Create Stanford event
-    And I wait for the Site Actions drop down to appear
-    And I click "Add Event" in the "Admin Shortcuts" region
+    Given I am on "node/add/stanford-event"
     Then I should see "Create Stanford Event" in the "Branding" region
 
   @safe
