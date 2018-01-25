@@ -10,28 +10,40 @@ Feature: Hoover Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-hoover-selector" button
 
   @deploy
-  Scenario: Header content for hoover homepage
+  Scenario Outline: Header content for hoover homepage
     Given I am on the homepage
-    Then I should see the "About" heading in the "Main Top" region
-    Then I should see the "Small Custom Block" heading in the "Content Lower" region
-    Then I should see the "Large Custom Block" heading in the "Content Lower" region
-    Then I should see the "Affiliates" heading in the "Main Bottom" region
-    Then I should see the "Contact Us" heading in the "Footer" region
+    Then I should see the "<Header>" heading in the "<Region>" region
+
+  Examples:
+    | Header                | Region                |
+    | About                 | Main Top              |
+    | Small Custom Block    | Content Lower         |
+    | Large Custom Block    | Content Lower         |
+    | Affiliates            | Main Bottom           |
+    | Contact Us            | Footer                |
 
   @deploy
-  Scenario: Homepage content hoover
+  Scenario Outline: Homepage content hoover
     Given I am on the homepage
-    Then I should see "This is your About block" in the "Main Top" region
-    Then I should see "You can use this block to highlight content" in the "Content Lower" region
-    Then I should see "This is your large custom block" in the "Content Lower" region
-    Then I should see "This is your custom" in the "Footer" region
+    Then I should see "<Text>" in the "<Region>" region
+
+  Examples:
+    | Text                                            | Region                |
+    | This is your About block                        | Main Top              |
+    | You can use this block to highlight content     | Content Lower         |
+    | This is your large custom block                 | Content Lower         |
+    | This is your custom                             | Footer                |
 
   @safe
-  Scenario: Homepage links on hoover
+  Scenario Outline: Homepage links on hoover
     Given I am on the homepage
-    Then I should see the link "More about us" in the "Main Top" region
-    Then I should see the link "Learn more" in the "Content Lower" region
-    Then I should see the link "Learn more" in the "Content Lower" region
+    Then I should see the link "<Link>" in the "<Region>" region
+
+  Examples:
+    | Link                          | Region                |
+    | More about us                 | Main Top              |
+    | Learn more                    | Content Lower         |
+    | Learn more                    | Content Lower         |
 
   @deploy
   Scenario: Affiliate Organizations page is visible and link in the main menu

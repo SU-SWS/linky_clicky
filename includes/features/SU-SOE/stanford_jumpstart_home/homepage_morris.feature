@@ -10,28 +10,40 @@ Feature: Morris Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-morris-selector" button
 
   @deploy
-  Scenario: Header content for Morris
+  Scenario Outline: Header content for Morris
     Given I am on the homepage
-    Then I should see the "About" heading in the "Main Top" region
-    Then I should see the "Small Custom Block" heading in the "Content 3 column flow" region
-    Then I should see the "Recent News" heading in the "Content 3 column flow" region
-    Then I should see the "Upcoming Events" heading in the "Content 3 column flow" region
+    Then I should see the "<Header>" heading in the "<Region>" region
+
+  Examples:
+    | Header                | Region                |
+    | About                 | Main Top              |
+    | Small Custom Block    | Content 3 column flow |
+    | Recent News           | Content 3 column flow |
+    | Upcoming Events       | Content 3 column flow |
 
   @deploy
-  Scenario: Homepage content Morris
+  Scenario Outline: Homepage content Morris
     Given I am on the homepage
-    Then I should see "This is your About block" in the "Main Top" region
-    Then I should see "Sample News" in the "Content 3 column flow" region
-    Then I should see "You can use this block to highlight content" in the "Content 3 column flow" region
-    Then I should see "See more events" in the "Content 3 column flow" region
+    Then I should see "<Text>" in the "<Region>" region
+
+  Examples:
+    | Text                                            | Region                |
+    | This is your About block                        | Main Top              |
+    | Sample News                                     | Content 3 column flow |
+    | You can use this block to highlight content     | Content 3 column flow |
+    | See more events                                 | Content 3 column flow |
 
   @deploy
-  Scenario: Homepage links Morris
+  Scenario Outline: Homepage links Morris
     Given I am on the homepage
-    Then I should see the link "More about us" in the "Main Top" region
-    Then I should see the link "Learn more" in the "Content 3 column flow" region
-    Then I should see the link "See more news" in the "Content 3 column flow" region
-    Then I should see the link "See more events" in the "Content 3 column flow" region
+    Then I should see the link "<Link>" in the "<Region>" region
+
+  Examples:
+    | Link                          | Region                |
+    | More about us                 | Main Top              |
+    | Learn more                    | Content 3 column flow |
+    | See more news                 | Content 3 column flow |
+    | See more events               | Content 3 column flow |
 
   @deploy
   Scenario: Homepage image Morris
