@@ -657,8 +657,7 @@ JS;
   /**
    * @Given I am logged in as User One
    */
-  public function iAmLoggedInAsUserOne()
-  {
+  public function iAmLoggedInAsUserOne() {
     // Check if logged in.
     if ($this->loggedIn()) {
       $this->logout();
