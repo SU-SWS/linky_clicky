@@ -36,7 +36,7 @@ Feature: PHP
     Then I should not see "Evaluate PHP in pattern"
 
   @api @javascript
-  Scenario: Backup and Migrate Import and Restore Form
+  Scenario: Backup and Migrate Import and Restore Forms
     Given I am logged in as User One
     And the "backup_migrate" module is enabled
     And I am on "admin/config/system/backup_migrate/settings/import"
