@@ -123,7 +123,6 @@ Feature: PHP
     And the cache has been cleared
     When I am on "admin/structure/flags/import"
     And I should see "This form is disabled"
-    And the response status code should be 403
 
   @api
   Scenario: Page Manager Import Form

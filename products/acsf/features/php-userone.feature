@@ -1,6 +1,6 @@
 Feature: PHP
   In order to ensure that end users cannot enter arbitrary PHP code
-  As a user with the "administrator" role
+  As User 1
   I want to try to enter arbitrary PHP (and fail)
 
   @api
