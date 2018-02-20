@@ -1,6 +1,6 @@
 Feature: PHP
   In order to ensure that end users cannot enter arbitrary PHP code
-  As a user with the "administrator" role
+  As User 1
   I want to try to enter arbitrary PHP (and fail)
 
   @api
@@ -16,12 +16,14 @@ Feature: PHP
   Scenario: Permissions
     Given I am logged in as User One
     And the "auto_nodetitle" module is enabled
+    And the "backup_migrate" module is enabled
     And the "ctools" module is enabled
     And the "custom_breadcrumbs" module is enabled
     And the "googleanalytics" module is enabled
     And the cache has been cleared
     And I am on "admin/people/permissions"
     Then I should see "Use PHP for title patterns Disabled by paranoia module."
+    And I should see "Restore the site Disabled by paranoia module."
     And I should see "Use CTools importer Disabled by paranoia module."
     And I should see "Use PHP in Custom Breadcrumbs Disabled by paranoia module."
     And I should see "Use PHP for tracking visibility Disabled by paranoia module."
@@ -34,10 +36,12 @@ Feature: PHP
     Then I should not see "Evaluate PHP in pattern"
 
   @api @javascript
-  Scenario: Backup and Migrate Import Form
+  Scenario: Backup and Migrate Import and Restore Forms
     Given I am logged in as User One
     And the "backup_migrate" module is enabled
     And I am on "admin/config/system/backup_migrate/settings/import"
+    Then I should see "This form is disabled"
+    Given I am on "admin/config/system/backup_migrate/restore"
     Then I should see "This form is disabled"
 
   @api @javascript
