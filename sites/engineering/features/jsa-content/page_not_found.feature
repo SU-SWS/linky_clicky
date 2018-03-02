@@ -3,7 +3,7 @@ Feature: Page not Found - 404
   As an end user
   I want to check for the existence of the page
 
-  @safe @javascript
+  @safe
   Scenario: Check content of the custom 404 page
     Given I am on "purple-monkey-dishwasher"
     Then I should see "Oops" in the "Content Body" region
@@ -11,6 +11,6 @@ Feature: Page not Found - 404
     And I should see the link "Search this site..." in the "Content Body" region
     When I click "Homepage"
     Then I should be on the homepage
-    When I move backward one page
-    And I click "Search this site..."
+    Given I am on "purple-monkey-dishwasher"
+    When I click "Search this site..."
     Then I should be on "search/content"

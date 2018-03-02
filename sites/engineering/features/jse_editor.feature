@@ -55,11 +55,11 @@ Feature: Editor
     When I go to "node/add/stanford-event-series"
     Then I should see "Access denied"
 
-  @javascript @safe
-  Scenario: Site editor can clear caches
-    And I wait for the Site Actions drop down to appear
-    And I click "Clear Site Cache" in the "Admin Shortcuts" region
-    Then I should see "Site Cache Cleared" in the "Console" region
+#  @javascript @safe
+#  Scenario: Site editor can clear caches
+#    And I wait for the Site Actions drop down to appear
+#    And I click "Clear Site Cache" in the "Admin Shortcuts" region
+#    Then I should see "Site Cache Cleared" in the "Console" region
 
   @safe
   Scenario: Event series link in the site actions menu

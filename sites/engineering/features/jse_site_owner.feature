@@ -13,11 +13,11 @@ Feature: Site Owner
     And I am on "admin/manage"
     Then I should see 1 or more "tr" elements
 
-  @javascript @safe
-  Scenario: Using site actions menu to access Manage Content
-    When I wait for the Site Actions drop down to appear
-    And I click "Manage Content" in the "Admin Shortcuts" region
-    Then I should see 1 or more "tr" elements
+#  @javascript @safe
+#  Scenario: Using site actions menu to access Manage Content
+#    When I wait for the Site Actions drop down to appear
+#    And I click "Manage Content" in the "Admin Shortcuts" region
+#    Then I should see 1 or more "tr" elements
 
   @javascript @dev @destructive
   Scenario: Add Stanford Page
@@ -89,11 +89,11 @@ Feature: Site Owner
     And I should see the heading "Are you ready to launch your site?"
     And I should see the link "Request Site Launch" in the "Content Body" region
 
-  @javascript @safe
-  Scenario: Clear caches from the Site Actions menu
-    And I wait for the Site Actions drop down to appear
-    And I click "Clear Site Cache" in the "Admin Shortcuts" region
-    Then I should see "Site Cache Cleared" in the "Console" region
+#  @javascript @safe
+#  Scenario: Clear caches from the Site Actions menu
+#    And I wait for the Site Actions drop down to appear
+#    And I click "Clear Site Cache" in the "Admin Shortcuts" region
+#    Then I should see "Site Cache Cleared" in the "Console" region
 
   @safe
   Scenario: As a site owner I can see Create Private Page
