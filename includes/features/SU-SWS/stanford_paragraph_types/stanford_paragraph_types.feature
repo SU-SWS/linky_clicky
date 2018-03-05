@@ -20,6 +20,7 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/field-collections/field_p_cards_card/display/default"
     And I want to validate select field option "fields[field_p_card_action_button][type]" default value is "hidden"
+    And I should see "group_card_title"
     And I want to validate select field option "fields[field_p_card_color][type]" default value is "hidden"
     And I want to validate select field option "fields[field_p_card_cta][type]" default value is "link_default"
     And I want to validate select field option "fields[field_p_card_file][type]" default value is "file_url_plain"
@@ -39,6 +40,8 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/field-collections/field_p_icon_columns/display/default"
     And I want to validate select field option "fields[field_p_icon_color][type]" default value is "hidden"
+    And I should see "group_p_icon_readmore"
+    And I should see "group_p_icon_title"
     And I want to validate select field option "fields[field_p_icon_icon][type]" default value is "fontawesome_icon_formatter"
     And I want to validate select field option "fields[field_p_icon_image][type]" default value is "hidden"
     And I want to validate select field option "fields[field_p_icon_links][type]" default value is "link_default"
@@ -59,6 +62,7 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/paragraphs/p_callout/display/default"
     And I want to validate select field option "fields[field_p_callout_color][type]" default value is "hidden"
+    And I should see "group_callout_span"
     And I want to validate select field option "fields[field_p_callout_more_link][type]" default value is "link_default"
     And I want to validate select field option "fields[field_p_callout_more_link][parent]" default value is "group_callout_span"
     And I want to validate select field option "fields[field_p_callout_text][type]" default value is "text_default"
@@ -81,6 +85,8 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/paragraphs/p_hero/display/default"
     And I want to validate select field option "fields[field_p_hero_alignment][type]" default value is "hidden"
+    And I should see "group_headline_h2"
+    And I should see "group_overlay_text"
     And I want to validate select field option "fields[field_p_hero_headline][type]" default value is "text_default"
     And I want to validate select field option "fields[field_p_hero_headline][parent]" default value is "group_headline_h2"
     And I want to validate select field option "fields[field_p_hero_image][type]" default value is "image"
@@ -108,6 +114,12 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/paragraphs/p_menu/display/default"
     And I want to validate select field option "fields[field_p_menu_file_insert][type]" default value is "hidden"
+    And I should see "group_featured_image"
+    And I should see "group_header_h2"
+    And I should see "group_image_caption"
+    And I should see "group_menu_column"
+    And I should see "group_menu_main"
+    And I should see "group_sidebar"
     And I want to validate select field option "fields[field_p_menu_header][type]" default value is "text_default"
     And I want to validate select field option "fields[field_p_menu_header][parent]" default value is "group_header_h2"
     And I want to validate select field option "fields[field_p_menu_image][type]" default value is "image"
@@ -128,7 +140,10 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/paragraphs/p_wysiwyg/display/default"
     And I want to validate select field option "fields[field_p_wysiwyg_body][type]" default value is "text_default"
+    And I should see "group_left_column"
     And I want to validate select field option "fields[field_p_wysiwyg_body][parent]" default value is "group_left_column"
+    And I should see "group_right_column"
+    And I should see "group_wysiwyg_title"
     And I want to validate select field option "fields[field_p_wysiwyg_button][type]" default value is "link_default"
     And I want to validate select field option "fields[field_p_wysiwyg_button][parent]" default value is "group_right_column"
     And I want to validate select field option "fields[field_p_wysiwyg_image][type]" default value is "image"
@@ -138,7 +153,10 @@ Feature: Stanford Paragraph Types
 
     Then I am on "admin/structure/paragraphs/p_wysiwyg/display/full"
     And I want to validate select field option "fields[field_p_wysiwyg_body][type]" default value is "text_default"
+    And I should see "group_p_wysiwyg_body"
     And I want to validate select field option "fields[field_p_wysiwyg_body][parent]" default value is "group_p_wysiwyg_body"
+    And I should see "group_p_wysiwyg_title"
+    And I should see "group_p_wysiwyg_wrapper"
     And I want to validate select field option "fields[field_p_wysiwyg_button][type]" default value is "hidden"
     And I want to validate select field option "fields[field_p_wysiwyg_image][type]" default value is "hidden"
     And I want to validate select field option "fields[field_p_wysiwyg_title][type]" default value is "text_default"
