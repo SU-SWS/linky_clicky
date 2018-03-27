@@ -17,3 +17,7 @@ Feature: Token
     And I enter "Token Test" for "Title *"
     And I press the "Save" button
     Then I should be on "article/token-test"
+    When I go to "admin/config/search/path/patterns"
+    And I enter "" for "Pattern for all Article paths"
+    And I press the "Save configuration" button
+    Then I should see "The configuration options have been saved"
