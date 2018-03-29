@@ -10,7 +10,7 @@ Feature: Homepage
     And I am on "admin/stanford-jumpstart/customize-design"
     Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
 
-  Scenario Outline: Header content
+    # Header content
     Given I am on the homepage
     Then I should see the "Welcome to your site!" heading in the "Main Top" region
     Then I should see the "About" heading in the "Content 3 column flow" region
@@ -21,13 +21,13 @@ Feature: Homepage
     Then I should see the "Connect" heading in the "Footer" region
     Then I should see the "Contact Us" heading in the "Footer" region
 
-  Scenario Outline: Homepage content
+    # Homepage content
     Given I am on the homepage
     Then I should see "Feature a tagline or website subtitle here" in the "Main Top" region
     Then I should see "Edit this block to change the image and caption" in the "Main Top" region
     Then I should see "This is your About block" in the "Content 3 column flow" region
 
-  Scenario Outline: Homepage links
+    # Homepage links
     Given I am on the homepage
     Then I should see the link "Example link" in the "Main Top" region
     Then I should see the link "About Us" in the "Footer" region

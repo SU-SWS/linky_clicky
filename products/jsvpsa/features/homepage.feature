@@ -3,7 +3,7 @@ Feature: Homepage
   As an end user
   I want to check for the existence of content that should appear
 
-  @api @javascript @safe
+  @api @safe
   Scenario: Homepage full width banner and content
   Given I am on the homepage
   Then I should see 1 ".view-mode-stanford-full-width-banner-short" element
