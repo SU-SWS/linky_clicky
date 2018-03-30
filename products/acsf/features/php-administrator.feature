@@ -49,7 +49,6 @@ Feature: PHP
     Then I should see "This form is disabled"
     Given I am on "admin/config/system/backup_migrate/restore"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
   @api
@@ -71,39 +70,39 @@ Feature: PHP
     And the cache has been cleared
     When I am on "admin/structure/context/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/appearance/delta/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/config/development/js-injector/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/config/media/jw_player/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/structure/openlayers/layers/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/structure/openlayers/maps/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/structure/openlayers/projections/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/structure/openlayers/styles/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
     When I am on "admin/structure/services/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
   @api
@@ -113,7 +112,7 @@ Feature: PHP
     And the cache has been cleared
     When I am on "admin/structure/feeds/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
   @api
@@ -131,7 +130,7 @@ Feature: PHP
     And the cache has been cleared
     When I am on "admin/structure/pages/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
   @api
@@ -164,7 +163,7 @@ Feature: PHP
     And the "views_ui" module is enabled
     And I go to "admin/structure/views/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
+#    And I should see "You are not authorized to access this page."
     And the response status code should be 403
 
   @api

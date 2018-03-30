@@ -134,7 +134,6 @@ Feature: PHP
     And the "views_ui" module is enabled
     And I go to "admin/structure/views/import"
     Then I should see "Access denied"
-    And I should see "You are not authorized to access this page."
 
   @api @javascript
   Scenario: Views Bulk Operations Chainsaw Mode - with Javascript
