@@ -3,7 +3,7 @@ Feature: Stanford Private Page Administration
   As an administrator
   I want to verify functionality
 
-  @safe @api
+  @safe @api @deploy
   Scenario: Verify manage Private Page exists
     Given I am logged in as a user with the "administrator" role
     When I go to "admin/manage/private-page"
