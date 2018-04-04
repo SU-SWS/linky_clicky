@@ -30,7 +30,7 @@ Feature: Content Access
     Then I should see "Your changes have been saved"
     When I am an anonymous user
     And I am on "content-access-test"
-    Then I should see "WebLogin"
+    Then I should see "Important Security Information: Logging in lets you access other protected Stanford websites with this browser, not just the website you requested"
     And I should see "SUNet ID"
     Given the "content_access" module is disabled
     And I am logged in as a user with the "administrator" role
