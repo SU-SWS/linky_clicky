@@ -21,6 +21,7 @@ Feature: Content Access
     When I am on "node/add/page"
     And I enter "Content Access Test" for "Title"
     And I select "Plain text" from "Text format"
+    And I wait for AJAX to finish
     And I enter "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit enim labore shankle tail in doner. Pork belly occaecat dolor turkey nulla do et. Jerky corned beef frankfurter, brisket jowl enim laborum ex ut turkey. Consequat filet mignon ullamco ground round pancetta sunt shank, adipisicing prosciutto boudin minim irure est ea commodo" for "Body"
     And I press the "Save" button
     And I should see "Basic page Content Access Test has been created"
@@ -30,7 +31,7 @@ Feature: Content Access
     Then I should see "Your changes have been saved"
     When I am an anonymous user
     And I am on "content-access-test"
-    Then I should see "WebLogin"
+    Then I should see "Important Security Information: Logging in lets you access other protected Stanford websites with this browser, not just the website you requested"
     And I should see "SUNet ID"
     Given the "content_access" module is disabled
     And I am logged in as a user with the "administrator" role
