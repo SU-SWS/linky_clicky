@@ -5,7 +5,7 @@ As an administrator
 I want to be able to view the modules for magazines as enabled
 
 @api @safe
-Scenario: Verify Collection modules are enabled
+Scenario: Verify Collection fields
 Given I am logged in as a user with the "administrator" role
 
 Then I am on "admin/structure/types/manage/stanford_collection/fields"

@@ -47,6 +47,7 @@ default:
         Content: "#content"
         Tabs: ".tabs"
         Top Full Width: "#fullwidth-top"
+        Bottom Full Width: "#fullwidth-bottom"
       selectors:
         message_selector: '.alert'
         error_message_selector: '.alert.alert-error'
