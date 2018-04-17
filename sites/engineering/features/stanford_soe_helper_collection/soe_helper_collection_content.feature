@@ -4,5 +4,6 @@ As an administrator
 I want to be able to verify content.
 
 @api @safe
-Scenario: Verify Collection
-  Given I am logged in as a user with the "administrator" role
+Scenario: Verify order of articles on a collection page
+Given I am on "magazine/test-collection-demo-100"
+Then I should see all timestamps for ".mag-article-date" in "descending" order
