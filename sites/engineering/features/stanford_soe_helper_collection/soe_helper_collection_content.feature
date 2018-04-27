@@ -11,7 +11,6 @@ Feature: Stanford SoE Helper Collection
     And I am on "node/add/stanford-collection"
     When I enter "Collection for Behat" for "title"
     And I enter "Collection for Behat Testing Subtitle" for "Subtitle"
-    And I enter "Collection for Behat Testing Superhead" for "Superhead"
     And I enter "Collection for Behat Testing Lead text" for "Lead text"
     And I press the "Save" button
     And I should be on "magazine/collection-behat"
