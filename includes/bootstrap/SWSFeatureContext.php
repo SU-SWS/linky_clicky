@@ -191,7 +191,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
       return;
     }
     throw new \Exception(sprintf('The element "%s" was not found in the "%s" region on the page %s', $tag, $region, $this->getSession()
-      ->getCurrentUrl()));
+                                                                                                                         ->getCurrentUrl()));
   }
 
   /**
@@ -260,7 +260,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     );
 
     $mink->getSession()
-      ->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
+         ->wait(3000, "jQuery('#block-menu-menu-admin-shortcuts ul.nav > ul.nav').children().length > 0");
 
   }
 
@@ -275,7 +275,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     $element = $session->getPage()->find(
       'xpath',
       $session->getSelectorsHandler()
-        ->selectorToXpath('xpath', '*//*[text()="' . $text . '"]')
+              ->selectorToXpath('xpath', '*//*[text()="' . $text . '"]')
     );
     if (NULL === $element) {
       throw new \InvalidArgumentException(sprintf('Cannot find text: "%s"', $text));
@@ -310,7 +310,7 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
     }
   }
 
-    /**
+  /**
    * Find the default value of a select element.
    * See https://github.com/Behat/Mink/issues/300.
    *
@@ -423,8 +423,8 @@ class SWSFeatureContext extends RawDrupalContext implements Context, SnippetAcce
   public function iFollowMetaRefresh() {
     $mink = $this->minkContext;
     while ($refresh = $mink->getSession()
-      ->getPage()
-      ->find('css', 'meta[http-equiv="Refresh"]')) {
+                           ->getPage()
+                           ->find('css', 'meta[http-equiv="Refresh"]')) {
       $content = $refresh->getAttribute('content');
       $url = str_replace('0; URL=', '', $content);
       $mink->getSession()->visit($url);
@@ -511,7 +511,7 @@ JS;
     }
     catch (Exception $e) {
       throw new \Exception(sprintf('No iframe found in the element "%s" on the page "%s".', $element_id, $mink->getSession()
-        ->getCurrentUrl()));
+                                                                                                              ->getCurrentUrl()));
     }
   }
 
@@ -666,5 +666,34 @@ JS;
     $this->visitPath($url);
   }
 
+  /**
+   * @Then I should see no duplicate HTML with :arg1
+   */
+  public function iShouldSeeNoDuplicateHtmlWith($arg1)
+  {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    $container = $this->getSession()->getPage();
+    $nodes = $container->findAll('css', $arg1);
 
+    // I would expect to see something if you're running this test.
+    if (count($nodes) == 0) {
+      $message = sprintf('%d "%s" elements found when there should be a minimum of 1.', count($nodes), $arg1);
+      throw new ExpectationException($message, $session);
+    }
+
+    // Build the array.
+    $check_array = array();
+    foreach ($nodes as $node) {
+      $html = $node->getHTML();
+      $check_array[] = $html;
+    }
+
+    // Are all unique?
+    if (count($check_array) != count(array_unique($check_array))) {
+      $message = sprintf('Duplicate HTML with class "%s" found. With a total of %d, %d were unique.',
+        $arg1, count($check_array), count(array_unique($check_array)));
+      throw new ExpectationException($message, $session);
+    }
+  }
 }
