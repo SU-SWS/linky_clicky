@@ -58,8 +58,8 @@ Feature: Ensure items on the ChemE landing page appear as expected
     Then I should see a "#block-bean-cheme-info-for" element
 
   @safe
-  Scenario: Verify users can view the Recent News view
+  Scenario: Verify users can view the related magazine article view
     Given I am on "faculty-research/departments/chemical-engineering"
     Then I should see a "a" element in the "Content Lower" region
-    Then I should see a "#block-views-98ef3755ed7cc9ac83eba0d66243ce4c" element
+    Then I should see a ".view-stanford-magazine-article-department" element
     Then I should see the text "Visit the"

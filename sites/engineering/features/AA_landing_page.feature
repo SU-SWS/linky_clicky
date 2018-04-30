@@ -58,8 +58,8 @@ Feature: Ensure items on the AA landing page appear as expected
     Then I should see a "#block-bean-aeronautics-astronautics-resear" element
 
   @safe
-  Scenario: Verify users can view the Recent News view
+  Scenario: Verify users can view the related magazine article view
     Given I am on "faculty-research/departments/aeronautics-astronautics"
     Then I should see a "a" element in the "Content Bottom" region
-    Then I should see a "#block-views-98ef3755ed7cc9ac83eba0d66243ce4c" element
+    Then I should see a ".view-stanford-magazine-article-department" element
     Then I should see the text "Visit the"
