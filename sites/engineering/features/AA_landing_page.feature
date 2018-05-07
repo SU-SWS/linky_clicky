@@ -7,10 +7,7 @@ Feature: Ensure items on the AA landing page appear as expected
   Scenario: Verify users can view the top banner
     Given I am on "faculty-research/departments/aeronautics-astronautics"
     Then I should see the "img" element in the "Top Full Width" region
-    Then I should see 1 or more ".view-stanford-page-top-banner" elements
-    And I should see 1 or more ".image-style-full-width-banner-tall" elements
-    Then I should see the text "Scroll to"
-    And I should see 1 or more ".page-feat-caption-container" elements
+    Then I should see 1 or more ".image-style-full-width-banner-short" elements
 
   @safe
   Scenario: Verify users can view all the blocks
