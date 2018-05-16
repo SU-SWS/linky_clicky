@@ -4,15 +4,6 @@ Feature: Ensure items on the Admission and Aid landing page appear as expected
   I want to be able to view all the Admission and Aid landing page blocks in their appropriate regions
 
   @safe
-  Scenario: Verify users can view the top banner
-    Given I am on "admission-aid"
-    Then I should see the "img" element in the "Top Full Width" region
-    Then I should see 1 or more ".view-stanford-page-top-banner" elements
-    And I should see 1 or more ".image-style-full-width-banner-tall" elements
-    Then I should see the text "Scroll to"
-    And I should see 1 or more ".page-feat-caption-container" elements
-
-  @safe
   Scenario: Verify users can view all the blocks
     Given I am on "admission-aid"
     Then I should see 3 or more ".bean-stanford-call-to-action" elements
