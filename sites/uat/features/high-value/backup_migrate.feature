@@ -6,7 +6,7 @@ Feature: Backup and Migrate
 
   # fails on API only for some reason; must use @javascript
   # fails on Anchorage because of https://www.drupal.org/node/2415421
-  @api @dev @destructive @javascript @notanchorage
+  @api @dev @destructive @javascript @notanchorage @notacsf
   Scenario: Backup and Migrate
     Given the "backup_migrate" module is enabled
     And I track variable "site_403"
@@ -22,11 +22,13 @@ Feature: Backup and Migrate
     And I enter "BAM Test 0s8obvunuj1ulflx" for "Title"
     And I attach the file "img/love-bacon.png" to "edit-field-image-und-0-upload"
     And I select "Plain text" from "Text format"
+    And I wait for AJAX to finish
     And I enter "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit" for "edit-body-und-0-value"
     And I press the "Save" button
     # Presumes pathauto but that's OK.
     Then I should be on "bam-test-0s8obvunuj1ulflx"
     And I should see "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit"
+    # This step is the part that makes it @notacsf. sites/default/files is not the path to the files directory.
     When I go to "sites/default/files/field/image/love-bacon.png"
     Then I should not see "not found"
     # Back up the DB.

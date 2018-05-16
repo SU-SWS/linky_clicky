@@ -55,4 +55,10 @@ Feature: Display Suite
     When I go to "admin/structure/ds/view_modes/delete/ifbpcnojcqmnmnro"
     And I press the "Delete" button
     Then I should see "The view mode ifbpcnojcqmnmnro has been deleted"
+    # Clean up
+    When I go to "admin/structure/taxonomy/tags"
+    And I click "edit" in the "foo" row
+    And I press the "Delete" button
+    And I press the "Delete" button
+    Then I should see "Deleted term foo"
 
