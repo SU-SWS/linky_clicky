@@ -26,7 +26,8 @@ Feature: Feeds Tamper
     And I select "Convert case" from "The plugin to add"
     And I wait for AJAX to finish
     And I press the "Add" button
-    Then I should see "Plugin Convert case was successfully added to Title"
+#    And I wait 30 seconds
+    Then I should see "Plugin Convert case was successfully added to Source: Title"
     And I should see "Normal"
     When I go to "admin/structure/feeds/feeds_tamper_test/delete"
     And I press the "Delete" button
