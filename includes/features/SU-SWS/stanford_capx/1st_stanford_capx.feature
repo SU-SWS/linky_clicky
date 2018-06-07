@@ -39,8 +39,6 @@ Feature: Stanford CAPx
     Then I should be on "admin/config/capx/settings"
     And I should see the link "Authorization" in the "Content" region
     And I should see the link "Advanced" in the "Content" region
-    And I should see the link "Synchronization settings" in the "Content" region
-    And I should see the link "Organizations & Schema" in the "Content" region
 
     # Update organization codes
     Then I am on "admin/config/capx/organizations/sync?destination=admin/config/capx/settings"
