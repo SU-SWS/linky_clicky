@@ -98,7 +98,7 @@ Feature: Site Owner
     And I should see the heading "Are you ready to launch your site?"
     And I should see the link "Schedule Site Launch" in the "Content Body" region
 # @todo follow links that open in new windows
-#  When I click "Request Site Launch"
+#  When I click "Schedule Site Launch"
 #    Then I should be on "https://stanforduniversity.qualtrics.com/SE/?SID=SV_01I4MJkFACIhhIN"
 
   @api @javascript @safe
