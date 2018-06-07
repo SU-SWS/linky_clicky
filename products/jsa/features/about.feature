@@ -6,7 +6,7 @@ Feature: About
   @live
   Scenario: Viewing a featured image on the About page
     Given I am on "about/about-us"
-    Then I should see "Arcade on the Quad" in the "Content Body" region
+    Then I should see "The Main Quad" in the "Content Body" region
 
   @live
   Scenario: Viewing a postcard block with Google Maps embed on the Location page
