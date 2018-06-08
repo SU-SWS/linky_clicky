@@ -16,7 +16,8 @@
       "psr/log":  "*",
       "emuse/behat-html-formatter": "~0.1",
       "behat/behat":  "^3.3.0",
-      "symfony/symfony": "^2.1"
+      "symfony/symfony": "^2.1",
+      "bex/behat-screenshot": "^1.2.7"
   },
   "config": {
     "bin-dir": "bin/"
