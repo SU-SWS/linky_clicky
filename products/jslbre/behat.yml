@@ -12,11 +12,19 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: 'sse.lbre-dev'
+    Bex\Behat\ScreenshotExtension:
+      image_drivers:
+        local:
+          screenshot_directory: /tmp/behat-screenshots
 
 production:
-    extensions:
-        Behat\MinkExtension:
-            base_url: https://sites.stanford.edu/lbre-production
-        Drupal\DrupalExtension:
-            drush:
-                alias: 'sse.lbre-production'
+  extensions:
+    Behat\MinkExtension:
+      base_url: https://sites.stanford.edu/lbre-production
+    Drupal\DrupalExtension:
+      drush:
+        alias: 'sse.lbre-production'
+    Bex\Behat\ScreenshotExtension:
+      image_drivers:
+        local:
+          screenshot_directory: /tmp/behat-screenshots

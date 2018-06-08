@@ -12,3 +12,7 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: 'acsf.cardinald7.behat'
+    Bex\Behat\ScreenshotExtension:
+      image_drivers:
+        local:
+          screenshot_directory: /tmp/behat-screenshots

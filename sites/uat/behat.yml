@@ -12,3 +12,7 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: uat.ds_drupal7-update-status
+    Bex\Behat\ScreenshotExtension:
+      image_drivers:
+        local:
+          screenshot_directory: /tmp/behat-screenshots

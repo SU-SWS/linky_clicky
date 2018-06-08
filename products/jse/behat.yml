@@ -13,4 +13,7 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: 'sse.jse-dev'
-
+    Bex\Behat\ScreenshotExtension:
+      image_drivers:
+        local:
+          screenshot_directory: /tmp/behat-screenshots
