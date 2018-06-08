@@ -12,3 +12,8 @@ default:
     Drupal\DrupalExtension:
       drush:
         alias: uat.ds_drupal7-update-status
+    Weavora\MinkExtra\Extension:
+      form: true
+      table: true
+      page: true
+      page_area: true
