@@ -29,6 +29,13 @@ default:
       paths:
         - %paths.base%/features
         - %paths.base%/../../includes/features
+      extensions:
+        Weavora\MinkExtra\Extension:
+          form: true
+          table: true
+          page: true
+          page_area: true
+
 
     # --- Lifecyle Phases Suites ---
     # Tests that are meant for development sites and can make changes.
