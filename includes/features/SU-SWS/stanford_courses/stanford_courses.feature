@@ -65,7 +65,7 @@ Feature: Stanford Courses
     And I want to validate select field option "fields[field_s_course_ger][type]" default value is "text_default"
     And I want to validate select field option "fields[field_s_course_grading][type]" default value is "text_default"
     And I want to validate select field option "fields[field_s_course_id][type]" default value is "number_integer"
-    And I want to validate select field option "fields[field_s_course_scid][trpe]" default value is "hidden"
+    And I want to validate select field option "fields[field_s_course_scid][type]" default value is "hidden"
     And I want to validate select field option "fields[field_s_course_section_info][type]" default value is "field_collection_view"
     And I want to validate select field option "fields[field_s_course_subject][type]" default value is "text_default"
     And I want to validate select field option "fields[field_s_course_tag_name][type]" default value is "hidden"
