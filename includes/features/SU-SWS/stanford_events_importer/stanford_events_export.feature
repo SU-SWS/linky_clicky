@@ -3,7 +3,7 @@ Feature: Stanford Events Export
   As an administrative user
   I want to ensure that
 
-  @api @dev
+  @api @dev @destructive
   Scenario: Test the events export pages.
     Given the "stanford_events_export" module is enabled
     And I am logged in as a user with the "administrator" role

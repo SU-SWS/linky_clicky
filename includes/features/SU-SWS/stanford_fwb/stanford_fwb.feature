@@ -5,6 +5,7 @@ Feature: Stanford Full Width Banner
 @api @dev @destructive @javascript
 Scenario: Test Full width banner
   Given I am logged in as a user with the "administrator" role
+  And the "stanford_fwb" module is enabled
   And I am on "admin/structure/views/view/stanford_slides_full_width_banner/edit"
   Then I should see "Stanford Slides: Full Width Banner"
   Then I am on "node/add/stanford-slide"

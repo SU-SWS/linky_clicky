@@ -13,7 +13,6 @@ Feature: Stanford Jumpstart
     Then I should see the link "Get Help" in the "Branding" region
     Then I should see the link "Add Features" in the "Branding" region
     Then I should see the link "Launch Checklist" in the "Branding" region
-    Then I should see the heading "Get Help" in the "Help" region
 
   @api @safe
   Scenario: Check if permissions exist.
