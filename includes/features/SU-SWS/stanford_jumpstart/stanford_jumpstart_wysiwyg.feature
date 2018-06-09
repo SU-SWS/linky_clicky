@@ -28,8 +28,8 @@ Feature: Stanford Sites Jumpstart WYSIWYG
     Then I should see the heading "CKEditor profile for Content Editor Text Format"
     # Basic Setup.
     And the "default" checkbox should be checked
-    And the "user_choose" checkbox should not be checked
-    And the "show_toggle" checkbox should be checked
+    And the "preferences[user_choose]" checkbox should not be checked
+    And the "preferences[show_toggle]" checkbox should be checked
     # Buttons and Plugins
     And the "buttons[default][Bold]" checkbox should be checked
     And the "buttons[default][Italic]" checkbox should be checked
