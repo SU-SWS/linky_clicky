@@ -19,30 +19,30 @@ Feature: Display Suite
     Then I should see "The view mode ifbpcnojcqmnmnro has been saved"
     When I go to "admin/structure/types/manage/article/display"
     And I click "Custom display settings"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I check the box "ifbpcnojcqmnmnro"
     And I press the "Save" button
     Then I should see "Your settings have been saved"
     When I go to "admin/structure/types/manage/article/display/ifbpcnojcqmnmnro"
     When I select "One column" from "Select a layout"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I press the "Save" button
     Then I should see "Your settings have been saved"
     And I should be on "admin/structure/types/manage/article/display/ifbpcnojcqmnmnro"
     When I select "Disabled" from "edit-fields-field-tags-region"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I press the "Save" button
     Then I should see "Your settings have been saved"
     When I am on "admin/structure/ds/list/extras"
     And I click "Other"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I check the box "View mode per node"
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved"
     When I go to "node/add/article"
     And I enter "Test DS View Mode" for "Title"
     And I enter "foo" for "Tags"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I press the "Save" button
     Then I should be on "test-ds-view-mode"
     Then I should see "Test DS View Mode"

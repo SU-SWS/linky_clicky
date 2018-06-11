@@ -10,7 +10,7 @@ Feature: XML Sitemap
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/menu/manage/main-menu/edit"
     When I click "Show XML sitemap"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I select "Included" from "Inclusion"
     And I press the "Save" button
     And I run cron

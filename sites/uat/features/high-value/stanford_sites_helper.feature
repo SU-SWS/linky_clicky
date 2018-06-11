@@ -47,49 +47,49 @@ Feature: Stanford Sites Helper Module
     Given I am logged in as a user with the "administrator" role
     And I am on the homepage
     When I click "Create a new page on your site"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Do you want an"
     When I click "Create a New Page"
     Then I should be on "node/add/page"
     Given I am on the homepage
     When I click "Change your site's name and information"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "You can rename your site, add a slogan, or set an existing page to be the homepage"
     When I click "Edit Your Site's Information"
     Then I should be on "admin/config/system/site-information"
     Given I am on the homepage
     When I click "Get rid of this"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Want to make these"
     When I click "Hide This Block"
     Then I should be on "admin/structure/block/manage/stanford_sites_helper/firststeps/configure"
     Given I am on the homepage
     When I click "Get rid of this"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Drupal uses a system called"
     When I click "Configure All Blocks"
     Then I should be on "admin/structure/block"
     Given I am on the homepage
     When I click "Edit your navigation menus"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Drupal comes pre-packaged with a Main menu navigation"
     When I click "Edit Your Main Menu"
     Then I should be on "admin/structure/menu/manage/main-menu"
     Given I am on the homepage
     When I click "Edit your navigation menus"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "First create new pages, and then add them to your menu"
     When I click "Create a New Menu"
     Then I should be on "admin/structure/menu/add"
     Given I am on the homepage
     When I click "Add functionality and features"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Want to add a contact form to your site? Looking to do more with your site?"
     When I click "Visit Your Modules"
     Then I should be on "admin/modules"
     Given I am on the homepage
     When I click "Edit the look and feel of your site"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Your site comes pre-packaged with the Stanford Light theme."
     When I click "Edit Your Theme Settings"
     Then I should be on "admin/appearance/settings"

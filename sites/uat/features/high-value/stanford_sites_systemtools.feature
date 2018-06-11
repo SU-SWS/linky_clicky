@@ -63,7 +63,7 @@ Feature: Stanford Sites System Tools Module
     Given the "stanford_sites_systemtools" module is enabled
     And I am logged in as a user with the "administrator" role
     When I go to "admin/modules"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should not see an "<Element>" element
 
     Examples:

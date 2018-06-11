@@ -26,7 +26,7 @@ Feature: Date iCal
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/types/manage/page/display"
     And I click "Custom display settings"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I check the box "iCal"
     And I press the "Save" button
     Then I should see "Your settings have been saved."

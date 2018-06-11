@@ -17,7 +17,7 @@ Feature: File Field Paths
     When I press the "Save field settings" button
     Then I should see "Updated field [random:1] field settings"
     When I click "File (Field) Path settings"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I enter "[node:content-type:machine-name]" for "File path"
     And I press the "Save settings" button
     Then I should see "Saved [random:1] configuration"

@@ -19,7 +19,7 @@ Feature: Block Title Link
     # There seems to be some inconsistent behavior about the default collapsed state
     # Per block_titlelink.module, it should be collapsed if the URL is empty, and expanded if the URL is set.
     And I click "Block Title Link Settings"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I enter "user" for "Title Path"
     And I select "First sidebar" from "Stanford Light (default theme)"
     And I press the "Save block" button

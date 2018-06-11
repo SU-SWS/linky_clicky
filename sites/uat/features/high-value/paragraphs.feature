@@ -18,7 +18,7 @@ Feature: Paragraphs
     When I go to "admin/structure/types/manage/paragraphs-test/fields"
     And I enter "Test Paragraph Field" for "edit-fields-add-new-field-label"
     And I select "Paragraphs" from "edit-fields-add-new-field-type"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I select "Embedded" from "edit-fields-add-new-field-widget-type"
     And I press the "Save" button
     And I press the "Save field settings" button
@@ -28,17 +28,17 @@ Feature: Paragraphs
     When I go to "node/add/paragraphs-test"
     And I enter "Test Node" for "Title"
     And I press the "Add new Paragraph" button
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Paragraph type: Test Bundle"
     When I press the "Remove" button
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "This Paragraph has been removed, press the button below to restore."
     And I should see "Warning: this Paragraph will actually be deleted when you press"
     When I press the "Confirm Deletion" button
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "No Paragraphs added yet. Select a Paragraph type and press the button below to add one."
     When I press the "Add another Paragraph" button
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Paragraph type: Test Bundle"
     When I press the "Save" button
     Then I should see "Paragraphs Test Test Node has been created"

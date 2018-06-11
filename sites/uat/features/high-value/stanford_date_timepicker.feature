@@ -12,7 +12,7 @@ Feature: Stanford Date Timepicker
     And I am logged in as a user with the "administrator" role
     And I am on "node/add/stanford-event"
     When I click on the element with css selector "#edit-field-stanford-event-datetime-und-0-value-timeEntry-popup-1"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should not see "Choose time"
     Given the "stanford_events_importer" module is enabled
     And the "stanford_date_timepicker" module is enabled
@@ -22,7 +22,7 @@ Feature: Stanford Date Timepicker
     And I enter "Stanford Date Timepicker Test Event" for "Title"
     And I enter "2016-09-01" for "Date"
     When I click on the element with css selector "#edit-field-stanford-event-datetime-und-0-value-timeEntry-popup-1"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then I should see "Choose time"
     And I should see "Time"
     And I should see "Hour"

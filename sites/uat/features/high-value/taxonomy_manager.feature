@@ -9,7 +9,7 @@ Feature: Taxonomy Manager
     Given the "taxonomy_manager" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/structure/taxonomy_manager/voc/tags"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     When I fill in "Terms" with:
     """
   dog
@@ -21,7 +21,7 @@ Feature: Taxonomy Manager
     And I press the "Add" button
     Then I should see "Terms added: dog, cat, sheep, cow, turtle"
     When I click "turtle"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     Then the "Name" field should contain "turtle"
     When I check the box "turtle"
     And I check the box "dog"

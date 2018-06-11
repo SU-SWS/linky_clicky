@@ -11,7 +11,7 @@ Feature: Transliteration
     And I am logged in as a user with the "administrator" role
     And I am on "admin/appearance/settings"
     And I uncheck the box "Use the default logo"
-    #And I wait for AJAX to finish
+    And I wait for AJAX to finish
     And I attach the file "img/not-pançetta.png" to "edit-logo-upload"
     And I press the "Save configuration" button
     Then I should see "The configuration options have been saved"
