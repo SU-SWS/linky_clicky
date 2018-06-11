@@ -22,7 +22,7 @@ Feature: Backup and Migrate
     And I enter "BAM Test 0s8obvunuj1ulflx" for "Title"
     And I attach the file "img/love-bacon.png" to "edit-field-image-und-0-upload"
     And I select "Plain text" from "Text format"
-    And I wait for AJAX to finish
+    #And I wait for AJAX to finish
     And I enter "Bacon ipsum dolor sit amet deserunt fatback in venison reprehenderit" for "edit-body-und-0-value"
     And I press the "Save" button
     # Presumes pathauto but that's OK.
