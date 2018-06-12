@@ -46,7 +46,7 @@ Feature: Stanford Sites Jumpstart Academic Layouts
     And I am on "admin/structure/context/list/9-col-banner-fsb-homepage/edit"
     Then I click on the element with css selector ".context-plugin-block a"
     And I should see "Jumpstart Home Page About Block"
-    And I should see "Jumpstart Home Page Announcements Block"
+    And I should see "Jumpstart Home Page Academics Block"
     And I should see "Jumpstart Home Page Banner Image"
     And I should see "View: News: 2 Item Recent News List Block"
     And I should see "View: Stanford Events List: 2 Item Upcoming Block - Date Stacked"
