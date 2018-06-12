@@ -4,10 +4,11 @@ Feature: Stanford Paragraphs Defaults
   As an end user
   I want to verify the display of content.
 
-  @destructive
+  @destructive @dev
   Scenario: Validate paragraphs defaults functions correctly.
     Given I am logged in as a user with the "administrator" role
     And the "stanford_paragraph_types" module is enabled
+    And the "stanford_paragraphs_defaults" module is enabled
 
     # Create a content type with paragraph field.
     Then I am on "admin/structure/types/add"

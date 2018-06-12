@@ -4,9 +4,10 @@ Feature: Stanford Paragraph Types Dynamic
   As an end user
   I want to verify the display of content.
 
-  @safe
+  @dev @destructive
   Scenario: Check for section header paragraph type
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_paragraph_types_section_header" module is enabled
     Then I am on "admin/structure/paragraphs/p_section_header/fields"
     And I should see "field_p_section_color"
     And I should see "field_p_section_heading"
