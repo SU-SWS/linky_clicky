@@ -7,7 +7,6 @@ Feature: Stanford CAPx
   Scenario: Stanford CAPx Mapper & Importer
     Given the "stanford_capx" module is enabled
     And I am authenticated with CAPx
-    And the "stanford_capx" module is enabled
     And I am logged in as a user with the "administrator" role
     And I am on "admin/config/capx"
 
