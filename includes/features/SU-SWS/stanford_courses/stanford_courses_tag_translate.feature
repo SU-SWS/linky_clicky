@@ -6,7 +6,7 @@ Feature: Stanford Courses Tag Translate
   @api @destructive @dev
   Scenario: Validate main admin page is there.
     Given I am logged in as a user with the "administrator" role
-    Given that the "stanford_courses_tag_translate" module is enabled
+    And the "stanford_courses_tag_translate" module is enabled
     And I am on "admin/config/stanford/courses/tag-translate"
     Then I should see "New tag translation"
 
