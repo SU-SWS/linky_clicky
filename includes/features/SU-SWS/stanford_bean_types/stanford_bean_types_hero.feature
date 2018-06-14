@@ -3,9 +3,10 @@ Feature: Stanford Bean Types Hero
   As an end user
   I want to check that the Stanford Bean Types Hero module is working correctly
 
-  @api @safe
+  @api @destructive @dev
   Scenario: Stanford Bean Types Hero Fields
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_bean_types_hero" module is enabled
     Then I am on "admin/structure/block-types/manage/stanford_hero_block/fields"
     And I should see "field_hero_block_hero"
     And I should see "field_hero_block_style"
@@ -28,6 +29,7 @@ Feature: Stanford Bean Types Hero
   @api @destructive @javascript
   Scenario: Create Hero Block
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_bean_types_hero" module is enabled
     And I am on "block/add/stanford-hero-block"
     Then I fill in "label" with "Hero Block Test"
     And I select "Curtain Reveal" from "Style"

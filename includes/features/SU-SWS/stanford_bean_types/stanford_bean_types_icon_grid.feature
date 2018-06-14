@@ -4,21 +4,22 @@ Feature: Stanford Icon Grid bean Type
   As an administrator
   I want to check that the Stanford Icon Grid bean types module is working correctly
 
-  @safe
+  @destructive @dev
   Scenario: Stanford Icon Grid type exists
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_icon_grid" module is enabled
     And I am on "block/add"
-    Then I should see the link "stanford_social_media_connect" in the "Content" region
+    Then I should see the link "stanford_icon_block" in the "Content" region
 
-  @safe
+  @destructive @dev
   Scenario: Icon Grid Block Type Fields Exist
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_icon_grid" module is enabled
     Then I am on "admin/structure/block-types/manage/stanford_icon_grid/fields"
     And I should see "field_s_icon_ext_columns"
 
     Then I am on "admin/structure/block-types/manage/stanford_icon_grid/display/default"
     And I want to validate select field option "fields[field_s_icon_ext_columns][type]" default value is "field_collection_view"
-
     Then I am on "admin/structure/field-collections/field_s_icon_ext_columns/fields"
     And I should see "field_s_icon_ext_columns_bg_colo"
     And I should see "field_s_icon_ext_columns_caption"
@@ -69,6 +70,7 @@ Feature: Stanford Icon Grid bean Type
   @dev @destructive
   Scenario: Create Icon Grid connect block
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_icon_grid" module is enabled
     And I am on "block/add/stanford-icon-grid"
     Then I fill in "edit-label" with "Behat Icon Grid Block"
     And I fill in "edit-title" with "Behat Icon Grid Block"
