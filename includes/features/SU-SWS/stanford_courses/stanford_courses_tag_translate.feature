@@ -64,7 +64,7 @@ Feature: Stanford Courses Tag Translate
     And I should see "Tag translation was successfully removed"
 
   # This scenario only works if the import scenario about has been run
-  @api @dev @destructive
+  @api @dev @destructive @javascript
   Scenario: Edit tag translations
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/config/stanford/courses/tag-translate"

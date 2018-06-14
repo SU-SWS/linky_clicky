@@ -3,9 +3,10 @@ Feature: Stanford Course Node Display
   As an administrative user
   I want to ensure that the Stanford Courses Node Display module is working properly
 
-  @api @safe
+  @api @dev @destructive
   Scenario: Stanford Course Node Display
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_courses_node_display" module is enabled
     Then I am on "admin/structure/types/manage/stanford_course/fields"
     And I should see "field_s_image_info"
 
