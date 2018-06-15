@@ -8,7 +8,7 @@ Feature: Panama Homepage Layout
   Scenario: Enable the Panama News & Events homepage layout as administrator
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the "edit-layouts-stanford-jumpstart-home-panama-news-events-selector" button
+    Then I press the "stanford_jumpstart_home_panama_news_events_select" button
 
   @safe
   Scenario Outline: Header content for panama news and events
@@ -32,7 +32,7 @@ Feature: Panama Homepage Layout
     | Feature a tagline or website subtitle here      | Main Top              |
     | Edit this block to change the image and caption | Main Top              |
     | This is your About block                        | Content 3 column flow |
-    | Sample News                 | Content 3 column flow |
+    | Sample News                                     | Content 3 column flow |
 
   @safe
   Scenario Outline: Homepage links panama news and events

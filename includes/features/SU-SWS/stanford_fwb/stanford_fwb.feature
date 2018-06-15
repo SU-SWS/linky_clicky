@@ -10,7 +10,7 @@ Scenario: Test Full width banner
   Then I should see "Stanford Slides: Full Width Banner"
   Then I am on "node/add/stanford-slide"
   Then I fill in "title" with "Behat Slide Test"
-  And I attach the file "features/stanford_fwb/img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
+  And I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_image_info_und_0_field_s_image_image_und_0]"
   And I press the "Save" button
   Then I should see "Behat Slide Test"
   Then I am on "admin/structure/context/add"
@@ -30,7 +30,3 @@ Scenario: Test Full width banner
   And I should see 1 or more ".view-stanford-slides-full-width-banner.view-display-id-midget_block_caption_credits_below img" elements
   Then I am on "admin/structure/context/list/behat_slide_test/delete"
   And I press the "Delete" button
-
-
-
-
