@@ -20,7 +20,7 @@ Scenario: Test Full width banner
   And I select "Blocks" from "reactions[selector]"
   And I click on the element with css selector "#edit-reactions-plugins-block-selector-views a.fieldset-title"
   And I check the box "reactions[plugins][block][selector][views][checkboxes][views-9530832697bc4866adbecb898b8ca7db]"
-  And I check the box "reactions[plugins][block][selector][views][checkboxes][views-1f87e2dcc30fc97e768620420853a031]"
+  And I check the box "reactions[plugins][block][selector][views][checkboxes][views-e9f1c9e614eeac235dbd4f78bbf590ba]"
   Then I click on the element with css selector ".context-blockform-regionlabel-content a.add-block"
   Then I press the "Save" button
   Then I should be on "admin/structure/context"
