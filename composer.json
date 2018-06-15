@@ -10,7 +10,7 @@
       "behat/mink": "^1.7.0",
       "behat/mink-selenium2-driver": "^1.3.1",
       "behat/mink-goutte-driver": "^1.2.1",
-      "drupal/drupal-extension": "~3.3.1",
+      "drupal/drupal-extension": "~3.4",
       "weavora/mink-extra-context": "dev-master",
       "drupal/drupal-driver": "^1.2.1",
       "psr/log":  "*",
