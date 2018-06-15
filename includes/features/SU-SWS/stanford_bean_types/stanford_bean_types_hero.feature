@@ -36,7 +36,7 @@ Feature: Stanford Bean Types Hero
     Then I press the "Add Hero" Button
     And I wait for AJAX to finish
     Then I select the "Video W/ Image Overlay" radio button
-    And I attach the file "features/stanford_bean_types/img/ooooaaaahhh.jpg" to "files[field_hero_block_hero_und_0_field_p_hero_image_und_0]"
+    And I attach the file "img/ooooaaaahhh.jpg" to "files[field_hero_block_hero_und_0_field_p_hero_image_und_0]"
     And I fill in "field_hero_block_hero[und][0][field_p_hero_video][und][0][video_url]" with "https://www.youtube.com/watch?v=QH8v0CkRlm8"
     Then I press the "Save" button
     And I should be on "block/hero-block-test/view"

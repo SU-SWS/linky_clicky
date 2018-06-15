@@ -37,7 +37,7 @@ Feature: Stanford large block bean Type
     Then I fill in "edit-label" with "Behat Large Block"
     Then I fill in "edit-title" with "Behat large Block"
     Then I fill in "field_s_large_block_body[und][0][value]" with "This is the body content"
-    Then I attach the file "features/stanford_bean_types/img/ooooaaaahhh.jpg" to "files[field_s_large_block_image_insert_und_0]"
+    Then I attach the file "img/ooooaaaahhh.jpg" to "files[field_s_large_block_image_insert_und_0]"
     Then I fill in "field_s_large_blk_read_more_link[und][0][title]" with "This is the read more link title"
     Then I fill in "field_s_large_blk_read_more_link[und][0][url]" with "http://www.stanford.edu"
     Then I press "Save"
