@@ -60,14 +60,12 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
    * The WebAuth Module for Drupal (WMD) hides the user login form in a collapsible fieldset.
    * We need to open that fieldset up to be able to fill out the fields
    */
-  public function login() {
+   public function login(\stdClass $user) {
+    $manager = $this->getUserManager();
+
     // Check if logged in.
     if ($this->loggedIn()) {
       $this->logout();
-    }
-
-    if (!$this->user) {
-      throw new \Exception('Tried to login without a user.');
     }
 
     $this->getSession()->visit($this->locatePath('/user'));
@@ -84,20 +82,26 @@ class SWSDrupalContext extends DrupalContext implements Context, SnippetAcceptin
       $this->getSession()
         ->wait(5000, '(typeof(jQuery)=="undefined" || (0 === jQuery.active && 0 === jQuery(\':animated\').length))');
     }
-    $element->fillField($this->getDrupalText('username_field'), $this->user->name);
-    $element->fillField($this->getDrupalText('password_field'), $this->user->pass);
+    $element->fillField($this->getDrupalText('username_field'), $user->name);
+    $element->fillField($this->getDrupalText('password_field'), $user->pass);
     $submit = $element->findButton($this->getDrupalText('log_in'));
     if (empty($submit)) {
-      throw new \Exception(sprintf("No submit button at %s", $this->getSession()
-        ->getCurrentUrl()));
+      throw new \Exception(sprintf("No submit button at %s", $this->getSession()->getCurrentUrl()));
     }
 
     // Log in.
     $submit->click();
 
     if (!$this->loggedIn()) {
-      throw new \Exception(sprintf("Failed to log in as user '%s' with role '%s'", $this->user->name, $this->user->role));
+      if (isset($user->role)) {
+        throw new \Exception(sprintf("Unable to determine if logged in because 'log_out' link cannot be found for user '%s' with role '%s'", $user->name, $user->role));
+      }
+      else {
+        throw new \Exception(sprintf("Unable to determine if logged in because 'log_out' link cannot be found for user '%s'", $user->name));
+      }
     }
+
+    $manager->setCurrentUser($user);
   }
 
 
