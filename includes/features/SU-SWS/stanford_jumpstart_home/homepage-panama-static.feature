@@ -12,7 +12,7 @@ Feature: Panama Homepage Layout
     Then I press the "edit-layouts-stanford-jumpstart-home-palm-selector" button
     Then I should see "Customized design options saved"
     And I am on "admin/stanford-jumpstart/customize-design"
-    Then I press the element with css selector "#edit-layouts-stanford-jumpstart-home-panama-selector"
+    Then I press the "stanford_jumpstart_home_panama_select" button
     Then I should see "Customized design options saved"
 
   @api @safe
