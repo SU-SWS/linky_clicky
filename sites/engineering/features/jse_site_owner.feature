@@ -24,6 +24,8 @@ Feature: Site Owner
     Given I am on "node/add/stanford-page"
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
+    When I click "Show Add/Edit Top Banner"
+    And I wait 2 seconds
     When I click "Show Add/Edit Image"
     And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
