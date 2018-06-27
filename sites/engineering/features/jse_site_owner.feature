@@ -53,14 +53,6 @@ Feature: Site Owner
     Then I should see "has been deleted" in the "Console" region
 
   @javascript @dev @destructive
-  Scenario: Edit Contact Information from the Site Actions menu
-    When I wait for the Site Actions drop down to appear
-    And I click "Edit Contact Information" in the "Admin Shortcuts" region
-    Then I should see "Edit stanford_contact: Jumpstart Footer Contact Block" in the "Branding" region
-    When I press the "Save" button
-    Then I should see "stanford_contact Contact Us has been updated" in the "Console" region
-
-  @javascript @dev @destructive
   Scenario: Edit Social Media Links from the Site Actions Menu
     And I wait for the Site Actions drop down to appear
     And I click "Edit Social Media Links" in the "Admin Shortcuts" region

@@ -18,7 +18,7 @@ Feature: Stanford SoE Helper Collection
 
 
   @api @dev @destructive
-  Scenario: Verify Stanford Collection does not display on an article when unpublished, no duplicates display, and they're all in the right order.
+  Scenario: Verify Stanford Collection does not display on an article when unpublished.
     Given I am logged in as a user with the "administrator" role
 
   # Create the collection
@@ -58,12 +58,15 @@ Feature: Stanford SoE Helper Collection
     And I uncheck the box "Publish"
     And I press the "Save" button
     And I should be on "magazine/collection-behat"
+    Given the cache has been cleared
 
   # Verify I cannot see the unpublished collection on the article
+    Given I am logged out
     Given I am on "magazine/article/article-2-behat"
     And I should not see "Collection for Behat"
 
   # Verify everything is deleted
+    Given I am logged in as a user with the "administrator" role
     Given I am on "magazine/article/article-1-behat"
     And I click "Edit"
     And I press "Delete"
