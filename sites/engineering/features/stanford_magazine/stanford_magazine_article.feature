@@ -78,3 +78,16 @@ Feature: Stanford Magazine Article
     And I want to validate select field option "fields[field_s_mag_article_series][type]" default value is "hidden"
     And I want to validate select field option "fields[field_s_mag_article_topics][type]" default value is "hidden"
 
+  @safe
+  Scenario: Verify the Stanford Magazine Article displays as expected
+    Given I am on "magazine/article/jeremy-bailenson-taking-grand-tour-latest-virtual-reality"
+    Then I should see a "h1" element in the "Content Body" region
+    Then I should see 1 ".field-name-field-s-mag-article-dek" element
+    Then I should see 1 or more ".field-name-field-s-mag-article-topics" elements
+    Then I should see 1 ".field-name-field-s-mag-article-byline" element
+    Then I should see 1 ".group-s-social-and-print" element
+    Then I should see 1 ".caption" element
+    Then I should see 1 ".paragraphs-items" element
+    Then I should see 1 "#block-ds-extras-related-departments" element
+    Then I should see 1 "#block-bean-stanford-soe-mag-news-signup" element
+
