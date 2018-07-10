@@ -699,18 +699,10 @@ JS;
   /**
    * @Given I am logged out
    */
-  public function iAmLoggedOut()
-  {
-    throw new PendingException();
-  }
-
-  /**
-   * @Given I am logged out
   public function iAmLoggedOut() {
     // Check if logged in.
     if ($this->loggedIn()) {
       $this->logout();
     }
   }
-   */
 }
