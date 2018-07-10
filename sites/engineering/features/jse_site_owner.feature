@@ -24,6 +24,8 @@ Feature: Site Owner
     Given I am on "node/add/stanford-page"
     Then I should see "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
+    When I click "Show Add/Edit Top Banner"
+    And I wait 2 seconds
     When I click "Show Add/Edit Image"
     And I wait 2 seconds
     Then I should see "Source Info" in the "Content Body" region
@@ -49,14 +51,6 @@ Feature: Site Owner
     And I click on the element with css selector "#edit-delete"
     And I click on the element with css selector "#edit-submit"
     Then I should see "has been deleted" in the "Console" region
-
-  @javascript @dev @destructive
-  Scenario: Edit Contact Information from the Site Actions menu
-    When I wait for the Site Actions drop down to appear
-    And I click "Edit Contact Information" in the "Admin Shortcuts" region
-    Then I should see "Edit stanford_contact: Jumpstart Footer Contact Block" in the "Branding" region
-    When I press the "Save" button
-    Then I should see "stanford_contact Contact Us has been updated" in the "Console" region
 
   @javascript @dev @destructive
   Scenario: Edit Social Media Links from the Site Actions Menu
