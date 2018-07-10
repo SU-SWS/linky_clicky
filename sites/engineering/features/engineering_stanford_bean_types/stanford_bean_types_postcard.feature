@@ -113,7 +113,6 @@ Feature: Stanford postcard bean Type
     Then I press "Save"
     Then I should see "stanford_postcard Behat Postcard Block has been created."
     Then I should see "This is the caption"
-    Then I should see "This is the credits"
     Then I should see "This is the body content"
     Then I should see "Behat Postcard Block"
     Then I should see "This is the read more link title"

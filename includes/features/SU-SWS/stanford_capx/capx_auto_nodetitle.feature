@@ -23,5 +23,6 @@ Feature: CAPX Auto Node Title Support
 
     Then I am on "admin/config/capx/mapper/delete/capx_auto_nodetitle_mapper"
     And I press the "Yes, please delete" button
-    # Travis hangs at the end for some unknown reason. The logout step is silly, but prevents the hang.
-    Then I am on "user/logout"
+    # Travis hangs at the end for some unknown reason. The homepage step is silly, but prevents the hang.
+    When I am on the homepage
+

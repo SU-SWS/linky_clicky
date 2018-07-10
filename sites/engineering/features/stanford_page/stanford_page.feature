@@ -25,14 +25,13 @@ Feature: Stanford Page
     And I am on "node/add/stanford-page"
     Then I should see the heading "Create Stanford Page" in the "Branding" region
     And the "Text format" field should contain "content_editor_text_format"
-    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
     Then I should see "Source Info" in the "Content" region
-    When I enter "Foo Stanford Page" for "Title"
+    Then I attach the file "img/ooooaaaahhh.jpg" to "edit-field-s-image-info-und-0-field-s-image-image-und-0-upload"
+    Then I fill in "edit-title" with "Foo Stanford Page"
     Then I fill in "body[und][0][value]" with "Hello, this is a nice body"
     And I press the "Save" button
     Then I should see "Stanford Page Foo Stanford Page has been created"
     And I should be on "foo-stanford-page"
-    And I should see 1 ".field-name-field-s-image-image" element
     And I should see "Hello, this is a nice body"
 
   @api @safe
