@@ -4,9 +4,10 @@ Feature: Stanford Paragraph Types Dynamic
   As an end user
   I want to verify the display of content.
 
-  @safe
+  @destructive @dev
   Scenario: Check for dynamic paragraph type
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_paragraph_types_dynamic" module is enabled
 
     Then I am on "admin/structure/paragraphs/p_views/fields"
     And I should see "field_p_views_view"

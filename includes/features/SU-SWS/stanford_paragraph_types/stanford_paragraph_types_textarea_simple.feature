@@ -4,9 +4,10 @@ Feature: Stanford Paragraph Types Textarea Simple
   As an end user
   I want to verify the display of content.
 
-  @safe
+  @dev @destructive
   Scenario: Check for Textarea simple paragraph type
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_paragraph_types_textarea_simple" module is enabled
     Then I am on "admin/structure/paragraphs/p_wysiwyg_simple/fields"
     And I should see "field_p_ws_body"
     And I should see "field_p_ws_image"

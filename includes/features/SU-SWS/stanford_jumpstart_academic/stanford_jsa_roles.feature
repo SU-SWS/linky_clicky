@@ -31,7 +31,6 @@ Feature: Stanford Sites Jumpstart Academic Roles and Permissions
     And drush output should contain "administrator"
     Then I run drush "rls" "--filter='access user profiles'"
     And drush output should contain "administrator"
-    And drush output should contain "editor"
     And drush output should contain "site owner"
     Then I run drush "rls" "--filter='administer bean settings'"
     And drush output should contain "administrator"
@@ -39,8 +38,6 @@ Feature: Stanford Sites Jumpstart Academic Roles and Permissions
     And drush output should contain "administrator"
     Then I run drush "rls" "--filter='administer beans'"
     And drush output should contain "administrator"
-    And drush output should contain "editor"
-    And drush output should contain "site owner"
     Then I run drush "rls" "--filter='administer block classes'"
     And drush output should contain "administrator"
     And drush output should contain "editor"
@@ -380,4 +377,3 @@ Feature: Stanford Sites Jumpstart Academic Roles and Permissions
     And drush output should contain "administrator"
     And drush output should contain "editor"
     And drush output should contain "site owner"
-

@@ -12,9 +12,6 @@ Feature: Editor
     And I should see the heading "Connect with the Drupal Community"
     And I should see the heading "Need assistance with your site?"
     And I should see the link "Request Assistance" in the "Content Body" region
-# @todo follow links that open in new windows
-#  When I click "Request Assistance"
-#    Then I should be on "https://jfe.qualtrics.com/form/SV_1EK9guIGepRtvwh?Name=Lindsey&Email=sws-developers+lindsey%40lists.stanford.edu&URL=https%3A%2F%2Fsites.stanford.edu%2Fsws-build-jsv"
 
   @api @javascript  @safe
   Scenario: View the Ready to Launch page
@@ -28,10 +25,7 @@ Feature: Editor
     And I should see the heading "Vanity URL"
     And I should see the heading "Approval"
     And I should see the heading "Are you ready to launch your site?"
-    And I should see the link "Request Site Launch" in the "Content Body" region
-# @todo follow links that open in new windows
-#  When I click "Request Site Launch"
-#    Then I should be on "https://stanforduniversity.qualtrics.com/SE/?SID=SV_01I4MJkFACIhhIN"
+    And I should see the link "Schedule Site Launch" in the "Content Body" region
 
   @api @javascript @safe
   Scenario: Clear caches

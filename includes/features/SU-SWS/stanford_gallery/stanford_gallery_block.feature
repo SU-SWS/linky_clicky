@@ -82,6 +82,7 @@ Scenario: Create stanford gallery node
   Then I should see 1 "#colorbox" element
   When I hover over the element "#cboxContent"
   And I wait for AJAX to finish
+  Then I wait 1 seconds
   # TODO: Make these work...
   # Then I should see 1 "#colorbox .caption" element
   # Then I should see 1 "#colorbox .credits" element

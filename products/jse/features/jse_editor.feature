@@ -18,7 +18,7 @@ Feature: Editor
     And I should see the heading "Vanity URL"
     And I should see the heading "Approval"
     And I should see the heading "Are you ready to launch your site?"
-    And I should see the link "Request Site Launch" in the "Content Body" region
+    And I should see the link "Schedule Site Launch" in the "Content Body" region
 
   @javascript @dev @destructive
   Scenario: Edit Contact Information

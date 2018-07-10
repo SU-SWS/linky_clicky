@@ -4,9 +4,10 @@ Feature: Stanford Paragraph Two Columns
   As an end user
   I want to verify the display of content.
 
-  @safe
+  @dev @destructive
   Scenario: Check for two columns paragraph type
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_paragraph_types_two_columns" module is enabled
     Then I am on "admin/structure/paragraphs/p_two_columns/fields"
     And I should see "field_p_2p_body"
 

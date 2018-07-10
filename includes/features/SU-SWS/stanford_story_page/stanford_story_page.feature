@@ -1,4 +1,4 @@
-@api
+@api @dev @destructive
 Feature: Stanford Paragraph Types
   In order to ensure that the Stanford Paragraphs Types installs properly
   As an end user
@@ -6,18 +6,19 @@ Feature: Stanford Paragraph Types
 
   Background:
     Given I am logged in as a user with the "administrator" role
+    And the "stanford_story_page" module is enabled
     And I am on "node/add/stanford-story-page"
     And I fill in "title" with "Behat Test Stanford Page"
 
-  @safe
-  Scenario: Check for fields on Stanford Page
+  @dev @destructive
+  Scenario: Check for fields on Stanford Story Page
     Then I should see "Title"
     And I should see "Hide Page Title"
     And I should see "Sections"
     And I should see "Paragraph type"
     And I should see "Add new Paragraph"
 
-  @safe
+  @dev @destructive
   Scenario: Create a Stanford Story Page with Buttons Type
     When I select "Buttons" from "Paragraph type"
     And I press the "Add new Paragraph" button
@@ -33,7 +34,7 @@ Feature: Stanford Paragraph Types
     And I should see "Link #1"
     And I should see "Link #2"
 
-  @safe
+  @dev @destructive
   Scenario: Create a Stanford Story Page with Callout Text Type
     When I select "Callout Text" from "Paragraph type"
     And I press the "Add new Paragraph" button
@@ -49,7 +50,7 @@ Feature: Stanford Paragraph Types
     And I should see "Link #1"
 
 
-  @safe @javascript
+  @dev @destructive @javascript
   Scenario: Create a Stanford Story Page with Teaser Cards Type
     When I select "Teaser Cards" from "Paragraph type"
     And I press the "Add new Paragraph" button
@@ -80,7 +81,7 @@ Feature: Stanford Paragraph Types
     And I should see "Another blurb about this card"
     And I should see "Call to Action Button 2"
 
-  @safe @javascript
+  @dev @destructive @javascript
   Scenario: Create a Stanford Story Page with Hero Type
     When I select "Hero" from "Paragraph type"
     And I press the "Add new Paragraph" button
@@ -109,7 +110,7 @@ Feature: Stanford Paragraph Types
     And I should see "Headline Text"
     And I should see "Read More"
 
-  @safe
+  @dev @destructive
   Scenario: Create a Stanford Story Page with WYSIWYG Type
     When I select "Text Area" from "Paragraph type"
     And I press the "Add new Paragraph" button

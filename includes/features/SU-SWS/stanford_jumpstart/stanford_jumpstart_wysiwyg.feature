@@ -28,8 +28,8 @@ Feature: Stanford Sites Jumpstart WYSIWYG
     Then I should see the heading "CKEditor profile for Content Editor Text Format"
     # Basic Setup.
     And the "default" checkbox should be checked
-    And the "user_choose" checkbox should not be checked
-    And the "show_toggle" checkbox should be checked
+    And the "preferences[user_choose]" checkbox should not be checked
+    And the "preferences[show_toggle]" checkbox should be checked
     # Buttons and Plugins
     And the "buttons[default][Bold]" checkbox should be checked
     And the "buttons[default][Italic]" checkbox should be checked
@@ -53,17 +53,10 @@ Feature: Stanford Sites Jumpstart WYSIWYG
     And the "buttons[default][Table]" checkbox should be checked
     And the "buttons[default][SpellChecker]" checkbox should be checked
     # Editor Appearance
-    And I want to validate select field option "toolbar_loc" default is "Top"
-    And I want to validate select field option "toolbar_align" default is "Left"
-    And I want to validate select field option "path_loc" default is "Bottom"
+    And I want to validate select field option "toolbarLocation" default is "Top"
     And the "resizing" checkbox should be checked
     # Cleanup and Output
-    And the "verify_html" checkbox should be checked
-    And the "preformatted" checkbox should not be checked
-    And the "convert_fonts_to_spans" checkbox should be checked
-    And the "remove_linebreaks" checkbox should be checked
-    And the "apply_source_formatting" checkbox should be checked
-    And the "paste_auto_cleanup_on_paste" checkbox should be checked
+    And the "simple_source_formatting" checkbox should be checked
     # CSS
     And I should see "Button Link=a.btn"
     And I should see "More Link=a.more-link"
@@ -74,7 +67,3 @@ Feature: Stanford Sites Jumpstart WYSIWYG
     And I should see "Infotext=p.infotext"
     And I should see "Caption=p.caption"
     And I should see "Credits=p.credits"
-
-
-
-    

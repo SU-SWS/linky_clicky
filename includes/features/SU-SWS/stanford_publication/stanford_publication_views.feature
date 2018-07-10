@@ -6,7 +6,7 @@ Feature: Publication views
   @safe
   Scenario: Filter publications by title
     Given I am on "publications"
-    Then I should see "Have something to add?" in the "Content Body" region
+    Then I should see "Sample Publication" in the "Content Body" region
     Then I should see "Filter by title" in the "First sidebar" region
     When I fill in "Filter by title" with "e"
     And I press "Go"
