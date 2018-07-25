@@ -10,6 +10,6 @@ Feature: Stanford People Spotlight Node display
 
   @safe
   Scenario: Verify Stanford People Spotlight related blocks exist.
-    And I should see a "view-display-id-block_related" element in the "Content Bottom" region
-    And I should see 3 "spotlight-container" elements
+    And I should see a ".view-display-id-block_related" element
+    And I should see 4 ".spotlight-container" elements
 
