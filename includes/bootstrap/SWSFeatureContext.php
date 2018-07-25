@@ -666,7 +666,18 @@ JS;
     $this->visitPath($url);
   }
 
-  /**
+   /**
+   * @Given I am logged out
+   */
+  public function iAmLoggedOut() {
+    // Check if logged in.
+    if ($this->loggedIn()) {
+      $this->logout();
+    }
+  }
+
+
+    /**
    * @Then I should see no duplicate HTML with :arg1
    */
   public function iShouldSeeNoDuplicateHtmlWith($arg1) {
@@ -693,16 +704,6 @@ JS;
       $message = sprintf('Duplicate HTML with class "%s" found. With a total of %d, %d were unique.',
         $arg1, count($check_array), count(array_unique($check_array)));
       throw new ExpectationException($message, $session);
-    }
-  }
-
-  /**
-   * @Given I am logged out
-   */
-  public function iAmLoggedOut() {
-    // Check if logged in.
-    if ($this->loggedIn()) {
-      $this->logout();
     }
   }
 }
