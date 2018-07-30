@@ -666,7 +666,18 @@ JS;
     $this->visitPath($url);
   }
 
-  /**
+   /**
+   * @Given I am logged out
+   */
+  public function iAmLoggedOut() {
+    // Check if logged in.
+    if ($this->loggedIn()) {
+      $this->logout();
+    }
+  }
+
+
+    /**
    * @Then I should see no duplicate HTML with :arg1
    */
   public function iShouldSeeNoDuplicateHtmlWith($arg1) {
@@ -695,22 +706,4 @@ JS;
       throw new ExpectationException($message, $session);
     }
   }
-
-  /**
-   * @Given I am logged out
-   */
-  public function iAmLoggedOut()
-  {
-    throw new PendingException();
-  }
-
-  /**
-   * @Given I am logged out
-  public function iAmLoggedOut() {
-    // Check if logged in.
-    if ($this->loggedIn()) {
-      $this->logout();
-    }
-  }
-   */
 }
