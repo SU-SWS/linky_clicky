@@ -90,4 +90,12 @@ Feature: Stanford Magazine Article
     Then I should see 1 ".paragraphs-items" element
     Then I should see 1 "#block-ds-extras-related-departments" element
     Then I should see 1 "#block-bean-stanford-soe-mag-news-signup" element
+    Then I should see 1 ".view-stanford-magazine-article-collection" element
+
+  @safe
+  Scenario: Verify order of articles displays in descending order on a Stanford Magazine Article
+    Given I am on "magazine/article/jeremy-bailenson-taking-grand-tour-latest-virtual-reality"
+    Then I should see all timestamps for ".mag-article-date" in "descending" order
+
+
 
