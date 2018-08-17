@@ -33,7 +33,7 @@ Feature: PHP
     Given I am logged in as User One
     And the "auto_nodetitle" module is enabled
     And I am on "admin/structure/types/manage/stanford_page"
-    Then I should not see "Evaluate PHP in pattern"
+    Then the "Evaluate PHP in pattern" checkbox should be disabled
 
   @api @javascript
   Scenario: Backup and Migrate Import and Restore Forms
