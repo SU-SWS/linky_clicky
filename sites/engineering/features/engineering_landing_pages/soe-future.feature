@@ -23,5 +23,20 @@ Feature: Ensure items on the About landing page appear as expected
   @safe
   Scenario: Verify users can view the Research (third) postcard linked block
     Then I should see a "#block-bean-soe-future-research-block" element
-    Then I should see a "#block-bean-soe-future-research-block.span6.well.no-padding" element
+    Then I should see a "#block-bean-soe-future-research-block.span12.well.next-row.no-padding" element
+
+  @safe
+  Scenario: Verify users can view the Education (fourth) postcard linked block
+    Then I should see a "#block-bean-soe-future-education" element
+    Then I should see a "#block-bean-soe-future-education.span12.well.next-row.no-padding" element
+
+  @safe
+  Scenario: Verify users can view the Mission (yeah, the block says Culture) (fifth) postcard linked block
+    Then I should see a "#block-bean-soe-future-culture" element
+    Then I should see a "#block-bean-soe-future-culture.span12.well.next-row.no-padding" element
+
+  @safe
+  Scenario: Verify users can view the Culture (yeah, the block says Mission) (sixth) postcard linked block
+    Then I should see a "#block-bean-soe-future-mission-block" element
+    Then I should see a "#block-bean-soe-future-mission-block.span12.well.next-row.no-padding" element
 
