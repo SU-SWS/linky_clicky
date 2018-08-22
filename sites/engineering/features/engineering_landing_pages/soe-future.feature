@@ -21,7 +21,7 @@ Feature: Ensure items on the About landing page appear as expected
     Then I should see a "#block-bean-soe-future-the-impact.span6.well.no-padding" element
 
   @safe
-  Scenario: Verify users can view the Research postcard linked block
-    Then I should see a "#block-bean-soe-future-the-impact" element
-    Then I should see a "#block-bean-soe-future-the-impact.span6.well.no-padding" element
+  Scenario: Verify users can view the Research (third) postcard linked block
+    Then I should see a "#block-bean-soe-future-research-block" element
+    Then I should see a "#block-bean-soe-future-research-block.span6.well.no-padding" element
 
