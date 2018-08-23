@@ -4,8 +4,8 @@ Feature: Ensure items on the Postcard Blocks Catalog page appear as expected
   I want to be able to view all the Postcard Blocks Catalog page blocks
 
   Background:
-    Given I am on "catalog-patterns/blocks-and-beans/postcard-blocks"
     Given I am logged in as a user with the "administrator" role
+    Given I am on "catalog-patterns/blocks-and-beans/postcard-blocks"
 
 #  @safe @api
 #  Scenario: Verify users can view the FW Banner People Spotlight view block

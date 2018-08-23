@@ -4,8 +4,8 @@ Feature: Ensure items on the Testimonial Blocks Catalog page appear as expected
   I want to be able to view all the Testimonial Blocks Catalog page blocks
 
   Background:
-    Given I am on "catalog-patterns/blocks-and-beans/testimonial-blocks"
     Given I am logged in as a user with the "administrator" role
+    Given I am on "catalog-patterns/blocks-and-beans/testimonial-blocks"
 
 #  @safe @api
 #  Scenario: Verify users can view the FW Banner People Spotlight view block

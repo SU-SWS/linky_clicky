@@ -2,7 +2,6 @@ Feature: Stanford People Spotlight
   In order to ensure the fields for the Stanford People Spotlight module are correct.
   As an administrator
 
-
   @safe @api
   Scenario: Verify Stanford People Spotlight fields exist as expected
     Given I am logged in as a user with the "administrator" role
@@ -66,3 +65,8 @@ Feature: Stanford People Spotlight
     And I want to validate select field option "fields[field_s_ppl_spot_related_page][type]" default value is "hidden"
     And I want to validate select field option "fields[field_s_ppl_spot_title][type]" default value is "hidden"
 
+
+  @safe @api
+  Scenario: Verify Stanford People Spotlight fields display as expected
+    Given I am on "spotlight"
+    Then I should not see an ".edit-link" element
