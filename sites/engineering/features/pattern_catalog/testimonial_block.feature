@@ -7,12 +7,15 @@ Feature: Ensure items on the Testimonial Blocks Catalog page appear as expected
     Given I am logged in as a user with the "administrator" role
     Given I am on "catalog-patterns/blocks-and-beans/testimonial-blocks"
 
-#  @safe @api
-#  Scenario: Verify users can view the FW Banner People Spotlight view block
-#    Then I should see a "#block-views-bbb1d0aad8bd2c65a848de02f62a1462" element
-#    Then I should see a "#block-views-bbb1d0aad8bd2c65a848de02f62a1462.span12.no-margin" element
-#
-#  @safe @api
-#  Scenario: Verify users can view the FW Banner People Spotlight view block
-#    Then I should see a "#block-views-737269f96e2fed913cd92d19b37073e7" element
-#    Then I should see a "#block-views-737269f96e2fed913cd92d19b37073e7.span12.next-row" element
+  @safe @api
+  Scenario: Verify that the quote marks display and classes are correct.
+    Then I should see a "#block-bean-jumpstart-homepage-testimonial-b" element
+    Then I should see a "#block-bean-jumpstart-homepage-testimonial-b .group-s-quote-style" element
+    Then I should see a "#block-bean-jumpstart-homepage-testimonial-b.span12.next-row.well.no-padding" element
+
+  @safe @api
+  Scenario: Verify that the quote marks don't display when there's no text and classes are correct.
+    Then I should see a "#block-bean-test-testimonial-block-with-no-q" element
+    Then I should not see "#block-bean-test-testimonial-block-with-no-q .group-s-quote-style"
+    Then I should see a "#block-bean-test-testimonial-block-with-no-q.span12.next-row.well.no-padding" element
+

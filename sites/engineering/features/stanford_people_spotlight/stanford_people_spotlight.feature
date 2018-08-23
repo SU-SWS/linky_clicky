@@ -70,3 +70,6 @@ Feature: Stanford People Spotlight
   Scenario: Verify Stanford People Spotlight fields display as expected
     Given I am on "spotlight"
     Then I should not see an ".edit-link" element
+    Then I should see a ".view-stanford-ppl-spot-3-v-card" element
+    Then I should see a ".view-stanford-ppl-spot-3-v-card .spotlight-container.well" element
+
