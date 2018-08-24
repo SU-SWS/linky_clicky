@@ -9,7 +9,6 @@ Feature: Ensure items on the People Spotlights Catalog page appear as expected
 
   @safe @api
   Scenario: Verify users can view the FW Banner People Spotlight view block
-    Then show me the HTML page
     Then I should see a "#block-views-bbb1d0aad8bd2c65a848de02f62a1462" element
     Then I should see a "#block-views-bbb1d0aad8bd2c65a848de02f62a1462.span12.no-margin" element
 
