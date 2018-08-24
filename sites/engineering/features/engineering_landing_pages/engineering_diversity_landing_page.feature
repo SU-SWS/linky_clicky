@@ -38,7 +38,7 @@ Feature: Ensure items on the Engineering Diversity landing page appear as expect
   Scenario: Verify users can view the third postcard linked block
     Then I should see a "a" element in the "Content Bottom" region
     Then I should see a "#block-bean-diversity-programs-summer-progra" element
-    Then I should see a "#block-bean-diversity-programs-summer-progra.span6.well.no-padding.next-row" element
+    Then I should see a "#block-bean-diversity-programs-summer-progra.span6.well.no-padding" element
 
   @safe
   Scenario: Verify users can view the fourth postcard linked block
