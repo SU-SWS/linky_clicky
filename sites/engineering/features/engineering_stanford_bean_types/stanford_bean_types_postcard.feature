@@ -31,13 +31,22 @@ Feature: Stanford postcard bean Type
     Then the "Header 3 Column" checkbox should be checked
     Then the "Header 4 Column" checkbox should be checked
     Then the "Photo Landscape 6 Column" checkbox should be checked
-    # And default display is set to something
+    Then the "Single Centered Button" checkbox should be checked
+
+  @safe
+  Scenario: Stanford Postcard block custom display Single Centered Button
+    Given I am on "admin/structure/block-types/manage/stanford-postcard/display/single_centered_button"
+    Then I should see "Body"
+
+  @safe
+  Scenario: Stanford Postcard block custom display Header 4 column
+    Given I am on "admin/structure/block-types/manage/stanford-postcard/display/stanford_4_col_header"
     Then I should see "View mode: Header 4 Column"
     Then I should see "Postcard"
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -52,7 +61,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -67,7 +76,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -82,7 +91,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -111,13 +120,14 @@ Feature: Stanford postcard bean Type
     Then I select "Header 4 Column" from "edit-view-mode"
     Then I press "Save"
     Then I should see "stanford_postcard Behat Postcard Block has been created."
-    Then I should see "This is the caption"
+  #  Then I should see "This is the caption" <- caption is no longer getting displayed with the new image format
     Then I should see "This is the body content"
     Then I should see "Behat Postcard Block"
     Then I should see "This is the read more link title"
     Then I should see 1 ".field-name-field-s-image-image" element
     Then I should see 1 ".field-name-field-s-image-image img" element
-    Then I should see 1 ".view-mode-stanford-4-col-header" element
+#    Then I should see 1 ".view-mode-stanford-4-col-header" element <- we changed the image format
+    Then I should see 1 ".view-mode-header_370x170" element
     Then I click "Delete Block"
     Then I press "Delete"
     Then I should see "stanford_postcard Behat Postcard Block has been deleted."
