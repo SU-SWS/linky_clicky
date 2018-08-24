@@ -31,6 +31,12 @@ Feature: Stanford postcard bean Type
     Then the "Header 3 Column" checkbox should be checked
     Then the "Header 4 Column" checkbox should be checked
     Then the "Photo Landscape 6 Column" checkbox should be checked
+    Then the "Single Centered Button" checkbox should be checked
+
+  @safe
+  Scenario: Stanford Postcard block custom display Single Centered Button
+    Given I am on "admin/structure/block-types/manage/stanford-postcard/display/single_centered_button"
+    Then I should see "Body"
 
   @safe
   Scenario: Stanford Postcard block custom display Header 4 column
@@ -40,7 +46,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -55,7 +61,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -70,7 +76,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
@@ -85,7 +91,7 @@ Feature: Stanford postcard bean Type
     Then I should see "group_s_postcard"
     Then I should see "Postcard Image"
     Then I should see "group_s_postcard_image"
-    Then I should see "Image"
+    Then I should see "Key Image"
     Then I should see "Postcard Content"
     Then I should see "group_s_postcard_content"
     Then I should see "Body"
