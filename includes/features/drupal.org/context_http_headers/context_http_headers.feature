@@ -4,7 +4,7 @@ Feature: Context HTTP Header module
   I want to verify functionality of the Context HTTP Header module
 
   @safe @api
-  Scenario: Verify Context HTTP Headeris enabled
+  Scenario: Verify Context HTTP Header is enabled
     Given I am logged in as a user with the "administrator" role
     And I am on "admin/modules"
     Then I should see 1 "#edit-modules-context-context-http-header-enable" element
