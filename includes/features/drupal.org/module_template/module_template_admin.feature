@@ -10,8 +10,14 @@ Feature: _new_module_ administration module
   @safe @api
   Scenario: Verify _new_module_ module is enabled
     And I am on "admin/modules"
-    Then I should see 1 "#edit-modules-context-context-http-header-enable" element
-    And the "modules[Context][context_http_header][enable]" checkbox should be checked
+    Then I should see 1 "#edit-modules-_new_module_-enable" element
+    And the "modules[Context][_new_module_][enable]" checkbox should be checked
+
+    # Verify the configuration page exists
+    And I click on the element with css selector "#edit-modules-other-_new_module_-links-configure"
+    And I should be on "admin/config/system/_new_module_"
+    Then I should see 1 "#_new_module_" element
+
 
   @dev @api @javascript @destructive
   Scenario: Verify _new_module_ module functionality
