@@ -25,11 +25,40 @@ Feature: special_menu_items administration module
     Then I should see text matching "<separator>"
 
   @dev @api @javascript @destructive
-  Scenario: Verify special_menu_items module functionality
-    And the cache has been cleared
-#    # Verify <no link>
-#    create a menu item with <no link> as a path,
-#    Verify you can't click on the menu item
+  Scenario: Verify that I can add header text that is not clickable
+    Given I am on "admin/structure/menu/manage/navigation/add"
+    Then I fill in "edit-link-title" with "Behat Special Menu Items <nolink>"
+    Then I fill in "edit-link-path" with "<nolink>"
+    Then I press the "Save" button
+    Then I should be on "admin/structure/menu/manage/navigation"
+    Then I should see a ".nolink" element
+    And I should not see the link "Behat Special Menu Items <nolink>"
+    Given I am on "admin/structure/menu/manage/navigation"
+#    And I click on the text "delete"
+#    Then I press the "Save" button
+#    Then I should not see a ".nolink" element
+
+  @dev @api @javascript @destructive
+  Scenario: Verify that I can add a horizontal rule or separator
+    Given I am on "admin/structure/menu/manage/navigation/add"
+    Then I fill in "edit-link-title" with "Behat Special Menu Items <separator>"
+    Then I fill in "edit-link-path" with "<separator>"
+    Then I press the "Save" button
+    Then I should be on "admin/structure/menu/manage/navigation"
+    Then I should see a ".separator" element
+    And I should not see the link "Behat Special Menu Items <separator>"
+#    And I click on the text "delete"
+#    Then I press the "Save" button
+#    Then I should not see a ".separator" element
+
+
+#    And the cache has been cleared
+
+#  Scenario: Verify that I can add menu items that are clickable below the header text
+#  Scenario: Verify that there is a menu
+#  Scenario: Verify that I can add menu items that are clickable below the header text
+#  Scenario: Verify that I can add a horizontal rule or separator
+#  Scenario: Verify that I can add menu items that are clickable below the horizontal rule or separator#    # Verify <no link>
 #    click "show as expanded"
 #    verify the sub items can be clicked on
 #    # Verify <separator>
