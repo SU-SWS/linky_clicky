@@ -90,11 +90,7 @@ Feature: Views Load More
     And I should see "Node 10"
     And I should see "Node 11"
     And I should see "Node 12"
-    And I wait 90 seconds
     # Clean up
     When I go to "admin/structure/views/view/vlm/delete"
     And I press the "Delete" button
     Then I should see "The view has been deleted"
-
-
-
