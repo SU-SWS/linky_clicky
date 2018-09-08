@@ -49,6 +49,8 @@ Feature: special_menu_items administration module
     Then I should see a ".separator" element
     And I should not see the link "Behat Special Menu Items <separator>"
     When I click "delete" in the "separator" row
+    And I press the "Confirm" button
+    Then I should see "deleted"
 
 # Todo
 #  Scenario: Verify that I can add menu items that are clickable below the header text
