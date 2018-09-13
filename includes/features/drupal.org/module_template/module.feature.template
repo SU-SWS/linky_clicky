@@ -4,5 +4,8 @@ Feature: _new_module_  module
   As an anonymous user
   I want to verify functionality of the _new_module_ module
 
-  @safe
-  Scenario: Verify _new_module_ module functionality
+  @dev @api @javascript @destructive
+  Scenario: Verify module functionality
+    Given the "_new_module_" module is enabled
+    And the cache has been cleared
+    Given I am on "admin/structure/types/manage/article/fields

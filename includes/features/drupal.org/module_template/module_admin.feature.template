@@ -1,14 +1,16 @@
-Feature: _new_module_ administration module
+Feature: New Module administration module
 # https://www.drupal.org/project/_new_module_
   In order to ensure the site is functioning as expected
   As administrator
-  I want to verify functionality of the _new_module_ module
+  I want to verify functionality of the New Module module administration
 
   Background:
     Given I am logged in as a user with the "administrator" role
 
   @safe @api
   Scenario: Verify _new_module_ module is enabled
+    # Given the "_new_module_" module is enabled <- this will make the test destructive
+    # And the cache has been cleared
     And I am on "admin/modules"
     Then I should see 1 "#edit-modules-_new_module_-enable" element
     And the "modules[Context][_new_module_][enable]" checkbox should be checked
@@ -18,7 +20,7 @@ Feature: _new_module_ administration module
     And I should be on "admin/config/system/_new_module_"
     Then I should see 1 "#_new_module_" element
 
+    # Verify it's on the permissions page
+    Given I am on "admin/people/permissions#module-_new_module_"
+    Then I should see "Administer New Module"
 
-  @dev @api @javascript @destructive
-  Scenario: Verify _new_module_ module functionality
-    And the cache has been cleared

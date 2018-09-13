@@ -18,15 +18,16 @@ Feature: special_menu_items administration module
     And I should be on "admin/config/system/special_menu_items"
     Then I should see 1 "#edit-special-menu-items-nolink-tag" element
 
-  @safe @api
-  Scenario:  Verify that the description on the menu item edit page has changed
+    # Verify that the description on the menu item edit page has changed
     Given I am on "admin/structure/menu/manage/main-menu/add"
     Then I should see text matching "<nolink>"
     Then I should see text matching "<separator>"
 
   @dev @api @javascript @destructive
-  Scenario: Verify that I can add header text that is not clickable
-    Then show me the HTML page
+  Scenario: Verify module functionality
+    # Verify that I can add header text that is not clickable
+    Given the "special_menu_items" module is enabled
+    And the cache has been cleared
     Given I am on "admin/structure/menu/manage/navigation/add"
     Then I fill in "edit-link-title" with "Behat Special Menu Items <nolink>"
     Then I fill in "edit-link-path" with "<nolink>"
@@ -39,8 +40,7 @@ Feature: special_menu_items administration module
     And I press the "Confirm" button
     Then I should see "The menu link Behat Special Menu Items <nolink> has been deleted."
 
-  @dev @api @javascript @destructive
-  Scenario: Verify that I can add a horizontal rule or separator
+    # Verify that I can add a horizontal rule or separator
     Given I am on "admin/structure/menu/manage/navigation/add"
     Then I fill in "edit-link-title" with "Behat Special Menu Items <separator>"
     Then I fill in "edit-link-path" with "<separator>"
