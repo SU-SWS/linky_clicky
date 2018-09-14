@@ -7,10 +7,10 @@ Feature: recaptcha administration module
   Background:
     Given I am logged in as a user with the "administrator" role
 
-  @safe @api
+  @destructive @api @dev
   Scenario: Verify recaptcha module is enabled
-    # Given the "recaptcha" module is enabled <- this will make the test destructive
-    # And the cache has been cleared
+    Given the "recaptcha" module is enabled
+    And the cache has been cleared
     And I am on "admin/modules"
     Then I should see 1 "#edit-modules-spam-control-recaptcha-enable" element
     And the "modules[Spam control][recaptcha][enable]" checkbox should be checked

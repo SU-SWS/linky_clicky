@@ -8,7 +8,7 @@ Feature: Captcha administration module
     Given I am logged in as a user with the "administrator" role
 
   @safe @api
-  Scenario: Verify captcha module is enabled
+  Scenario: Verify captcha module administration
     # Given the "captcha" module is enabled <- this will make the test destructive
     # And the cache has been cleared
     And I am on "admin/modules"
