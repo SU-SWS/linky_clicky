@@ -13,8 +13,10 @@ Feature: Verify captcha module functionality
     Given the "captcha" module is enabled
     And the cache has been cleared
     Given I am on "admin/config/people/captcha"
-    And I click on the element with css selector "#edit-captcha-default-challenge-on-nonlisted-forms"
+    When I check the box "Default challenge on non-listed forms."
     And I press "Save"
+    Then I should see "The CAPTCHA settings have been saved."
+    Given I am logged out
     Given I am an anonymous user
     And I am on "user/register"
     Then I should see "Captcha"
@@ -22,7 +24,7 @@ Feature: Verify captcha module functionality
   # Clean up
     Given I am logged in as a user with the "administrator" role
     Given I am on "admin/config/people/captcha"
-    And I click on the element with css selector "#edit-captcha-default-challenge-on-nonlisted-forms"
+    When I check the box "Default challenge on non-listed forms."
     And I press "Save"
 
 

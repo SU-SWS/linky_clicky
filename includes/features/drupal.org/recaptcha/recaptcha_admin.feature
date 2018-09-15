@@ -8,7 +8,7 @@ Feature: recaptcha administration module
     Given I am logged in as a user with the "administrator" role
 
   @destructive @api @dev
-  Scenario: Verify recaptcha module is enabled
+  Scenario: Verify recaptcha module administration
     Given the "recaptcha" module is enabled
     And the cache has been cleared
     And I am on "admin/modules"
