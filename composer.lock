@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa9aac7868193bcafe077d26f7a8dcbe",
+    "content-hash": "964cd1d2a0d1fb7bc5695790366b6c4d",
     "packages": [
         {
             "name": "behat/behat",
@@ -2491,7 +2491,7 @@
                 "Mink",
                 "feature"
             ],
-            "time": "2014-01-13 15:50:49"
+            "time": "2014-01-13T15:50:49+00:00"
         }
     ],
     "packages-dev": [],
