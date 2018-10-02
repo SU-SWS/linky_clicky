@@ -13,10 +13,10 @@ Feature: Stanford Bean Types Featured
     And I want to validate select field option "fields[group_featured_curtain][format][type]" default value is "div"
     And I want to validate select field option "fields[field_featured_block_featured][type]" default value is "paragraphs_view"
 
-  @api @destructive @javascript
+  @api @dev @destructive @javascript
   Scenario: Create Featured Block
     Given I am logged in as a user with the "administrator" role
-    And I am on "block/add/stanford-featured-block"
+    Then I am on "block/add/stanford-featured-block"
     Then I fill in "label" with "Featured Block Test"
     Then I press the "Add Featured" Button
     And I wait for AJAX to finish
