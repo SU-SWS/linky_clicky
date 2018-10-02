@@ -16,7 +16,7 @@ Feature: Stanford Bean Types Featured
   @api @dev @destructive @javascript
   Scenario: Create Featured Block
     Given I am logged in as a user with the "administrator" role
-    Then I am on "block/add/stanford-featured-block"
+    And I am on "block/add/stanford-featured-block"
     Then I fill in "label" with "Featured Block Test"
     Then I press the "Add Featured" Button
     And I wait for AJAX to finish
