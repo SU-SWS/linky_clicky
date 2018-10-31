@@ -14,9 +14,8 @@ Feature: Administration Menu
     When I go to "admin/content"
     And I wait for the Admin Menu to load
     Then I should see a "#admin-menu" element
-    When I go to "admin/config/administration/admin_menu"
-    Then I should see "The administration menu module provides a dropdown menu"
-    And the "Adjust top margin" checkbox should be checked
+    When I go to "admin/config/administration/admin-menu"
+    Then the "Adjust top margin" checkbox should be checked
     And the "Keep menu at top of page" checkbox should be checked
     And the "Icon menu" checkbox should be checked
     And the "Administration menu" checkbox should be checked
@@ -34,4 +33,4 @@ Feature: Administration Menu
     When I hover over the element ".admin-menu-icon"
     And I click "Flush all caches"
     Then I should be on the homepage
-    And I should see the success message "Every cache cleared."
+    And I should see the success message "All caches cleared."
