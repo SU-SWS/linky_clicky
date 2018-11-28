@@ -34,5 +34,5 @@ Feature: Field Permissions
     When I go to "field-permissions-test?foo=bar"
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback"
     Given I am an anonymous user
-    And I am on "field-permissions-test?foo=bar"
+    And I am on "field-permissions-test?foo=baz"
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback"
