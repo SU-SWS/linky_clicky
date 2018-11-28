@@ -30,7 +30,7 @@ Feature: Content Access
     And I press the "Submit" button
     Then I should see "Your changes have been saved"
     When I am an anonymous user
-    And I am on "content-access-test"
+    And I am on "content-access-test?foo=bar"
     Then I should see "Important Security Information: Logging in lets you access other protected Stanford websites with this browser, not just the website you requested"
     And I should see "SUNet ID"
     Given the "content_access" module is disabled
