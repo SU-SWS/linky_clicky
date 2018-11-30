@@ -31,8 +31,8 @@ Feature: Field Permissions
     And I select the "Public (author and administrators can edit, everyone can view)" radio button
     And I press the "Save settings" button
     Then I should see "Saved Body configuration"
-    When I go to "field-permissions-test"
+    When I go to "field-permissions-test?foo=bar"
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback"
     Given I am an anonymous user
-    And I am on "field-permissions-test"
+    And I am on "field-permissions-test?foo=baz"
     Then I should see "Bacon ipsum dolor sit amet deserunt fatback"
