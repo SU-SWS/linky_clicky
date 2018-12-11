@@ -28,11 +28,12 @@ Feature: PHP
     And I should see "Use PHP in Custom Breadcrumbs Disabled by paranoia module."
     And I should see "Use PHP for tracking visibility Disabled by paranoia module."
 
-  @api
+  @api @javascript
   Scenario: Automatic Nodetitles
     Given I am logged in as User One
     And the "auto_nodetitle" module is enabled
     And I am on "admin/structure/types/manage/stanford_page"
+    And I wait for AJAX to finish
     Then the "Evaluate PHP in pattern" checkbox should be disabled
 
   @api @javascript
