@@ -28,8 +28,3 @@ Feature: Entity Connect
     When I press the "Save" button
     Then I should see "Basic page [random:2] has been created."
 
-
-
-
-
-
