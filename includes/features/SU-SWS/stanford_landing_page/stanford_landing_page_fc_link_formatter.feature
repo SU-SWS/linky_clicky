@@ -28,7 +28,7 @@ Feature: Stanford Landing Page FC Link Formatter
     And I should see "Primary link is required"
     Then I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "http://google.com"
     And I press the "Save" button
-    Then I should see a "img" element in the "Content" region
+    Then I should see a "img" element
     And I click on the element with css selector ".field-name-field-s-lp-item-image a"
     Then I should see "Google"
     And I should be on "http://google.com"
