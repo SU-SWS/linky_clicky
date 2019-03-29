@@ -2,6 +2,7 @@ Feature: External Link (extlink) module
   In order to ensure the site is functioning as expected
   As administrator
   I want to verify functionality of the External Link module
+  This depends on the Stanford Landing Page module.
 
   @safe @api
   Scenario: Verify External Link module is enabled
