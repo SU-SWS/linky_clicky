@@ -117,6 +117,7 @@ Feature: Stanford Sites Helper Module
     And I am on "admin"
     Then I should see the heading "Get Help" in the "Help" region
     And I should see "Problems using this service? Submit a help ticket" in the "Help" region
+
     When I click "help ticket"
     Then I should be on "https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=c44652e04f13ae0054c23f828110c7d9"
 
