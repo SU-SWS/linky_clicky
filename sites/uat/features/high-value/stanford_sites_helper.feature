@@ -116,7 +116,8 @@ Feature: Stanford Sites Helper Module
     Given I am logged in as a user with the "administrator" role
     And I am on "admin"
     Then I should see the heading "Get Help" in the "Help" region
-    And I should see "Problems using this service? Submit a help ticket." in the "Help" region
+    And I should see "Problems using this service? Submit a help ticket" in the "Help" region
+
     When I click "help ticket"
     Then I should be on "https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=c44652e04f13ae0054c23f828110c7d9"
 
@@ -129,17 +130,4 @@ Feature: Stanford Sites Helper Module
     Then I want to validate select field option "profile_id" default is "Stanford Sites Profile"
     When I go to "admin/config/system/backup_migrate/settings/profile"
     Then I should see "Stanford Sites Profile" in the "Content" region
-
-  @api @safe @sites @deploy
-  Scenario: AFS file storage checking
-    Given I am logged in as a user with the "administrator" role
-    And the "stanford_afs_quota" module is enabled
-    And I am on "admin/reports/status"
-    Then I should see "File Storage Limit"
-    When I click "Check again" in the "File Storage Limit" row
-    Then I should be on "admin/config/stanford-sites-helper/filequota/check"
-    When I am on "admin/reports/status"
-    And I click "request more storage" in the "File Storage Limit" row
-    Then I should be on "https://stanford.service-now.com/it_services?id=sc_cat_item&sys_id=c44652e04f13ae0054c23f828110c7d9"
-
 
