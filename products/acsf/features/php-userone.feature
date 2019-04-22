@@ -41,8 +41,10 @@ Feature: PHP
     Given I am logged in as User One
     And the "backup_migrate" module is enabled
     And I am on "admin/config/system/backup_migrate/settings/import"
+    And I wait for AJAX to finish
     Then I should see "This form is disabled"
     Given I am on "admin/config/system/backup_migrate/restore"
+    And I wait for AJAX to finish
     Then I should see "This form is disabled"
 
   @api @javascript
