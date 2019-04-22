@@ -33,30 +33,6 @@ Feature: Stanford Sites System Tools Module
       | #edit-modules-stanford-stanford-sites-systemtools-enable |
       | #edit-modules-core-update-enable                         |
 
-  @api @destructive @dev
-  Scenario: Prevent user saving Backup and Migrate archives to absolute path
-    Given the "stanford_sites_systemtools" module is enabled
-    And the "backup_migrate" module is enabled
-    And I am logged in as a user with the "administrator" role
-    When I go to "admin/config/system/backup_migrate/settings/destination/edit/manual"
-    And I enter "/tmp" for "Directory path"
-    And I press the "Save destination" button
-    Then I should see "You must enter a relative path for your destination directory."
-    And I should not see "Your destination was saved"
-    And I should be on "admin/config/system/backup_migrate/settings/destination/edit/manual"
-
-  @api @destructive @dev
-  Scenario: Prevent user saving Backup and Migrate archives to path outside of Drupal root
-    Given the "stanford_sites_systemtools" module is enabled
-    And the "backup_migrate" module is enabled
-    And I am logged in as a user with the "administrator" role
-    When I go to "admin/config/system/backup_migrate/settings/destination/edit/manual"
-    And I enter "../../foo" for "Directory path"
-    And I press the "Save destination" button
-    Then I should see "You may not choose a destination outside of your Drupal directory."
-    And I should not see "Your destination was saved"
-    And I should be on "admin/config/system/backup_migrate/settings/destination/edit/manual"
-
   # We use a Scenario Outline here because we want to test each item independently.
   @api @destructive @dev @javascript
   Scenario Outline: Prevent user from disabling/enabling certain modules (with Module Filter enabled)
