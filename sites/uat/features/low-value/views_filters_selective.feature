@@ -2,7 +2,7 @@
 Feature: Views Filters Selective
   In order to ensure that upgrades do not break existing functionality
   As an administrative user
-  I want to ensure the Stanford Sites System Tools module is working properly
+  I want to ensure the Views Filters Selective module is working properly
 
   @api @javascript
   Scenario: Views Filters Selective
@@ -34,19 +34,19 @@ Feature: Views Filters Selective
     And I press "Save settings"
     Then I am on "/node/add/behat-test-type"
     And I fill in "Title" with "Test content 1"
-    And I select "Test Term 1" from "Test term field"
+    And I select "Test Term 1" from "Test Selective Filters"
     Then I press "Save"
     Then I am on "/node/add/behat-test-type"
     And I fill in "Title" with "Test content 2"
-    And I select "Test Term 1" from "Test term field"
+    And I select "Test Term 1" from "Test Selective Filters"
     Then I press "Save"
     Then I am on "/node/add/behat-test-type"
     And I fill in "Title" with "Test content 3"
-    And I select "Test Term 2" from "Test term field"
+    And I select "Test Term 2" from "Test Selective Filters"
     Then I press "Save"
     Then I am on "/admin/structure/views/add"
     And I fill in "View name" with "Behat test view"
-    And I fill in "Machine-readable name" with "behat_test_view"
+    And I wait for AJAX to finish
     And I select "Behat Test Type" from "show[type]"
     And I fill in "page[path]" with "behat-test-view"
     And I select "fields" from "page[style][row_plugin]"
