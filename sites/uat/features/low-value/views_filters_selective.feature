@@ -53,7 +53,8 @@ Feature: Views Filters Selective
     And I select "fields" from "page[style][row_plugin]"
     Then I press "Continue & edit"
     Then I click "views-add-field"
-    And I check "name[field_data_field_test_selective_filters.field_test_selective_filters]"
+    And I wait for AJAX to finish
+    And I check "Test Selective Filters"
     And I press "Add and configure fields"
     Then I check "Exclude from display"
     And I select "Plain text" from "Formatter"
