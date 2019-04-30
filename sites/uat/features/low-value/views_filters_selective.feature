@@ -55,15 +55,24 @@ Feature: Views Filters Selective
     Then I click "views-add-field"
     And I wait for AJAX to finish
     And I check "Test Selective Filters"
-    And I press "Add and configure fields"
+    And I press "Apply (all displays)"
+    And I wait for AJAX to finish
     Then I check "Exclude from display"
     And I select "Plain text" from "Formatter"
-    And I press "Apply"
+    And I wait for AJAX to finish
+    And I press "Apply (all displays)"
+    And I wait for AJAX to finish
     Then I click "views-add-filter"
-    Then I check "name[field_data_field_test_selective_filters.field_test_selective_filters_tid_selective]"
-    And I press "Add and configure filter criteria"
-    And I press "Apply"
+    And I wait for AJAX to finish
+    And I check "Content: Test Selective Filters (field_test_selective_filters) (selective)"
+    And I press "Apply (all displays)"
+    And I wait for AJAX to finish
+    And I press "Apply (all displays)"
+    And I wait for AJAX to finish
     Then I press "Update preview"
+    And I wait for AJAX to finish
     And I select "Test Term 1" from "Test Selective Filters (field_test_selective_filters) (selective)"
     And I select "Test Term 2" from "Test Selective Filters (field_test_selective_filters) (selective)"
+    And I wait for AJAX to finish
+    And I press the "Save" button
     #And Option "Test Term 3" should not exist in "Test Selective Filters (field_test_selective_filters) (selective)"
