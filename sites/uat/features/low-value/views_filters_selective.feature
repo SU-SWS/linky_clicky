@@ -74,5 +74,21 @@ Feature: Views Filters Selective
     And I select "Test Term 1" from "Test Selective Filters (field_test_selective_filters) (selective)"
     And I select "Test Term 2" from "Test Selective Filters (field_test_selective_filters) (selective)"
     And I wait for AJAX to finish
-    And I press the "Save" button
-    #And Option "Test Term 3" should not exist in "Test Selective Filters (field_test_selective_filters) (selective)"
+    And Option "Test Term 3" should not exist in "edit-field-test-selective-filters-tid-selective"
+    # Clean up. We never saved the View, and nodes get deleted in a teardown step.
+    # Delete terms.
+    When I go to "admin/structure/taxonomy_manager/voc/test_taxonomy_term_vocab"
+    And I check "Test Term 1"
+    And I check "Test Term 2"
+    And I check "Test Term 3"
+    And I press the "Delete" button
+    And I press "edit-delete-delete"
+    And I press the "Delete" button
+    # Delete vocabulary.
+    And I go to "admin/structure/taxonomy/test_taxonomy_term_vocab/edit"
+    And I press the "Delete" button
+    And I press the "Delete" button
+    # Delete content type.
+    When I go to "admin/structure/types/manage/behat_test_type/delete"
+    And I press the "Delete" button
+

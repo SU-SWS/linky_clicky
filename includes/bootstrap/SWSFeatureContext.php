@@ -666,7 +666,7 @@ JS;
     $this->visitPath($url);
   }
 
-   /**
+  /**
    * @Given I am logged out
    */
   public function iAmLoggedOut() {
@@ -677,7 +677,7 @@ JS;
   }
 
 
-    /**
+  /**
    * @Then I should see no duplicate HTML with :arg1
    */
   public function iShouldSeeNoDuplicateHtmlWith($arg1) {
@@ -706,4 +706,23 @@ JS;
       throw new ExpectationException($message, $session);
     }
   }
+
+  /**
+   * @Then Option :arg1 should not exist in :arg2
+   */
+  public function optionShouldNotExistIn($arg1, $arg2)
+  {
+    // Borrowed and modified from http://www.inanzzz.com/index.php/post/v5qb/verifying-selectbox-options-with-behat
+    $session = $this->getSession();
+    $page = $session->getPage();
+    $element = $page->findById($arg2);
+    if (is_null($element)) {
+        throw new \InvalidArgumentException(sprintf('Could not evaluate CSS for "%s".', $element));
+    }
+
+    if ($element->getText() == $arg1) {
+        throw new \Exception(sprintf('Element "%s" exists.', $element));
+    }
+  }
+
 }
