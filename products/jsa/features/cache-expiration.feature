@@ -103,3 +103,19 @@ Feature: Cache Expiration
     And I refresh the page
     Then I should see "War and Peace"
 
+  @api @destructive @javascript
+  Scenario: Create a Course and assure that it appears on the Courses page
+    # Prime the cache.
+    Given I am an anonymous user
+    And I am on "courses/search?combine=flux&field_s_course_section_year_value_selective=All&field_s_course_term_value=All"
+    Then I should not see "Flux Capacitor Design and Implementation"
+    Given I am logged in as a user with the "site owner" role
+    # Not enabling any of the required modules here, because it should "just work".
+    And I am on "node/add/stanford-course"
+    Then I fill in "edit-title" with "Flux Capacitor Design and Implementation"
+    And I press the "Save" button
+    Then I should see "Course Flux Capacitor Design and Implementation has been created"
+    Given I am an anonymous user
+    And I am on "courses/search?combine=flux&field_s_course_section_year_value_selective=All&field_s_course_term_value=All"
+    And I refresh the page
+    Then I should see "Flux Capacitor Design and Implementation"
