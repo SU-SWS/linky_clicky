@@ -16,9 +16,9 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "News Item [random:1] has been created"
-    Given I am an anonymous user
-    And I wait 60 seconds
+    And I am an anonymous user
     And I am on "news/recent-news"
+    And I refresh the page
     Then I should see "[random:1]"
 
   @api @destructive @javascript
@@ -32,9 +32,9 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "News Item [random:1] has been created"
-    Given I am an anonymous user
-    And I wait 60 seconds
+    And I am an anonymous user
     And I am on the homepage
+    And I refresh the page
     Then I should see "[random:1]"
 
   @api @destructive @javascript
@@ -48,9 +48,9 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "Stanford Event [random:1] has been created"
-    Given I am an anonymous user
-    And I wait 60 seconds
+    And I am an anonymous user
     And I am on "events/upcoming-events"
+    And I refresh the page
     Then I should see "[random:1]"
 
   @api @destructive @javascript
@@ -64,7 +64,7 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "Stanford Event [random:1] has been created"
-    Given I am an anonymous user
-    And I wait 60 seconds
+    And I am an anonymous user
     And I am on the homepage
+    And I refresh the page
     Then I should see "[random:1]"

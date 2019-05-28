@@ -677,7 +677,7 @@ JS;
   }
 
 
-    /**
+   /**
    * @Then I should see no duplicate HTML with :arg1
    */
   public function iShouldSeeNoDuplicateHtmlWith($arg1) {
@@ -706,4 +706,15 @@ JS;
       throw new ExpectationException($message, $session);
     }
   }
+
+  /**
+   * @Given I refresh the page
+   */
+  public function iRefreshThePage() {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    // http://mink.behat.org/en/latest/guides/session.html#interacting-with-the-page
+    $session->reload();
+  }
+
 }
