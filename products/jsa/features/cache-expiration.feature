@@ -16,7 +16,7 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "News Item [random:1] has been created"
-    And I am an anonymous user
+    Given I am an anonymous user
     And I am on "news/recent-news"
     And I refresh the page
     Then I should see "[random:1]"
@@ -32,7 +32,7 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "News Item [random:1] has been created"
-    And I am an anonymous user
+    Given I am an anonymous user
     And I am on the homepage
     And I refresh the page
     Then I should see "[random:1]"
@@ -48,7 +48,7 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "Stanford Event [random:1] has been created"
-    And I am an anonymous user
+    Given I am an anonymous user
     And I am on "events/upcoming-events"
     And I refresh the page
     Then I should see "[random:1]"
@@ -64,7 +64,42 @@ Feature: Cache Expiration
     Then I fill in "title" with "[random]"
     And I press the "Save" button
     Then I should see "Stanford Event [random:1] has been created"
-    And I am an anonymous user
+    Given I am an anonymous user
     And I am on the homepage
     And I refresh the page
     Then I should see "[random:1]"
+
+  @api @destructive @javascript
+  Scenario: Create a Person (faculty) and assure that she appears on the Faculty page
+    # Prime the cache.
+    Given I am an anonymous user
+    And I am on "people/faculty"
+    Given I am logged in as a user with the "site owner" role
+    # Not enabling any of the required modules here, because it should "just work".
+    And I am on "node/add/stanford-person"
+    Then I fill in "First name" with "Annie"
+    And I fill in "Last Name" with "Aardvark"
+    And I check "Faculty"
+    And I press the "Save" button
+    Then I should see "Person Annie Aardvark has been created"
+    Given I am an anonymous user
+    And I am on "people/faculty"
+    And I refresh the page
+    Then I should see "Annie Aardvark"
+
+  @api @destructive @javascript
+  Scenario: Create a Publication and assure that it appears on the Publications page
+    # Prime the cache.
+    Given I am an anonymous user
+    And I am on "publications"
+    Given I am logged in as a user with the "site owner" role
+    # Not enabling any of the required modules here, because it should "just work".
+    And I am on "node/add/stanford-publication"
+    Then I fill in "edit-title" with "War and Peace"
+    And I press the "Save" button
+    Then I should see "Publication War and Peace has been created"
+    Given I am an anonymous user
+    And I am on "publications"
+    And I refresh the page
+    Then I should see "War and Peace"
+
