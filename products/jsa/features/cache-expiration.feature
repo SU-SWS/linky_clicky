@@ -37,6 +37,24 @@ Feature: Cache Expiration
     And I refresh the page
     Then I should see "[random:1]"
 
+  @api @destructive
+  Scenario: Create a News Item and assure that it does not invalidate the cache on the Upcoming Events page
+    # Prime the cache.
+    Given I am an anonymous user
+    And I am on "events/upcoming-events"
+    And I refresh the page
+    Then the response header "X-Cache" should contain "HIT"
+    Given I am logged in as a user with the "site owner" role
+    # Not enabling any of the required modules here, because it should "just work".
+    And I am on "node/add/stanford-news-item"
+    Then I fill in "title" with "[random]"
+    And I press the "Save" button
+    Then I should see "News Item [random:1] has been created"
+    Given I am an anonymous user
+    And I am on "events/upcoming-events"
+    And I refresh the page
+    Then the response header "X-Cache" should contain "HIT"
+
   @api @destructive @javascript
   Scenario: Create an Event and assure that it appears on the Upcoming Events page
     # Prime the cache.
