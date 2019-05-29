@@ -137,3 +137,32 @@ Feature: Cache Expiration
     And I am on "courses/search?combine=flux&field_s_course_section_year_value_selective=All&field_s_course_term_value=All"
     And I refresh the page
     Then I should see "Flux Capacitor Design and Implementation"
+
+  @api @destructive @javascript
+  Scenario: Create an item in the Main Menu and assure that it appears
+    # Prime the cache.
+    Given I am an anonymous user
+    And I am on the homepage
+    And I refresh the page
+    Then I should not see "New Menu Item"
+    Given I am logged in as a user with the "site owner" role
+    # Not enabling any of the required modules here, because it should "just work".
+    And I am on "admin/structure/menu/manage/main-menu"
+    And I click "Add link"
+    And I fill in "Menu link title" with "New Menu Item"
+    And I fill in "Path" with "<front>"
+    And I press the "Save" button
+    Then I should see "Your configuration has been saved."
+    Given I am an anonymous user
+    And I am on the homepage
+    And I refresh the page
+    Then I should see "New Menu Item"
+    Given I am logged in as a user with the "site owner" role
+    And I am on "admin/structure/menu/manage/main-menu"
+    And I click "delete" in the "New Menu Item" row
+    And I press the "Confirm" button
+    Then I should see "The menu link New Menu Item has been deleted."
+    Given I am an anonymous user
+    And I am on the homepage
+    And I refresh the page
+    Then I should not see "New Menu Item"
