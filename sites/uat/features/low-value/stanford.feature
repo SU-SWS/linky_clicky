@@ -12,7 +12,7 @@ Feature: Stanford Drupal Install Profile
   Examples:
     | Text                                                                             | Region          |
     | Home                                                                             | Main Navigation |
-    | Log in with WebAuth                                                              | First sidebar   |
+    | SUNetID Login                                                                    | First sidebar   |
 
   @webauth @safe @deploy
   Scenario Outline: Header content
@@ -21,7 +21,7 @@ Feature: Stanford Drupal Install Profile
 
   Examples:
     | Header                                 | Region        |
-    | WebAuth Login                          | First sidebar |
+    | SUNetID Login                          | First sidebar |
 
   @api @safe @deploy
   Scenario: Search box - authenticated user
