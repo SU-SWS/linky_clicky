@@ -27,4 +27,4 @@ Feature: Advanced Help
     When I move backward one page
     And I click "Why advanced help?"
     Then I should be on "help/advanced_help/why-advanced-help"
-    And I should see "The Advanced help framework was designed to replace the original Drupal help system"
+    And I should see "The Advanced help framework is designed to supplement the Drupal core help system"
