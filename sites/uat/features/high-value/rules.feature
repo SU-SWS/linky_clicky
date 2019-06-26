@@ -12,13 +12,13 @@ Feature: Rules
     And I am on "admin/config/workflow/rules/reaction/add"
     When I enter "Send Email When Pages Are Viewed" for "Name"
     And I select "Content is viewed" from "React on event"
-    And I wait 3 seconds
+    And I wait for AJAX to finish
     And I select "Basic page" from "Restrict by type"
     And I press the "Save" button
     Then I should see "Your changes have been saved"
     When I click "Add action"
     And I select "Send mail" from "Select the action to add"
-    And I wait 3 seconds
+    And I wait for AJAX to finish
     And I enter "jbickar@stanford.edu" for "edit-parameter-to-settings-to"
     And I enter "Page has been viewed" for "edit-parameter-subject-settings-subject"
     And I enter "The page has been viewed" for "edit-parameter-message-settings-message"
