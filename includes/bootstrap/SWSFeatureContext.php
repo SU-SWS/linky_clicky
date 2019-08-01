@@ -725,4 +725,14 @@ JS;
     }
   }
 
+  /**
+   * @Given I refresh the page
+   */
+  public function iRefreshThePage() {
+    $mink = $this->minkContext;
+    $session = $mink->getSession();
+    // http://mink.behat.org/en/latest/guides/session.html#interacting-with-the-page
+    $session->reload();
+  }
+
 }

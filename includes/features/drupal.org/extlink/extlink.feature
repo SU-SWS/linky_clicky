@@ -12,6 +12,7 @@ Feature: External Link (extlink) module
     And I am on "node/add/stanford-landing-page"
     Then I fill in "title" with "External Link Behat Test"
     And I click "Add/Edit Content"
+    And I wait for AJAX to finish
     And I fill in "field_landing_page_item[und][0][field_s_lp_item_title][und][0][value]" with "External Link #1"
     And I fill in "field_landing_page_item[und][0][field_s_lp_item_link][und][0][url]" with "https://google.com"
     And I press the "Save" button
