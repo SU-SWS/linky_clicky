@@ -710,8 +710,7 @@ JS;
   /**
    * @Then Option :arg1 should not exist in :arg2
    */
-  public function optionShouldNotExistIn($arg1, $arg2)
-  {
+  public function optionShouldNotExistIn($arg1, $arg2) {
     // Borrowed and modified from http://www.inanzzz.com/index.php/post/v5qb/verifying-selectbox-options-with-behat
     $session = $this->getSession();
     $page = $session->getPage();
