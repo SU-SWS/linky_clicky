@@ -26,6 +26,7 @@ Feature: Content Access
     And I press the "Save" button
     And I should see "Basic page Content Access Test has been created"
     When I click "Access control"
+    And I wait for AJAX to finish
     And I uncheck the box "edit-view-1"
     And I press the "Submit" button
     Then I should see "Your changes have been saved"

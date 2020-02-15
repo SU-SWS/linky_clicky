@@ -48,7 +48,7 @@ Feature: Display Suite
     Then I should see "Test DS View Mode"
     And I should see "tags"
     And I should see "foo"
-    When I go to "test-ds-view-mode?v=ifbpcnojcqmnmnro"
+    When I go to "test-ds-view-mode?v=ifbpcnojcqmnmnro&foo=bar"
     Then I should see "Test DS View Mode"
     And I should not see "tags"
     And I should not see "foo"
