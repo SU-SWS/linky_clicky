@@ -55,7 +55,7 @@ Feature: Cache Expiration
     And I refresh the page
     Then the response header "X-Cache" should contain "HIT"
 
-  @api @destructive @javascript
+  @api @destructive
   Scenario: Create an Event and assure that it appears on the Upcoming Events page
     # Prime the cache.
     Given I am an anonymous user
@@ -64,6 +64,7 @@ Feature: Cache Expiration
     # Not enabling any of the required modules here, because it should "just work".
     And I am on "node/add/stanford-event"
     Then I fill in "title" with "[random]"
+    And I fill in "Time" with ninety minutes from now
     And I press the "Save" button
     Then I should see "Stanford Event [random:1] has been created"
     Given I am an anonymous user
@@ -71,7 +72,7 @@ Feature: Cache Expiration
     And I refresh the page
     Then I should see "[random:1]"
 
-  @api @destructive @javascript
+  @api @destructive
   Scenario: Create an Event and assure that it appears on the homepage
     # Prime the cache.
     Given I am an anonymous user
@@ -80,11 +81,14 @@ Feature: Cache Expiration
     # Not enabling any of the required modules here, because it should "just work".
     And I am on "node/add/stanford-event"
     Then I fill in "title" with "[random]"
+    And I fill in "Time" with ninety minutes from now
     And I press the "Save" button
     Then I should see "Stanford Event [random:1] has been created"
     Given I am an anonymous user
     And I am on the homepage
     And I refresh the page
+    # There are only two events in the View on the homepage, so this may fail in the rare occurence that there are two
+    # events happening within the next ninety minutes.
     Then I should see "[random:1]"
 
   @api @destructive @javascript
