@@ -734,4 +734,22 @@ JS;
     $session->reload();
   }
 
+  /**
+   * @Given I fill in :arg1 with ninety minutes from now
+   */
+  public function iFillInWithNinetyMinutesFromNow($selector)
+  {
+    $ninety_minutes_hence = time() + (60 * 90);
+    $ninety_minutes_hence = date('h:iA', $ninety_minutes_hence);
+    $session = $this->getSession();
+
+    $page = $session->getPage();
+    $element = $session->getPage()->find('named', array('content', $selector));
+    if (is_null($element)) {
+      throw new \Exception(sprintf('"%s" element not found".', $selector));
+    }
+
+    $page->fillField($selector, $ninety_minutes_hence);
+  }
+
 }
