@@ -92,6 +92,11 @@ Feature: Block Paths
     Then the response status code should be 403
     # We want to make sure that this request does not bootstrap Drupal.
     And the response header should not have "X-Drupal-Cache"
+    # Check for wildcard coverage.
+    When I am on "[random]/[random]/connector.minimal.php"
+    Then the response status code should be 403
+    # We want to make sure that this request does not bootstrap Drupal.
+    And the response header should not have "X-Drupal-Cache"
     When I am on "uddilistener/vendor/phpunit/phpunit/src/Util/PHP/sssp.pHp5"
     Then the response status code should be 403
     # We want to make sure that this request does not bootstrap Drupal.
@@ -116,6 +121,19 @@ Feature: Block Paths
     And the response header should not have "X-Drupal-Cache"
     # Check for wildcard coverage.
     When I am on "[random]/[random]/sssp.php.pjpeg"
+    Then the response status code should be 403
+    # We want to make sure that this request does not bootstrap Drupal.
+    And the response header should not have "X-Drupal-Cache"
+    When I am on "uddilistener/vendor/phpunit/phpunit/src/Util/PHP/sssp.phtml"
+    Then the response status code should be 403
+    # We want to make sure that this request does not bootstrap Drupal.
+    And the response header should not have "X-Drupal-Cache"
+    When I am on "typo3/vendor/phpunit/phpunit/src/Util/PHP/sssp.phtml"
+    Then the response status code should be 403
+    # We want to make sure that this request does not bootstrap Drupal.
+    And the response header should not have "X-Drupal-Cache"
+    # Check for wildcard coverage.
+    When I am on "[random]/[random]/sssp.phtml"
     Then the response status code should be 403
     # We want to make sure that this request does not bootstrap Drupal.
     And the response header should not have "X-Drupal-Cache"
