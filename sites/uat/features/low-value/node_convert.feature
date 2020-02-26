@@ -7,6 +7,8 @@ Feature: Node Convert
   @api @javascript @content @dev @destructive
   Scenario: Node Convert
     Given the "node_convert" module is enabled
+    # Testing patch in https://www.drupal.org/project/node_convert/issues/2394047
+    And the "xmlsitemap" module is enabled
     And the cache has been cleared
     And I am logged in as a user with the "administrator" role
     When I am on "node/add/page"
