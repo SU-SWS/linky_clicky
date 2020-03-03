@@ -12,6 +12,7 @@ Feature: Block Title Link
     And I click "Add block"
     And I enter "Block Title Link Test" for "Block title"
     And I enter "Block Title Link Test" for "Block description"
+    And I wait for AJAX to finish
     # Assign an id to an element without an id. Tricksy little hobbitses.
     And the iframe in element "cke_contents_edit-body-value" has id "cke_contents_edit-body-value-iframe"
     And I fill in "This is a test block for the Block Title Link module" in WYSIWYG editor "cke_contents_edit-body-value-iframe"
