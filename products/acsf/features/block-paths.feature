@@ -137,3 +137,8 @@ Feature: Block Paths
     Then the response status code should be 403
     # We want to make sure that this request does not bootstrap Drupal.
     And the response header should not have "X-Drupal-Cache"
+    When I am on "xmlrpc.php"
+    Then the response status code should be 403
+    # We want to make sure that this request does not bootstrap Drupal.
+    And the response header should not have "X-Drupal-Cache"
+
