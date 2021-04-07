@@ -10,28 +10,20 @@ Feature: Homepage
 
 
   @api @safe
-  Scenario Outline: Homepage blocks are available
+  Scenario: Homepage blocks are available
     Given I am on the homepage
-    Then I should see the "<Header>" heading in the "<Region>" region
-
-    Examples:
-      | Header                 | Region       |
-      | Connect                | Main Lower   |
-      | Upcoming Events        | Main Content |
-      | Announcements & News   | Main Content |
-      | Project Management     | Main Content |
-      | Maintenance & Services | Main Content |
-      | Helpful Links          | Footer       |
-      | Contact LBRE           | Footer       |
+    Then I should see the "Connect" heading in the "Main Lower" region
+    Then I should see the "Upcoming Events" heading in the "Main Content" region
+    Then I should see the "Announcements & News" heading in the "Main Content" region
+    Then I should see the "Project Management" heading in the "Main Content" region
+    Then I should see the "Maintenance & Services" heading in the "Main Content" region
+    Then I should see the "Helpful Links" heading in the "Footer" region
+    Then I should see the "Contact LBRE" heading in the "Footer" region
 
   @api @safe
-  Scenario Outline: Homepage content
+  Scenario: Homepage content
     Given I am on the homepage
-    Then I should see "<Text>" in the "<Region>" region
-
-    Examples:
-      | Text                                            | Region   |
-      | 3160 Porter Drive                               | Footer   |
-      | Helpful Links                                   | Footer   |
-      | Overarching a collective of ten departments     | Footer   |
-      | Caretakers of a Legacy                          | Footer   |
+    Then I should see "3160 Porter Drive" in the "Footer" region
+    Then I should see "Helpful Links" in the "Footer" region
+    Then I should see "Overarching a collective of ten departments" in the "Footer" region
+    Then I should see "Caretakers of a Legacy" in the "Footer" region
